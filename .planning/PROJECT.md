@@ -116,6 +116,13 @@ A global humor discovery platform - the world's best joke search engine. Users f
 - **Budget**: Prefer free/open-source tools; minimize paid services
 - **Database**: PostgreSQL with full-text search (not Elasticsearch initially)
 
+**Local Development Database:**
+- Host: localhost
+- Port: 5432 (default)
+- Username: `postgres`
+- Password: `6969`
+- Database name: `jokesfor` (to be created)
+
 ## Key Decisions
 
 | Decision | Rationale | Outcome |
