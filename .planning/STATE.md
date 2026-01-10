@@ -30,12 +30,14 @@ Jokes For is a global humor discovery platform - a search engine for jokes. User
 - [x] Phase directories created
 
 ### Current Phase
-**None** - Ready to start Phase 01: Foundation
+**Phase 01: Foundation** - Planned (3 plans ready for execution)
 
 ### Upcoming
-1. Phase 01: Foundation - Django config, PostgreSQL, security fixes
-2. Phase 02: Data Models - Joke model with metadata
-3. Phase 03: Content Seeding - 100-200 dev jokes
+1. **Phase 01-01**: Project hygiene (.gitignore, requirements.txt, python-dotenv)
+2. **Phase 01-02**: Secure settings (SECRET_KEY, DEBUG, ALLOWED_HOSTS via env)
+3. **Phase 01-03**: PostgreSQL setup (database config, migrations)
+4. Phase 02: Data Models - Joke model with metadata
+5. Phase 03: Content Seeding - 100-200 dev jokes
 
 ---
 
@@ -75,8 +77,9 @@ None tracked yet.
 
 ## Next Actions
 
-1. Run `/gsd:plan-phase 01` to create detailed plan for Foundation phase
-2. Or run `/gsd:research-phase 01` if uncertain about approach
+1. Run `/gsd:execute-plan .planning/phases/01-foundation/01-01-PLAN.md`
+2. Then: `/gsd:execute-plan .planning/phases/01-foundation/01-02-PLAN.md`
+3. Then: `/gsd:execute-plan .planning/phases/01-foundation/01-03-PLAN.md`
 
 ---
 
