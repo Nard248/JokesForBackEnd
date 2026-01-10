@@ -1,0 +1,2194 @@
+[
+  {
+    "model": "jokes.joke",
+    "pk": 1,
+    "fields": {
+      "text": "I told my wife she was drawing her eyebrows too high. She looked surprised.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3],
+      "context_tags": [5, 6, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 2,
+    "fields": {
+      "text": "Why don't scientists trust atoms? Because they make up everything!",
+      "setup": "Why don't scientists trust atoms?",
+      "punchline": "Because they make up everything!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 4, 5],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 3,
+    "fields": {
+      "text": "I'm reading a book about anti-gravity. It's impossible to put down!",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 4,
+    "fields": {
+      "text": "What do you call a fake noodle? An impasta!",
+      "setup": "What do you call a fake noodle?",
+      "punchline": "An impasta!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [5, 7, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 5,
+    "fields": {
+      "text": "I used to hate facial hair, but then it grew on me.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [2, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 6,
+    "fields": {
+      "text": "Why did the scarecrow win an award? Because he was outstanding in his field!",
+      "setup": "Why did the scarecrow win an award?",
+      "punchline": "Because he was outstanding in his field!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [2, 4, 5],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 7,
+    "fields": {
+      "text": "I told my computer I needed a break, and it said 'No problem, I'll go to sleep.'",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 2,
+      "tones": [1, 4],
+      "context_tags": [2, 4, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 8,
+    "fields": {
+      "text": "What's the best thing about Switzerland? I don't know, but the flag is a big plus.",
+      "setup": "What's the best thing about Switzerland?",
+      "punchline": "I don't know, but the flag is a big plus.",
+      "format": 2,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [5, 6, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 9,
+    "fields": {
+      "text": "Parallel lines have so much in common. It's a shame they'll never meet.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 10,
+    "fields": {
+      "text": "Why did the math book look so sad? Because it had too many problems!",
+      "setup": "Why did the math book look so sad?",
+      "punchline": "Because it had too many problems!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 11,
+    "fields": {
+      "text": "My boss told me to have a good day, so I went home.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 5],
+      "context_tags": [2, 6, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 12,
+    "fields": {
+      "text": "A man walks into a library and asks for books about paranoia. The librarian whispers, 'They're right behind you!'",
+      "setup": "A man walks into a library and asks for books about paranoia.",
+      "punchline": "The librarian whispers, 'They're right behind you!'",
+      "format": 3,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 2],
+      "context_tags": [3, 5, 6],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 13,
+    "fields": {
+      "text": "I'm on a seafood diet. I see food and I eat it.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [5, 7, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 14,
+    "fields": {
+      "text": "Why don't eggs tell jokes? They'd crack each other up!",
+      "setup": "Why don't eggs tell jokes?",
+      "punchline": "They'd crack each other up!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 7],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 15,
+    "fields": {
+      "text": "I couldn't figure out how to put my seatbelt on. Then it clicked.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [5, 6, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 16,
+    "fields": {
+      "text": "What do you call a bear with no teeth? A gummy bear!",
+      "setup": "What do you call a bear with no teeth?",
+      "punchline": "A gummy bear!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 17,
+    "fields": {
+      "text": "Time flies like an arrow. Fruit flies like a banana.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 4],
+      "context_tags": [4, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 18,
+    "fields": {
+      "text": "A priest, a rabbi, and a minister walk into a bar. The bartender says, 'What is this, some kind of joke?'",
+      "setup": "A priest, a rabbi, and a minister walk into a bar.",
+      "punchline": "The bartender says, 'What is this, some kind of joke?'",
+      "format": 3,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 5],
+      "context_tags": [5, 6, 8],
+      "culture_tags": [2]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 19,
+    "fields": {
+      "text": "I'm afraid of elevators, so I'm taking steps to avoid them.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [2, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 20,
+    "fields": {
+      "text": "Why did the bicycle fall over? Because it was two-tired!",
+      "setup": "Why did the bicycle fall over?",
+      "punchline": "Because it was two-tired!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 21,
+    "fields": {
+      "text": "To the person who stole my glasses: I will find you. I have contacts.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 4, 5],
+      "context_tags": [2, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 22,
+    "fields": {
+      "text": "What do you call a fish without eyes? A fsh!",
+      "setup": "What do you call a fish without eyes?",
+      "punchline": "A fsh!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 23,
+    "fields": {
+      "text": "I told my therapist about my fear of giant mushrooms. She said I shouldn't let it hold me back. I replied, 'But there's too mushroom for error.'",
+      "setup": "",
+      "punchline": "",
+      "format": 3,
+      "age_rating": 2,
+      "language": 1,
+      "source": 2,
+      "tones": [1, 3, 4],
+      "context_tags": [5, 6, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 24,
+    "fields": {
+      "text": "I used to think I was indecisive. But now I'm not so sure.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 5],
+      "context_tags": [2, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 25,
+    "fields": {
+      "text": "Why do chicken coops only have two doors? Because if they had four, they'd be chicken sedans!",
+      "setup": "Why do chicken coops only have two doors?",
+      "punchline": "Because if they had four, they'd be chicken sedans!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [2]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 26,
+    "fields": {
+      "text": "The rotation of Earth really makes my day.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 4, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 27,
+    "fields": {
+      "text": "What's orange and sounds like a parrot? A carrot!",
+      "setup": "What's orange and sounds like a parrot?",
+      "punchline": "A carrot!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 7],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 28,
+    "fields": {
+      "text": "A guy walks into a bar and asks for a beer. The bartender says, 'Sure, that'll be one dollar.' The guy thinks this is amazing and asks how they can charge so little. The bartender replies, 'I won the lottery last year, bought this place, and decided to just share my good fortune.'",
+      "setup": "",
+      "punchline": "",
+      "format": 3,
+      "age_rating": 3,
+      "language": 1,
+      "source": 1,
+      "tones": [1],
+      "context_tags": [5, 6],
+      "culture_tags": [2]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 29,
+    "fields": {
+      "text": "I'm so good at sleeping, I can do it with my eyes closed.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 30,
+    "fields": {
+      "text": "Why don't skeletons fight each other? They don't have the guts!",
+      "setup": "Why don't skeletons fight each other?",
+      "punchline": "They don't have the guts!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 6],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 31,
+    "fields": {
+      "text": "My wife told me to stop impersonating a flamingo. I had to put my foot down.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [1, 5, 7],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 32,
+    "fields": {
+      "text": "What do you call a lazy kangaroo? A pouch potato!",
+      "setup": "What do you call a lazy kangaroo?",
+      "punchline": "A pouch potato!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 33,
+    "fields": {
+      "text": "I asked my dog what's two minus two. He said nothing.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 34,
+    "fields": {
+      "text": "Why did the coffee file a police report? It got mugged!",
+      "setup": "Why did the coffee file a police report?",
+      "punchline": "It got mugged!",
+      "format": 2,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [2, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 35,
+    "fields": {
+      "text": "I have a friend who's addicted to brake fluid, but he says he can stop any time.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [5, 6, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 36,
+    "fields": {
+      "text": "What did the ocean say to the beach? Nothing, it just waved.",
+      "setup": "What did the ocean say to the beach?",
+      "punchline": "Nothing, it just waved.",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 37,
+    "fields": {
+      "text": "I would tell you a chemistry joke, but I know I wouldn't get a reaction.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 4, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 38,
+    "fields": {
+      "text": "Why did the gym close down? It just didn't work out!",
+      "setup": "Why did the gym close down?",
+      "punchline": "It just didn't work out!",
+      "format": 2,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [5, 6, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 39,
+    "fields": {
+      "text": "A photon checks into a hotel. The bellhop asks, 'Can I help you with your luggage?' The photon replies, 'No thanks, I'm traveling light.'",
+      "setup": "A photon checks into a hotel. The bellhop asks, 'Can I help you with your luggage?'",
+      "punchline": "The photon replies, 'No thanks, I'm traveling light.'",
+      "format": 3,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 4],
+      "context_tags": [3, 4, 5],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 40,
+    "fields": {
+      "text": "I tried to sue the airline for losing my luggage. I lost my case.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [5, 6, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 41,
+    "fields": {
+      "text": "What's a tree's favorite drink? Root beer!",
+      "setup": "What's a tree's favorite drink?",
+      "punchline": "Root beer!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 7],
+      "culture_tags": [2]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 42,
+    "fields": {
+      "text": "I named my dog '5 miles' so I can tell people I walk 5 miles every day.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3],
+      "context_tags": [5, 6, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 43,
+    "fields": {
+      "text": "Why don't oysters donate to charity? Because they're shellfish!",
+      "setup": "Why don't oysters donate to charity?",
+      "punchline": "Because they're shellfish!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [5, 7, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 44,
+    "fields": {
+      "text": "I'm terrified of elevators. I'm going to start taking steps to avoid them.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [2, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 45,
+    "fields": {
+      "text": "What do you call cheese that isn't yours? Nacho cheese!",
+      "setup": "What do you call cheese that isn't yours?",
+      "punchline": "Nacho cheese!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 7],
+      "culture_tags": [2]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 46,
+    "fields": {
+      "text": "Marriage is like a deck of cards. In the beginning, all you need is two hearts and a diamond. By the end, you wish you had a club and a spade.",
+      "setup": "",
+      "punchline": "",
+      "format": 3,
+      "age_rating": 3,
+      "language": 1,
+      "source": 1,
+      "tones": [2, 5],
+      "context_tags": [1, 6],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 47,
+    "fields": {
+      "text": "I told my suitcase there would be no holiday this year. Now I'm dealing with emotional baggage.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [5, 6, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 48,
+    "fields": {
+      "text": "Why do we tell actors to 'break a leg'? Because every play has a cast!",
+      "setup": "Why do we tell actors to 'break a leg'?",
+      "punchline": "Because every play has a cast!",
+      "format": 2,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [5, 6, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 49,
+    "fields": {
+      "text": "I made a pencil with two erasers. It was pointless.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 50,
+    "fields": {
+      "text": "What do you call a dinosaur that crashes their car? Tyrannosaurus Wrecks!",
+      "setup": "What do you call a dinosaur that crashes their car?",
+      "punchline": "Tyrannosaurus Wrecks!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 51,
+    "fields": {
+      "text": "I used to be a banker, but I lost interest.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [2, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 52,
+    "fields": {
+      "text": "Why did the tomato turn red? Because it saw the salad dressing!",
+      "setup": "Why did the tomato turn red?",
+      "punchline": "Because it saw the salad dressing!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3],
+      "context_tags": [3, 5, 7],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 53,
+    "fields": {
+      "text": "A man walked into a bar. He said 'ouch.'",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3],
+      "context_tags": [5, 6, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 54,
+    "fields": {
+      "text": "What do you call a parade of rabbits hopping backwards? A receding hare-line!",
+      "setup": "What do you call a parade of rabbits hopping backwards?",
+      "punchline": "A receding hare-line!",
+      "format": 2,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [5, 6, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 55,
+    "fields": {
+      "text": "I have a joke about construction, but I'm still working on it.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [2, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 56,
+    "fields": {
+      "text": "Why did the golfer bring two pairs of pants? In case he got a hole in one!",
+      "setup": "Why did the golfer bring two pairs of pants?",
+      "punchline": "In case he got a hole in one!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [5, 6, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 57,
+    "fields": {
+      "text": "My grandfather has the heart of a lion and a lifetime ban from the zoo.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 3,
+      "language": 1,
+      "source": 1,
+      "tones": [2, 5],
+      "context_tags": [6, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 58,
+    "fields": {
+      "text": "What did the left eye say to the right eye? Between you and me, something smells!",
+      "setup": "What did the left eye say to the right eye?",
+      "punchline": "Between you and me, something smells!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 59,
+    "fields": {
+      "text": "The guy who invented the knock-knock joke should get a no-bell prize.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 60,
+    "fields": {
+      "text": "Why don't scientists trust stairs? Because they're always up to something!",
+      "setup": "Why don't scientists trust stairs?",
+      "punchline": "Because they're always up to something!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 4, 5],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 61,
+    "fields": {
+      "text": "I stayed up all night wondering where the sun went. Then it dawned on me.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 62,
+    "fields": {
+      "text": "What do you get when you cross a snowman with a vampire? Frostbite!",
+      "setup": "What do you get when you cross a snowman with a vampire?",
+      "punchline": "Frostbite!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 6],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 63,
+    "fields": {
+      "text": "I'm reading a horror story in Braille. Something bad is going to happen, I can feel it.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 2, 4],
+      "context_tags": [5, 6, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 64,
+    "fields": {
+      "text": "Why did the computer go to the doctor? Because it had a virus!",
+      "setup": "Why did the computer go to the doctor?",
+      "punchline": "Because it had a virus!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3],
+      "context_tags": [2, 3, 5],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 65,
+    "fields": {
+      "text": "I once wrote a song about a tortilla. Actually, it was more of a wrap.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [5, 7, 8],
+      "culture_tags": [2]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 66,
+    "fields": {
+      "text": "What do you call a sleeping dinosaur? A dino-snore!",
+      "setup": "What do you call a sleeping dinosaur?",
+      "punchline": "A dino-snore!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 67,
+    "fields": {
+      "text": "I'm so bright my mother calls me son.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [5, 6, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 68,
+    "fields": {
+      "text": "Why can't your nose be 12 inches long? Because then it would be a foot!",
+      "setup": "Why can't your nose be 12 inches long?",
+      "punchline": "Because then it would be a foot!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [2]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 69,
+    "fields": {
+      "text": "Working from home means I can wear whatever I want to meetings. Today I went with 'visible frustration' and 'barely concealed exhaustion.'",
+      "setup": "",
+      "punchline": "",
+      "format": 3,
+      "age_rating": 2,
+      "language": 1,
+      "source": 2,
+      "tones": [5],
+      "context_tags": [2, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 70,
+    "fields": {
+      "text": "What do you call a can opener that doesn't work? A can't opener!",
+      "setup": "What do you call a can opener that doesn't work?",
+      "punchline": "A can't opener!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 71,
+    "fields": {
+      "text": "I don't trust those trees. They seem kind of shady.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [5, 6, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 72,
+    "fields": {
+      "text": "Why did the stadium get hot after the game? All the fans left!",
+      "setup": "Why did the stadium get hot after the game?",
+      "punchline": "All the fans left!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [5, 6, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 73,
+    "fields": {
+      "text": "Did you hear about the claustrophobic astronaut? He just needed a little space.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 74,
+    "fields": {
+      "text": "What did the buffalo say when his son left for college? Bison!",
+      "setup": "What did the buffalo say when his son left for college?",
+      "punchline": "Bison!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [2]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 75,
+    "fields": {
+      "text": "What sits at the bottom of the sea and twitches? A nervous wreck!",
+      "setup": "What sits at the bottom of the sea and twitches?",
+      "punchline": "A nervous wreck!",
+      "format": 2,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [5, 6, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 76,
+    "fields": {
+      "text": "As a wedding toast to my best friend: 'May your love be like a fine wine - it gets better with age, though you'll both end up with headaches occasionally.'",
+      "setup": "",
+      "punchline": "",
+      "format": 3,
+      "age_rating": 3,
+      "language": 1,
+      "source": 2,
+      "tones": [1, 5],
+      "context_tags": [1],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 77,
+    "fields": {
+      "text": "What do you call a pig that does karate? A pork chop!",
+      "setup": "What do you call a pig that does karate?",
+      "punchline": "A pork chop!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 78,
+    "fields": {
+      "text": "I have a fear of speed bumps, but I'm slowly getting over it.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [5, 6, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 79,
+    "fields": {
+      "text": "Why do bees have sticky hair? Because they use honeycombs!",
+      "setup": "Why do bees have sticky hair?",
+      "punchline": "Because they use honeycombs!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 80,
+    "fields": {
+      "text": "I asked the librarian if the library had any books on paranoia. She whispered, 'They're right behind you!'",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 2],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 81,
+    "fields": {
+      "text": "What do you call a boomerang that won't come back? A stick!",
+      "setup": "What do you call a boomerang that won't come back?",
+      "punchline": "A stick!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 82,
+    "fields": {
+      "text": "Want to hear a joke about paper? Never mind, it's tearable.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 83,
+    "fields": {
+      "text": "Why are frogs so happy? They eat whatever bugs them!",
+      "setup": "Why are frogs so happy?",
+      "punchline": "They eat whatever bugs them!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 84,
+    "fields": {
+      "text": "The shovel was a ground-breaking invention.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [2, 4, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 85,
+    "fields": {
+      "text": "Why couldn't the leopard play hide and seek? Because he was always spotted!",
+      "setup": "Why couldn't the leopard play hide and seek?",
+      "punchline": "Because he was always spotted!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 86,
+    "fields": {
+      "text": "I entered ten puns in a contest to see if any would win. No pun in ten did.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [5, 6, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 87,
+    "fields": {
+      "text": "What do you call a factory that makes okay products? A satisfactory!",
+      "setup": "What do you call a factory that makes okay products?",
+      "punchline": "A satisfactory!",
+      "format": 2,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [2, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 88,
+    "fields": {
+      "text": "I was going to make a belt out of watches, but then I realized it would be a waist of time.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [5, 6, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 89,
+    "fields": {
+      "text": "What do you call a man with a rubber toe? Roberto!",
+      "setup": "What do you call a man with a rubber toe?",
+      "punchline": "Roberto!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [5, 6, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 90,
+    "fields": {
+      "text": "The past, present, and future walked into a bar. It was tense.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 4],
+      "context_tags": [3, 4, 5],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 91,
+    "fields": {
+      "text": "Why did the invisible man turn down the job offer? Because he couldn't see himself doing it!",
+      "setup": "Why did the invisible man turn down the job offer?",
+      "punchline": "Because he couldn't see himself doing it!",
+      "format": 2,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [2, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 92,
+    "fields": {
+      "text": "A plateau is the highest form of flattery.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 4],
+      "context_tags": [3, 4, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 93,
+    "fields": {
+      "text": "Why do cows wear bells? Because their horns don't work!",
+      "setup": "Why do cows wear bells?",
+      "punchline": "Because their horns don't work!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 94,
+    "fields": {
+      "text": "Light travels faster than sound. That's why some people appear bright until you hear them speak.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 3,
+      "language": 1,
+      "source": 1,
+      "tones": [2, 5],
+      "context_tags": [6, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 95,
+    "fields": {
+      "text": "What do you call a deer with no eyes? No eye deer!",
+      "setup": "What do you call a deer with no eyes?",
+      "punchline": "No eye deer!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 96,
+    "fields": {
+      "text": "My friend said I'm terrible at multitasking. That's absurd - I can waste time, be unproductive, and procrastinate all at once.",
+      "setup": "",
+      "punchline": "",
+      "format": 3,
+      "age_rating": 2,
+      "language": 1,
+      "source": 2,
+      "tones": [5],
+      "context_tags": [2, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 97,
+    "fields": {
+      "text": "Why couldn't the bicycle stand up by itself? It was two-tired!",
+      "setup": "Why couldn't the bicycle stand up by itself?",
+      "punchline": "It was two-tired!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 98,
+    "fields": {
+      "text": "What's brown and sticky? A stick!",
+      "setup": "What's brown and sticky?",
+      "punchline": "A stick!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 99,
+    "fields": {
+      "text": "I tried to organize a hide-and-seek tournament, but it was a complete failure. Good players are hard to find.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [5, 6, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 100,
+    "fields": {
+      "text": "Why don't some couples go to the gym? Because some relationships don't work out!",
+      "setup": "Why don't some couples go to the gym?",
+      "punchline": "Because some relationships don't work out!",
+      "format": 2,
+      "age_rating": 3,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 2, 4],
+      "context_tags": [1, 5, 6],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 101,
+    "fields": {
+      "text": "I went to buy some camouflage pants, but I couldn't find any.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3],
+      "context_tags": [5, 6, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 102,
+    "fields": {
+      "text": "What did the janitor say when he jumped out of the closet? Supplies!",
+      "setup": "What did the janitor say when he jumped out of the closet?",
+      "punchline": "Supplies!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [2, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 103,
+    "fields": {
+      "text": "Two fish are in a tank. One says to the other, 'Do you know how to drive this thing?'",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3],
+      "context_tags": [5, 6, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 104,
+    "fields": {
+      "text": "Why don't seagulls fly over the bay? Because then they'd be bagels!",
+      "setup": "Why don't seagulls fly over the bay?",
+      "punchline": "Because then they'd be bagels!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 7],
+      "culture_tags": [2]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 105,
+    "fields": {
+      "text": "I'm addicted to brake fluid. But I can stop anytime I want.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 2, 4],
+      "context_tags": [5, 6, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 106,
+    "fields": {
+      "text": "What do you call a dog that does magic tricks? A Labracadabrador!",
+      "setup": "What do you call a dog that does magic tricks?",
+      "punchline": "A Labracadabrador!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 6],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 107,
+    "fields": {
+      "text": "My wife asked me to stop singing 'Wonderwall' to her. I said maybe.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [1, 5, 6],
+      "culture_tags": [3]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 108,
+    "fields": {
+      "text": "Why did the cookie go to the doctor? Because it felt crummy!",
+      "setup": "Why did the cookie go to the doctor?",
+      "punchline": "Because it felt crummy!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 7],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 109,
+    "fields": {
+      "text": "I wondered why the frisbee kept getting bigger and bigger. Then it hit me.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [5, 6, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 110,
+    "fields": {
+      "text": "What do sprinters eat before a race? Nothing, they fast!",
+      "setup": "What do sprinters eat before a race?",
+      "punchline": "Nothing, they fast!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 111,
+    "fields": {
+      "text": "A British man walks into a bar and says, 'I'll have a pint of your finest ale, and make it proper!' The American bartender replies, 'Sir, this is a Wendy's.'",
+      "setup": "",
+      "punchline": "",
+      "format": 3,
+      "age_rating": 2,
+      "language": 1,
+      "source": 2,
+      "tones": [1, 5],
+      "context_tags": [5, 6],
+      "culture_tags": [2, 3]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 112,
+    "fields": {
+      "text": "Why don't scientists have doorbells? Because they want to win the no-bell prize!",
+      "setup": "Why don't scientists have doorbells?",
+      "punchline": "Because they want to win the no-bell prize!",
+      "format": 2,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 4, 5],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 113,
+    "fields": {
+      "text": "I have a joke about time travel, but you didn't like it.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 4],
+      "context_tags": [5, 6, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 114,
+    "fields": {
+      "text": "What did the grape say when it got stepped on? Nothing, it just let out a little wine!",
+      "setup": "What did the grape say when it got stepped on?",
+      "punchline": "Nothing, it just let out a little wine!",
+      "format": 2,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [5, 7, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 115,
+    "fields": {
+      "text": "I bought shoes from a drug dealer. I don't know what he laced them with, but I've been tripping all day.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 4,
+      "language": 1,
+      "source": 1,
+      "tones": [2, 4],
+      "context_tags": [6, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 116,
+    "fields": {
+      "text": "What do you call an elephant that doesn't matter? An irrelephant!",
+      "setup": "What do you call an elephant that doesn't matter?",
+      "punchline": "An irrelephant!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 4, 5],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 117,
+    "fields": {
+      "text": "Marriage is finding that special someone you want to annoy for the rest of your life.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 5],
+      "context_tags": [1, 6, 7],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 118,
+    "fields": {
+      "text": "Why did the banana go to the doctor? Because it wasn't peeling well!",
+      "setup": "Why did the banana go to the doctor?",
+      "punchline": "Because it wasn't peeling well!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 119,
+    "fields": {
+      "text": "The inventor of AutoCorrect has died. His funfair will be held tomato.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 2, 4],
+      "context_tags": [2, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 120,
+    "fields": {
+      "text": "Why do ducks have tail feathers? To cover their butt quacks!",
+      "setup": "Why do ducks have tail feathers?",
+      "punchline": "To cover their butt quacks!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 121,
+    "fields": {
+      "text": "Whenever I lose my TV remote, I always find it in the 'last place I look.' Well, of course - why would I keep looking after I found it?",
+      "setup": "",
+      "punchline": "",
+      "format": 3,
+      "age_rating": 2,
+      "language": 1,
+      "source": 2,
+      "tones": [1, 5],
+      "context_tags": [5, 6, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 122,
+    "fields": {
+      "text": "What do you call a snake that's 3.14 meters long? A pi-thon!",
+      "setup": "What do you call a snake that's 3.14 meters long?",
+      "punchline": "A pi-thon!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 4, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 123,
+    "fields": {
+      "text": "Before you criticize someone, walk a mile in their shoes. That way, when you criticize them, you're a mile away and you have their shoes.",
+      "setup": "",
+      "punchline": "",
+      "format": 3,
+      "age_rating": 3,
+      "language": 1,
+      "source": 1,
+      "tones": [2, 5],
+      "context_tags": [5, 6, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 124,
+    "fields": {
+      "text": "Why did the PowerPoint presentation cross the road? To get to the other slide!",
+      "setup": "Why did the PowerPoint presentation cross the road?",
+      "punchline": "To get to the other slide!",
+      "format": 2,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [2, 4, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 125,
+    "fields": {
+      "text": "My email password has been hacked. That's the third time I've had to rename the cat.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 5],
+      "context_tags": [2, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 126,
+    "fields": {
+      "text": "What do you call a fish with no eyes? A fsh!",
+      "setup": "What do you call a fish with no eyes?",
+      "punchline": "A fsh!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 127,
+    "fields": {
+      "text": "I have an inferiority complex, but it's not a very good one.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 2, 5],
+      "context_tags": [5, 6, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 128,
+    "fields": {
+      "text": "Why do we never tell secrets in a cornfield? Too many ears!",
+      "setup": "Why do we never tell secrets in a cornfield?",
+      "punchline": "Too many ears!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 5, 8],
+      "culture_tags": [2]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 129,
+    "fields": {
+      "text": "Never trust math teachers who use graph paper. They're always plotting something.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [3, 4, 5],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 130,
+    "fields": {
+      "text": "What do you call it when Batman skips church? Christian Bale!",
+      "setup": "What do you call it when Batman skips church?",
+      "punchline": "Christian Bale!",
+      "format": 2,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 4],
+      "context_tags": [5, 6, 8],
+      "culture_tags": [2]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 131,
+    "fields": {
+      "text": "I asked my wife what she wanted for our anniversary. She said 'Nothing would make me happier than diamond earrings.' So I got her nothing.",
+      "setup": "",
+      "punchline": "",
+      "format": 3,
+      "age_rating": 2,
+      "language": 1,
+      "source": 2,
+      "tones": [1, 5],
+      "context_tags": [1, 6, 7],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 132,
+    "fields": {
+      "text": "Why did the couple break up at the wedding? They wanted to beat the rush.",
+      "setup": "Why did the couple break up at the wedding?",
+      "punchline": "They wanted to beat the rush.",
+      "format": 2,
+      "age_rating": 3,
+      "language": 1,
+      "source": 2,
+      "tones": [2, 5],
+      "context_tags": [1, 6],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 133,
+    "fields": {
+      "text": "My husband and I were happy for twenty years. Then we met.",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 5],
+      "context_tags": [1, 6],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 134,
+    "fields": {
+      "text": "To the bride and groom: May your love be like good wine - getting better with each passing year, though it might give you headaches on special occasions.",
+      "setup": "",
+      "punchline": "",
+      "format": 3,
+      "age_rating": 2,
+      "language": 1,
+      "source": 2,
+      "tones": [1, 5],
+      "context_tags": [1, 7],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 135,
+    "fields": {
+      "text": "What do you call two spiders who just got married? Newlywebs!",
+      "setup": "What do you call two spiders who just got married?",
+      "punchline": "Newlywebs!",
+      "format": 2,
+      "age_rating": 1,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [1, 5, 8],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 136,
+    "fields": {
+      "text": "Marriage lets you annoy one special person for the rest of your life - and they can't legally escape!",
+      "setup": "",
+      "punchline": "",
+      "format": 1,
+      "age_rating": 2,
+      "language": 1,
+      "source": 2,
+      "tones": [1, 5],
+      "context_tags": [1, 6],
+      "culture_tags": [1]
+    }
+  },
+  {
+    "model": "jokes.joke",
+    "pk": 137,
+    "fields": {
+      "text": "Why should you never marry a tennis player? Because love means nothing to them!",
+      "setup": "Why should you never marry a tennis player?",
+      "punchline": "Because love means nothing to them!",
+      "format": 2,
+      "age_rating": 2,
+      "language": 1,
+      "source": 1,
+      "tones": [1, 3, 4],
+      "context_tags": [1, 5, 6],
+      "culture_tags": [1]
+    }
+  }
+]
