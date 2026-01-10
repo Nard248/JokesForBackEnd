@@ -29,7 +29,7 @@
 
 | Phase | Name | Research | Status | Dependencies |
 |-------|------|----------|--------|--------------|
-| 01 | Foundation | — | In progress (1/3) | — |
+| 01 | Foundation | — | In progress (2/3) | — |
 | 02 | Data Models | — | pending | 01 |
 | 03 | Content Seeding | — | pending | 02 |
 | 04 | Search Engine | Likely | pending | 02 |
