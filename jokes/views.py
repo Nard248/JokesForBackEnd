@@ -62,9 +62,9 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
                 required=False,
             ),
             OpenApiParameter(
-                name='format',
+                name='joke_format',
                 type=str,
-                description='Filter by format slug (e.g., one-liner, setup-punchline)',
+                description='Filter by format slug (e.g., one-liner, setup-punchline). Note: named joke_format to avoid conflict with DRF content negotiation.',
                 required=False,
             ),
             OpenApiParameter(
@@ -106,7 +106,7 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
 
         Query Parameters:
         - q: Full-text search query
-        - format: Filter by format slug
+        - joke_format: Filter by format slug (named to avoid DRF format param conflict)
         - age_rating: Filter by age rating slug
         - tones: Filter by tone slugs (comma-separated)
         - context_tags: Filter by context tag slugs (comma-separated)
@@ -115,13 +115,13 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
 
         Examples:
         - /api/v1/jokes/?q=chicken
-        - /api/v1/jokes/?format=one-liner
+        - /api/v1/jokes/?joke_format=one-liner
         - /api/v1/jokes/?tones=clean,dad-jokes
         - /api/v1/jokes/?q=why&age_rating=kid-safe
         """
         # Extract query parameters
         query_text = request.query_params.get('q', '').strip()
-        format_slug = request.query_params.get('format', '').strip()
+        format_slug = request.query_params.get('joke_format', '').strip()  # named joke_format to avoid DRF conflict
         age_rating_slug = request.query_params.get('age_rating', '').strip()
         tones_param = request.query_params.get('tones', '').strip()
         context_tags_param = request.query_params.get('context_tags', '').strip()
@@ -186,35 +186,35 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
 
 class FormatViewSet(viewsets.ReadOnlyModelViewSet):
     """Viewset for joke formats (one-liner, setup-punchline, etc.)."""
-    queryset = Format.objects.all()
+    queryset = Format.objects.all().order_by('name')
     serializer_class = FormatSerializer
 
 
 class AgeRatingViewSet(viewsets.ReadOnlyModelViewSet):
     """Viewset for age ratings (kid-safe, teen, adult, family-friendly)."""
-    queryset = AgeRating.objects.all()
+    queryset = AgeRating.objects.all().order_by('min_age', 'name')
     serializer_class = AgeRatingSerializer
 
 
 class ToneViewSet(viewsets.ReadOnlyModelViewSet):
     """Viewset for humor tones (clean, dark, dad-jokes, puns, sarcasm)."""
-    queryset = Tone.objects.all()
+    queryset = Tone.objects.all().order_by('name')
     serializer_class = ToneSerializer
 
 
 class ContextTagViewSet(viewsets.ReadOnlyModelViewSet):
     """Viewset for context/situation tags (wedding, work, school, etc.)."""
-    queryset = ContextTag.objects.all()
+    queryset = ContextTag.objects.all().order_by('name')
     serializer_class = ContextTagSerializer
 
 
 class LanguageViewSet(viewsets.ReadOnlyModelViewSet):
     """Viewset for languages (ISO 639-1 codes)."""
-    queryset = Language.objects.all()
+    queryset = Language.objects.all().order_by('name')
     serializer_class = LanguageSerializer
 
 
 class CultureTagViewSet(viewsets.ReadOnlyModelViewSet):
     """Viewset for cultural context tags (American, British, universal)."""
-    queryset = CultureTag.objects.all()
+    queryset = CultureTag.objects.all().order_by('name')
     serializer_class = CultureTagSerializer
