@@ -4,8 +4,8 @@
 
 **Project:** Jokes For
 **Milestone:** 1 - MVP Launch
-**Phase:** 05 - API Core (Plan 1 of ? in progress)
-**Status:** Phase 05 plan 01 complete, DRF infrastructure ready
+**Phase:** 05 - API Core (COMPLETE)
+**Status:** Phase 05 complete, all API endpoints working
 
 ---
 
@@ -29,21 +29,20 @@ Jokes For is a global humor discovery platform - a search engine for jokes. User
 - [x] ROADMAP.md created (12 phases)
 - [x] Phase directories created
 - [x] **Phase 01: Foundation COMPLETE**
-- [x] **02-01**: Data models (8 models with FK/M2M relationships, admin configured)
 - [x] **Phase 02: Data Models COMPLETE**
-- [x] **03-01**: Content seeding (137 jokes, lookup fixtures, seed command)
 - [x] **Phase 03: Content Seeding COMPLETE**
-- [x] **04-01**: Search infrastructure (SearchVectorField, GIN index, trigger, JokeManager.search())
 - [x] **Phase 04: Search Engine COMPLETE**
 - [x] **05-01**: DRF setup (djangorestframework, drf-spectacular, django-cors-headers, serializers)
+- [x] **05-02**: API viewsets and routing (JokeViewSet, lookup viewsets, /api/v1/, /api/docs/)
+- [x] **Phase 05: API Core COMPLETE**
 
 ### Current Phase
-**Phase 05: API Core** - Plan 01 complete, continuing
+**Phase 05: API Core** - COMPLETE (2/2 plans done)
 
 ### Upcoming
-1. Phase 05: API Core - Viewsets and routes (05-02+)
-2. Phase 06: Authentication - JWT with Google OAuth
-3. Phase 07: Collections - User collections feature
+1. Phase 06: Authentication - JWT with Google OAuth
+2. Phase 07: User Preferences
+3. Phase 08: Collections
 
 ---
 
@@ -69,6 +68,7 @@ None currently.
 | 2026-01-11 | PageNumberPagination with 20 per page | Simple, frontend-friendly, good balance |
 | 2026-01-11 | URL path versioning (/v1/) | Explicit versioning, easy to manage |
 | 2026-01-11 | Throttle 100/hr anon, 1000/hr user | Conservative start, adjustable |
+| 2026-01-11 | joke_format param instead of format | Avoid DRF content negotiation conflict |
 
 ---
 
@@ -79,6 +79,15 @@ None tracked yet.
 ---
 
 ## Session Notes
+
+**2026-01-11 (late evening):**
+- Executed 05-02-PLAN.md (API Viewsets and Routing)
+- Created JokeViewSet with list/retrieve/random actions and search integration
+- Built 6 lookup viewsets for reference data
+- Configured URL routing at /api/v1/ with DRF DefaultRouter
+- Added Swagger UI at /api/docs/ and ReDoc at /api/redoc/
+- Fixed format param conflict by renaming to joke_format
+- **Phase 05: API Core COMPLETE**
 
 **2026-01-11 (late evening):**
 - Executed 05-01-PLAN.md (DRF Setup)
@@ -118,9 +127,9 @@ None tracked yet.
 
 ## Next Actions
 
-1. Execute next plan in Phase 05 (05-02 if exists, or plan more)
-2. Complete Phase 05: API Core
-3. Then: Phase 06 - Authentication
+1. Plan Phase 06: Authentication (JWT with Google OAuth)
+2. Execute Phase 06
+3. Then: Phase 07 - User Preferences
 
 ---
 
