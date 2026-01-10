@@ -58,7 +58,11 @@
 - Set up python-dotenv for environment management
 - Create .gitignore with Python/Django patterns
 - Generate requirements.txt with pinned dependencies
-- Configure PostgreSQL database connection
+- Configure PostgreSQL database connection:
+  - Install psycopg2-binary
+  - Create `jokesfor` database on local PostgreSQL
+  - Configure settings.py with DATABASE settings
+  - Local credentials: postgres/6969 on localhost:5432
 - Set up ALLOWED_HOSTS configuration
 - Create .env.example template
 
@@ -66,8 +70,8 @@
 - Secure settings.py configuration
 - .gitignore file
 - requirements.txt with all dependencies
-- .env.example template
-- PostgreSQL database configured
+- .env.example template (with DB_* variables)
+- PostgreSQL database `jokesfor` configured and connected
 
 ---
 
