@@ -4,8 +4,8 @@
 
 **Project:** Jokes For
 **Milestone:** 1 - MVP Launch
-**Phase:** 04 - Search Engine (Plan 1 of 1 complete)
-**Status:** Phase 04 plan 01 complete, search infrastructure operational
+**Phase:** 05 - API Core (Plan 1 of ? in progress)
+**Status:** Phase 05 plan 01 complete, DRF infrastructure ready
 
 ---
 
@@ -35,12 +35,13 @@ Jokes For is a global humor discovery platform - a search engine for jokes. User
 - [x] **Phase 03: Content Seeding COMPLETE**
 - [x] **04-01**: Search infrastructure (SearchVectorField, GIN index, trigger, JokeManager.search())
 - [x] **Phase 04: Search Engine COMPLETE**
+- [x] **05-01**: DRF setup (djangorestframework, drf-spectacular, django-cors-headers, serializers)
 
 ### Current Phase
-**Phase 05: API Core** - Ready to plan
+**Phase 05: API Core** - Plan 01 complete, continuing
 
 ### Upcoming
-1. Phase 05: API Core - Django REST Framework setup
+1. Phase 05: API Core - Viewsets and routes (05-02+)
 2. Phase 06: Authentication - JWT with Google OAuth
 3. Phase 07: Collections - User collections feature
 
@@ -65,6 +66,9 @@ None currently.
 | 2026-01-11 | Slugs on all lookup tables | URL-friendly identifiers for API filtering |
 | 2026-01-11 | Explicit PKs in fixtures | Deterministic FK references for reproducible seeding |
 | 2026-01-11 | Management command for jokes | Better M2M handling than loaddata |
+| 2026-01-11 | PageNumberPagination with 20 per page | Simple, frontend-friendly, good balance |
+| 2026-01-11 | URL path versioning (/v1/) | Explicit versioning, easy to manage |
+| 2026-01-11 | Throttle 100/hr anon, 1000/hr user | Conservative start, adjustable |
 
 ---
 
@@ -75,6 +79,13 @@ None tracked yet.
 ---
 
 ## Session Notes
+
+**2026-01-11 (late evening):**
+- Executed 05-01-PLAN.md (DRF Setup)
+- Installed djangorestframework 3.16.1, drf-spectacular 0.29.0, django-cors-headers 4.9.0
+- Configured REST_FRAMEWORK with pagination, throttling, versioning, OpenAPI
+- Created 9 serializers for all models (7 lookup + JokeSerializer + JokeListSerializer)
+- **Phase 05: Plan 01 COMPLETE**
 
 **2026-01-11 (evening):**
 - Executed 04-01-PLAN.md (Search Infrastructure)
@@ -107,8 +118,8 @@ None tracked yet.
 
 ## Next Actions
 
-1. Run `/gsd:plan-phase 5` to plan Phase 05: API Core
-2. Execute Phase 05 plans (Django REST Framework setup)
+1. Execute next plan in Phase 05 (05-02 if exists, or plan more)
+2. Complete Phase 05: API Core
 3. Then: Phase 06 - Authentication
 
 ---
