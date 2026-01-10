@@ -3,6 +3,8 @@ from django.contrib.postgres.search import SearchVectorField
 from django.db import models
 import pgtrigger
 
+from .managers import JokeManager
+
 
 class Format(models.Model):
     """Joke format: one-liner, setup-punchline, short-story"""
@@ -83,6 +85,10 @@ class Source(models.Model):
 )
 class Joke(models.Model):
     """Main joke model with rich metadata for search and filtering"""
+
+    # Manager
+    objects = JokeManager()
+
     # Content
     text = models.TextField(help_text="Full joke text for one-liners or complete jokes")
     setup = models.TextField(blank=True, help_text="Setup for two-part jokes")
