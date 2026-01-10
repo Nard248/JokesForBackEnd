@@ -1,4 +1,7 @@
+from django.contrib.postgres.indexes import GinIndex
+from django.contrib.postgres.search import SearchVectorField
 from django.db import models
+import pgtrigger
 
 
 class Format(models.Model):
@@ -71,6 +74,13 @@ class Source(models.Model):
         return self.name
 
 
+@pgtrigger.register(
+    pgtrigger.UpdateSearchVector(
+        name='joke_search_vector_update',
+        vector_field='search_vector',
+        document_fields=['text', 'setup', 'punchline'],
+    )
+)
 class Joke(models.Model):
     """Main joke model with rich metadata for search and filtering"""
     # Content
@@ -89,12 +99,18 @@ class Joke(models.Model):
     context_tags = models.ManyToManyField(ContextTag, related_name='jokes')
     culture_tags = models.ManyToManyField(CultureTag, related_name='jokes', blank=True)
 
+    # Search
+    search_vector = SearchVectorField(null=True, blank=True)
+
     # Timestamps
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         ordering = ['-created_at']
+        indexes = [
+            GinIndex(fields=['search_vector'], name='joke_search_vector_idx'),
+        ]
 
     def __str__(self):
         return self.text[:50] + ('...' if len(self.text) > 50 else '')
