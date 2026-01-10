@@ -31,7 +31,7 @@
 |-------|------|----------|--------|--------------|
 | 01 | Foundation | — | Complete (3/3) | — |
 | 02 | Data Models | — | Complete (1/1) | 01 |
-| 03 | Content Seeding | — | pending | 02 |
+| 03 | Content Seeding | — | Complete (1/1) | 02 |
 | 04 | Search Engine | Likely | pending | 02 |
 | 05 | API Core | — | pending | 02 |
 | 06 | Authentication | Likely | pending | 05 |
