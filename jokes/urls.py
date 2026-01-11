@@ -17,5 +17,7 @@ router.register('context-tags', views.ContextTagViewSet, basename='context-tag')
 router.register('culture-tags', views.CultureTagViewSet, basename='culture-tag')
 router.register('languages', views.LanguageViewSet, basename='language')
 router.register('preferences', views.UserPreferenceViewSet, basename='preferences')
+router.register('collections', views.CollectionViewSet, basename='collection')
+router.register('saved-jokes', views.SavedJokeViewSet, basename='saved-joke')
 
 urlpatterns = router.urls
