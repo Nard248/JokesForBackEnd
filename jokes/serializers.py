@@ -22,6 +22,7 @@ from .models import (
     SavedJoke,
     DailyJoke,
     JokeRating,
+    ShareEvent,
 )
 
 
@@ -454,3 +455,20 @@ class JokeRatingSerializer(serializers.ModelSerializer):
         model = JokeRating
         fields = ['id', 'rating', 'created_at', 'updated_at']
         read_only_fields = ['id', 'created_at', 'updated_at']
+
+
+# =============================================================================
+# ShareEvent Serializers
+# =============================================================================
+
+class ShareEventSerializer(serializers.ModelSerializer):
+    """
+    Serializer for share events.
+
+    Use for recording and displaying share events.
+    """
+
+    class Meta:
+        model = ShareEvent
+        fields = ['id', 'joke', 'platform', 'created_at']
+        read_only_fields = ['id', 'created_at']
