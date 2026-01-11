@@ -8,6 +8,7 @@ Provides viewsets for all models:
 """
 from rest_framework import status, viewsets
 from rest_framework.decorators import action
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from drf_spectacular.utils import extend_schema, OpenApiParameter
 from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
@@ -23,6 +24,7 @@ from .models import (
     ContextTag,
     Language,
     CultureTag,
+    UserPreference,
 )
 from .serializers import (
     JokeSerializer,
@@ -33,6 +35,8 @@ from .serializers import (
     ContextTagSerializer,
     LanguageSerializer,
     CultureTagSerializer,
+    UserPreferenceSerializer,
+    UserPreferenceUpdateSerializer,
 )
 
 
@@ -223,6 +227,69 @@ class CultureTagViewSet(viewsets.ReadOnlyModelViewSet):
     """Viewset for cultural context tags (American, British, universal)."""
     queryset = CultureTag.objects.all().order_by('name')
     serializer_class = CultureTagSerializer
+
+
+# =============================================================================
+# User Preferences ViewSet
+# =============================================================================
+
+class UserPreferenceViewSet(viewsets.GenericViewSet):
+    """
+    User preference management.
+
+    Endpoints:
+    - GET /api/v1/preferences/me/ - Get current user's preferences
+    - PATCH /api/v1/preferences/me/ - Update current user's preferences
+    - POST /api/v1/preferences/complete-onboarding/ - Mark onboarding as complete
+    """
+
+    permission_classes = [IsAuthenticated]
+
+    def get_serializer_class(self):
+        """Return appropriate serializer based on action."""
+        if self.action == 'me' and self.request.method == 'PATCH':
+            return UserPreferenceUpdateSerializer
+        return UserPreferenceSerializer
+
+    @extend_schema(
+        description='Get or update current user preferences.',
+        responses={200: UserPreferenceSerializer},
+    )
+    @action(detail=False, methods=['get', 'patch'], url_path='me')
+    def me(self, request):
+        """Get or update current user's preferences."""
+        preference = request.user.preference
+
+        if request.method == 'GET':
+            serializer = UserPreferenceSerializer(preference)
+            return Response(serializer.data)
+
+        # PATCH
+        serializer = UserPreferenceUpdateSerializer(
+            preference, data=request.data, partial=True
+        )
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        # Return updated preferences with nested serializer
+        return Response(UserPreferenceSerializer(preference).data)
+
+    @extend_schema(
+        description='Mark user onboarding as complete.',
+        responses={200: {'type': 'object', 'properties': {
+            'status': {'type': 'string'},
+            'onboarding_completed': {'type': 'boolean'}
+        }}},
+    )
+    @action(detail=False, methods=['post'], url_path='complete-onboarding')
+    def complete_onboarding(self, request):
+        """Mark onboarding as complete."""
+        preference = request.user.preference
+        preference.onboarding_completed = True
+        preference.save(update_fields=['onboarding_completed', 'updated_at'])
+        return Response({
+            'status': 'onboarding_completed',
+            'onboarding_completed': True
+        })
 
 
 # =============================================================================
