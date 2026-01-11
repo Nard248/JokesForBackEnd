@@ -106,6 +106,9 @@ class JokeSerializer(serializers.ModelSerializer):
     context_tags = ContextTagSerializer(many=True, read_only=True)
     culture_tags = CultureTagSerializer(many=True, read_only=True)
 
+    # Share card URL
+    share_image_url = serializers.SerializerMethodField()
+
     class Meta:
         model = Joke
         fields = [
@@ -120,10 +123,20 @@ class JokeSerializer(serializers.ModelSerializer):
             'tones',
             'context_tags',
             'culture_tags',
+            'share_image_url',
             'created_at',
             'updated_at',
         ]
         # Explicitly exclude search_vector
+
+    def get_share_image_url(self, obj):
+        """Return absolute URL for share image if it exists."""
+        if obj.share_image:
+            request = self.context.get('request')
+            if request:
+                return request.build_absolute_uri(obj.share_image.url)
+            return obj.share_image.url
+        return None
 
 
 class JokeListSerializer(serializers.ModelSerializer):
@@ -148,6 +161,9 @@ class JokeListSerializer(serializers.ModelSerializer):
         read_only=True
     )
 
+    # Share card URL
+    share_image_url = serializers.SerializerMethodField()
+
     class Meta:
         model = Joke
         fields = [
@@ -156,6 +172,7 @@ class JokeListSerializer(serializers.ModelSerializer):
             'format',
             'age_rating',
             'tones',
+            'share_image_url',
         ]
 
     def get_text(self, obj):
@@ -163,6 +180,15 @@ class JokeListSerializer(serializers.ModelSerializer):
         if len(obj.text) > 100:
             return obj.text[:100] + '...'
         return obj.text
+
+    def get_share_image_url(self, obj):
+        """Return absolute URL for share image if it exists."""
+        if obj.share_image:
+            request = self.context.get('request')
+            if request:
+                return request.build_absolute_uri(obj.share_image.url)
+            return obj.share_image.url
+        return None
 
 
 # =============================================================================
