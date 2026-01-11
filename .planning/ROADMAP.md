@@ -35,7 +35,7 @@
 | 04 | Search Engine | Likely | Complete (1/1) | 02 |
 | 05 | API Core | — | Complete (2/2) | 02 |
 | 06 | Authentication | Likely | Complete (3/3) | 05 |
-| 07 | User Preferences | — | In progress (1/2) | 06 |
+| 07 | User Preferences | — | Complete (2/2) | 06 |
 | 08 | Collections | — | pending | 06 |
 | 09 | Daily Joke | Likely | pending | 07 |
 | 10 | Sharing | — | pending | 05 |
