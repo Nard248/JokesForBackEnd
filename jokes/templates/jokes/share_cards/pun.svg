@@ -1,0 +1,19 @@
+{% load mathfilters %}
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#004d4d"/>
+  <rect y="580" width="1200" height="50" fill="#00b894"/>
+  <text x="60" y="615" fill="#004d4d" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="600">
+    JokesFor.com
+  </text>
+  <rect x="1050" y="590" width="90" height="30" rx="15" fill="rgba(0,0,0,0.2)"/>
+  <text x="1095" y="612" fill="#004d4d" font-family="Inter, Arial, sans-serif" font-size="14" text-anchor="middle">
+    Pun
+  </text>
+  {% with joke_lines=joke_text|wordwrap:45 %}
+  <text fill="#e6fff9" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="500">
+    {% for line in joke_lines.splitlines %}
+    <tspan x="60" y="{{ 180|add:forloop.counter0|multiply:45 }}">{{ line }}</tspan>
+    {% endfor %}
+  </text>
+  {% endwith %}
+</svg>
