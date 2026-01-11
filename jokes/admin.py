@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Joke, Format, AgeRating, Tone, ContextTag, Language, CultureTag, Source, UserPreference
+from .models import Joke, Format, AgeRating, Tone, ContextTag, Language, CultureTag, Source, UserPreference, Collection, SavedJoke
 
 
 @admin.register(Format)
@@ -68,3 +68,20 @@ class UserPreferenceAdmin(admin.ModelAdmin):
     search_fields = ['user__email']
     filter_horizontal = ['preferred_tones', 'preferred_contexts']
     readonly_fields = ['created_at', 'updated_at']
+
+
+@admin.register(Collection)
+class CollectionAdmin(admin.ModelAdmin):
+    list_display = ['name', 'user', 'is_default', 'created_at']
+    list_filter = ['is_default', 'created_at']
+    search_fields = ['name', 'user__email']
+    readonly_fields = ['created_at', 'updated_at']
+
+
+@admin.register(SavedJoke)
+class SavedJokeAdmin(admin.ModelAdmin):
+    list_display = ['user', 'joke', 'collection', 'created_at']
+    list_filter = ['created_at', 'collection']
+    search_fields = ['user__email', 'joke__text']
+    readonly_fields = ['created_at']
+    raw_id_fields = ['joke']
