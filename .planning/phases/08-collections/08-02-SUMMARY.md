@@ -1,66 +1,92 @@
 ---
 phase: 08-collections
 plan: 02
-status: completed
+subsystem: api
+tags: [drf, rest-api, collections, serializers, viewsets]
+
+# Dependency graph
+requires:
+  - phase: 08-01
+    provides: Collection and SavedJoke models
+  - phase: 07-02
+    provides: ViewSet patterns, serializer patterns
+  - phase: 05-02
+    provides: Router registration, viewset patterns
+provides:
+  - Collection CRUD API endpoints
+  - SavedJoke add/remove/list/search endpoints
+  - Collection joke listing endpoint
+affects: [12-frontend-features]
+
+# Tech tracking
+tech-stack:
+  added: []
+  patterns:
+    - "ModelViewSet for full CRUD with custom actions"
+    - "Mixin-based GenericViewSet for limited operations"
+    - "Nested serializers for read, PK fields for write"
+    - "Validation in serializer for ownership/uniqueness"
+
+key-files:
+  created: []
+  modified:
+    - jokes/serializers.py
+    - jokes/views.py
+    - jokes/urls.py
+
+key-decisions:
+  - "Separate read/write serializers for collections and saved jokes"
+  - "Default collection delete protection in ViewSet.destroy()"
+  - "Search within saved jokes reuses Joke.objects.search() manager"
+
+patterns-established:
+  - "Collection ownership validation in serializer"
+  - "Duplicate save prevention in serializer validate()"
+
+issues-created: []
+
+# Metrics
+duration: 5 min
+completed: 2026-01-11
 ---
 
-# Phase 08-02 Summary: Collections API Endpoints
+# Phase 08 Plan 02: Collections API Endpoints Summary
 
-## Objective
-Create API endpoints for collection management and saving jokes.
+**Collection CRUD API with save/unsave joke functionality using ModelViewSet and mixin-based GenericViewSet patterns**
 
-## Tasks Completed: 3/3
+## Performance
 
-### Task 1: Create Collection and SavedJoke serializers
-**Files modified:** `jokes/serializers.py`
+- **Duration:** 5 min
+- **Started:** 2026-01-11T15:30:56Z
+- **Completed:** 2026-01-11T15:35:56Z
+- **Tasks:** 3
+- **Files modified:** 3
 
-Added four serializers following established patterns:
+## Accomplishments
 
-**CollectionSerializer (read):**
-- Fields: id, name, description, is_default, joke_count, created_at, updated_at
-- joke_count: SerializerMethodField returning collection.saved_jokes.count()
-- read_only_fields: id, is_default, created_at, updated_at
+- Collection CRUD endpoints with jokes listing action
+- SavedJoke add/remove/list/search endpoints
+- Validation for ownership, uniqueness, and duplicate prevention
+- Default collection delete protection
 
-**CollectionCreateSerializer (write):**
-- Fields: name, description
-- validate_name: Ensures name uniqueness per user (excludes self on update)
+## Task Commits
 
-**SavedJokeSerializer (read):**
-- Fields: id, joke, collection, note, created_at
-- joke: Nested JokeListSerializer (compact view)
-- collection: Nested CollectionSerializer
+Each task was committed atomically:
 
-**SavedJokeCreateSerializer (write):**
-- Fields: joke (PK), collection (PK, allow_null=True), note
-- validate_collection: Ensures collection belongs to current user
-- validate: Prevents duplicate saves of same joke to same collection
+1. **Task 1: Create Collection and SavedJoke serializers** - `1de8732` (feat)
+2. **Task 2: Create Collection and SavedJoke ViewSets** - `79c517e` (feat)
+3. **Task 3: Register routes and complete API** - `6947e43` (feat)
 
-### Task 2: Create Collection and SavedJoke ViewSets
-**Files modified:** `jokes/views.py`
+**Plan metadata:** `701fdd0` (docs: complete plan)
 
-**CollectionViewSet (ModelViewSet):**
-- permission_classes: [IsAuthenticated]
-- get_queryset: Filters by request.user
-- get_serializer_class: CollectionCreateSerializer for create/update, CollectionSerializer otherwise
-- perform_create: Sets user from request
-- destroy: Prevents deletion of default (Favorites) collection
-- @action(detail=True) jokes(): Lists SavedJokes in collection with pagination
+## Files Created/Modified
 
-**SavedJokeViewSet (CreateModelMixin, DestroyModelMixin, ListModelMixin, GenericViewSet):**
-- permission_classes: [IsAuthenticated]
-- get_queryset: Filters by user with select_related('joke', 'collection')
-- get_serializer_class: SavedJokeCreateSerializer for create, SavedJokeSerializer otherwise
-- perform_create: Sets user from request
-- @action(detail=False) search(): Text search within saved jokes using Joke.objects.search()
+- `jokes/serializers.py` - CollectionSerializer, CollectionCreateSerializer, SavedJokeSerializer, SavedJokeCreateSerializer
+- `jokes/views.py` - CollectionViewSet (ModelViewSet), SavedJokeViewSet (mixin-based GenericViewSet)
+- `jokes/urls.py` - Registered collections and saved-jokes routes
 
-### Task 3: Register routes and verify endpoints
-**Files modified:** `jokes/urls.py`
+## API Endpoints
 
-Registered routes:
-- `router.register('collections', views.CollectionViewSet, basename='collection')`
-- `router.register('saved-jokes', views.SavedJokeViewSet, basename='saved-joke')`
-
-**Available endpoints:**
 | Endpoint | Method | Description |
 |----------|--------|-------------|
 | /api/v1/collections/ | GET | List user's collections |
@@ -74,41 +100,25 @@ Registered routes:
 | /api/v1/saved-jokes/{id}/ | DELETE | Unsave a joke |
 | /api/v1/saved-jokes/search/?q=... | GET | Search within saved jokes |
 
-## Commits
+## Decisions Made
 
-| Hash | Message |
-|------|---------|
-| 1de8732 | feat(08-02): create Collection and SavedJoke serializers |
-| 79c517e | feat(08-02): create Collection and SavedJoke ViewSets |
-| 6947e43 | feat(08-02): register collection routes and complete API |
+- Separate read/write serializers following Phase 07 pattern
+- Default collection (is_default=True) protected from deletion
+- SavedJoke search reuses Joke.objects.search() for consistency
 
-## Verification Results
+## Deviations from Plan
 
-- [x] `python manage.py check` passes
-- [x] Collection CRUD endpoints available (list, create, retrieve, update, delete)
-- [x] Collection jokes listing endpoint available (/collections/{id}/jokes/)
-- [x] SavedJoke create/delete/list endpoints available
-- [x] SavedJoke search within saved jokes endpoint available
-- [x] All endpoints require authentication (IsAuthenticated)
-- [x] OpenAPI documentation updated (extend_schema decorators added)
+None - plan executed exactly as written.
 
-## Deviations
+## Issues Encountered
 
-None. All tasks completed as specified in the plan.
+None.
 
-## Validation Logic Implemented
+## Next Phase Readiness
 
-1. **Collection name uniqueness:** CollectionCreateSerializer.validate_name() ensures no duplicate collection names per user
-2. **Collection ownership:** SavedJokeCreateSerializer.validate_collection() ensures collection belongs to current user
-3. **Duplicate save prevention:** SavedJokeCreateSerializer.validate() prevents saving same joke to same collection twice
-4. **Default collection protection:** CollectionViewSet.destroy() prevents deletion of is_default=True collections
-
-## Performance Considerations
-
-- SavedJokeViewSet uses select_related('joke', 'collection') for efficient queries
-- Pagination enabled on all list endpoints
-- Joke search uses existing Joke.objects.search() manager method (PostgreSQL full-text search)
+- Phase 08: Collections COMPLETE (2/2 plans)
+- Ready for Phase 09: Daily Joke
 
 ---
-
-**Phase 08: Collections COMPLETE**
+*Phase: 08-collections*
+*Completed: 2026-01-11*

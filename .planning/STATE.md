@@ -4,8 +4,8 @@
 
 **Project:** Jokes For
 **Milestone:** 1 - MVP Launch
-**Phase:** 08 - Collections (IN PROGRESS)
-**Status:** Plan 08-01 complete (1/2 plans), Collection and SavedJoke models
+**Phase:** 08 - Collections (COMPLETE)
+**Status:** Phase complete (2/2 plans), ready for Phase 09
 
 ---
 
@@ -32,25 +32,17 @@ Jokes For is a global humor discovery platform - a search engine for jokes. User
 - [x] **Phase 02: Data Models COMPLETE**
 - [x] **Phase 03: Content Seeding COMPLETE**
 - [x] **Phase 04: Search Engine COMPLETE**
-- [x] **05-01**: DRF setup (djangorestframework, drf-spectacular, django-cors-headers, serializers)
-- [x] **05-02**: API viewsets and routing (JokeViewSet, lookup viewsets, /api/v1/, /api/docs/)
 - [x] **Phase 05: API Core COMPLETE**
-- [x] **06-01**: Authentication setup (dj-rest-auth, simplejwt, allauth, JWT settings)
-- [x] **06-02**: Auth endpoints and migrations (URL routing, GoogleLogin view, database setup)
-- [x] **06-03**: Google OAuth config + auth verification (SocialApp, email-only registration fix)
 - [x] **Phase 06: Authentication COMPLETE**
-- [x] **07-01**: UserPreference model (model, signal, admin)
-- [x] **07-02**: Preference API endpoints (serializers, ViewSet, routes)
 - [x] **Phase 07: User Preferences COMPLETE**
 - [x] **08-01**: Collection and SavedJoke models (models, migration, signals, admin)
-
-### Current Phase
-**Phase 08: Collections** - IN PROGRESS (1/2 plans)
+- [x] **08-02**: Collections API endpoints (serializers, ViewSets, routes)
+- [x] **Phase 08: Collections COMPLETE**
 
 ### Upcoming
-1. **08-02**: Collections API endpoints (serializers, ViewSet, routes)
-2. Phase 09: Daily Joke
-3. Phase 10: Sharing
+1. Phase 09: Daily Joke
+2. Phase 10: Sharing
+3. Phase 11: Frontend Foundation
 
 ---
 
@@ -89,6 +81,9 @@ None currently.
 | 2026-01-11 | CASCADE on_delete for user-owned data | User owns collections/saved jokes, delete with user |
 | 2026-01-11 | Separate signal for Favorites auto-create | Clean separation, follows UserPreference pattern |
 | 2026-01-11 | raw_id_fields for joke FK in admin | Performance with many jokes |
+| 2026-01-11 | Separate read/write serializers for collections | Nested for display, PK fields for updates |
+| 2026-01-11 | Default collection delete protection | Prevent users from deleting their Favorites |
+| 2026-01-11 | Reuse Joke.objects.search() for saved joke search | Consistency with main search, no code duplication |
 
 ---
 
@@ -101,12 +96,19 @@ None tracked yet.
 ## Session Notes
 
 **2026-01-11 (night):**
+- Executed 08-02-PLAN.md (Collections API Endpoints)
+- Created CollectionSerializer, CollectionCreateSerializer, SavedJokeSerializer, SavedJokeCreateSerializer
+- Built CollectionViewSet (ModelViewSet) with CRUD + jokes() action
+- Built SavedJokeViewSet (mixin-based) with create/delete/list + search()
+- Registered routes at /api/v1/collections/ and /api/v1/saved-jokes/
+- **Phase 08: Collections COMPLETE** (2/2 plans)
+
+**2026-01-11 (night):**
 - Executed 08-01-PLAN.md (Collection and SavedJoke Models)
 - Created Collection model with user FK, name, is_default flag, timestamps
 - Created SavedJoke model with user/joke/collection FKs, note, timestamp
 - Added create_default_collection signal for auto-creating "Favorites" collection
 - Configured admin with list_display, list_filter, search_fields, raw_id_fields
-- **Plan 08-01 COMPLETE** (1/2 plans for Phase 08)
 
 **2026-01-11 (late evening):**
 - Executed 07-02-PLAN.md (Preference API Endpoints)
@@ -120,7 +122,6 @@ None tracked yet.
 - Created UserPreference model with tone/context/rating/language preferences
 - Added post_save signal for auto-creation on user signup
 - Built admin interface with filters, search, horizontal M2M widgets
-- **Plan 07-01 COMPLETE** (1/2 plans for Phase 07)
 
 **2026-01-11 (evening):**
 - Executed 06-03-PLAN.md (Google OAuth & Auth Verification)
@@ -130,64 +131,13 @@ None tracked yet.
 - All 12 auth endpoints confirmed working
 - **Phase 06: Authentication COMPLETE**
 
-**2026-01-11 (afternoon):**
-- Executed 06-01-PLAN.md (Authentication Setup)
-- Installed dj-rest-auth 7.0.2, djangorestframework-simplejwt 5.5.1, django-allauth 65.13.1
-- Configured JWT auth with HttpOnly cookies, refresh rotation, token blacklisting
-- Set up email-based login with Google OAuth provider
-- Updated allauth settings to non-deprecated format (ACCOUNT_LOGIN_METHODS, ACCOUNT_SIGNUP_FIELDS)
-- **Phase 06: Plan 01 COMPLETE**
-
-**2026-01-11 (late evening):**
-- Executed 05-02-PLAN.md (API Viewsets and Routing)
-- Created JokeViewSet with list/retrieve/random actions and search integration
-- Built 6 lookup viewsets for reference data
-- Configured URL routing at /api/v1/ with DRF DefaultRouter
-- Added Swagger UI at /api/docs/ and ReDoc at /api/redoc/
-- Fixed format param conflict by renaming to joke_format
-- **Phase 05: API Core COMPLETE**
-
-**2026-01-11 (late evening):**
-- Executed 05-01-PLAN.md (DRF Setup)
-- Installed djangorestframework 3.16.1, drf-spectacular 0.29.0, django-cors-headers 4.9.0
-- Configured REST_FRAMEWORK with pagination, throttling, versioning, OpenAPI
-- Created 9 serializers for all models (7 lookup + JokeSerializer + JokeListSerializer)
-- **Phase 05: Plan 01 COMPLETE**
-
-**2026-01-11 (evening):**
-- Executed 04-01-PLAN.md (Search Infrastructure)
-- Added django-pgtrigger for automatic search vector updates
-- Created SearchVectorField with GIN index on Joke model
-- Built JokeManager.search() with full-text search and filter support
-- Backfilled search vectors for all 137 jokes
-- **Phase 04: Search Engine COMPLETE**
-
-**2026-01-11 (afternoon):**
-- Executed 03-01-PLAN.md (Content Seeding)
-- Created lookup_data.json with 27 records (Format, AgeRating, Tone, ContextTag, Language, CultureTag, Source)
-- Built seed_jokes management command with --count and --clear options
-- Curated 137 jokes with full M2M relationships and diverse coverage
-- **Phase 03: Content Seeding COMPLETE**
-
-**2026-01-11:**
-- Executed 02-01-PLAN.md (Data Models)
-- Created jokes app with 8 models: Joke, Format, AgeRating, Tone, ContextTag, Language, CultureTag, Source
-- Configured admin with filters, search, prepopulated slugs
-- **Phase 02: Data Models COMPLETE**
-
-**2026-01-10:**
-- Initialized project with /gsd:new-project
-- Created comprehensive roadmap with 12 phases
-- Executed Phase 01: Foundation (3 plans)
-- **Phase 01: Foundation COMPLETE**
-
 ---
 
 ## Next Actions
 
-1. Execute 08-02-PLAN.md (Collections API endpoints)
-2. Then: Phase 09 - Daily Joke
-3. Then: Phase 10 - Sharing
+1. Plan Phase 09: Daily Joke
+2. Then: Phase 10 - Sharing
+3. Then: Phase 11 - Frontend Foundation
 
 ---
 

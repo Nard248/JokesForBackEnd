@@ -36,7 +36,7 @@
 | 05 | API Core | — | Complete (2/2) | 02 |
 | 06 | Authentication | Likely | Complete (3/3) | 05 |
 | 07 | User Preferences | — | Complete (2/2) | 06 |
-| 08 | Collections | — | In progress (1/2) | 06 |
+| 08 | Collections | — | Complete (2/2) | 06 |
 | 09 | Daily Joke | Likely | pending | 07 |
 | 10 | Sharing | — | pending | 05 |
 | 11 | Frontend Foundation | Likely | pending | 05 |
