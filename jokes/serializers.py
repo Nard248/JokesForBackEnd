@@ -18,6 +18,8 @@ from .models import (
     Source,
     Joke,
     UserPreference,
+    Collection,
+    SavedJoke,
 )
 
 
@@ -252,5 +254,139 @@ class UserPreferenceUpdateSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError({
                 'notification_time': 'Notification time is required when notifications are enabled.'
             })
+
+        return data
+
+
+# =============================================================================
+# Collection and SavedJoke Serializers
+# =============================================================================
+
+class CollectionSerializer(serializers.ModelSerializer):
+    """
+    Read-only serializer for collections with joke count.
+
+    Use for GET requests to display collection details.
+    """
+
+    joke_count = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Collection
+        fields = [
+            'id',
+            'name',
+            'description',
+            'is_default',
+            'joke_count',
+            'created_at',
+            'updated_at',
+        ]
+        read_only_fields = ['id', 'is_default', 'created_at', 'updated_at']
+
+    def get_joke_count(self, obj):
+        """Return the number of jokes in this collection."""
+        return obj.saved_jokes.count()
+
+
+class CollectionCreateSerializer(serializers.ModelSerializer):
+    """
+    Write serializer for creating/updating collections.
+
+    Use for POST/PATCH requests.
+    Validates name uniqueness per user.
+    """
+
+    class Meta:
+        model = Collection
+        fields = ['name', 'description']
+
+    def validate_name(self, value):
+        """Validate name is unique for the current user."""
+        user = self.context['request'].user
+        queryset = Collection.objects.filter(user=user, name=value)
+
+        # Exclude current instance on update
+        if self.instance:
+            queryset = queryset.exclude(pk=self.instance.pk)
+
+        if queryset.exists():
+            raise serializers.ValidationError(
+                'You already have a collection with this name.'
+            )
+
+        return value
+
+
+class SavedJokeSerializer(serializers.ModelSerializer):
+    """
+    Read-only serializer for saved jokes with nested joke and collection.
+
+    Use for GET requests to display saved joke details.
+    """
+
+    joke = JokeListSerializer(read_only=True)
+    collection = CollectionSerializer(read_only=True)
+
+    class Meta:
+        model = SavedJoke
+        fields = [
+            'id',
+            'joke',
+            'collection',
+            'note',
+            'created_at',
+        ]
+        read_only_fields = fields
+
+
+class SavedJokeCreateSerializer(serializers.ModelSerializer):
+    """
+    Write serializer for saving jokes to collections.
+
+    Use for POST requests.
+    Validates collection belongs to user and joke not already saved in collection.
+    """
+
+    joke = serializers.PrimaryKeyRelatedField(queryset=Joke.objects.all())
+    collection = serializers.PrimaryKeyRelatedField(
+        queryset=Collection.objects.all(),
+        allow_null=True,
+        required=False,
+    )
+
+    class Meta:
+        model = SavedJoke
+        fields = ['joke', 'collection', 'note']
+
+    def validate_collection(self, value):
+        """Validate collection belongs to the current user."""
+        if value is not None:
+            user = self.context['request'].user
+            if value.user != user:
+                raise serializers.ValidationError(
+                    'Collection does not belong to you.'
+                )
+        return value
+
+    def validate(self, data):
+        """Validate joke is not already saved in the same collection."""
+        user = self.context['request'].user
+        joke = data.get('joke')
+        collection = data.get('collection')
+
+        if SavedJoke.objects.filter(
+            user=user,
+            joke=joke,
+            collection=collection
+        ).exists():
+            if collection:
+                raise serializers.ValidationError({
+                    'joke': 'This joke is already saved in this collection.'
+                })
+            else:
+                raise serializers.ValidationError({
+                    'joke': 'This joke is already saved without a collection.'
+                })
 
         return data
