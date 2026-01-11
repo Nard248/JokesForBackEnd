@@ -20,6 +20,7 @@ from .models import (
     UserPreference,
     Collection,
     SavedJoke,
+    DailyJoke,
 )
 
 
@@ -390,3 +391,22 @@ class SavedJokeCreateSerializer(serializers.ModelSerializer):
                 })
 
         return data
+
+
+# =============================================================================
+# DailyJoke Serializers
+# =============================================================================
+
+class DailyJokeSerializer(serializers.ModelSerializer):
+    """
+    Serializer for daily jokes with nested joke details.
+
+    Use for displaying today's personalized joke and joke history.
+    """
+
+    joke = JokeSerializer(read_only=True)
+
+    class Meta:
+        model = DailyJoke
+        fields = ['id', 'joke', 'date', 'delivered_at', 'created_at']
+        read_only_fields = ['id', 'joke', 'date', 'delivered_at', 'created_at']

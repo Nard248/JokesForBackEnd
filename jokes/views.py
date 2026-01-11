@@ -16,6 +16,8 @@ from allauth.socialaccount.providers.oauth2.client import OAuth2Client
 from dj_rest_auth.registration.views import SocialLoginView
 from django.conf import settings
 
+from django.utils import timezone
+
 from .models import (
     Joke,
     Format,
@@ -27,7 +29,9 @@ from .models import (
     UserPreference,
     Collection,
     SavedJoke,
+    DailyJoke,
 )
+from .recommendations import get_personalized_joke, get_recently_shown_joke_ids
 from .serializers import (
     JokeSerializer,
     JokeListSerializer,
@@ -43,6 +47,7 @@ from .serializers import (
     CollectionCreateSerializer,
     SavedJokeSerializer,
     SavedJokeCreateSerializer,
+    DailyJokeSerializer,
 )
 
 
@@ -459,4 +464,103 @@ class SavedJokeViewSet(
             return self.get_paginated_response(serializer.data)
 
         serializer = SavedJokeSerializer(saved_jokes, many=True)
+        return Response(serializer.data)
+
+
+# =============================================================================
+# Daily Joke ViewSet
+# =============================================================================
+
+class DailyJokeViewSet(viewsets.GenericViewSet):
+    """
+    ViewSet for daily joke functionality.
+    All endpoints require authentication.
+
+    Endpoints:
+    - GET /api/v1/daily-jokes/today/ - Get today's personalized joke
+    - GET /api/v1/daily-jokes/history/ - Get last 30 days of jokes
+    """
+
+    permission_classes = [IsAuthenticated]
+    serializer_class = DailyJokeSerializer
+
+    def get_queryset(self):
+        """Return daily jokes for the current user."""
+        return DailyJoke.objects.filter(user=self.request.user)
+
+    @extend_schema(
+        description='Get today\'s personalized joke. Generates on-demand if not pre-generated.',
+        responses={200: DailyJokeSerializer, 404: None},
+    )
+    @action(detail=False, methods=['get'])
+    def today(self, request):
+        """
+        Get today's personalized joke.
+
+        If scheduled task already generated one, return it.
+        Otherwise, generate on-demand (fallback).
+
+        Returns 404 if no joke available (dataset exhausted).
+        """
+        today = timezone.now().date()
+
+        # Try to get pre-generated daily joke
+        daily = DailyJoke.objects.filter(
+            user=request.user,
+            date=today
+        ).select_related(
+            'joke',
+            'joke__format',
+            'joke__age_rating',
+            'joke__language'
+        ).prefetch_related(
+            'joke__tones',
+            'joke__context_tags'
+        ).first()
+
+        if not daily:
+            # Fallback: generate on-demand
+            exclude_ids = get_recently_shown_joke_ids(request.user, days=30)
+            joke = get_personalized_joke(request.user, exclude_joke_ids=exclude_ids)
+
+            if joke:
+                daily = DailyJoke.objects.create(
+                    user=request.user,
+                    joke=joke,
+                    date=today
+                )
+            else:
+                return Response(
+                    {'detail': 'No jokes available. Please try again later.'},
+                    status=status.HTTP_404_NOT_FOUND
+                )
+
+        # Mark as delivered on first access
+        if not daily.delivered_at:
+            daily.delivered_at = timezone.now()
+            daily.save(update_fields=['delivered_at'])
+
+        return Response(DailyJokeSerializer(daily).data)
+
+    @extend_schema(
+        description='Get user\'s daily joke history (last 30 days).',
+        responses={200: DailyJokeSerializer(many=True)},
+    )
+    @action(detail=False, methods=['get'])
+    def history(self, request):
+        """
+        Get user's daily joke history.
+        Returns last 30 days of daily jokes.
+        """
+        queryset = self.get_queryset().select_related(
+            'joke',
+            'joke__format',
+            'joke__age_rating',
+            'joke__language'
+        ).prefetch_related(
+            'joke__tones',
+            'joke__context_tags'
+        )[:30]
+
+        serializer = DailyJokeSerializer(queryset, many=True)
         return Response(serializer.data)

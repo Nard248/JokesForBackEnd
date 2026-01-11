@@ -19,5 +19,6 @@ router.register('languages', views.LanguageViewSet, basename='language')
 router.register('preferences', views.UserPreferenceViewSet, basename='preferences')
 router.register('collections', views.CollectionViewSet, basename='collection')
 router.register('saved-jokes', views.SavedJokeViewSet, basename='saved-joke')
+router.register('daily-jokes', views.DailyJokeViewSet, basename='daily-joke')
 
 urlpatterns = router.urls
