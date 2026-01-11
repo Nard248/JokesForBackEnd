@@ -21,11 +21,14 @@ from drf_spectacular.views import (
     SpectacularRedocView,
     SpectacularSwaggerView,
 )
-from jokes.views import GoogleLogin
+from jokes.views import GoogleLogin, joke_share_page
 
 urlpatterns = [
     # Admin
     path('admin/', admin.site.urls),
+
+    # Public share pages (before API routes)
+    path('jokes/<int:pk>/share/', joke_share_page, name='joke-share'),
 
     # API v1
     path('api/v1/', include('jokes.urls')),

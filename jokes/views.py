@@ -5,16 +5,19 @@ Provides viewsets for all models:
 - JokeViewSet: Search, list, retrieve, and random joke endpoints
 - Lookup viewsets: Format, AgeRating, Tone, ContextTag, Language, CultureTag
 - GoogleLogin: Google OAuth2 authentication endpoint
+- joke_share_page: Public share page with OG meta tags
 """
 from rest_framework import mixins, status, viewsets
 from rest_framework.decorators import action
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
 from drf_spectacular.utils import extend_schema, OpenApiParameter
 from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
 from allauth.socialaccount.providers.oauth2.client import OAuth2Client
 from dj_rest_auth.registration.views import SocialLoginView
 from django.conf import settings
+from django.shortcuts import render, get_object_or_404
+from django.views.decorators.http import require_GET
 
 from django.utils import timezone
 
@@ -33,6 +36,7 @@ from .models import (
     SavedJoke,
     DailyJoke,
     JokeRating,
+    ShareEvent,
 )
 from .recommendations import get_personalized_joke, get_recently_shown_joke_ids
 from .serializers import (
@@ -618,3 +622,40 @@ class DailyJokeViewSet(viewsets.GenericViewSet):
 
         serializer = DailyJokeSerializer(queryset, many=True)
         return Response(serializer.data)
+
+
+# =============================================================================
+# Public Share Page View
+# =============================================================================
+
+@require_GET
+def joke_share_page(request, pk):
+    """
+    Public share page for a joke with OG meta tags.
+
+    This page is designed for social media crawlers. It returns
+    an HTML page with proper Open Graph and Twitter Card meta tags
+    so the joke preview looks great when shared.
+    """
+    joke = get_object_or_404(
+        Joke.objects.select_related('format', 'age_rating').prefetch_related('tones'),
+        pk=pk
+    )
+
+    # Build absolute URLs
+    share_image_url = ''
+    if joke.share_image:
+        share_image_url = request.build_absolute_uri(joke.share_image.url)
+
+    canonical_url = request.build_absolute_uri()
+
+    # Get badge text from primary tone
+    tone = joke.tones.first()
+    badge_text = tone.name if tone else None
+
+    return render(request, 'jokes/share.html', {
+        'joke': joke,
+        'share_image_url': share_image_url,
+        'canonical_url': canonical_url,
+        'badge_text': badge_text,
+    })
