@@ -1,0 +1,30 @@
+{% load mathfilters %}
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#1a1a2e"/>
+
+  <!-- Brand stripe -->
+  <rect y="580" width="1200" height="50" fill="#e94560"/>
+
+  <!-- Logo/brand text -->
+  <text x="60" y="615" fill="white" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="600">
+    JokesFor.com
+  </text>
+
+  <!-- Joke type badge -->
+  {% if badge_text %}
+  <rect x="1020" y="590" width="120" height="30" rx="15" fill="rgba(255,255,255,0.2)"/>
+  <text x="1080" y="612" fill="white" font-family="Inter, Arial, sans-serif" font-size="14" text-anchor="middle">
+    {{ badge_text }}
+  </text>
+  {% endif %}
+
+  <!-- Joke text -->
+  {% with joke_lines=joke_text|wordwrap:45 %}
+  <text fill="white" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="500">
+    {% for line in joke_lines.splitlines %}
+    <tspan x="60" y="{{ 180|add:forloop.counter0|multiply:45 }}">{{ line }}</tspan>
+    {% endfor %}
+  </text>
+  {% endwith %}
+</svg>
