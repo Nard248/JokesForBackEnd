@@ -4,8 +4,8 @@
 
 **Project:** Jokes For
 **Milestone:** 1 - MVP Launch
-**Phase:** 09 - Daily Joke (COMPLETE)
-**Status:** Phase complete (3/3 plans), ready for Phase 10
+**Phase:** 10 - Sharing (IN PROGRESS)
+**Status:** 1/3 plans complete, executing Phase 10
 
 ---
 
@@ -42,9 +42,10 @@ Jokes For is a global humor discovery platform - a search engine for jokes. User
 - [x] **09-02**: DailyJoke model and recommendation algorithm
 - [x] **09-03**: Celery tasks and Daily Joke API endpoints
 - [x] **Phase 09: Daily Joke COMPLETE**
+- [x] **10-01**: JokeRating model and rating API endpoints
 
 ### Upcoming
-1. Phase 10: Sharing
+1. Phase 10: Sharing (2 more plans - share cards, share analytics)
 2. Phase 11: Frontend Foundation
 3. Phase 12: Frontend Features
 
@@ -101,6 +102,14 @@ None tracked yet.
 ---
 
 ## Session Notes
+
+**2026-01-11 (night, latest):**
+- Executed 10-01-PLAN.md (Joke Rating System)
+- Created JokeRating model with user/joke FKs, binary rating (1/-1), unique_together constraint
+- Added POST /api/v1/jokes/{id}/rate/ for thumbs up/down voting
+- Added GET /api/v1/jokes/{id}/my-rating/ for retrieving user's current rating
+- Both endpoints return aggregate joke_score via Sum aggregate
+- **10-01 complete** (1/3 plans for Phase 10)
 
 **2026-01-11 (night, later):**
 - Executed 09-03-PLAN.md (Celery Task and Daily Joke API)
@@ -163,9 +172,10 @@ None tracked yet.
 
 ## Next Actions
 
-1. Plan Phase 10: Sharing (rating, share URLs, share cards)
-2. Then: Phase 11 - Frontend Foundation
-3. Then: Phase 12 - Frontend Features
+1. Execute 10-02-PLAN.md (Share Cards)
+2. Execute 10-03-PLAN.md (Share Analytics)
+3. Then: Phase 11 - Frontend Foundation
+4. Then: Phase 12 - Frontend Features
 
 ---
 
