@@ -210,6 +210,7 @@ REST_AUTH = {
     'JWT_AUTH_SECURE': not DEBUG,  # True in production (HTTPS), False for local dev
     'JWT_AUTH_SAMESITE': 'Lax',
     'SESSION_LOGIN': False,  # Disable session auth, use JWT only
+    'REGISTER_SERIALIZER': 'JokesForProject.serializers.EmailOnlyRegisterSerializer',
 }
 
 
@@ -228,12 +229,15 @@ SIMPLE_JWT = {
 }
 
 
+# Email backend (console for development)
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 # django-allauth settings
 # https://docs.allauth.org/en/latest/account/configuration.html
 
 ACCOUNT_LOGIN_METHODS = {'email'}  # Use email for login
 ACCOUNT_SIGNUP_FIELDS = ['email*', 'password1*', 'password2*']  # Email required, no username
-ACCOUNT_EMAIL_VERIFICATION = 'optional'  # 'mandatory' for production
+ACCOUNT_EMAIL_VERIFICATION = 'none'  # Disable for development, 'mandatory' for production
 ACCOUNT_UNIQUE_EMAIL = True
 
 # Google OAuth settings
