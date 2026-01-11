@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Joke, Format, AgeRating, Tone, ContextTag, Language, CultureTag, Source, UserPreference, Collection, SavedJoke, DailyJoke, JokeRating
+from .models import Joke, Format, AgeRating, Tone, ContextTag, Language, CultureTag, Source, UserPreference, Collection, SavedJoke, DailyJoke, JokeRating, ShareEvent
 
 
 @admin.register(Format)
@@ -109,3 +109,17 @@ class JokeRatingAdmin(admin.ModelAdmin):
         text = obj.joke.text
         return text[:50] + '...' if len(text) > 50 else text
     joke_truncated.short_description = 'Joke'
+
+
+@admin.register(ShareEvent)
+class ShareEventAdmin(admin.ModelAdmin):
+    list_display = ['id', 'joke_preview', 'user', 'platform', 'created_at']
+    list_filter = ['platform', 'created_at']
+    search_fields = ['user__email', 'joke__text']
+    raw_id_fields = ['joke', 'user']
+    date_hierarchy = 'created_at'
+    readonly_fields = ['created_at']
+
+    def joke_preview(self, obj):
+        return obj.joke.text[:50] + '...' if len(obj.joke.text) > 50 else obj.joke.text
+    joke_preview.short_description = 'Joke'
