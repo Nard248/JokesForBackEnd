@@ -16,5 +16,6 @@ router.register('tones', views.ToneViewSet, basename='tone')
 router.register('context-tags', views.ContextTagViewSet, basename='context-tag')
 router.register('culture-tags', views.CultureTagViewSet, basename='culture-tag')
 router.register('languages', views.LanguageViewSet, basename='language')
+router.register('preferences', views.UserPreferenceViewSet, basename='preferences')
 
 urlpatterns = router.urls
