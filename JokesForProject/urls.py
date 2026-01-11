@@ -21,6 +21,7 @@ from drf_spectacular.views import (
     SpectacularRedocView,
     SpectacularSwaggerView,
 )
+from jokes.views import GoogleLogin
 
 urlpatterns = [
     # Admin
@@ -28,6 +29,11 @@ urlpatterns = [
 
     # API v1
     path('api/v1/', include('jokes.urls')),
+
+    # Authentication
+    path('api/v1/auth/', include('dj_rest_auth.urls')),
+    path('api/v1/auth/registration/', include('dj_rest_auth.registration.urls')),
+    path('api/v1/auth/google/', GoogleLogin.as_view(), name='google_login'),
 
     # API Documentation
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
