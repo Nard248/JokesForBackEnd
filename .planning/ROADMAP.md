@@ -38,7 +38,7 @@
 | 07 | User Preferences | — | Complete (2/2) | 06 |
 | 08 | Collections | — | Complete (2/2) | 06 |
 | 09 | Daily Joke | Likely | Complete (3/3) | 07 |
-| 10 | Sharing | — | In progress (1/3) | 05 |
+| 10 | Sharing | — | In progress (2/3) | 05 |
 | 11 | Frontend Foundation | Likely | pending | 05 |
 | 12 | Frontend Features | — | pending | 11, 04, 06, 07, 08, 09, 10 |
 

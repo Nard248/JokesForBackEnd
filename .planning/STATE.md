@@ -5,7 +5,7 @@
 **Project:** Jokes For
 **Milestone:** 1 - MVP Launch
 **Phase:** 10 - Sharing (IN PROGRESS)
-**Status:** 1/3 plans complete, executing Phase 10
+**Status:** 2/3 plans complete, executing Phase 10
 
 ---
 
@@ -43,9 +43,10 @@ Jokes For is a global humor discovery platform - a search engine for jokes. User
 - [x] **09-03**: Celery tasks and Daily Joke API endpoints
 - [x] **Phase 09: Daily Joke COMPLETE**
 - [x] **10-01**: JokeRating model and rating API endpoints
+- [x] **10-02**: SVG share card templates and auto-generation on save
 
 ### Upcoming
-1. Phase 10: Sharing (2 more plans - share cards, share analytics)
+1. Phase 10: Sharing (1 more plan - share analytics)
 2. Phase 11: Frontend Foundation
 3. Phase 12: Frontend Features
 
@@ -92,6 +93,9 @@ None currently.
 | 2026-01-11 | Content-based filtering for MVP recommendations | Simpler than collaborative, no cold-start problem |
 | 2026-01-11 | 30-day recency window for joke exhaustion prevention | Balances variety with small dataset |
 | 2026-01-11 | Pre-generate + on-demand fallback pattern | Scheduled task at night, API fallback if missed |
+| 2026-01-11 | Tone-based share card templates | Different themes for dad-jokes, dark, puns vs default |
+| 2026-01-11 | Text change detection for share images | Track _original_text to avoid unnecessary regeneration |
+| 2026-01-11 | Pre-generate share images on save | Performance over on-demand generation |
 
 ---
 
@@ -104,6 +108,14 @@ None tracked yet.
 ## Session Notes
 
 **2026-01-11 (night, latest):**
+- Executed 10-02-PLAN.md (Share Cards Infrastructure)
+- Installed CairoSVG and created 4 themed SVG templates (base, dad_joke, dark_humor, pun)
+- Added share_image ImageField to Joke model with auto-generation on save
+- Implemented text change detection via _original_text to avoid unnecessary regeneration
+- Added share_image_url to JokeSerializer and JokeListSerializer with absolute URLs
+- **10-02 complete** (2/3 plans for Phase 10)
+
+**2026-01-11 (night):**
 - Executed 10-01-PLAN.md (Joke Rating System)
 - Created JokeRating model with user/joke FKs, binary rating (1/-1), unique_together constraint
 - Added POST /api/v1/jokes/{id}/rate/ for thumbs up/down voting
@@ -172,10 +184,9 @@ None tracked yet.
 
 ## Next Actions
 
-1. Execute 10-02-PLAN.md (Share Cards)
-2. Execute 10-03-PLAN.md (Share Analytics)
-3. Then: Phase 11 - Frontend Foundation
-4. Then: Phase 12 - Frontend Features
+1. Execute 10-03-PLAN.md (Share Analytics)
+2. Then: Phase 11 - Frontend Foundation
+3. Then: Phase 12 - Frontend Features
 
 ---
 
