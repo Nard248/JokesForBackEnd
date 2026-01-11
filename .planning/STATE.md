@@ -4,8 +4,8 @@
 
 **Project:** Jokes For
 **Milestone:** 1 - MVP Launch
-**Phase:** 07 - User Preferences (IN PROGRESS)
-**Status:** Plan 1/2 complete - UserPreference model with signal and admin
+**Phase:** 07 - User Preferences (COMPLETE)
+**Status:** Phase 07 complete (2/2 plans), UserPreference model + API endpoints
 
 ---
 
@@ -40,14 +40,16 @@ Jokes For is a global humor discovery platform - a search engine for jokes. User
 - [x] **06-03**: Google OAuth config + auth verification (SocialApp, email-only registration fix)
 - [x] **Phase 06: Authentication COMPLETE**
 - [x] **07-01**: UserPreference model (model, signal, admin)
+- [x] **07-02**: Preference API endpoints (serializers, ViewSet, routes)
+- [x] **Phase 07: User Preferences COMPLETE**
 
 ### Current Phase
-**Phase 07: User Preferences** - IN PROGRESS (1/2 plans)
+**Phase 07: User Preferences** - COMPLETE (2/2 plans)
 
 ### Upcoming
-1. 07-02: User Preferences API endpoints
-2. Phase 08: Collections
-3. Phase 09: Daily Joke
+1. Phase 08: Collections
+2. Phase 09: Daily Joke
+3. Phase 10: Sharing
 
 ---
 
@@ -81,6 +83,8 @@ None currently.
 | 2026-01-11 | Console EMAIL_BACKEND for dev | No SMTP needed, switch to real backend for production |
 | 2026-01-11 | settings.AUTH_USER_MODEL for UserPreference | Flexibility over direct User import |
 | 2026-01-11 | post_save signal for UserPreference auto-create | Ensures every user has preferences |
+| 2026-01-11 | Separate read/write serializers for preferences | Nested for display, PK fields for updates |
+| 2026-01-11 | GenericViewSet for preferences API | Custom actions only, no standard CRUD |
 
 ---
 
@@ -91,6 +95,13 @@ None tracked yet.
 ---
 
 ## Session Notes
+
+**2026-01-11 (late evening):**
+- Executed 07-02-PLAN.md (Preference API Endpoints)
+- Created UserPreferenceSerializer (read with nested) and UserPreferenceUpdateSerializer (write with PK)
+- Built UserPreferenceViewSet with me() and complete_onboarding() actions
+- Registered routes at /api/v1/preferences/me/ and /api/v1/preferences/complete-onboarding/
+- **Phase 07: User Preferences COMPLETE** (2/2 plans)
 
 **2026-01-11 (late evening):**
 - Executed 07-01-PLAN.md (UserPreference Model)
@@ -162,9 +173,9 @@ None tracked yet.
 
 ## Next Actions
 
-1. Execute 07-02-PLAN.md: User Preferences API endpoints
-2. Then: Phase 08 - Collections
-3. Then: Phase 09 - Daily Joke
+1. Plan Phase 08: Collections
+2. Then: Phase 09 - Daily Joke
+3. Then: Phase 10 - Sharing
 
 ---
 
