@@ -4,8 +4,8 @@
 
 **Project:** Jokes For
 **Milestone:** 1 - MVP Launch
-**Phase:** 06 - Authentication (COMPLETE)
-**Status:** Phase 06 complete (3/3 plans), JWT auth + Google OAuth working
+**Phase:** 07 - User Preferences (IN PROGRESS)
+**Status:** Plan 1/2 complete - UserPreference model with signal and admin
 
 ---
 
@@ -39,12 +39,13 @@ Jokes For is a global humor discovery platform - a search engine for jokes. User
 - [x] **06-02**: Auth endpoints and migrations (URL routing, GoogleLogin view, database setup)
 - [x] **06-03**: Google OAuth config + auth verification (SocialApp, email-only registration fix)
 - [x] **Phase 06: Authentication COMPLETE**
+- [x] **07-01**: UserPreference model (model, signal, admin)
 
 ### Current Phase
-**Phase 06: Authentication** - COMPLETE (3/3 plans)
+**Phase 07: User Preferences** - IN PROGRESS (1/2 plans)
 
 ### Upcoming
-1. Phase 07: User Preferences
+1. 07-02: User Preferences API endpoints
 2. Phase 08: Collections
 3. Phase 09: Daily Joke
 
@@ -78,6 +79,8 @@ None currently.
 | 2026-01-11 | Email-only login (no username) | Simpler UX, matches PROJECT.md requirement |
 | 2026-01-11 | Custom EmailOnlyRegisterSerializer | dj-rest-auth default requires username at import time |
 | 2026-01-11 | Console EMAIL_BACKEND for dev | No SMTP needed, switch to real backend for production |
+| 2026-01-11 | settings.AUTH_USER_MODEL for UserPreference | Flexibility over direct User import |
+| 2026-01-11 | post_save signal for UserPreference auto-create | Ensures every user has preferences |
 
 ---
 
@@ -88,6 +91,13 @@ None tracked yet.
 ---
 
 ## Session Notes
+
+**2026-01-11 (late evening):**
+- Executed 07-01-PLAN.md (UserPreference Model)
+- Created UserPreference model with tone/context/rating/language preferences
+- Added post_save signal for auto-creation on user signup
+- Built admin interface with filters, search, horizontal M2M widgets
+- **Plan 07-01 COMPLETE** (1/2 plans for Phase 07)
 
 **2026-01-11 (evening):**
 - Executed 06-03-PLAN.md (Google OAuth & Auth Verification)
@@ -152,7 +162,7 @@ None tracked yet.
 
 ## Next Actions
 
-1. Plan Phase 07: User Preferences
+1. Execute 07-02-PLAN.md: User Preferences API endpoints
 2. Then: Phase 08 - Collections
 3. Then: Phase 09 - Daily Joke
 
