@@ -4,8 +4,8 @@
 
 **Project:** Jokes For
 **Milestone:** 1 - MVP Launch
-**Phase:** 06 - Authentication (IN PROGRESS)
-**Status:** Phase 06-02 complete, auth endpoints configured, migrations applied
+**Phase:** 06 - Authentication (COMPLETE)
+**Status:** Phase 06 complete (3/3 plans), JWT auth + Google OAuth working
 
 ---
 
@@ -37,14 +37,16 @@ Jokes For is a global humor discovery platform - a search engine for jokes. User
 - [x] **Phase 05: API Core COMPLETE**
 - [x] **06-01**: Authentication setup (dj-rest-auth, simplejwt, allauth, JWT settings)
 - [x] **06-02**: Auth endpoints and migrations (URL routing, GoogleLogin view, database setup)
+- [x] **06-03**: Google OAuth config + auth verification (SocialApp, email-only registration fix)
+- [x] **Phase 06: Authentication COMPLETE**
 
 ### Current Phase
-**Phase 06: Authentication** - IN PROGRESS (2/? plans done)
+**Phase 06: Authentication** - COMPLETE (3/3 plans)
 
 ### Upcoming
-1. Complete Phase 06: Any remaining auth tasks
-2. Phase 07: User Preferences
-3. Phase 08: Collections
+1. Phase 07: User Preferences
+2. Phase 08: Collections
+3. Phase 09: Daily Joke
 
 ---
 
@@ -74,6 +76,8 @@ None currently.
 | 2026-01-11 | HttpOnly cookies for JWT storage | XSS protection vs localStorage |
 | 2026-01-11 | 15min access, 1day refresh tokens | Short-lived access with rotation limits breach impact |
 | 2026-01-11 | Email-only login (no username) | Simpler UX, matches PROJECT.md requirement |
+| 2026-01-11 | Custom EmailOnlyRegisterSerializer | dj-rest-auth default requires username at import time |
+| 2026-01-11 | Console EMAIL_BACKEND for dev | No SMTP needed, switch to real backend for production |
 
 ---
 
@@ -84,6 +88,14 @@ None tracked yet.
 ---
 
 ## Session Notes
+
+**2026-01-11 (evening):**
+- Executed 06-03-PLAN.md (Google OAuth & Auth Verification)
+- Configured Google OAuth credentials in Cloud Console and created SocialApp
+- Fixed email-only registration with custom EmailOnlyRegisterSerializer
+- Verified all auth flows: registration, login, token refresh, authenticated access
+- All 12 auth endpoints confirmed working
+- **Phase 06: Authentication COMPLETE**
 
 **2026-01-11 (afternoon):**
 - Executed 06-01-PLAN.md (Authentication Setup)
@@ -140,9 +152,9 @@ None tracked yet.
 
 ## Next Actions
 
-1. Execute Phase 06-02: Auth endpoints and migrations
-2. Complete Phase 06
-3. Then: Phase 07 - User Preferences
+1. Plan Phase 07: User Preferences
+2. Then: Phase 08 - Collections
+3. Then: Phase 09 - Daily Joke
 
 ---
 

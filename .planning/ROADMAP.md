@@ -34,7 +34,7 @@
 | 03 | Content Seeding | — | Complete (1/1) | 02 |
 | 04 | Search Engine | Likely | Complete (1/1) | 02 |
 | 05 | API Core | — | Complete (2/2) | 02 |
-| 06 | Authentication | Likely | In Progress (2/?) | 05 |
+| 06 | Authentication | Likely | Complete (3/3) | 05 |
 | 07 | User Preferences | — | pending | 06 |
 | 08 | Collections | — | pending | 06 |
 | 09 | Daily Joke | Likely | pending | 07 |
