@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Joke, Format, AgeRating, Tone, ContextTag, Language, CultureTag, Source, UserPreference, Collection, SavedJoke, DailyJoke
+from .models import Joke, Format, AgeRating, Tone, ContextTag, Language, CultureTag, Source, UserPreference, Collection, SavedJoke, DailyJoke, JokeRating
 
 
 @admin.register(Format)
@@ -94,3 +94,18 @@ class DailyJokeAdmin(admin.ModelAdmin):
     search_fields = ['user__email']
     date_hierarchy = 'date'
     raw_id_fields = ['user', 'joke']
+
+
+@admin.register(JokeRating)
+class JokeRatingAdmin(admin.ModelAdmin):
+    list_display = ['user', 'joke_truncated', 'rating', 'created_at']
+    list_filter = ['rating', 'created_at']
+    search_fields = ['user__email', 'joke__text']
+    raw_id_fields = ['joke']
+    readonly_fields = ['created_at', 'updated_at']
+
+    def joke_truncated(self, obj):
+        """Return truncated joke text."""
+        text = obj.joke.text
+        return text[:50] + '...' if len(text) > 50 else text
+    joke_truncated.short_description = 'Joke'
