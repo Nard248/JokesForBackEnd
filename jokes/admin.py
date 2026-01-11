@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Joke, Format, AgeRating, Tone, ContextTag, Language, CultureTag, Source, UserPreference, Collection, SavedJoke
+from .models import Joke, Format, AgeRating, Tone, ContextTag, Language, CultureTag, Source, UserPreference, Collection, SavedJoke, DailyJoke
 
 
 @admin.register(Format)
@@ -85,3 +85,12 @@ class SavedJokeAdmin(admin.ModelAdmin):
     search_fields = ['user__email', 'joke__text']
     readonly_fields = ['created_at']
     raw_id_fields = ['joke']
+
+
+@admin.register(DailyJoke)
+class DailyJokeAdmin(admin.ModelAdmin):
+    list_display = ['user', 'joke', 'date', 'delivered_at']
+    list_filter = ['date', 'delivered_at']
+    search_fields = ['user__email']
+    date_hierarchy = 'date'
+    raw_id_fields = ['user', 'joke']
