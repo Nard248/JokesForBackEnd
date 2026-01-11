@@ -330,3 +330,45 @@ class JokeRating(models.Model):
     def __str__(self):
         rating_text = 'Like' if self.rating == self.LIKE else 'Dislike'
         return f"{self.user.email} {rating_text} joke {self.joke_id}"
+
+
+class ShareEvent(models.Model):
+    """Track joke share events for analytics."""
+    PLATFORM_CHOICES = [
+        ('copy', 'Copy to Clipboard'),
+        ('twitter', 'Twitter/X'),
+        ('facebook', 'Facebook'),
+        ('whatsapp', 'WhatsApp'),
+        ('other', 'Other'),
+    ]
+
+    joke = models.ForeignKey(
+        'Joke',
+        on_delete=models.CASCADE,
+        related_name='share_events'
+    )
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='share_events',
+        help_text='Null for anonymous shares'
+    )
+    platform = models.CharField(
+        max_length=20,
+        choices=PLATFORM_CHOICES,
+        default='other'
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-created_at']
+        indexes = [
+            models.Index(fields=['joke', 'created_at']),
+            models.Index(fields=['platform', 'created_at']),
+        ]
+
+    def __str__(self):
+        user_str = self.user.email if self.user else 'anonymous'
+        return f"{user_str} shared joke {self.joke_id} via {self.platform}"
