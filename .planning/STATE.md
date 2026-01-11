@@ -4,8 +4,8 @@
 
 **Project:** Jokes For
 **Milestone:** 1 - MVP Launch
-**Phase:** 09 - Daily Joke (IN PROGRESS)
-**Status:** Plan 2 of 3 complete
+**Phase:** 09 - Daily Joke (COMPLETE)
+**Status:** Phase complete (3/3 plans), ready for Phase 10
 
 ---
 
@@ -40,11 +40,13 @@ Jokes For is a global humor discovery platform - a search engine for jokes. User
 - [x] **Phase 08: Collections COMPLETE**
 - [x] **09-01**: Celery infrastructure setup (celery, redis, django-celery-beat)
 - [x] **09-02**: DailyJoke model and recommendation algorithm
+- [x] **09-03**: Celery tasks and Daily Joke API endpoints
+- [x] **Phase 09: Daily Joke COMPLETE**
 
 ### Upcoming
-1. 09-03: Daily joke API endpoint and Celery scheduling
-2. Phase 10: Sharing
-3. Phase 11: Frontend Foundation
+1. Phase 10: Sharing
+2. Phase 11: Frontend Foundation
+3. Phase 12: Frontend Features
 
 ---
 
@@ -86,6 +88,9 @@ None currently.
 | 2026-01-11 | Separate read/write serializers for collections | Nested for display, PK fields for updates |
 | 2026-01-11 | Default collection delete protection | Prevent users from deleting their Favorites |
 | 2026-01-11 | Reuse Joke.objects.search() for saved joke search | Consistency with main search, no code duplication |
+| 2026-01-11 | Content-based filtering for MVP recommendations | Simpler than collaborative, no cold-start problem |
+| 2026-01-11 | 30-day recency window for joke exhaustion prevention | Balances variety with small dataset |
+| 2026-01-11 | Pre-generate + on-demand fallback pattern | Scheduled task at night, API fallback if missed |
 
 ---
 
@@ -98,11 +103,18 @@ None tracked yet.
 ## Session Notes
 
 **2026-01-11 (night, later):**
+- Executed 09-03-PLAN.md (Celery Task and Daily Joke API)
+- Created generate_daily_jokes Celery task for batch processing
+- Created generate_daily_joke_for_user for on-demand fallback
+- Built DailyJokeViewSet with today() and history() endpoints
+- Registered at /api/v1/daily-jokes/
+- **Phase 09: Daily Joke COMPLETE** (3/3 plans)
+
+**2026-01-11 (night, later):**
 - Executed 09-02-PLAN.md (DailyJoke Model and Recommendation Algorithm)
 - Created DailyJoke model with user/joke FKs, unique_together on [user, date]
 - Built content-based recommendation algorithm in jokes/recommendations.py
 - Implemented 30-day recency window and popularity scoring
-- **Phase 09: Daily Joke IN PROGRESS** (2/3 plans)
 
 **2026-01-11 (night, later):**
 - Executed 09-01-PLAN.md (Celery Infrastructure Setup)
@@ -151,9 +163,9 @@ None tracked yet.
 
 ## Next Actions
 
-1. Execute 09-03-PLAN.md (Daily joke API and Celery scheduling)
-2. Then: Phase 10 - Sharing
-3. Then: Phase 11 - Frontend Foundation
+1. Plan Phase 10: Sharing (rating, share URLs, share cards)
+2. Then: Phase 11 - Frontend Foundation
+3. Then: Phase 12 - Frontend Features
 
 ---
 
