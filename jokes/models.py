@@ -248,3 +248,36 @@ class DailyJoke(models.Model):
 
     def __str__(self):
         return f"Daily joke for {self.user.email} on {self.date}"
+
+
+class JokeRating(models.Model):
+    """User rating for a joke (thumbs up/down)"""
+    LIKE = 1
+    DISLIKE = -1
+    RATING_CHOICES = [(LIKE, 'Like'), (DISLIKE, 'Dislike')]
+
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='joke_ratings'
+    )
+    joke = models.ForeignKey(
+        Joke,
+        on_delete=models.CASCADE,
+        related_name='ratings'
+    )
+    rating = models.SmallIntegerField(choices=RATING_CHOICES)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        unique_together = [['user', 'joke']]
+        ordering = ['-created_at']
+        indexes = [
+            models.Index(fields=['user']),
+            models.Index(fields=['joke']),
+        ]
+
+    def __str__(self):
+        rating_text = 'Like' if self.rating == self.LIKE else 'Dislike'
+        return f"{self.user.email} {rating_text} joke {self.joke_id}"
