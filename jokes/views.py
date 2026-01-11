@@ -6,7 +6,7 @@ Provides viewsets for all models:
 - Lookup viewsets: Format, AgeRating, Tone, ContextTag, Language, CultureTag
 - GoogleLogin: Google OAuth2 authentication endpoint
 """
-from rest_framework import status, viewsets
+from rest_framework import mixins, status, viewsets
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -25,6 +25,8 @@ from .models import (
     Language,
     CultureTag,
     UserPreference,
+    Collection,
+    SavedJoke,
 )
 from .serializers import (
     JokeSerializer,
@@ -37,6 +39,10 @@ from .serializers import (
     CultureTagSerializer,
     UserPreferenceSerializer,
     UserPreferenceUpdateSerializer,
+    CollectionSerializer,
+    CollectionCreateSerializer,
+    SavedJokeSerializer,
+    SavedJokeCreateSerializer,
 )
 
 
@@ -318,3 +324,139 @@ class GoogleLogin(SocialLoginView):
     adapter_class = GoogleOAuth2Adapter
     callback_url = settings.GOOGLE_OAUTH_CALLBACK_URL
     client_class = OAuth2Client
+
+
+# =============================================================================
+# Collection and SavedJoke ViewSets
+# =============================================================================
+
+class CollectionViewSet(viewsets.ModelViewSet):
+    """
+    Collection management for authenticated users.
+
+    Endpoints:
+    - GET /api/v1/collections/ - List user's collections
+    - POST /api/v1/collections/ - Create a new collection
+    - GET /api/v1/collections/{id}/ - Get collection details
+    - PATCH /api/v1/collections/{id}/ - Update collection
+    - DELETE /api/v1/collections/{id}/ - Delete collection (except default)
+    - GET /api/v1/collections/{id}/jokes/ - List jokes in collection
+    """
+
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        """Return collections belonging to the current user."""
+        return Collection.objects.filter(user=self.request.user)
+
+    def get_serializer_class(self):
+        """Return appropriate serializer based on action."""
+        if self.action in ['create', 'update', 'partial_update']:
+            return CollectionCreateSerializer
+        return CollectionSerializer
+
+    def perform_create(self, serializer):
+        """Set the user when creating a collection."""
+        serializer.save(user=self.request.user)
+
+    def destroy(self, request, *args, **kwargs):
+        """Prevent deletion of default collection."""
+        instance = self.get_object()
+        if instance.is_default:
+            return Response(
+                {'detail': 'Cannot delete the default Favorites collection.'},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+        return super().destroy(request, *args, **kwargs)
+
+    @extend_schema(
+        description='List jokes saved in this collection.',
+        responses={200: SavedJokeSerializer(many=True)},
+    )
+    @action(detail=True, methods=['get'])
+    def jokes(self, request, pk=None):
+        """List jokes in this collection."""
+        collection = self.get_object()
+        saved_jokes = SavedJoke.objects.filter(
+            collection=collection
+        ).select_related('joke', 'collection')
+
+        page = self.paginate_queryset(saved_jokes)
+        if page is not None:
+            serializer = SavedJokeSerializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
+        serializer = SavedJokeSerializer(saved_jokes, many=True)
+        return Response(serializer.data)
+
+
+class SavedJokeViewSet(
+    mixins.CreateModelMixin,
+    mixins.DestroyModelMixin,
+    mixins.ListModelMixin,
+    viewsets.GenericViewSet,
+):
+    """
+    Save and unsave jokes for authenticated users.
+
+    Endpoints:
+    - GET /api/v1/saved-jokes/ - List user's saved jokes
+    - POST /api/v1/saved-jokes/ - Save a joke
+    - DELETE /api/v1/saved-jokes/{id}/ - Unsave a joke
+    - GET /api/v1/saved-jokes/search/?q=... - Search within saved jokes
+    """
+
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        """Return saved jokes for the current user with related data."""
+        return SavedJoke.objects.filter(
+            user=self.request.user
+        ).select_related('joke', 'collection')
+
+    def get_serializer_class(self):
+        """Return appropriate serializer based on action."""
+        if self.action == 'create':
+            return SavedJokeCreateSerializer
+        return SavedJokeSerializer
+
+    def perform_create(self, serializer):
+        """Set the user when saving a joke."""
+        serializer.save(user=self.request.user)
+
+    @extend_schema(
+        parameters=[
+            OpenApiParameter(
+                name='q',
+                type=str,
+                description='Search query for joke text',
+                required=False,
+            ),
+        ],
+        description='Search within user\'s saved jokes by joke text.',
+        responses={200: SavedJokeSerializer(many=True)},
+    )
+    @action(detail=False, methods=['get'])
+    def search(self, request):
+        """Search within saved jokes by joke text."""
+        query = request.query_params.get('q', '').strip()
+
+        if not query:
+            return Response(
+                {'detail': 'Search query "q" is required.'},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        # Get joke IDs matching the search
+        matching_joke_ids = Joke.objects.search(query_text=query).values_list('id', flat=True)
+
+        # Filter saved jokes to those matching
+        saved_jokes = self.get_queryset().filter(joke_id__in=matching_joke_ids)
+
+        page = self.paginate_queryset(saved_jokes)
+        if page is not None:
+            serializer = SavedJokeSerializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
+        serializer = SavedJokeSerializer(saved_jokes, many=True)
+        return Response(serializer.data)
