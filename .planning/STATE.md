@@ -5,7 +5,7 @@
 **Project:** Jokes For
 **Milestone:** 1 - MVP Launch
 **Phase:** 06 - Authentication (IN PROGRESS)
-**Status:** Phase 06-01 complete, auth packages installed and configured
+**Status:** Phase 06-02 complete, auth endpoints configured, migrations applied
 
 ---
 
@@ -36,12 +36,13 @@ Jokes For is a global humor discovery platform - a search engine for jokes. User
 - [x] **05-02**: API viewsets and routing (JokeViewSet, lookup viewsets, /api/v1/, /api/docs/)
 - [x] **Phase 05: API Core COMPLETE**
 - [x] **06-01**: Authentication setup (dj-rest-auth, simplejwt, allauth, JWT settings)
+- [x] **06-02**: Auth endpoints and migrations (URL routing, GoogleLogin view, database setup)
 
 ### Current Phase
-**Phase 06: Authentication** - IN PROGRESS (1/? plans done)
+**Phase 06: Authentication** - IN PROGRESS (2/? plans done)
 
 ### Upcoming
-1. Continue Phase 06: Auth endpoints and migrations
+1. Complete Phase 06: Any remaining auth tasks
 2. Phase 07: User Preferences
 3. Phase 08: Collections
 
