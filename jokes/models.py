@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.contrib.postgres.indexes import GinIndex
 from django.contrib.postgres.search import SearchVectorField
+from django.core.files.base import ContentFile
 from django.db import models
 import pgtrigger
 
@@ -109,6 +110,16 @@ class Joke(models.Model):
     # Search
     search_vector = SearchVectorField(null=True, blank=True)
 
+    # Share card
+    share_image = models.ImageField(
+        upload_to='share-cards/',
+        blank=True,
+        help_text='Auto-generated share card image for social media'
+    )
+
+    # Track original text for change detection
+    _original_text = None
+
     # Timestamps
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -118,6 +129,44 @@ class Joke(models.Model):
         indexes = [
             GinIndex(fields=['search_vector'], name='joke_search_vector_idx'),
         ]
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self._original_text = self.text if self.pk else None
+
+    def save(self, *args, **kwargs):
+        # Check if we need to regenerate share image
+        regenerate = False
+        if self.pk:
+            # Existing joke - check if text changed
+            if self._original_text != self.text:
+                regenerate = True
+        else:
+            # New joke - always generate
+            regenerate = True
+
+        # Generate share image if needed (after first save to ensure pk exists)
+        if not regenerate and not self.share_image:
+            regenerate = True
+
+        # Save first to ensure pk exists
+        super().save(*args, **kwargs)
+
+        # Generate share image after save
+        if regenerate:
+            self._generate_share_image()
+            # Save again with the image (avoid recursion by using update)
+            Joke.objects.filter(pk=self.pk).update(share_image=self.share_image.name)
+
+        self._original_text = self.text
+
+    def _generate_share_image(self):
+        """Generate themed share card PNG."""
+        from .share_cards import generate_share_card_png
+
+        png_buffer = generate_share_card_png(self)
+        filename = f'joke-{self.pk}.png'
+        self.share_image.save(filename, ContentFile(png_buffer.read()), save=False)
 
     def __str__(self):
         return self.text[:50] + ('...' if len(self.text) > 50 else '')
