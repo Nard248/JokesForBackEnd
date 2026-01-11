@@ -4,8 +4,8 @@
 
 **Project:** Jokes For
 **Milestone:** 1 - MVP Launch
-**Phase:** 07 - User Preferences (COMPLETE)
-**Status:** Phase 07 complete (2/2 plans), UserPreference model + API endpoints
+**Phase:** 08 - Collections (IN PROGRESS)
+**Status:** Plan 08-01 complete (1/2 plans), Collection and SavedJoke models
 
 ---
 
@@ -42,12 +42,13 @@ Jokes For is a global humor discovery platform - a search engine for jokes. User
 - [x] **07-01**: UserPreference model (model, signal, admin)
 - [x] **07-02**: Preference API endpoints (serializers, ViewSet, routes)
 - [x] **Phase 07: User Preferences COMPLETE**
+- [x] **08-01**: Collection and SavedJoke models (models, migration, signals, admin)
 
 ### Current Phase
-**Phase 07: User Preferences** - COMPLETE (2/2 plans)
+**Phase 08: Collections** - IN PROGRESS (1/2 plans)
 
 ### Upcoming
-1. Phase 08: Collections
+1. **08-02**: Collections API endpoints (serializers, ViewSet, routes)
 2. Phase 09: Daily Joke
 3. Phase 10: Sharing
 
@@ -85,6 +86,9 @@ None currently.
 | 2026-01-11 | post_save signal for UserPreference auto-create | Ensures every user has preferences |
 | 2026-01-11 | Separate read/write serializers for preferences | Nested for display, PK fields for updates |
 | 2026-01-11 | GenericViewSet for preferences API | Custom actions only, no standard CRUD |
+| 2026-01-11 | CASCADE on_delete for user-owned data | User owns collections/saved jokes, delete with user |
+| 2026-01-11 | Separate signal for Favorites auto-create | Clean separation, follows UserPreference pattern |
+| 2026-01-11 | raw_id_fields for joke FK in admin | Performance with many jokes |
 
 ---
 
@@ -95,6 +99,14 @@ None tracked yet.
 ---
 
 ## Session Notes
+
+**2026-01-11 (night):**
+- Executed 08-01-PLAN.md (Collection and SavedJoke Models)
+- Created Collection model with user FK, name, is_default flag, timestamps
+- Created SavedJoke model with user/joke/collection FKs, note, timestamp
+- Added create_default_collection signal for auto-creating "Favorites" collection
+- Configured admin with list_display, list_filter, search_fields, raw_id_fields
+- **Plan 08-01 COMPLETE** (1/2 plans for Phase 08)
 
 **2026-01-11 (late evening):**
 - Executed 07-02-PLAN.md (Preference API Endpoints)
@@ -173,7 +185,7 @@ None tracked yet.
 
 ## Next Actions
 
-1. Plan Phase 08: Collections
+1. Execute 08-02-PLAN.md (Collections API endpoints)
 2. Then: Phase 09 - Daily Joke
 3. Then: Phase 10 - Sharing
 
