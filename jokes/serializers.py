@@ -17,6 +17,7 @@ from .models import (
     CultureTag,
     Source,
     Joke,
+    UserPreference,
 )
 
 
@@ -158,3 +159,98 @@ class JokeListSerializer(serializers.ModelSerializer):
         if len(obj.text) > 100:
             return obj.text[:100] + '...'
         return obj.text
+
+
+# =============================================================================
+# UserPreference Serializers
+# =============================================================================
+
+class UserPreferenceSerializer(serializers.ModelSerializer):
+    """
+    Read-only serializer for user preferences with nested related models.
+
+    Use for GET requests to display full preference details.
+    """
+
+    # Nested serializers for related models (read_only)
+    preferred_tones = ToneSerializer(many=True, read_only=True)
+    preferred_contexts = ContextTagSerializer(many=True, read_only=True)
+    preferred_age_rating = AgeRatingSerializer(read_only=True)
+    preferred_language = LanguageSerializer(read_only=True)
+
+    class Meta:
+        model = UserPreference
+        fields = [
+            'id',
+            'preferred_tones',
+            'preferred_contexts',
+            'preferred_age_rating',
+            'preferred_language',
+            'notification_enabled',
+            'notification_time',
+            'onboarding_completed',
+            'created_at',
+            'updated_at',
+        ]
+        read_only_fields = fields
+
+
+class UserPreferenceUpdateSerializer(serializers.ModelSerializer):
+    """
+    Write serializer for updating user preferences.
+
+    Use for PATCH requests to update preference settings.
+    Accepts primary keys for FK/M2M fields.
+    """
+
+    # PrimaryKeyRelatedField for FK/M2M (accept IDs for write)
+    preferred_tones = serializers.PrimaryKeyRelatedField(
+        queryset=Tone.objects.all(),
+        many=True,
+        required=False,
+    )
+    preferred_contexts = serializers.PrimaryKeyRelatedField(
+        queryset=ContextTag.objects.all(),
+        many=True,
+        required=False,
+    )
+    preferred_age_rating = serializers.PrimaryKeyRelatedField(
+        queryset=AgeRating.objects.all(),
+        required=False,
+        allow_null=True,
+    )
+    preferred_language = serializers.PrimaryKeyRelatedField(
+        queryset=Language.objects.all(),
+        required=False,
+        allow_null=True,
+    )
+
+    class Meta:
+        model = UserPreference
+        fields = [
+            'preferred_tones',
+            'preferred_contexts',
+            'preferred_age_rating',
+            'preferred_language',
+            'notification_enabled',
+            'notification_time',
+            'onboarding_completed',
+        ]
+
+    def validate(self, data):
+        """Validate notification_time is required when notification_enabled is True."""
+        notification_enabled = data.get(
+            'notification_enabled',
+            getattr(self.instance, 'notification_enabled', False) if self.instance else False
+        )
+        notification_time = data.get(
+            'notification_time',
+            getattr(self.instance, 'notification_time', None) if self.instance else None
+        )
+
+        if notification_enabled and not notification_time:
+            raise serializers.ValidationError({
+                'notification_time': 'Notification time is required when notifications are enabled.'
+            })
+
+        return data
