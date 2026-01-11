@@ -221,3 +221,30 @@ class SavedJoke(models.Model):
 
     def __str__(self):
         return f"{self.user.email} saved joke {self.joke_id}"
+
+
+class DailyJoke(models.Model):
+    """Track daily joke delivered to each user"""
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='daily_jokes'
+    )
+    joke = models.ForeignKey(
+        'Joke',
+        on_delete=models.CASCADE,
+        related_name='daily_deliveries'
+    )
+    date = models.DateField()
+    delivered_at = models.DateTimeField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = [['user', 'date']]
+        ordering = ['-date']
+        indexes = [
+            models.Index(fields=['user', 'date']),
+        ]
+
+    def __str__(self):
+        return f"Daily joke for {self.user.email} on {self.date}"
