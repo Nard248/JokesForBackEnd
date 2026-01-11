@@ -9,3 +9,15 @@ def create_user_preference(sender, instance, created, **kwargs):
     if created:
         from .models import UserPreference
         UserPreference.objects.create(user=instance)
+
+
+@receiver(post_save, sender=settings.AUTH_USER_MODEL)
+def create_default_collection(sender, instance, created, **kwargs):
+    """Auto-create default 'Favorites' collection when a new User is created."""
+    if created:
+        from .models import Collection
+        Collection.objects.create(
+            user=instance,
+            name='Favorites',
+            is_default=True
+        )
