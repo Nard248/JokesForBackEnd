@@ -4,11 +4,16 @@ API views for the Jokes API.
 Provides viewsets for all models:
 - JokeViewSet: Search, list, retrieve, and random joke endpoints
 - Lookup viewsets: Format, AgeRating, Tone, ContextTag, Language, CultureTag
+- GoogleLogin: Google OAuth2 authentication endpoint
 """
 from rest_framework import status, viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from drf_spectacular.utils import extend_schema, OpenApiParameter
+from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
+from allauth.socialaccount.providers.oauth2.client import OAuth2Client
+from dj_rest_auth.registration.views import SocialLoginView
+from django.conf import settings
 
 from .models import (
     Joke,
@@ -218,3 +223,31 @@ class CultureTagViewSet(viewsets.ReadOnlyModelViewSet):
     """Viewset for cultural context tags (American, British, universal)."""
     queryset = CultureTag.objects.all().order_by('name')
     serializer_class = CultureTagSerializer
+
+
+# =============================================================================
+# OAuth Authentication Views
+# =============================================================================
+
+class GoogleLogin(SocialLoginView):
+    """
+    Google OAuth2 login endpoint.
+
+    Accepts authorization code from frontend OAuth flow and returns JWT tokens.
+    Frontend should redirect user to Google OAuth, receive code, then POST it here.
+
+    Request body:
+    {
+        "code": "authorization_code_from_google"
+    }
+
+    Response:
+    {
+        "access": "jwt_access_token",  # Also set as HttpOnly cookie
+        "refresh": "jwt_refresh_token",  # Also set as HttpOnly cookie
+        "user": { ... }
+    }
+    """
+    adapter_class = GoogleOAuth2Adapter
+    callback_url = settings.GOOGLE_OAUTH_CALLBACK_URL
+    client_class = OAuth2Client
