@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Joke, Format, AgeRating, Tone, ContextTag, Language, CultureTag, Source
+from .models import Joke, Format, AgeRating, Tone, ContextTag, Language, CultureTag, Source, UserPreference
 
 
 @admin.register(Format)
@@ -59,3 +59,12 @@ class JokeAdmin(admin.ModelAdmin):
         ('Tags', {'fields': ['tones', 'context_tags', 'culture_tags']}),
         ('Metadata', {'fields': ['created_at', 'updated_at'], 'classes': ['collapse']}),
     ]
+
+
+@admin.register(UserPreference)
+class UserPreferenceAdmin(admin.ModelAdmin):
+    list_display = ['user', 'preferred_age_rating', 'notification_enabled', 'onboarding_completed', 'created_at']
+    list_filter = ['notification_enabled', 'onboarding_completed', 'preferred_age_rating']
+    search_fields = ['user__email']
+    filter_horizontal = ['preferred_tones', 'preferred_contexts']
+    readonly_fields = ['created_at', 'updated_at']
