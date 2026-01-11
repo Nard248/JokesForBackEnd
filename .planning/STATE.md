@@ -4,8 +4,8 @@
 
 **Project:** Jokes For
 **Milestone:** 1 - MVP Launch
-**Phase:** 05 - API Core (COMPLETE)
-**Status:** Phase 05 complete, all API endpoints working
+**Phase:** 06 - Authentication (IN PROGRESS)
+**Status:** Phase 06-01 complete, auth packages installed and configured
 
 ---
 
@@ -35,12 +35,13 @@ Jokes For is a global humor discovery platform - a search engine for jokes. User
 - [x] **05-01**: DRF setup (djangorestframework, drf-spectacular, django-cors-headers, serializers)
 - [x] **05-02**: API viewsets and routing (JokeViewSet, lookup viewsets, /api/v1/, /api/docs/)
 - [x] **Phase 05: API Core COMPLETE**
+- [x] **06-01**: Authentication setup (dj-rest-auth, simplejwt, allauth, JWT settings)
 
 ### Current Phase
-**Phase 05: API Core** - COMPLETE (2/2 plans done)
+**Phase 06: Authentication** - IN PROGRESS (1/? plans done)
 
 ### Upcoming
-1. Phase 06: Authentication - JWT with Google OAuth
+1. Continue Phase 06: Auth endpoints and migrations
 2. Phase 07: User Preferences
 3. Phase 08: Collections
 
@@ -69,6 +70,9 @@ None currently.
 | 2026-01-11 | URL path versioning (/v1/) | Explicit versioning, easy to manage |
 | 2026-01-11 | Throttle 100/hr anon, 1000/hr user | Conservative start, adjustable |
 | 2026-01-11 | joke_format param instead of format | Avoid DRF content negotiation conflict |
+| 2026-01-11 | HttpOnly cookies for JWT storage | XSS protection vs localStorage |
+| 2026-01-11 | 15min access, 1day refresh tokens | Short-lived access with rotation limits breach impact |
+| 2026-01-11 | Email-only login (no username) | Simpler UX, matches PROJECT.md requirement |
 
 ---
 
@@ -79,6 +83,14 @@ None tracked yet.
 ---
 
 ## Session Notes
+
+**2026-01-11 (afternoon):**
+- Executed 06-01-PLAN.md (Authentication Setup)
+- Installed dj-rest-auth 7.0.2, djangorestframework-simplejwt 5.5.1, django-allauth 65.13.1
+- Configured JWT auth with HttpOnly cookies, refresh rotation, token blacklisting
+- Set up email-based login with Google OAuth provider
+- Updated allauth settings to non-deprecated format (ACCOUNT_LOGIN_METHODS, ACCOUNT_SIGNUP_FIELDS)
+- **Phase 06: Plan 01 COMPLETE**
 
 **2026-01-11 (late evening):**
 - Executed 05-02-PLAN.md (API Viewsets and Routing)
@@ -127,8 +139,8 @@ None tracked yet.
 
 ## Next Actions
 
-1. Plan Phase 06: Authentication (JWT with Google OAuth)
-2. Execute Phase 06
+1. Execute Phase 06-02: Auth endpoints and migrations
+2. Complete Phase 06
 3. Then: Phase 07 - User Preferences
 
 ---
