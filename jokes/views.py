@@ -18,6 +18,8 @@ from django.conf import settings
 
 from django.utils import timezone
 
+from django.db.models import Sum
+
 from .models import (
     Joke,
     Format,
@@ -30,6 +32,7 @@ from .models import (
     Collection,
     SavedJoke,
     DailyJoke,
+    JokeRating,
 )
 from .recommendations import get_personalized_joke, get_recently_shown_joke_ids
 from .serializers import (
@@ -48,6 +51,7 @@ from .serializers import (
     SavedJokeSerializer,
     SavedJokeCreateSerializer,
     DailyJokeSerializer,
+    JokeRatingSerializer,
 )
 
 
@@ -198,6 +202,56 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
             )
         serializer = JokeSerializer(joke)
         return Response(serializer.data)
+
+    @extend_schema(
+        description='Rate a joke with thumbs up (1) or thumbs down (-1). Updates existing rating if present.',
+        request={'application/json': {'type': 'object', 'properties': {'rating': {'type': 'integer', 'enum': [1, -1]}}}},
+        responses={200: {'type': 'object', 'properties': {
+            'rating': {'type': 'integer'},
+            'created': {'type': 'boolean'},
+            'joke_score': {'type': 'integer'}
+        }}},
+    )
+    @action(detail=True, methods=['post'], permission_classes=[IsAuthenticated])
+    def rate(self, request, pk=None):
+        """Rate a joke: POST /api/v1/jokes/{id}/rate/ with {"rating": 1} or {"rating": -1}"""
+        joke = self.get_object()
+        rating_value = request.data.get('rating')
+
+        if rating_value not in [1, -1]:
+            return Response(
+                {'error': 'Rating must be 1 (like) or -1 (dislike)'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        rating, created = JokeRating.objects.update_or_create(
+            user=request.user,
+            joke=joke,
+            defaults={'rating': rating_value}
+        )
+
+        # Calculate aggregate score
+        score = joke.ratings.aggregate(score=Sum('rating'))['score'] or 0
+
+        return Response({
+            'rating': rating.rating,
+            'created': created,
+            'joke_score': score
+        })
+
+    @extend_schema(
+        description='Get current user\'s rating for this joke, or null if not rated.',
+        responses={200: JokeRatingSerializer},
+    )
+    @action(detail=True, methods=['get'], permission_classes=[IsAuthenticated], url_path='my-rating')
+    def get_rating(self, request, pk=None):
+        """Get user's rating for a joke: GET /api/v1/jokes/{id}/my-rating/"""
+        joke = self.get_object()
+        try:
+            rating = JokeRating.objects.get(user=request.user, joke=joke)
+            return Response(JokeRatingSerializer(rating).data)
+        except JokeRating.DoesNotExist:
+            return Response({'rating': None})
 
 
 # =============================================================================
