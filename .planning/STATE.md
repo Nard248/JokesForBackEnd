@@ -4,8 +4,8 @@
 
 **Project:** Jokes For
 **Milestone:** 1 - MVP Launch
-**Phase:** 08 - Collections (COMPLETE)
-**Status:** Phase complete (2/2 plans), ready for Phase 09
+**Phase:** 09 - Daily Joke (IN PROGRESS)
+**Status:** Plan 1 of 3 complete
 
 ---
 
@@ -38,11 +38,12 @@ Jokes For is a global humor discovery platform - a search engine for jokes. User
 - [x] **08-01**: Collection and SavedJoke models (models, migration, signals, admin)
 - [x] **08-02**: Collections API endpoints (serializers, ViewSets, routes)
 - [x] **Phase 08: Collections COMPLETE**
+- [x] **09-01**: Celery infrastructure setup (celery, redis, django-celery-beat)
 
 ### Upcoming
-1. Phase 09: Daily Joke
-2. Phase 10: Sharing
-3. Phase 11: Frontend Foundation
+1. 09-02: DailyJoke model and selection algorithm
+2. 09-03: Daily joke API endpoint and scheduling
+3. Phase 10: Sharing
 
 ---
 
@@ -95,6 +96,14 @@ None tracked yet.
 
 ## Session Notes
 
+**2026-01-11 (night, later):**
+- Executed 09-01-PLAN.md (Celery Infrastructure Setup)
+- Installed celery 5.6.2, redis 7.1.0, django-celery-beat 2.8.1, django-celery-results 2.6.0
+- Created JokesForProject/celery.py with Django integration
+- Configured Redis broker and result backend in settings.py
+- Applied django_celery_beat and django_celery_results migrations
+- **Phase 09: Daily Joke IN PROGRESS** (1/3 plans)
+
 **2026-01-11 (night):**
 - Executed 08-02-PLAN.md (Collections API Endpoints)
 - Created CollectionSerializer, CollectionCreateSerializer, SavedJokeSerializer, SavedJokeCreateSerializer
@@ -135,9 +144,9 @@ None tracked yet.
 
 ## Next Actions
 
-1. Plan Phase 09: Daily Joke
-2. Then: Phase 10 - Sharing
-3. Then: Phase 11 - Frontend Foundation
+1. Execute 09-02-PLAN.md (DailyJoke model and selection algorithm)
+2. Execute 09-03-PLAN.md (Daily joke API and scheduling)
+3. Then: Phase 10 - Sharing
 
 ---
 
