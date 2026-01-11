@@ -21,6 +21,7 @@ from .models import (
     Collection,
     SavedJoke,
     DailyJoke,
+    JokeRating,
 )
 
 
@@ -410,3 +411,20 @@ class DailyJokeSerializer(serializers.ModelSerializer):
         model = DailyJoke
         fields = ['id', 'joke', 'date', 'delivered_at', 'created_at']
         read_only_fields = ['id', 'joke', 'date', 'delivered_at', 'created_at']
+
+
+# =============================================================================
+# JokeRating Serializers
+# =============================================================================
+
+class JokeRatingSerializer(serializers.ModelSerializer):
+    """
+    Serializer for joke ratings.
+
+    Use for displaying user's rating for a joke.
+    """
+
+    class Meta:
+        model = JokeRating
+        fields = ['id', 'rating', 'created_at', 'updated_at']
+        read_only_fields = ['id', 'created_at', 'updated_at']
