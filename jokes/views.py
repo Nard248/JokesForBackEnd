@@ -257,6 +257,55 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
         except JokeRating.DoesNotExist:
             return Response({'rating': None})
 
+    def get_permissions(self):
+        """Allow unauthenticated access to share endpoint."""
+        if self.action == 'share':
+            return [AllowAny()]
+        return super().get_permissions()
+
+    @extend_schema(
+        description='Record a share event for analytics. Platform: copy, twitter, facebook, whatsapp, other.',
+        request={'application/json': {'type': 'object', 'properties': {
+            'platform': {'type': 'string', 'enum': ['copy', 'twitter', 'facebook', 'whatsapp', 'other']}
+        }}},
+        responses={201: {'type': 'object', 'properties': {
+            'status': {'type': 'string'},
+            'share_url': {'type': 'string'},
+            'joke_id': {'type': 'integer'}
+        }}},
+    )
+    @action(detail=True, methods=['post'])
+    def share(self, request, pk=None):
+        """
+        Record share event: POST /api/v1/jokes/{id}/share/ with {"platform": "twitter"}
+
+        Returns the shareable URL for the joke.
+        Authentication optional - tracks user if authenticated.
+        """
+        joke = self.get_object()
+        platform = request.data.get('platform', 'other')
+
+        # Validate platform
+        valid_platforms = [choice[0] for choice in ShareEvent.PLATFORM_CHOICES]
+        if platform not in valid_platforms:
+            platform = 'other'
+
+        # Create share event
+        ShareEvent.objects.create(
+            joke=joke,
+            user=request.user if request.user.is_authenticated else None,
+            platform=platform
+        )
+
+        # Build share URL
+        share_url = request.build_absolute_uri(f'/jokes/{joke.pk}/share/')
+
+        return Response({
+            'status': 'recorded',
+            'share_url': share_url,
+            'joke_id': joke.pk,
+        }, status=status.HTTP_201_CREATED)
+
 
 # =============================================================================
 # Lookup Model Viewsets
