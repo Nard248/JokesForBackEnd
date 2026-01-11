@@ -170,3 +170,54 @@ class UserPreference(models.Model):
 
     def __str__(self):
         return f"Preferences for {self.user.email}"
+
+
+class Collection(models.Model):
+    """User's personal collection of jokes (folder/playlist)"""
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='collections'
+    )
+    name = models.CharField(max_length=100)
+    description = models.TextField(blank=True)
+    is_default = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['-is_default', 'name']
+        unique_together = [['user', 'name']]
+
+    def __str__(self):
+        return f"{self.name} ({self.user.email})"
+
+
+class SavedJoke(models.Model):
+    """A joke saved by a user, optionally in a collection"""
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='saved_jokes'
+    )
+    joke = models.ForeignKey(
+        Joke,
+        on_delete=models.CASCADE,
+        related_name='saved_by'
+    )
+    collection = models.ForeignKey(
+        Collection,
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name='saved_jokes'
+    )
+    note = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-created_at']
+        unique_together = [['user', 'joke', 'collection']]
+
+    def __str__(self):
+        return f"{self.user.email} saved joke {self.joke_id}"
