@@ -5,7 +5,7 @@
 **Project:** Jokes For
 **Milestone:** 1 - MVP Launch
 **Phase:** 11 - Frontend Foundation (In Progress)
-**Status:** Plan 02 of 04 complete
+**Status:** Plan 03 of 04 complete
 
 ---
 
@@ -48,9 +48,10 @@ Jokes For is a global humor discovery platform - a search engine for jokes. User
 - [x] **Phase 10: Sharing COMPLETE**
 - [x] **11-01**: React + Vite + TypeScript + TailwindCSS v4 + shadcn/ui project setup
 - [x] **11-02**: React Router + TanStack Query + Zustand state management setup
+- [x] **11-03**: Axios HTTP client with JWT interceptors and auth store
 
 ### Upcoming
-1. 11-03, 11-04: Remaining Frontend Foundation plans
+1. 11-04: Auth Context and Protected Routes
 2. Phase 12: Frontend Features
 
 ---
@@ -107,6 +108,9 @@ None currently.
 | 2026-01-11 | Two-store pattern (TanStack Query + Zustand) | Server state vs client state separation |
 | 2026-01-11 | TanStack Query 5-min stale time | Optimal balance between freshness and performance |
 | 2026-01-11 | Provider composition pattern | Clean App.tsx with single Providers wrapper |
+| 2026-01-11 | Access token in memory (Zustand) | XSS protection vs localStorage |
+| 2026-01-11 | Raw axios for refresh endpoint | Prevents infinite interceptor loop |
+| 2026-01-11 | Subscriber queue for concurrent 401s | One refresh call, queued retries |
 
 ---
 
@@ -119,6 +123,17 @@ None tracked yet.
 ## Session Notes
 
 **2026-01-11 (night, latest):**
+- Executed 11-03-PLAN.md (API Client Configuration)
+- Installed Axios and created HTTP client with JWT interceptors
+- Implemented refresh token queue pattern for concurrent 401 handling
+- Created typed API helpers for auth, jokes, daily-joke, collections endpoints
+- Built Zustand auth store with user/token state and actions
+- Created TanStack Query mutations for login/register/logout
+- Added AuthProvider that checks session on mount via token refresh
+- Updated Layout to display auth state with login/logout controls
+- **11-03 complete** (3/4 plans for Phase 11)
+
+**2026-01-11 (night):**
 - Executed 11-02-PLAN.md (Routing and State Management)
 - Installed React Router 7.x and configured nested routes with layout wrapper
 - Created stub pages for all routes (Home, Daily, Collections, Settings, Login, Register, 404)
@@ -225,9 +240,8 @@ None tracked yet.
 
 ## Next Actions
 
-1. 11-03 - API Client Configuration
-2. 11-04 - Auth Context and Protected Routes
-3. Phase 12 - Frontend Features
+1. 11-04 - Auth Context and Protected Routes
+2. Phase 12 - Frontend Features
 
 ---
 
