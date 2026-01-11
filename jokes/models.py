@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.contrib.postgres.indexes import GinIndex
 from django.contrib.postgres.search import SearchVectorField
 from django.db import models
@@ -120,3 +121,52 @@ class Joke(models.Model):
 
     def __str__(self):
         return self.text[:50] + ('...' if len(self.text) > 50 else '')
+
+
+class UserPreference(models.Model):
+    """User preferences for personalized joke recommendations and notifications"""
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='preference'
+    )
+    preferred_tones = models.ManyToManyField(
+        Tone,
+        blank=True,
+        related_name='preferred_by'
+    )
+    preferred_contexts = models.ManyToManyField(
+        ContextTag,
+        blank=True,
+        related_name='preferred_by'
+    )
+    preferred_age_rating = models.ForeignKey(
+        AgeRating,
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='preferred_by'
+    )
+    preferred_language = models.ForeignKey(
+        Language,
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='preferred_by'
+    )
+    notification_enabled = models.BooleanField(default=False)
+    notification_time = models.TimeField(
+        null=True,
+        blank=True,
+        help_text="Time for daily joke notification"
+    )
+    onboarding_completed = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'User Preference'
+        verbose_name_plural = 'User Preferences'
+
+    def __str__(self):
+        return f"Preferences for {self.user.email}"
