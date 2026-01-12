@@ -4,8 +4,9 @@
 
 **Project:** Jokes For
 **Milestone:** 1 - MVP Launch
-**Phase:** 11 - Frontend Foundation (COMPLETE)
-**Status:** Ready for Phase 12
+**Phase:** 12 - Frontend Features (In Progress)
+**Plan:** 1 of 8 complete
+**Status:** Ready for 12-02
 
 ---
 
@@ -44,8 +45,12 @@ Jokes For is a global humor discovery platform - a search engine for jokes. User
   - 11-03: Axios HTTP client with JWT interceptors
   - 11-04: Shell layout (Header/Footer) + Playwright E2E
 
+### In Progress
+- **Phase 12: Frontend Features** (1/8 plans)
+  - 12-01: Search feature implementation with TanStack Query hooks ✓
+
 ### Upcoming
-1. Phase 12: Frontend Features (API integration, search UI, collections UI, etc.)
+2. 12-02 to 12-08: Remaining frontend features (daily joke, collections, auth UI, settings, etc.)
 
 ---
 
@@ -117,6 +122,16 @@ None tracked yet.
 ---
 
 ## Session Notes
+
+**2026-01-12 (morning, later):**
+- Executed 12-01-PLAN.md (Search Feature Implementation)
+- Created jokes feature module with TanStack Query hooks (useJokeSearch, useRandomJoke)
+- Built JokeCard component with badges, tone tags, placeholder action buttons
+- Built SearchFilters component with debounced search, category buttons, age dropdown
+- Created SearchPage with loading/error/empty states and pagination
+- Moved HomePage to src/pages/, connected search form to /search route
+- Established URL-based filter state pattern for bookmarkable searches
+- **12-01 complete** (1/8 plans for Phase 12)
 
 **2026-01-12 (morning):**
 - Executed 11-04-PLAN.md (Shell Layout and E2E Testing)
@@ -248,7 +263,7 @@ None tracked yet.
 
 ## Next Actions
 
-1. Plan Phase 12 - Frontend Features (with focus on API integration + public/protected distinction)
+1. Execute 12-02-PLAN.md (next plan in Phase 12)
 
 ---
 

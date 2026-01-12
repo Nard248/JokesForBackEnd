@@ -40,7 +40,7 @@
 | 09 | Daily Joke | Likely | Complete (3/3) | 07 |
 | 10 | Sharing | — | Complete (3/3) | 05 |
 | 11 | Frontend Foundation | Likely | Complete (4/4) | 05 |
-| 12 | Frontend Features | — | pending | 11, 04, 06, 07, 08, 09, 10 |
+| 12 | Frontend Features | — | In progress (1/8) | 11, 04, 06, 07, 08, 09, 10 |
 
 ---
 
