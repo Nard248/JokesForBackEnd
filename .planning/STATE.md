@@ -5,8 +5,8 @@
 **Project:** Jokes For
 **Milestone:** 1 - MVP Launch
 **Phase:** 12 - Frontend Features (In Progress)
-**Plan:** 2 of 8 complete
-**Status:** Ready for 12-03
+**Plan:** 3 of 8 complete
+**Status:** Ready for 12-04
 
 ---
 
@@ -46,12 +46,13 @@ Jokes For is a global humor discovery platform - a search engine for jokes. User
   - 11-04: Shell layout (Header/Footer) + Playwright E2E
 
 ### In Progress
-- **Phase 12: Frontend Features** (2/8 plans)
+- **Phase 12: Frontend Features** (3/8 plans)
   - 12-01: Search feature implementation with TanStack Query hooks ✓
   - 12-02: Auth UI (login/register pages) ✓
+  - 12-03: Daily joke page with history ✓
 
 ### Upcoming
-- 12-03 to 12-08: Remaining frontend features (daily joke, collections, settings, etc.)
+- 12-04 to 12-08: Remaining frontend features (collections, settings, etc.)
 
 ---
 
@@ -115,6 +116,8 @@ None currently.
 | 2026-01-12 | Ref guard for AuthProvider | Handles React StrictMode double-mount |
 | 2026-01-12 | Use response.data.user directly | Avoids extra getUser() API call after login/register |
 | 2026-01-12 | CORS explicit origins for credentials | Wildcard not allowed with withCredentials=true |
+| 2026-01-12 | 1-hour staleTime for daily joke | Joke changes daily, not per request |
+| 2026-01-12 | Punchline reveal button for two-part jokes | Better UX than auto-reveal |
 
 ---
 
@@ -127,6 +130,14 @@ None tracked yet.
 ## Session Notes
 
 **2026-01-12 (morning, latest):**
+- Executed 12-03-PLAN.md (Daily Joke Feature)
+- Created daily-joke TanStack Query hooks (useTodaysJoke, useDailyJokeHistory)
+- Built DailyJokeCard hero component with gradient border, punchline reveal, action buttons
+- Built DailyJokePage with today's joke display and history grid
+- Wired /daily route to use new component
+- **12-03 complete** (3/8 plans for Phase 12)
+
+**2026-01-12 (morning):**
 - Executed 12-02-PLAN.md (Auth UI)
 - Created LoginPage with email/password form, error handling, returnTo redirect
 - Created RegisterPage with validation, password confirmation, show/hide toggle
@@ -276,7 +287,7 @@ None tracked yet.
 
 ## Next Actions
 
-1. Execute 12-03-PLAN.md (Daily Joke page)
+1. Execute 12-04-PLAN.md (Collections UI)
 
 ---
 
