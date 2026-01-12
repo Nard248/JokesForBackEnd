@@ -198,7 +198,12 @@ SPECTACULAR_SETTINGS = {
 # django-cors-headers settings
 # https://github.com/adamchainz/django-cors-headers
 
-CORS_ALLOW_ALL_ORIGINS = True  # Dev only - restrict in production
+# For credentials mode (cookies), must specify exact origins - not wildcard
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:5173',  # Vite dev server
+    'http://127.0.0.1:5173',
+]
+CORS_ALLOW_CREDENTIALS = True  # Required for httpOnly cookie auth
 
 
 # dj-rest-auth settings
