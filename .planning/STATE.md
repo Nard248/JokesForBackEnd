@@ -5,8 +5,8 @@
 **Project:** Jokes For
 **Milestone:** 1 - MVP Launch
 **Phase:** 12 - Frontend Features (In Progress)
-**Plan:** 1 of 8 complete
-**Status:** Ready for 12-02
+**Plan:** 2 of 8 complete
+**Status:** Ready for 12-03
 
 ---
 
@@ -46,11 +46,12 @@ Jokes For is a global humor discovery platform - a search engine for jokes. User
   - 11-04: Shell layout (Header/Footer) + Playwright E2E
 
 ### In Progress
-- **Phase 12: Frontend Features** (1/8 plans)
+- **Phase 12: Frontend Features** (2/8 plans)
   - 12-01: Search feature implementation with TanStack Query hooks ✓
+  - 12-02: Auth UI (login/register pages) ✓
 
 ### Upcoming
-2. 12-02 to 12-08: Remaining frontend features (daily joke, collections, auth UI, settings, etc.)
+- 12-03 to 12-08: Remaining frontend features (daily joke, collections, settings, etc.)
 
 ---
 
@@ -112,6 +113,8 @@ None currently.
 | 2026-01-12 | lucide-react for icons | Consistent, tree-shakeable, replaces emojis |
 | 2026-01-12 | Pixel 5 for mobile E2E tests | Chromium-based, avoids WebKit install |
 | 2026-01-12 | Ref guard for AuthProvider | Handles React StrictMode double-mount |
+| 2026-01-12 | Use response.data.user directly | Avoids extra getUser() API call after login/register |
+| 2026-01-12 | CORS explicit origins for credentials | Wildcard not allowed with withCredentials=true |
 
 ---
 
@@ -122,6 +125,16 @@ None tracked yet.
 ---
 
 ## Session Notes
+
+**2026-01-12 (morning, latest):**
+- Executed 12-02-PLAN.md (Auth UI)
+- Created LoginPage with email/password form, error handling, returnTo redirect
+- Created RegisterPage with validation, password confirmation, show/hide toggle
+- Added shadcn Input component
+- Fixed CORS for credentials mode (explicit origins instead of wildcard)
+- Fixed token ordering bug (setAccessToken before getUser)
+- Optimized auth flow to use response user data directly
+- **12-02 complete** (2/8 plans for Phase 12)
 
 **2026-01-12 (morning, later):**
 - Executed 12-01-PLAN.md (Search Feature Implementation)
@@ -263,7 +276,7 @@ None tracked yet.
 
 ## Next Actions
 
-1. Execute 12-02-PLAN.md (next plan in Phase 12)
+1. Execute 12-03-PLAN.md (Daily Joke page)
 
 ---
 
