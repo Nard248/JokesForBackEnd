@@ -110,6 +110,12 @@ class JokeSerializer(serializers.ModelSerializer):
     context_tags = ContextTagSerializer(many=True, read_only=True)
     culture_tags = CultureTagSerializer(many=True, read_only=True)
 
+    # New design vocabulary aliases (P1 of Pivot Plan).
+    # `themes` mirrors `context_tags`; `categories` mirrors `tones`. Both old and
+    # new names ship in the response so the frontend can migrate at its own pace.
+    themes = ContextTagSerializer(source='context_tags', many=True, read_only=True)
+    categories = ToneSerializer(source='tones', many=True, read_only=True)
+
     # Share card URL
     share_image_url = serializers.SerializerMethodField()
 
@@ -126,6 +132,8 @@ class JokeSerializer(serializers.ModelSerializer):
             'source',
             'tones',
             'context_tags',
+            'themes',       # alias of context_tags
+            'categories',   # alias of tones
             'culture_tags',
             'share_image_url',
             'created_at',
@@ -164,6 +172,13 @@ class JokeListSerializer(serializers.ModelSerializer):
         many=True,
         read_only=True
     )
+    # New design vocabulary alias (P1 of Pivot Plan)
+    categories = serializers.SlugRelatedField(
+        source='tones',
+        slug_field='slug',
+        many=True,
+        read_only=True,
+    )
 
     # Share card URL
     share_image_url = serializers.SerializerMethodField()
@@ -176,6 +191,7 @@ class JokeListSerializer(serializers.ModelSerializer):
             'format',
             'age_rating',
             'tones',
+            'categories',   # alias of tones
             'share_image_url',
         ]
 
@@ -212,12 +228,18 @@ class UserPreferenceSerializer(serializers.ModelSerializer):
     preferred_age_rating = AgeRatingSerializer(read_only=True)
     preferred_language = LanguageSerializer(read_only=True)
 
+    # New design vocabulary aliases (P1 of Pivot Plan)
+    preferred_categories = ToneSerializer(source='preferred_tones', many=True, read_only=True)
+    preferred_themes = ContextTagSerializer(source='preferred_contexts', many=True, read_only=True)
+
     class Meta:
         model = UserPreference
         fields = [
             'id',
             'preferred_tones',
             'preferred_contexts',
+            'preferred_categories',  # alias of preferred_tones
+            'preferred_themes',      # alias of preferred_contexts
             'preferred_age_rating',
             'preferred_language',
             'notification_enabled',
@@ -248,6 +270,18 @@ class UserPreferenceUpdateSerializer(serializers.ModelSerializer):
         many=True,
         required=False,
     )
+    # New design vocabulary aliases — accepted on write, mapped to canonical
+    # field names in to_internal_value() below.
+    preferred_categories = serializers.PrimaryKeyRelatedField(
+        queryset=Tone.objects.all(),
+        many=True,
+        required=False,
+    )
+    preferred_themes = serializers.PrimaryKeyRelatedField(
+        queryset=ContextTag.objects.all(),
+        many=True,
+        required=False,
+    )
     preferred_age_rating = serializers.PrimaryKeyRelatedField(
         queryset=AgeRating.objects.all(),
         required=False,
@@ -264,12 +298,28 @@ class UserPreferenceUpdateSerializer(serializers.ModelSerializer):
         fields = [
             'preferred_tones',
             'preferred_contexts',
+            'preferred_categories',
+            'preferred_themes',
             'preferred_age_rating',
             'preferred_language',
             'notification_enabled',
             'notification_time',
             'onboarding_completed',
         ]
+
+    def to_internal_value(self, data):
+        """Map new vocabulary aliases to canonical field names.
+
+        If both old and new names are present in the input, the new name wins
+        (frontend has explicitly migrated). Old name still works for clients
+        that haven't migrated yet.
+        """
+        validated = super().to_internal_value(data)
+        if 'preferred_categories' in validated:
+            validated['preferred_tones'] = validated.pop('preferred_categories')
+        if 'preferred_themes' in validated:
+            validated['preferred_contexts'] = validated.pop('preferred_themes')
+        return validated
 
     def validate(self, data):
         """Validate notification_time is required when notification_enabled is True."""
@@ -518,6 +568,9 @@ class JokeSubmissionListSerializer(serializers.ModelSerializer):
     age_rating = serializers.SlugRelatedField(slug_field='slug', read_only=True)
     tones = serializers.SerializerMethodField()
     context_tags = serializers.SerializerMethodField()
+    # New design vocabulary aliases (P1 of Pivot Plan)
+    categories = serializers.SerializerMethodField()
+    themes = serializers.SerializerMethodField()
     last_edited_at = serializers.DateTimeField(source='updated_at', read_only=True)
     likes = serializers.SerializerMethodField()
 
@@ -525,15 +578,24 @@ class JokeSubmissionListSerializer(serializers.ModelSerializer):
         model = JokeSubmission
         fields = [
             'id', 'text', 'setup', 'punchline', 'format', 'status',
-            'tones', 'age_rating', 'context_tags', 'last_edited_at',
+            'tones', 'age_rating', 'context_tags',
+            'categories',  # alias of tones
+            'themes',      # alias of context_tags
+            'last_edited_at',
             'created_at', 'likes', 'rejection_reason',
         ]
 
-    def get_tones(self, obj):
+    def get_tones(self, obj) -> list[str]:
         return [t.name for t in obj.tones.all()]
 
-    def get_context_tags(self, obj):
+    def get_context_tags(self, obj) -> list[str]:
         return [t.slug for t in obj.context_tags.all()]
+
+    def get_categories(self, obj) -> list[str]:
+        return self.get_tones(obj)
+
+    def get_themes(self, obj) -> list[str]:
+        return self.get_context_tags(obj)
 
     def get_likes(self, obj):
         if obj.published_joke:
@@ -550,6 +612,14 @@ class JokeSubmissionCreateSerializer(serializers.ModelSerializer):
     context_tags = serializers.SlugRelatedField(
         slug_field='slug', queryset=ContextTag.objects.all(), many=True, required=False,
     )
+    # New design vocabulary aliases (P1 of Pivot Plan) — accepted on write,
+    # collapsed into tones/context_tags by to_internal_value().
+    categories = serializers.SlugRelatedField(
+        slug_field='slug', queryset=Tone.objects.all(), many=True, required=False,
+    )
+    themes = serializers.SlugRelatedField(
+        slug_field='slug', queryset=ContextTag.objects.all(), many=True, required=False,
+    )
     format = serializers.SlugRelatedField(
         slug_field='slug', queryset=Format.objects.all(),
     )
@@ -564,8 +634,18 @@ class JokeSubmissionCreateSerializer(serializers.ModelSerializer):
         model = JokeSubmission
         fields = [
             'format', 'setup', 'punchline', 'text', 'tones',
+            'categories', 'themes',
             'age_rating', 'context_tags', 'source', 'language',
         ]
+
+    def to_internal_value(self, data):
+        """Map new vocabulary aliases to canonical field names. New name wins."""
+        validated = super().to_internal_value(data)
+        if 'categories' in validated:
+            validated['tones'] = validated.pop('categories')
+        if 'themes' in validated:
+            validated['context_tags'] = validated.pop('themes')
+        return validated
 
     def validate(self, data):
         fmt = data.get('format')

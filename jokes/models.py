@@ -30,20 +30,28 @@ class AgeRating(models.Model):
 
 
 class Tone(models.Model):
-    """Humor tone: clean, dark, dad-jokes, puns, sarcasm"""
+    """Humor tone — exposed in the new design vocabulary as 'Category' (how it feels): wholesome, dark, dad-jokes, puns, sarcasm, etc."""
     name = models.CharField(max_length=50, unique=True)
     slug = models.SlugField(max_length=50, unique=True)
     description = models.TextField(blank=True)
+
+    class Meta:
+        verbose_name = 'Category (Tone)'
+        verbose_name_plural = 'Categories (Tones)'
 
     def __str__(self):
         return self.name
 
 
 class ContextTag(models.Model):
-    """Context/situation: wedding, work, school, presentation, icebreaker"""
+    """Context/situation — exposed in the new design vocabulary as 'Theme' (what it's about): work, family, food, tech, school, dating, etc."""
     name = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(max_length=100, unique=True)
     description = models.TextField(blank=True)
+
+    class Meta:
+        verbose_name = 'Theme (ContextTag)'
+        verbose_name_plural = 'Themes (ContextTags)'
 
     def __str__(self):
         return self.name
