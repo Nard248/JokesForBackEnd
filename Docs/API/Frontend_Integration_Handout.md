@@ -232,9 +232,13 @@ await api.post('/auth/password/reset/confirm/', {
 
 ---
 
-## 6. Endpoint catalog (live count: 80)
+## 6. Endpoint catalog (live count: 96)
 
 For request/response shapes per endpoint, see [`API_Specification_For_Frontend.md`](./API_Specification_For_Frontend.md). Quick tour:
+
+### Polish — knock-knock lines + top-jokester vibes (P10 of Pivot Plan)
+- `Joke` schema now includes `lines: string[] | null` — array of dialogue lines for `format=knock-knock` jokes; `null` for all other formats. Render as alternating bubbles in the UI.
+- `GET /users/top-jokesters/` results now include `top_vibes: [{slug, label, icon}, ...]` (up to 2 vibes per user) — for the "Office · Observ." vibe pill on each leaderboard row.
 
 ### Insights — taste profile + tomorrow teaser + issue label (3 endpoints, P9 of Pivot Plan)
 - `GET    /users/me/taste-profile/?period=month|week|all` → derived analytics: `{ period, jokes_read, jokes_saved, peak_read_hour, top_vibe, top_themes, top_categories, top_formats, daily_reads_28d }`. Pure computation from JokeView + SavedJoke + UserVibe; no caching layer.
