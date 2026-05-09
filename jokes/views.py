@@ -1509,6 +1509,13 @@ class TopJokestersView(APIView):
         results = []
         for rank, u in enumerate(users, 1):
             name = f"{u.first_name} {u.last_name}".strip() or u.email.split('@')[0]
+            # P10: include this user's top 2 vibes (by recency for now;
+            # could weight by submission counts later)
+            top_vibes = list(
+                UserVibe.objects.filter(user=u)
+                .select_related('vibe')
+                .order_by('-created_at')[:2]
+            )
             results.append({
                 'id': u.id,
                 'name': name,
@@ -1516,6 +1523,10 @@ class TopJokestersView(APIView):
                 'avatar_url': None,
                 'punchline_count': u.punchline_count,
                 'rank': rank,
+                'top_vibes': [
+                    {'slug': uv.vibe.slug, 'label': uv.vibe.label, 'icon': uv.vibe.icon}
+                    for uv in top_vibes
+                ],
             })
 
         return Response({'results': results})

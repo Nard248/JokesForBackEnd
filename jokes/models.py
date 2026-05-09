@@ -129,6 +129,13 @@ class Joke(models.Model):
         help_text='Content classification tier for compliance'
     )
 
+    # P10: knock-knock dialogue storage. Null for non-knock formats. Frontend
+    # renders one bubble per line; even/odd indices alternate speaker (A/B).
+    lines = models.JSONField(
+        null=True, blank=True,
+        help_text='List of dialogue lines for knock-knock format; null for other formats.',
+    )
+
     # Search
     search_vector = SearchVectorField(null=True, blank=True)
 

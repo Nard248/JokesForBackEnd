@@ -135,6 +135,7 @@ class JokeSerializer(serializers.ModelSerializer):
             'text',
             'setup',
             'punchline',
+            'lines',        # P10: knock-knock dialogue (null for other formats)
             'format',
             'age_rating',
             'language',
