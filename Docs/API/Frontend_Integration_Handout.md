@@ -236,6 +236,11 @@ await api.post('/auth/password/reset/confirm/', {
 
 For request/response shapes per endpoint, see [`API_Specification_For_Frontend.md`](./API_Specification_For_Frontend.md). Quick tour:
 
+### Insights — taste profile + tomorrow teaser + issue label (3 endpoints, P9 of Pivot Plan)
+- `GET    /users/me/taste-profile/?period=month|week|all` → derived analytics: `{ period, jokes_read, jokes_saved, peak_read_hour, top_vibe, top_themes, top_categories, top_formats, daily_reads_28d }`. Pure computation from JokeView + SavedJoke + UserVibe; no caching layer.
+- `GET    /daily-jokes/today/` → existing endpoint, now augmented with `issue_label: "Vol. I · No. 042"` (newspaper-style, computed from earliest DailyJoke date).
+- `GET    /daily-jokes/tomorrow/` → preview tomorrow's joke (12-word truncated text for the blurred teaser) + `issue_label`. **Lazy-generates** the DailyJoke row inline if it doesn't exist yet (replaces the Celery beat task per the no-cron constraint).
+
 ### Daily ritual settings (1 new endpoint, P8 of Pivot Plan)
 - `GET    /users/me/today-status/` → `{ daily_joke_due, has_read_today, today_is_a_notification_day, now_past_notification_time }`. Frontend polls this on Today screen load and renders "Today's joke is ready" hero when `daily_joke_due=true`. Replaces the 9 AM scheduled push (no cron in single-Cloud-Run setup).
 - Existing `GET /users/me/preferences/` and `PATCH /preferences/me/` extended with two new fields:

@@ -25,7 +25,8 @@ from django.views.decorators.http import require_GET
 
 from django.utils import timezone
 
-from django.db.models import Count, Max, Q, Sum
+from django.db.models import Count, Max, Min, Q, Sum
+from django.db.models.functions import ExtractHour
 
 from .models import (
     Joke,
@@ -937,7 +938,46 @@ class DailyJokeViewSet(viewsets.GenericViewSet):
             daily.delivered_at = timezone.now()
             daily.save(update_fields=['delivered_at'])
 
-        return Response(DailyJokeSerializer(daily).data)
+        # P9: include newspaper-style issue label
+        data = DailyJokeSerializer(daily).data
+        data['issue_label'] = _issue_label_for(daily.date)
+        return Response(data)
+
+    @extend_schema(
+        description="Tomorrow's daily joke (lazy-generated), truncated to 12 words for the blurred teaser. P9 of Pivot Plan.",
+        responses={200: {'type': 'object'}, 404: None},
+    )
+    @action(detail=False, methods=['get'], permission_classes=[IsAuthenticated])
+    def tomorrow(self, request):
+        """GET /api/v1/daily-jokes/tomorrow/ — preview tomorrow's joke."""
+        from datetime import timedelta
+        tomorrow_date = timezone.now().date() + timedelta(days=1)
+        daily = DailyJoke.objects.filter(
+            user=request.user, date=tomorrow_date
+        ).select_related('joke', 'joke__format').first()
+
+        if not daily:
+            # Lazy-generate (replaces the Celery beat task)
+            exclude_ids = get_recently_shown_joke_ids(request.user, days=30)
+            joke = get_personalized_joke(request.user, exclude_joke_ids=exclude_ids)
+            if joke is None:
+                return Response(
+                    {'detail': 'No jokes available for tomorrow yet.'},
+                    status=status.HTTP_404_NOT_FOUND,
+                )
+            daily = DailyJoke.objects.create(
+                user=request.user, joke=joke, date=tomorrow_date
+            )
+
+        full_text = daily.joke.text or daily.joke.setup or ''
+        words = full_text.split()
+        preview = ' '.join(words[:12]) + ('…' if len(words) > 12 else '')
+        return Response({
+            'date': daily.date,
+            'issue_label': _issue_label_for(daily.date),
+            'preview': preview,
+            'format': daily.joke.format.slug if daily.joke.format else None,
+        })
 
     @extend_schema(
         description='Get user\'s daily joke history (last 30 days).',
@@ -2020,3 +2060,134 @@ class DailyRitualStatusView(APIView):
             'today_is_a_notification_day': today_is_day,
             'now_past_notification_time': now_past,
         })
+
+
+# =============================================================================
+# Insights (P9 of Pivot Plan) — taste profile, tomorrow teaser, issue numbering
+# =============================================================================
+
+LAUNCH_DATE_FOR_ISSUE_NUMBERING = None  # lazily computed in helper
+
+
+def _issue_label_for(date_obj):
+    """Newspaper-style issue label like 'Vol. I · No. 042'.
+
+    Issue 1 = the day the first DailyJoke ever existed (or today if none yet).
+    Volume rolls over every 365 issues.
+    """
+    from .models import DailyJoke
+    earliest = DailyJoke.objects.aggregate(min_date=Min('date'))['min_date']
+    if earliest is None:
+        earliest = date_obj
+    days_since = (date_obj - earliest).days
+    issue = days_since + 1
+    volume_index = (issue - 1) // 365 + 1
+    issue_in_volume = ((issue - 1) % 365) + 1
+    roman = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X']
+    vol_str = roman[volume_index - 1] if volume_index <= len(roman) else str(volume_index)
+    return f"Vol. {vol_str} · No. {issue_in_volume:03d}"
+
+
+def _select_daily_joke_for(user, target_date):
+    """Lazy selection of a DailyJoke for the user on target_date — generates
+    the row if it doesn't exist yet (replaces the Celery beat task)."""
+    from .models import DailyJoke
+    existing = DailyJoke.objects.filter(user=user, date=target_date).first()
+    if existing:
+        return existing
+    # Pick a joke (favor user's vibes, fall back to global)
+    pool, _ = _mystery_pool_for_user(user)
+    joke = pool.order_by('?').first() or Joke.objects.order_by('?').first()
+    if joke is None:
+        return None
+    daily, _ = DailyJoke.objects.get_or_create(
+        user=user, date=target_date, defaults={'joke': joke}
+    )
+    return daily
+
+
+class TasteProfileView(APIView):
+    """GET /api/v1/users/me/taste-profile/ — derived analytics from JokeView,
+    SavedJoke, JokeReaction. No new model, no caching (small scale)."""
+    permission_classes = [IsAuthenticated]
+
+    @extend_schema(
+        parameters=[
+            OpenApiParameter(name='period', type=str, description='Window: month (default) | week | all'),
+        ],
+        responses={200: {'type': 'object'}},
+    )
+    def get(self, request):
+        from django.utils import timezone
+        from datetime import timedelta
+
+        period = request.query_params.get('period', 'month')
+        if period == 'week':
+            since = timezone.now().date() - timedelta(days=6)
+        elif period == 'all':
+            since = None
+        else:
+            period = 'month'
+            since = timezone.now().date() - timedelta(days=29)
+
+        view_qs = JokeView.objects.filter(user=request.user)
+        save_qs = SavedJoke.objects.filter(user=request.user)
+        if since:
+            view_qs = view_qs.filter(viewed_date__gte=since)
+            save_qs = save_qs.filter(created_at__date__gte=since)
+
+        jokes_read = view_qs.values('joke').distinct().count()
+        jokes_saved = save_qs.count()
+
+        # Peak read hour
+        peak = (
+            view_qs.annotate(h=ExtractHour('viewed_at'))
+            .values('h').annotate(n=Count('id')).order_by('-n').first()
+        )
+        peak_hour = peak['h'] if peak else None
+
+        # Top vibe (by user's selected ones, ordered by recency for now;
+        # could later weight by view frequency per recipe)
+        top_vibe_qs = UserVibe.objects.filter(user=request.user).select_related('vibe').order_by('-created_at')[:1]
+        top_vibe = VibeSerializer(top_vibe_qs[0].vibe).data if top_vibe_qs else None
+
+        # Top themes / categories / formats from viewed jokes
+        top_themes = list(
+            view_qs.values('joke__context_tags__name')
+            .exclude(joke__context_tags__name__isnull=True)
+            .annotate(c=Count('id')).order_by('-c')[:8]
+        )
+        top_categories = list(
+            view_qs.values('joke__tones__name')
+            .exclude(joke__tones__name__isnull=True)
+            .annotate(c=Count('id')).order_by('-c')[:8]
+        )
+        top_formats = list(
+            view_qs.values('joke__format__name')
+            .exclude(joke__format__name__isnull=True)
+            .annotate(c=Count('id')).order_by('-c')[:5]
+        )
+
+        # 28-day sparkline of daily read counts
+        today = timezone.now().date()
+        start = today - timedelta(days=27)
+        daily_counts = (
+            view_qs.filter(viewed_date__gte=start)
+            .values('viewed_date').annotate(c=Count('id'))
+        )
+        sparkline_map = {row['viewed_date']: row['c'] for row in daily_counts}
+        daily_reads_28d = [sparkline_map.get(start + timedelta(days=i), 0) for i in range(28)]
+
+        return Response({
+            'period': period,
+            'jokes_read': jokes_read,
+            'jokes_saved': jokes_saved,
+            'peak_read_hour': peak_hour,
+            'top_vibe': top_vibe,
+            'top_themes': [{'label': r['joke__context_tags__name'], 'count': r['c']} for r in top_themes],
+            'top_categories': [{'label': r['joke__tones__name'], 'count': r['c']} for r in top_categories],
+            'top_formats': [{'label': r['joke__format__name'], 'count': r['c']} for r in top_formats],
+            'daily_reads_28d': daily_reads_28d,
+        })
+
+
