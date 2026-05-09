@@ -928,3 +928,73 @@ class JokeView(models.Model):
 
     def __str__(self):
         return f"{self.user.email} viewed joke {self.joke_id} @ {self.viewed_at}"
+
+
+# =============================================================================
+# Streak (P6 of Pivot Plan) — daily-return loop with forgiveness
+# =============================================================================
+
+class Streak(models.Model):
+    """Per-user streak state. Updated synchronously on JokeView post-save +
+    lazily reconciled when /streak/ is fetched (no scheduled jobs).
+
+    Forgiveness mechanic:
+      - 2 freeze days per calendar month, refreshed lazily on first /streak/
+        access in a new month
+      - A missed day with freezes available auto-burns one (status='frozen')
+      - A missed day with no freezes resets current_count to 0
+    """
+
+    FREEZES_PER_MONTH = 2
+
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='streak',
+    )
+    current_count = models.PositiveIntegerField(default=0)
+    longest_count = models.PositiveIntegerField(default=0)
+    last_active_date = models.DateField(null=True, blank=True)
+    freeze_days_available = models.PositiveSmallIntegerField(default=FREEZES_PER_MONTH)
+    freezes_used_total = models.PositiveIntegerField(default=0)
+    last_freeze_refresh_month = models.CharField(
+        max_length=7, blank=True,
+        help_text='YYYY-MM of the last month we refreshed the freeze pool',
+    )
+    started_at = models.DateField(null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.user.email} streak={self.current_count}"
+
+
+class StreakDay(models.Model):
+    """Per-day status for a user. One row per (user, date)."""
+
+    STATUS_READ = 'read'
+    STATUS_FROZEN = 'frozen'
+    STATUS_MISSED = 'missed'
+    STATUS_CHOICES = [
+        (STATUS_READ,   'Read'),
+        (STATUS_FROZEN, 'Frozen'),
+        (STATUS_MISSED, 'Missed'),
+    ]
+
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='streak_days',
+    )
+    date = models.DateField()
+    status = models.CharField(max_length=8, choices=STATUS_CHOICES)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = [['user', 'date']]
+        ordering = ['-date']
+        indexes = [
+            models.Index(fields=['user', '-date']),
+        ]
+
+    def __str__(self):
+        return f"{self.user.email} {self.date} → {self.status}"

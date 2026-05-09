@@ -30,6 +30,8 @@ from .models import (
     UserVibe,
     MysteryBoxRoll,
     JokeView,
+    Streak,
+    StreakDay,
 )
 
 
@@ -765,3 +767,67 @@ class JokeViewSerializer(serializers.ModelSerializer):
         model = JokeView
         fields = ['joke', 'source', 'revealed_punchline', 'viewed_at']
         read_only_fields = fields
+
+
+# =============================================================================
+# Streak (P6 of Pivot Plan)
+# =============================================================================
+
+class StreakDaySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = StreakDay
+        fields = ['date', 'status']
+
+
+class StreakSerializer(serializers.ModelSerializer):
+    """Streak state + last 14 days + risk flag for streak-saver UI."""
+    last_14_days = serializers.SerializerMethodField()
+    streak_at_risk_today = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Streak
+        fields = [
+            'current_count',
+            'longest_count',
+            'last_active_date',
+            'freeze_days_available',
+            'freezes_used_total',
+            'started_at',
+            'last_14_days',
+            'streak_at_risk_today',
+        ]
+        read_only_fields = fields
+
+    def get_last_14_days(self, obj) -> list:
+        from django.utils import timezone
+        from datetime import timedelta
+        today = timezone.now().date()
+        start = today - timedelta(days=13)
+        days_by_date = {
+            d.date: d.status
+            for d in StreakDay.objects.filter(
+                user=obj.user, date__gte=start, date__lte=today
+            )
+        }
+        out = []
+        for offset in range(14):
+            d = start + timedelta(days=offset)
+            out.append({
+                'date': d.isoformat(),
+                'status': days_by_date.get(d, 'pending' if d == today else 'missed'),
+            })
+        return out
+
+    def get_streak_at_risk_today(self, obj) -> bool:
+        """True if user hasn't read today AND it's past their (UTC) 8 PM.
+
+        Frontend uses this to render the in-app streak-saver nudge —
+        replaces the 8 PM push (we have no scheduled jobs).
+        """
+        from django.utils import timezone
+        now = timezone.now()
+        today = now.date()
+        if obj.last_active_date == today:
+            return False
+        # Past 8 PM UTC?
+        return now.hour >= 20

@@ -236,6 +236,13 @@ await api.post('/auth/password/reset/confirm/', {
 
 For request/response shapes per endpoint, see [`API_Specification_For_Frontend.md`](./API_Specification_For_Frontend.md). Quick tour:
 
+### Streak — daily commitment with forgiveness (3 endpoints, P6 of Pivot Plan)
+- `GET    /users/me/streak/` → `{ current_count, longest_count, last_active_date, freeze_days_available, freezes_used_total, started_at, last_14_days: [{date, status: read|frozen|missed|pending}], streak_at_risk_today }`
+- `POST   /users/me/streak/freeze/` → manually use a freeze day (vacation mode). Returns updated streak. 400 if no freezes available or today already counted as read.
+- `POST   /users/me/streak/freeze/remove/` → undo today's accidental freeze. Returns updated streak. 400 if today wasn't frozen.
+
+**Mechanics**: Reading any joke synchronously increments the streak (via `JokeView` post-save signal). Gap reconciliation is **lazy**: when you fetch `/streak/`, the backend walks any gap from `last_active_date+1` to today, burning freezes (2/month, refreshes lazily) for each missed day; if freezes run out, `current_count` resets to 0. `streak_at_risk_today` is true when the user hasn't read today and it's past 8 PM UTC — frontend renders the in-app nudge (no push notifications).
+
 ### Activity log + recently viewed (1 endpoint, P5 of Pivot Plan)
 - `GET    /users/me/recently-viewed/?limit=20` → chronological list of recently-viewed jokes; powers "continue mid-sip" + Today's "what you've been laughing at" rail
 - Every authenticated `GET /jokes/{id}/` automatically logs a `JokeView`. Pass `?source=daily|search|explore|mystery|pack|saved|share|other` so the backend knows the surface — used for taste-profile insights and Mystery Box recent-exclusion. Debounced server-side: same (user, joke) within 60 sec doesn't double-log.
