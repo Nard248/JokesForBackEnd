@@ -470,3 +470,321 @@ GOOGLE_CLIENT_SECRET  ← secret google-client-secret:latest
 - **Real email backend** — replace Django's `console` email with SendGrid/Mailgun for password reset links.
 - **Async tasks** — the `generate_daily_jokes` Celery task isn't running anywhere. To re-enable, plan is Cloud Scheduler → Cloud Run handler endpoint (no Celery worker, no Redis, $0).
 - **Custom domain on the API** (`api.jokesfor.net`) via Cloud Run domain mapping — would simplify the OAuth callback story but doesn't enable same-origin (still cross-site with `app.jokesfor.net`).
+
+---
+
+## 13. Design components → API call wiring
+
+> Every component in `parts/flow-screens.jsx` mapped to its endpoint(s). Use this as the build sheet: for each screen, the components are listed in render order with the exact call needed and the data path from response → UI.
+>
+> **All requests are authenticated** unless explicitly marked "(public)". `credentials: 'include'` everywhere.
+>
+> Notation: `→ METHOD /path` for the call, `· data:` for what to read from the response, `· side-effect:` for what implicitly happens server-side.
+
+### 13.1 Universal — JokeCard component (used on Today, Explore, Search, Library, Joke Detail)
+
+The card is **format-aware**: rendering branches on `joke.format.slug` ∈ {`oneliner`, `setup`, `knock`, `story`, `anti`, `observ`}. The same card is used everywhere; only the data source upstream differs.
+
+| Component | Call | Data path |
+|---|---|---|
+| Card hydration | data passed in (no call) | parent provides `joke` object |
+| Setup → Punchline reveal (tap to unblur) | no call | local state; punchline is in `joke.punchline` from the start |
+| Knock-knock advance (tap to next bubble) | no call | `joke.lines[]` (P10) |
+| Format badge | no call | `joke.format.slug` → label map |
+| Theme/Category eyebrow | no call | `joke.themes[].name` and `joke.categories[].name` (or legacy `context_tags` / `tones`) |
+| Save button (toggle) | `→ POST /api/v1/saved-jokes/` body `{ joke: <id> }` to save • `→ DELETE /api/v1/saved-jokes/{id}/` to unsave | optimistic UI; on success, store the saved-joke id locally to support unsave |
+| Share button | `→ POST /api/v1/jokes/{id}/share/` body `{ platform: 'copy' \| 'twitter' \| 'whatsapp' \| ... }` | logs ShareEvent; copy-to-clipboard happens in the browser independently |
+| Reaction emoji (😂🤣🤔🙄) | `→ POST /api/v1/jokes/{id}/react/` body `{ reaction: 'lol' \| 'crying' \| 'hmm' \| 'eyeroll' }` | toggles off if same; switches if different. response: `{ my_reaction, counts }` |
+| Stat row (😂 612 · 💾 4.1K) | `→ GET /api/v1/jokes/{id}/reactions/` (or use counts already in joke detail) | `counts.lol`, `counts.crying`, etc.; saves count from a separate aggregate or `joke.saves_count` if added |
+| Side-effect on retrieve | `→ GET /api/v1/jokes/{id}/?source=daily` | passing `?source=` so the JokeView log records the surface (powers streak + insights) |
+
+**Source values to pass on `?source=`** when retrieving a joke from each surface:
+- Today's JOTD card → `?source=daily`
+- Today's "Three you'll save" 3-up → `?source=daily`
+- Today's mid-sip pack continuation → `?source=pack`
+- Explore results → `?source=explore`
+- Search results → `?source=search`
+- Mystery box modal → `?source=mystery`
+- Saved/library → `?source=saved`
+- Public share landing page → `?source=share`
+
+### 13.2 Screen — Login (`LoginScreen`)
+
+| Component | Call |
+|---|---|
+| Brand canvas (left, "Find the right joke. For any moment.") | static |
+| Sample joke card (Setup/Punchline shown unblurred) | no call — static demo content. Optionally `→ GET /api/v1/jokes/random/` (public) for live demo of corpus |
+| "Continue with Google" button | frontend-driven OAuth flow, then `→ POST /api/v1/auth/google/` body `{ code: <code from Google> }` — see §5.3 |
+| Email input | local |
+| Password input | local |
+| "Forgot" link | navigate to `/forgot-password` page, which on submit `→ POST /api/v1/auth/password/reset/` body `{ email }` |
+| "Sign in" submit | `→ POST /api/v1/auth/login/` body `{ email, password }`. On 200 the cookies are already set by the browser. Redirect to `/today`. |
+| "Create an account →" | navigate to `/register` |
+| 14-day streak banner ("Keep your 14-day streak alive") | static aspirational copy on this screen — render unconditionally |
+| Stats footer (312K daily readers, 10K+ jokes) | static for now |
+
+### 13.3 Screen — Register (`RegisterScreen`) — two steps
+
+**Step 1 (account basics):**
+
+| Component | Call |
+|---|---|
+| First name input | local; saved with PATCH after submit |
+| Display handle input | local; saved via UserProfile (see below) |
+| Email input | required for submit |
+| Password input + strength meter | client-side strength only |
+| "Continue" button (advance to step 2) | no API yet — gather data, hold locally |
+
+**Step 2 (preferences) + final submit:**
+
+| Component | Call |
+|---|---|
+| Pronoun pills (he/him, she/her, they/them) | held locally; PATCHed in onboarding-completion call |
+| "Where will you tell these jokes most?" tile picker (Office/Friends/Group/Stage) | held locally; saved in UserProfile via `→ PATCH /api/v1/users/me/profile/` body `{ display_context: 'office' \| 'friends' \| 'group_chat' \| 'stage' }` (NOTE: this field doesn't exist in the model yet — defer or treat as a frontend-only preference for the demo) |
+| "Send me the daily joke at 9 AM" toggle | passed into the registration payload as `notification_enabled: true, notification_time: '09:00'` (PATCHed after step 3) |
+| **"Create account & start setup"** | sequence:<br>1. `→ POST /api/v1/auth/registration/` body `{ email, password1, password2 }` — cookies set, user authenticated<br>2. `→ PATCH /api/v1/auth/user/` body `{ first_name }` to save display name<br>3. `→ PATCH /api/v1/users/me/profile/` body `{ handle: '@alexq' }` to save handle<br>4. Navigate to `/onboarding/vibes` (step 3 of registration is the vibe picker) |
+
+### 13.4 Screen — Onboarding · Vibes (`OnbVibesScreen`)
+
+| Component | Call |
+|---|---|
+| Page render | `→ GET /api/v1/vibes/` — returns the 12 catalog entries with `slug, label, subtitle, icon, swatch_bg, swatch_fg, order`. Render as the picker grid in `order` |
+| Tile click (toggle) | local state only |
+| "X picked" pill | local count |
+| Skip link | `→ navigate /today` (no save) |
+| **"Continue"** | `→ PUT /api/v1/users/me/vibes/` body `{ slugs: ["office","puns","observ", ...] }` — **min 3, max 12**. On 400, surface the error. On 200, navigate to `/onboarding/formats` |
+| Resume case (user returns to picker) | `→ GET /api/v1/users/me/vibes/` — pre-select the user's existing picks before they start toggling |
+
+### 13.5 Screen — Onboarding · Formats (`OnbFormatsScreen`)
+
+| Component | Call |
+|---|---|
+| Page render | `→ GET /api/v1/formats/` — returns the 6 format entries with `slug, name, description`. The design's `FORMATS` array (parts/flow.jsx 41-48) provides the demo strings; map by slug |
+| Tile click (toggle) | local state only |
+| "Continue" | **No backend persistence today** — `UserPreference` doesn't have `preferred_formats`. Two options:<br>(a) hold the selection locally and use it client-side as a `?joke_format=X` filter on subsequent feeds<br>(b) defer to a future backend addition<br>For the demo, (a) is sufficient |
+
+### 13.6 Screen — Onboarding · Ritual (`OnbRitualScreen`)
+
+| Component | Call |
+|---|---|
+| Time slot picker (07/08/09/12/17/21) | local state |
+| Day-of-week tiles (M/T/W/T/F/S/S) | local state |
+| Streak-saver toggle | local state |
+| Notification preview card | static |
+| Streak forecast "14 days" card | static aspirational copy |
+| **"Done — show me today's joke"** | `→ PATCH /api/v1/preferences/me/` body `{ notification_enabled: true, notification_time: "09:00", notification_days: ["mon","tue","wed","thu","fri"], streak_saver_enabled: true, onboarding_completed: true }`. On 200, navigate to `/today` |
+
+### 13.7 Screen — Today (`TodayScreen`) — the busiest screen
+
+**Header bar (`TopShell`):**
+
+| Component | Call |
+|---|---|
+| Logo / brand | static |
+| Nav (Today/Explore/Search/Library) | router |
+| Streak chip "14-day streak" | `→ GET /api/v1/users/me/streak/` (one call shared with the streak rail below) — read `current_count` |
+| Bell icon w/ dot | placeholder; no notifications endpoint yet |
+| Avatar | from `→ GET /api/v1/auth/user/` (already loaded by auth shell) |
+
+**Hero strip (greeting):**
+
+| Component | Call |
+|---|---|
+| "Wednesday · Feb 12 · Vol. I · No. 042" eyebrow | `→ GET /api/v1/daily-jokes/today/` → read `issue_label` |
+| "Good morning, Alex" | `→ GET /api/v1/auth/user/` → `first_name` |
+| "One joke today. Two if you finish yesterday's saved set." | static copy |
+| "Yesterday" button | `→ GET /api/v1/daily-jokes/history/?limit=1` — show yesterday's daily |
+| "Mystery box · 3 LEFT" pill button | `→ GET /api/v1/mystery-box/status/` → read `rolls_remaining_today` |
+
+**JOTD hero card:**
+
+| Component | Call |
+|---|---|
+| Card payload | `→ GET /api/v1/daily-jokes/today/` → returns `{ id, joke, date, issue_label, delivered_at }` (single shared call with the eyebrow) |
+| Setup line | `joke.setup` |
+| Punchline blur/reveal (tap) | `joke.punchline` (already in payload; just reveal locally) |
+| Save button | `→ POST /api/v1/saved-jokes/` body `{ joke: joke.id }` |
+| Share button | `→ POST /api/v1/jokes/{joke.id}/share/` body `{ platform: 'copy' \| ... }` |
+| Stat row (😂 612 · 💾 4.1K · 🔁 312) | already in joke payload via reactions endpoint, OR `→ GET /api/v1/jokes/{joke.id}/reactions/` |
+
+**Right rail (3 stacked tiles):**
+
+| Component | Call |
+|---|---|
+| Streak rail "14 days" + 14-cell grid | `→ GET /api/v1/users/me/streak/` (same call as header chip — cache & share). Render `last_14_days[]` (each `{date, status}`) into the grid |
+| Mystery box card "Roll for a random joke" | display from `→ GET /api/v1/mystery-box/status/` (same as header pill); Roll button → `→ POST /api/v1/mystery-box/roll/` with no body. On 200 open a modal showing `joke`; on 429 show "limit reached" toast |
+| Tomorrow teaser (blurred) | `→ GET /api/v1/daily-jokes/tomorrow/` → render `preview` (truncated to 12 words by backend) blurred + `format` label below |
+
+**Continue mid-sip strip ("You stopped mid-sip · Yesterday"):**
+
+| Component | Call |
+|---|---|
+| Strip render condition | `→ GET /api/v1/users/me/packs/in-progress/` — render only if list non-empty; show first pack |
+| "2/4" badge | `pack.user_progress.last_read_entry / pack.joke_count` |
+| "Continue" button | navigate to `/packs/{slug}` resume view |
+
+**"Three you'll probably save" 3-up grid:**
+
+| Component | Call |
+|---|---|
+| Section render | `→ GET /api/v1/jokes/?vibe={user_top_vibe}&page_size=3&ordering=-created_at` — pick `user_top_vibe` from `taste_profile.top_vibe.slug` or first of `users/me/vibes/`; fall back to `→ GET /api/v1/jokes/trending/?limit=3` if user has no vibes |
+| Each card | renders via the JokeCard component (§13.1); `?source=daily` param when user clicks through |
+| "See more in Explore →" | navigate to `/explore` |
+
+**7-day archive newspaper strip ("The Week in Punchlines"):**
+
+| Component | Call |
+|---|---|
+| 7 columns | `→ GET /api/v1/daily-jokes/history/?limit=7` — returns last 7 daily jokes with `joke`, `date`, `issue_label` (if exposed; otherwise compute client-side from `date`) |
+| Each column: "WED · No. 041 · 'On scientists trusting atoms.'" | column eyebrow uses date + issue_label; italic line uses `joke.text` truncated to ~50 chars; bottom label uses `joke.format.name` or `joke.categories[0].name` |
+
+**Mixed-format showcase ("Same library. Different rhythm."):**
+
+| Component | Call |
+|---|---|
+| Section render | parallel calls, one per format card slot. Each: `→ GET /api/v1/jokes/?joke_format={fmt}&ordering=-created_at&page_size=1` for `fmt` ∈ `oneliner`, `knock`, `anti` |
+| Cards | render each via JokeCard |
+
+**Top jokesters card:**
+
+| Component | Call |
+|---|---|
+| Section payload | `→ GET /api/v1/users/top-jokesters/?limit=5&period=week` — returns `{ results: [{ id, name, username, punchline_count, rank, top_vibes: [{slug, label, icon}] }, ...] }` |
+| Per-row render | name + handle + punchline count + first 2 `top_vibes` as pill labels |
+
+**Weekly Special wide tile:**
+
+| Component | Call |
+|---|---|
+| Tile payload | `→ GET /api/v1/packs/featured/` → `{ slug, title, subtitle, description, cover_color, jokes: [{order, joke}] }` |
+| Title / subtitle / cover_color | direct |
+| Preview list of 5 joke snippets | from `jokes[0..5]` truncated to short quotes |
+| "Read collection →" button | navigate to `/packs/{slug}` |
+| "Save list" button | not currently mapped to a single endpoint; either save each joke individually via `→ POST /api/v1/saved-jokes/` per `pack.jokes[].joke.id`, or skip for the demo |
+
+**"How you've been laughing" stats card (dark variant):**
+
+| Component | Call |
+|---|---|
+| Whole card payload | `→ GET /api/v1/users/me/taste-profile/?period=month` → `{ jokes_read, jokes_saved, peak_read_hour, top_vibe, top_themes, top_categories, top_formats, daily_reads_28d }` |
+| 168 JOKES READ | `jokes_read` |
+| 42 SAVED | `jokes_saved` |
+| 9 AM PEAK READ | `peak_read_hour` (display as "9 AM" / "10 PM" by formatting) |
+| Pun TOP VIBE | `top_vibe.label` |
+| 28-day sparkline | `daily_reads_28d` (array of 28 ints) |
+
+**"Themes you laugh at most" pill cloud:**
+
+| Component | Call |
+|---|---|
+| Pills | from same `taste-profile` call: `top_themes` + `top_categories` + `top_formats` (concatenate or interleave). Each is `{ label, count }` — render with the count as a small mono badge |
+
+**"Test it on a friend" share card:**
+
+| Component | Call |
+|---|---|
+| Pre-populated message | `joke.text` from today's daily |
+| "Share today's joke" button | `→ POST /api/v1/jokes/{today_joke.id}/share/` body `{ platform: <selected> }`. The "did they laugh / lied" reaction tracking isn't implemented today — frontend-only state for now |
+
+**Pull quote / brand footer:**
+
+| Component | Call |
+|---|---|
+| Quote + countdown to tomorrow 9 AM | static + client-side timer (compute `tomorrow_at_9am - now`) |
+
+### 13.8 Screen — Explore (`ExploreScreen`)
+
+| Component | Call |
+|---|---|
+| Hero ("10,432 jokes") count | `→ GET /api/v1/jokes/?page_size=1` — read `count` from paginated envelope |
+| "Or describe the moment" CTA tile | navigates to `/search` |
+| **Format chip rail** | `→ GET /api/v1/formats/` — render the 6 chips |
+| **Theme chip rail** | `→ GET /api/v1/context-tags/` — render all 13 themes |
+| **Category chip rail** | `→ GET /api/v1/tones/` — render all 9 categories |
+| Active-filter bar (pills + Clear all) | client state |
+| Quick prompts ("This week", "Top saves", "Trending", "New") | each maps to a preset:<br>· This week → `?ordering=-created_at`<br>· Top saves → `?ordering=popularity`<br>· Trending → `→ GET /api/v1/jokes/trending/?period=week`<br>· New → `?ordering=-created_at` |
+| **Results masonry** | `→ GET /api/v1/jokes/?joke_format={f}&context_tags={t1},{t2}&tones={c1},{c2}&page=N&page_size=18` — composes whatever filters are active. Use comma-separated lists for M2M filters. |
+| Inline editorial tile (curator note) | static / hard-coded for now; could later be `/editor-notes/` |
+| Inline weekly-special tile | `→ GET /api/v1/packs/featured/` (cached from Today screen if user came from there) |
+| Empty-state "Surprise me" | `→ POST /api/v1/mystery-box/roll/` (with auth) |
+
+### 13.9 Screen — Search (`SearchScreen`) — the Sentence Builder
+
+| Component | Call |
+|---|---|
+| Format pill dropdown | `→ GET /api/v1/formats/` (cached from Explore) |
+| Theme pill dropdown | `→ GET /api/v1/context-tags/` |
+| Category pill dropdown | `→ GET /api/v1/tones/` |
+| Keyword refine input | added as `&q=<keyword>` to results call |
+| **Results call** | `→ GET /api/v1/jokes/?q={kw}&joke_format={f}&context_tags={ts}&tones={cs}&page_size=18&ordering=relevance` — relevance ordering is server-default when `q` is present. Use comma-separated for M2M lists. |
+| Quick-prompt chips ("First day at work", "Wedding toast", etc.) | each chip writes preset values into the format/theme/category pills + clears `q` + re-runs results call |
+| "X matches" count | from paginated `count` |
+| Empty-state "Loosen filters" | drops format + cats from state and re-queries |
+| Empty-state "Surprise me" | `→ POST /api/v1/mystery-box/roll/` |
+
+### 13.10 Screen — Library (referenced by nav; not in flow-screens.jsx but frontend will build)
+
+| Component | Call |
+|---|---|
+| Saved jokes list | `→ GET /api/v1/saved-jokes/?page=N` |
+| Search within saved | `→ GET /api/v1/saved-jokes/search/?q=<kw>` |
+| Collections list | `→ GET /api/v1/collections/` |
+| Collection detail | `→ GET /api/v1/collections/{id}/` and `→ GET /api/v1/collections/{id}/jokes/` |
+| Create collection | `→ POST /api/v1/collections/` body `{ name, description?, is_public? }` |
+| Move saved joke into collection | `→ PATCH /api/v1/saved-jokes/{id}/` body `{ collection: <collection_id> }` (if endpoint supports; otherwise delete+recreate) |
+| Favorites list | `→ GET /api/v1/favorites/` |
+| Favorite stats | `→ GET /api/v1/favorites/stats/` |
+| Heart joke from list | `→ POST /api/v1/favorites/` body `{ joke }` |
+| Trending collections | `→ GET /api/v1/collections/trending/` |
+
+### 13.11 Screen — Joke Detail (`screens-4.jsx`)
+
+| Component | Call |
+|---|---|
+| Detail page render | `→ GET /api/v1/jokes/{id}/?source=<surface>` — automatically logs a JokeView (debounced 60s) and powers the "Streak saved +1" rail below |
+| Pills row (Puns / Work-friendly / 5/5 cleanliness) | from `joke.themes`, `joke.categories`, and `joke.age_rating` |
+| Setup / Punchline display | `joke.setup` / `joke.punchline` |
+| Save to "Work Icebreakers" button | `→ POST /api/v1/saved-jokes/` body `{ joke: joke.id, collection: <collection_id> }` (or just `{ joke }` to save into default Favorites) |
+| Share button | `→ POST /api/v1/jokes/{joke.id}/share/` |
+| Copy button | clipboard API; optionally also `→ POST /api/v1/jokes/{joke.id}/share/` body `{ platform: 'copy' }` for analytics |
+| Reaction emoji row (😂🤣🤔🙄) | `→ POST /api/v1/jokes/{joke.id}/react/` body `{ reaction: <slug> }` — toggle/switch logic on backend |
+| **"How the internet laughed" 4-card breakdown (😂 412 · 🤣 188 · 🤔 38 · 🙄 12)** | `→ GET /api/v1/jokes/{joke.id}/reactions/` → `{ counts, my_reaction }`. Render `counts.lol` etc. |
+| **"Why you got this one" panel** | `→ GET /api/v1/users/me/taste-profile/` to derive: "Picked because you saved {top_themes[0].count} {top_themes[0].label}, opened JokesFor on... {top_vibe.label} is your top vibe." Construct copy on frontend. The "tune your feed" link → `/onboarding/vibes` |
+| **"Streak saved +1 — that's 14"** rail | `→ GET /api/v1/users/me/streak/` — display `current_count`. Side-effect: viewing this page already logged a JokeView, which incremented the streak server-side. If frontend wants to react to "did the streak just tick?", compare current_count before vs after the page render |
+| "Tomorrow's joke unlocks at 9 AM" line | static + client-side timer |
+| **"More like this" list** | `→ GET /api/v1/jokes/?vibe={user_top_vibe}&exclude={joke.id}&limit=3` — *exclude param doesn't exist on the backend*. Workaround for the demo: `→ GET /api/v1/jokes/?vibe={user_top_vibe}&page_size=4` and drop the current joke client-side |
+| "Roll a mystery joke?" CTA | `→ POST /api/v1/mystery-box/roll/` |
+
+### 13.12 Modal — Mystery Box result
+
+When the user taps "Roll" on Today (or "Surprise me" elsewhere), the response is a single joke:
+
+| Field on response | Use |
+|---|---|
+| `joke` | render full JokeCard |
+| `rolls_remaining_today` | update the "X LEFT" pill |
+| `source_vibe` (optional) | small "Pulled from your Office vibe" hint at the bottom of the modal — rendered only if non-null |
+
+On 429 (cap reached), show a friendly toast: "Out of rolls for today — check back tomorrow at midnight UTC."
+
+### 13.13 Cross-screen polling & cache hints
+
+To keep the frontend fast and the backend bill at $0:
+
+- Cache `/vibes/`, `/formats/`, `/context-tags/`, `/tones/` for the session — they're effectively static (12 / 6 / 13 / 9 rows).
+- Cache `/users/me/profile/` and `/users/me/vibes/` for the session; invalidate after PATCH/PUT.
+- Re-fetch `/users/me/streak/` only when the user opens the Today screen, plus once after viewing a joke (the viewing causes a server-side streak tick; refresh to show the new count).
+- `/users/me/today-status/` should be re-fetched on tab focus or every ~5 min while the Today screen is mounted — it's how the "Today's joke is ready" hero appears at 9 AM.
+- `/mystery-box/status/` only needs refresh when the user opens the Mystery Box card or after a roll.
+- `/users/me/taste-profile/` is computed on demand — don't poll; fetch once per visit to Today.
+- `/daily-jokes/today/` is **idempotent for the day**; cache for 24h. `/daily-jokes/tomorrow/` lazy-creates the row on first call — cache it once and don't re-fetch.
+
+### 13.14 Endpoints with no current frontend wiring (open hooks)
+
+These backend endpoints exist but no design component currently uses them — leaving them in the catalog so the frontend can adopt as needed:
+
+- `GET /api/v1/jokes/random/` — public; for the login-screen sample joke if you want it live
+- `GET /api/v1/themes/popular/`, `/tags/trending/`, `/tags/rising/` — alternative pill-cloud sources for Explore
+- `GET /api/v1/users/me/activity/` — denser activity stream
+- `GET /api/v1/users/me/achievements/` — awarded badges, no surface in current design
+- `POST /api/v1/reports/`, `POST /api/v1/users/{id}/block/`, `DELETE /api/v1/users/me/`, `GET /api/v1/users/me/data-export/` — compliance flows; will live in a Settings screen the design hasn't drawn yet
