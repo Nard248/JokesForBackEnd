@@ -750,3 +750,55 @@ class UserVibe(models.Model):
 
     def __str__(self):
         return f"{self.user.email} picked {self.vibe.label}"
+
+
+# =============================================================================
+# Mystery Box (P3 of Pivot Plan) — variable-reward pull from user's vibe pool
+# =============================================================================
+
+class MysteryBoxRoll(models.Model):
+    """Audit row for every Mystery Box pull — used for daily-cap enforcement
+    and same-day deduplication.
+
+    Daily cap is enforced at the view layer via a date-bucketed count
+    (no Celery beat needed — the cap "resets" implicitly at midnight UTC
+    because new rolls land on a new `rolled_date`).
+    """
+
+    MAX_DAILY_ROLLS = 3
+
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='mystery_rolls',
+    )
+    joke = models.ForeignKey(
+        Joke,
+        on_delete=models.CASCADE,
+        related_name='mystery_pulls',
+    )
+    source_vibe = models.ForeignKey(
+        Vibe,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='+',
+        help_text='Which vibe the roll was sourced from (null = global fallback)',
+    )
+    rolled_at = models.DateTimeField(auto_now_add=True)
+    rolled_date = models.DateField(db_index=True)
+
+    class Meta:
+        ordering = ['-rolled_at']
+        indexes = [
+            models.Index(fields=['user', 'rolled_date']),
+        ]
+
+    def save(self, *args, **kwargs):
+        if not self.rolled_date:
+            from django.utils import timezone
+            self.rolled_date = timezone.now().date()
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f"{self.user.email} rolled #{self.joke_id} on {self.rolled_date}"

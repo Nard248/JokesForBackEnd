@@ -28,6 +28,7 @@ from .models import (
     ContentReport,
     Vibe,
     UserVibe,
+    MysteryBoxRoll,
 )
 
 
@@ -731,3 +732,21 @@ class UserVibesUpdateSerializer(serializers.Serializer):
                 f"Unknown or inactive vibes: {unknown}"
             )
         return slugs
+
+
+# =============================================================================
+# Mystery Box (P3 of Pivot Plan)
+# =============================================================================
+
+class MysteryBoxStatusSerializer(serializers.Serializer):
+    """Quota state for the Mystery Box surface — purely computed."""
+    rolls_used_today = serializers.IntegerField()
+    rolls_remaining_today = serializers.IntegerField()
+    max_per_day = serializers.IntegerField()
+
+
+class MysteryBoxRollResponseSerializer(serializers.Serializer):
+    """Successful roll response — joke + remaining quota + which vibe sourced it."""
+    joke = JokeSerializer()
+    rolls_remaining_today = serializers.IntegerField()
+    source_vibe = VibeSerializer(allow_null=True)

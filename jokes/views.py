@@ -50,6 +50,7 @@ from .models import (
     UserProfile,
     Vibe,
     UserVibe,
+    MysteryBoxRoll,
 )
 from .recommendations import get_personalized_joke, get_recently_shown_joke_ids
 from .serializers import (
@@ -76,6 +77,8 @@ from .serializers import (
     VibeSerializer,
     UserVibeSerializer,
     UserVibesUpdateSerializer,
+    MysteryBoxStatusSerializer,
+    MysteryBoxRollResponseSerializer,
 )
 
 
@@ -1492,3 +1495,125 @@ class UserVibesView(APIView):
             .order_by('-created_at')
         )
         return Response(UserVibeSerializer(qs, many=True).data)
+
+
+# =============================================================================
+# Mystery Box (P3 of Pivot Plan) — variable-reward pull from user's vibe pool
+# =============================================================================
+
+def _mystery_pool_for_user(user):
+    """Build the joke pool a user can be served from the Mystery Box.
+
+    Strategy:
+      1. Union of jokes matching every vibe the user picked (their "pool").
+      2. If no vibes / empty pool → fall back to the global joke pool.
+      3. Exclude jokes already rolled today by this user (no same-day repeats).
+      4. Exclude jokes the user has already saved (already in their library).
+
+    Returns a 2-tuple `(queryset, source_vibe)`. `source_vibe` is one of the
+    user's vibes (any) — for telemetry on the roll, not for filtering.
+    """
+    from django.utils import timezone
+    today = timezone.now().date()
+
+    user_vibes = list(
+        Vibe.objects.filter(picked_by__user=user, is_active=True).distinct()
+    )
+
+    pool = Joke.objects.none()
+    used_vibe = None
+    if user_vibes:
+        joke_ids = set()
+        for v in user_vibes:
+            joke_ids.update(v.filter_jokes().values_list('id', flat=True))
+        if joke_ids:
+            pool = Joke.objects.filter(id__in=joke_ids)
+            used_vibe = user_vibes[0]
+    if not pool.exists():
+        pool = Joke.objects.all()
+        used_vibe = None
+
+    rolled_today = MysteryBoxRoll.objects.filter(
+        user=user, rolled_date=today
+    ).values_list('joke_id', flat=True)
+    pool = pool.exclude(id__in=list(rolled_today))
+
+    saved_ids = SavedJoke.objects.filter(user=user).values_list('joke_id', flat=True)
+    pool = pool.exclude(id__in=list(saved_ids))
+
+    return pool, used_vibe
+
+
+class MysteryBoxStatusView(APIView):
+    """GET /api/v1/mystery-box/status/ — current quota state for the user."""
+    permission_classes = [IsAuthenticated]
+
+    @extend_schema(responses={200: MysteryBoxStatusSerializer})
+    def get(self, request):
+        from django.utils import timezone
+        used = MysteryBoxRoll.objects.filter(
+            user=request.user, rolled_date=timezone.now().date()
+        ).count()
+        max_per_day = MysteryBoxRoll.MAX_DAILY_ROLLS
+        return Response({
+            'rolls_used_today': used,
+            'rolls_remaining_today': max(0, max_per_day - used),
+            'max_per_day': max_per_day,
+        })
+
+
+class MysteryBoxRollView(APIView):
+    """POST /api/v1/mystery-box/roll/ — pull one joke from the user's pool.
+
+    Returns 429 if daily cap reached, 404 if pool exhausted, 200 with the
+    joke + remaining quota otherwise.
+    """
+    permission_classes = [IsAuthenticated]
+
+    @extend_schema(
+        request=None,
+        responses={
+            200: MysteryBoxRollResponseSerializer,
+            404: None,
+            429: None,
+        },
+    )
+    def post(self, request):
+        from django.utils import timezone
+        today = timezone.now().date()
+
+        used = MysteryBoxRoll.objects.filter(
+            user=request.user, rolled_date=today
+        ).count()
+        if used >= MysteryBoxRoll.MAX_DAILY_ROLLS:
+            return Response(
+                {
+                    'detail': 'Daily Mystery Box limit reached. Resets at midnight UTC.',
+                    'rolls_used_today': used,
+                    'rolls_remaining_today': 0,
+                    'max_per_day': MysteryBoxRoll.MAX_DAILY_ROLLS,
+                },
+                status=status.HTTP_429_TOO_MANY_REQUESTS,
+            )
+
+        pool, source_vibe = _mystery_pool_for_user(request.user)
+        joke = pool.order_by('?').first()
+        if joke is None:
+            return Response(
+                {'detail': 'No jokes available — your pool is exhausted for today.'},
+                status=status.HTTP_404_NOT_FOUND,
+            )
+
+        with transaction.atomic():
+            MysteryBoxRoll.objects.create(
+                user=request.user,
+                joke=joke,
+                source_vibe=source_vibe,
+                rolled_date=today,
+            )
+
+        return Response({
+            'joke': JokeSerializer(joke, context={'request': request}).data,
+            'rolls_remaining_today': MysteryBoxRoll.MAX_DAILY_ROLLS - used - 1,
+            'source_vibe': VibeSerializer(source_vibe).data if source_vibe else None,
+        })
