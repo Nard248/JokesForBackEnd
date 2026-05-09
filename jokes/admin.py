@@ -4,7 +4,7 @@ from .models import (
     UserPreference, Collection, SavedJoke, DailyJoke, JokeRating, ShareEvent,
     UserProfile, Favorite, JokeSubmission, Achievement, UserAchievement,
     ContentReport, UserBlock,
-    Vibe, UserVibe, MysteryBoxRoll,
+    Vibe, UserVibe, MysteryBoxRoll, JokeReaction,
 )
 
 
@@ -259,3 +259,12 @@ class MysteryBoxRollAdmin(admin.ModelAdmin):
     raw_id_fields = ['user', 'joke', 'source_vibe']
     readonly_fields = ['rolled_at', 'rolled_date']
     date_hierarchy = 'rolled_date'
+
+
+@admin.register(JokeReaction)
+class JokeReactionAdmin(admin.ModelAdmin):
+    list_display = ['user', 'joke', 'reaction', 'updated_at']
+    list_filter = ['reaction']
+    search_fields = ['user__email']
+    raw_id_fields = ['user', 'joke']
+    readonly_fields = ['created_at', 'updated_at']
