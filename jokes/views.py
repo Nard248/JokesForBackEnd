@@ -53,6 +53,8 @@ from .models import (
     MysteryBoxRoll,
     JokeReaction,
     JokeView,
+    Streak,
+    StreakDay,
 )
 from .recommendations import get_personalized_joke, get_recently_shown_joke_ids
 from .serializers import (
@@ -82,6 +84,7 @@ from .serializers import (
     MysteryBoxStatusSerializer,
     MysteryBoxRollResponseSerializer,
     JokeViewSerializer,
+    StreakSerializer,
 )
 
 
@@ -1751,3 +1754,100 @@ class RecentlyViewedView(APIView):
             .order_by('-viewed_at')[:limit]
         )
         return Response(JokeViewSerializer(qs, many=True, context={'request': request}).data)
+
+
+# =============================================================================
+# Streak (P6 of Pivot Plan)
+# =============================================================================
+
+def _reconcile_streak(streak):
+    """Lazy gap reconciliation on /streak/ read — handles the case where the
+    user opens their streak page after multiple inactive days.
+
+    Reuses the same _walk_gap helper used by the JokeView signal so behaviour
+    stays consistent between read-path and write-path reconciliation.
+    """
+    from django.utils import timezone
+    from .signals import _walk_gap
+
+    if not streak.last_active_date:
+        return
+
+    # Refresh freezes if month rolled over
+    current_month = timezone.now().strftime('%Y-%m')
+    if streak.last_freeze_refresh_month != current_month:
+        streak.freeze_days_available = Streak.FREEZES_PER_MONTH
+        streak.last_freeze_refresh_month = current_month
+
+    today = timezone.now().date()
+    _walk_gap(streak, today)
+    streak.save()
+
+
+class StreakView(APIView):
+    """GET /api/v1/users/me/streak/  → reconciled streak state + 14-day grid + risk flag.
+    POST /api/v1/users/me/streak/freeze/        → manually use a freeze (vacation mode).
+    POST /api/v1/users/me/streak/freeze/remove/ → undo today's accidental freeze.
+    """
+    permission_classes = [IsAuthenticated]
+
+    @extend_schema(responses={200: StreakSerializer})
+    def get(self, request):
+        streak, _ = Streak.objects.get_or_create(user=request.user)
+        _reconcile_streak(streak)
+        return Response(StreakSerializer(streak).data)
+
+
+class StreakFreezeView(APIView):
+    """Manual freeze for today — vacation-mode override."""
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        from django.utils import timezone
+        streak, _ = Streak.objects.get_or_create(user=request.user)
+        if streak.freeze_days_available <= 0:
+            return Response(
+                {'detail': 'No freeze days available this month.'},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+        today = timezone.now().date()
+        existing = StreakDay.objects.filter(user=request.user, date=today).first()
+        if existing and existing.status == StreakDay.STATUS_READ:
+            return Response(
+                {'detail': 'Already counted today — no need to freeze.'},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+        with transaction.atomic():
+            StreakDay.objects.update_or_create(
+                user=request.user, date=today,
+                defaults={'status': StreakDay.STATUS_FROZEN},
+            )
+            streak.freeze_days_available -= 1
+            streak.freezes_used_total += 1
+            streak.last_active_date = today  # frozen days count for continuity
+            streak.save()
+        return Response(StreakSerializer(streak).data)
+
+
+class StreakFreezeRemoveView(APIView):
+    """Undo a freeze used today."""
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        from django.utils import timezone
+        today = timezone.now().date()
+        streak, _ = Streak.objects.get_or_create(user=request.user)
+        existing = StreakDay.objects.filter(
+            user=request.user, date=today, status=StreakDay.STATUS_FROZEN
+        ).first()
+        if not existing:
+            return Response(
+                {'detail': "No freeze to remove for today."},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+        with transaction.atomic():
+            existing.delete()
+            streak.freeze_days_available += 1
+            streak.freezes_used_total = max(0, streak.freezes_used_total - 1)
+            streak.save()
+        return Response(StreakSerializer(streak).data)

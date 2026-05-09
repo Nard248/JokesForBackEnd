@@ -45,6 +45,10 @@ urlpatterns = [
     path('mystery-box/roll/', views.MysteryBoxRollView.as_view(), name='mystery-box-roll'),
     # Recently viewed (P5 of Pivot Plan)
     path('users/me/recently-viewed/', views.RecentlyViewedView.as_view(), name='recently-viewed'),
+    # Streak (P6 of Pivot Plan)
+    path('users/me/streak/', views.StreakView.as_view(), name='user-streak'),
+    path('users/me/streak/freeze/', views.StreakFreezeView.as_view(), name='user-streak-freeze'),
+    path('users/me/streak/freeze/remove/', views.StreakFreezeRemoveView.as_view(), name='user-streak-freeze-remove'),
 
     # Trending & Discovery (Phase 5) — non-router endpoints
     path('tags/trending/', views.TagsTrendingView.as_view(), name='tags-trending'),

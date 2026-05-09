@@ -4,7 +4,7 @@ from .models import (
     UserPreference, Collection, SavedJoke, DailyJoke, JokeRating, ShareEvent,
     UserProfile, Favorite, JokeSubmission, Achievement, UserAchievement,
     ContentReport, UserBlock,
-    Vibe, UserVibe, MysteryBoxRoll, JokeReaction, JokeView,
+    Vibe, UserVibe, MysteryBoxRoll, JokeReaction, JokeView, Streak, StreakDay,
 )
 
 
@@ -278,3 +278,20 @@ class JokeViewAdmin(admin.ModelAdmin):
     raw_id_fields = ['user', 'joke']
     readonly_fields = ['viewed_at', 'viewed_date']
     date_hierarchy = 'viewed_date'
+
+
+@admin.register(Streak)
+class StreakAdmin(admin.ModelAdmin):
+    list_display = ['user', 'current_count', 'longest_count', 'freeze_days_available', 'last_active_date']
+    search_fields = ['user__email']
+    raw_id_fields = ['user']
+    readonly_fields = ['updated_at']
+
+
+@admin.register(StreakDay)
+class StreakDayAdmin(admin.ModelAdmin):
+    list_display = ['user', 'date', 'status']
+    list_filter = ['status', 'date']
+    search_fields = ['user__email']
+    raw_id_fields = ['user']
+    date_hierarchy = 'date'
