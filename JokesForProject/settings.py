@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 import os
 from datetime import timedelta
 from pathlib import Path
+from typing import Any
+from urllib.parse import parse_qs, unquote, urlparse
 
 from dotenv import load_dotenv
 
@@ -106,17 +108,42 @@ WSGI_APPLICATION = 'JokesForProject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
+#
+# When DATABASE_URL is set (e.g. Neon), parse it and pass any libpq query-string
+# params (sslmode, channel_binding, application_name, ...) through OPTIONS.
+# Otherwise fall back to the individual DB_* vars used for local development.
 
-DATABASES = {
-    'default': {
+def _build_default_db():
+    url = os.getenv('DATABASE_URL', '').strip()
+    if not url:
+        return {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.getenv('DB_NAME', 'jokesfor'),
+            'USER': os.getenv('DB_USER', 'postgres'),
+            'PASSWORD': os.getenv('DB_PASSWORD', ''),
+            'HOST': os.getenv('DB_HOST', 'localhost'),
+            'PORT': os.getenv('DB_PORT', '5432'),
+        }
+
+    parsed = urlparse(url)
+    options = {k: v[-1] for k, v in parse_qs(parsed.query).items()}
+    config: dict[str, Any] = {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME', 'jokesfor'),
-        'USER': os.getenv('DB_USER', 'postgres'),
-        'PASSWORD': os.getenv('DB_PASSWORD', ''),
-        'HOST': os.getenv('DB_HOST', 'localhost'),
-        'PORT': os.getenv('DB_PORT', '5432'),
+        'NAME': (parsed.path or '/').lstrip('/'),
+        'USER': unquote(parsed.username or ''),
+        'PASSWORD': unquote(parsed.password or ''),
+        'HOST': parsed.hostname or '',
+        'PORT': str(parsed.port) if parsed.port else '',
+        'OPTIONS': options,
     }
-}
+    # Pooled hosts (PgBouncer transaction mode, e.g. Neon `-pooler`) don't
+    # support server-side cursors — connections get reassigned mid-statement.
+    if '-pooler' in (parsed.hostname or ''):
+        config['DISABLE_SERVER_SIDE_CURSORS'] = True
+    return config
+
+
+DATABASES = {'default': _build_default_db()}
 
 
 # Password validation
@@ -169,7 +196,7 @@ REST_FRAMEWORK = {
         'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
     ],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 20,
+    'PAGE_SIZE': 10,
     'DEFAULT_THROTTLE_CLASSES': [
         'rest_framework.throttling.AnonRateThrottle',
         'rest_framework.throttling.UserRateThrottle',

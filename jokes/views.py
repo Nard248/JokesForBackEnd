@@ -7,10 +7,11 @@ Provides viewsets for all models:
 - GoogleLogin: Google OAuth2 authentication endpoint
 - joke_share_page: Public share page with OG meta tags
 """
-from rest_framework import mixins, status, viewsets
+from rest_framework import generics, mixins, status, viewsets
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
+from rest_framework.views import APIView
 from drf_spectacular.utils import extend_schema, OpenApiParameter
 from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
 from allauth.socialaccount.providers.oauth2.client import OAuth2Client
@@ -21,7 +22,7 @@ from django.views.decorators.http import require_GET
 
 from django.utils import timezone
 
-from django.db.models import Sum
+from django.db.models import Count, Q, Sum
 
 from .models import (
     Joke,
@@ -37,11 +38,17 @@ from .models import (
     DailyJoke,
     JokeRating,
     ShareEvent,
+    Favorite,
+    JokeSubmission,
+    ContentReport,
+    UserBlock,
+    Achievement,
+    UserAchievement,
+    UserProfile,
 )
 from .recommendations import get_personalized_joke, get_recently_shown_joke_ids
 from .serializers import (
     JokeSerializer,
-    JokeListSerializer,
     FormatSerializer,
     AgeRatingSerializer,
     ToneSerializer,
@@ -56,6 +63,11 @@ from .serializers import (
     SavedJokeCreateSerializer,
     DailyJokeSerializer,
     JokeRatingSerializer,
+    FavoriteSerializer,
+    FavoriteCreateSerializer,
+    JokeSubmissionListSerializer,
+    JokeSubmissionCreateSerializer,
+    ContentReportSerializer,
 )
 
 
@@ -73,13 +85,13 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
     Return a random joke (useful for "Joke of the Day" features).
     """
 
-    queryset = Joke.objects.all()
+    serializer_class = JokeSerializer
 
-    def get_serializer_class(self):
-        """Use compact serializer for list, full serializer for detail."""
-        if self.action == 'list':
-            return JokeListSerializer
-        return JokeSerializer
+    def get_queryset(self):
+        """Optimized queryset with eager loading for nested serializer."""
+        return Joke.objects.select_related(
+            'format', 'age_rating', 'language', 'source'
+        ).prefetch_related('tones', 'context_tags', 'culture_tags')
 
     @extend_schema(
         parameters=[
@@ -125,6 +137,12 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
                 description='Filter by language code (e.g., en)',
                 required=False,
             ),
+            OpenApiParameter(
+                name='ordering',
+                type=str,
+                description='Sort order: -created_at (newest), popularity (by likes/saves), relevance (default when q is present)',
+                required=False,
+            ),
         ],
         description='List jokes with optional full-text search and filtering.',
     )
@@ -155,6 +173,7 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
         context_tags_param = request.query_params.get('context_tags', '').strip()
         culture_tags_param = request.query_params.get('culture_tags', '').strip()
         language_code = request.query_params.get('language', '').strip()
+        ordering = request.query_params.get('ordering', '').strip()
 
         # Build filters dict
         filters = {}
@@ -175,6 +194,7 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
         queryset = Joke.objects.search(
             query_text=query_text if query_text else None,
             filters=filters if filters else None,
+            ordering=ordering if ordering else None,
         )
 
         # Paginate results
@@ -251,15 +271,64 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
     def get_rating(self, request, pk=None):
         """Get user's rating for a joke: GET /api/v1/jokes/{id}/my-rating/"""
         joke = self.get_object()
+        score = joke.ratings.aggregate(score=Sum('rating'))['score'] or 0
         try:
             rating = JokeRating.objects.get(user=request.user, joke=joke)
-            return Response(JokeRatingSerializer(rating).data)
+            data = JokeRatingSerializer(rating).data
+            data['joke_score'] = score
+            return Response(data)
         except JokeRating.DoesNotExist:
-            return Response({'rating': None})
+            return Response({'rating': None, 'joke_score': score})
+
+    @extend_schema(
+        parameters=[
+            OpenApiParameter(name='period', type=str, description='Time window: today, week (default), month'),
+        ],
+        description='Get jokes ranked by recent popularity.',
+    )
+    @action(detail=False, methods=['get'], permission_classes=[AllowAny])
+    def trending(self, request):
+        """GET /jokes/trending/ — Jokes ranked by recent popularity."""
+        from datetime import timedelta
+
+        period = request.query_params.get('period', 'week')
+        period_map = {'today': 1, 'week': 7, 'month': 30}
+        days = period_map.get(period, 7)
+        since = timezone.now() - timedelta(days=days)
+
+        jokes = Joke.objects.select_related(
+            'format', 'age_rating', 'language', 'source'
+        ).prefetch_related('tones', 'context_tags', 'culture_tags').annotate(
+            recent_likes=Count('ratings', filter=Q(ratings__rating=1, ratings__created_at__gte=since)),
+            recent_shares=Count('share_events', filter=Q(share_events__created_at__gte=since)),
+            recent_saves=Count('saved_by', filter=Q(saved_by__created_at__gte=since)),
+            score=Count('ratings', filter=Q(ratings__rating=1, ratings__created_at__gte=since))
+                  + Count('share_events', filter=Q(share_events__created_at__gte=since)) * 2
+                  + Count('saved_by', filter=Q(saved_by__created_at__gte=since)),
+        ).filter(
+            Q(recent_likes__gt=0) | Q(recent_shares__gt=0) | Q(recent_saves__gt=0)
+        ).order_by('-score')
+
+        page = self.paginate_queryset(jokes)
+        results = []
+        for rank, joke in enumerate(page or jokes[:20], 1):
+            data = JokeSerializer(joke, context={'request': request}).data
+            results.append({
+                'rank': rank,
+                'joke': data,
+                'likes': joke.recent_likes,
+                'shares': joke.recent_shares,
+                'comments': 0,
+                'trending_since': since.isoformat(),
+            })
+
+        if page is not None:
+            return self.get_paginated_response(results)
+        return Response({'count': len(results), 'next': None, 'previous': None, 'results': results})
 
     def get_permissions(self):
-        """Allow unauthenticated access to share endpoint."""
-        if self.action == 'share':
+        """Allow unauthenticated access to share and trending endpoints."""
+        if self.action in ('share', 'trending'):
             return [AllowAny()]
         return super().get_permissions()
 
@@ -501,6 +570,34 @@ class CollectionViewSet(viewsets.ModelViewSet):
         serializer = SavedJokeSerializer(saved_jokes, many=True)
         return Response(serializer.data)
 
+    @action(detail=False, methods=['get'], permission_classes=[AllowAny])
+    def trending(self, request):
+        """GET /collections/trending/ — Public collections gaining traction."""
+        from datetime import timedelta
+
+        week_ago = timezone.now() - timedelta(days=7)
+        collections = (
+            Collection.objects.filter(is_public=True)
+            .annotate(
+                saves_this_week=Count('saved_jokes', filter=Q(saved_jokes__created_at__gte=week_ago)),
+                joke_count=Count('saved_jokes'),
+            )
+            .filter(saves_this_week__gt=0)
+            .order_by('-saves_this_week')[:10]
+        )
+
+        results = []
+        for c in collections:
+            results.append({
+                'id': c.id,
+                'name': c.name,
+                'joke_count': c.joke_count,
+                'saves_this_week': c.saves_this_week,
+                'creator_name': c.user.first_name or c.user.email.split('@')[0],
+            })
+
+        return Response({'results': results})
+
 
 class SavedJokeViewSet(
     mixins.CreateModelMixin,
@@ -522,9 +619,22 @@ class SavedJokeViewSet(
 
     def get_queryset(self):
         """Return saved jokes for the current user with related data."""
-        return SavedJoke.objects.filter(
+        qs = SavedJoke.objects.filter(
             user=self.request.user
-        ).select_related('joke', 'collection')
+        ).select_related(
+            'joke', 'joke__format', 'joke__age_rating', 'joke__language', 'joke__source',
+            'collection'
+        ).prefetch_related('joke__tones', 'joke__context_tags', 'joke__culture_tags')
+
+        ordering = self.request.query_params.get('ordering', '-saved_at')
+        ordering_map = {
+            '-saved_at': '-created_at',
+            'saved_at': 'created_at',
+            '-created_at': '-created_at',
+            'created_at': 'created_at',
+        }
+        qs = qs.order_by(ordering_map.get(ordering, '-created_at'))
+        return qs
 
     def get_serializer_class(self):
         """Return appropriate serializer based on action."""
@@ -581,40 +691,62 @@ class SavedJokeViewSet(
 class DailyJokeViewSet(viewsets.GenericViewSet):
     """
     ViewSet for daily joke functionality.
-    All endpoints require authentication.
 
     Endpoints:
-    - GET /api/v1/daily-jokes/today/ - Get today's personalized joke
-    - GET /api/v1/daily-jokes/history/ - Get last 30 days of jokes
+    - GET /api/v1/daily-jokes/today/ - Get today's joke (personalized for auth, editorial pick for anon)
+    - GET /api/v1/daily-jokes/history/ - Get last 30 days of jokes (auth required)
     """
 
-    permission_classes = [IsAuthenticated]
     serializer_class = DailyJokeSerializer
+
+    def get_permissions(self):
+        """Allow anonymous access to today's joke, require auth for history."""
+        if self.action == 'today':
+            return [AllowAny()]
+        return [IsAuthenticated()]
 
     def get_queryset(self):
         """Return daily jokes for the current user."""
-        return DailyJoke.objects.filter(user=self.request.user)
+        if self.request.user.is_authenticated:
+            return DailyJoke.objects.filter(user=self.request.user)
+        return DailyJoke.objects.none()
 
     @extend_schema(
-        description='Get today\'s personalized joke. Generates on-demand if not pre-generated.',
+        description='Get today\'s joke. Personalized for authenticated users, editorial pick for anonymous.',
         responses={200: DailyJokeSerializer, 404: None},
     )
     @action(detail=False, methods=['get'])
     def today(self, request):
         """
-        Get today's personalized joke.
+        Get today's joke.
 
-        If scheduled task already generated one, return it.
-        Otherwise, generate on-demand (fallback).
-
-        Returns 404 if no joke available (dataset exhausted).
+        For authenticated users: personalized based on preferences.
+        For anonymous users: an editorial pick (random curated joke).
         """
-        today = timezone.now().date()
+        today_date = timezone.now().date()
 
-        # Try to get pre-generated daily joke
+        # Anonymous users get an editorial pick
+        if not request.user.is_authenticated:
+            joke = Joke.objects.select_related(
+                'format', 'age_rating', 'language', 'source'
+            ).prefetch_related(
+                'tones', 'context_tags', 'culture_tags'
+            ).order_by('?').first()
+
+            if not joke:
+                return Response(
+                    {'detail': 'No jokes available.'},
+                    status=status.HTTP_404_NOT_FOUND
+                )
+            return Response({
+                'joke': JokeSerializer(joke, context={'request': request}).data,
+                'date': today_date.isoformat(),
+            })
+
+        # Authenticated users get personalized daily joke
         daily = DailyJoke.objects.filter(
             user=request.user,
-            date=today
+            date=today_date
         ).select_related(
             'joke',
             'joke__format',
@@ -634,7 +766,7 @@ class DailyJokeViewSet(viewsets.GenericViewSet):
                 daily = DailyJoke.objects.create(
                     user=request.user,
                     joke=joke,
-                    date=today
+                    date=today_date
                 )
             else:
                 return Response(
@@ -708,3 +840,554 @@ def joke_share_page(request, pk):
         'canonical_url': canonical_url,
         'badge_text': badge_text,
     })
+
+
+# =============================================================================
+# Phase 2: Joke Submission & Drafts
+# =============================================================================
+
+class JokeSubmitView(generics.CreateAPIView):
+    """POST /jokes/submit/ — Submit a new joke for moderation."""
+
+    permission_classes = [IsAuthenticated]
+    serializer_class = JokeSubmissionCreateSerializer
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user, status='pending')
+
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        return Response(
+            {'id': serializer.instance.id, 'status': 'pending', 'created_at': serializer.instance.created_at},
+            status=status.HTTP_201_CREATED,
+        )
+
+
+class JokeDraftListView(generics.ListAPIView):
+    """GET /jokes/my-drafts/ — List user's drafts and submissions."""
+
+    permission_classes = [IsAuthenticated]
+    serializer_class = JokeSubmissionListSerializer
+
+    def get_queryset(self):
+        return JokeSubmission.objects.filter(
+            user=self.request.user
+        ).select_related('format', 'age_rating', 'published_joke').prefetch_related('tones', 'context_tags')
+
+
+class JokeDraftDetailView(generics.RetrieveUpdateDestroyAPIView):
+    """
+    GET/PATCH/DELETE /jokes/my-drafts/{id}/
+
+    PATCH: Only allowed when status is 'draft' or 'rejected'.
+    DELETE: Always allowed for the owner.
+    """
+
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        return JokeSubmission.objects.filter(user=self.request.user)
+
+    def get_serializer_class(self):
+        if self.request.method == 'PATCH':
+            return JokeSubmissionCreateSerializer
+        return JokeSubmissionListSerializer
+
+    def update(self, request, *args, **kwargs):
+        instance = self.get_object()
+        if instance.status not in ('draft', 'rejected'):
+            return Response(
+                {'detail': 'Can only edit drafts or rejected submissions.'},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+        return super().update(request, *args, **kwargs)
+
+
+class JokeDraftSubmitView(APIView):
+    """POST /jokes/my-drafts/{id}/submit/ — Submit a draft for review."""
+
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, pk):
+        submission = get_object_or_404(JokeSubmission, pk=pk, user=request.user)
+        if submission.status not in ('draft', 'rejected'):
+            return Response(
+                {'detail': 'Can only submit drafts or rejected submissions for review.'},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+        submission.status = 'pending'
+        submission.save(update_fields=['status', 'updated_at'])
+        return Response({'id': submission.id, 'status': 'pending'})
+
+
+# =============================================================================
+# Phase 3: Favorites
+# =============================================================================
+
+class FavoriteViewSet(
+    mixins.CreateModelMixin,
+    mixins.DestroyModelMixin,
+    mixins.ListModelMixin,
+    viewsets.GenericViewSet,
+):
+    """
+    Favorite management for authenticated users.
+
+    Endpoints:
+    - GET /api/v1/favorites/ — List favorited jokes
+    - POST /api/v1/favorites/ — Favorite a joke
+    - DELETE /api/v1/favorites/{id}/ — Unfavorite
+    - GET /api/v1/favorites/stats/ — Favorite statistics
+    """
+
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        qs = Favorite.objects.filter(
+            user=self.request.user
+        ).select_related(
+            'joke', 'joke__format', 'joke__age_rating', 'joke__language', 'joke__source'
+        ).prefetch_related('joke__tones', 'joke__context_tags', 'joke__culture_tags')
+
+        # Filter by tones
+        tones_param = self.request.query_params.get('tones', '').strip()
+        if tones_param:
+            tone_slugs = [t.strip() for t in tones_param.split(',')]
+            qs = qs.filter(joke__tones__slug__in=tone_slugs).distinct()
+
+        # Ordering
+        ordering = self.request.query_params.get('ordering', '-favorited_at')
+        if ordering == '-popularity':
+            qs = qs.annotate(
+                popularity=Count('joke__ratings', filter=Q(joke__ratings__rating=1))
+            ).order_by('-popularity')
+        elif ordering == 'favorited_at':
+            qs = qs.order_by('created_at')
+        else:  # -favorited_at (default)
+            qs = qs.order_by('-created_at')
+
+        return qs
+
+    def get_serializer_class(self):
+        if self.action == 'create':
+            return FavoriteCreateSerializer
+        return FavoriteSerializer
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
+    def create(self, request, *args, **kwargs):
+        """Override to return full Favorite object (not just joke id) after creation."""
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        # Return full Favorite shape (id, joke, favorited_at) via FavoriteSerializer
+        full_data = FavoriteSerializer(
+            serializer.instance, context=self.get_serializer_context()
+        ).data
+        return Response(full_data, status=status.HTTP_201_CREATED)
+
+    @action(detail=False, methods=['get'])
+    def stats(self, request):
+        """GET /favorites/stats/ — Favorite statistics."""
+        from datetime import timedelta
+
+        favorites = Favorite.objects.filter(user=request.user)
+        total = favorites.count()
+
+        week_ago = timezone.now() - timedelta(days=7)
+        this_week = favorites.filter(created_at__gte=week_ago).count()
+
+        # Top tone: most common tone among favorited jokes
+        top_tone_data = (
+            Tone.objects.filter(jokes__favorited_by__user=request.user)
+            .annotate(fav_count=Count('jokes__favorited_by'))
+            .order_by('-fav_count')
+            .first()
+        )
+        top_tone = top_tone_data.name if top_tone_data else None
+
+        return Response({
+            'total_count': total,
+            'top_tone': top_tone,
+            'this_week_count': this_week,
+        })
+
+
+# =============================================================================
+# Phase 4: User Profile, Activity, Achievements, Preferences
+# =============================================================================
+
+class UserProfileView(APIView):
+    """GET/PATCH /users/me/profile/ — User profile with stats and humor DNA."""
+
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        user = request.user
+        profile = user.profile
+
+        # Compute stats
+        stats = {
+            'jokes_saved': SavedJoke.objects.filter(user=user).count(),
+            'jokes_shared': ShareEvent.objects.filter(user=user).count(),
+            'collections': Collection.objects.filter(user=user).count(),
+            'days_active': (timezone.now().date() - user.date_joined.date()).days,
+        }
+
+        # Compute humor DNA from interaction history
+        humor_dna = self._compute_humor_dna(user)
+
+        return Response({
+            'name': f"{user.first_name} {user.last_name}".strip() or user.email.split('@')[0],
+            'username': f"@{user.email.split('@')[0]}",
+            'email': user.email,
+            'bio': profile.bio,
+            'avatar_url': request.build_absolute_uri(profile.avatar.url) if profile.avatar else None,
+            'member_since': user.date_joined.date().isoformat(),
+            'is_premium': profile.is_premium,
+            'stats': stats,
+            'humor_dna': humor_dna,
+        })
+
+    def patch(self, request):
+        user = request.user
+        profile = user.profile
+
+        if 'first_name' in request.data:
+            user.first_name = request.data['first_name']
+        if 'last_name' in request.data:
+            user.last_name = request.data['last_name']
+        if 'bio' in request.data:
+            profile.bio = request.data['bio']
+
+        user.save()
+        profile.save()
+
+        return self.get(request)
+
+    def _compute_humor_dna(self, user):
+        """Distribution of tones across user's positive interactions."""
+        tone_counts = (
+            Tone.objects.filter(
+                Q(jokes__ratings__user=user, jokes__ratings__rating=1)
+                | Q(jokes__favorited_by__user=user)
+                | Q(jokes__saved_by__user=user)
+            )
+            .annotate(interaction_count=Count('id'))
+            .order_by('-interaction_count')[:4]
+        )
+        total = sum(t.interaction_count for t in tone_counts) or 1
+        return [
+            {'type': t.name, 'percentage': round(t.interaction_count / total * 100)}
+            for t in tone_counts
+        ]
+
+
+class UserActivityView(APIView):
+    """GET /users/me/activity/ — Recent activity feed."""
+
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        limit = int(request.query_params.get('limit', 10))
+        activities = []
+
+        # Recent ratings
+        for r in JokeRating.objects.filter(user=request.user).select_related('joke').order_by('-created_at')[:limit]:
+            verb = 'Liked' if r.rating == 1 else 'Disliked'
+            activities.append({
+                'id': f'rating_{r.id}',
+                'type': 'like' if r.rating == 1 else 'dislike',
+                'description': f"{verb} '{r.joke.text[:40]}...'",
+                'created_at': r.created_at,
+            })
+
+        # Recent saves
+        for s in SavedJoke.objects.filter(user=request.user).select_related('joke').order_by('-created_at')[:limit]:
+            activities.append({
+                'id': f'save_{s.id}',
+                'type': 'save',
+                'description': f"Saved '{s.joke.text[:40]}...'",
+                'created_at': s.created_at,
+            })
+
+        # Recent favorites
+        for f in Favorite.objects.filter(user=request.user).select_related('joke').order_by('-created_at')[:limit]:
+            activities.append({
+                'id': f'fav_{f.id}',
+                'type': 'save',
+                'description': f"Favorited '{f.joke.text[:40]}...'",
+                'created_at': f.created_at,
+            })
+
+        # Recent shares
+        for e in ShareEvent.objects.filter(user=request.user).order_by('-created_at')[:limit]:
+            activities.append({
+                'id': f'share_{e.id}',
+                'type': 'share',
+                'description': f"Shared a joke via {e.get_platform_display()}",
+                'created_at': e.created_at,
+            })
+
+        # Sort and limit
+        activities.sort(key=lambda x: x['created_at'], reverse=True)
+        return Response({'results': activities[:limit]})
+
+
+class UserAchievementsView(APIView):
+    """GET /users/me/achievements/ — All achievement badges with unlock status."""
+
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        user = request.user
+        unlocked = dict(
+            UserAchievement.objects.filter(user=user).values_list('achievement__slug', 'unlocked_at')
+        )
+
+        results = []
+        for ach in Achievement.objects.all():
+            results.append({
+                'id': ach.slug,
+                'title': ach.title,
+                'description': ach.description,
+                'icon': ach.icon,
+                'unlocked': ach.slug in unlocked,
+                'unlocked_at': unlocked.get(ach.slug),
+            })
+
+        return Response({'results': results})
+
+
+class UserPreferencesView(APIView):
+    """GET/PUT/PATCH /users/me/preferences/ — Composite preferences from UserPreference + UserProfile."""
+
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        pref = request.user.preference
+        profile = request.user.profile
+        return Response({
+            'humor_types': list(pref.preferred_tones.values_list('slug', flat=True)),
+            'notifications': {
+                'daily_joke': pref.notification_daily_joke,
+                'trending_alerts': pref.notification_trending_alerts,
+                'collection_updates': pref.notification_collection_updates,
+                'email_digest': pref.notification_email_digest,
+            },
+            'privacy': {
+                'public_profile': profile.public_profile,
+                'show_activity': profile.show_activity,
+                'share_analytics': profile.share_analytics,
+            },
+            'theme': profile.theme,
+        })
+
+    def put(self, request):
+        return self._update(request)
+
+    def patch(self, request):
+        return self._update(request)
+
+    def _update(self, request):
+        pref = request.user.preference
+        profile = request.user.profile
+        data = request.data
+
+        # Update humor_types
+        if 'humor_types' in data:
+            tone_slugs = data['humor_types']
+            tones = Tone.objects.filter(slug__in=tone_slugs)
+            pref.preferred_tones.set(tones)
+
+        # Update notifications
+        if 'notifications' in data:
+            notif = data['notifications']
+            for key in ('daily_joke', 'trending_alerts', 'collection_updates', 'email_digest'):
+                if key in notif:
+                    setattr(pref, f'notification_{key}', notif[key])
+            pref.save()
+
+        # Update privacy
+        if 'privacy' in data:
+            priv = data['privacy']
+            for key in ('public_profile', 'show_activity', 'share_analytics'):
+                if key in priv:
+                    setattr(profile, key, priv[key])
+            profile.save()
+
+        # Update theme
+        if 'theme' in data:
+            profile.theme = data['theme']
+            profile.save()
+
+        return self.get(request)
+
+
+# =============================================================================
+# Phase 5: Trending & Discovery
+# =============================================================================
+
+class TagsTrendingView(APIView):
+    """GET /tags/trending/ — Tags ranked by engagement."""
+
+    permission_classes = [AllowAny]
+
+    def get(self, request):
+        from datetime import timedelta
+        since = timezone.now() - timedelta(days=7)
+
+        results = (
+            Tone.objects.annotate(
+                count=Count('jokes__ratings', filter=Q(
+                    jokes__ratings__rating=1, jokes__ratings__created_at__gte=since
+                ))
+            ).filter(count__gt=0).order_by('-count')[:10]
+        )
+
+        return Response({
+            'results': [
+                {'name': t.name, 'slug': t.slug, 'count': t.count, 'growth_percent': 0}
+                for t in results
+            ]
+        })
+
+
+class TagsRisingView(APIView):
+    """GET /tags/rising/ — Topics with highest growth rate."""
+
+    permission_classes = [AllowAny]
+
+    def get(self, request):
+        from datetime import timedelta
+        now = timezone.now()
+        this_week = now - timedelta(days=7)
+        prev_week = this_week - timedelta(days=7)
+
+        results = []
+        for tag in ContextTag.objects.all():
+            current = tag.jokes.filter(
+                ratings__rating=1, ratings__created_at__gte=this_week
+            ).count()
+            previous = tag.jokes.filter(
+                ratings__rating=1, ratings__created_at__gte=prev_week,
+                ratings__created_at__lt=this_week
+            ).count()
+            if current > 0:
+                growth = round((current - previous) / max(previous, 1) * 100)
+                results.append({'name': tag.name, 'slug': tag.slug, 'growth_percent': growth})
+
+        results.sort(key=lambda x: x['growth_percent'], reverse=True)
+        return Response({'results': results[:10]})
+
+
+class TopJokestersView(APIView):
+    """GET /users/top-jokesters/ — Users ranked by contributions."""
+
+    permission_classes = [AllowAny]
+
+    def get(self, request):
+        from django.contrib.auth import get_user_model
+        User = get_user_model()
+
+        period = request.query_params.get('period', 'all_time')
+        limit = int(request.query_params.get('limit', 5))
+
+        qs = User.objects.filter(joke_submissions__status='published')
+
+        if period != 'all_time':
+            from datetime import timedelta
+            days = {'week': 7, 'month': 30}.get(period, 365)
+            since = timezone.now() - timedelta(days=days)
+            qs = qs.filter(joke_submissions__updated_at__gte=since)
+
+        users = qs.annotate(
+            punchline_count=Count('joke_submissions', filter=Q(joke_submissions__status='published'))
+        ).order_by('-punchline_count')[:limit]
+
+        results = []
+        for rank, u in enumerate(users, 1):
+            name = f"{u.first_name} {u.last_name}".strip() or u.email.split('@')[0]
+            results.append({
+                'id': u.id,
+                'name': name,
+                'username': f"@{u.email.split('@')[0]}",
+                'avatar_url': None,
+                'punchline_count': u.punchline_count,
+                'rank': rank,
+            })
+
+        return Response({'results': results})
+
+
+class ThemesPopularView(APIView):
+    """GET /themes/popular/ — Popular topic labels for discovery."""
+
+    permission_classes = [AllowAny]
+
+    def get(self, request):
+        names = list(
+            ContextTag.objects.annotate(joke_count=Count('jokes'))
+            .order_by('-joke_count')
+            .values_list('name', flat=True)[:10]
+        )
+        return Response({'results': names})
+
+
+# =============================================================================
+# Phase 6: Compliance & Account Management
+# =============================================================================
+
+class ContentReportView(generics.CreateAPIView):
+    """POST /reports/ — Report content (app store compliance)."""
+
+    permission_classes = [IsAuthenticated]
+    serializer_class = ContentReportSerializer
+
+    def perform_create(self, serializer):
+        serializer.save(reporter=self.request.user)
+
+
+class UserBlockView(APIView):
+    """POST/DELETE /users/{user_id}/block/ — Block/unblock a user."""
+
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, user_id):
+        from django.contrib.auth import get_user_model
+        User = get_user_model()
+        blocked_user = get_object_or_404(User, pk=user_id)
+        if blocked_user == request.user:
+            return Response({'detail': 'Cannot block yourself.'}, status=status.HTTP_400_BAD_REQUEST)
+        UserBlock.objects.get_or_create(blocker=request.user, blocked=blocked_user)
+        return Response({'status': 'blocked'}, status=status.HTTP_201_CREATED)
+
+    def delete(self, request, user_id):
+        UserBlock.objects.filter(blocker=request.user, blocked_id=user_id).delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+class UserAccountDeleteView(APIView):
+    """DELETE /users/me/ — Permanently delete account (GDPR)."""
+
+    permission_classes = [IsAuthenticated]
+
+    def delete(self, request):
+        user = request.user
+        user.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+class DataExportView(APIView):
+    """GET /users/me/data-export/ — GDPR data export (placeholder)."""
+
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        return Response({
+            'status': 'processing',
+            'message': 'Your data export is being prepared. You will receive an email when ready.',
+        }, status=status.HTTP_202_ACCEPTED)
