@@ -30,10 +30,14 @@ class JokeManager(models.Manager):
         """
         qs = self.get_queryset()
 
-        # Full-text search
+        # Full-text search.
+        # The pgtrigger that populates `search_vector` uses pg_catalog.english,
+        # so we must use the same config in the query side or lemmas won't
+        # match (e.g. "coffee" → "coffe" in english config but stays "coffee"
+        # under the DB default 'simple' config).
         has_query = query_text and query_text.strip()
         if has_query:
-            query = SearchQuery(query_text.strip(), search_type='websearch')
+            query = SearchQuery(query_text.strip(), search_type='websearch', config='english')
             qs = qs.annotate(
                 rank=SearchRank('search_vector', query)
             ).filter(search_vector=query)
