@@ -236,6 +236,10 @@ await api.post('/auth/password/reset/confirm/', {
 
 For request/response shapes per endpoint, see [`API_Specification_For_Frontend.md`](./API_Specification_For_Frontend.md). Quick tour:
 
+### Activity log + recently viewed (1 endpoint, P5 of Pivot Plan)
+- `GET    /users/me/recently-viewed/?limit=20` → chronological list of recently-viewed jokes; powers "continue mid-sip" + Today's "what you've been laughing at" rail
+- Every authenticated `GET /jokes/{id}/` automatically logs a `JokeView`. Pass `?source=daily|search|explore|mystery|pack|saved|share|other` so the backend knows the surface — used for taste-profile insights and Mystery Box recent-exclusion. Debounced server-side: same (user, joke) within 60 sec doesn't double-log.
+
 ### Reactions — 4-emoji reactions (2 endpoints, P4 of Pivot Plan)
 - `POST   /jokes/{id}/react/` body `{ "reaction": "lol" | "crying" | "hmm" | "eyeroll" }` → toggles off if same, switches if different. Returns `{ my_reaction, counts: { lol, crying, hmm, eyeroll } }`.
 - `GET    /jokes/{id}/reactions/` → same shape, no-op for the user's reaction; useful for hydrating the joke detail card without an extra `?include=` param.

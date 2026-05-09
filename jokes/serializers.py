@@ -29,6 +29,7 @@ from .models import (
     Vibe,
     UserVibe,
     MysteryBoxRoll,
+    JokeView,
 )
 
 
@@ -750,3 +751,17 @@ class MysteryBoxRollResponseSerializer(serializers.Serializer):
     joke = JokeSerializer()
     rolls_remaining_today = serializers.IntegerField()
     source_vibe = VibeSerializer(allow_null=True)
+
+
+# =============================================================================
+# JokeView (P5) — recently viewed list
+# =============================================================================
+
+class JokeViewSerializer(serializers.ModelSerializer):
+    """One row of recently-viewed history with the joke embedded."""
+    joke = JokeSerializer(read_only=True)
+
+    class Meta:
+        model = JokeView
+        fields = ['joke', 'source', 'revealed_punchline', 'viewed_at']
+        read_only_fields = fields

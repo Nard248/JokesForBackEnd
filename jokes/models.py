@@ -852,3 +852,79 @@ class JokeReaction(models.Model):
 
     def __str__(self):
         return f"{self.user.email} {self.reaction} on joke {self.joke_id}"
+
+
+# =============================================================================
+# JokeView (P5 of Pivot Plan) — activity log; foundational for streaks,
+# insights, "continue mid-sip", and Mystery Box recent-exclusion
+# =============================================================================
+
+class JokeView(models.Model):
+    """A user opened/viewed a joke. Logged synchronously by signal/middleware.
+
+    Single source of truth for "the user did something with this joke today".
+    Powers: streak detection, taste profile, recently-viewed list, peak-read-hour
+    histogram, "continue mid-sip" pack progress, Mystery Box recent-exclusion.
+
+    Debounced at the view layer — multiple fetches of the same joke within 60s
+    don't create duplicate rows.
+    """
+
+    SOURCE_DAILY = 'daily'
+    SOURCE_SEARCH = 'search'
+    SOURCE_EXPLORE = 'explore'
+    SOURCE_MYSTERY = 'mystery'
+    SOURCE_PACK = 'pack'
+    SOURCE_SAVED = 'saved'
+    SOURCE_SHARE = 'share'
+    SOURCE_OTHER = 'other'
+    SOURCE_CHOICES = [
+        (SOURCE_DAILY,   'Daily'),
+        (SOURCE_SEARCH,  'Search'),
+        (SOURCE_EXPLORE, 'Explore'),
+        (SOURCE_MYSTERY, 'Mystery'),
+        (SOURCE_PACK,    'Pack'),
+        (SOURCE_SAVED,   'Saved'),
+        (SOURCE_SHARE,   'Share'),
+        (SOURCE_OTHER,   'Other'),
+    ]
+
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='joke_views',
+    )
+    joke = models.ForeignKey(
+        Joke,
+        on_delete=models.CASCADE,
+        related_name='views',
+    )
+    source = models.CharField(
+        max_length=16,
+        choices=SOURCE_CHOICES,
+        default=SOURCE_OTHER,
+        db_index=True,
+    )
+    revealed_punchline = models.BooleanField(
+        default=False,
+        help_text='Did the user tap to reveal? Tracks engagement vs. bounce.',
+    )
+    viewed_at = models.DateTimeField(auto_now_add=True)
+    viewed_date = models.DateField(db_index=True)
+
+    class Meta:
+        ordering = ['-viewed_at']
+        indexes = [
+            models.Index(fields=['user', '-viewed_at']),
+            models.Index(fields=['user', 'viewed_date']),
+            models.Index(fields=['joke', '-viewed_at']),
+        ]
+
+    def save(self, *args, **kwargs):
+        if not self.viewed_date:
+            from django.utils import timezone
+            self.viewed_date = timezone.now().date()
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f"{self.user.email} viewed joke {self.joke_id} @ {self.viewed_at}"
