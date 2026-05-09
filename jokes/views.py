@@ -1958,3 +1958,65 @@ class JokePackInProgressView(APIView):
         return Response(
             JokePackListSerializer(packs, many=True, context={'request': request}).data
         )
+
+
+# =============================================================================
+# Daily Ritual Status (P8 of Pivot Plan)
+# =============================================================================
+
+class DailyRitualStatusView(APIView):
+    """GET /api/v1/users/me/today-status/ — flags for the Today surface.
+
+    Replaces the 9 AM daily push: frontend polls this and renders "Today's
+    joke is ready" when daily_joke_due is true. Cloud Run-friendly (no cron).
+    """
+    permission_classes = [IsAuthenticated]
+
+    @extend_schema(
+        description='Per-user surface flags computed on demand.',
+        responses={200: {'type': 'object', 'properties': {
+            'daily_joke_due': {'type': 'boolean'},
+            'has_read_today': {'type': 'boolean'},
+            'today_is_a_notification_day': {'type': 'boolean'},
+            'now_past_notification_time': {'type': 'boolean'},
+        }}},
+    )
+    def get(self, request):
+        from django.utils import timezone
+        from .models import UserPreference
+
+        now = timezone.now()
+        today = now.date()
+        weekday = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'][today.weekday()]
+
+        pref, _ = UserPreference.objects.get_or_create(user=request.user)
+
+        # Has the user read today? (via JokeView)
+        has_read_today = JokeView.objects.filter(
+            user=request.user, viewed_date=today
+        ).exists()
+
+        days = pref.notification_days or []
+        today_is_day = (weekday in days) if days else True
+        notification_time = pref.notification_time
+        now_past = (
+            notification_time is None
+            or now.time() >= notification_time
+        )
+
+        # daily_joke_due: it's a notification day, we're past the time, user
+        # hasn't read yet, and they have notifications enabled (or no
+        # preference set yet — default to showing the surface).
+        daily_joke_due = (
+            today_is_day
+            and now_past
+            and not has_read_today
+            and (pref.notification_enabled or not pref.notification_time)
+        )
+
+        return Response({
+            'daily_joke_due': daily_joke_due,
+            'has_read_today': has_read_today,
+            'today_is_a_notification_day': today_is_day,
+            'now_past_notification_time': now_past,
+        })
