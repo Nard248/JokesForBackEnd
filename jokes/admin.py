@@ -4,6 +4,7 @@ from .models import (
     UserPreference, Collection, SavedJoke, DailyJoke, JokeRating, ShareEvent,
     UserProfile, Favorite, JokeSubmission, Achievement, UserAchievement,
     ContentReport, UserBlock,
+    Vibe, UserVibe,
 )
 
 
@@ -200,4 +201,51 @@ class ContentReportAdmin(admin.ModelAdmin):
 class UserBlockAdmin(admin.ModelAdmin):
     list_display = ['blocker', 'blocked', 'created_at']
     search_fields = ['blocker__email', 'blocked__email']
+    readonly_fields = ['created_at']
+
+
+# =============================================================================
+# Vibes (P2 of Pivot Plan)
+# =============================================================================
+
+@admin.register(Vibe)
+class VibeAdmin(admin.ModelAdmin):
+    list_display = ['order', 'icon', 'label', 'slug', 'is_active', 'recipe_summary']
+    list_editable = ['is_active']
+    list_display_links = ['icon', 'label']
+    list_filter = ['is_active']
+    search_fields = ['label', 'slug', 'subtitle']
+    prepopulated_fields = {'slug': ('label',)}
+    filter_horizontal = ['formats', 'themes', 'categories']
+    fieldsets = [
+        ('Identity', {
+            'fields': ['slug', 'label', 'subtitle', 'icon', 'order', 'is_active'],
+        }),
+        ('Display swatches (hex)', {
+            'fields': ['swatch_bg', 'swatch_fg'],
+            'description': 'Used in the onboarding picker tile and hero surfaces.',
+        }),
+        ('Filter recipe', {
+            'fields': ['formats', 'themes', 'categories'],
+            'description': (
+                'A joke matches this vibe iff for each non-empty axis, the joke '
+                'shares at least one value with that axis. Empty axes do not '
+                'constrain. Edit anytime — joke→vibe membership recomputes on '
+                'every query, no backfill needed.'
+            ),
+        }),
+    ]
+    readonly_fields = ['created_at', 'updated_at']
+
+    @admin.display(description='Recipe (F·T·C)')
+    def recipe_summary(self, obj):
+        return f'{obj.formats.count()}·{obj.themes.count()}·{obj.categories.count()}'
+
+
+@admin.register(UserVibe)
+class UserVibeAdmin(admin.ModelAdmin):
+    list_display = ['user', 'vibe', 'weight', 'created_at']
+    list_filter = ['vibe']
+    search_fields = ['user__email', 'vibe__label']
+    raw_id_fields = ['user']
     readonly_fields = ['created_at']

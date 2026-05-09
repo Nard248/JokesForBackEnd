@@ -232,9 +232,18 @@ await api.post('/auth/password/reset/confirm/', {
 
 ---
 
-## 6. Endpoint catalog (live count: 76)
+## 6. Endpoint catalog (live count: 80)
 
 For request/response shapes per endpoint, see [`API_Specification_For_Frontend.md`](./API_Specification_For_Frontend.md). Quick tour:
+
+### Vibes — humor fingerprint (3 endpoints, P2 of Pivot Plan)
+- `GET    /vibes/` — catalog of all 12 active vibes (display metadata: slug, label, subtitle, icon, swatch_bg, swatch_fg, order). No pagination.
+- `GET    /vibes/{slug}/` — single vibe (e.g. `/vibes/office/`)
+- `GET    /users/me/vibes/` — current user's selected vibes; returns `[{ vibe: {...}, weight, created_at }]`
+- `PUT    /users/me/vibes/` — replaces selection atomically; body `{ "slugs": ["office","puns","observ"] }`. **Min 3, max 12.** Unknown slugs → 400.
+- `GET    /jokes/?vibe=office` — filter jokes by a vibe's recipe (resolves to format/theme/category constraints)
+
+**Onboarding wiring** — render `GET /vibes/` as the picker grid, gate "Continue" until ≥3 selected, send `PUT /users/me/vibes/` on submit. `GET /users/me/vibes/` returns whatever was saved last so the picker can pre-select on resume.
 
 ### Auth & users (15 endpoints)
 - `POST   /auth/registration/`, `POST /auth/login/`, `POST /auth/logout/`, `POST /auth/google/`

@@ -19,6 +19,7 @@ from dj_rest_auth.app_settings import api_settings as rest_auth_settings
 from dj_rest_auth.jwt_auth import set_jwt_cookies
 from dj_rest_auth.registration.views import RegisterView, SocialLoginView
 from django.conf import settings
+from django.db import transaction
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.http import require_GET
 
@@ -47,6 +48,8 @@ from .models import (
     Achievement,
     UserAchievement,
     UserProfile,
+    Vibe,
+    UserVibe,
 )
 from .recommendations import get_personalized_joke, get_recently_shown_joke_ids
 from .serializers import (
@@ -70,6 +73,9 @@ from .serializers import (
     JokeSubmissionListSerializer,
     JokeSubmissionCreateSerializer,
     ContentReportSerializer,
+    VibeSerializer,
+    UserVibeSerializer,
+    UserVibesUpdateSerializer,
 )
 
 
@@ -140,6 +146,12 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
                 required=False,
             ),
             OpenApiParameter(
+                name='vibe',
+                type=str,
+                description="Filter to jokes matching a curated vibe's recipe (e.g., 'office', 'puns'). Resolves the vibe's M2M filter recipe to themes/categories/formats.",
+                required=False,
+            ),
+            OpenApiParameter(
                 name='ordering',
                 type=str,
                 description='Sort order: -created_at (newest), popularity (by likes/saves), relevance (default when q is present)',
@@ -198,6 +210,19 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
             filters=filters if filters else None,
             ordering=ordering if ordering else None,
         )
+
+        # Vibe filter (P2): resolves to the vibe's M2M filter recipe.
+        # Applied AFTER search() so it composes with all other filters.
+        vibe_slug = request.query_params.get('vibe', '').strip()
+        if vibe_slug:
+            try:
+                vibe = Vibe.objects.get(slug=vibe_slug, is_active=True)
+            except Vibe.DoesNotExist:
+                return Response(
+                    {'detail': f"Unknown vibe '{vibe_slug}'."},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
+            queryset = vibe.filter_jokes(queryset)
 
         # Paginate results
         page = self.paginate_queryset(queryset)
@@ -1409,3 +1434,61 @@ class DataExportView(APIView):
             'status': 'processing',
             'message': 'Your data export is being prepared. You will receive an email when ready.',
         }, status=status.HTTP_202_ACCEPTED)
+
+
+# =============================================================================
+# Vibes (P2 of Pivot Plan)
+# =============================================================================
+
+class VibeViewSet(viewsets.ReadOnlyModelViewSet):
+    """Catalog of curated vibes shown in the onboarding picker.
+
+    Read-only — vibes are seeded by migration 0013 and edited by curators in
+    Django admin.
+    """
+    queryset = Vibe.objects.filter(is_active=True)
+    serializer_class = VibeSerializer
+    lookup_field = 'slug'
+    pagination_class = None  # 12 vibes; pagination would just add noise
+
+
+class UserVibesView(APIView):
+    """The current user's vibe selection — read with GET, replace with PUT.
+
+    GET   /api/v1/users/me/vibes/  → list of {vibe, weight, created_at}
+    PUT   /api/v1/users/me/vibes/  → body {"slugs": ["office","puns",…]}
+                                      replaces selection atomically; 3-12 slugs
+    """
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        qs = (
+            UserVibe.objects.filter(user=request.user)
+            .select_related('vibe')
+            .order_by('-created_at')
+        )
+        return Response(UserVibeSerializer(qs, many=True).data)
+
+    @extend_schema(
+        request=UserVibesUpdateSerializer,
+        responses={200: UserVibeSerializer(many=True)},
+        description='Replace the user\'s vibe selection. Body: {"slugs": [...]}.',
+    )
+    def put(self, request):
+        serializer = UserVibesUpdateSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        slugs = serializer.validated_data['slugs']
+
+        with transaction.atomic():
+            UserVibe.objects.filter(user=request.user).delete()
+            vibes = list(Vibe.objects.filter(slug__in=slugs, is_active=True))
+            UserVibe.objects.bulk_create(
+                [UserVibe(user=request.user, vibe=v) for v in vibes]
+            )
+
+        qs = (
+            UserVibe.objects.filter(user=request.user)
+            .select_related('vibe')
+            .order_by('-created_at')
+        )
+        return Response(UserVibeSerializer(qs, many=True).data)
