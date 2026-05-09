@@ -4,7 +4,7 @@ from .models import (
     UserPreference, Collection, SavedJoke, DailyJoke, JokeRating, ShareEvent,
     UserProfile, Favorite, JokeSubmission, Achievement, UserAchievement,
     ContentReport, UserBlock,
-    Vibe, UserVibe, MysteryBoxRoll, JokeReaction,
+    Vibe, UserVibe, MysteryBoxRoll, JokeReaction, JokeView,
 )
 
 
@@ -268,3 +268,13 @@ class JokeReactionAdmin(admin.ModelAdmin):
     search_fields = ['user__email']
     raw_id_fields = ['user', 'joke']
     readonly_fields = ['created_at', 'updated_at']
+
+
+@admin.register(JokeView)
+class JokeViewAdmin(admin.ModelAdmin):
+    list_display = ['user', 'joke', 'source', 'revealed_punchline', 'viewed_at']
+    list_filter = ['source', 'revealed_punchline', 'viewed_date']
+    search_fields = ['user__email']
+    raw_id_fields = ['user', 'joke']
+    readonly_fields = ['viewed_at', 'viewed_date']
+    date_hierarchy = 'viewed_date'

@@ -43,6 +43,8 @@ urlpatterns = [
     # Mystery Box (P3 of Pivot Plan)
     path('mystery-box/status/', views.MysteryBoxStatusView.as_view(), name='mystery-box-status'),
     path('mystery-box/roll/', views.MysteryBoxRollView.as_view(), name='mystery-box-roll'),
+    # Recently viewed (P5 of Pivot Plan)
+    path('users/me/recently-viewed/', views.RecentlyViewedView.as_view(), name='recently-viewed'),
 
     # Trending & Discovery (Phase 5) — non-router endpoints
     path('tags/trending/', views.TagsTrendingView.as_view(), name='tags-trending'),

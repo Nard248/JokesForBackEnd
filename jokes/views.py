@@ -52,6 +52,7 @@ from .models import (
     UserVibe,
     MysteryBoxRoll,
     JokeReaction,
+    JokeView,
 )
 from .recommendations import get_personalized_joke, get_recently_shown_joke_ids
 from .serializers import (
@@ -80,6 +81,7 @@ from .serializers import (
     UserVibesUpdateSerializer,
     MysteryBoxStatusSerializer,
     MysteryBoxRollResponseSerializer,
+    JokeViewSerializer,
 )
 
 
@@ -104,6 +106,28 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
         return Joke.objects.select_related(
             'format', 'age_rating', 'language', 'source'
         ).prefetch_related('tones', 'context_tags', 'culture_tags')
+
+    def retrieve(self, request, *args, **kwargs):
+        """Log a JokeView (P5) on retrieve with 60s debouncing per (user, joke)."""
+        response = super().retrieve(request, *args, **kwargs)
+        if request.user.is_authenticated and response.status_code == 200:
+            from django.utils import timezone
+            from datetime import timedelta
+            joke_id = response.data.get('id')
+            if joke_id:
+                source = request.query_params.get('source', JokeView.SOURCE_OTHER)
+                if source not in dict(JokeView.SOURCE_CHOICES):
+                    source = JokeView.SOURCE_OTHER
+                # Debounce: skip if same user+joke logged within 60s
+                cutoff = timezone.now() - timedelta(seconds=60)
+                recent = JokeView.objects.filter(
+                    user=request.user, joke_id=joke_id, viewed_at__gte=cutoff
+                ).exists()
+                if not recent:
+                    JokeView.objects.create(
+                        user=request.user, joke_id=joke_id, source=source
+                    )
+        return response
 
     @extend_schema(
         parameters=[
@@ -1696,3 +1720,34 @@ class MysteryBoxRollView(APIView):
             'rolls_remaining_today': MysteryBoxRoll.MAX_DAILY_ROLLS - used - 1,
             'source_vibe': VibeSerializer(source_vibe).data if source_vibe else None,
         })
+
+
+# =============================================================================
+# Recently Viewed (P5 of Pivot Plan)
+# =============================================================================
+
+class RecentlyViewedView(APIView):
+    """GET /api/v1/users/me/recently-viewed/?limit=20 — chronological view log.
+
+    Powers "continue mid-sip" + Today's "what you've been laughing at" rail.
+    """
+    permission_classes = [IsAuthenticated]
+
+    @extend_schema(
+        parameters=[
+            OpenApiParameter(name='limit', type=int, description='Max rows (default 20, max 100)'),
+        ],
+        responses={200: JokeViewSerializer(many=True)},
+    )
+    def get(self, request):
+        try:
+            limit = min(int(request.query_params.get('limit', 20)), 100)
+        except ValueError:
+            limit = 20
+        qs = (
+            JokeView.objects.filter(user=request.user)
+            .select_related('joke', 'joke__format', 'joke__age_rating', 'joke__language')
+            .prefetch_related('joke__tones', 'joke__context_tags')
+            .order_by('-viewed_at')[:limit]
+        )
+        return Response(JokeViewSerializer(qs, many=True, context={'request': request}).data)
