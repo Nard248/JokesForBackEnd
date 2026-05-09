@@ -802,3 +802,53 @@ class MysteryBoxRoll(models.Model):
 
     def __str__(self):
         return f"{self.user.email} rolled #{self.joke_id} on {self.rolled_date}"
+
+
+# =============================================================================
+# Joke Reactions (P4 of Pivot Plan) — 4-emoji reaction model
+# Coexists with the legacy JokeRating like/dislike model (additive, not destructive)
+# =============================================================================
+
+class JokeReaction(models.Model):
+    """A user's reaction to a joke — one of 4 emojis: 😂 🤣 🤔 🙄.
+
+    A user has at most ONE reaction per joke (unique_together). Posting a
+    different reaction switches; posting the same un-reacts. The legacy
+    JokeRating like/dislike model is left in place for historical analytics
+    and is not affected.
+    """
+
+    REACTION_LOL = 'lol'
+    REACTION_CRYING = 'crying'
+    REACTION_HMM = 'hmm'
+    REACTION_EYEROLL = 'eyeroll'
+    REACTION_CHOICES = [
+        (REACTION_LOL,     '😂 LOL'),
+        (REACTION_CRYING,  '🤣 Crying'),
+        (REACTION_HMM,     '🤔 Hmm'),
+        (REACTION_EYEROLL, '🙄 Eye-roll'),
+    ]
+
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='joke_reactions',
+    )
+    joke = models.ForeignKey(
+        Joke,
+        on_delete=models.CASCADE,
+        related_name='reactions_v2',  # _v2 to avoid clash with JokeRating's `ratings`
+    )
+    reaction = models.CharField(max_length=10, choices=REACTION_CHOICES)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        unique_together = [['user', 'joke']]
+        ordering = ['-updated_at']
+        indexes = [
+            models.Index(fields=['joke', 'reaction']),
+        ]
+
+    def __str__(self):
+        return f"{self.user.email} {self.reaction} on joke {self.joke_id}"

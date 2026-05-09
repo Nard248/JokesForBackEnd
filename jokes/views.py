@@ -51,6 +51,7 @@ from .models import (
     Vibe,
     UserVibe,
     MysteryBoxRoll,
+    JokeReaction,
 )
 from .recommendations import get_personalized_joke, get_recently_shown_joke_ids
 from .serializers import (
@@ -309,6 +310,84 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
             return Response(data)
         except JokeRating.DoesNotExist:
             return Response({'rating': None, 'joke_score': score})
+
+    @extend_schema(
+        description=(
+            'React to a joke with one of 4 emoji reactions (P4 of Pivot Plan). '
+            'Posting the same reaction toggles it off; posting a different one '
+            'switches. Returns my current reaction + aggregated counts.'
+        ),
+        request={
+            'application/json': {
+                'type': 'object',
+                'properties': {
+                    'reaction': {
+                        'type': 'string',
+                        'enum': [r[0] for r in JokeReaction.REACTION_CHOICES],
+                    },
+                },
+                'required': ['reaction'],
+            },
+        },
+        responses={200: {'type': 'object', 'properties': {
+            'my_reaction': {'type': 'string', 'nullable': True},
+            'counts': {'type': 'object', 'additionalProperties': {'type': 'integer'}},
+        }}},
+    )
+    @action(detail=True, methods=['post'], permission_classes=[IsAuthenticated])
+    def react(self, request, pk=None):
+        """React to a joke: POST /api/v1/jokes/{id}/react/ {"reaction": "lol"}"""
+        joke = self.get_object()
+        value = request.data.get('reaction')
+        valid = {r[0] for r in JokeReaction.REACTION_CHOICES}
+        if value not in valid:
+            return Response(
+                {'error': f'reaction must be one of {sorted(valid)}'},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        with transaction.atomic():
+            existing = JokeReaction.objects.filter(user=request.user, joke=joke).first()
+            if existing and existing.reaction == value:
+                # Toggle off
+                existing.delete()
+                my_reaction = None
+            elif existing:
+                # Switch
+                existing.reaction = value
+                existing.save(update_fields=['reaction', 'updated_at'])
+                my_reaction = value
+            else:
+                JokeReaction.objects.create(user=request.user, joke=joke, reaction=value)
+                my_reaction = value
+
+        # Aggregate counts
+        counts = dict.fromkeys([r[0] for r in JokeReaction.REACTION_CHOICES], 0)
+        for row in joke.reactions_v2.values('reaction').annotate(c=Count('id')):
+            counts[row['reaction']] = row['c']
+
+        return Response({'my_reaction': my_reaction, 'counts': counts})
+
+    @extend_schema(
+        description='Get aggregated reaction counts + the current user\'s reaction (if any).',
+        responses={200: {'type': 'object', 'properties': {
+            'my_reaction': {'type': 'string', 'nullable': True},
+            'counts': {'type': 'object', 'additionalProperties': {'type': 'integer'}},
+        }}},
+    )
+    @action(detail=True, methods=['get'])
+    def reactions(self, request, pk=None):
+        """Reactions summary: GET /api/v1/jokes/{id}/reactions/"""
+        joke = self.get_object()
+        counts = dict.fromkeys([r[0] for r in JokeReaction.REACTION_CHOICES], 0)
+        for row in joke.reactions_v2.values('reaction').annotate(c=Count('id')):
+            counts[row['reaction']] = row['c']
+        my_reaction = None
+        if request.user.is_authenticated:
+            my = JokeReaction.objects.filter(user=request.user, joke=joke).first()
+            if my:
+                my_reaction = my.reaction
+        return Response({'my_reaction': my_reaction, 'counts': counts})
 
     @extend_schema(
         parameters=[

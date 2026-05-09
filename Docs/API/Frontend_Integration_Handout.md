@@ -236,6 +236,12 @@ await api.post('/auth/password/reset/confirm/', {
 
 For request/response shapes per endpoint, see [`API_Specification_For_Frontend.md`](./API_Specification_For_Frontend.md). Quick tour:
 
+### Reactions — 4-emoji reactions (2 endpoints, P4 of Pivot Plan)
+- `POST   /jokes/{id}/react/` body `{ "reaction": "lol" | "crying" | "hmm" | "eyeroll" }` → toggles off if same, switches if different. Returns `{ my_reaction, counts: { lol, crying, hmm, eyeroll } }`.
+- `GET    /jokes/{id}/reactions/` → same shape, no-op for the user's reaction; useful for hydrating the joke detail card without an extra `?include=` param.
+
+The legacy `POST /jokes/{id}/rate/` (like/dislike) is **still available** and unchanged — historical analytics keep working. New surfaces should use react/.
+
 ### Mystery Box — variable reward (2 endpoints, P3 of Pivot Plan)
 - `GET    /mystery-box/status/` → `{ rolls_used_today, rolls_remaining_today, max_per_day }`. Use to render "3 left today" pill.
 - `POST   /mystery-box/roll/` → 200 with `{ joke, rolls_remaining_today, source_vibe }` on success. Returns **429** when daily cap (3/day) is reached, **404** if the user's pool is exhausted (rare — every joke saved or already rolled today).
