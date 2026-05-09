@@ -25,7 +25,7 @@ from django.views.decorators.http import require_GET
 
 from django.utils import timezone
 
-from django.db.models import Count, Q, Sum
+from django.db.models import Count, Max, Q, Sum
 
 from .models import (
     Joke,
@@ -55,6 +55,9 @@ from .models import (
     JokeView,
     Streak,
     StreakDay,
+    JokePack,
+    JokePackEntry,
+    JokePackProgress,
 )
 from .recommendations import get_personalized_joke, get_recently_shown_joke_ids
 from .serializers import (
@@ -85,6 +88,9 @@ from .serializers import (
     MysteryBoxRollResponseSerializer,
     JokeViewSerializer,
     StreakSerializer,
+    JokePackListSerializer,
+    JokePackDetailSerializer,
+    JokePackProgressUpdateSerializer,
 )
 
 
@@ -1851,3 +1857,104 @@ class StreakFreezeRemoveView(APIView):
             streak.freezes_used_total = max(0, streak.freezes_used_total - 1)
             streak.save()
         return Response(StreakSerializer(streak).data)
+
+
+# =============================================================================
+# Joke Packs (P7 of Pivot Plan)
+# =============================================================================
+
+class JokePackViewSet(viewsets.ReadOnlyModelViewSet):
+    """Editor-curated joke packs.
+
+    - GET /api/v1/packs/                  → published packs (paginated)
+    - GET /api/v1/packs/{slug}/           → pack with embedded ordered jokes
+    - GET /api/v1/packs/featured/         → single featured pack (Weekly Special)
+    """
+    lookup_field = 'slug'
+    permission_classes = [AllowAny]
+
+    def get_queryset(self):
+        from django.utils import timezone
+        now = timezone.now()
+        qs = JokePack.objects.filter(is_published=True)
+        # Honor publish/expire windows
+        qs = qs.filter(
+            Q(publish_at__isnull=True) | Q(publish_at__lte=now)
+        ).filter(
+            Q(expires_at__isnull=True) | Q(expires_at__gt=now)
+        )
+        return qs.prefetch_related('entries')
+
+    def get_serializer_class(self):
+        if self.action == 'retrieve':
+            return JokePackDetailSerializer
+        return JokePackListSerializer
+
+    @extend_schema(
+        description='The currently featured pack (the Today screen Weekly Special).',
+        responses={200: JokePackDetailSerializer, 404: None},
+    )
+    @action(detail=False, methods=['get'])
+    def featured(self, request):
+        """GET /api/v1/packs/featured/ — currently featured pack."""
+        pack = self.get_queryset().filter(is_featured=True).first()
+        if pack is None:
+            return Response(
+                {'detail': 'No featured pack at the moment.'},
+                status=status.HTTP_404_NOT_FOUND,
+            )
+        return Response(JokePackDetailSerializer(pack, context={'request': request}).data)
+
+
+class JokePackProgressView(APIView):
+    """Record progress through a pack and resume later.
+
+    POST /api/v1/packs/{slug}/progress/  body: { "entry_order": N }
+                                         marks user at entry N (0 = restart)
+                                         If N >= last entry's order → mark complete
+    """
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, slug):
+        pack = get_object_or_404(JokePack, slug=slug, is_published=True)
+        ser = JokePackProgressUpdateSerializer(data=request.data)
+        ser.is_valid(raise_exception=True)
+        entry_order = ser.validated_data['entry_order']
+
+        max_order = pack.entries.aggregate(m=Max('order'))['m'] or 0
+
+        with transaction.atomic():
+            progress, _ = JokePackProgress.objects.get_or_create(
+                user=request.user, pack=pack
+            )
+            progress.last_read_entry = entry_order
+            if entry_order >= max_order and max_order > 0:
+                from django.utils import timezone
+                progress.completed_at = progress.completed_at or timezone.now()
+            else:
+                progress.completed_at = None  # un-complete if user goes back
+            progress.save()
+
+        return Response({
+            'last_read_entry': progress.last_read_entry,
+            'completed_at': progress.completed_at,
+            'is_complete': progress.completed_at is not None,
+        })
+
+
+class JokePackInProgressView(APIView):
+    """GET /api/v1/users/me/packs/in-progress/ — packs the user has started but not finished."""
+    permission_classes = [IsAuthenticated]
+
+    @extend_schema(responses={200: JokePackListSerializer(many=True)})
+    def get(self, request):
+        progress_qs = (
+            JokePackProgress.objects
+            .filter(user=request.user, completed_at__isnull=True, last_read_entry__gt=0)
+            .select_related('pack')
+            .order_by('-updated_at')
+        )
+        packs = [p.pack for p in progress_qs if p.pack.is_published]
+        return Response(
+            JokePackListSerializer(packs, many=True, context={'request': request}).data
+        )

@@ -5,6 +5,7 @@ from .models import (
     UserProfile, Favorite, JokeSubmission, Achievement, UserAchievement,
     ContentReport, UserBlock,
     Vibe, UserVibe, MysteryBoxRoll, JokeReaction, JokeView, Streak, StreakDay,
+    JokePack, JokePackEntry, JokePackProgress,
 )
 
 
@@ -295,3 +296,43 @@ class StreakDayAdmin(admin.ModelAdmin):
     search_fields = ['user__email']
     raw_id_fields = ['user']
     date_hierarchy = 'date'
+
+
+# =============================================================================
+# Joke Packs (P7 of Pivot Plan)
+# =============================================================================
+
+class JokePackEntryInline(admin.TabularInline):
+    model = JokePackEntry
+    raw_id_fields = ['joke']
+    extra = 1
+    ordering = ['order']
+
+
+@admin.register(JokePack)
+class JokePackAdmin(admin.ModelAdmin):
+    list_display = ['title', 'slug', 'is_published', 'is_featured', 'entry_count', 'publish_at', 'expires_at']
+    list_editable = ['is_published', 'is_featured']
+    list_filter = ['is_published', 'is_featured']
+    search_fields = ['title', 'slug', 'description']
+    prepopulated_fields = {'slug': ('title',)}
+    inlines = [JokePackEntryInline]
+    readonly_fields = ['created_at', 'updated_at', 'created_by']
+
+    def save_model(self, request, obj, form, change):
+        if not change:
+            obj.created_by = request.user
+        super().save_model(request, obj, form, change)
+
+    @admin.display(description='Jokes')
+    def entry_count(self, obj):
+        return obj.entries.count()
+
+
+@admin.register(JokePackProgress)
+class JokePackProgressAdmin(admin.ModelAdmin):
+    list_display = ['user', 'pack', 'last_read_entry', 'completed_at', 'updated_at']
+    list_filter = ['pack']
+    search_fields = ['user__email', 'pack__title']
+    raw_id_fields = ['user', 'pack']
+    readonly_fields = ['started_at', 'updated_at']

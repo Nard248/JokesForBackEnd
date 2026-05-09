@@ -20,6 +20,7 @@ router.register('culture-tags', views.CultureTagViewSet, basename='culture-tag')
 router.register('languages', views.LanguageViewSet, basename='language')
 router.register('preferences', views.UserPreferenceViewSet, basename='preferences')
 router.register('vibes', views.VibeViewSet, basename='vibe')
+router.register('packs', views.JokePackViewSet, basename='pack')
 router.register('collections', views.CollectionViewSet, basename='collection')
 router.register('saved-jokes', views.SavedJokeViewSet, basename='saved-joke')
 router.register('daily-jokes', views.DailyJokeViewSet, basename='daily-joke')
@@ -49,6 +50,9 @@ urlpatterns = [
     path('users/me/streak/', views.StreakView.as_view(), name='user-streak'),
     path('users/me/streak/freeze/', views.StreakFreezeView.as_view(), name='user-streak-freeze'),
     path('users/me/streak/freeze/remove/', views.StreakFreezeRemoveView.as_view(), name='user-streak-freeze-remove'),
+    # Joke Packs (P7 of Pivot Plan)
+    path('packs/<slug:slug>/progress/', views.JokePackProgressView.as_view(), name='pack-progress'),
+    path('users/me/packs/in-progress/', views.JokePackInProgressView.as_view(), name='packs-in-progress'),
 
     # Trending & Discovery (Phase 5) — non-router endpoints
     path('tags/trending/', views.TagsTrendingView.as_view(), name='tags-trending'),
