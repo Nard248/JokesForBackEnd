@@ -254,6 +254,17 @@ CSRF_TRUSTED_ORIGINS = [o.strip() for o in os.getenv('CSRF_TRUSTED_ORIGINS', '')
 # `JWT_AUTH_SECURE` cookies would be silently dropped by the browser.
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
+# When the frontend lives on a different eTLD+1 than the API (e.g. *.web.app
+# frontend talking to *.run.app backend), JWT_COOKIE_SAMESITE=None is required
+# so cookies cross the origin boundary. Browsers reject SameSite=None without
+# Secure=True, so we mirror that pairing onto Django's other cookies in prod.
+_COOKIE_SAMESITE = os.getenv('JWT_COOKIE_SAMESITE', 'Lax')
+if _COOKIE_SAMESITE == 'None':
+    CSRF_COOKIE_SAMESITE = 'None'
+    SESSION_COOKIE_SAMESITE = 'None'
+CSRF_COOKIE_SECURE = not DEBUG
+SESSION_COOKIE_SECURE = not DEBUG
+
 
 # dj-rest-auth settings
 # https://dj-rest-auth.readthedocs.io/en/latest/configuration.html
