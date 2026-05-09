@@ -23,6 +23,9 @@ from .models import (
     DailyJoke,
     JokeRating,
     ShareEvent,
+    Favorite,
+    JokeSubmission,
+    ContentReport,
 )
 
 
@@ -354,7 +357,7 @@ class SavedJokeSerializer(serializers.ModelSerializer):
     Use for GET requests to display saved joke details.
     """
 
-    joke = JokeListSerializer(read_only=True)
+    joke = JokeSerializer(read_only=True)
     collection = CollectionSerializer(read_only=True)
 
     class Meta:
@@ -472,3 +475,120 @@ class ShareEventSerializer(serializers.ModelSerializer):
         model = ShareEvent
         fields = ['id', 'joke', 'platform', 'created_at']
         read_only_fields = ['id', 'created_at']
+
+
+# =============================================================================
+# Favorite Serializers
+# =============================================================================
+
+class FavoriteSerializer(serializers.ModelSerializer):
+    """Read serializer for favorites with nested joke."""
+
+    joke = JokeSerializer(read_only=True)
+    favorited_at = serializers.DateTimeField(source='created_at', read_only=True)
+
+    class Meta:
+        model = Favorite
+        fields = ['id', 'joke', 'favorited_at']
+        read_only_fields = fields
+
+
+class FavoriteCreateSerializer(serializers.ModelSerializer):
+    """Write serializer for creating a favorite."""
+
+    class Meta:
+        model = Favorite
+        fields = ['joke']
+
+    def validate_joke(self, value):
+        user = self.context['request'].user
+        if Favorite.objects.filter(user=user, joke=value).exists():
+            raise serializers.ValidationError('Joke already favorited.')
+        return value
+
+
+# =============================================================================
+# Joke Submission Serializers
+# =============================================================================
+
+class JokeSubmissionListSerializer(serializers.ModelSerializer):
+    """Read serializer for listing user's drafts/submissions."""
+
+    format = serializers.SlugRelatedField(slug_field='slug', read_only=True)
+    age_rating = serializers.SlugRelatedField(slug_field='slug', read_only=True)
+    tones = serializers.SerializerMethodField()
+    context_tags = serializers.SerializerMethodField()
+    last_edited_at = serializers.DateTimeField(source='updated_at', read_only=True)
+    likes = serializers.SerializerMethodField()
+
+    class Meta:
+        model = JokeSubmission
+        fields = [
+            'id', 'text', 'setup', 'punchline', 'format', 'status',
+            'tones', 'age_rating', 'context_tags', 'last_edited_at',
+            'created_at', 'likes', 'rejection_reason',
+        ]
+
+    def get_tones(self, obj):
+        return [t.name for t in obj.tones.all()]
+
+    def get_context_tags(self, obj):
+        return [t.slug for t in obj.context_tags.all()]
+
+    def get_likes(self, obj):
+        if obj.published_joke:
+            return obj.published_joke.ratings.filter(rating=1).count()
+        return None
+
+
+class JokeSubmissionCreateSerializer(serializers.ModelSerializer):
+    """Write serializer for creating/updating joke submissions."""
+
+    tones = serializers.SlugRelatedField(
+        slug_field='slug', queryset=Tone.objects.all(), many=True, required=False,
+    )
+    context_tags = serializers.SlugRelatedField(
+        slug_field='slug', queryset=ContextTag.objects.all(), many=True, required=False,
+    )
+    format = serializers.SlugRelatedField(
+        slug_field='slug', queryset=Format.objects.all(),
+    )
+    age_rating = serializers.SlugRelatedField(
+        slug_field='slug', queryset=AgeRating.objects.all(),
+    )
+    language = serializers.SlugRelatedField(
+        slug_field='code', queryset=Language.objects.all(), required=False,
+    )
+
+    class Meta:
+        model = JokeSubmission
+        fields = [
+            'format', 'setup', 'punchline', 'text', 'tones',
+            'age_rating', 'context_tags', 'source', 'language',
+        ]
+
+    def validate(self, data):
+        fmt = data.get('format')
+        if fmt and fmt.slug in ('one-liner', 'one_liner'):
+            if not data.get('text'):
+                raise serializers.ValidationError({'text': 'Required for one-liner format.'})
+        elif fmt:
+            if not data.get('setup') or not data.get('punchline'):
+                raise serializers.ValidationError(
+                    {'setup': 'Setup and punchline are required for this format.'}
+                )
+            if not data.get('text'):
+                data['text'] = f"{data['setup']} {data['punchline']}"
+        return data
+
+
+# =============================================================================
+# Content Report Serializer (Compliance)
+# =============================================================================
+
+class ContentReportSerializer(serializers.ModelSerializer):
+    """Write serializer for content reports."""
+
+    class Meta:
+        model = ContentReport
+        fields = ['joke', 'reason', 'description']

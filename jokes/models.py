@@ -107,6 +107,20 @@ class Joke(models.Model):
     context_tags = models.ManyToManyField(ContextTag, related_name='jokes')
     culture_tags = models.ManyToManyField(CultureTag, related_name='jokes', blank=True)
 
+    # Content classification (compliance: three-bucket framework)
+    CONTENT_TIER_CHOICES = [
+        ('tier_1', 'Tier 1 - Universal'),
+        ('tier_2', 'Tier 2 - Mature'),
+        ('tier_3', 'Tier 3 - Prohibited'),
+    ]
+    content_tier = models.CharField(
+        max_length=10,
+        choices=CONTENT_TIER_CHOICES,
+        default='tier_1',
+        db_index=True,
+        help_text='Content classification tier for compliance'
+    )
+
     # Search
     search_vector = SearchVectorField(null=True, blank=True)
 
@@ -209,6 +223,11 @@ class UserPreference(models.Model):
         blank=True,
         help_text="Time for daily joke notification"
     )
+    # Granular notification preferences
+    notification_daily_joke = models.BooleanField(default=True)
+    notification_trending_alerts = models.BooleanField(default=False)
+    notification_collection_updates = models.BooleanField(default=True)
+    notification_email_digest = models.BooleanField(default=False)
     onboarding_completed = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -231,6 +250,10 @@ class Collection(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(blank=True)
     is_default = models.BooleanField(default=False)
+    is_public = models.BooleanField(
+        default=False,
+        help_text='Whether this collection is visible to other users'
+    )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -372,3 +395,251 @@ class ShareEvent(models.Model):
     def __str__(self):
         user_str = self.user.email if self.user else 'anonymous'
         return f"{user_str} shared joke {self.joke_id} via {self.platform}"
+
+
+# =============================================================================
+# User Profile (extends User via OneToOneField)
+# =============================================================================
+
+class UserProfile(models.Model):
+    """Extended profile for User. Auto-created via signal on user creation."""
+
+    THEME_CHOICES = [
+        ('light', 'Light'),
+        ('dark', 'Dark'),
+        ('system', 'System'),
+    ]
+
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='profile'
+    )
+    bio = models.TextField(blank=True, max_length=500)
+    avatar = models.ImageField(upload_to='avatars/', blank=True)
+    is_premium = models.BooleanField(default=False)
+
+    # Privacy settings
+    public_profile = models.BooleanField(default=True)
+    show_activity = models.BooleanField(default=True)
+    share_analytics = models.BooleanField(default=False)
+
+    # Theme
+    theme = models.CharField(max_length=20, choices=THEME_CHOICES, default='light')
+
+    # Timestamps
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'User Profile'
+        verbose_name_plural = 'User Profiles'
+
+    def __str__(self):
+        return f"Profile for {self.user.email}"
+
+
+# =============================================================================
+# Favorites (separate from SavedJoke/Collections)
+# =============================================================================
+
+class Favorite(models.Model):
+    """User's favorited jokes (heart action, distinct from bookmark/save)."""
+
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='favorites'
+    )
+    joke = models.ForeignKey(
+        Joke,
+        on_delete=models.CASCADE,
+        related_name='favorited_by'
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = [['user', 'joke']]
+        ordering = ['-created_at']
+        indexes = [
+            models.Index(fields=['user', '-created_at']),
+        ]
+
+    def __str__(self):
+        return f"{self.user.email} favorited joke {self.joke_id}"
+
+
+# =============================================================================
+# Joke Submission & Drafts
+# =============================================================================
+
+class JokeSubmission(models.Model):
+    """User-submitted jokes with draft/moderation workflow."""
+
+    STATUS_CHOICES = [
+        ('draft', 'Draft'),
+        ('pending', 'Pending Review'),
+        ('published', 'Published'),
+        ('rejected', 'Rejected'),
+    ]
+
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='joke_submissions'
+    )
+
+    # Content (mirrors Joke fields)
+    text = models.TextField(blank=True)
+    setup = models.TextField(blank=True)
+    punchline = models.TextField(blank=True)
+    format = models.ForeignKey(Format, on_delete=models.PROTECT, related_name='submissions')
+    age_rating = models.ForeignKey(AgeRating, on_delete=models.PROTECT, related_name='submissions')
+    language = models.ForeignKey(Language, on_delete=models.PROTECT, related_name='submissions')
+    source = models.CharField(max_length=200, default='original')
+    tones = models.ManyToManyField(Tone, blank=True, related_name='submissions')
+    context_tags = models.ManyToManyField(ContextTag, blank=True, related_name='submissions')
+
+    # Workflow
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='draft')
+    rejection_reason = models.TextField(blank=True)
+    published_joke = models.OneToOneField(
+        Joke,
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='submission',
+        help_text='The published Joke record if approved'
+    )
+
+    # Timestamps
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['-updated_at']
+        indexes = [
+            models.Index(fields=['user', 'status']),
+        ]
+
+    def __str__(self):
+        return f"Submission by {self.user.email}: {self.text[:40]}... ({self.status})"
+
+
+# =============================================================================
+# Achievements
+# =============================================================================
+
+class Achievement(models.Model):
+    """Achievement badge definitions."""
+
+    slug = models.SlugField(unique=True)
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    icon = models.CharField(max_length=50, help_text='Icon name (e.g., bookmark, diamond, flame)')
+    criteria_type = models.CharField(
+        max_length=50,
+        help_text='Metric type: save_count, streak_days, share_count, favorite_count, rating_count'
+    )
+    criteria_value = models.IntegerField(default=1, help_text='Threshold to unlock')
+
+    class Meta:
+        ordering = ['criteria_value']
+
+    def __str__(self):
+        return self.title
+
+
+class UserAchievement(models.Model):
+    """Tracks which achievements a user has unlocked."""
+
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='achievements'
+    )
+    achievement = models.ForeignKey(
+        Achievement,
+        on_delete=models.CASCADE,
+        related_name='unlocked_by'
+    )
+    unlocked_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = [['user', 'achievement']]
+
+    def __str__(self):
+        return f"{self.user.email} unlocked {self.achievement.title}"
+
+
+# =============================================================================
+# Compliance: Content Reporting
+# =============================================================================
+
+class ContentReport(models.Model):
+    """User reports on content (required by app stores)."""
+
+    REASON_CHOICES = [
+        ('offensive', 'Offensive Content'),
+        ('inappropriate', 'Inappropriate for Rating'),
+        ('spam', 'Spam'),
+        ('copyright', 'Copyright Violation'),
+        ('harassment', 'Harassment'),
+        ('other', 'Other'),
+    ]
+    STATUS_CHOICES = [
+        ('pending', 'Pending'),
+        ('reviewed', 'Reviewed'),
+        ('resolved', 'Resolved'),
+        ('dismissed', 'Dismissed'),
+    ]
+
+    reporter = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='content_reports'
+    )
+    joke = models.ForeignKey(
+        Joke,
+        on_delete=models.CASCADE,
+        related_name='reports'
+    )
+    reason = models.CharField(max_length=20, choices=REASON_CHOICES)
+    description = models.TextField(blank=True)
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
+    resolved_at = models.DateTimeField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        indexes = [
+            models.Index(fields=['status', 'created_at']),
+        ]
+
+    def __str__(self):
+        return f"Report on joke {self.joke_id} by {self.reporter.email} ({self.reason})"
+
+
+# =============================================================================
+# Compliance: User Blocking
+# =============================================================================
+
+class UserBlock(models.Model):
+    """User blocking relationship (required by app stores)."""
+
+    blocker = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='blocked_users'
+    )
+    blocked = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='blocked_by'
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = [['blocker', 'blocked']]
+
+    def __str__(self):
+        return f"{self.blocker.email} blocked {self.blocked.email}"

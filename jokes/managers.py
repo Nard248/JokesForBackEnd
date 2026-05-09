@@ -1,13 +1,14 @@
 from django.contrib.postgres.search import SearchQuery, SearchRank
 from django.db import models
+from django.db.models import Count, Q
 
 
 class JokeManager(models.Manager):
     """Custom manager for Joke model with full-text search capabilities."""
 
-    def search(self, query_text=None, filters=None):
+    def search(self, query_text=None, filters=None, ordering=None):
         """
-        Full-text search with optional filters.
+        Full-text search with optional filters and ordering.
 
         Args:
             query_text: Search string (optional - if empty, returns all)
@@ -18,14 +19,20 @@ class JokeManager(models.Manager):
                 - context_tags: list of slug strings
                 - culture_tags: list of slug strings
                 - language: code string
+            ordering: Sort order string (optional):
+                - '-created_at': newest first
+                - 'popularity': by likes + saves descending
+                - 'relevance': by search rank (default when query_text present)
+                - None: auto-select (relevance if searching, -created_at otherwise)
 
         Returns:
-            QuerySet ordered by relevance (if searching) or date (if browsing)
+            QuerySet ordered by the specified ordering
         """
         qs = self.get_queryset()
 
         # Full-text search
-        if query_text and query_text.strip():
+        has_query = query_text and query_text.strip()
+        if has_query:
             query = SearchQuery(query_text.strip(), search_type='websearch')
             qs = qs.annotate(
                 rank=SearchRank('search_vector', query)
@@ -46,10 +53,21 @@ class JokeManager(models.Manager):
             if filters.get('language'):
                 qs = qs.filter(language__code=filters['language'])
 
-        # Order by rank if searching, else by date
-        if query_text and query_text.strip():
+        # Apply ordering
+        if ordering == 'popularity' or ordering == '-popularity':
+            qs = qs.annotate(
+                like_count=Count('ratings', filter=Q(ratings__rating=1)),
+                save_count=Count('saved_by'),
+            ).order_by('-like_count', '-save_count', '-created_at')
+        elif ordering == '-created_at':
+            qs = qs.order_by('-created_at')
+        elif ordering == 'relevance' and has_query:
+            qs = qs.order_by('-rank')
+        elif has_query:
+            # Default when searching: order by relevance
             qs = qs.order_by('-rank')
         else:
+            # Default when browsing: order by date
             qs = qs.order_by('-created_at')
 
         return qs.distinct()

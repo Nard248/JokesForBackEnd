@@ -1,5 +1,10 @@
 from django.contrib import admin
-from .models import Joke, Format, AgeRating, Tone, ContextTag, Language, CultureTag, Source, UserPreference, Collection, SavedJoke, DailyJoke, JokeRating, ShareEvent
+from .models import (
+    Joke, Format, AgeRating, Tone, ContextTag, Language, CultureTag, Source,
+    UserPreference, Collection, SavedJoke, DailyJoke, JokeRating, ShareEvent,
+    UserProfile, Favorite, JokeSubmission, Achievement, UserAchievement,
+    ContentReport, UserBlock,
+)
 
 
 @admin.register(Format)
@@ -55,7 +60,7 @@ class JokeAdmin(admin.ModelAdmin):
     readonly_fields = ['created_at', 'updated_at']
     fieldsets = [
         ('Content', {'fields': ['text', 'setup', 'punchline']}),
-        ('Classification', {'fields': ['format', 'age_rating', 'language', 'source']}),
+        ('Classification', {'fields': ['format', 'age_rating', 'content_tier', 'language', 'source']}),
         ('Tags', {'fields': ['tones', 'context_tags', 'culture_tags']}),
         ('Metadata', {'fields': ['created_at', 'updated_at'], 'classes': ['collapse']}),
     ]
@@ -123,3 +128,76 @@ class ShareEventAdmin(admin.ModelAdmin):
     def joke_preview(self, obj):
         return obj.joke.text[:50] + '...' if len(obj.joke.text) > 50 else obj.joke.text
     joke_preview.short_description = 'Joke'
+
+
+# =============================================================================
+# Phase 1: New Models Admin
+# =============================================================================
+
+@admin.register(UserProfile)
+class UserProfileAdmin(admin.ModelAdmin):
+    list_display = ['user', 'is_premium', 'public_profile', 'theme', 'created_at']
+    list_filter = ['is_premium', 'theme', 'public_profile']
+    search_fields = ['user__email']
+    readonly_fields = ['created_at', 'updated_at']
+
+
+@admin.register(Favorite)
+class FavoriteAdmin(admin.ModelAdmin):
+    list_display = ['user', 'joke_preview', 'created_at']
+    search_fields = ['user__email', 'joke__text']
+    raw_id_fields = ['joke']
+    readonly_fields = ['created_at']
+
+    def joke_preview(self, obj):
+        return obj.joke.text[:50] + '...' if len(obj.joke.text) > 50 else obj.joke.text
+    joke_preview.short_description = 'Joke'
+
+
+@admin.register(JokeSubmission)
+class JokeSubmissionAdmin(admin.ModelAdmin):
+    list_display = ['user', 'text_preview', 'format', 'status', 'updated_at']
+    list_filter = ['status', 'format', 'age_rating']
+    search_fields = ['user__email', 'text', 'setup', 'punchline']
+    filter_horizontal = ['tones', 'context_tags']
+    readonly_fields = ['created_at', 'updated_at']
+    raw_id_fields = ['published_joke']
+
+    def text_preview(self, obj):
+        text = obj.text or obj.setup or ''
+        return text[:50] + '...' if len(text) > 50 else text
+    text_preview.short_description = 'Content'
+
+
+@admin.register(Achievement)
+class AchievementAdmin(admin.ModelAdmin):
+    list_display = ['title', 'slug', 'criteria_type', 'criteria_value', 'icon']
+    prepopulated_fields = {'slug': ('title',)}
+
+
+@admin.register(UserAchievement)
+class UserAchievementAdmin(admin.ModelAdmin):
+    list_display = ['user', 'achievement', 'unlocked_at']
+    search_fields = ['user__email', 'achievement__title']
+    raw_id_fields = ['user']
+    readonly_fields = ['unlocked_at']
+
+
+@admin.register(ContentReport)
+class ContentReportAdmin(admin.ModelAdmin):
+    list_display = ['reporter', 'joke_preview', 'reason', 'status', 'created_at']
+    list_filter = ['status', 'reason', 'created_at']
+    search_fields = ['reporter__email', 'joke__text', 'description']
+    raw_id_fields = ['joke']
+    readonly_fields = ['created_at']
+
+    def joke_preview(self, obj):
+        return obj.joke.text[:50] + '...' if len(obj.joke.text) > 50 else obj.joke.text
+    joke_preview.short_description = 'Joke'
+
+
+@admin.register(UserBlock)
+class UserBlockAdmin(admin.ModelAdmin):
+    list_display = ['blocker', 'blocked', 'created_at']
+    search_fields = ['blocker__email', 'blocked__email']
+    readonly_fields = ['created_at']
