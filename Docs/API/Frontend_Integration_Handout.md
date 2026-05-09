@@ -236,6 +236,15 @@ await api.post('/auth/password/reset/confirm/', {
 
 For request/response shapes per endpoint, see [`API_Specification_For_Frontend.md`](./API_Specification_For_Frontend.md). Quick tour:
 
+### Joke Packs — editorial bundles (5 endpoints, P7 of Pivot Plan)
+- `GET    /packs/` → published packs (paginated). Each pack: `{ slug, title, subtitle, description, cover_color, is_featured, joke_count, publish_at, expires_at, user_progress }`. `user_progress` is null for anonymous or new-to-pack users.
+- `GET    /packs/{slug}/` → pack detail with `jokes: [{order, joke}]` embedded. 404 for unpublished or expired.
+- `GET    /packs/featured/` → single featured pack (Today screen Weekly Special). 404 if none featured.
+- `POST   /packs/{slug}/progress/` body `{ "entry_order": N }` → record where the user is. Reaching the last entry sets `completed_at`. Going back un-completes (supports replay).
+- `GET    /users/me/packs/in-progress/` → packs the user has started (`last_read_entry > 0`) but not completed. Powers the "Continue mid-sip" surface.
+
+Different from `Collection` (user-private library): packs are editor-curated and shipped to all users; collections are user-owned and private.
+
 ### Streak — daily commitment with forgiveness (3 endpoints, P6 of Pivot Plan)
 - `GET    /users/me/streak/` → `{ current_count, longest_count, last_active_date, freeze_days_available, freezes_used_total, started_at, last_14_days: [{date, status: read|frozen|missed|pending}], streak_at_risk_today }`
 - `POST   /users/me/streak/freeze/` → manually use a freeze day (vacation mode). Returns updated streak. 400 if no freezes available or today already counted as read.

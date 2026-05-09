@@ -32,6 +32,9 @@ from .models import (
     JokeView,
     Streak,
     StreakDay,
+    JokePack,
+    JokePackEntry,
+    JokePackProgress,
 )
 
 
@@ -831,3 +834,61 @@ class StreakSerializer(serializers.ModelSerializer):
             return False
         # Past 8 PM UTC?
         return now.hour >= 20
+
+
+# =============================================================================
+# Joke Packs (P7 of Pivot Plan)
+# =============================================================================
+
+class JokePackListSerializer(serializers.ModelSerializer):
+    """Compact pack for catalog listings — no embedded jokes."""
+    joke_count = serializers.SerializerMethodField()
+    user_progress = serializers.SerializerMethodField()
+
+    class Meta:
+        model = JokePack
+        fields = [
+            'slug', 'title', 'subtitle', 'description',
+            'cover_color', 'is_featured', 'joke_count',
+            'publish_at', 'expires_at', 'user_progress',
+        ]
+
+    def get_joke_count(self, obj) -> int:
+        return obj.entries.count()
+
+    def get_user_progress(self, obj) -> dict | None:
+        request = self.context.get('request')
+        if not request or not request.user.is_authenticated:
+            return None
+        progress = obj.progress_records.filter(user=request.user).first()
+        if not progress:
+            return None
+        return {
+            'last_read_entry': progress.last_read_entry,
+            'completed_at': progress.completed_at,
+            'is_complete': progress.completed_at is not None,
+        }
+
+
+class JokePackDetailSerializer(JokePackListSerializer):
+    """Full pack with embedded ordered jokes."""
+    jokes = serializers.SerializerMethodField()
+
+    class Meta(JokePackListSerializer.Meta):
+        fields = JokePackListSerializer.Meta.fields + ['jokes']
+
+    def get_jokes(self, obj):
+        entries = obj.entries.select_related(
+            'joke', 'joke__format', 'joke__age_rating', 'joke__language'
+        ).prefetch_related('joke__tones', 'joke__context_tags').order_by('order')
+        return [
+            {
+                'order': e.order,
+                'joke': JokeSerializer(e.joke, context=self.context).data,
+            }
+            for e in entries
+        ]
+
+
+class JokePackProgressUpdateSerializer(serializers.Serializer):
+    entry_order = serializers.IntegerField(min_value=0)

@@ -998,3 +998,100 @@ class StreakDay(models.Model):
 
     def __str__(self):
         return f"{self.user.email} {self.date} → {self.status}"
+
+
+# =============================================================================
+# Joke Packs (P7 of Pivot Plan) — editor-curated themed bundles
+# =============================================================================
+
+class JokePack(models.Model):
+    """Editor-curated themed bundle of jokes (e.g. "Back-to-school survival kit").
+
+    Different from user `Collection` (user-owned, private library) — packs are
+    shipped to all users by editors and have publish/expiry windows.
+    """
+
+    slug = models.SlugField(max_length=80, unique=True)
+    title = models.CharField(max_length=120)
+    subtitle = models.CharField(max_length=200, blank=True)
+    description = models.TextField(blank=True)
+    cover_color = models.CharField(
+        max_length=20, default='#FFC965',
+        help_text='Hex color for the pack tile background',
+    )
+    is_published = models.BooleanField(default=False, db_index=True)
+    is_featured = models.BooleanField(
+        default=False,
+        help_text='Surface this pack as the Weekly Special on Today',
+    )
+    publish_at = models.DateTimeField(
+        null=True, blank=True,
+        help_text='Hide until this time (null = visible immediately when published)',
+    )
+    expires_at = models.DateTimeField(
+        null=True, blank=True,
+        help_text='Hide after this time (null = never expires)',
+    )
+
+    jokes = models.ManyToManyField(
+        Joke,
+        through='JokePackEntry',
+        related_name='packs',
+    )
+    created_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='+',
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['-is_featured', '-created_at']
+
+    def __str__(self):
+        return self.title
+
+
+class JokePackEntry(models.Model):
+    """Through-table for JokePack ↔ Joke with display order."""
+    pack = models.ForeignKey(JokePack, on_delete=models.CASCADE, related_name='entries')
+    joke = models.ForeignKey(Joke, on_delete=models.CASCADE, related_name='+')
+    order = models.PositiveSmallIntegerField()
+
+    class Meta:
+        unique_together = [['pack', 'joke']]
+        ordering = ['pack', 'order']
+
+    def __str__(self):
+        return f"#{self.order} in {self.pack.title}"
+
+
+class JokePackProgress(models.Model):
+    """Per-user reading progress through a pack — powers "continue mid-sip"."""
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='pack_progress',
+    )
+    pack = models.ForeignKey(
+        JokePack,
+        on_delete=models.CASCADE,
+        related_name='progress_records',
+    )
+    last_read_entry = models.PositiveSmallIntegerField(
+        default=0,
+        help_text='order of the last entry the user read; 0 = not started',
+    )
+    completed_at = models.DateTimeField(null=True, blank=True)
+    started_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        unique_together = [['user', 'pack']]
+        ordering = ['-updated_at']
+
+    def __str__(self):
+        return f"{self.user.email} → {self.pack.title} (#{self.last_read_entry})"
