@@ -19,6 +19,7 @@ router.register('context-tags', views.ContextTagViewSet, basename='context-tag')
 router.register('culture-tags', views.CultureTagViewSet, basename='culture-tag')
 router.register('languages', views.LanguageViewSet, basename='language')
 router.register('preferences', views.UserPreferenceViewSet, basename='preferences')
+router.register('vibes', views.VibeViewSet, basename='vibe')
 router.register('collections', views.CollectionViewSet, basename='collection')
 router.register('saved-jokes', views.SavedJokeViewSet, basename='saved-joke')
 router.register('daily-jokes', views.DailyJokeViewSet, basename='daily-joke')
@@ -37,6 +38,8 @@ urlpatterns = [
     path('users/me/activity/', views.UserActivityView.as_view(), name='user-activity'),
     path('users/me/achievements/', views.UserAchievementsView.as_view(), name='user-achievements'),
     path('users/me/preferences/', views.UserPreferencesView.as_view(), name='user-preferences'),
+    # Vibes (P2 of Pivot Plan) — user's selected humor flavors
+    path('users/me/vibes/', views.UserVibesView.as_view(), name='user-vibes'),
 
     # Trending & Discovery (Phase 5) — non-router endpoints
     path('tags/trending/', views.TagsTrendingView.as_view(), name='tags-trending'),

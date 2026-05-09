@@ -651,3 +651,102 @@ class UserBlock(models.Model):
 
     def __str__(self):
         return f"{self.blocker.email} blocked {self.blocked.email}"
+
+
+# =============================================================================
+# Vibes (P2 of Pivot Plan) — curated humor flavors used in onboarding +
+# recommendations + Mystery Box pull
+# =============================================================================
+
+class Vibe(models.Model):
+    """A curated humor flavor — preset filter recipe over Format/Theme/Category.
+
+    Each vibe's "membership" of a joke is computed via its M2M sets:
+    a joke matches the vibe iff for every non-empty axis, the joke shares at
+    least one value with that axis. (any-match within an axis, AND across axes.)
+
+    Twelve canonical vibes are seeded in migration 0013. Curators can adjust the
+    recipe via Django admin; joke→vibe membership updates instantly without
+    backfilling.
+    """
+    slug = models.SlugField(max_length=50, unique=True)
+    label = models.CharField(max_length=40)
+    subtitle = models.CharField(max_length=80, blank=True)
+    icon = models.CharField(
+        max_length=8, blank=True,
+        help_text='Emoji shown in the picker tile (e.g. 💼)'
+    )
+    swatch_bg = models.CharField(
+        max_length=20, default='#6A1CF6',
+        help_text='Hex color for the picker tile background'
+    )
+    swatch_fg = models.CharField(
+        max_length=20, default='#FFFFFF',
+        help_text='Hex color for the picker tile text'
+    )
+    order = models.PositiveSmallIntegerField(
+        default=0,
+        help_text='Display order in the picker (lower = earlier)'
+    )
+
+    # Filter recipe — joke matches iff for each non-empty axis, joke shares ≥1 value.
+    formats = models.ManyToManyField(Format, blank=True, related_name='vibes')
+    themes = models.ManyToManyField(ContextTag, blank=True, related_name='vibes')
+    categories = models.ManyToManyField(Tone, blank=True, related_name='vibes')
+
+    is_active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['order', 'label']
+
+    def __str__(self):
+        return f"{self.icon} {self.label}".strip()
+
+    def filter_jokes(self, queryset=None):
+        """Apply this vibe's filter recipe to a Joke queryset.
+
+        A joke matches iff for each non-empty axis, the joke shares at least
+        one value with that axis. Empty axes don't constrain.
+        """
+        if queryset is None:
+            queryset = Joke.objects.all()
+        format_ids = list(self.formats.values_list('id', flat=True))
+        theme_ids = list(self.themes.values_list('id', flat=True))
+        category_ids = list(self.categories.values_list('id', flat=True))
+        if format_ids:
+            queryset = queryset.filter(format_id__in=format_ids)
+        if theme_ids:
+            queryset = queryset.filter(context_tags__id__in=theme_ids)
+        if category_ids:
+            queryset = queryset.filter(tones__id__in=category_ids)
+        # M2M filters can produce duplicates; collapse them
+        return queryset.distinct() if (theme_ids or category_ids) else queryset
+
+
+class UserVibe(models.Model):
+    """A user's selected vibe from onboarding — drives recommendations + Mystery Box."""
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='user_vibes'
+    )
+    vibe = models.ForeignKey(
+        Vibe,
+        on_delete=models.CASCADE,
+        related_name='picked_by'
+    )
+    weight = models.FloatField(
+        default=1.0,
+        help_text='Future tuning hook: user can boost/dampen a vibe'
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = [['user', 'vibe']]
+        ordering = ['-created_at']
+        indexes = [models.Index(fields=['user'])]
+
+    def __str__(self):
+        return f"{self.user.email} picked {self.vibe.label}"

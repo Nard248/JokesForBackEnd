@@ -26,6 +26,8 @@ from .models import (
     Favorite,
     JokeSubmission,
     ContentReport,
+    Vibe,
+    UserVibe,
 )
 
 
@@ -672,3 +674,60 @@ class ContentReportSerializer(serializers.ModelSerializer):
     class Meta:
         model = ContentReport
         fields = ['joke', 'reason', 'description']
+
+
+# =============================================================================
+# Vibes (P2 of Pivot Plan)
+# =============================================================================
+
+class VibeSerializer(serializers.ModelSerializer):
+    """Catalog entry for the onboarding picker — display metadata only."""
+
+    class Meta:
+        model = Vibe
+        fields = [
+            'slug', 'label', 'subtitle', 'icon',
+            'swatch_bg', 'swatch_fg', 'order',
+        ]
+        read_only_fields = fields
+
+
+class UserVibeSerializer(serializers.ModelSerializer):
+    """A user's selected vibe — embeds the vibe display data inline so the
+    frontend gets the picker tile state in one round-trip."""
+
+    vibe = VibeSerializer(read_only=True)
+
+    class Meta:
+        model = UserVibe
+        fields = ['vibe', 'weight', 'created_at']
+        read_only_fields = fields
+
+
+class UserVibesUpdateSerializer(serializers.Serializer):
+    """Replace the user's selected vibes with the given list of slugs.
+
+    Per the design's onboarding screen ("Pick at least 3"), enforces a 3-12
+    range. Unknown slugs return 400 with a clear error so frontend can guide
+    the user.
+    """
+
+    slugs = serializers.ListField(
+        child=serializers.SlugField(),
+        min_length=3,
+        max_length=12,
+        help_text="List of vibe slugs (3-12). Replaces the user's current selection.",
+    )
+
+    def validate_slugs(self, slugs):
+        slugs = list(dict.fromkeys(slugs))  # dedupe, preserve order
+        existing = set(
+            Vibe.objects.filter(slug__in=slugs, is_active=True)
+            .values_list('slug', flat=True)
+        )
+        unknown = [s for s in slugs if s not in existing]
+        if unknown:
+            raise serializers.ValidationError(
+                f"Unknown or inactive vibes: {unknown}"
+            )
+        return slugs
