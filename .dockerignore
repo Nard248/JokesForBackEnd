@@ -1,0 +1,38 @@
+# VCS / IDE
+.git
+.gitignore
+.idea
+.vscode
+
+# Python
+.venv
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache
+.mypy_cache
+.ruff_cache
+
+# Project-local state
+.env
+.env.local
+.env.*.local
+.planning
+.remember
+.claude
+
+# Build output
+staticfiles
+media
+*.sqlite3
+*.log
+
+# Docs (not needed in runtime image)
+Docs
+*.md
+!README.md
+
+# Tests
+tests
+**/test_*.py

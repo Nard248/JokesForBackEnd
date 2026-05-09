@@ -21,7 +21,7 @@ from drf_spectacular.views import (
     SpectacularRedocView,
     SpectacularSwaggerView,
 )
-from jokes.views import GoogleLogin, joke_share_page
+from jokes.views import CookieRegisterView, GoogleLogin, joke_share_page
 
 urlpatterns = [
     # Admin
@@ -35,6 +35,9 @@ urlpatterns = [
 
     # Authentication
     path('api/v1/auth/', include('dj_rest_auth.urls')),
+    # Override registration root with cookie-setting variant; include still owns
+    # sub-paths (verify-email, resend-email, account-confirm-email).
+    path('api/v1/auth/registration/', CookieRegisterView.as_view(), name='rest_register'),
     path('api/v1/auth/registration/', include('dj_rest_auth.registration.urls')),
     path('api/v1/auth/google/', GoogleLogin.as_view(), name='google_login'),
 

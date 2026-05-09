@@ -69,6 +69,10 @@ SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    # WhiteNoise serves collected static files directly from the app process —
+    # avoids needing a CDN/bucket for the admin's CSS/JS in low-traffic deploys.
+    # Must be placed immediately after SecurityMiddleware per WhiteNoise docs.
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -181,6 +185,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+# Hashed + gzipped static assets so WhiteNoise can serve them with far-future
+# cache headers (filename embeds content hash → safe to cache forever).
+STORAGES = {
+    'default': {'BACKEND': 'django.core.files.storage.FileSystemStorage'},
+    'staticfiles': {'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage'},
+}
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
@@ -225,24 +236,39 @@ SPECTACULAR_SETTINGS = {
 # django-cors-headers settings
 # https://github.com/adamchainz/django-cors-headers
 
-# For credentials mode (cookies), must specify exact origins - not wildcard
+# For credentials mode (cookies), must specify exact origins - not wildcard.
+# Comma-separated env var overlays the local-dev defaults so production can add
+# its frontend origin (e.g. https://app.jokesfor.com) without a code change.
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173',  # Vite dev server
     'http://127.0.0.1:5173',
-]
+] + [o.strip() for o in os.getenv('CORS_ALLOWED_ORIGINS', '').split(',') if o.strip()]
 CORS_ALLOW_CREDENTIALS = True  # Required for httpOnly cookie auth
+
+# CSRF: when behind Cloud Run / any TLS-terminating proxy, Django must trust
+# the origin header. Same env-overlay pattern as CORS.
+CSRF_TRUSTED_ORIGINS = [o.strip() for o in os.getenv('CSRF_TRUSTED_ORIGINS', '').split(',') if o.strip()]
+
+# Cloud Run terminates TLS at the load balancer and forwards X-Forwarded-Proto.
+# Without this, request.is_secure() returns False inside the container and
+# `JWT_AUTH_SECURE` cookies would be silently dropped by the browser.
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 # dj-rest-auth settings
 # https://dj-rest-auth.readthedocs.io/en/latest/configuration.html
 
+# 'Lax' works when frontend and API share an eTLD+1 (or for same-origin dev).
+# Set JWT_COOKIE_SAMESITE=None in production when the frontend lives on a
+# different domain from the Cloud Run URL — browsers won't send Lax cookies
+# on cross-site fetches. SameSite=None requires Secure=True (Cloud Run is HTTPS).
 REST_AUTH = {
     'USE_JWT': True,
     'JWT_AUTH_COOKIE': 'jokes-access-token',
     'JWT_AUTH_REFRESH_COOKIE': 'jokes-refresh-token',
     'JWT_AUTH_HTTPONLY': True,
     'JWT_AUTH_SECURE': not DEBUG,  # True in production (HTTPS), False for local dev
-    'JWT_AUTH_SAMESITE': 'Lax',
+    'JWT_AUTH_SAMESITE': os.getenv('JWT_COOKIE_SAMESITE', 'Lax'),
     'SESSION_LOGIN': False,  # Disable session auth, use JWT only
     'REGISTER_SERIALIZER': 'JokesForProject.serializers.EmailOnlyRegisterSerializer',
 }

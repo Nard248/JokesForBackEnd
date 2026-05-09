@@ -15,7 +15,9 @@ from rest_framework.views import APIView
 from drf_spectacular.utils import extend_schema, OpenApiParameter
 from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
 from allauth.socialaccount.providers.oauth2.client import OAuth2Client
-from dj_rest_auth.registration.views import SocialLoginView
+from dj_rest_auth.app_settings import api_settings as rest_auth_settings
+from dj_rest_auth.jwt_auth import set_jwt_cookies
+from dj_rest_auth.registration.views import RegisterView, SocialLoginView
 from django.conf import settings
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.http import require_GET
@@ -482,6 +484,22 @@ class UserPreferenceViewSet(viewsets.GenericViewSet):
 # =============================================================================
 # OAuth Authentication Views
 # =============================================================================
+
+class CookieRegisterView(RegisterView):
+    # dj-rest-auth's RegisterView returns JWTs in the body but doesn't write
+    # cookies — only LoginView does. Mirror LoginView's cookie-setting here so
+    # the browser is authenticated immediately after sign-up, no extra login round-trip.
+    def create(self, request, *args, **kwargs):
+        response = super().create(request, *args, **kwargs)
+        if (
+            response.status_code == status.HTTP_201_CREATED
+            and rest_auth_settings.USE_JWT
+            and getattr(self, 'access_token', None)
+            and getattr(self, 'refresh_token', None)
+        ):
+            set_jwt_cookies(response, self.access_token, self.refresh_token)
+        return response
+
 
 class GoogleLogin(SocialLoginView):
     """
