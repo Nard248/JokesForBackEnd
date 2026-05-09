@@ -231,6 +231,17 @@ class UserPreference(models.Model):
         blank=True,
         help_text="Time for daily joke notification"
     )
+    # P8: day-of-week mask for the daily ritual. JSON list of weekday names
+    # (lowercase 3-letter): ['mon','tue','wed','thu','fri','sat','sun'].
+    # Empty list = no days. Default = weekdays.
+    notification_days = models.JSONField(
+        default=list,
+        blank=True,
+        help_text='Weekdays the user wants the daily push: ["mon","tue",...]',
+    )
+    # P8: streak-saver in-app nudge (no push delivery — frontend reads the flag)
+    streak_saver_enabled = models.BooleanField(default=True)
+
     # Granular notification preferences
     notification_daily_joke = models.BooleanField(default=True)
     notification_trending_alerts = models.BooleanField(default=False)

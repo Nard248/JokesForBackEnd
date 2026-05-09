@@ -253,6 +253,8 @@ class UserPreferenceSerializer(serializers.ModelSerializer):
             'preferred_language',
             'notification_enabled',
             'notification_time',
+            'notification_days',     # P8: day-of-week mask
+            'streak_saver_enabled',  # P8: in-app nudge gate
             'onboarding_completed',
             'created_at',
             'updated_at',
@@ -313,8 +315,17 @@ class UserPreferenceUpdateSerializer(serializers.ModelSerializer):
             'preferred_language',
             'notification_enabled',
             'notification_time',
+            'notification_days',     # P8
+            'streak_saver_enabled',  # P8
             'onboarding_completed',
         ]
+
+    def validate_notification_days(self, value):
+        valid = {'mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'}
+        unknown = [d for d in value if d not in valid]
+        if unknown:
+            raise serializers.ValidationError(f'Unknown weekday(s): {unknown}')
+        return list(dict.fromkeys(value))  # dedupe
 
     def to_internal_value(self, data):
         """Map new vocabulary aliases to canonical field names.

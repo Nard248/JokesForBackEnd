@@ -53,6 +53,8 @@ urlpatterns = [
     # Joke Packs (P7 of Pivot Plan)
     path('packs/<slug:slug>/progress/', views.JokePackProgressView.as_view(), name='pack-progress'),
     path('users/me/packs/in-progress/', views.JokePackInProgressView.as_view(), name='packs-in-progress'),
+    # Ritual status (P8 of Pivot Plan)
+    path('users/me/today-status/', views.DailyRitualStatusView.as_view(), name='today-status'),
 
     # Trending & Discovery (Phase 5) — non-router endpoints
     path('tags/trending/', views.TagsTrendingView.as_view(), name='tags-trending'),

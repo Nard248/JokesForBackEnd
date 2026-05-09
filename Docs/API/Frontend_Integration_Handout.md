@@ -236,6 +236,12 @@ await api.post('/auth/password/reset/confirm/', {
 
 For request/response shapes per endpoint, see [`API_Specification_For_Frontend.md`](./API_Specification_For_Frontend.md). Quick tour:
 
+### Daily ritual settings (1 new endpoint, P8 of Pivot Plan)
+- `GET    /users/me/today-status/` → `{ daily_joke_due, has_read_today, today_is_a_notification_day, now_past_notification_time }`. Frontend polls this on Today screen load and renders "Today's joke is ready" hero when `daily_joke_due=true`. Replaces the 9 AM scheduled push (no cron in single-Cloud-Run setup).
+- Existing `GET /users/me/preferences/` and `PATCH /preferences/me/` extended with two new fields:
+  - `notification_days: ["mon","tue","wed","thu","fri"]` — 7 string-name array
+  - `streak_saver_enabled: bool` — gates the in-app `streak_at_risk_today` flag (see Streak section)
+
 ### Joke Packs — editorial bundles (5 endpoints, P7 of Pivot Plan)
 - `GET    /packs/` → published packs (paginated). Each pack: `{ slug, title, subtitle, description, cover_color, is_featured, joke_count, publish_at, expires_at, user_progress }`. `user_progress` is null for anonymous or new-to-pack users.
 - `GET    /packs/{slug}/` → pack detail with `jokes: [{order, joke}]` embedded. 404 for unpublished or expired.
