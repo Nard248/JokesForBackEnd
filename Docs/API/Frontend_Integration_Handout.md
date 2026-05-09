@@ -236,6 +236,12 @@ await api.post('/auth/password/reset/confirm/', {
 
 For request/response shapes per endpoint, see [`API_Specification_For_Frontend.md`](./API_Specification_For_Frontend.md). Quick tour:
 
+### Mystery Box — variable reward (2 endpoints, P3 of Pivot Plan)
+- `GET    /mystery-box/status/` → `{ rolls_used_today, rolls_remaining_today, max_per_day }`. Use to render "3 left today" pill.
+- `POST   /mystery-box/roll/` → 200 with `{ joke, rolls_remaining_today, source_vibe }` on success. Returns **429** when daily cap (3/day) is reached, **404** if the user's pool is exhausted (rare — every joke saved or already rolled today).
+
+**Pull algorithm**: union of jokes matching the user's selected vibes, falling back to global pool if user has no vibes. Excludes today's prior rolls (no same-day repeats) and already-saved jokes. Cap resets at midnight UTC implicitly via date-bucketed counting (no scheduled task needed).
+
 ### Vibes — humor fingerprint (3 endpoints, P2 of Pivot Plan)
 - `GET    /vibes/` — catalog of all 12 active vibes (display metadata: slug, label, subtitle, icon, swatch_bg, swatch_fg, order). No pagination.
 - `GET    /vibes/{slug}/` — single vibe (e.g. `/vibes/office/`)

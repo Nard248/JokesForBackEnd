@@ -40,6 +40,9 @@ urlpatterns = [
     path('users/me/preferences/', views.UserPreferencesView.as_view(), name='user-preferences'),
     # Vibes (P2 of Pivot Plan) — user's selected humor flavors
     path('users/me/vibes/', views.UserVibesView.as_view(), name='user-vibes'),
+    # Mystery Box (P3 of Pivot Plan)
+    path('mystery-box/status/', views.MysteryBoxStatusView.as_view(), name='mystery-box-status'),
+    path('mystery-box/roll/', views.MysteryBoxRollView.as_view(), name='mystery-box-roll'),
 
     # Trending & Discovery (Phase 5) — non-router endpoints
     path('tags/trending/', views.TagsTrendingView.as_view(), name='tags-trending'),
