@@ -8,6 +8,8 @@ Provides serializers for all 8 models:
 """
 from rest_framework import serializers
 
+from jokes.submission_rules import validate_per_format
+
 from .models import (
     Format,
     AgeRating,
@@ -650,13 +652,18 @@ class JokeSubmissionCreateSerializer(serializers.ModelSerializer):
     language = serializers.SlugRelatedField(
         slug_field='code', queryset=Language.objects.all(), required=False,
     )
+    culture_tags = serializers.SlugRelatedField(
+        slug_field='slug', queryset=CultureTag.objects.all(), many=True, required=False,
+    )
+    lines = serializers.JSONField(required=False, allow_null=True)
 
     class Meta:
         model = JokeSubmission
         fields = [
-            'format', 'setup', 'punchline', 'text', 'tones',
-            'categories', 'themes',
-            'age_rating', 'context_tags', 'source', 'language',
+            'format', 'setup', 'punchline', 'text', 'lines',
+            'tones', 'categories', 'themes',
+            'age_rating', 'context_tags', 'culture_tags',
+            'source', 'language',
         ]
 
     def to_internal_value(self, data):
@@ -669,17 +676,26 @@ class JokeSubmissionCreateSerializer(serializers.ModelSerializer):
         return validated
 
     def validate(self, data):
-        fmt = data.get('format')
-        if fmt and fmt.slug in ('one-liner', 'one_liner'):
-            if not data.get('text'):
-                raise serializers.ValidationError({'text': 'Required for one-liner format.'})
-        elif fmt:
-            if not data.get('setup') or not data.get('punchline'):
-                raise serializers.ValidationError(
-                    {'setup': 'Setup and punchline are required for this format.'}
-                )
-            if not data.get('text'):
-                data['text'] = f"{data['setup']} {data['punchline']}"
+        # Resolve format from the payload or the instance being patched.
+        fmt = data.get('format') or (self.instance.format if self.instance else None)
+        if fmt is None:
+            raise serializers.ValidationError({'format': 'This field is required.'})
+
+        # Build the attrs view the rule helper expects (slug-agnostic).
+        attrs = {
+            'text': data.get('text', '') if 'text' in data
+                    else (self.instance.text if self.instance else ''),
+            'setup': data.get('setup', '') if 'setup' in data
+                     else (self.instance.setup if self.instance else ''),
+            'punchline': data.get('punchline', '') if 'punchline' in data
+                         else (self.instance.punchline if self.instance else ''),
+            'lines': data.get('lines') if 'lines' in data
+                     else (self.instance.lines if self.instance else None),
+        }
+
+        errors = validate_per_format(fmt.slug, attrs)
+        if errors:
+            raise serializers.ValidationError(errors)
         return data
 
 

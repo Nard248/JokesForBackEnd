@@ -115,3 +115,146 @@ class FormatRulesTests(SimpleTestCase):
     def test_unknown_format_slug(self):
         errs = validate_per_format('bogus', {'text': 'x'})
         self.assertIn('format', errs)
+
+
+from rest_framework.test import APITestCase
+from django.contrib.auth import get_user_model
+
+from jokes.models import (
+    Format, AgeRating, Language, Tone, ContextTag, CultureTag, JokeSubmission,
+)
+
+User = get_user_model()
+
+
+class SubmissionApiTests(APITestCase):
+    @classmethod
+    def setUpTestData(cls):
+        cls.user = User.objects.create_user(
+            username='creator', email='creator@example.com', password='pw',
+        )
+        cls.fmt_oneliner = Format.objects.get(slug='oneliner')
+        cls.fmt_setup = Format.objects.get(slug='setup')
+        cls.fmt_knock = Format.objects.get(slug='knock')
+        cls.fmt_story = Format.objects.get(slug='story')
+        cls.age = AgeRating.objects.first()
+        cls.lang = Language.objects.get(code='en')
+        cls.culture, _ = CultureTag.objects.get_or_create(
+            slug='test-culture', defaults={'name': 'Test Culture'},
+        )
+
+    def setUp(self):
+        self.client.force_authenticate(user=self.user)
+
+    def _payload(self, **overrides):
+        base = {
+            'format': 'oneliner',
+            'age_rating': self.age.slug,
+            'language': self.lang.code,
+            'text': 'I told my wife she was drawing her eyebrows too high. She looked surprised.',
+            'source': 'original',
+        }
+        base.update(overrides)
+        return base
+
+    def test_oneliner_valid_creates_pending(self):
+        resp = self.client.post('/api/v1/jokes/submit/', self._payload(), format='json')
+        self.assertEqual(resp.status_code, 201, resp.content)
+        sub = JokeSubmission.objects.get(id=resp.json()['id'])
+        self.assertEqual(sub.status, 'pending')
+        self.assertEqual(sub.format.slug, 'oneliner')
+
+    def test_oneliner_missing_text_rejected(self):
+        resp = self.client.post(
+            '/api/v1/jokes/submit/', self._payload(text=''), format='json'
+        )
+        self.assertEqual(resp.status_code, 400)
+        self.assertIn('text', resp.json())
+
+    def test_setup_punchline_valid(self):
+        resp = self.client.post(
+            '/api/v1/jokes/submit/',
+            self._payload(format='setup', text='', setup='Why?', punchline='Because.'),
+            format='json',
+        )
+        self.assertEqual(resp.status_code, 201, resp.content)
+
+    def test_setup_missing_punchline_rejected(self):
+        resp = self.client.post(
+            '/api/v1/jokes/submit/',
+            self._payload(format='setup', text='', setup='Why?', punchline=''),
+            format='json',
+        )
+        self.assertEqual(resp.status_code, 400)
+        self.assertIn('punchline', resp.json())
+
+    def test_knock_with_lines_valid(self):
+        resp = self.client.post(
+            '/api/v1/jokes/submit/',
+            self._payload(
+                format='knock',
+                text='',
+                lines=['Knock, knock.', "Who's there?", 'Olive.', 'Olive who?'],
+            ),
+            format='json',
+        )
+        self.assertEqual(resp.status_code, 201, resp.content)
+        sub = JokeSubmission.objects.get(id=resp.json()['id'])
+        self.assertEqual(len(sub.lines), 4)
+
+    def test_knock_without_lines_rejected(self):
+        resp = self.client.post(
+            '/api/v1/jokes/submit/',
+            self._payload(format='knock', text=''),
+            format='json',
+        )
+        self.assertEqual(resp.status_code, 400)
+        self.assertIn('lines', resp.json())
+
+    def test_knock_with_text_rejected(self):
+        resp = self.client.post(
+            '/api/v1/jokes/submit/',
+            self._payload(
+                format='knock',
+                text='oops',
+                lines=['A.', 'B.', 'C.', 'D.'],
+            ),
+            format='json',
+        )
+        self.assertEqual(resp.status_code, 400)
+        self.assertIn('text', resp.json())
+
+    def test_story_too_short_rejected(self):
+        resp = self.client.post(
+            '/api/v1/jokes/submit/',
+            self._payload(format='story', text='Just a few words.'),
+            format='json',
+        )
+        self.assertEqual(resp.status_code, 400)
+        self.assertIn('text', resp.json())
+
+    def test_culture_tags_accepted_and_stored(self):
+        resp = self.client.post(
+            '/api/v1/jokes/submit/',
+            self._payload(culture_tags=[self.culture.slug]),
+            format='json',
+        )
+        self.assertEqual(resp.status_code, 201, resp.content)
+        sub = JokeSubmission.objects.get(id=resp.json()['id'])
+        self.assertEqual(
+            list(sub.culture_tags.values_list('slug', flat=True)),
+            [self.culture.slug],
+        )
+
+    def test_patch_draft_revalidates(self):
+        sub = JokeSubmission.objects.create(
+            user=self.user, format=self.fmt_oneliner, age_rating=self.age,
+            language=self.lang, text='A.', status='draft',
+        )
+        resp = self.client.patch(
+            f'/api/v1/jokes/my-drafts/{sub.id}/',
+            {'format': 'knock', 'text': ''},
+            format='json',
+        )
+        self.assertEqual(resp.status_code, 400)
+        self.assertIn('lines', resp.json())
