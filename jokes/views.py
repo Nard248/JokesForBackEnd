@@ -1072,7 +1072,7 @@ class JokeDraftListView(generics.ListAPIView):
     def get_queryset(self):
         return JokeSubmission.objects.filter(
             user=self.request.user
-        ).select_related('format', 'age_rating', 'published_joke').prefetch_related('tones', 'context_tags')
+        ).select_related('format', 'age_rating', 'published_joke').prefetch_related('tones', 'context_tags', 'culture_tags')
 
 
 class JokeDraftDetailView(generics.RetrieveUpdateDestroyAPIView):
