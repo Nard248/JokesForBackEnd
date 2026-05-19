@@ -8,7 +8,7 @@ Provides serializers for all 8 models:
 """
 from rest_framework import serializers
 
-from jokes.submission_rules import validate_per_format
+from jokes.submission_rules import FORMAT_RULES, validate_per_format
 
 from .models import (
     Format,
@@ -45,11 +45,30 @@ from .models import (
 # =============================================================================
 
 class FormatSerializer(serializers.ModelSerializer):
-    """Serializer for joke format (one-liner, setup-punchline, etc.)."""
+    """Serializer for joke format with creator-editor schema disclosure."""
+
+    required_fields = serializers.SerializerMethodField()
+    forbidden_fields = serializers.SerializerMethodField()
+    constraints = serializers.SerializerMethodField()
 
     class Meta:
         model = Format
-        fields = ['id', 'name', 'slug', 'description']
+        fields = [
+            'id', 'name', 'slug', 'description',
+            'required_fields', 'forbidden_fields', 'constraints',
+        ]
+
+    def _rule(self, obj):
+        return FORMAT_RULES.get(obj.slug, {})
+
+    def get_required_fields(self, obj) -> list[str]:
+        return list(self._rule(obj).get('required', []))
+
+    def get_forbidden_fields(self, obj) -> list[str]:
+        return list(self._rule(obj).get('forbidden', []))
+
+    def get_constraints(self, obj) -> dict:
+        return dict(self._rule(obj).get('constraints', {}))
 
 
 class AgeRatingSerializer(serializers.ModelSerializer):

@@ -310,3 +310,26 @@ class SubmissionApiTests(APITestCase):
         body = resp.json()
         self.assertEqual(body['lines'], ['A.', 'B.', 'C.', 'D.'])
         self.assertEqual(body['culture_tags'], [self.culture.slug])
+
+
+class FormatSchemaApiTests(APITestCase):
+    def test_formats_endpoint_exposes_per_format_schema(self):
+        resp = self.client.get('/api/v1/formats/')
+        self.assertEqual(resp.status_code, 200)
+        body = resp.json()
+        rows = body.get('results', body)  # paginated or not
+        by_slug = {row['slug']: row for row in rows}
+
+        knock = by_slug['knock']
+        self.assertEqual(knock['required_fields'], ['lines'])
+        self.assertIn('text', knock['forbidden_fields'])
+        self.assertEqual(knock['constraints']['min_lines'], 4)
+        self.assertEqual(knock['constraints']['max_lines'], 8)
+
+        oneliner = by_slug['oneliner']
+        self.assertEqual(oneliner['required_fields'], ['text'])
+        self.assertIn('setup', oneliner['forbidden_fields'])
+        self.assertEqual(oneliner.get('constraints', {}), {})
+
+        story = by_slug['story']
+        self.assertEqual(story['constraints']['min_text_words'], 30)
