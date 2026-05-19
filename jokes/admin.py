@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.db import transaction
 from .models import (
     Joke, Format, AgeRating, Tone, ContextTag, Language, CultureTag, Source,
     UserPreference, Collection, SavedJoke, DailyJoke, JokeRating, ShareEvent,
@@ -164,11 +165,53 @@ class JokeSubmissionAdmin(admin.ModelAdmin):
     filter_horizontal = ['tones', 'context_tags', 'culture_tags']
     readonly_fields = ['created_at', 'updated_at']
     raw_id_fields = ['published_joke']
+    actions = ['approve_and_publish']
 
     def text_preview(self, obj):
-        text = obj.text or obj.setup or ''
+        text = obj.text or obj.setup or (obj.lines[0] if obj.lines else '')
         return text[:50] + '...' if len(text) > 50 else text
     text_preview.short_description = 'Content'
+
+    @admin.action(description='Approve and publish selected submissions')
+    def approve_and_publish(self, request, queryset):
+        pending = queryset.filter(status='pending')
+        created = 0
+        skipped = 0
+        for submission in pending:
+            try:
+                with transaction.atomic():
+                    source_obj, _ = Source.objects.get_or_create(
+                        name=submission.source or 'original'
+                    )
+                    joke = Joke.objects.create(
+                        text=submission.text,
+                        setup=submission.setup,
+                        punchline=submission.punchline,
+                        lines=submission.lines,
+                        format=submission.format,
+                        age_rating=submission.age_rating,
+                        language=submission.language,
+                        source=source_obj,
+                        content_tier='tier_1',
+                    )
+                    joke.tones.set(submission.tones.all())
+                    joke.context_tags.set(submission.context_tags.all())
+                    joke.culture_tags.set(submission.culture_tags.all())
+                    submission.published_joke = joke
+                    submission.status = 'published'
+                    submission.save(update_fields=['published_joke', 'status', 'updated_at'])
+                    created += 1
+            except Exception as exc:
+                self.message_user(
+                    request, f'Skipped {submission.id}: {exc}', level='WARNING'
+                )
+                skipped += 1
+        non_pending = queryset.exclude(status='pending').count()
+        self.message_user(
+            request,
+            f'Published {created} submission(s); skipped {skipped} error(s); '
+            f'{non_pending} not in pending status were ignored.',
+        )
 
 
 @admin.register(Achievement)

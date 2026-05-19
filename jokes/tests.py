@@ -333,3 +333,87 @@ class FormatSchemaApiTests(APITestCase):
 
         story = by_slug['story']
         self.assertEqual(story['constraints']['min_text_words'], 30)
+
+
+from unittest.mock import patch
+
+from django.contrib.admin.sites import AdminSite
+from django.test import RequestFactory
+
+from jokes.admin import JokeSubmissionAdmin
+from jokes.models import Joke
+
+
+class AdminApproveTests(APITestCase):
+    @classmethod
+    def setUpTestData(cls):
+        cls.user = User.objects.create_user(
+            username='creator2', email='c2@example.com', password='pw',
+        )
+        cls.staff = User.objects.create_user(
+            username='mod', email='mod@example.com', password='pw',
+            is_staff=True, is_superuser=True,
+        )
+        cls.fmt = Format.objects.get(slug='knock')
+        cls.age = AgeRating.objects.first()
+        cls.lang = Language.objects.get(code='en')
+        cls.tone = Tone.objects.first()
+        cls.theme = ContextTag.objects.first()
+        cls.culture, _ = CultureTag.objects.get_or_create(
+            slug='test-culture-admin', defaults={'name': 'Test Culture Admin'},
+        )
+
+    def _make_pending_knock(self):
+        sub = JokeSubmission.objects.create(
+            user=self.user, format=self.fmt, age_rating=self.age, language=self.lang,
+            source='original',
+            lines=['Knock, knock.', "Who's there?", 'Olive.', 'Olive who?'],
+            text="Knock, knock. Who's there? Olive. Olive who?",
+            status='pending',
+        )
+        sub.tones.add(self.tone)
+        sub.context_tags.add(self.theme)
+        sub.culture_tags.add(self.culture)
+        return sub
+
+    def _admin_request(self):
+        req = RequestFactory().post('/admin/')
+        req.user = self.staff
+        # Silence Django messages framework — it requires the messages middleware
+        # to be set up, which isn't available in this lightweight admin invocation.
+        req._messages = type('M', (), {'add': lambda *a, **kw: None})()
+        return req
+
+    @patch('jokes.models.Joke._generate_share_image')
+    def test_approve_action_publishes_and_creates_joke(self, _mock_img):
+        sub = self._make_pending_knock()
+        admin_instance = JokeSubmissionAdmin(JokeSubmission, AdminSite())
+        admin_instance.approve_and_publish(
+            self._admin_request(), JokeSubmission.objects.filter(id=sub.id)
+        )
+
+        sub.refresh_from_db()
+        self.assertEqual(sub.status, 'published')
+        self.assertIsNotNone(sub.published_joke_id)
+
+        joke = sub.published_joke
+        self.assertEqual(joke.format.slug, 'knock')
+        self.assertEqual(joke.lines, sub.lines)
+        self.assertIn(self.tone, joke.tones.all())
+        self.assertIn(self.theme, joke.context_tags.all())
+        self.assertIn(self.culture, joke.culture_tags.all())
+
+    @patch('jokes.models.Joke._generate_share_image')
+    def test_approve_skips_drafts(self, _mock_img):
+        sub = self._make_pending_knock()
+        sub.status = 'draft'
+        sub.save(update_fields=['status'])
+
+        admin_instance = JokeSubmissionAdmin(JokeSubmission, AdminSite())
+        admin_instance.approve_and_publish(
+            self._admin_request(), JokeSubmission.objects.filter(id=sub.id)
+        )
+
+        sub.refresh_from_db()
+        self.assertEqual(sub.status, 'draft')
+        self.assertIsNone(sub.published_joke_id)
