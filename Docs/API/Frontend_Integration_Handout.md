@@ -788,3 +788,120 @@ These backend endpoints exist but no design component currently uses them — le
 - `GET /api/v1/users/me/activity/` — denser activity stream
 - `GET /api/v1/users/me/achievements/` — awarded badges, no surface in current design
 - `POST /api/v1/reports/`, `POST /api/v1/users/{id}/block/`, `DELETE /api/v1/users/me/`, `GET /api/v1/users/me/data-export/` — compliance flows; will live in a Settings screen the design hasn't drawn yet
+
+---
+
+## Creator Authoring (added 2026-05-19)
+
+The submission API now accepts format-specific payloads and validates them
+against a per-format rule table. The editor should:
+
+1. Load `GET /api/v1/formats/` once at app start.
+2. When the creator picks a format, render only the inputs in
+   `required_fields` (plus optional fields like `tones`/`themes`/
+   `culture_tags`). Hide inputs in `forbidden_fields`.
+3. Respect `constraints` (e.g. show "min 4 lines" hint for knock-knock).
+4. POST to `/api/v1/jokes/submit/` with `format` plus only the inputs
+   appropriate to that format.
+
+### `GET /api/v1/formats/` — response shape
+
+```json
+{
+  "results": [
+    {
+      "id": 3,
+      "slug": "knock",
+      "name": "Knock-knock",
+      "description": "Multi-line call-and-response",
+      "required_fields": ["lines"],
+      "forbidden_fields": ["text", "setup", "punchline"],
+      "constraints": { "min_lines": 4, "max_lines": 8, "max_line_chars": 200 }
+    },
+    {
+      "id": 1,
+      "slug": "oneliner",
+      "name": "One-liner",
+      "required_fields": ["text"],
+      "forbidden_fields": ["setup", "punchline", "lines"],
+      "constraints": {}
+    }
+  ]
+}
+```
+
+### Per-format submission payloads
+
+**One-liner**
+```json
+{ "format": "oneliner", "age_rating": "kid-safe", "language": "en",
+  "text": "I told my wife she was drawing her eyebrows too high. She looked surprised.",
+  "tones": ["wholesome"], "context_tags": ["family"], "source": "original" }
+```
+
+**Setup-punchline**
+```json
+{ "format": "setup", "age_rating": "kid-safe", "language": "en",
+  "setup": "Why did the scarecrow get promoted?",
+  "punchline": "He was outstanding in his field.",
+  "tones": ["dad"], "source": "original" }
+```
+
+**Knock-knock**
+```json
+{ "format": "knock", "age_rating": "kid-safe", "language": "en",
+  "lines": ["Knock, knock.", "Who's there?", "Olive.", "Olive who?",
+            "Olive you and I miss you!"],
+  "tones": ["wholesome"], "context_tags": ["family"],
+  "culture_tags": ["universal"], "source": "original" }
+```
+
+**Story**
+```json
+{ "format": "story", "age_rating": "teen", "language": "en",
+  "text": "A long-form joke of at least thirty words ...",
+  "tones": ["surreal"], "source": "original" }
+```
+
+**Anti-joke**
+```json
+{ "format": "anti", "age_rating": "teen", "language": "en",
+  "setup": "Why did the chicken cross the road?",
+  "punchline": "To get to the other side.",
+  "tones": ["dry"], "source": "original" }
+```
+
+**Observational**
+```json
+{ "format": "observ", "age_rating": "teen", "language": "en",
+  "text": "Have you ever noticed how everyone driving slower than you is an idiot, and everyone driving faster than you is a maniac?",
+  "tones": ["sarcasm"], "source": "original" }
+```
+
+### Error catalog
+
+All errors return HTTP 400 with DRF-standard `{ field: [message] }`:
+
+| Code path | Example response |
+|---|---|
+| Required field missing | `{"lines": ["This field is required for knock format."]}` |
+| Forbidden field present | `{"text": ["Not allowed for knock format."]}` |
+| Knock — too few lines | `{"lines": ["Knock format requires at least 4 lines."]}` |
+| Knock — too many lines | `{"lines": ["Knock format allows at most 8 lines."]}` |
+| Knock — empty/non-string entry | `{"lines": ["Line 2 must be a non-empty string."]}` |
+| Knock — line too long | `{"lines": ["Line 3 exceeds 200 character limit."]}` |
+| Story — too short | `{"text": ["Story must be at least 30 words."]}` |
+| Unknown format slug | `{"format": ["Unknown format slug 'xyz'."]}` |
+
+### Draft lifecycle
+
+| Status | Creator can PATCH? | Creator can submit? |
+|---|---|---|
+| `draft` | yes | yes (→ `pending`) |
+| `pending` | no | no |
+| `published` | no | no |
+| `rejected` | yes | yes (→ `pending`) |
+
+`POST /api/v1/jokes/my-drafts/{id}/submit/` flips `draft`/`rejected` → `pending`.
+
+Approval and publication are moderator-only (Django admin).
