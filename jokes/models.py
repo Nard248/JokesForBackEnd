@@ -525,6 +525,15 @@ class JokeSubmission(models.Model):
     source = models.CharField(max_length=200, default='original')
     tones = models.ManyToManyField(Tone, blank=True, related_name='submissions')
     context_tags = models.ManyToManyField(ContextTag, blank=True, related_name='submissions')
+    culture_tags = models.ManyToManyField(
+        CultureTag, blank=True, related_name='submissions'
+    )
+
+    # Knock-knock dialogue storage. Mirrors Joke.lines. Null for non-knock formats.
+    lines = models.JSONField(
+        null=True, blank=True,
+        help_text='Dialogue lines for knock-knock format; null for other formats.',
+    )
 
     # Workflow
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='draft')
