@@ -696,6 +696,18 @@ class JokeSubmissionCreateSerializer(serializers.ModelSerializer):
         errors = validate_per_format(fmt.slug, attrs)
         if errors:
             raise serializers.ValidationError(errors)
+
+        # Backfill `text` for formats that don't have it as a creator input
+        # (setup-punchline, anti-joke, knock-knock). Keeps the submission's
+        # text field populated for previews, admin __str__, search indexing,
+        # and the Joke.text field after publish — without forcing creators
+        # to type it twice.
+        if not attrs['text']:
+            if attrs['setup'] and attrs['punchline']:
+                data['text'] = f"{attrs['setup']} {attrs['punchline']}"
+            elif attrs['lines']:
+                data['text'] = ' '.join(attrs['lines'])
+
         return data
 
 

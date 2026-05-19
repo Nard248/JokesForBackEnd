@@ -258,3 +258,43 @@ class SubmissionApiTests(APITestCase):
         )
         self.assertEqual(resp.status_code, 400)
         self.assertIn('lines', resp.json())
+
+    def test_patch_format_falls_back_to_instance(self):
+        """A PATCH with no `format` key should reuse the instance's format."""
+        sub = JokeSubmission.objects.create(
+            user=self.user, format=self.fmt_oneliner, age_rating=self.age,
+            language=self.lang, text='A short joke.', status='draft',
+        )
+        resp = self.client.patch(
+            f'/api/v1/jokes/my-drafts/{sub.id}/',
+            {'text': 'An updated one-liner.'},
+            format='json',
+        )
+        self.assertEqual(resp.status_code, 200, resp.content)
+        sub.refresh_from_db()
+        self.assertEqual(sub.text, 'An updated one-liner.')
+
+    def test_setup_punchline_text_backfilled(self):
+        """For setup/punchline formats, text is auto-derived from setup+punchline
+        so previews, search, and downstream Joke.text are non-empty."""
+        resp = self.client.post(
+            '/api/v1/jokes/submit/',
+            self._payload(format='setup', text='', setup='Why?', punchline='Because.'),
+            format='json',
+        )
+        self.assertEqual(resp.status_code, 201, resp.content)
+        sub = JokeSubmission.objects.get(id=resp.json()['id'])
+        self.assertEqual(sub.text, 'Why? Because.')
+
+    def test_knock_text_backfilled_from_lines(self):
+        resp = self.client.post(
+            '/api/v1/jokes/submit/',
+            self._payload(
+                format='knock', text='',
+                lines=['Knock, knock.', "Who's there?", 'Olive.', 'Olive who?'],
+            ),
+            format='json',
+        )
+        self.assertEqual(resp.status_code, 201, resp.content)
+        sub = JokeSubmission.objects.get(id=resp.json()['id'])
+        self.assertIn('Olive who?', sub.text)
