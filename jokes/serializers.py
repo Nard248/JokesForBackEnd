@@ -591,6 +591,7 @@ class JokeSubmissionListSerializer(serializers.ModelSerializer):
     age_rating = serializers.SlugRelatedField(slug_field='slug', read_only=True)
     tones = serializers.SerializerMethodField()
     context_tags = serializers.SerializerMethodField()
+    culture_tags = serializers.SerializerMethodField()
     # New design vocabulary aliases (P1 of Pivot Plan)
     categories = serializers.SerializerMethodField()
     themes = serializers.SerializerMethodField()
@@ -600,8 +601,9 @@ class JokeSubmissionListSerializer(serializers.ModelSerializer):
     class Meta:
         model = JokeSubmission
         fields = [
-            'id', 'text', 'setup', 'punchline', 'format', 'status',
-            'tones', 'age_rating', 'context_tags',
+            'id', 'text', 'setup', 'punchline', 'lines',
+            'format', 'status',
+            'tones', 'age_rating', 'context_tags', 'culture_tags',
             'categories',  # alias of tones
             'themes',      # alias of context_tags
             'last_edited_at',
@@ -613,6 +615,9 @@ class JokeSubmissionListSerializer(serializers.ModelSerializer):
 
     def get_context_tags(self, obj) -> list[str]:
         return [t.slug for t in obj.context_tags.all()]
+
+    def get_culture_tags(self, obj) -> list[str]:
+        return [t.slug for t in obj.culture_tags.all()]
 
     def get_categories(self, obj) -> list[str]:
         return self.get_tones(obj)
