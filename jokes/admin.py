@@ -161,7 +161,7 @@ class JokeSubmissionAdmin(admin.ModelAdmin):
     list_display = ['user', 'text_preview', 'format', 'status', 'updated_at']
     list_filter = ['status', 'format', 'age_rating']
     search_fields = ['user__email', 'text', 'setup', 'punchline']
-    filter_horizontal = ['tones', 'context_tags']
+    filter_horizontal = ['tones', 'context_tags', 'culture_tags']
     readonly_fields = ['created_at', 'updated_at']
     raw_id_fields = ['published_joke']
 
