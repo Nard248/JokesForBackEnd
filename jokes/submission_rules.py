@@ -68,6 +68,9 @@ def validate_per_format(format_slug, attrs):
         if _is_blank(attrs.get(field)):
             errors[field] = f"This field is required for {format_slug} format."
 
+    # A blank value (None / '' / []) for a forbidden field is treated as
+    # "not provided" and silently passes. Callers that send explicit blanks
+    # (e.g. a serializer clearing a field on PATCH) won't be tripped up.
     for field in rule.get('forbidden', []):
         if field in errors:
             continue

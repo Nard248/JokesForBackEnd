@@ -1,6 +1,4 @@
-from django.test import TestCase, SimpleTestCase
-
-# Create your tests here.
+from django.test import SimpleTestCase
 
 from jokes.submission_rules import FORMAT_RULES, validate_per_format
 
