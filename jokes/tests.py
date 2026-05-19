@@ -298,3 +298,15 @@ class SubmissionApiTests(APITestCase):
         self.assertEqual(resp.status_code, 201, resp.content)
         sub = JokeSubmission.objects.get(id=resp.json()['id'])
         self.assertIn('Olive who?', sub.text)
+
+    def test_drafts_list_includes_lines_and_culture_tags(self):
+        sub = JokeSubmission.objects.create(
+            user=self.user, format=self.fmt_knock, age_rating=self.age,
+            language=self.lang, lines=['A.', 'B.', 'C.', 'D.'], status='draft',
+        )
+        sub.culture_tags.add(self.culture)
+        resp = self.client.get(f'/api/v1/jokes/my-drafts/{sub.id}/')
+        self.assertEqual(resp.status_code, 200)
+        body = resp.json()
+        self.assertEqual(body['lines'], ['A.', 'B.', 'C.', 'D.'])
+        self.assertEqual(body['culture_tags'], [self.culture.slug])
