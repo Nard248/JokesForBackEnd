@@ -61,8 +61,10 @@ INSTALLED_APPS = [
     'pgtrigger',
     'django_celery_beat',
     'django_celery_results',
+    'anymail',
     # Local apps
     'jokes',
+    'notifications',
 ]
 
 SITE_ID = 1
@@ -215,6 +217,7 @@ REST_FRAMEWORK = {
     'DEFAULT_THROTTLE_RATES': {
         'anon': '100/hour',
         'user': '1000/hour',
+        'verification_resend': '3/15min',
     },
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.URLPathVersioning',
@@ -300,8 +303,20 @@ SIMPLE_JWT = {
 }
 
 
-# Email backend (console for development)
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# Email backend is environment-driven. Local dev prints to console (read the
+# 6-digit code from stdout). Prod sets EMAIL_BACKEND=anymail.backends.resend.EmailBackend.
+EMAIL_BACKEND = os.getenv(
+    'EMAIL_BACKEND', 'django.core.mail.backends.console.EmailBackend'
+)
+ANYMAIL = {'RESEND_API_KEY': os.getenv('RESEND_API_KEY', '')}
+DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', 'Jokes For <noreply@localhost>')
+
+# Registration email verification (the notifications app).
+# EMAIL_VERIFICATION_REQUIRED is the deploy gate: keep False until a real email
+# provider + verified domain are live, else new users cannot receive their code.
+EMAIL_VERIFICATION_REQUIRED = os.getenv('EMAIL_VERIFICATION_REQUIRED', 'false').lower() == 'true'
+EMAIL_VERIFICATION_CODE_TTL_MINUTES = int(os.getenv('EMAIL_VERIFICATION_CODE_TTL_MINUTES', '10'))
+EMAIL_VERIFICATION_MAX_ATTEMPTS = int(os.getenv('EMAIL_VERIFICATION_MAX_ATTEMPTS', '5'))
 
 # django-allauth settings
 # https://docs.allauth.org/en/latest/account/configuration.html

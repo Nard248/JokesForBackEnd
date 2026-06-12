@@ -1,0 +1,7 @@
+Confirm your email to finish setting up your Jokes For account.
+
+Your code: {{ code }}
+
+Enter this code in the app. It expires in {{ ttl_minutes }} minutes.
+
+If you didn't request this, you can ignore this email.
