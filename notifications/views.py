@@ -12,11 +12,11 @@ from .throttles import ResendThrottle
 
 User = get_user_model()
 
-# Maps verify_code() error strings to user-facing field errors.
+# Maps verify_code() error strings to user-facing field errors. 'too_many_attempts'
+# is handled separately (429), so it is not in this 400-field map.
 _VERIFY_ERRORS = {
     'no_active_code': ('code', 'No active code. Request a new one.'),
     'expired': ('code', 'This code has expired. Request a new one.'),
-    'too_many_attempts': ('code', 'Too many attempts. Request a new code.'),
     'incorrect': ('code', 'Incorrect code.'),
 }
 
@@ -38,14 +38,25 @@ class VerifyEmailView(APIView):
             return Response({'code': ['Incorrect code.']},
                             status=status.HTTP_400_BAD_REQUEST)
 
+        if user.is_active:
+            return Response(
+                {'detail': 'This email is already verified. Please log in.'},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
         ok, err = verification.verify_code(user, code)
         if not ok:
+            if err == 'too_many_attempts':
+                return Response(
+                    {'detail': 'Too many attempts. Request a new code.'},
+                    status=status.HTTP_429_TOO_MANY_REQUESTS,
+                )
             field, msg = _VERIFY_ERRORS[err]
             return Response({field: [msg]}, status=status.HTTP_400_BAD_REQUEST)
 
-        if not user.is_active:
-            user.is_active = True
-            user.save(update_fields=['is_active'])
+        # User was inactive (active users returned early above); activate now.
+        user.is_active = True
+        user.save(update_fields=['is_active'])
 
         refresh = RefreshToken.for_user(user)
         access = refresh.access_token
