@@ -81,6 +81,12 @@ def verify_code(user, code):
         ev.save(update_fields=['attempts'])
         return False, 'incorrect'
 
-    ev.consumed_at = timezone.now()
-    ev.save(update_fields=['consumed_at'])
+    # Atomically consume: a conditional UPDATE so two concurrent verifies of the
+    # same code can't both succeed (only the row still unconsumed flips). If the
+    # update affects 0 rows, another request already consumed it.
+    consumed = EmailVerification.objects.filter(
+        pk=ev.pk, consumed_at__isnull=True
+    ).update(consumed_at=timezone.now())
+    if not consumed:
+        return False, 'no_active_code'
     return True, None
