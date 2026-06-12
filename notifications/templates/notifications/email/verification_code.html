@@ -1,0 +1,6 @@
+{% extends "notifications/email/base.html" %}
+{% block content %}
+  <p>Confirm your email to finish setting up your Jokes For account.</p>
+  <p style="font-size:32px; font-weight:700; letter-spacing:6px; color:#111; margin:24px 0;">{{ code }}</p>
+  <p>Enter this code in the app. It expires in {{ ttl_minutes }} minutes.</p>
+{% endblock %}

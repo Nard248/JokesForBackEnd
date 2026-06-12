@@ -627,19 +627,55 @@ class UserPreferenceViewSet(viewsets.GenericViewSet):
 # =============================================================================
 
 class CookieRegisterView(RegisterView):
-    # dj-rest-auth's RegisterView returns JWTs in the body but doesn't write
-    # cookies — only LoginView does. Mirror LoginView's cookie-setting here so
-    # the browser is authenticated immediately after sign-up, no extra login round-trip.
+    """Registration with two modes, switched by EMAIL_VERIFICATION_REQUIRED.
+
+    Gated (True): create an inactive user, issue + email a 6-digit code, return
+    201 {detail, email} with NO tokens. The user authenticates only after
+    POST /auth/verify-email/.
+
+    Legacy (False): original behavior — active user, JWT cookies on 201. Kept so
+    the feature can be deployed before a real email provider is live.
+    """
+
     def create(self, request, *args, **kwargs):
-        response = super().create(request, *args, **kwargs)
-        if (
-            response.status_code == status.HTTP_201_CREATED
-            and rest_auth_settings.USE_JWT
-            and getattr(self, 'access_token', None)
-            and getattr(self, 'refresh_token', None)
-        ):
-            set_jwt_cookies(response, self.access_token, self.refresh_token)
-        return response
+        if not settings.EMAIL_VERIFICATION_REQUIRED:
+            response = super().create(request, *args, **kwargs)
+            if (
+                response.status_code == status.HTTP_201_CREATED
+                and rest_auth_settings.USE_JWT
+                and getattr(self, 'access_token', None)
+                and getattr(self, 'refresh_token', None)
+            ):
+                set_jwt_cookies(response, self.access_token, self.refresh_token)
+            return response
+
+        # Gated flow.
+        from notifications import verification
+        from notifications.service import EmailSendError
+
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        user = serializer.save(request)
+        user.is_active = False
+        user.save(update_fields=['is_active'])
+
+        try:
+            verification.issue_and_send(user)
+        except EmailSendError:
+            # Provider down. The user row exists (inactive) and a verification
+            # row was issued, so the account is recoverable via
+            # POST /auth/resend-verification/. Surface a 502 instead of a 500.
+            return Response(
+                {'detail': "We couldn't send your code right now. "
+                           'Please use "Resend code" in a moment.',
+                 'email': user.email},
+                status=status.HTTP_502_BAD_GATEWAY,
+            )
+
+        return Response(
+            {'detail': 'Verification code sent to your email.', 'email': user.email},
+            status=status.HTTP_201_CREATED,
+        )
 
 
 class GoogleLogin(SocialLoginView):
