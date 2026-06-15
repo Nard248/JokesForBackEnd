@@ -23,7 +23,12 @@ from drf_spectacular.views import (
 )
 from jokes.views import CookieRegisterView, GoogleLogin, joke_share_page
 
+from JokesForProject.health import healthz
+
 urlpatterns = [
+    # Unauthenticated liveness probe — no DRF auth/versioning/throttling
+    path('healthz', healthz, name='healthz'),
+
     # Admin
     path('admin/', admin.site.urls),
 
