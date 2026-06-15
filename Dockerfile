@@ -48,6 +48,8 @@ COPY --chown=app:app . .
 
 # Build-time collectstatic so the static layer is cached and served by WhiteNoise.
 # SECRET_KEY/DEBUG values here are throwaway — nothing sensitive is read.
+# GS_BUCKET_NAME is intentionally unset at build time: collectstatic targets the
+# WhiteNoise staticfiles storage only; media (GCS) is configured at runtime.
 RUN SECRET_KEY=build-only-key DEBUG=False ALLOWED_HOSTS=* \
     python manage.py collectstatic --noinput --clear
 

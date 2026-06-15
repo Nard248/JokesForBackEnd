@@ -217,10 +217,53 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# Media files (user uploads + generated share cards).
+# Local dev/test serve from the filesystem; production overrides the default
+# storage to Google Cloud Storage when GS_BUCKET_NAME is set (see below).
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+
+def build_default_storage(bucket_name: str) -> dict[str, Any]:
+    """Return the STORAGES['default'] config.
+
+    With GS_BUCKET_NAME set -> Google Cloud Storage (durable prod storage).
+    Without it -> the filesystem (local dev + tests need no GCS).
+
+    The bucket uses Uniform bucket-level access set to public-read, so we keep
+    default_acl=None and querystring_auth=False: django-storages then returns a
+    stable, non-expiring https://storage.googleapis.com/<bucket>/<path> URL.
+    Signed URLs are deliberately avoided -- Cloud Run's default service account
+    cannot V4-sign without the IAM Credentials API, and share cards must be
+    crawler-fetchable (Open Graph) without expiry.
+    """
+    bucket_name = (bucket_name or '').strip()
+    if not bucket_name:
+        return {'BACKEND': 'django.core.files.storage.FileSystemStorage'}
+
+    options: dict[str, Any] = {
+        'bucket_name': bucket_name,
+        'default_acl': None,
+        'querystring_auth': False,
+        'file_overwrite': True,
+    }
+    project_id = os.getenv('GS_PROJECT_ID', '').strip()
+    if project_id:
+        options['project_id'] = project_id
+    location = os.getenv('GS_LOCATION', '').strip()
+    if location:
+        options['location'] = location
+    return {
+        'BACKEND': 'storages.backends.gcloud.GoogleCloudStorage',
+        'OPTIONS': options,
+    }
+
+
 # Hashed + gzipped static assets so WhiteNoise can serve them with far-future
 # cache headers (filename embeds content hash → safe to cache forever).
 STORAGES = {
-    'default': {'BACKEND': 'django.core.files.storage.FileSystemStorage'},
+    'default': build_default_storage(os.getenv('GS_BUCKET_NAME', '')),
     'staticfiles': {'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage'},
 }
 
