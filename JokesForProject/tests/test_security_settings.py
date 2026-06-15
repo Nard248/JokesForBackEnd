@@ -33,6 +33,24 @@ class SecuritySettingsTests(SimpleTestCase):
         # NOSNIFF is harmless in dev; assert it is False here only because we gate it.
         self.assertFalse(s.SECURE_CONTENT_TYPE_NOSNIFF)
 
+    def test_missing_secret_key_in_prod_raises(self):
+        from django.core.exceptions import ImproperlyConfigured
+        import importlib
+        import JokesForProject.settings as s
+        # Set SECRET_KEY to empty string: load_dotenv() re-runs on reload but
+        # won't override an already-set (even empty) env var (override=False).
+        with mock.patch.dict(os.environ, {'DEBUG': 'False', 'SECRET_KEY': ''}, clear=False):
+            with self.assertRaises(ImproperlyConfigured):
+                importlib.reload(s)
+
+    def test_dev_fallback_secret_key_when_debug(self):
+        # pop SECRET_KEY then reload to confirm the dev fallback path
+        import importlib
+        import JokesForProject.settings as s
+        with mock.patch.dict(os.environ, {'DEBUG': 'True', 'SECRET_KEY': ''}, clear=False):
+            s = importlib.reload(s)
+        self.assertTrue(s.SECRET_KEY)
+
     @classmethod
     def tearDownClass(cls):
         # Restore the real settings module after reloads.
