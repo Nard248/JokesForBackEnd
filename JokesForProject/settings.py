@@ -150,6 +150,29 @@ def _build_default_db():
 DATABASES = {'default': _build_default_db()}
 
 
+# Cache — Django DatabaseCache on the existing Postgres connection.
+#
+# DRF throttling reads/writes the `default` cache alias. Without this block,
+# Django falls back to a per-process LocMemCache, so each gunicorn worker (and
+# each Cloud Run instance) keeps its OWN throttle counters and the anon/user/
+# verification_resend limits are bypassable by ~workers x instances.
+#
+# We use DatabaseCache (not Redis/Memcached) on purpose: it reuses the Neon
+# connection we already hold, is strongly consistent, survives instance churn,
+# and needs NO extra service or background worker — honoring the single-app,
+# no-worker principle. The cache table is created by a migration (see
+# notifications/migrations/0002_create_cache_table.py) so it exists in prod and
+# in the test DB after `migrate`.
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+        'LOCATION': 'jokesfor_cache',
+        # Cap the table so it self-prunes; throttle entries are short-lived.
+        'OPTIONS': {'MAX_ENTRIES': 10000, 'CULL_FREQUENCY': 3},
+    }
+}
+
+
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
