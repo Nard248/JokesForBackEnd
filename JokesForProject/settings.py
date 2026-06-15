@@ -289,6 +289,22 @@ if _COOKIE_SAMESITE == 'None':
 CSRF_COOKIE_SECURE = not DEBUG
 SESSION_COOKIE_SECURE = not DEBUG
 
+# Transport security — production only. Local dev runs over plain http, so these
+# stay OFF when DEBUG=True. SECURE_PROXY_SSL_HEADER (set above) lets Django see
+# Cloud Run's terminated TLS, so SECURE_SSL_REDIRECT won't loop.
+if not DEBUG:
+    # Start lower (e.g. 3600) on first prod rollout, then ramp to a year before
+    # adding the domain to the browser HSTS preload list.
+    SECURE_HSTS_SECONDS = int(os.getenv('SECURE_HSTS_SECONDS', '31536000'))
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
+    SECURE_SSL_REDIRECT = True
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+else:
+    SECURE_HSTS_SECONDS = 0
+    SECURE_SSL_REDIRECT = False
+    SECURE_CONTENT_TYPE_NOSNIFF = False
+
 
 # dj-rest-auth settings
 # https://dj-rest-auth.readthedocs.io/en/latest/configuration.html
