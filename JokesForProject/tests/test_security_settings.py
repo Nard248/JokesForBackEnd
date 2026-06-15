@@ -51,6 +51,16 @@ class SecuritySettingsTests(SimpleTestCase):
             s = importlib.reload(s)
         self.assertTrue(s.SECRET_KEY)
 
+    def test_sentry_not_initialized_without_dsn(self):
+        with mock.patch.dict(os.environ, {'DEBUG': 'True', 'SENTRY_DSN': ''}, clear=False):
+            import importlib
+            import JokesForProject.settings as s
+            importlib.reload(s)
+        import sentry_sdk
+        client = sentry_sdk.get_client()
+        # No DSN configured => client is not active.
+        self.assertFalse(getattr(client, 'is_active', lambda: bool(client.dsn))())
+
     @classmethod
     def tearDownClass(cls):
         # Restore the real settings module after reloads.

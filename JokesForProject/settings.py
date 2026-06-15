@@ -383,3 +383,19 @@ SOCIALACCOUNT_PROVIDERS = {
 # Google OAuth credentials (from environment)
 GOOGLE_OAUTH_CALLBACK_URL = os.getenv('GOOGLE_OAUTH_CALLBACK_URL', 'http://localhost:5173/auth/google/callback')
 
+# Error monitoring — Sentry, opt-in via SENTRY_DSN. No DSN => fully no-op, so
+# local dev and the test suite never phone home. send_default_pii=False keeps
+# user identifiers out of events (COPPA/GDPR posture).
+SENTRY_DSN = os.getenv('SENTRY_DSN', '').strip()
+if SENTRY_DSN:
+    import sentry_sdk
+    from sentry_sdk.integrations.django import DjangoIntegration
+
+    sentry_sdk.init(
+        dsn=SENTRY_DSN,
+        integrations=[DjangoIntegration()],
+        traces_sample_rate=float(os.getenv('SENTRY_TRACES_SAMPLE_RATE', '0')),
+        send_default_pii=False,
+        environment=os.getenv('SENTRY_ENVIRONMENT', 'production' if not DEBUG else 'development'),
+    )
+
