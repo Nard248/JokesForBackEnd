@@ -3,6 +3,7 @@ from django.contrib.postgres.indexes import GinIndex
 from django.contrib.postgres.search import SearchVectorField
 from django.core.files.base import ContentFile
 from django.db import models
+from django.utils import timezone
 import pgtrigger
 
 from .managers import JokeManager
@@ -255,6 +256,10 @@ class UserPreference(models.Model):
     notification_collection_updates = models.BooleanField(default=True)
     notification_email_digest = models.BooleanField(default=False)
     onboarding_completed = models.BooleanField(default=False)
+    show_mature = models.BooleanField(
+        default=False,
+        help_text='Adult opt-in to mature (tier_2) content. Default off. Only honored for 18+ users.',
+    )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -450,6 +455,13 @@ class UserProfile(models.Model):
     show_activity = models.BooleanField(default=True)
     share_analytics = models.BooleanField(default=False)
 
+    # Age gating (COPPA). Null = treated as non-adult (OAuth/legacy users fail safe to tier_1).
+    date_of_birth = models.DateField(
+        null=True,
+        blank=True,
+        help_text='Neutral DOB for age gating (COPPA). Null = treated as non-adult.',
+    )
+
     # Theme
     theme = models.CharField(max_length=20, choices=THEME_CHOICES, default='light')
 
@@ -463,6 +475,29 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return f"Profile for {self.user.email}"
+
+    @property
+    def age(self):
+        """Return integer age in years, or None if DOB is not set."""
+        if self.date_of_birth is None:
+            return None
+        today = timezone.now().date()
+        dob = self.date_of_birth
+        years = today.year - dob.year - (
+            1 if (today.month, today.day) < (dob.month, dob.day) else 0
+        )
+        return years
+
+    @property
+    def is_adult(self):
+        """True only if age is known and >= 18."""
+        a = self.age
+        return a is not None and a >= 18
+
+    @property
+    def is_minor(self):
+        """True if age is unknown (null DOB) or < 18. Fail-safe direction."""
+        return not self.is_adult
 
 
 # =============================================================================
