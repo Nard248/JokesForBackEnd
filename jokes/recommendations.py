@@ -19,7 +19,7 @@ def get_recently_shown_joke_ids(user, days=30):
     )
 
 
-def get_personalized_joke(user, exclude_joke_ids=None):
+def get_personalized_joke(user, exclude_joke_ids=None, allowed_tiers=frozenset({'tier_1'})):
     """
     Content-based filtering using UserPreference.
     Returns a joke matching user's preferences, avoiding recently shown.
@@ -29,6 +29,9 @@ def get_personalized_joke(user, exclude_joke_ids=None):
     2. Exclude recently shown jokes (30-day window)
     3. Order by popularity (save count) with randomness for variety
     4. Fallback to any joke if preferences too restrictive
+
+    allowed_tiers: frozenset of content_tier values the user is allowed to receive.
+    Defaults to frozenset({'tier_1'}) as a fail-safe for any caller that omits it.
     """
     try:
         prefs = user.preference
@@ -38,8 +41,10 @@ def get_personalized_joke(user, exclude_joke_ids=None):
 
     exclude_ids = exclude_joke_ids or []
 
-    # Start with all jokes, excluding recently shown
-    base_queryset = Joke.objects.exclude(id__in=exclude_ids)
+    # Start with jokes in allowed tiers, excluding recently shown
+    base_queryset = Joke.objects.exclude(id__in=exclude_ids).filter(
+        content_tier__in=allowed_tiers
+    )
 
     if not base_queryset.exists():
         # All jokes exhausted - return None (caller should handle reset)

@@ -61,6 +61,7 @@ from .models import (
     JokePackProgress,
 )
 from .recommendations import get_personalized_joke, get_recently_shown_joke_ids
+from .serving import allowed_tiers
 from .serializers import (
     JokeSerializer,
     FormatSerializer,
@@ -113,7 +114,9 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
 
     def get_queryset(self):
         """Optimized queryset with eager loading for nested serializer."""
-        return Joke.objects.select_related(
+        return Joke.objects.filter(
+            content_tier__in=allowed_tiers(self.request)
+        ).select_related(
             'format', 'age_rating', 'language', 'source'
         ).prefetch_related('tones', 'context_tags', 'culture_tags')
 
@@ -247,6 +250,7 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
             query_text=query_text if query_text else None,
             filters=filters if filters else None,
             ordering=ordering if ordering else None,
+            allowed_tiers=allowed_tiers(request),
         )
 
         # Vibe filter (P2): resolves to the vibe's M2M filter recipe.
@@ -283,7 +287,9 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
         Useful for "Joke of the Day" or random joke button features.
         Returns 404 if no jokes exist in the database.
         """
-        joke = Joke.objects.order_by('?').first()
+        joke = Joke.objects.filter(
+            content_tier__in=allowed_tiers(request)
+        ).order_by('?').first()
         if joke is None:
             return Response(
                 {'detail': 'No jokes found.'},
@@ -439,7 +445,9 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
         days = period_map.get(period, 7)
         since = timezone.now() - timedelta(days=days)
 
-        jokes = Joke.objects.select_related(
+        jokes = Joke.objects.filter(
+            content_tier__in=allowed_tiers(request)
+        ).select_related(
             'format', 'age_rating', 'language', 'source'
         ).prefetch_related('tones', 'context_tags', 'culture_tags').annotate(
             recent_likes=Count('ratings', filter=Q(ratings__rating=1, ratings__created_at__gte=since)),
@@ -864,11 +872,17 @@ class SavedJokeViewSet(
                 status=status.HTTP_400_BAD_REQUEST,
             )
 
-        # Get joke IDs matching the search
-        matching_joke_ids = Joke.objects.search(query_text=query).values_list('id', flat=True)
+        # Get joke IDs matching the search (within allowed tiers)
+        tiers = allowed_tiers(request)
+        matching_joke_ids = Joke.objects.search(
+            query_text=query, allowed_tiers=tiers
+        ).values_list('id', flat=True)
 
-        # Filter saved jokes to those matching
-        saved_jokes = self.get_queryset().filter(joke_id__in=matching_joke_ids)
+        # Filter saved jokes to those matching (also filter by tier for belt-and-suspenders)
+        saved_jokes = self.get_queryset().filter(
+            joke_id__in=matching_joke_ids,
+            joke__content_tier__in=tiers,
+        )
 
         page = self.paginate_queryset(saved_jokes)
         if page is not None:
@@ -920,9 +934,11 @@ class DailyJokeViewSet(viewsets.GenericViewSet):
         """
         today_date = timezone.now().date()
 
-        # Anonymous users get an editorial pick
+        # Anonymous users get an editorial pick (tier_1 only — always fail-safe for anon)
         if not request.user.is_authenticated:
-            joke = Joke.objects.select_related(
+            joke = Joke.objects.filter(
+                content_tier__in=allowed_tiers(request)
+            ).select_related(
                 'format', 'age_rating', 'language', 'source'
             ).prefetch_related(
                 'tones', 'context_tags', 'culture_tags'
@@ -953,9 +969,13 @@ class DailyJokeViewSet(viewsets.GenericViewSet):
         ).first()
 
         if not daily:
-            # Fallback: generate on-demand
+            # Fallback: generate on-demand (respecting allowed tiers for this user)
             exclude_ids = get_recently_shown_joke_ids(request.user, days=30)
-            joke = get_personalized_joke(request.user, exclude_joke_ids=exclude_ids)
+            joke = get_personalized_joke(
+                request.user,
+                exclude_joke_ids=exclude_ids,
+                allowed_tiers=allowed_tiers(request),
+            )
 
             if joke:
                 daily = DailyJoke.objects.create(
@@ -995,7 +1015,11 @@ class DailyJokeViewSet(viewsets.GenericViewSet):
         if not daily:
             # Lazy-generate (replaces the Celery beat task)
             exclude_ids = get_recently_shown_joke_ids(request.user, days=30)
-            joke = get_personalized_joke(request.user, exclude_joke_ids=exclude_ids)
+            joke = get_personalized_joke(
+                request.user,
+                exclude_joke_ids=exclude_ids,
+                allowed_tiers=allowed_tiers(request),
+            )
             if joke is None:
                 return Response(
                     {'detail': 'No jokes available for tomorrow yet.'},
@@ -1700,14 +1724,15 @@ class UserVibesView(APIView):
 # Mystery Box (P3 of Pivot Plan) — variable-reward pull from user's vibe pool
 # =============================================================================
 
-def _mystery_pool_for_user(user):
+def _mystery_pool_for_user(user, allowed=frozenset({'tier_1'})):
     """Build the joke pool a user can be served from the Mystery Box.
 
     Strategy:
       1. Union of jokes matching every vibe the user picked (their "pool").
       2. If no vibes / empty pool → fall back to the global joke pool.
-      3. Exclude jokes already rolled today by this user (no same-day repeats).
-      4. Exclude jokes the user has already saved (already in their library).
+      3. Filter to allowed content tiers (serving lock).
+      4. Exclude jokes already rolled today by this user (no same-day repeats).
+      5. Exclude jokes the user has already saved (already in their library).
 
     Returns a 2-tuple `(queryset, source_vibe)`. `source_vibe` is one of the
     user's vibes (any) — for telemetry on the roll, not for filtering.
@@ -1731,6 +1756,9 @@ def _mystery_pool_for_user(user):
     if not pool.exists():
         pool = Joke.objects.all()
         used_vibe = None
+
+    # Apply content-tier serving lock
+    pool = pool.filter(content_tier__in=allowed)
 
     rolled_today = MysteryBoxRoll.objects.filter(
         user=user, rolled_date=today
@@ -1795,7 +1823,7 @@ class MysteryBoxRollView(APIView):
                 status=status.HTTP_429_TOO_MANY_REQUESTS,
             )
 
-        pool, source_vibe = _mystery_pool_for_user(request.user)
+        pool, source_vibe = _mystery_pool_for_user(request.user, allowed=allowed_tiers(request))
         joke = pool.order_by('?').first()
         if joke is None:
             return Response(
@@ -2135,16 +2163,18 @@ def _issue_label_for(date_obj):
     return f"Vol. {vol_str} · No. {issue_in_volume:03d}"
 
 
-def _select_daily_joke_for(user, target_date):
+def _select_daily_joke_for(user, target_date, allowed=frozenset({'tier_1'})):
     """Lazy selection of a DailyJoke for the user on target_date — generates
     the row if it doesn't exist yet (replaces the Celery beat task)."""
     from .models import DailyJoke
     existing = DailyJoke.objects.filter(user=user, date=target_date).first()
     if existing:
         return existing
-    # Pick a joke (favor user's vibes, fall back to global)
-    pool, _ = _mystery_pool_for_user(user)
-    joke = pool.order_by('?').first() or Joke.objects.order_by('?').first()
+    # Pick a joke (favor user's vibes, fall back to global — both filtered by allowed tiers)
+    pool, _ = _mystery_pool_for_user(user, allowed=allowed)
+    joke = pool.order_by('?').first() or Joke.objects.filter(
+        content_tier__in=allowed
+    ).order_by('?').first()
     if joke is None:
         return None
     daily, _ = DailyJoke.objects.get_or_create(
