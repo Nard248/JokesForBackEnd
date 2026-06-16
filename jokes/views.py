@@ -1697,7 +1697,13 @@ class UserAccountDeleteView(APIView):
                 except Exception:
                     pass  # Missing file must not block account deletion
 
-            # 3. Purge email logs and verifications (not auto-cascaded)
+            # 3. Purge email records.
+            #    EmailMessageLog.user is SET_NULL, so its rows SURVIVE user.delete()
+            #    and MUST be purged explicitly. We match on the user FK OR the
+            #    account email; email is immutable in this app (set only at
+            #    registration, no change-email feature), so this covers every log.
+            #    EmailVerification.user is CASCADE (user.delete() would remove it),
+            #    but we purge it explicitly here for immediacy/clarity.
             EmailMessageLog.objects.filter(
                 Q(user=user) | Q(to_email__iexact=user.email)
             ).delete()
