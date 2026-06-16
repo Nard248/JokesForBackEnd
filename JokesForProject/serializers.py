@@ -7,9 +7,30 @@ from rest_framework import serializers
 
 from allauth.account.adapter import get_adapter
 from allauth.account.utils import setup_user_email
+from dj_rest_auth.serializers import UserDetailsSerializer
 
 
 User = get_user_model()
+
+
+class JokesForUserDetailsSerializer(UserDetailsSerializer):
+    """
+    Extends dj-rest-auth's UserDetailsSerializer to expose the user's own
+    date_of_birth from their UserProfile.
+
+    GDPR Article 15 grants users the right to access their own personal data,
+    so returning the authenticated user their own DOB is both legal and required.
+    The frontend uses this field to gate consent-analytics for adults.
+    """
+
+    date_of_birth = serializers.DateField(
+        source='profile.date_of_birth',
+        read_only=True,
+        allow_null=True,
+    )
+
+    class Meta(UserDetailsSerializer.Meta):
+        fields = UserDetailsSerializer.Meta.fields + ('date_of_birth',)
 
 
 class EmailOnlyRegisterSerializer(serializers.Serializer):

@@ -373,6 +373,7 @@ REST_AUTH = {
     'JWT_AUTH_SAMESITE': os.getenv('JWT_COOKIE_SAMESITE', 'Lax'),
     'SESSION_LOGIN': False,  # Disable session auth, use JWT only
     'REGISTER_SERIALIZER': 'JokesForProject.serializers.EmailOnlyRegisterSerializer',
+    'USER_DETAILS_SERIALIZER': 'JokesForProject.serializers.JokesForUserDetailsSerializer',
 }
 
 
