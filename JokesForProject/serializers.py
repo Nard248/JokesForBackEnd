@@ -2,6 +2,7 @@
 Custom serializers for authentication.
 """
 from django.contrib.auth import get_user_model
+from django.utils import timezone
 from rest_framework import serializers
 
 from allauth.account.adapter import get_adapter
@@ -16,10 +17,12 @@ class EmailOnlyRegisterSerializer(serializers.Serializer):
     Registration serializer for email-only authentication.
 
     Does not require username - uses email as the primary identifier.
+    Requires date_of_birth; blocks registrations for users under 13.
     """
     email = serializers.EmailField(required=True)
     password1 = serializers.CharField(write_only=True)
     password2 = serializers.CharField(write_only=True)
+    date_of_birth = serializers.DateField(required=True, write_only=True)
 
     def validate_email(self, email):
         email = get_adapter().clean_email(email)
@@ -33,6 +36,19 @@ class EmailOnlyRegisterSerializer(serializers.Serializer):
     def validate_password1(self, password):
         return get_adapter().clean_password(password)
 
+    def validate_date_of_birth(self, value):
+        today = timezone.now().date()
+        if value >= today:
+            raise serializers.ValidationError('Enter a valid date of birth.')
+        years = today.year - value.year - (
+            1 if (today.month, today.day) < (value.month, value.day) else 0
+        )
+        if years < 13:
+            raise serializers.ValidationError(
+                'You must be at least 13 years old to use Jokes For.'
+            )
+        return value
+
     def validate(self, data):
         if data['password1'] != data['password2']:
             raise serializers.ValidationError({
@@ -44,6 +60,7 @@ class EmailOnlyRegisterSerializer(serializers.Serializer):
         return {
             'email': self.validated_data.get('email', ''),
             'password1': self.validated_data.get('password1', ''),
+            'date_of_birth': self.validated_data.get('date_of_birth'),
         }
 
     def save(self, request):
@@ -56,6 +73,11 @@ class EmailOnlyRegisterSerializer(serializers.Serializer):
         user.username = self.cleaned_data['email']  # Use email as username
         user.set_password(self.cleaned_data['password1'])
         user.save()
+
+        # Persist DOB onto the signal-created profile
+        profile = user.profile
+        profile.date_of_birth = self.cleaned_data['date_of_birth']
+        profile.save(update_fields=['date_of_birth', 'updated_at'])
 
         setup_user_email(request, user, [])
         return user
