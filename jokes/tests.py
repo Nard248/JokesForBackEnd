@@ -117,6 +117,12 @@ class FormatRulesTests(SimpleTestCase):
         self.assertIn('format', errs)
 
 
+import io
+import json
+import zipfile
+from datetime import date, timedelta
+
+from django.utils import timezone
 from rest_framework.test import APITestCase
 from django.contrib.auth import get_user_model
 
@@ -417,3 +423,230 @@ class AdminApproveTests(APITestCase):
         sub.refresh_from_db()
         self.assertEqual(sub.status, 'draft')
         self.assertIsNone(sub.published_joke_id)
+
+
+# =============================================================================
+# GDPR: DataExportView tests  (Task 1)
+# =============================================================================
+
+from jokes.models import (
+    Joke, Collection, SavedJoke, Favorite, JokeRating, JokeReaction,
+    DailyJoke, JokeView, Streak, StreakDay, JokeSubmission as _JS,
+    ContentReport, UserBlock, UserPreference, UserProfile, UserVibe, Vibe,
+    MysteryBoxRoll, ShareEvent, Achievement, UserAchievement,
+    JokePack, JokePackProgress,
+)
+from notifications.models import EmailMessageLog, EmailVerification
+
+
+class DataExportTests(APITestCase):
+    @classmethod
+    def setUpTestData(cls):
+        cls.user = User.objects.create_user(
+            username='exporter@example.com',
+            email='exporter@example.com',
+            password='pw12345!',
+        )
+        cls.other = User.objects.create_user(
+            username='other@example.com',
+            email='other@example.com',
+            password='pw12345!',
+        )
+        fmt = Format.objects.get(slug='oneliner')
+        age = AgeRating.objects.first()
+        lang = Language.objects.get(code='en')
+        with patch('jokes.models.Joke._generate_share_image'):
+            cls.joke = Joke.objects.create(
+                text='My export joke', format=fmt, age_rating=age, language=lang,
+            )
+        col = Collection.objects.create(user=cls.user, name='Mine')
+        SavedJoke.objects.create(user=cls.user, joke=cls.joke, collection=col, note='keep')
+        Favorite.objects.create(user=cls.user, joke=cls.joke)
+        JokeRating.objects.create(user=cls.user, joke=cls.joke, rating=JokeRating.LIKE)
+        JokeReaction.objects.create(user=cls.user, joke=cls.joke, reaction=JokeReaction.REACTION_LOL)
+        DailyJoke.objects.create(user=cls.user, joke=cls.joke, date=date.today())
+        JokeView.objects.create(user=cls.user, joke=cls.joke, source=JokeView.SOURCE_DAILY)
+        EmailMessageLog.objects.create(
+            user=cls.user, to_email=cls.user.email,
+            template_name='welcome', subject='Hi', status='sent',
+        )
+        ContentReport.objects.create(reporter=cls.user, joke=cls.joke, reason='spam')
+        UserBlock.objects.create(blocker=cls.user, blocked=cls.other)
+        # Other user's data — must NOT appear in user_a's export
+        Favorite.objects.create(user=cls.other, joke=cls.joke)
+        EmailMessageLog.objects.create(
+            user=cls.other, to_email=cls.other.email,
+            template_name='welcome', subject='Hi', status='sent',
+        )
+
+    def setUp(self):
+        self.client.force_authenticate(user=self.user)
+
+    def _export(self):
+        resp = self.client.get('/api/v1/users/me/data-export/')
+        self.assertEqual(resp.status_code, 200, resp.content)
+        self.assertEqual(resp['Content-Type'], 'application/zip')
+        self.assertIn('attachment', resp['Content-Disposition'])
+        raw = resp.content
+        zf = zipfile.ZipFile(io.BytesIO(raw))
+        return json.loads(zf.read(zf.namelist()[0]))
+
+    def test_export_headers_and_zip(self):
+        resp = self.client.get('/api/v1/users/me/data-export/')
+        self.assertEqual(resp.status_code, 200)
+        self.assertEqual(resp['Content-Type'], 'application/zip')
+        self.assertIn('attachment', resp['Content-Disposition'])
+        self.assertIn('.zip', resp['Content-Disposition'])
+
+    def test_export_contains_all_sections(self):
+        data = self._export()
+        expected_sections = [
+            'export_meta', 'account', 'profile', 'preferences',
+            'collections', 'saved_jokes', 'favorites', 'ratings', 'reactions',
+            'daily_jokes', 'streak', 'streak_days', 'views', 'submissions',
+            'reports_filed', 'blocks', 'achievements', 'vibes', 'pack_progress',
+            'mystery_rolls', 'share_events', 'email_logs',
+        ]
+        for key in expected_sections:
+            self.assertIn(key, data, f'Missing export section: {key}')
+        # Sections seeded for user_a must be non-empty
+        self.assertTrue(len(data['collections']) > 0)
+        self.assertTrue(len(data['saved_jokes']) > 0)
+        self.assertTrue(len(data['favorites']) > 0)
+        self.assertTrue(len(data['ratings']) > 0)
+        self.assertTrue(len(data['reactions']) > 0)
+        self.assertTrue(len(data['daily_jokes']) > 0)
+        self.assertTrue(len(data['views']) > 0)
+        self.assertTrue(len(data['email_logs']) > 0)
+        self.assertTrue(len(data['reports_filed']) > 0)
+        self.assertTrue(len(data['blocks']) > 0)
+
+    def test_export_excludes_other_users_data(self):
+        data = self._export()
+        # Only 1 favorite (user_a's), not other's
+        self.assertEqual(len(data['favorites']), 1)
+        # Only user_a's email log, not other's
+        self.assertEqual(len(data['email_logs']), 1)
+        # Blocks store blocked_id only — never other's email
+        self.assertNotIn('other@example.com', json.dumps(data))
+        # The block row should reference other.id as blocked_id
+        self.assertEqual(data['blocks'][0]['blocked_id'], self.other.id)
+
+    def test_export_requires_auth(self):
+        self.client.force_authenticate(user=None)
+        resp = self.client.get('/api/v1/users/me/data-export/')
+        self.assertIn(resp.status_code, [401, 403])
+
+
+# =============================================================================
+# GDPR: AccountDeleteView tests  (Task 3)
+# =============================================================================
+
+from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework_simplejwt.token_blacklist.models import OutstandingToken, BlacklistedToken
+
+
+class AccountDeleteTests(APITestCase):
+    @classmethod
+    def setUpTestData(cls):
+        fmt = Format.objects.get(slug='oneliner')
+        age = AgeRating.objects.first()
+        lang = Language.objects.get(code='en')
+        with patch('jokes.models.Joke._generate_share_image'):
+            cls.joke = Joke.objects.create(
+                text='Delete test joke', format=fmt, age_rating=age, language=lang,
+            )
+
+    def _make_pw_user(self):
+        u = User.objects.create_user(
+            username='del@example.com', email='del@example.com', password='pw12345!',
+        )
+        EmailMessageLog.objects.create(
+            user=u, to_email=u.email, template_name='welcome', subject='Hi', status='sent',
+        )
+        EmailVerification.objects.create(
+            user=u, code_hash='xhash', expires_at=timezone.now() + timedelta(minutes=10),
+        )
+        SavedJoke.objects.create(user=u, joke=self.joke)
+        return u
+
+    def _make_oauth_user(self):
+        u = User.objects.create_user(
+            username='g@example.com', email='g@example.com',
+        )
+        u.set_unusable_password()
+        u.save()
+        EmailMessageLog.objects.create(
+            user=u, to_email=u.email, template_name='welcome', subject='Hi', status='sent',
+        )
+        EmailVerification.objects.create(
+            user=u, code_hash='xhash2', expires_at=timezone.now() + timedelta(minutes=10),
+        )
+        return u
+
+    def test_delete_missing_password(self):
+        u = self._make_pw_user()
+        self.client.force_authenticate(user=u)
+        resp = self.client.delete('/api/v1/users/me/', {}, format='json')
+        self.assertEqual(resp.status_code, 400)
+        self.assertIn('password', resp.json())
+        self.assertTrue(User.objects.filter(pk=u.pk).exists())
+
+    def test_delete_wrong_password(self):
+        u = self._make_pw_user()
+        self.client.force_authenticate(user=u)
+        resp = self.client.delete('/api/v1/users/me/', {'password': 'nope'}, format='json')
+        self.assertEqual(resp.status_code, 400)
+        self.assertIn('password', resp.json())
+        self.assertTrue(User.objects.filter(pk=u.pk).exists())
+
+    def test_delete_correct_password_removes_user_and_cascades(self):
+        u = self._make_pw_user()
+        u_pk = u.pk
+        u_email = u.email
+        self.client.force_authenticate(user=u)
+        resp = self.client.delete('/api/v1/users/me/', {'password': 'pw12345!'}, format='json')
+        self.assertEqual(resp.status_code, 204)
+        self.assertFalse(User.objects.filter(pk=u_pk).exists())
+        # Email logs and verifications must be explicitly purged (SET_NULL doesn't auto-delete)
+        self.assertFalse(
+            EmailMessageLog.objects.filter(to_email__iexact=u_email).exists()
+        )
+        self.assertFalse(
+            EmailVerification.objects.filter(user_id=u_pk).exists()
+        )
+
+    def test_oauth_requires_confirm(self):
+        u = self._make_oauth_user()
+        u_pk = u.pk
+        self.client.force_authenticate(user=u)
+        # Missing confirm
+        resp = self.client.delete('/api/v1/users/me/', {}, format='json')
+        self.assertEqual(resp.status_code, 400)
+        self.assertIn('confirm', resp.json())
+        # Wrong confirm value
+        resp = self.client.delete('/api/v1/users/me/', {'confirm': 'nope'}, format='json')
+        self.assertEqual(resp.status_code, 400)
+        self.assertIn('confirm', resp.json())
+        # Correct confirm
+        resp = self.client.delete('/api/v1/users/me/', {'confirm': 'DELETE'}, format='json')
+        self.assertEqual(resp.status_code, 204)
+        self.assertFalse(User.objects.filter(pk=u_pk).exists())
+
+    def test_delete_blacklists_refresh_token(self):
+        u = self._make_pw_user()
+        u_pk = u.pk
+        # Mint a real refresh token so OutstandingToken row is created
+        refresh = RefreshToken.for_user(u)
+        jti = refresh['jti']
+        self.client.force_authenticate(user=u)
+        resp = self.client.delete('/api/v1/users/me/', {'password': 'pw12345!'}, format='json')
+        self.assertEqual(resp.status_code, 204)
+        self.assertFalse(User.objects.filter(pk=u_pk).exists())
+        # The outstanding token should now be blacklisted
+        ot = OutstandingToken.objects.filter(jti=jti).first()
+        self.assertIsNotNone(ot, 'OutstandingToken row should still exist (SET_NULL)')
+        self.assertTrue(
+            BlacklistedToken.objects.filter(token=ot).exists(),
+            'Refresh token should be blacklisted after account deletion',
+        )

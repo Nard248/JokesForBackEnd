@@ -7,6 +7,10 @@ Provides viewsets for all models:
 - GoogleLogin: Google OAuth2 authentication endpoint
 - joke_share_page: Public share page with OG meta tags
 """
+import io
+import json
+import zipfile
+
 from rest_framework import generics, mixins, status, viewsets
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated, AllowAny
@@ -19,7 +23,9 @@ from dj_rest_auth.app_settings import api_settings as rest_auth_settings
 from dj_rest_auth.jwt_auth import set_jwt_cookies
 from dj_rest_auth.registration.views import RegisterView, SocialLoginView
 from django.conf import settings
+from django.core.serializers.json import DjangoJSONEncoder
 from django.db import transaction
+from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.http import require_GET
 
@@ -27,6 +33,8 @@ from django.utils import timezone
 
 from django.db.models import Count, Max, Min, Q, Sum
 from django.db.models.functions import ExtractHour
+
+from notifications.models import EmailMessageLog, EmailVerification
 
 from .models import (
     Joke,
@@ -1643,26 +1651,199 @@ class UserBlockView(APIView):
 
 
 class UserAccountDeleteView(APIView):
-    """DELETE /users/me/ — Permanently delete account (GDPR)."""
+    """DELETE /users/me/ — Re-authenticated hard delete of account (GDPR)."""
 
     permission_classes = [IsAuthenticated]
 
     def delete(self, request):
         user = request.user
-        user.delete()
+        # Re-authentication gate — must happen BEFORE any mutation
+        if user.has_usable_password():
+            password = (request.data or {}).get('password')
+            if not password:
+                return Response(
+                    {'password': ['This field is required.']},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
+            if not user.check_password(password):
+                return Response(
+                    {'password': ['Incorrect password.']},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
+        else:
+            # OAuth / unusable-password accounts require a typed confirmation
+            if (request.data or {}).get('confirm') != 'DELETE':
+                return Response(
+                    {'confirm': ['Type DELETE to confirm account deletion.']},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
+
+        with transaction.atomic():
+            # 1. Blacklist outstanding refresh tokens BEFORE user.delete()
+            #    (OutstandingToken.user is SET_NULL; after delete the rows survive
+            #    with user_id=NULL and filter(user=user) would miss them)
+            if 'rest_framework_simplejwt.token_blacklist' in settings.INSTALLED_APPS:
+                from rest_framework_simplejwt.token_blacklist.models import (
+                    OutstandingToken, BlacklistedToken,
+                )
+                for ot in OutstandingToken.objects.filter(user=user):
+                    BlacklistedToken.objects.get_or_create(token=ot)
+
+            # 2. Delete avatar file from the storage backend (safe/idempotent)
+            profile = UserProfile.objects.filter(user=user).first()
+            if profile and profile.avatar:
+                try:
+                    profile.avatar.delete(save=False)
+                except Exception:
+                    pass  # Missing file must not block account deletion
+
+            # 3. Purge email logs and verifications (not auto-cascaded)
+            EmailMessageLog.objects.filter(
+                Q(user=user) | Q(to_email__iexact=user.email)
+            ).delete()
+            EmailVerification.objects.filter(user=user).delete()
+
+            # 4. Cascade-delete the user (removes all FK=CASCADE rows)
+            user.delete()
+
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 class DataExportView(APIView):
-    """GET /users/me/data-export/ — GDPR data export (placeholder)."""
+    """GET /users/me/data-export/ — Synchronous GDPR data export (zipped JSON)."""
 
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        return Response({
-            'status': 'processing',
-            'message': 'Your data export is being prepared. You will receive an email when ready.',
-        }, status=status.HTTP_202_ACCEPTED)
+        u = request.user
+        data = {
+            'export_meta': {
+                'generated_at': timezone.now(),
+                'format_version': 1,
+                'note': "Full export of your Jokes For data. Other users' personal data is excluded.",
+            },
+            'account': {
+                'id': u.id,
+                'email': u.email,
+                'username': u.username,
+                'date_joined': u.date_joined,
+                'last_login': u.last_login,
+                'is_active': u.is_active,
+            },
+            'profile': [
+                {
+                    'bio': p.bio,
+                    'avatar': p.avatar.name or '',
+                    'is_premium': p.is_premium,
+                    'public_profile': p.public_profile,
+                    'show_activity': p.show_activity,
+                    'share_analytics': p.share_analytics,
+                    'theme': p.theme,
+                    'created_at': p.created_at,
+                }
+                for p in UserProfile.objects.filter(user=u)
+            ],
+            'preferences': [
+                {
+                    'notification_enabled': pr.notification_enabled,
+                    'notification_days': pr.notification_days,
+                    'onboarding_completed': pr.onboarding_completed,
+                    'preferred_tones': list(pr.preferred_tones.values_list('slug', flat=True)),
+                    'preferred_contexts': list(pr.preferred_contexts.values_list('slug', flat=True)),
+                }
+                for pr in UserPreference.objects.filter(user=u)
+            ],
+            'collections': list(
+                Collection.objects.filter(user=u).values('id', 'name', 'description', 'is_public', 'created_at')
+            ),
+            'saved_jokes': [
+                {
+                    'joke_id': s.joke_id,
+                    'joke_text': s.joke.text,
+                    'collection': s.collection.name if s.collection else None,
+                    'note': s.note,
+                    'created_at': s.created_at,
+                }
+                for s in SavedJoke.objects.filter(user=u).select_related('joke', 'collection')
+            ],
+            'favorites': [
+                {
+                    'joke_id': f.joke_id,
+                    'joke_text': f.joke.text,
+                    'created_at': f.created_at,
+                }
+                for f in Favorite.objects.filter(user=u).select_related('joke')
+            ],
+            'ratings': list(
+                JokeRating.objects.filter(user=u).values('joke_id', 'rating', 'created_at')
+            ),
+            'reactions': list(
+                JokeReaction.objects.filter(user=u).values('joke_id', 'reaction', 'created_at')
+            ),
+            'daily_jokes': list(
+                DailyJoke.objects.filter(user=u).values('joke_id', 'date', 'delivered_at')
+            ),
+            'views': list(
+                JokeView.objects.filter(user=u)
+                .values('joke_id', 'source', 'revealed_punchline', 'viewed_at')[:5000]
+            ),
+            'streak': list(
+                Streak.objects.filter(user=u).values(
+                    'current_count', 'longest_count', 'last_active_date',
+                    'freeze_days_available', 'freezes_used_total',
+                )
+            ),
+            'streak_days': list(
+                StreakDay.objects.filter(user=u).values('date', 'status')
+            ),
+            'submissions': list(
+                JokeSubmission.objects.filter(user=u).values(
+                    'id', 'text', 'setup', 'punchline', 'status', 'created_at'
+                )
+            ),
+            'reports_filed': list(
+                ContentReport.objects.filter(reporter=u).values(
+                    'joke_id', 'reason', 'description', 'status', 'created_at'
+                )
+            ),
+            'blocks': list(
+                UserBlock.objects.filter(blocker=u).values('blocked_id', 'created_at')
+            ),
+            'achievements': list(
+                UserAchievement.objects.filter(user=u).values(
+                    'achievement__slug', 'achievement__title', 'unlocked_at'
+                )
+            ),
+            'vibes': list(
+                UserVibe.objects.filter(user=u).values('vibe__slug', 'weight', 'created_at')
+            ),
+            'pack_progress': list(
+                JokePackProgress.objects.filter(user=u).values(
+                    'pack__slug', 'last_read_entry', 'completed_at'
+                )
+            ),
+            'mystery_rolls': list(
+                MysteryBoxRoll.objects.filter(user=u).values(
+                    'joke_id', 'source_vibe__slug', 'rolled_date'
+                )
+            ),
+            'share_events': list(
+                ShareEvent.objects.filter(user=u).values('joke_id', 'platform', 'created_at')
+            ),
+            'email_logs': list(
+                EmailMessageLog.objects.filter(
+                    Q(user=u) | Q(to_email__iexact=u.email)
+                ).values('to_email', 'template_name', 'subject', 'status', 'created_at', 'sent_at')
+            ),
+        }
+        payload = json.dumps(data, cls=DjangoJSONEncoder, indent=2)
+        buf = io.BytesIO()
+        with zipfile.ZipFile(buf, 'w', zipfile.ZIP_DEFLATED) as zf:
+            zf.writestr('jokes-for-data-export.json', payload)
+        buf.seek(0)
+        resp = HttpResponse(buf.getvalue(), content_type='application/zip')
+        resp['Content-Disposition'] = 'attachment; filename="jokes-for-data-export.zip"'
+        return resp
 
 
 # =============================================================================
