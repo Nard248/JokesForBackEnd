@@ -762,7 +762,8 @@ class CollectionViewSet(viewsets.ModelViewSet):
         """List jokes in this collection."""
         collection = self.get_object()
         saved_jokes = SavedJoke.objects.filter(
-            collection=collection
+            collection=collection,
+            joke__content_tier__in=allowed_tiers(request),
         ).select_related('joke', 'collection')
 
         page = self.paginate_queryset(saved_jokes)
@@ -1078,7 +1079,8 @@ def joke_share_page(request, pk):
     """
     joke = get_object_or_404(
         Joke.objects.select_related('format', 'age_rating').prefetch_related('tones'),
-        pk=pk
+        pk=pk,
+        content_tier__in=allowed_tiers(request),
     )
 
     # Build absolute URLs
@@ -1204,7 +1206,8 @@ class FavoriteViewSet(
 
     def get_queryset(self):
         qs = Favorite.objects.filter(
-            user=self.request.user
+            user=self.request.user,
+            joke__content_tier__in=allowed_tiers(self.request),
         ).select_related(
             'joke', 'joke__format', 'joke__age_rating', 'joke__language', 'joke__source'
         ).prefetch_related('joke__tones', 'joke__context_tags', 'joke__culture_tags')

@@ -18,6 +18,7 @@ from rest_framework.test import APITestCase, APIRequestFactory
 
 from jokes.models import (
     Joke, Format, AgeRating, Language, UserProfile, UserPreference,
+    Collection, SavedJoke, Favorite, JokePack, JokePackEntry,
 )
 from jokes.serving import allowed_tiers
 
@@ -499,4 +500,206 @@ class ServingLockTests(APITestCase):
                 self.joke_t3.id, ids,
                 f"tier_3 joke appeared in list for user={getattr(user, 'email', 'anon')}"
             )
+        self.client.force_authenticate(user=None)
+
+    # -- RETRIEVE endpoint (surface 5: explicit test) --
+
+    def test_retrieve_minor_tier2_returns_404(self):
+        """GET /api/v1/jokes/<tier2_id>/ as a minor must return 404."""
+        self.client.force_authenticate(user=self.minor)
+        resp = self.client.get(f'/api/v1/jokes/{self.joke_t2.id}/')
+        self.assertEqual(resp.status_code, 404, "minor must get 404 for tier_2 joke retrieve")
+        self.client.force_authenticate(user=None)
+
+    def test_retrieve_anon_tier2_returns_404(self):
+        """GET /api/v1/jokes/<tier2_id>/ as anon must return 404."""
+        resp = self.client.get(f'/api/v1/jokes/{self.joke_t2.id}/')
+        self.assertEqual(resp.status_code, 404, "anon must get 404 for tier_2 joke retrieve")
+
+    def test_retrieve_adult_opt_tier2_returns_200(self):
+        """GET /api/v1/jokes/<tier2_id>/ as opted-in adult must return 200."""
+        self.client.force_authenticate(user=self.adult_opt)
+        resp = self.client.get(f'/api/v1/jokes/{self.joke_t2.id}/')
+        self.assertEqual(resp.status_code, 200, "opted-in adult must get 200 for tier_2 joke retrieve")
+        self.client.force_authenticate(user=None)
+
+    # -- SHARE PAGE (surface 1) --
+
+    def test_share_page_anon_tier2_returns_404(self):
+        """GET /jokes/<tier2_id>/share/ as anon must 404."""
+        resp = self.client.get(f'/jokes/{self.joke_t2.id}/share/')
+        self.assertEqual(resp.status_code, 404, "anon must get 404 for tier_2 share page")
+
+    def test_share_page_minor_tier2_returns_404(self):
+        """GET /jokes/<tier2_id>/share/ as minor must 404."""
+        self.client.force_authenticate(user=self.minor)
+        resp = self.client.get(f'/jokes/{self.joke_t2.id}/share/')
+        self.assertEqual(resp.status_code, 404, "minor must get 404 for tier_2 share page")
+        self.client.force_authenticate(user=None)
+
+    def test_share_page_adult_opt_tier2_returns_200(self):
+        """GET /jokes/<tier2_id>/share/ as opted-in adult must return 200.
+
+        The share page is a plain Django view (not DRF), so session-based
+        force_login is required — force_authenticate only affects DRF views.
+        """
+        self.client.force_login(self.adult_opt)
+        resp = self.client.get(f'/jokes/{self.joke_t2.id}/share/')
+        self.assertEqual(resp.status_code, 200, "opted-in adult must get 200 for tier_2 share page")
+        self.client.logout()
+
+    def test_share_page_tier1_always_accessible(self):
+        """GET /jokes/<tier1_id>/share/ must work for everyone (anon)."""
+        resp = self.client.get(f'/jokes/{self.joke_t1.id}/share/')
+        self.assertEqual(resp.status_code, 200, "tier_1 share page must be accessible to everyone")
+
+
+# ---------------------------------------------------------------------------
+# Extra surfaces: JokePack, Collection.jokes, Favorite
+# ---------------------------------------------------------------------------
+
+class JokePackTierFilterTests(APITestCase):
+    """JokePackViewSet (AllowAny) must not embed tier_2 jokes for anon/minors."""
+
+    @classmethod
+    def setUpTestData(cls):
+        fmt = Format.objects.first()
+        age_rating = AgeRating.objects.first()
+        lang = Language.objects.filter(code='en').first() or Language.objects.first()
+
+        with patch.object(Joke, '_generate_share_image', return_value=None):
+            cls.joke_t1 = _make_joke(fmt, age_rating, lang, 'tier_1', 'packtest')
+            cls.joke_t2 = _make_joke(fmt, age_rating, lang, 'tier_2', 'packtest')
+
+        cls.pack = JokePack.objects.create(
+            slug='test-pack-compliance',
+            title='Compliance Test Pack',
+            is_published=True,
+        )
+        JokePackEntry.objects.create(pack=cls.pack, joke=cls.joke_t1, order=1)
+        JokePackEntry.objects.create(pack=cls.pack, joke=cls.joke_t2, order=2)
+
+        cls.minor = User.objects.create_user(
+            username='pack_minor@example.com', email='pack_minor@example.com', password='pw',
+        )
+        cls.minor.profile.date_of_birth = _years_ago(15)
+        cls.minor.profile.save(update_fields=['date_of_birth'])
+
+        cls.adult_opt = User.objects.create_user(
+            username='pack_adult@example.com', email='pack_adult@example.com', password='pw',
+        )
+        cls.adult_opt.profile.date_of_birth = _years_ago(25)
+        cls.adult_opt.profile.save(update_fields=['date_of_birth'])
+        cls.adult_opt.preference.show_mature = True
+        cls.adult_opt.preference.save(update_fields=['show_mature'])
+
+    def _joke_ids_in_pack(self, resp):
+        data = resp.json()
+        return {entry['joke']['id'] for entry in data.get('jokes', [])}
+
+    def test_pack_detail_anon_excludes_tier2(self):
+        """Anon must NOT see tier_2 jokes embedded in pack detail."""
+        resp = self.client.get(f'/api/v1/packs/{self.pack.slug}/')
+        self.assertEqual(resp.status_code, 200)
+        ids = self._joke_ids_in_pack(resp)
+        self.assertIn(self.joke_t1.id, ids)
+        self.assertNotIn(self.joke_t2.id, ids, "anon must not see tier_2 joke in pack detail")
+
+    def test_pack_detail_minor_excludes_tier2(self):
+        """Minor must NOT see tier_2 jokes embedded in pack detail."""
+        self.client.force_authenticate(user=self.minor)
+        resp = self.client.get(f'/api/v1/packs/{self.pack.slug}/')
+        self.assertEqual(resp.status_code, 200)
+        ids = self._joke_ids_in_pack(resp)
+        self.assertNotIn(self.joke_t2.id, ids, "minor must not see tier_2 joke in pack detail")
+        self.client.force_authenticate(user=None)
+
+    def test_pack_detail_adult_opt_includes_tier2(self):
+        """Opted-in adult MUST see tier_2 jokes in pack detail."""
+        self.client.force_authenticate(user=self.adult_opt)
+        resp = self.client.get(f'/api/v1/packs/{self.pack.slug}/')
+        self.assertEqual(resp.status_code, 200)
+        ids = self._joke_ids_in_pack(resp)
+        self.assertIn(self.joke_t2.id, ids, "opted-in adult must see tier_2 joke in pack detail")
+        self.client.force_authenticate(user=None)
+
+
+class CollectionJokesTierFilterTests(APITestCase):
+    """CollectionViewSet.jokes must not expose re-tiered mature jokes."""
+
+    @classmethod
+    def setUpTestData(cls):
+        fmt = Format.objects.first()
+        age_rating = AgeRating.objects.first()
+        lang = Language.objects.filter(code='en').first() or Language.objects.first()
+
+        with patch.object(Joke, '_generate_share_image', return_value=None):
+            cls.joke_t1 = _make_joke(fmt, age_rating, lang, 'tier_1', 'collectiontest')
+            cls.joke_t2 = _make_joke(fmt, age_rating, lang, 'tier_2', 'collectiontest')
+
+        cls.minor = User.objects.create_user(
+            username='col_minor@example.com', email='col_minor@example.com', password='pw',
+        )
+        cls.minor.profile.date_of_birth = _years_ago(15)
+        cls.minor.profile.save(update_fields=['date_of_birth'])
+
+        # Give minor a collection that contains a tier_2 joke (simulates re-tiering scenario)
+        cls.collection = Collection.objects.create(
+            user=cls.minor, name='Minor Collection', is_default=True,
+        )
+        SavedJoke.objects.create(user=cls.minor, joke=cls.joke_t1, collection=cls.collection)
+        SavedJoke.objects.create(user=cls.minor, joke=cls.joke_t2, collection=cls.collection)
+
+    def _joke_ids(self, resp):
+        data = resp.json()
+        results = data.get('results', data) if isinstance(data, dict) else data
+        return {item['joke']['id'] for item in (results if isinstance(results, list) else [])}
+
+    def test_collection_jokes_minor_excludes_tier2(self):
+        """Minor's collection jokes endpoint must not return tier_2 jokes."""
+        self.client.force_authenticate(user=self.minor)
+        resp = self.client.get(f'/api/v1/collections/{self.collection.id}/jokes/')
+        self.assertEqual(resp.status_code, 200)
+        ids = self._joke_ids(resp)
+        self.assertIn(self.joke_t1.id, ids)
+        self.assertNotIn(self.joke_t2.id, ids, "minor must not see tier_2 joke in collection")
+        self.client.force_authenticate(user=None)
+
+
+class FavoriteTierFilterTests(APITestCase):
+    """FavoriteViewSet must not expose re-tiered mature jokes."""
+
+    @classmethod
+    def setUpTestData(cls):
+        fmt = Format.objects.first()
+        age_rating = AgeRating.objects.first()
+        lang = Language.objects.filter(code='en').first() or Language.objects.first()
+
+        with patch.object(Joke, '_generate_share_image', return_value=None):
+            cls.joke_t1 = _make_joke(fmt, age_rating, lang, 'tier_1', 'favtest')
+            cls.joke_t2 = _make_joke(fmt, age_rating, lang, 'tier_2', 'favtest')
+
+        cls.minor = User.objects.create_user(
+            username='fav_minor@example.com', email='fav_minor@example.com', password='pw',
+        )
+        cls.minor.profile.date_of_birth = _years_ago(15)
+        cls.minor.profile.save(update_fields=['date_of_birth'])
+
+        # Minor favorited a joke that later became tier_2 (re-tiering simulation)
+        Favorite.objects.create(user=cls.minor, joke=cls.joke_t1)
+        Favorite.objects.create(user=cls.minor, joke=cls.joke_t2)
+
+    def _joke_ids(self, resp):
+        data = resp.json()
+        results = data.get('results', data) if isinstance(data, dict) else data
+        return {item['joke']['id'] for item in (results if isinstance(results, list) else [])}
+
+    def test_favorites_minor_excludes_tier2(self):
+        """Minor's favorites endpoint must not return tier_2 jokes."""
+        self.client.force_authenticate(user=self.minor)
+        resp = self.client.get('/api/v1/favorites/')
+        self.assertEqual(resp.status_code, 200)
+        ids = self._joke_ids(resp)
+        self.assertIn(self.joke_t1.id, ids)
+        self.assertNotIn(self.joke_t2.id, ids, "minor must not see tier_2 joke in favorites")
         self.client.force_authenticate(user=None)
