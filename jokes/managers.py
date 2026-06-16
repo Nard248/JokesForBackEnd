@@ -6,7 +6,7 @@ from django.db.models import Count, Q
 class JokeManager(models.Manager):
     """Custom manager for Joke model with full-text search capabilities."""
 
-    def search(self, query_text=None, filters=None, ordering=None):
+    def search(self, query_text=None, filters=None, ordering=None, allowed_tiers=None):
         """
         Full-text search with optional filters and ordering.
 
@@ -29,6 +29,11 @@ class JokeManager(models.Manager):
             QuerySet ordered by the specified ordering
         """
         qs = self.get_queryset()
+
+        # Content-tier serving lock: filter to allowed tiers when caller provides them.
+        # (None means no tier filter — e.g. admin/internal callers.)
+        if allowed_tiers is not None:
+            qs = qs.filter(content_tier__in=allowed_tiers)
 
         # Full-text search.
         # The pgtrigger that populates `search_vector` uses pg_catalog.english,
