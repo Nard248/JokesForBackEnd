@@ -19,6 +19,7 @@ class GatedRegistrationTests(APITestCase):
         resp = self.client.post(REG_URL, {
             'email': 'new@example.com',
             'password1': 'sup3rsecret!', 'password2': 'sup3rsecret!',
+            'date_of_birth': '2000-01-01',
         }, format='json')
         self.assertEqual(resp.status_code, 201, resp.content)
         body = resp.json()
@@ -39,6 +40,7 @@ class GatedRegistrationTests(APITestCase):
         resp = self.client.post(REG_URL, {
             'email': 'boom@example.com',
             'password1': 'sup3rsecret!', 'password2': 'sup3rsecret!',
+            'date_of_birth': '2000-01-01',
         }, format='json')
         self.assertEqual(resp.status_code, 502, resp.content)
         # User exists, inactive, with an issued (unconsumed) code -> recoverable
@@ -66,6 +68,7 @@ class UngatedRegistrationTests(APITestCase):
         resp = self.client.post(REG_URL, {
             'email': 'legacy@example.com',
             'password1': 'sup3rsecret!', 'password2': 'sup3rsecret!',
+            'date_of_birth': '2000-01-01',
         }, format='json')
         self.assertEqual(resp.status_code, 201, resp.content)
         user = User.objects.get(email='legacy@example.com')
