@@ -2059,7 +2059,10 @@ class RecentlyViewedView(APIView):
         except ValueError:
             limit = 20
         qs = (
-            JokeView.objects.filter(user=request.user)
+            JokeView.objects.filter(
+                user=request.user,
+                joke__content_tier__in=allowed_tiers(request),
+            )
             .select_related('joke', 'joke__format', 'joke__age_rating', 'joke__language')
             .prefetch_related('joke__tones', 'joke__context_tags')
             .order_by('-viewed_at')[:limit]

@@ -18,7 +18,7 @@ from rest_framework.test import APITestCase, APIRequestFactory
 
 from jokes.models import (
     Joke, Format, AgeRating, Language, UserProfile, UserPreference,
-    Collection, SavedJoke, Favorite, JokePack, JokePackEntry,
+    Collection, SavedJoke, Favorite, JokePack, JokePackEntry, JokeView,
 )
 from jokes.serving import allowed_tiers
 
@@ -703,3 +703,108 @@ class FavoriteTierFilterTests(APITestCase):
         self.assertIn(self.joke_t1.id, ids)
         self.assertNotIn(self.joke_t2.id, ids, "minor must not see tier_2 joke in favorites")
         self.client.force_authenticate(user=None)
+
+
+# ---------------------------------------------------------------------------
+# Fix 1: user-details endpoint exposes date_of_birth
+# ---------------------------------------------------------------------------
+
+class UserDetailsDateOfBirthTests(APITestCase):
+    """GET /api/v1/auth/user/ must include date_of_birth from the user's profile."""
+
+    @classmethod
+    def setUpTestData(cls):
+        cls.user_with_dob = User.objects.create_user(
+            username='dob_user@example.com',
+            email='dob_user@example.com',
+            password='pw',
+        )
+        cls.user_with_dob.profile.date_of_birth = _years_ago(25)
+        cls.user_with_dob.profile.save(update_fields=['date_of_birth'])
+
+        # OAuth/legacy user — profile exists but DOB is null
+        cls.user_no_dob = User.objects.create_user(
+            username='nodob_user@example.com',
+            email='nodob_user@example.com',
+            password='pw',
+        )
+        # profile.date_of_birth is null by default
+
+    def test_user_details_includes_date_of_birth_when_set(self):
+        """Authenticated user with a DOB sees it in the user-details response."""
+        self.client.force_authenticate(user=self.user_with_dob)
+        resp = self.client.get('/api/v1/auth/user/')
+        self.assertEqual(resp.status_code, 200)
+        data = resp.json()
+        self.assertIn('date_of_birth', data, "date_of_birth must be present in user-details response")
+        expected = self.user_with_dob.profile.date_of_birth.isoformat()
+        self.assertEqual(data['date_of_birth'], expected)
+
+    def test_user_details_returns_null_dob_when_not_set(self):
+        """Authenticated user with no DOB (OAuth/legacy) sees null for date_of_birth."""
+        self.client.force_authenticate(user=self.user_no_dob)
+        resp = self.client.get('/api/v1/auth/user/')
+        self.assertEqual(resp.status_code, 200)
+        data = resp.json()
+        self.assertIn('date_of_birth', data, "date_of_birth field must be present even when null")
+        self.assertIsNone(data['date_of_birth'])
+
+
+# ---------------------------------------------------------------------------
+# Fix 2: recently-viewed endpoint respects tier lock
+# ---------------------------------------------------------------------------
+
+class RecentlyViewedTierFilterTests(APITestCase):
+    """GET /api/v1/users/me/recently-viewed/ must respect the content_tier lock."""
+
+    @classmethod
+    def setUpTestData(cls):
+        fmt = Format.objects.first()
+        age_rating = AgeRating.objects.first()
+        lang = Language.objects.filter(code='en').first() or Language.objects.first()
+
+        with patch.object(Joke, '_generate_share_image', return_value=None):
+            cls.joke_t1 = _make_joke(fmt, age_rating, lang, 'tier_1', 'recentview')
+            cls.joke_t2 = _make_joke(fmt, age_rating, lang, 'tier_2', 'recentview')
+
+        # User who was once opted-in (viewed tier_2 joke), then turned off show_mature
+        cls.user = User.objects.create_user(
+            username='rv_user@example.com',
+            email='rv_user@example.com',
+            password='pw',
+        )
+        cls.user.profile.date_of_birth = _years_ago(25)
+        cls.user.profile.save(update_fields=['date_of_birth'])
+        # show_mature is now False (default) — simulates user who opted back out
+
+        # Seed view history directly (bypasses the view debounce/signal)
+        JokeView.objects.create(user=cls.user, joke=cls.joke_t1)
+        JokeView.objects.create(user=cls.user, joke=cls.joke_t2)
+
+    def test_recently_viewed_excludes_tier2_when_not_opted_in(self):
+        """User who turned off show_mature must NOT see tier_2 in their history."""
+        self.client.force_authenticate(user=self.user)
+        resp = self.client.get('/api/v1/users/me/recently-viewed/')
+        self.assertEqual(resp.status_code, 200)
+        data = resp.json()
+        joke_ids = {entry['joke']['id'] for entry in data}
+        self.assertIn(self.joke_t1.id, joke_ids, "tier_1 must still appear in recently-viewed")
+        self.assertNotIn(self.joke_t2.id, joke_ids,
+                         "tier_2 must NOT appear when show_mature=False")
+
+    def test_recently_viewed_includes_tier2_when_opted_in(self):
+        """Adult with show_mature=True DOES see tier_2 in their history."""
+        self.user.preference.show_mature = True
+        self.user.preference.save(update_fields=['show_mature'])
+        try:
+            self.client.force_authenticate(user=self.user)
+            resp = self.client.get('/api/v1/users/me/recently-viewed/')
+            self.assertEqual(resp.status_code, 200)
+            data = resp.json()
+            joke_ids = {entry['joke']['id'] for entry in data}
+            self.assertIn(self.joke_t1.id, joke_ids)
+            self.assertIn(self.joke_t2.id, joke_ids,
+                          "opted-in adult must see tier_2 in recently-viewed")
+        finally:
+            self.user.preference.show_mature = False
+            self.user.preference.save(update_fields=['show_mature'])
