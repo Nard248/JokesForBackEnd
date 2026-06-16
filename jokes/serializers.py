@@ -942,9 +942,14 @@ class JokePackDetailSerializer(JokePackListSerializer):
         fields = JokePackListSerializer.Meta.fields + ['jokes']
 
     def get_jokes(self, obj):
+        from jokes.serving import allowed_tiers
+        request = self.context.get('request')
+        tiers = allowed_tiers(request) if request is not None else frozenset({'tier_1'})
         entries = obj.entries.select_related(
             'joke', 'joke__format', 'joke__age_rating', 'joke__language'
-        ).prefetch_related('joke__tones', 'joke__context_tags').order_by('order')
+        ).prefetch_related('joke__tones', 'joke__context_tags').filter(
+            joke__content_tier__in=tiers
+        ).order_by('order')
         return [
             {
                 'order': e.order,
