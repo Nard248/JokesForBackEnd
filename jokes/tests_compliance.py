@@ -377,32 +377,35 @@ class ServingLockTests(APITestCase):
     # -- RANDOM endpoint --
 
     def test_random_anon_never_tier2_or_tier3(self):
-        """Hit random 20 times; tier_2/tier_3 must never appear."""
+        """Anon random must never return the tier_2 or tier_3 joke IDs."""
+        forbidden = {self.joke_t2.id, self.joke_t3.id}
         for _ in range(20):
             resp = self.client.get('/api/v1/jokes/random/')
             if resp.status_code == 404:
                 continue
-            tier = resp.json().get('content_tier', 'tier_1')
-            self.assertIn(tier, ('tier_1',), f"random served {tier} to anon")
+            joke_id = resp.json().get('id')
+            self.assertNotIn(joke_id, forbidden, f"random served forbidden joke id={joke_id} to anon")
 
     def test_random_minor_never_tier2_or_tier3(self):
         self.client.force_authenticate(user=self.minor)
+        forbidden = {self.joke_t2.id, self.joke_t3.id}
         for _ in range(20):
             resp = self.client.get('/api/v1/jokes/random/')
             if resp.status_code == 404:
                 continue
-            tier = resp.json().get('content_tier', 'tier_1')
-            self.assertIn(tier, ('tier_1',), f"random served {tier} to minor")
+            joke_id = resp.json().get('id')
+            self.assertNotIn(joke_id, forbidden, f"random served forbidden joke id={joke_id} to minor")
         self.client.force_authenticate(user=None)
 
     def test_random_adult_opt_never_tier3(self):
         self.client.force_authenticate(user=self.adult_opt)
+        forbidden = {self.joke_t3.id}
         for _ in range(20):
             resp = self.client.get('/api/v1/jokes/random/')
             if resp.status_code == 404:
                 continue
-            tier = resp.json().get('content_tier', 'tier_1')
-            self.assertNotIn(tier, ('tier_3',), f"random served tier_3 to adult_opt")
+            joke_id = resp.json().get('id')
+            self.assertNotIn(joke_id, forbidden, f"random served tier_3 joke id={joke_id} to adult_opt")
         self.client.force_authenticate(user=None)
 
     # -- TRENDING endpoint --
@@ -419,63 +422,67 @@ class ServingLockTests(APITestCase):
             results = resp.json().get('results', [])
             for item in results:
                 joke_data = item.get('joke', item)
-                tier = joke_data.get('content_tier', 'tier_1')
-                self.assertNotIn(tier, ('tier_3',), "tier_3 leaked in trending")
+                joke_id = joke_data.get('id')
+                self.assertNotEqual(joke_id, self.joke_t3.id, "tier_3 joke leaked in trending")
         self.client.force_authenticate(user=None)
 
     # -- DAILY TODAY endpoint --
 
     def test_daily_today_anon_only_tier1(self):
-        """Anonymous daily joke must always be tier_1."""
+        """Anonymous daily joke must always be tier_1 (i.e., not tier_2 or tier_3 joke IDs)."""
+        forbidden = {self.joke_t2.id, self.joke_t3.id}
         for _ in range(5):
             resp = self.client.get('/api/v1/daily-jokes/today/')
             if resp.status_code != 200:
                 continue
-            data = resp.json()
-            joke_data = data.get('joke', {})
-            tier = joke_data.get('content_tier', 'tier_1')
-            self.assertEqual(tier, 'tier_1', f"anon daily served {tier}")
+            joke_id = resp.json().get('joke', {}).get('id')
+            self.assertNotIn(joke_id, forbidden, f"anon daily served forbidden joke id={joke_id}")
 
     def test_daily_today_minor_only_tier1(self):
+        forbidden = {self.joke_t2.id, self.joke_t3.id}
         self.client.force_authenticate(user=self.minor)
         resp = self.client.get('/api/v1/daily-jokes/today/')
         if resp.status_code == 200:
+            # For authenticated path, resp has 'joke' nested under the DailyJoke serializer
             joke_data = resp.json().get('joke', {})
-            tier = joke_data.get('content_tier', 'tier_1')
-            self.assertEqual(tier, 'tier_1', f"minor daily served {tier}")
+            joke_id = joke_data.get('id')
+            self.assertNotIn(joke_id, forbidden, f"minor daily served forbidden joke id={joke_id}")
         self.client.force_authenticate(user=None)
 
     def test_daily_today_adult_opt_never_tier3(self):
+        forbidden = {self.joke_t3.id}
         self.client.force_authenticate(user=self.adult_opt)
         resp = self.client.get('/api/v1/daily-jokes/today/')
         if resp.status_code == 200:
             joke_data = resp.json().get('joke', {})
-            tier = joke_data.get('content_tier', 'tier_1')
-            self.assertNotIn(tier, ('tier_3',), "daily served tier_3 to adult_opt")
+            joke_id = joke_data.get('id')
+            self.assertNotIn(joke_id, forbidden, f"daily served tier_3 joke id={joke_id} to adult_opt")
         self.client.force_authenticate(user=None)
 
     # -- MYSTERY BOX endpoint --
 
     def test_mystery_box_minor_never_tier2_tier3(self):
+        forbidden = {self.joke_t2.id, self.joke_t3.id}
         self.client.force_authenticate(user=self.minor)
         for _ in range(5):
             resp = self.client.post('/api/v1/mystery-box/roll/')
             if resp.status_code in (404, 429):
                 continue
             self.assertEqual(resp.status_code, 200)
-            tier = resp.json().get('joke', {}).get('content_tier', 'tier_1')
-            self.assertIn(tier, ('tier_1',), f"mystery box served {tier} to minor")
+            joke_id = resp.json().get('joke', {}).get('id')
+            self.assertNotIn(joke_id, forbidden, f"mystery box served forbidden joke id={joke_id} to minor")
         self.client.force_authenticate(user=None)
 
     def test_mystery_box_adult_opt_never_tier3(self):
+        forbidden = {self.joke_t3.id}
         self.client.force_authenticate(user=self.adult_opt)
         for _ in range(5):
             resp = self.client.post('/api/v1/mystery-box/roll/')
             if resp.status_code in (404, 429):
                 continue
             self.assertEqual(resp.status_code, 200)
-            tier = resp.json().get('joke', {}).get('content_tier', 'tier_1')
-            self.assertNotIn(tier, ('tier_3',), f"mystery box served tier_3 to adult_opt")
+            joke_id = resp.json().get('joke', {}).get('id')
+            self.assertNotIn(joke_id, forbidden, f"mystery box served tier_3 joke id={joke_id} to adult_opt")
         self.client.force_authenticate(user=None)
 
     # -- tier_3 never served to anyone --
