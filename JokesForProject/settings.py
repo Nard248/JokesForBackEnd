@@ -71,6 +71,7 @@ INSTALLED_APPS = [
     # Local apps
     'jokes',
     'notifications',
+    'creator_insights',
 ]
 
 SITE_ID = 1
