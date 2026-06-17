@@ -6,6 +6,7 @@ from rest_framework.views import APIView
 from creator_insights.permissions import IsCreator
 from creator_insights.serializers import CreatorInsightsSerializer
 from creator_insights.services import build_creator_insights
+from creator_insights.throttles import CreatorInsightsThrottle
 
 
 class CreatorInsightsView(APIView):
@@ -17,6 +18,7 @@ class CreatorInsightsView(APIView):
     does NOT expose any other user's personal data.
     """
     permission_classes = [IsAuthenticated, IsCreator]
+    throttle_classes = [CreatorInsightsThrottle]
 
     @extend_schema(
         parameters=[

@@ -160,13 +160,31 @@ def _top_jokes(jokes, since):
     if since:
         view_qs = view_qs.filter(viewed_date__gte=since)
 
-    # IDs of jokes that have at least one view in period (to compute view count per joke)
+    # Annotate per-joke metrics; all counts use distinct=True so that multiple
+    # LEFT JOINs (views × reactions × saves × shares) don't fan out row counts.
+    # reaction/save/share are also period-filtered for internal consistency.
     annotated = (
         jokes.annotate(
-            view_count=Count('views', filter=Q(views__viewed_date__gte=since) if since else Q()),
-            reaction_count=Count('reactions_v2', distinct=True),
-            save_count=Count('saved_by', distinct=True),
-            share_count=Count('share_events', distinct=True),
+            view_count=Count(
+                'views',
+                filter=Q(views__viewed_date__gte=since) if since else Q(),
+                distinct=True,
+            ),
+            reaction_count=Count(
+                'reactions_v2',
+                filter=Q(reactions_v2__created_at__date__gte=since) if since else Q(),
+                distinct=True,
+            ),
+            save_count=Count(
+                'saved_by',
+                filter=Q(saved_by__created_at__date__gte=since) if since else Q(),
+                distinct=True,
+            ),
+            share_count=Count(
+                'share_events',
+                filter=Q(share_events__created_at__date__gte=since) if since else Q(),
+                distinct=True,
+            ),
             payoff_count=Count(
                 'views',
                 filter=(
@@ -174,6 +192,7 @@ def _top_jokes(jokes, since):
                     if since
                     else Q(views__revealed_punchline=True)
                 ),
+                distinct=True,
             ),
         )
         .order_by('-view_count')[:10]
@@ -273,10 +292,19 @@ def _suggestions(creator, jokes, since):
         view_qs.values('joke__tones__name')
         .exclude(joke__tones__name__isnull=True)
         .annotate(
-            views=Count('id'),
+            # distinct=True prevents fan-out when the reactions JOIN multiplies view rows
+            views=Count('id', distinct=True),
+            # period-filter reactions so numerator and denominator cover the same window
             reactions=Count(
                 'joke__reactions_v2',
-                filter=Q(joke__reactions_v2__isnull=False),
+                filter=(
+                    Q(
+                        joke__reactions_v2__isnull=False,
+                        joke__reactions_v2__created_at__date__gte=since,
+                    )
+                    if since
+                    else Q(joke__reactions_v2__isnull=False)
+                ),
                 distinct=True,
             ),
         )
