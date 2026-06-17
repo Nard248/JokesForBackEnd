@@ -23,14 +23,12 @@ from drf_spectacular.views import (
 )
 from jokes.views import CookieRegisterView, GoogleLogin, joke_share_page
 
-from JokesForProject.health import healthz, readyz
+from JokesForProject.health import healthz
 
 urlpatterns = [
     # Unauthenticated liveness probe — no DRF auth/versioning/throttling.
     # Process-only: never touches DB/cache (a 200 means "don't recycle me").
     path('healthz', healthz, name='healthz'),
-    # Unauthenticated readiness probe — checks DB + cache deps, 503 if any down.
-    path('readyz', readyz, name='readyz'),
 
     # Admin
     path('admin/', admin.site.urls),

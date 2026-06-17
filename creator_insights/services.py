@@ -72,7 +72,10 @@ def _overview(jokes, since):
     revealed_views = view_qs.filter(revealed_punchline=True).count()
     payoff_rate = (revealed_views / total_views) if total_views else None
 
-    reactions = JokeReaction.objects.filter(joke__in=jokes).count()
+    reaction_qs = JokeReaction.objects.filter(joke__in=jokes)
+    if since:
+        reaction_qs = reaction_qs.filter(created_at__date__gte=since)
+    reactions = reaction_qs.count()
 
     fav_qs = Favorite.objects.filter(joke__in=jokes)
     if since:
@@ -126,9 +129,11 @@ def _breakdowns(jokes, since):
     if since:
         view_qs = view_qs.filter(viewed_date__gte=since)
 
+    reaction_qs = JokeReaction.objects.filter(joke__in=jokes)
+    if since:
+        reaction_qs = reaction_qs.filter(created_at__date__gte=since)
     reactions_breakdown = list(
-        JokeReaction.objects.filter(joke__in=jokes)
-        .values('reaction').annotate(count=Count('id')).order_by('-count')
+        reaction_qs.values('reaction').annotate(count=Count('id')).order_by('-count')
     )
     # Rename key to match API shape
     reactions_breakdown = [{'reaction': r['reaction'], 'count': r['count']} for r in reactions_breakdown]
