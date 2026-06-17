@@ -447,3 +447,318 @@ class WindowSinceTests(TestCase):
         since = window_since('bogus')
         expected = timezone.now().date() - timedelta(days=29)
         self.assertEqual(since, expected)
+
+
+class TopJokesViewCountFanoutTests(TestCase):
+    """BUG 1 — view_count/payoff_count lack distinct=True, causing fan-out
+    when reaction/save/share LEFT JOINs multiply JokeView rows.
+
+    Setup: 1 joke, 3 views (2 revealed), 2 reactions, 1 share.
+    Without distinct=True the join produces 3*2*1=6 view rows (or some multiple),
+    so view_count > 3 and payoff_rate is wrong.
+    After the fix: view_count == 3, payoff_rate == 2/3.
+    """
+
+    @classmethod
+    def setUpTestData(cls):
+        cls.fmt = Format.objects.get(slug='oneliner')
+        cls.age = AgeRating.objects.first()
+        cls.lang = Language.objects.get(code='en')
+
+        cls.creator = User.objects.create_user(
+            username='fanout_creator@svc.com', email='fanout_creator@svc.com', password='x'
+        )
+        cls.reader1 = User.objects.create_user(
+            username='fanout_r1@svc.com', email='fanout_r1@svc.com', password='x'
+        )
+        cls.reader2 = User.objects.create_user(
+            username='fanout_r2@svc.com', email='fanout_r2@svc.com', password='x'
+        )
+
+        _, cls.joke = _make_published_submission(
+            cls.creator, cls.fmt, cls.age, cls.lang, text='Fanout joke'
+        )
+
+        # 3 views: 2 revealed, 1 not
+        _view(cls.reader1, cls.joke, revealed=True, days_ago=1)
+        _view(cls.reader2, cls.joke, revealed=True, days_ago=2)
+        _view(cls.reader1, cls.joke, revealed=False, days_ago=3)
+
+        # 2 reactions — these LEFT JOINs would fan out view rows without distinct
+        JokeReaction.objects.create(user=cls.reader1, joke=cls.joke, reaction='lol')
+        JokeReaction.objects.create(user=cls.reader2, joke=cls.joke, reaction='crying')
+
+        # 1 share — another join multiplier
+        ShareEvent.objects.create(joke=cls.joke, user=cls.reader1, platform='whatsapp')
+
+    def test_top_jokes_view_count_not_fanned_out(self):
+        """view_count must equal 3 (distinct JokeView PKs), not a multiple."""
+        from creator_insights.services import build_creator_insights
+        data = build_creator_insights(self.creator, 'all')
+        top = data['top_jokes']
+        self.assertEqual(len(top), 1)
+        row = top[0]
+        self.assertEqual(
+            row['views'], 3,
+            f"Expected view_count=3 but got {row['views']} — likely fan-out bug (BUG 1)",
+        )
+
+    def test_top_jokes_payoff_rate_not_fanned_out(self):
+        """payoff_rate must be 2/3 (2 revealed out of 3 distinct views)."""
+        from creator_insights.services import build_creator_insights
+        data = build_creator_insights(self.creator, 'all')
+        top = data['top_jokes']
+        row = top[0]
+        self.assertIsNotNone(row['payoff_rate'])
+        self.assertAlmostEqual(
+            row['payoff_rate'], round(2 / 3, 4), places=4,
+            msg=f"Expected payoff_rate≈{round(2/3,4)} but got {row['payoff_rate']} — likely fan-out bug (BUG 1)",
+        )
+
+
+class TopJokesPeriodConsistencyTests(TestCase):
+    """BUG 4 — reaction/save/share counts in _top_jokes are all-time while
+    view_count is period-filtered.  After the fix, all four metrics use only
+    in-period rows.
+
+    Setup: 1 joke.
+      - 2 views inside the 'week' window
+      - 1 reaction OUTSIDE the window (old)
+      - 1 reaction INSIDE the window
+    Before fix: reactions == 2 (all-time) even though period='week'.
+    After fix:  reactions == 1 (only in-period reaction).
+    """
+
+    @classmethod
+    def setUpTestData(cls):
+        cls.fmt = Format.objects.get(slug='oneliner')
+        cls.age = AgeRating.objects.first()
+        cls.lang = Language.objects.get(code='en')
+
+        cls.creator = User.objects.create_user(
+            username='period_c_creator@svc.com', email='period_c_creator@svc.com', password='x'
+        )
+        cls.reader = User.objects.create_user(
+            username='period_c_reader@svc.com', email='period_c_reader@svc.com', password='x'
+        )
+
+        _, cls.joke = _make_published_submission(
+            cls.creator, cls.fmt, cls.age, cls.lang, text='Period consistency joke'
+        )
+
+        # Views in period (week = last 6 days)
+        _view(cls.reader, cls.joke, days_ago=1)
+        _view(cls.reader, cls.joke, days_ago=2)
+
+        cls.reader2 = User.objects.create_user(
+            username='period_c_reader2@svc.com', email='period_c_reader2@svc.com', password='x'
+        )
+
+        # Reaction OUTSIDE week window (40 days ago — all-time but not in-period)
+        old_reaction = JokeReaction.objects.create(
+            user=cls.reader, joke=cls.joke, reaction='lol'
+        )
+        JokeReaction.objects.filter(pk=old_reaction.pk).update(
+            created_at=timezone.now() - timedelta(days=40)
+        )
+
+        # Reaction INSIDE week window (today) — different user so unique_together passes
+        JokeReaction.objects.create(user=cls.reader2, joke=cls.joke, reaction='crying')
+
+        # Save OUTSIDE week window
+        old_save = SavedJoke.objects.create(user=cls.reader, joke=cls.joke)
+        SavedJoke.objects.filter(pk=old_save.pk).update(
+            created_at=timezone.now() - timedelta(days=40)
+        )
+
+        # Share OUTSIDE week window
+        old_share = ShareEvent.objects.create(joke=cls.joke, user=cls.reader, platform='twitter')
+        ShareEvent.objects.filter(pk=old_share.pk).update(
+            created_at=timezone.now() - timedelta(days=40)
+        )
+
+    def test_top_jokes_reactions_period_filtered(self):
+        """For period='week', only in-period reactions should be counted."""
+        from creator_insights.services import build_creator_insights
+        data = build_creator_insights(self.creator, 'week')
+        top = data['top_jokes']
+        self.assertEqual(len(top), 1)
+        row = top[0]
+        self.assertEqual(
+            row['reactions'], 1,
+            f"Expected 1 in-period reaction but got {row['reactions']} — BUG 4 (all-time reactions in _top_jokes)",
+        )
+
+    def test_top_jokes_saves_period_filtered(self):
+        """For period='week', only in-period saves should be counted."""
+        from creator_insights.services import build_creator_insights
+        data = build_creator_insights(self.creator, 'week')
+        top = data['top_jokes']
+        row = top[0]
+        self.assertEqual(
+            row['saves'], 0,
+            f"Expected 0 in-period saves but got {row['saves']} — BUG 4 (all-time saves in _top_jokes)",
+        )
+
+    def test_top_jokes_shares_period_filtered(self):
+        """For period='week', only in-period shares should be counted."""
+        from creator_insights.services import build_creator_insights
+        data = build_creator_insights(self.creator, 'week')
+        top = data['top_jokes']
+        row = top[0]
+        self.assertEqual(
+            row['shares'], 0,
+            f"Expected 0 in-period shares but got {row['shares']} — BUG 4 (all-time shares in _top_jokes)",
+        )
+
+
+class WhatResonatesFanoutTests(TestCase):
+    """BUG 2 & BUG 3 — tone_stats in _suggestions/_what_resonates.
+
+    BUG 2: views=Count('id') (JokeView.id) is fanned out by the reactions JOIN
+    because distinct=True is missing → reactions_per_view is inflated/wrong.
+
+    BUG 3: reactions Count has no date filter → for period='week' the numerator
+    is all-time while the denominator is in-period → reactions_per_view is wrong.
+
+    Setup:
+      Tone A: 2 in-period views, 4 all-time reactions (2 in-period + 2 old).
+      Tone B: 1 in-period view, 1 in-period reaction.
+
+    Without bug fix for BUG 3 (period='week'):
+      Tone A reactions_per_view = 4/2 = 2.0  (WRONG — uses all-time reactions)
+      Tone B reactions_per_view = 1/1 = 1.0
+      → what_resonates picks Tone A (wrong winner!)
+
+    After fix:
+      Tone A reactions_per_view = 2/2 = 1.0  (only in-period reactions)
+      Tone B reactions_per_view = 1/1 = 1.0
+      → Tie or correct ranking (Tone B wins or ties — the key assertion is that
+         Tone A's rate is 1.0, not 2.0, proving in-period filtering works).
+
+    Without BUG 2 fix (with reactions LEFT JOIN), view count for Tone A would be
+    fanned out: 2 views × 4 reactions = 8 rows → views=8, reactions_per_view=0.5 (wrong).
+    """
+
+    @classmethod
+    def setUpTestData(cls):
+        cls.fmt = Format.objects.get(slug='oneliner')
+        cls.age = AgeRating.objects.first()
+        cls.lang = Language.objects.get(code='en')
+
+        cls.creator = User.objects.create_user(
+            username='resonates_creator@svc.com', email='resonates_creator@svc.com', password='x'
+        )
+        cls.reader = User.objects.create_user(
+            username='resonates_reader@svc.com', email='resonates_reader@svc.com', password='x'
+        )
+
+        # Get two tones
+        tones = list(Tone.objects.all()[:2])
+        if len(tones) < 2:
+            raise cls.skipTest("Need at least 2 Tone objects in fixture")
+        cls.tone_a = tones[0]
+        cls.tone_b = tones[1]
+
+        # Joke tagged with Tone A
+        _, cls.joke_a = _make_published_submission(
+            cls.creator, cls.fmt, cls.age, cls.lang, text='Resonates Joke A'
+        )
+        cls.joke_a.tones.add(cls.tone_a)
+
+        # Joke tagged with Tone B
+        _, cls.joke_b = _make_published_submission(
+            cls.creator, cls.fmt, cls.age, cls.lang, text='Resonates Joke B'
+        )
+        cls.joke_b.tones.add(cls.tone_b)
+
+        # 2 in-period views on Joke A (within 'week' = last 6 days)
+        _view(cls.reader, cls.joke_a, days_ago=1)
+        _view(cls.reader, cls.joke_a, days_ago=2)
+
+        cls.reader2 = User.objects.create_user(
+            username='resonates_r2@svc.com', email='resonates_r2@svc.com', password='x'
+        )
+        cls.reader3 = User.objects.create_user(
+            username='resonates_r3@svc.com', email='resonates_r3@svc.com', password='x'
+        )
+        cls.reader4 = User.objects.create_user(
+            username='resonates_r4@svc.com', email='resonates_r4@svc.com', password='x'
+        )
+
+        # 2 in-period reactions on Joke A (distinct users)
+        r_a1 = JokeReaction.objects.create(user=cls.reader, joke=cls.joke_a, reaction='lol')
+        r_a2 = JokeReaction.objects.create(user=cls.reader2, joke=cls.joke_a, reaction='crying')
+
+        # 2 OLD reactions on Joke A — distinct users, set old timestamps
+        r_a3 = JokeReaction.objects.create(user=cls.reader3, joke=cls.joke_a, reaction='hmm')
+        r_a4 = JokeReaction.objects.create(user=cls.reader4, joke=cls.joke_a, reaction='eyeroll')
+        JokeReaction.objects.filter(pk__in=[r_a3.pk, r_a4.pk]).update(
+            created_at=timezone.now() - timedelta(days=40)
+        )
+
+        # 1 in-period view on Joke B
+        _view(cls.reader, cls.joke_b, days_ago=1)
+
+        # 1 in-period reaction on Joke B (reader3 didn't react to B yet)
+        JokeReaction.objects.create(user=cls.reader3, joke=cls.joke_b, reaction='lol')
+
+    def _get_tone_data(self, data, tone_name):
+        """Extract reactions_per_view for a specific tone from what_resonates suggestion."""
+        # We need to inspect tone_stats directly; the suggestion only exposes best_tone.
+        # Instead, call _suggestions indirectly and introspect the resonates_data.
+        what_resonates = next(
+            s for s in data['suggestions'] if s['kind'] == 'what_resonates'
+        )
+        return what_resonates['data']
+
+    def test_what_resonates_views_not_fanned_out_by_reactions(self):
+        """BUG 2: Tone A should have 2 views (distinct JokeView PKs), not a fanned-out multiple.
+
+        We use 'all' period so we're only testing the distinct=True fix (BUG 2),
+        not the date filter (BUG 3). With 4 reactions and 2 views on Tone A:
+          Without distinct: views fanned out → rate != 4/2 = 2.0
+          After fix: reactions_per_view = 4/2 = 2.0 for Tone A (best tone wins)
+
+        The definitive check: call _top_jokes directly via build_creator_insights
+        and also verify through the suggestions data. We check via _top_jokes that
+        view_count is 3 (done in TopJokesViewCountFanoutTests). Here we verify the
+        what_resonates rate is 2.0 (Tone A: 4 reactions / 2 distinct views).
+        """
+        from creator_insights.services import _suggestions, resolve_creator_jokes, window_since
+        jokes = resolve_creator_jokes(self.creator)
+        since = window_since('all')  # None
+        suggestions = _suggestions(self.creator, jokes, since)
+        what_resonates = next(s for s in suggestions if s['kind'] == 'what_resonates')
+        rate = what_resonates['data']['reactions_per_view']
+        self.assertIsNotNone(rate)
+        # After distinct fix: best rate = 4 reactions / 2 views = 2.0 for Tone A
+        # Without distinct: views fanned out (2 views × 4 reactions = 8 rows) → rate = 4/8 = 0.5
+        # or some other wrong value. The key is rate == 2.0 after fix.
+        self.assertAlmostEqual(
+            rate, 2.0, places=3,
+            msg=f"Expected reactions_per_view=2.0 (4 reactions / 2 distinct views) but got {rate} — likely BUG 2 fan-out",
+        )
+
+    def test_what_resonates_reactions_are_period_filtered(self):
+        """BUG 3: For period='week', only in-period reactions should count.
+
+        Tone A: 2 in-period views, 2 in-period reactions, 2 old reactions.
+        Without BUG 3 fix: rate for Tone A = 4/2 = 2.0 (uses all-time reactions).
+        After BUG 3 fix: rate for Tone A = 2/2 = 1.0.
+        Tone B: 1/1 = 1.0 regardless.
+        The best rate should be 1.0, not 2.0.
+        """
+        from creator_insights.services import _suggestions, resolve_creator_jokes, window_since
+        jokes = resolve_creator_jokes(self.creator)
+        since = window_since('week')
+        suggestions = _suggestions(self.creator, jokes, since)
+        what_resonates = next(s for s in suggestions if s['kind'] == 'what_resonates')
+        rate = what_resonates['data']['reactions_per_view']
+        self.assertIsNotNone(rate)
+        # Without fix: 4 all-time reactions / 2 in-period views = 2.0
+        # After fix: 2 in-period reactions / 2 in-period views = 1.0
+        self.assertAlmostEqual(
+            rate, 1.0, places=3,
+            msg=f"Expected reactions_per_view=1.0 (in-period only) but got {rate} — likely BUG 3 (all-time reactions)",
+        )
