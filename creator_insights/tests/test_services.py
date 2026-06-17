@@ -383,6 +383,47 @@ class AudienceAndSuggestionsTests(TestCase):
         self.assertEqual(len(data['overview']['daily_reach_28d']), 28)
 
 
+class PeriodBoundaryTests(TestCase):
+    """Views outside the period window must be excluded; 'all' includes everything."""
+
+    @classmethod
+    def setUpTestData(cls):
+        cls.fmt = Format.objects.get(slug='oneliner')
+        cls.age = AgeRating.objects.first()
+        cls.lang = Language.objects.get(code='en')
+
+        cls.creator = User.objects.create_user(
+            username='pb_creator@svc.com', email='pb_creator@svc.com', password='x'
+        )
+        cls.reader = User.objects.create_user(
+            username='pb_reader@svc.com', email='pb_reader@svc.com', password='x'
+        )
+
+        _, cls.joke = _make_published_submission(
+            cls.creator, cls.fmt, cls.age, cls.lang, text='Boundary joke'
+        )
+
+        # View today — always within any window
+        cls.view_today = _view(cls.reader, cls.joke, days_ago=0)
+
+        # View 10 days ago — outside the 'week' (6-day) window but inside 'all'
+        cls.view_old = _view(cls.reader, cls.joke, days_ago=10)
+        # Force viewed_date to 10 days ago explicitly (in case auto_now_add
+        # overrides the date).  JokeView.viewed_date is set explicitly in _view().
+
+    def test_week_period_excludes_old_view(self):
+        from creator_insights.services import build_creator_insights
+        data = build_creator_insights(self.creator, period='week')
+        # Only the today-view should be counted (days_ago=0 is within 6 days)
+        self.assertEqual(data['overview']['views'], 1)
+
+    def test_all_period_includes_both_views(self):
+        from creator_insights.services import build_creator_insights
+        data = build_creator_insights(self.creator, period='all')
+        # Both views (today + 10 days ago) must appear
+        self.assertEqual(data['overview']['views'], 2)
+
+
 class WindowSinceTests(TestCase):
 
     def test_period_week(self):

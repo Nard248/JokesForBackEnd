@@ -1,8 +1,10 @@
+import shutil
+import tempfile
 from unittest.mock import patch
 
 from django.conf import settings
 from django.core.files.base import ContentFile
-from django.test import TestCase
+from django.test import TestCase, override_settings
 from rest_framework.test import APIRequestFactory
 
 from jokes.models import AgeRating, Format, Joke, Language
@@ -53,6 +55,19 @@ class StorageBackendSelectionTests(TestCase):
 class ShareImageUrlAbsoluteTests(TestCase):
     """share_image_url is always an absolute URL (local FS mode)."""
 
+    @classmethod
+    def setUpClass(cls):
+        cls._media_root = tempfile.mkdtemp()
+        cls._override = override_settings(MEDIA_ROOT=cls._media_root)
+        cls._override.enable()
+        super().setUpClass()
+
+    @classmethod
+    def tearDownClass(cls):
+        super().tearDownClass()
+        cls._override.disable()
+        shutil.rmtree(cls._media_root, ignore_errors=True)
+
     @patch('jokes.models.Joke._generate_share_image')
     def _make_joke_with_image(self, _mock_img):
         fmt, age, lang = _get_or_create_fixtures()
@@ -80,6 +95,19 @@ class ShareImageUrlAbsoluteTests(TestCase):
 
 class ShareCardRegenerationTests(TestCase):
     """Joke.save() still routes the generated PNG through default storage."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls._media_root = tempfile.mkdtemp()
+        cls._override = override_settings(MEDIA_ROOT=cls._media_root)
+        cls._override.enable()
+        super().setUpClass()
+
+    @classmethod
+    def tearDownClass(cls):
+        super().tearDownClass()
+        cls._override.disable()
+        shutil.rmtree(cls._media_root, ignore_errors=True)
 
     def test_regeneration_saves_via_storage(self):
         fmt, age, lang = _get_or_create_fixtures()
