@@ -291,6 +291,7 @@ REST_FRAMEWORK = {
         'anon': '100/hour',
         'user': '1000/hour',
         'verification_resend': '3/15min',
+        'creator_insights': '120/hour',
     },
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.URLPathVersioning',
