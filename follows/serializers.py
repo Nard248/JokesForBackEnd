@@ -9,11 +9,14 @@ class PublicUserSerializer(serializers.Serializer):
     avatar_url = serializers.SerializerMethodField()
 
     def get_name(self, obj):
+        # Never derive public identifiers from email (PII / enumeration). Use the
+        # user's name if set, else an opaque id. A real user-chosen handle field
+        # on UserProfile is the proper long-term fix (tracked as a follow-up).
         full = f'{obj.first_name} {obj.last_name}'.strip()
-        return full if full else obj.email.split('@')[0]
+        return full if full else f'user_{obj.pk}'
 
     def get_username(self, obj):
-        return '@' + obj.email.split('@')[0]
+        return f'@user{obj.pk}'
 
     def get_avatar_url(self, obj):
         try:

@@ -1,4 +1,5 @@
 from django.contrib.auth import get_user_model
+from django.core.exceptions import ValidationError
 from django.shortcuts import get_object_or_404
 from rest_framework import status
 from rest_framework.pagination import PageNumberPagination
@@ -21,8 +22,11 @@ class FollowView(APIView):
         creator = get_object_or_404(User, pk=creator_id)
         try:
             _, created = services.follow(request.user, creator)
-        except Exception as exc:
-            return Response({'detail': str(exc)}, status=status.HTTP_400_BAD_REQUEST)
+        except ValidationError as exc:
+            # Only surface validation messages (e.g. self-follow). Let any other
+            # exception propagate to DRF's handler → logged + generic 500 (no
+            # internal-error leakage to the client).
+            return Response({'detail': exc.messages[0]}, status=status.HTTP_400_BAD_REQUEST)
         st = status.HTTP_201_CREATED if created else status.HTTP_200_OK
         return Response({
             'is_following': True,
