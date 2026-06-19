@@ -1,0 +1,61 @@
+steps:
+  # ── 1. Migrate ────────────────────────────────────────────────────────────
+  # Run Django migrations against the production Neon database BEFORE the new
+  # revision is live, so the schema is always ahead of the running code.
+  # DEBUG=True + ALLOWED_HOSTS=localhost let Django boot without the real
+  # SECRET_KEY (migrate never signs tokens, so this is safe).
+  - name: python:3.11-slim
+    id: migrate
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        pip install -r requirements.txt --quiet &&
+        python manage.py migrate --noinput
+    secretEnv:
+      - DATABASE_URL
+    env:
+      - DEBUG=True
+      - ALLOWED_HOSTS=localhost
+
+  # ── 2. Build Docker image ─────────────────────────────────────────────────
+  - name: gcr.io/cloud-builders/docker
+    id: build
+    args:
+      - build
+      - -t
+      - us-east1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/jokesforbackend:$SHORT_SHA
+      - .
+
+  # ── 3. Push image to Artifact Registry ───────────────────────────────────
+  - name: gcr.io/cloud-builders/docker
+    id: push
+    args:
+      - push
+      - us-east1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/jokesforbackend:$SHORT_SHA
+
+  # ── 4. Deploy to Cloud Run ────────────────────────────────────────────────
+  # Does NOT pass --set-env-vars so all existing Cloud Run env vars are kept.
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    id: deploy
+    entrypoint: gcloud
+    args:
+      - run
+      - deploy
+      - jokesforbackend
+      - --image
+      - us-east1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/jokesforbackend:$SHORT_SHA
+      - --region
+      - us-east1
+      - --quiet
+
+images:
+  - us-east1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/jokesforbackend:$SHORT_SHA
+
+availableSecrets:
+  secretManager:
+    - versionName: projects/332865216810/secrets/DATABASE_URL/versions/latest
+      env: DATABASE_URL
+
+options:
+  logging: CLOUD_LOGGING_ONLY
