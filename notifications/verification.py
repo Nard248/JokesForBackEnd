@@ -6,6 +6,7 @@ resend throttling, not from hash slowness. Plaintext is never stored.
 """
 import hashlib
 import hmac
+import logging
 import secrets
 from datetime import timedelta
 
@@ -14,6 +15,8 @@ from django.utils import timezone
 
 from .models import EmailVerification
 from .service import send_email
+
+_metrics = logging.getLogger('jokesfor.metrics')
 
 
 def _hash(code):
@@ -68,17 +71,21 @@ def verify_code(user, code):
         .first()
     )
     if ev is None:
+        _metrics.info('metric', extra={'event': 'verification_attempt', 'result': 'no_active_code'})
         return False, 'no_active_code'
     if ev.is_expired:
+        _metrics.info('metric', extra={'event': 'verification_attempt', 'result': 'expired'})
         return False, 'expired'
     # MAX_ATTEMPTS wrong guesses are allowed; the next call is blocked.
     # e.g. MAX=5 -> 5 incorrect tries permitted, the 6th returns too_many_attempts.
     if ev.attempts >= settings.EMAIL_VERIFICATION_MAX_ATTEMPTS:
+        _metrics.info('metric', extra={'event': 'verification_attempt', 'result': 'too_many_attempts'})
         return False, 'too_many_attempts'
 
     if not hmac.compare_digest(ev.code_hash, _hash(code)):
         ev.attempts += 1
         ev.save(update_fields=['attempts'])
+        _metrics.info('metric', extra={'event': 'verification_attempt', 'result': 'incorrect'})
         return False, 'incorrect'
 
     # Atomically consume: a conditional UPDATE so two concurrent verifies of the
@@ -88,5 +95,7 @@ def verify_code(user, code):
         pk=ev.pk, consumed_at__isnull=True
     ).update(consumed_at=timezone.now())
     if not consumed:
+        _metrics.info('metric', extra={'event': 'verification_attempt', 'result': 'no_active_code'})
         return False, 'no_active_code'
+    _metrics.info('metric', extra={'event': 'verification_attempt', 'result': 'ok'})
     return True, None
