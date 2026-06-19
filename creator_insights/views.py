@@ -1,6 +1,8 @@
 from django.contrib.auth import get_user_model
 from django.shortcuts import get_object_or_404
 from drf_spectacular.utils import extend_schema, OpenApiParameter
+from rest_framework.exceptions import NotFound
+from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -9,6 +11,7 @@ from creator_insights.permissions import IsCreator
 from creator_insights.serializers import CreatorInsightsSerializer, CreatorProfileSerializer
 from creator_insights.services import build_creator_insights, build_creator_profile
 from creator_insights.throttles import CreatorInsightsThrottle
+from jokes.serializers import JokeListSerializer
 from jokes.serving import allowed_tiers
 
 User = get_user_model()
@@ -55,8 +58,19 @@ class CreatorProfileView(APIView):
         creator = get_object_or_404(User, pk=creator_id)
         tiers = allowed_tiers(request)
         viewer = getattr(request, 'user', None)
-        data = build_creator_profile(creator, viewer, tiers)
+        data, jokes = build_creator_profile(creator, viewer, tiers)
         if data is None:
-            from rest_framework.exceptions import NotFound
             raise NotFound('Creator not found or has no published jokes.')
+
+        # Paginate + serialize the tier-filtered jokes for the viewer.
+        paginator = PageNumberPagination()
+        paginator.page_size = 10
+        page = paginator.paginate_queryset(jokes, request, view=self)
+        serializer = JokeListSerializer(page, many=True, context={'request': request})
+        data['jokes'] = serializer.data
+        data['jokes_pagination'] = {
+            'count': paginator.page.paginator.count,
+            'next': paginator.get_next_link(),
+            'previous': paginator.get_previous_link(),
+        }
         return Response(data)

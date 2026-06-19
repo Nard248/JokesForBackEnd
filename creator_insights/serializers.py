@@ -77,6 +77,12 @@ class CreatorInsightsSerializer(serializers.Serializer):
     suggestions = SuggestionSerializer(many=True)
 
 
+class CreatorProfileJokesPaginationSerializer(serializers.Serializer):
+    count = serializers.IntegerField()
+    next = serializers.CharField(allow_null=True)
+    previous = serializers.CharField(allow_null=True)
+
+
 class CreatorProfileSerializer(serializers.Serializer):
     """Documents the shape of GET /api/v1/creators/<id>/profile/ for drf-spectacular."""
     id = serializers.IntegerField()
@@ -85,3 +91,6 @@ class CreatorProfileSerializer(serializers.Serializer):
     published_jokes = serializers.IntegerField()
     follower_count = serializers.IntegerField()
     is_following = serializers.BooleanField(allow_null=True)
+    # Tier-filtered (for the viewer) page of the creator's published jokes.
+    jokes = serializers.ListField(child=serializers.DictField())
+    jokes_pagination = CreatorProfileJokesPaginationSerializer()

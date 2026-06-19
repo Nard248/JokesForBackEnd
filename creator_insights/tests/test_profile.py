@@ -76,6 +76,18 @@ class CreatorProfileViewTests(APITestCase):
         response = self.client.get(self._url())
         self.assertEqual(response.data['published_jokes'], 1)
 
+    def test_jokes_list_present_and_tier_1_visible(self):
+        """Anon viewer gets a jokes array containing the tier_1 joke."""
+        response = self.client.get(self._url())
+        self.assertIn('jokes', response.data)
+        ids = {row['id'] for row in response.data['jokes']}
+        self.assertIn(self.joke.id, ids)
+
+    def test_jokes_pagination_block(self):
+        response = self.client.get(self._url())
+        self.assertIn('jokes_pagination', response.data)
+        self.assertEqual(response.data['jokes_pagination']['count'], 1)
+
     def test_follower_count_zero(self):
         response = self.client.get(self._url())
         self.assertEqual(response.data['follower_count'], 0)
@@ -133,6 +145,64 @@ class CreatorProfileViewTests(APITestCase):
     def test_no_email_in_response(self):
         response = self.client.get(self._url())
         self.assertNotIn('email', response.data)
+
+
+class CreatorProfileTierFilterTests(APITestCase):
+    """Public profile MUST re-apply allowed_tiers(request) to the jokes list.
+
+    anon/minor: tier_1 only; adult opted-in: tier_1 + tier_2; tier_3: never served.
+    """
+
+    @classmethod
+    def setUpTestData(cls):
+        cls.fmt = Format.objects.get(slug='oneliner')
+        cls.age = AgeRating.objects.first()
+        cls.lang = Language.objects.get(code='en')
+
+        cls.creator = User.objects.create_user(
+            username='tier_creator@test.com', email='tier_creator@test.com', password='x',
+        )
+        cls.t1 = _make_joke(cls.fmt, cls.age, cls.lang, text='Tier1 joke',
+                            content_tier='tier_1', creator=cls.creator)
+        _publish_submission(cls.creator, cls.fmt, cls.age, cls.lang, cls.t1)
+        cls.t2 = _make_joke(cls.fmt, cls.age, cls.lang, text='Tier2 joke',
+                            content_tier='tier_2', creator=cls.creator)
+        _publish_submission(cls.creator, cls.fmt, cls.age, cls.lang, cls.t2)
+        cls.t3 = _make_joke(cls.fmt, cls.age, cls.lang, text='Tier3 joke',
+                            content_tier='tier_3', creator=cls.creator)
+        _publish_submission(cls.creator, cls.fmt, cls.age, cls.lang, cls.t3)
+
+        # Adult opted-in viewer (18+, show_mature=True)
+        from datetime import date
+        cls.adult = User.objects.create_user(
+            username='adult_viewer@test.com', email='adult_viewer@test.com', password='x',
+        )
+        cls.adult.profile.date_of_birth = date(1990, 1, 1)
+        cls.adult.profile.save(update_fields=['date_of_birth'])
+        cls.adult.preference.show_mature = True
+        cls.adult.preference.save(update_fields=['show_mature'])
+
+    def _url(self):
+        return reverse('creator-profile', kwargs={'creator_id': self.creator.pk})
+
+    def test_anon_sees_only_tier_1(self):
+        response = self.client.get(self._url())
+        ids = {row['id'] for row in response.data['jokes']}
+        self.assertEqual(ids, {self.t1.id})
+        self.assertEqual(response.data['published_jokes'], 1)
+
+    def test_adult_optedin_sees_tier_1_and_tier_2(self):
+        self.client.force_authenticate(user=self.adult)
+        response = self.client.get(self._url())
+        ids = {row['id'] for row in response.data['jokes']}
+        self.assertEqual(ids, {self.t1.id, self.t2.id})
+
+    def test_tier_3_never_served(self):
+        # Even the opted-in adult never sees tier_3
+        self.client.force_authenticate(user=self.adult)
+        response = self.client.get(self._url())
+        ids = {row['id'] for row in response.data['jokes']}
+        self.assertNotIn(self.t3.id, ids)
 
 
 class CreatorProfileFallbackJokeTests(APITestCase):
