@@ -58,11 +58,14 @@ EXPOSE 8080
 
 # Cloud Run sends $PORT; gunicorn binds to it. Keep workers low — Cloud Run
 # scales horizontally rather than vertically for serverless workloads.
+# AccessLogMiddleware emits one structured JSON access line per request to
+# stdout (Cloud Run auto-ingests). Gunicorn's own plain-text access log is
+# disabled (--access-logfile removed) to avoid a duplicate unparsed entry.
+# Worker errors / timeouts still go to stderr via --error-logfile -.
 CMD exec gunicorn JokesForProject.wsgi:application \
     --bind 0.0.0.0:${PORT} \
     --workers 2 \
     --threads 4 \
     --worker-class gthread \
     --timeout 60 \
-    --access-logfile - \
     --error-logfile -
