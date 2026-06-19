@@ -8,6 +8,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from creator_insights.permissions import IsCreator
+from billing.permissions import HasFeature
 from creator_insights.serializers import CreatorInsightsSerializer, CreatorProfileSerializer
 from creator_insights.services import build_creator_insights, build_creator_profile
 from creator_insights.throttles import CreatorInsightsThrottle
@@ -25,7 +26,7 @@ class CreatorInsightsView(APIView):
     Owner-scoped: the creator's own tier_2 jokes are visible here; this endpoint
     does NOT expose any other user's personal data.
     """
-    permission_classes = [IsAuthenticated, IsCreator]
+    permission_classes = [IsAuthenticated, IsCreator, HasFeature('creator_analytics')]
     throttle_classes = [CreatorInsightsThrottle]
 
     @extend_schema(

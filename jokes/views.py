@@ -35,6 +35,7 @@ from django.db.models import Count, Max, Min, Q, Sum
 from django.db.models.functions import ExtractHour
 
 from notifications.models import EmailMessageLog, EmailVerification
+from billing import entitlements
 
 from .models import (
     Joke,
@@ -2023,7 +2024,7 @@ class MysteryBoxStatusView(APIView):
         used = MysteryBoxRoll.objects.filter(
             user=request.user, rolled_date=timezone.now().date()
         ).count()
-        max_per_day = MysteryBoxRoll.MAX_DAILY_ROLLS
+        max_per_day = entitlements.get_limit(request.user, 'mystery_box_rolls_per_day', default=MysteryBoxRoll.MAX_DAILY_ROLLS)
         return Response({
             'rolls_used_today': used,
             'rolls_remaining_today': max(0, max_per_day - used),
@@ -2054,13 +2055,13 @@ class MysteryBoxRollView(APIView):
         used = MysteryBoxRoll.objects.filter(
             user=request.user, rolled_date=today
         ).count()
-        if used >= MysteryBoxRoll.MAX_DAILY_ROLLS:
+        if used >= entitlements.get_limit(request.user, 'mystery_box_rolls_per_day', default=MysteryBoxRoll.MAX_DAILY_ROLLS):
             return Response(
                 {
                     'detail': 'Daily Mystery Box limit reached. Resets at midnight UTC.',
                     'rolls_used_today': used,
                     'rolls_remaining_today': 0,
-                    'max_per_day': MysteryBoxRoll.MAX_DAILY_ROLLS,
+                    'max_per_day': entitlements.get_limit(request.user, 'mystery_box_rolls_per_day', default=MysteryBoxRoll.MAX_DAILY_ROLLS),
                 },
                 status=status.HTTP_429_TOO_MANY_REQUESTS,
             )
@@ -2083,7 +2084,7 @@ class MysteryBoxRollView(APIView):
 
         return Response({
             'joke': JokeSerializer(joke, context={'request': request}).data,
-            'rolls_remaining_today': MysteryBoxRoll.MAX_DAILY_ROLLS - used - 1,
+            'rolls_remaining_today': entitlements.get_limit(request.user, 'mystery_box_rolls_per_day', default=MysteryBoxRoll.MAX_DAILY_ROLLS) - used - 1,
             'source_vibe': VibeSerializer(source_vibe).data if source_vibe else None,
         })
 
