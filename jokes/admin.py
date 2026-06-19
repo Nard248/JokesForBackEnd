@@ -192,6 +192,7 @@ class JokeSubmissionAdmin(admin.ModelAdmin):
                         age_rating=submission.age_rating,
                         language=submission.language,
                         source=source_obj,
+                        creator=submission.user,
                         content_tier='tier_1',
                     )
                     joke.tones.set(submission.tones.all())

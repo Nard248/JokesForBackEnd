@@ -17,6 +17,8 @@ class OverviewSerializer(serializers.Serializer):
     shares = serializers.IntegerField()
     peak_read_hour = serializers.IntegerField(allow_null=True)
     daily_reach_28d = serializers.ListField(child=serializers.IntegerField())
+    followers = serializers.IntegerField()
+    follower_growth_28d = serializers.ListField(child=serializers.IntegerField())
 
 
 class ReactionBreakdownSerializer(serializers.Serializer):
@@ -73,3 +75,13 @@ class CreatorInsightsSerializer(serializers.Serializer):
     top_jokes = TopJokeSerializer(many=True)
     audience = AudienceSerializer()
     suggestions = SuggestionSerializer(many=True)
+
+
+class CreatorProfileSerializer(serializers.Serializer):
+    """Documents the shape of GET /api/v1/creators/<id>/profile/ for drf-spectacular."""
+    id = serializers.IntegerField()
+    display_name = serializers.CharField()
+    handle = serializers.CharField()
+    published_jokes = serializers.IntegerField()
+    follower_count = serializers.IntegerField()
+    is_following = serializers.BooleanField(allow_null=True)

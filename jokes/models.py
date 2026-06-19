@@ -110,6 +110,15 @@ class Joke(models.Model):
     age_rating = models.ForeignKey(AgeRating, on_delete=models.PROTECT, related_name='jokes')
     language = models.ForeignKey(Language, on_delete=models.PROTECT, related_name='jokes')
     source = models.ForeignKey(Source, on_delete=models.SET_NULL, null=True, blank=True, related_name='jokes')
+    creator = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='created_jokes',
+        db_index=True,
+        help_text='Attributed creator, stamped at publish time. Null = legacy/seed/curated.',
+    )
 
     # Many-to-Many (multiple values)
     tones = models.ManyToManyField(Tone, related_name='jokes')
