@@ -1,12 +1,17 @@
+from django.contrib.auth import get_user_model
+from django.shortcuts import get_object_or_404
 from drf_spectacular.utils import extend_schema, OpenApiParameter
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from creator_insights.permissions import IsCreator
-from creator_insights.serializers import CreatorInsightsSerializer
-from creator_insights.services import build_creator_insights
+from creator_insights.serializers import CreatorInsightsSerializer, CreatorProfileSerializer
+from creator_insights.services import build_creator_insights, build_creator_profile
 from creator_insights.throttles import CreatorInsightsThrottle
+from jokes.serving import allowed_tiers
+
+User = get_user_model()
 
 
 class CreatorInsightsView(APIView):
@@ -33,4 +38,25 @@ class CreatorInsightsView(APIView):
     def get(self, request):
         period = request.query_params.get('period', 'month')
         data = build_creator_insights(request.user, period)
+        return Response(data)
+
+
+class CreatorProfileView(APIView):
+    """GET /api/v1/creators/<creator_id>/profile/
+
+    Public profile for a creator. Returns 404 if the user doesn't exist or
+    has no published jokes visible to the requester.
+    is_following is set only when authenticated and not viewing own profile.
+    """
+    permission_classes = [AllowAny]
+
+    @extend_schema(responses={200: CreatorProfileSerializer})
+    def get(self, request, creator_id):
+        creator = get_object_or_404(User, pk=creator_id)
+        tiers = allowed_tiers(request)
+        viewer = getattr(request, 'user', None)
+        data = build_creator_profile(creator, viewer, tiers)
+        if data is None:
+            from rest_framework.exceptions import NotFound
+            raise NotFound('Creator not found or has no published jokes.')
         return Response(data)

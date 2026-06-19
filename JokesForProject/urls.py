@@ -42,6 +42,8 @@ urlpatterns = [
     # API v1
     path('api/v1/', include('jokes.urls')),
     path('api/v1/creators/', include('creator_insights.urls')),
+    path('api/v1/follows/', include('follows.urls')),
+    path('api/v1/users/', include('follows.user_urls')),
 
     # Authentication
     path('api/v1/auth/', include('dj_rest_auth.urls')),

@@ -72,6 +72,7 @@ INSTALLED_APPS = [
     'jokes',
     'notifications',
     'creator_insights',
+    'follows',
     'audit',
 ]
 

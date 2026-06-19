@@ -16,6 +16,7 @@ from django.utils import timezone
 from jokes.models import (
     Joke, JokeView, JokeReaction, Favorite, SavedJoke, ShareEvent, JokeSubmission,
 )
+from follows.models import Follow
 
 
 # ---------------------------------------------------------------------------
@@ -33,9 +34,9 @@ def resolve_creator_jokes(creator):
     (slice 2) is a one-line change here.
     """
     return Joke.objects.filter(
-        submission__user=creator,
-        submission__status='published',
-    )
+        Q(creator=creator) |
+        Q(creator__isnull=True, submission__user=creator, submission__status='published')
+    ).distinct()
 
 
 def window_since(period):
@@ -394,6 +395,19 @@ def build_creator_insights(creator, period):
     audience = _audience(jokes, since)
     suggestions = _suggestions(creator, jokes, since)
 
+    # Follower stats (injected after _overview so the function signature stays stable)
+    today = timezone.now().date()
+    bf_start = today - timedelta(days=27)
+    overview['followers'] = Follow.objects.filter(creator=creator).count()
+    follow_counts = (
+        Follow.objects.filter(creator=creator, created_at__date__gte=bf_start)
+        .values('created_at__date').annotate(c=Count('id'))
+    )
+    follow_map = {row['created_at__date']: row['c'] for row in follow_counts}
+    overview['follower_growth_28d'] = [
+        follow_map.get(bf_start + timedelta(days=i), 0) for i in range(28)
+    ]
+
     return {
         'period': normalised_period,
         'is_creator': True,
@@ -404,4 +418,45 @@ def build_creator_insights(creator, period):
         'top_jokes': top_jokes,
         'audience': audience,
         'suggestions': suggestions,
+    }
+
+
+def build_creator_profile(creator, viewer, tiers):
+    """Build the public creator profile dict.
+
+    Args:
+        creator: the User whose profile is being viewed
+        viewer: the requesting User (or None for anonymous)
+        tiers: frozenset of allowed content_tier values for the viewer
+
+    Returns a plain dict. The caller 404s if this returns None.
+    """
+    # Only published jokes visible to the viewer are shown on the public profile
+    jokes = Joke.objects.filter(
+        Q(creator=creator) |
+        Q(creator__isnull=True, submission__user=creator, submission__status='published')
+    ).filter(content_tier__in=tiers).distinct()
+
+    total_published = jokes.count()
+    if total_published == 0:
+        return None
+
+    follower_count = Follow.objects.filter(creator=creator).count()
+
+    is_following = None
+    if viewer and viewer.is_authenticated and viewer.pk != creator.pk:
+        is_following = Follow.objects.filter(follower=viewer, creator=creator).exists()
+
+    # Display name
+    full_name = f'{creator.first_name} {creator.last_name}'.strip()
+    display_name = full_name if full_name else creator.email.split('@')[0]
+    handle = '@' + creator.email.split('@')[0]
+
+    return {
+        'id': creator.pk,
+        'display_name': display_name,
+        'handle': handle,
+        'published_jokes': total_published,
+        'follower_count': follower_count,
+        'is_following': is_following,
     }
