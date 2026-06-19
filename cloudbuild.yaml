@@ -1,60 +1,79 @@
+# Cloud Build pipeline for the JokesFor backend — point the existing Cloud Run
+# continuous-deployment trigger at this file (Trigger → Configuration → "Cloud
+# Build configuration file" → /cloudbuild.yaml).
+#
+# It mirrors the trigger's auto-generated Build → Push → Deploy steps EXACTLY
+# (same Artifact Registry path via the trigger's substitutions) and inserts a
+# MIGRATE step that the auto-config lacks. Migrations run INSIDE the freshly
+# built image (which has libcairo/pango for cairosvg + the exact release code),
+# against the prod DB, BEFORE the new revision is rolled out — so the schema is
+# always ahead of the running code.
+#
+# Substitutions (_AR_HOSTNAME, _AR_REPOSITORY, _SERVICE_NAME, _DEPLOY_REGION,
+# REPO_NAME) are already defined on the trigger; they resolve to the same values
+# used today, so WHERE/HOW it deploys is unchanged — we only add migrations.
 steps:
-  # ── 1. Migrate ────────────────────────────────────────────────────────────
-  # Run Django migrations against the production Neon database BEFORE the new
-  # revision is live, so the schema is always ahead of the running code.
-  # DEBUG=True + ALLOWED_HOSTS=localhost let Django boot without the real
-  # SECRET_KEY (migrate never signs tokens, so this is safe).
-  - name: python:3.11-slim
-    id: migrate
-    entrypoint: bash
+  # ── 1. Build the image (identical to the trigger's current Build step) ──────
+  - name: gcr.io/cloud-builders/docker
+    id: Build
     args:
-      - -c
-      - |
-        pip install -r requirements.txt --quiet &&
-        python manage.py migrate --noinput
-    secretEnv:
-      - DATABASE_URL
+      - build
+      - --no-cache
+      - -t
+      - $_AR_HOSTNAME/$_AR_PROJECT_ID/$_AR_REPOSITORY/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA
+      - .
+      - -f
+      - Dockerfile
+
+  # ── 2. Push to Artifact Registry (identical to current Push step) ──────────
+  - name: gcr.io/cloud-builders/docker
+    id: Push
+    args:
+      - push
+      - $_AR_HOSTNAME/$_AR_PROJECT_ID/$_AR_REPOSITORY/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA
+
+  # ── 3. MIGRATE (new) — run inside the just-built image ─────────────────────
+  # Uses the release artifact so all deps + system libs (libcairo/pango) and the
+  # exact code are present. DATABASE_URL comes from Secret Manager. DEBUG=True
+  # lets Django boot without the prod SECRET_KEY (migrate never signs tokens).
+  # If a migration fails the build stops here and the Deploy step never runs —
+  # so broken-schema code is never served.
+  - name: $_AR_HOSTNAME/$_AR_PROJECT_ID/$_AR_REPOSITORY/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA
+    id: Migrate
+    entrypoint: python
+    args:
+      - manage.py
+      - migrate
+      - --noinput
     env:
       - DEBUG=True
       - ALLOWED_HOSTS=localhost
+    secretEnv:
+      - DATABASE_URL
 
-  # ── 2. Build Docker image ─────────────────────────────────────────────────
-  - name: gcr.io/cloud-builders/docker
-    id: build
-    args:
-      - build
-      - -t
-      - us-east1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/jokesforbackend:$SHORT_SHA
-      - .
-
-  # ── 3. Push image to Artifact Registry ───────────────────────────────────
-  - name: gcr.io/cloud-builders/docker
-    id: push
-    args:
-      - push
-      - us-east1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/jokesforbackend:$SHORT_SHA
-
-  # ── 4. Deploy to Cloud Run ────────────────────────────────────────────────
-  # Does NOT pass --set-env-vars so all existing Cloud Run env vars are kept.
-  - name: gcr.io/google.com/cloudsdktool/cloud-sdk
-    id: deploy
+  # ── 4. Deploy to Cloud Run (identical to current Deploy step) ──────────────
+  # No --set-env-vars, so all existing Cloud Run env (SECRET_KEY, RESEND_API_KEY,
+  # GS_BUCKET_NAME, SENTRY_DSN, …) is preserved untouched.
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
+    id: Deploy
     entrypoint: gcloud
     args:
       - run
-      - deploy
-      - jokesforbackend
-      - --image
-      - us-east1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/jokesforbackend:$SHORT_SHA
-      - --region
-      - us-east1
+      - services
+      - update
+      - $_SERVICE_NAME
+      - --platform=managed
+      - --image=$_AR_HOSTNAME/$_AR_PROJECT_ID/$_AR_REPOSITORY/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA
+      - --labels=managed-by=gcp-cloud-build-deploy-cloud-run,commit-sha=$COMMIT_SHA,gcb-build-id=$BUILD_ID,gcb-trigger-id=$_TRIGGER_ID
+      - --region=$_DEPLOY_REGION
       - --quiet
 
 images:
-  - us-east1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/jokesforbackend:$SHORT_SHA
+  - $_AR_HOSTNAME/$_AR_PROJECT_ID/$_AR_REPOSITORY/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA
 
 availableSecrets:
   secretManager:
-    - versionName: projects/332865216810/secrets/DATABASE_URL/versions/latest
+    - versionName: projects/$PROJECT_ID/secrets/DATABASE_URL/versions/latest
       env: DATABASE_URL
 
 options:
