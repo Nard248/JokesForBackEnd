@@ -72,6 +72,7 @@ INSTALLED_APPS = [
     'jokes',
     'notifications',
     'creator_insights',
+    'audit',
 ]
 
 SITE_ID = 1
@@ -82,6 +83,14 @@ MIDDLEWARE = [
     # avoids needing a CDN/bucket for the admin's CSS/JS in low-traffic deploys.
     # Must be placed immediately after SecurityMiddleware per WhiteNoise docs.
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    # Observability: bind request-id + Cloud Trace correlation into contextvars
+    # early so every inner middleware/view log line carries the same trace.
+    # user_id is bound lazily after get_response (AuthenticationMiddleware runs
+    # during get_response, so user is only available post-view).
+    'JokesForProject.observability.middleware.RequestContextMiddleware',
+    # Structured one-line access log per request (latency, DB stats, status).
+    # Placed after RequestContextMiddleware so the timer wraps the full stack.
+    'JokesForProject.observability.middleware.AccessLogMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -429,6 +438,91 @@ SOCIALACCOUNT_PROVIDERS = {
 # Google OAuth credentials (from environment)
 GOOGLE_OAUTH_CALLBACK_URL = os.getenv('GOOGLE_OAUTH_CALLBACK_URL', 'http://localhost:5173/auth/google/callback')
 
+# ── Observability / structured logging ──────────────────────────────────────
+# Cloud Run injects GOOGLE_CLOUD_PROJECT automatically; the fallback is the
+# known project id so local/test builds get the correct trace resource name.
+GOOGLE_CLOUD_PROJECT = os.getenv('GOOGLE_CLOUD_PROJECT', '332865216810')
+# LOG_LEVEL: default DEBUG locally, INFO in production.
+LOG_LEVEL = os.getenv('LOG_LEVEL', 'DEBUG' if DEBUG else 'INFO')
+# LOG_FORMAT: 'plain' for local dev, 'json' for prod (Cloud Run stdout).
+LOG_FORMAT = os.getenv('LOG_FORMAT', 'plain' if DEBUG else 'json')
+# LOG_SQL: set to 'true' to log every SQL statement (dev only; never in prod).
+LOG_SQL = os.getenv('LOG_SQL', 'false').lower() == 'true'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'gcp_json': {
+            '()': 'JokesForProject.observability.formatters.GoogleCloudJsonFormatter',
+        },
+        'plain': {
+            '()': 'JokesForProject.observability.formatters.PlainFormatter',
+        },
+    },
+    'handlers': {
+        'stdout': {
+            'class': 'logging.StreamHandler',
+            'stream': 'ext://sys.stdout',
+            'formatter': 'plain' if DEBUG else 'gcp_json',
+        },
+    },
+    'root': {
+        'handlers': ['stdout'],
+        'level': LOG_LEVEL,
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['stdout'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+        # django.request fires on 5xx/handler exceptions; keep at ERROR to
+        # avoid double-logging 4xx DRF validation responses.
+        'django.request': {
+            'handlers': ['stdout'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        'django.server': {
+            'handlers': ['stdout'],
+            'level': 'WARNING',
+            'propagate': False,
+        },
+        'django.db.backends': {
+            'handlers': ['stdout'],
+            'level': 'DEBUG' if LOG_SQL else 'WARNING',
+            'propagate': False,
+        },
+        # App loggers — propagate False so they don't double-log to root
+        'jokesfor': {
+            'handlers': ['stdout'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+        'jokesfor.access': {
+            'handlers': ['stdout'],
+            'level': 'DEBUG',  # AccessLogMiddleware picks the right level per request
+            'propagate': False,
+        },
+        'jokesfor.metrics': {
+            'handlers': ['stdout'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+        'jokesfor.audit': {
+            'handlers': ['stdout'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+        'jokesfor.health': {
+            'handlers': ['stdout'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+    },
+}
+
 # Error monitoring — Sentry, opt-in via SENTRY_DSN. No DSN => fully no-op, so
 # local dev and the test suite never phone home. send_default_pii=False keeps
 # user identifiers out of events (COPPA/GDPR posture).
@@ -436,6 +530,15 @@ SENTRY_DSN = os.getenv('SENTRY_DSN', '').strip()
 if SENTRY_DSN:
     import sentry_sdk
     from sentry_sdk.integrations.django import DjangoIntegration
+    from JokesForProject.observability.sentry import scrub_event
+
+    # Ignore noisy expected exceptions so they don't consume Sentry quota.
+    from rest_framework.exceptions import (
+        Throttled, NotAuthenticated, PermissionDenied, AuthenticationFailed,
+        ValidationError,
+    )
+    from django.http import Http404
+    from notifications.service import EmailSendError
 
     sentry_sdk.init(
         dsn=SENTRY_DSN,
@@ -443,5 +546,13 @@ if SENTRY_DSN:
         traces_sample_rate=float(os.getenv('SENTRY_TRACES_SAMPLE_RATE', '0')),
         send_default_pii=False,
         environment=os.getenv('SENTRY_ENVIRONMENT', 'production' if not DEBUG else 'development'),
+        # K_REVISION is the Cloud Run revision name — gives per-deploy error grouping.
+        release=os.getenv('K_REVISION') or None,
+        # Scrub PII from event headers/cookies/body as defense-in-depth.
+        before_send=scrub_event,
+        ignore_errors=[
+            Throttled, NotAuthenticated, PermissionDenied,
+            AuthenticationFailed, Http404, ValidationError, EmailSendError,
+        ],
     )
 
