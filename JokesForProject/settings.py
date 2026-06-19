@@ -74,6 +74,7 @@ INSTALLED_APPS = [
     'creator_insights',
     'follows',
     'audit',
+    'billing',
 ]
 
 SITE_ID = 1
@@ -418,6 +419,16 @@ DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', 'Jokes For <noreply@localho
 EMAIL_VERIFICATION_REQUIRED = os.getenv('EMAIL_VERIFICATION_REQUIRED', 'false').lower() == 'true'
 EMAIL_VERIFICATION_CODE_TTL_MINUTES = int(os.getenv('EMAIL_VERIFICATION_CODE_TTL_MINUTES', '10'))
 EMAIL_VERIFICATION_MAX_ATTEMPTS = int(os.getenv('EMAIL_VERIFICATION_MAX_ATTEMPTS', '5'))
+
+# Stripe / billing — env-gated (dormant when STRIPE_SECRET_KEY is unset)
+STRIPE_SECRET_KEY      = os.getenv('STRIPE_SECRET_KEY', '').strip()
+STRIPE_PUBLISHABLE_KEY = os.getenv('STRIPE_PUBLISHABLE_KEY', '').strip()
+STRIPE_WEBHOOK_SECRET  = os.getenv('STRIPE_WEBHOOK_SECRET', '').strip()
+STRIPE_API_VERSION     = os.getenv('STRIPE_API_VERSION', '2026-05-27.dahlia')
+BILLING_ENABLED        = os.getenv('BILLING_ENABLED', 'false').lower() == 'true'
+BILLING_SUCCESS_URL    = os.getenv('BILLING_SUCCESS_URL', 'http://localhost:5173/billing/success')
+BILLING_CANCEL_URL     = os.getenv('BILLING_CANCEL_URL', 'http://localhost:5173/billing/cancel')
+BILLING_PORTAL_RETURN_URL = os.getenv('BILLING_PORTAL_RETURN_URL', 'http://localhost:5173/account')
 
 # django-allauth settings
 # https://docs.allauth.org/en/latest/account/configuration.html
