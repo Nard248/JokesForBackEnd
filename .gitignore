@@ -56,3 +56,4 @@ celerybeat.pid
 # Misc
 *.bak
 *.tmp
+.playwright-mcp/
