@@ -1,140 +1,145 @@
-# Backend CI/CD Setup Guide
+# Backend CI/CD Setup Guide — GCP Cloud Build (Native)
 
-This document covers the one-time manual steps required to activate the
-`.github/workflows/deploy-backend.yml` pipeline. None of this can be automated
-because it involves creating GCP credentials and configuring GitHub secrets,
-both of which require human interaction in the respective consoles.
+The `.github/workflows/deploy-backend.yml` GitHub Actions pipeline has been
+replaced with a GCP-native Cloud Build pipeline (`/cloudbuild.yaml` at the repo
+root). No GitHub secrets, no SA key files, and no external runner are required.
 
 ---
 
 ## What the pipeline does
 
-On every push to `main` (and on manual trigger via Actions → Run workflow):
+On every push to `main` (once the trigger below is configured), Cloud Build:
 
-1. Checks out the repo.
-2. Authenticates to GCP using a Service Account key stored as a GitHub secret.
-3. Installs Python 3.11 + `requirements.txt` on the runner.
-4. Runs `python manage.py migrate --noinput` against the production Neon database
-   directly from the GitHub Actions runner. Migrations run **before** the new
-   Cloud Run revision is deployed, so the schema is always ahead of the code.
-5. Calls `gcloud run deploy --source .`, which triggers a Cloud Build job that
-   builds the Dockerfile and rolls a new Cloud Run revision. Existing Cloud Run
-   environment variables are **not touched** by this command.
-
----
-
-## Step 1 — Create the deploy Service Account
-
-In the [GCP Console → IAM & Admin → Service Accounts](https://console.cloud.google.com/iam-admin/serviceaccounts):
-
-1. Click **Create Service Account**.
-2. Name: `github-deploy` (or similar), ID: `github-deploy`.
-3. Click **Create and Continue**.
-4. Grant the following roles (all required):
-
-   | Role | Why |
-   |------|-----|
-   | `roles/run.admin` | Deploy and manage Cloud Run services |
-   | `roles/cloudbuild.builds.editor` | Submit and manage Cloud Build jobs triggered by `--source .` |
-   | `roles/iam.serviceAccountUser` | Allow Cloud Build to act as the Cloud Run service's runtime SA |
-   | `roles/artifactregistry.writer` | Push built container images to Artifact Registry (used by Cloud Build internally) |
-
-   > If your project still uses Container Registry (gcr.io) instead of Artifact Registry,
-   > substitute `roles/storage.admin` for `roles/artifactregistry.writer`.
-
-5. Click **Done**.
+1. **Migrates** — runs `pip install -r requirements.txt` then
+   `python manage.py migrate --noinput` inside a `python:3.11-slim` container,
+   pulling `DATABASE_URL` directly from Secret Manager. Migrations always run
+   **before** the new revision is served.
+2. **Builds** the Docker image and tags it to Artifact Registry:
+   `us-east1-docker.pkg.dev/<PROJECT_ID>/cloud-run-source-deploy/jokesforbackend:<SHORT_SHA>`
+3. **Pushes** the image.
+4. **Deploys** to Cloud Run (`jokesforbackend`, region `us-east1`).
+   The deploy does **not** pass `--set-env-vars`, so all existing Cloud Run
+   environment variables are preserved exactly as configured on the service.
 
 ---
 
-## Step 2 — Create a JSON key for the Service Account
+## Step 1 — Create the Artifact Registry repository (if it doesn't exist)
 
-1. In the Service Accounts list, click on `github-deploy`.
-2. Go to the **Keys** tab → **Add Key** → **Create new key** → **JSON**.
-3. Download the key file. Keep it safe — treat it like a password.
-4. You will paste the entire contents of this JSON file into a GitHub secret (next step).
+```bash
+gcloud artifacts repositories create cloud-run-source-deploy \
+  --repository-format=docker \
+  --location=us-east1 \
+  --project=<PROJECT_ID>
+```
 
----
-
-## Step 3 — Add GitHub Secrets
-
-In the GitHub repo (`Nard248/JokesForBackEnd`) → **Settings → Secrets and variables → Actions → New repository secret**, add:
-
-| Secret name | Value |
-|-------------|-------|
-| `GCP_SA_KEY` | The full JSON content of the key file from Step 2 |
-| `GCP_PROJECT` | `332865216810` (GCP project number) or the project ID string |
-| `DATABASE_URL` | The Neon connection string (same value as in your `.env` / Cloud Run env) |
-
-These three secrets are the only additions needed. All other environment variables
-(`SECRET_KEY`, `RESEND_API_KEY`, `ALLOWED_HOSTS`, etc.) stay where they are —
-configured on the Cloud Run service via the GCP console — and the workflow never
-overwrites them.
+If the repository already exists, skip this step.
 
 ---
 
-## Step 4 — Verify the first run
+## Step 2 — Create the DATABASE_URL secret in Secret Manager
 
-1. Push any change to `main` (or trigger manually via Actions → Deploy Backend to Cloud Run → Run workflow).
-2. Watch the job log. The **Run database migrations** step should show Django printing applied migrations (or "No migrations to apply.").
-3. The **Deploy to Cloud Run** step will print a Cloud Build log URL and end with a service URL. Confirm traffic is routing to the new revision in Cloud Run → Revisions.
+1. Go to **GCP Console → Secret Manager → Create Secret**.
+2. Name: `DATABASE_URL`.
+3. Value: the Neon connection string (same value previously stored as the
+   GitHub secret and in Cloud Run's env).
+4. Click **Create Secret**.
+
+Grant the Cloud Build service account access to the secret:
+
+```bash
+gcloud secrets add-iam-policy-binding DATABASE_URL \
+  --member="serviceAccount:332865216810@cloudbuild.gserviceaccount.com" \
+  --role="roles/secretmanager.secretAccessor" \
+  --project=<PROJECT_ID>
+```
+
+---
+
+## Step 3 — Grant the Cloud Build service account the required roles
+
+The default Cloud Build SA (`332865216810@cloudbuild.gserviceaccount.com`) needs:
+
+| Role | Purpose |
+|------|---------|
+| `roles/run.admin` | Deploy and manage Cloud Run services |
+| `roles/iam.serviceAccountUser` | Allow Cloud Build to act as the Cloud Run runtime SA |
+| `roles/artifactregistry.writer` | Push built images to Artifact Registry |
+| `roles/secretmanager.secretAccessor` | Read `DATABASE_URL` during the migrate step (granted in Step 2) |
+
+Apply with:
+
+```bash
+PROJECT_ID=<your-project-id>
+CB_SA=332865216810@cloudbuild.gserviceaccount.com
+
+gcloud projects add-iam-policy-binding $PROJECT_ID \
+  --member="serviceAccount:$CB_SA" --role="roles/run.admin"
+
+gcloud projects add-iam-policy-binding $PROJECT_ID \
+  --member="serviceAccount:$CB_SA" --role="roles/iam.serviceAccountUser"
+
+gcloud projects add-iam-policy-binding $PROJECT_ID \
+  --member="serviceAccount:$CB_SA" --role="roles/artifactregistry.writer"
+```
+
+---
+
+## Step 4 — Connect the repository and create the trigger
+
+**Option A — via Cloud Build console (recommended):**
+
+1. Go to **GCP Console → Cloud Build → Triggers → Connect Repository**.
+2. Choose **GitHub (Cloud Build GitHub App)** and authorise the app if prompted.
+3. Select repository `Nard248/JokesForBackEnd`.
+4. Click **Create a trigger** on the next screen:
+   - **Event**: Push to a branch
+   - **Branch**: `^main$`
+   - **Build configuration**: Cloud Build configuration file (yaml or json)
+   - **Cloud Build configuration file location**: `/cloudbuild.yaml`
+
+   > Do **not** choose the "Dockerfile" auto-detect option — that skips the
+   > migration step entirely and will deploy schema-breaking revisions.
+
+5. Save the trigger.
+
+**Option B — via Cloud Run console:**
+
+1. Go to **Cloud Run → service `jokesforbackend` → Edit & Deploy New Revision**.
+2. Scroll to **Continuous deployment** → **Set up with Cloud Build**.
+3. Connect the GitHub repo, select branch `main`, and point to
+   **Cloud Build configuration file** (`/cloudbuild.yaml`).
 
 ---
 
 ## Frontend deploy ordering
 
-The frontend (Firebase via its own GH Actions workflow) can deploy at any time —
-it is a static SPA. However, note that recent backend changes introduced
-`date_of_birth` as a required registration field. If the frontend and backend
-deploy out of order:
+The frontend (Firebase) can deploy at any time since it is a static SPA.
+However, recent backend changes introduced `date_of_birth` as a required
+registration field. If the frontend and backend deploy out of order:
 
-- **Frontend before backend**: registration calls will fail (new field sent to old endpoint that doesn't accept it).
-- **Backend before frontend**: registration calls will fail (old form doesn't send the new required field).
+- **Frontend before backend**: registration calls will fail (new field sent to
+  old endpoint that doesn't accept it).
+- **Backend before frontend**: registration calls will fail (old form doesn't
+  send the new required field).
 
-**Safe approach**: deploy both together in the same release, or deploy the backend first and keep the frontend pointed at the old build until it is ready.
-
----
-
-## Upgrading to Workload Identity Federation (recommended)
-
-The current setup uses a long-lived JSON key. Workload Identity Federation (WIF)
-is more secure because it issues short-lived tokens and requires no key files.
-
-1. In GCP Console → IAM & Admin → **Workload Identity Federation** → Create a Pool.
-   - Name: `github-actions-pool`
-   - Provider: OIDC, issuer `https://token.actions.githubusercontent.com`
-2. Add an attribute mapping:
-   - `google.subject` → `assertion.sub`
-   - `attribute.repository` → `assertion.repository`
-3. Grant the `github-deploy` service account the role `roles/iam.workloadIdentityUser`
-   scoped to the pool, bound to the repo principal:
-   ```
-   principalSet://iam.googleapis.com/projects/332865216810/locations/global/workloadIdentityPools/<pool-id>/attribute.repository/Nard248/JokesForBackEnd
-   ```
-4. In `.github/workflows/deploy-backend.yml`, replace the `credentials_json` auth step with:
-   ```yaml
-   - name: Authenticate to Google Cloud
-     uses: google-github-actions/auth@v2
-     with:
-       workload_identity_provider: 'projects/332865216810/locations/global/workloadIdentityPools/<pool-id>/providers/<provider-id>'
-       service_account: 'github-deploy@<project-id>.iam.gserviceaccount.com'
-   ```
-   Also add `permissions: { id-token: write, contents: read }` at the job level.
-5. Delete the `GCP_SA_KEY` secret from GitHub — it is no longer needed.
+**Safe approach**: deploy the backend first, then the frontend in the same
+release window, or deploy both together.
 
 ---
 
 ## Rollback
 
-Cloud Run keeps previous revisions. To roll back immediately:
+Cloud Run keeps all previous revisions. To immediately route traffic away from a
+bad revision:
 
 ```bash
 # List revisions
 gcloud run revisions list --service jokesforbackend --region us-east1
 
-# Route 100% traffic to a previous revision
+# Send 100% traffic to a previous revision
 gcloud run services update-traffic jokesforbackend \
-  --region us-east1 \
-  --to-revisions <previous-revision-name>=100
+  --to-revisions=<prev-revision-name>=100 \
+  --region us-east1
 ```
 
 Note: rolling back the code does **not** roll back database migrations. If a
