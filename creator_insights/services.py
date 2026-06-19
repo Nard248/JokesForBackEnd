@@ -421,25 +421,36 @@ def build_creator_insights(creator, period):
     }
 
 
+def resolve_creator_published_jokes_for_viewer(creator, tiers):
+    """Return the creator's published jokes visible to a viewer with the given tiers.
+
+    Public surface: re-applies the content-tier serving lock (the explicit inverse
+    of owner-scoped resolve_creator_jokes). Uses the Joke.creator FK with the same
+    submission-join fallback for null-creator (legacy) rows. Ordered newest-first.
+    """
+    return Joke.objects.filter(
+        Q(creator=creator) |
+        Q(creator__isnull=True, submission__user=creator, submission__status='published')
+    ).filter(content_tier__in=tiers).distinct().order_by('-created_at')
+
+
 def build_creator_profile(creator, viewer, tiers):
-    """Build the public creator profile dict.
+    """Build the public creator profile dict (identity + counts + is_following).
 
     Args:
         creator: the User whose profile is being viewed
         viewer: the requesting User (or None for anonymous)
         tiers: frozenset of allowed content_tier values for the viewer
 
-    Returns a plain dict. The caller 404s if this returns None.
+    Returns a plain dict and the visible-jokes queryset as (data, jokes_qs).
+    The caller 404s if data is None. The jokes_qs is tier-filtered for the viewer
+    and meant to be serialized + paginated by the view.
     """
-    # Only published jokes visible to the viewer are shown on the public profile
-    jokes = Joke.objects.filter(
-        Q(creator=creator) |
-        Q(creator__isnull=True, submission__user=creator, submission__status='published')
-    ).filter(content_tier__in=tiers).distinct()
+    jokes = resolve_creator_published_jokes_for_viewer(creator, tiers)
 
     total_published = jokes.count()
     if total_published == 0:
-        return None
+        return None, None
 
     follower_count = Follow.objects.filter(creator=creator).count()
 
@@ -452,7 +463,7 @@ def build_creator_profile(creator, viewer, tiers):
     display_name = full_name if full_name else creator.email.split('@')[0]
     handle = '@' + creator.email.split('@')[0]
 
-    return {
+    data = {
         'id': creator.pk,
         'display_name': display_name,
         'handle': handle,
@@ -460,3 +471,4 @@ def build_creator_profile(creator, viewer, tiers):
         'follower_count': follower_count,
         'is_following': is_following,
     }
+    return data, jokes
