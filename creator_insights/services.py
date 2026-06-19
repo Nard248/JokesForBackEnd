@@ -458,10 +458,12 @@ def build_creator_profile(creator, viewer, tiers):
     if viewer and viewer.is_authenticated and viewer.pk != creator.pk:
         is_following = Follow.objects.filter(follower=viewer, creator=creator).exists()
 
-    # Display name
+    # Display name — never derived from email (PII / enumeration). Names if set,
+    # else an opaque id. A user-chosen handle field on UserProfile is the proper
+    # long-term fix (tracked as a follow-up).
     full_name = f'{creator.first_name} {creator.last_name}'.strip()
-    display_name = full_name if full_name else creator.email.split('@')[0]
-    handle = '@' + creator.email.split('@')[0]
+    display_name = full_name if full_name else f'user_{creator.pk}'
+    handle = f'@user{creator.pk}'
 
     data = {
         'id': creator.pk,
