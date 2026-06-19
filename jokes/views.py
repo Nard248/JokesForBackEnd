@@ -654,6 +654,9 @@ class CookieRegisterView(RegisterView):
     """
 
     def create(self, request, *args, **kwargs):
+        import logging as _logging
+        _reg_metrics = _logging.getLogger('jokesfor.metrics')
+
         if not settings.EMAIL_VERIFICATION_REQUIRED:
             response = super().create(request, *args, **kwargs)
             if (
@@ -663,11 +666,19 @@ class CookieRegisterView(RegisterView):
                 and getattr(self, 'refresh_token', None)
             ):
                 set_jwt_cookies(response, self.access_token, self.refresh_token)
+            if response.status_code == status.HTTP_201_CREATED:
+                from audit.services import record_audit
+                actor = getattr(self, 'user', None)
+                record_audit(request, 'registration', outcome='success', actor=actor)
+                _reg_metrics.info('metric', extra={
+                    'event': 'registration', 'mode': 'legacy', 'outcome': 'created',
+                })
             return response
 
         # Gated flow.
         from notifications import verification
         from notifications.service import EmailSendError
+        from audit.services import record_audit
 
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -681,6 +692,11 @@ class CookieRegisterView(RegisterView):
             # Provider down. The user row exists (inactive) and a verification
             # row was issued, so the account is recoverable via
             # POST /auth/resend-verification/. Surface a 502 instead of a 500.
+            record_audit(request, 'registration', outcome='failure', actor=user,
+                         metadata={'reason': 'email_send_failed'})
+            _reg_metrics.info('metric', extra={
+                'event': 'registration', 'mode': 'gated', 'outcome': 'email_send_failed',
+            })
             return Response(
                 {'detail': "We couldn't send your code right now. "
                            'Please use "Resend code" in a moment.',
@@ -688,6 +704,10 @@ class CookieRegisterView(RegisterView):
                 status=status.HTTP_502_BAD_GATEWAY,
             )
 
+        record_audit(request, 'registration', outcome='success', actor=user)
+        _reg_metrics.info('metric', extra={
+            'event': 'registration', 'mode': 'gated', 'outcome': 'created',
+        })
         return Response(
             {'detail': 'Verification code sent to your email.', 'email': user.email},
             status=status.HTTP_201_CREATED,
@@ -1628,7 +1648,16 @@ class ContentReportView(generics.CreateAPIView):
     serializer_class = ContentReportSerializer
 
     def perform_create(self, serializer):
-        serializer.save(reporter=self.request.user)
+        instance = serializer.save(reporter=self.request.user)
+        from audit.services import record_audit
+        record_audit(
+            self.request, 'content_report',
+            outcome='success',
+            actor=self.request.user,
+            target_type='joke',
+            target_id=str(instance.joke_id) if hasattr(instance, 'joke_id') else '',
+            metadata={'reason': getattr(instance, 'reason', '')},
+        )
 
 
 class UserBlockView(APIView):
@@ -1643,10 +1672,16 @@ class UserBlockView(APIView):
         if blocked_user == request.user:
             return Response({'detail': 'Cannot block yourself.'}, status=status.HTTP_400_BAD_REQUEST)
         UserBlock.objects.get_or_create(blocker=request.user, blocked=blocked_user)
+        from audit.services import record_audit
+        record_audit(request, 'block', outcome='success', actor=request.user,
+                     target_type='user', target_id=str(user_id))
         return Response({'status': 'blocked'}, status=status.HTTP_201_CREATED)
 
     def delete(self, request, user_id):
         UserBlock.objects.filter(blocker=request.user, blocked_id=user_id).delete()
+        from audit.services import record_audit
+        record_audit(request, 'unblock', outcome='success', actor=request.user,
+                     target_type='user', target_id=str(user_id))
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
@@ -1677,6 +1712,12 @@ class UserAccountDeleteView(APIView):
                     {'confirm': ['Type DELETE to confirm account deletion.']},
                     status=status.HTTP_400_BAD_REQUEST,
                 )
+
+        # Capture actor identity BEFORE deletion so the audit row has the hash
+        from audit.services import record_audit
+        from JokesForProject.observability.redaction import hash_email as _hash_email
+        actor_id = user.pk
+        actor_email_hash = _hash_email(user.email) if user.email else ''
 
         with transaction.atomic():
             # 1. Blacklist outstanding refresh tokens BEFORE user.delete()
@@ -1712,6 +1753,15 @@ class UserAccountDeleteView(APIView):
             # 4. Cascade-delete the user (removes all FK=CASCADE rows)
             user.delete()
 
+        # Record audit AFTER delete; actor=None (user gone), hash preserved
+        record_audit(
+            request, 'account_delete',
+            outcome='success',
+            actor=None,
+            target_type='user',
+            target_id=str(actor_id),
+            metadata={'actor_email_hash': actor_email_hash},
+        )
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
@@ -1849,6 +1899,8 @@ class DataExportView(APIView):
         buf.seek(0)
         resp = HttpResponse(buf.getvalue(), content_type='application/zip')
         resp['Content-Disposition'] = 'attachment; filename="jokes-for-data-export.zip"'
+        from audit.services import record_audit
+        record_audit(request, 'data_export', outcome='success', actor=u)
         return resp
 
 

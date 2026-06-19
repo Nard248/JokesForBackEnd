@@ -1,4 +1,5 @@
-"""Tests for the audit app: AuditLog model, record_audit(), signal hooks."""
+"""Tests for the audit app: AuditLog model, record_audit(), signal hooks,
+and domain-metric choke-points."""
 from django.test import TestCase, RequestFactory
 from django.contrib.auth import get_user_model
 
@@ -115,3 +116,34 @@ class AuthSignalTests(TestCase):
         self.assertTrue(
             AuditLog.objects.filter(action='logout', outcome='success').exists()
         )
+
+
+class ChokePointTests(TestCase):
+    def setUp(self):
+        self.rf = RequestFactory()
+        self.u = User.objects.create_user(
+            username='choke', email='choke@example.com', password='x'
+        )
+
+    def test_verify_emits_metric_no_active_code(self):
+        from notifications import verification
+        with self.assertLogs('jokesfor.metrics', level='INFO') as cm:
+            verification.verify_code(self.u, '000000')
+        events = [
+            getattr(r, 'event', None) or r.getMessage()
+            for r in cm.records
+        ]
+        self.assertTrue(
+            any('verification_attempt' in str(e) for e in events),
+            f'No verification_attempt event found in: {events}',
+        )
+
+    def test_content_tier_decision_emits_metric_for_anon(self):
+        from jokes.serving import allowed_tiers
+        from django.test import RequestFactory as RF
+        request = RF().get('/')
+        request.user = type('anon', (), {'is_authenticated': False})()
+        with self.assertLogs('jokesfor.metrics', level='INFO') as cm:
+            allowed_tiers(request)
+        events = [getattr(r, 'event', '') for r in cm.records]
+        self.assertIn('content_tier_decision', events)
