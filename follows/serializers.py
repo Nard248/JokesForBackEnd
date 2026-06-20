@@ -1,5 +1,7 @@
 from rest_framework import serializers
 
+from jokes.identity import public_display_name, public_handle
+
 
 class PublicUserSerializer(serializers.Serializer):
     """Minimal public user identity — id, display name, @handle, avatar_url. Never exposes email."""
@@ -9,14 +11,10 @@ class PublicUserSerializer(serializers.Serializer):
     avatar_url = serializers.SerializerMethodField()
 
     def get_name(self, obj):
-        # Never derive public identifiers from email (PII / enumeration). Use the
-        # user's name if set, else an opaque id. A real user-chosen handle field
-        # on UserProfile is the proper long-term fix (tracked as a follow-up).
-        full = f'{obj.first_name} {obj.last_name}'.strip()
-        return full if full else f'user_{obj.pk}'
+        return public_display_name(obj)
 
     def get_username(self, obj):
-        return f'@user{obj.pk}'
+        return public_handle(obj)
 
     def get_avatar_url(self, obj):
         try:
