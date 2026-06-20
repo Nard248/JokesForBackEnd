@@ -71,8 +71,8 @@ The codebase moved toward a modular monolith **additively** (no risky big‑bang
 5. When to flip `BILLING_ENABLED` / switch from Stripe **test** to **live** keys + run Push‑to‑Stripe.
 
 **Engineering follow‑ups:**
-6. **Real creator handles** — public handle/display name is currently opaque `user_<id>` (email‑derivation was removed for privacy). For real `@handles`, add a user‑chosen `handle`/`display_name` field on `UserProfile` (+ a profile‑edit surface). Also applies to the pre‑existing `TopJokestersView`.
-7. **Creator‑profile jokes shape** — the FE types profile `jokes` as full `Joke`; the real API returns a leaner shape, so add a DTO→`Joke` map in the adapter before the real‑API cutover (mocks are fine today).
+6. ✅ **DONE (2026‑06‑20, backend `2c87f52`)** **Real creator handles** — added user‑chosen `display_name` + unique `handle` on `UserProfile`, settable via `PATCH /users/me/profile/` (normalized/validated/uniqueness‑checked). New `jokes/identity.py` is the single public‑identity helper (chosen handle/name → opaque `user_<id>`, never email); follows, creator profiles, and the profile endpoint all use it. 8 tests. *(Still open: apply the same helper to the pre‑existing `TopJokestersView`, and add the profile‑edit UI surface in the frontend.)*
+7. ✅ **DONE (2026‑06‑20, frontend `437fccf`)** **Creator‑profile jokes shape** — `normalizeProfileJoke` in the creator‑profile adapter converts the lean `JokeListSerializer` shape (slug‑string tones/format/age_rating) into the object `Joke` shape `JokeCard` renders; tolerant reader (already‑nested objects pass through). +2 tests.
 8. **Observability console setup** — alerts/dashboards/uptime (checklist in the observability plan).
 9. **Deploy** — push (frontend first/together) when ready; confirm the `jokesfor_cache` table after the first migrate.
 
