@@ -6,10 +6,12 @@ from rest_framework.test import APIClient
 from jokes.identity import (
     public_display_name, public_handle, normalize_handle, is_valid_handle,
 )
+from jokes.models import Format, AgeRating, Language, JokeSubmission
 
 User = get_user_model()
 
 PROFILE_URL = '/api/v1/users/me/profile/'
+TOP_JOKESTERS_URL = '/api/v1/users/top-jokesters/'
 
 
 class IdentityHelperTests(TestCase):
@@ -80,3 +82,31 @@ class ProfileHandlePatchTests(TestCase):
         self.assertEqual(r.status_code, 200, r.content)
         self.user.profile.refresh_from_db()
         self.assertIsNone(self.user.profile.handle)
+
+
+class TopJokestersIdentityTests(TestCase):
+    """The public leaderboard (AllowAny) must use chosen identity, never email."""
+
+    @classmethod
+    def setUpTestData(cls):
+        cls.fmt = Format.objects.get(slug='oneliner')
+        cls.age = AgeRating.objects.first()
+        cls.lang = Language.objects.get(code='en')
+        cls.user = User.objects.create_user(
+            username='jokester@secretdomain.com', email='jokester@secretdomain.com', password='x',
+        )
+        cls.user.profile.display_name = 'Top Comic'
+        cls.user.profile.handle = 'topcomic'
+        cls.user.profile.save()
+        JokeSubmission.objects.create(
+            user=cls.user, format=cls.fmt, age_rating=cls.age,
+            language=cls.lang, status='published', text='A published bit',
+        )
+
+    def test_leaderboard_uses_handle_and_never_leaks_email(self):
+        r = self.client.get(TOP_JOKESTERS_URL)
+        self.assertEqual(r.status_code, 200)
+        self.assertNotIn('secretdomain', r.content.decode())
+        entry = next(e for e in r.data['results'] if e['id'] == self.user.pk)
+        self.assertEqual(entry['name'], 'Top Comic')
+        self.assertEqual(entry['username'], '@topcomic')

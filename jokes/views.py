@@ -1609,7 +1609,7 @@ class TopJokestersView(APIView):
         period = request.query_params.get('period', 'all_time')
         limit = int(request.query_params.get('limit', 5))
 
-        qs = User.objects.filter(joke_submissions__status='published')
+        qs = User.objects.filter(joke_submissions__status='published').select_related('profile')
 
         if period != 'all_time':
             from datetime import timedelta
@@ -1623,7 +1623,8 @@ class TopJokestersView(APIView):
 
         results = []
         for rank, u in enumerate(users, 1):
-            name = f"{u.first_name} {u.last_name}".strip() or u.email.split('@')[0]
+            # Public identity via the shared helper — never derived from email.
+            name = public_display_name(u)
             # P10: include this user's top 2 vibes (by recency for now;
             # could weight by submission counts later)
             top_vibes = list(
@@ -1634,7 +1635,7 @@ class TopJokestersView(APIView):
             results.append({
                 'id': u.id,
                 'name': name,
-                'username': f"@{u.email.split('@')[0]}",
+                'username': public_handle(u),
                 'avatar_url': None,
                 'punchline_count': u.punchline_count,
                 'rank': rank,
