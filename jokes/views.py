@@ -71,6 +71,9 @@ from .models import (
 )
 from .recommendations import get_personalized_joke, get_recently_shown_joke_ids
 from .serving import allowed_tiers
+from .identity import (
+    public_display_name, public_handle, normalize_handle, is_valid_handle,
+)
 from .serializers import (
     JokeSerializer,
     FormatSerializer,
@@ -1331,8 +1334,10 @@ class UserProfileView(APIView):
         humor_dna = self._compute_humor_dna(user)
 
         return Response({
-            'name': f"{user.first_name} {user.last_name}".strip() or user.email.split('@')[0],
-            'username': f"@{user.email.split('@')[0]}",
+            'name': public_display_name(user),
+            'username': public_handle(user),
+            'display_name': profile.display_name,
+            'handle': profile.handle,
             'email': user.email,
             'bio': profile.bio,
             'avatar_url': request.build_absolute_uri(profile.avatar.url) if profile.avatar else None,
@@ -1352,6 +1357,24 @@ class UserProfileView(APIView):
             user.last_name = request.data['last_name']
         if 'bio' in request.data:
             profile.bio = request.data['bio']
+        if 'display_name' in request.data:
+            profile.display_name = (request.data['display_name'] or '')[:50]
+        if 'handle' in request.data:
+            raw = normalize_handle(request.data['handle'])
+            if raw == '':
+                profile.handle = None
+            elif not is_valid_handle(raw):
+                return Response(
+                    {'handle': ['Handle must be 3-30 chars: lowercase letters, numbers, or underscore.']},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
+            elif UserProfile.objects.exclude(pk=profile.pk).filter(handle=raw).exists():
+                return Response(
+                    {'handle': ['That handle is already taken.']},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
+            else:
+                profile.handle = raw
 
         user.save()
         profile.save()

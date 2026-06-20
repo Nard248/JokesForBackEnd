@@ -459,6 +459,13 @@ class UserProfile(models.Model):
     avatar = models.ImageField(upload_to='avatars/', blank=True)
     is_premium = models.BooleanField(default=False)
 
+    # Public identity (creator profiles, follower lists). Never derived from email.
+    display_name = models.CharField(max_length=50, blank=True, default='')
+    handle = models.CharField(
+        max_length=30, blank=True, null=True, unique=True,
+        help_text='User-chosen public @handle (lowercase alphanumeric/underscore). Null = unset.',
+    )
+
     # Privacy settings
     public_profile = models.BooleanField(default=True)
     show_activity = models.BooleanField(default=True)

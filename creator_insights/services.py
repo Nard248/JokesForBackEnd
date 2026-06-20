@@ -17,6 +17,7 @@ from jokes.models import (
     Joke, JokeView, JokeReaction, Favorite, SavedJoke, ShareEvent, JokeSubmission,
 )
 from follows.models import Follow
+from jokes.identity import public_display_name, public_handle
 
 
 # ---------------------------------------------------------------------------
@@ -458,12 +459,9 @@ def build_creator_profile(creator, viewer, tiers):
     if viewer and viewer.is_authenticated and viewer.pk != creator.pk:
         is_following = Follow.objects.filter(follower=viewer, creator=creator).exists()
 
-    # Display name — never derived from email (PII / enumeration). Names if set,
-    # else an opaque id. A user-chosen handle field on UserProfile is the proper
-    # long-term fix (tracked as a follow-up).
-    full_name = f'{creator.first_name} {creator.last_name}'.strip()
-    display_name = full_name if full_name else f'user_{creator.pk}'
-    handle = f'@user{creator.pk}'
+    # Public identity via the shared helper (chosen handle/name, never email).
+    display_name = public_display_name(creator)
+    handle = public_handle(creator)
 
     data = {
         'id': creator.pk,
