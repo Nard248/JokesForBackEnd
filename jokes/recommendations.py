@@ -46,6 +46,13 @@ def get_personalized_joke(user, exclude_joke_ids=None, allowed_tiers=frozenset({
         content_tier__in=allowed_tiers
     )
 
+    # Moderation: never serve a blocked user's jokes (removed jokes are already
+    # excluded by the default manager).
+    from jokes.moderation import hidden_user_ids
+    hidden = hidden_user_ids(user)
+    if hidden:
+        base_queryset = base_queryset.exclude(creator_id__in=hidden)
+
     if not base_queryset.exists():
         # All jokes exhausted - return None (caller should handle reset)
         return None

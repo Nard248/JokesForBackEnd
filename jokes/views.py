@@ -308,9 +308,11 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
         Useful for "Joke of the Day" or random joke button features.
         Returns 404 if no jokes exist in the database.
         """
-        joke = Joke.objects.filter(
-            content_tier__in=allowed_tiers(request)
-        ).order_by('?').first()
+        qs = Joke.objects.filter(content_tier__in=allowed_tiers(request))
+        hidden = hidden_user_ids(request.user)
+        if hidden:
+            qs = qs.exclude(creator_id__in=hidden)
+        joke = qs.order_by('?').first()
         if joke is None:
             return Response(
                 {'detail': 'No jokes found.'},
@@ -2067,6 +2069,11 @@ def _mystery_pool_for_user(user, allowed=frozenset({'tier_1'})):
 
     # Apply content-tier serving lock
     pool = pool.filter(content_tier__in=allowed)
+
+    # Moderation: exclude blocked users' jokes (removed already excluded by manager).
+    hidden = hidden_user_ids(user)
+    if hidden:
+        pool = pool.exclude(creator_id__in=hidden)
 
     rolled_today = MysteryBoxRoll.objects.filter(
         user=user, rolled_date=today
