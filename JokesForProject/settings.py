@@ -75,6 +75,7 @@ INSTALLED_APPS = [
     'follows',
     'audit',
     'billing',
+    'inbox',
 ]
 
 SITE_ID = 1

@@ -213,6 +213,8 @@ class JokeSubmissionAdmin(admin.ModelAdmin):
                     submission.published_joke = joke
                     submission.status = 'published'
                     submission.save(update_fields=['published_joke', 'status', 'updated_at'])
+                    from inbox.services import notify
+                    notify(submission.user, 'joke_published', joke=joke)
                     created += 1
             except Exception as exc:
                 self.message_user(
@@ -268,9 +270,17 @@ class ContentReportAdmin(admin.ModelAdmin):
         from audit.services import record_audit
         joke_ids = set(queryset.values_list('joke_id', flat=True))
         now = timezone.now()
+        # Notify creators before flipping the flag (need the creator FK; the row
+        # stays, only is_removed changes). One notification per affected joke.
+        from inbox.services import notify
+        to_remove = list(
+            Joke.all_objects.filter(pk__in=joke_ids, is_removed=False).select_related('creator')
+        )
         removed = Joke.all_objects.filter(pk__in=joke_ids, is_removed=False).update(
             is_removed=True, removed_at=now,
         )
+        for jk in to_remove:
+            notify(jk.creator, 'joke_removed', joke=jk)
         # Resolve every pending/reviewed report against those jokes.
         ContentReport.objects.filter(joke_id__in=joke_ids).exclude(
             status__in=['resolved', 'dismissed']

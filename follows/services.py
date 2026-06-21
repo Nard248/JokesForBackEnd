@@ -11,7 +11,11 @@ def follow(follower, creator):
     from jokes.moderation import is_blocked_between
     if is_blocked_between(follower, creator):
         raise ValidationError('You cannot follow this user.')
-    return Follow.objects.get_or_create(follower=follower, creator=creator)
+    follow_obj, created = Follow.objects.get_or_create(follower=follower, creator=creator)
+    if created:
+        from inbox.services import notify
+        notify(creator, 'followed_you', actor=follower)
+    return follow_obj, created
 
 
 def unfollow(follower, creator):
