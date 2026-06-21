@@ -57,8 +57,13 @@ class CreatorProfileView(APIView):
     @extend_schema(responses={200: CreatorProfileSerializer})
     def get(self, request, creator_id):
         creator = get_object_or_404(User, pk=creator_id)
-        tiers = allowed_tiers(request)
         viewer = getattr(request, 'user', None)
+        # Symmetric block: a blocked pair can't see each other's profile.
+        if viewer is not None and viewer.is_authenticated:
+            from jokes.moderation import is_blocked_between
+            if is_blocked_between(viewer, creator):
+                raise NotFound('Creator not found or has no published jokes.')
+        tiers = allowed_tiers(request)
         data, jokes = build_creator_profile(creator, viewer, tiers)
         if data is None:
             raise NotFound('Creator not found or has no published jokes.')

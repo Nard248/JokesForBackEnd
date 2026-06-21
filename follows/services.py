@@ -4,9 +4,13 @@ from follows.models import Follow
 
 
 def follow(follower, creator):
-    """Follow creator. Raises ValidationError on self-follow. Returns (follow, created)."""
+    """Follow creator. Raises ValidationError on self-follow or when a block
+    exists between the two users. Returns (follow, created)."""
     if follower.pk == creator.pk:
         raise ValidationError('You cannot follow yourself.')
+    from jokes.moderation import is_blocked_between
+    if is_blocked_between(follower, creator):
+        raise ValidationError('You cannot follow this user.')
     return Follow.objects.get_or_create(follower=follower, creator=creator)
 
 
