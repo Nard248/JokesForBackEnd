@@ -149,6 +149,35 @@ class ReportDedupTests(ModerationBase):
         self.assertEqual(ContentReport.objects.filter(reporter=self.viewer, joke=j).count(), 1)
 
 
+class BlockServingSurfaceTests(ModerationBase):
+    """Per-viewer block-hiding on the personalized/mystery serving surfaces."""
+
+    def test_recommendations_never_serve_blocked_creator(self):
+        other = User.objects.create_user(username='ot@t.com', email='ot@t.com', password='x')
+        blocked_j = _make_joke(self.fmt, self.age, self.lang, creator=self.creator)
+        visible_j = _make_joke(self.fmt, self.age, self.lang, creator=other)
+        UserBlock.objects.create(blocker=self.viewer, blocked=self.creator)
+        # Constrain the pool to just our two jokes so the result is deterministic.
+        others = list(Joke.all_objects.exclude(pk__in=[blocked_j.pk, visible_j.pk]).values_list('pk', flat=True))
+        from jokes.recommendations import get_personalized_joke
+        result = get_personalized_joke(
+            self.viewer, exclude_joke_ids=others,
+            allowed_tiers=frozenset({'tier_1', 'tier_2', 'tier_3'}),
+        )
+        self.assertEqual(result.pk, visible_j.pk)
+
+    def test_mystery_pool_excludes_blocked_creator(self):
+        from jokes.views import _mystery_pool_for_user
+        other = User.objects.create_user(username='ot2@t.com', email='ot2@t.com', password='x')
+        blocked_j = _make_joke(self.fmt, self.age, self.lang, creator=self.creator)
+        visible_j = _make_joke(self.fmt, self.age, self.lang, creator=other)
+        UserBlock.objects.create(blocker=self.viewer, blocked=self.creator)
+        pool, _ = _mystery_pool_for_user(self.viewer, allowed=frozenset({'tier_1'}))
+        ids = set(pool.values_list('pk', flat=True))
+        self.assertIn(visible_j.pk, ids)
+        self.assertNotIn(blocked_j.pk, ids)
+
+
 class ModerationAdminTests(ModerationBase):
     def test_take_down_joke_removes_and_resolves_reports(self):
         j = _make_joke(self.fmt, self.age, self.lang, creator=self.creator)
