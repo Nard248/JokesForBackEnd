@@ -97,8 +97,10 @@ class Source(models.Model):
 class Joke(models.Model):
     """Main joke model with rich metadata for search and filtering"""
 
-    # Manager
+    # Manager. `objects` hides removed jokes globally (takedown enforcement);
+    # `all_objects` is unfiltered for admin/moderation (view/restore removed).
     objects = JokeManager()
+    all_objects = models.Manager()
 
     # Content
     text = models.TextField(help_text="Full joke text for one-liners or complete jokes")
@@ -138,6 +140,14 @@ class Joke(models.Model):
         db_index=True,
         help_text='Content classification tier for compliance'
     )
+
+    # Moderation takedown (Wave 2). Removed jokes are excluded from all viewer
+    # read paths but retained for audit/appeal (not deleted). Set via admin triage.
+    is_removed = models.BooleanField(
+        default=False, db_index=True,
+        help_text='Removed by moderation; hidden from all users but kept for audit.',
+    )
+    removed_at = models.DateTimeField(null=True, blank=True)
 
     # P10: knock-knock dialogue storage. Null for non-knock formats. Frontend
     # renders one bubble per line; even/odd indices alternate speaker (A/B).

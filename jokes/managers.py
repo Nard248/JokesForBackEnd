@@ -4,7 +4,15 @@ from django.db.models import Count, Q
 
 
 class JokeManager(models.Manager):
-    """Custom manager for Joke model with full-text search capabilities."""
+    """Custom manager for Joke model with full-text search capabilities.
+
+    Takedowns are global: get_queryset() excludes is_removed=True so a moderated
+    joke never serves through the default manager on ANY read path. Admin and
+    moderation use `Joke.all_objects` (unfiltered) to view/restore removed jokes.
+    """
+
+    def get_queryset(self):
+        return super().get_queryset().filter(is_removed=False)
 
     def search(self, query_text=None, filters=None, ordering=None, allowed_tiers=None):
         """

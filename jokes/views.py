@@ -74,6 +74,7 @@ from .serving import allowed_tiers
 from .identity import (
     public_display_name, public_handle, normalize_handle, is_valid_handle,
 )
+from .moderation import visible_jokes, is_blocked_between, hidden_user_ids
 from .serializers import (
     JokeSerializer,
     FormatSerializer,
@@ -126,11 +127,13 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
 
     def get_queryset(self):
         """Optimized queryset with eager loading for nested serializer."""
-        return Joke.objects.filter(
+        qs = Joke.objects.filter(
             content_tier__in=allowed_tiers(self.request)
         ).select_related(
             'format', 'age_rating', 'language', 'source'
         ).prefetch_related('tones', 'context_tags', 'culture_tags')
+        # Moderation: hide removed jokes (global) + blocked users' jokes (per-viewer).
+        return visible_jokes(qs, self.request)
 
     def retrieve(self, request, *args, **kwargs):
         """Log a JokeView (P5) on retrieve with 60s debouncing per (user, joke)."""
@@ -277,6 +280,12 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
                     status=status.HTTP_400_BAD_REQUEST,
                 )
             queryset = vibe.filter_jokes(queryset)
+
+        # Moderation: hide jokes by users blocked-by/blocking the viewer (removed
+        # jokes are already excluded by the default manager).
+        hidden = hidden_user_ids(request.user)
+        if hidden:
+            queryset = queryset.exclude(creator_id__in=hidden)
 
         # Paginate results
         page = self.paginate_queryset(queryset)
@@ -1672,6 +1681,20 @@ class ContentReportView(generics.CreateAPIView):
     permission_classes = [IsAuthenticated]
     serializer_class = ContentReportSerializer
 
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        # Dedup: one pending report per (reporter, joke) — repeat returns the
+        # existing one (200) instead of letting users stack the queue.
+        existing = ContentReport.objects.filter(
+            reporter=request.user, joke=serializer.validated_data['joke'], status='pending',
+        ).first()
+        if existing:
+            return Response(self.get_serializer(existing).data, status=status.HTTP_200_OK)
+        self.perform_create(serializer)
+        headers = self.get_success_headers(serializer.data)
+        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+
     def perform_create(self, serializer):
         instance = serializer.save(reporter=self.request.user)
         from audit.services import record_audit
@@ -1697,6 +1720,10 @@ class UserBlockView(APIView):
         if blocked_user == request.user:
             return Response({'detail': 'Cannot block yourself.'}, status=status.HTTP_400_BAD_REQUEST)
         UserBlock.objects.get_or_create(blocker=request.user, blocked=blocked_user)
+        # Blocking severs any follow relationship in both directions.
+        from follows.models import Follow
+        Follow.objects.filter(follower=request.user, creator=blocked_user).delete()
+        Follow.objects.filter(follower=blocked_user, creator=request.user).delete()
         from audit.services import record_audit
         record_audit(request, 'block', outcome='success', actor=request.user,
                      target_type='user', target_id=str(user_id))
@@ -1708,6 +1735,20 @@ class UserBlockView(APIView):
         record_audit(request, 'unblock', outcome='success', actor=request.user,
                      target_type='user', target_id=str(user_id))
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+class MyBlocksView(APIView):
+    """GET /users/me/blocks/ — the users I've blocked (for self-management UI)."""
+
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        from follows.serializers import PublicUserSerializer
+        from django.contrib.auth import get_user_model
+        User = get_user_model()
+        blocked_ids = UserBlock.objects.filter(blocker=request.user).values_list('blocked_id', flat=True)
+        blocked = User.objects.filter(pk__in=blocked_ids).select_related('profile').order_by('id')
+        return Response({'results': PublicUserSerializer(blocked, many=True, context={'request': request}).data})
 
 
 class UserAccountDeleteView(APIView):

@@ -66,6 +66,7 @@ urlpatterns = [
 
     # Compliance & Account Management (Phase 6)
     path('reports/', views.ContentReportView.as_view(), name='content-report'),
+    path('users/me/blocks/', views.MyBlocksView.as_view(), name='my-blocks'),
     path('users/<int:user_id>/block/', views.UserBlockView.as_view(), name='user-block'),
     path('users/me/', views.UserAccountDeleteView.as_view(), name='user-account-delete'),
     path('users/me/data-export/', views.DataExportView.as_view(), name='data-export'),

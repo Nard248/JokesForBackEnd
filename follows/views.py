@@ -10,6 +10,7 @@ from rest_framework.views import APIView
 from follows import services
 from follows.models import Follow
 from follows.serializers import PublicUserSerializer, FollowStatusSerializer
+from jokes.moderation import hidden_user_ids
 
 User = get_user_model()
 
@@ -63,7 +64,11 @@ class FollowersListView(APIView):
             .order_by('-created_at')
             .values_list('follower_id', flat=True)
         )
-        followers = User.objects.filter(pk__in=follower_ids).order_by('id')
+        followers = (
+            User.objects.filter(pk__in=follower_ids)
+            .exclude(pk__in=hidden_user_ids(request.user))
+            .order_by('id')
+        )
         paginator = PageNumberPagination()
         paginator.page_size = 10
         page = paginator.paginate_queryset(followers, request)
@@ -81,7 +86,11 @@ class MyFollowingView(APIView):
             .order_by('-created_at')
             .values_list('creator_id', flat=True)
         )
-        creators = User.objects.filter(pk__in=creator_ids).order_by('id')
+        creators = (
+            User.objects.filter(pk__in=creator_ids)
+            .exclude(pk__in=hidden_user_ids(request.user))
+            .order_by('id')
+        )
         paginator = PageNumberPagination()
         paginator.page_size = 10
         page = paginator.paginate_queryset(creators, request)
