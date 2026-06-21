@@ -1,17 +1,28 @@
-"""Wave 2 moderation tests: takedown enforcement, blocks, follow side-effects, report dedup."""
+"""Wave 2 moderation tests: takedown enforcement, blocks, follow side-effects, report dedup, admin triage."""
 from unittest.mock import patch
 
+from django.contrib.admin.sites import AdminSite
 from django.contrib.auth import get_user_model
-from django.test import TestCase
+from django.contrib.messages.storage.fallback import FallbackStorage
+from django.test import RequestFactory, TestCase
 from django.utils import timezone
 from rest_framework.test import APIClient
 
+from jokes.admin import ContentReportAdmin, JokeAdmin
 from jokes.models import Format, AgeRating, Language, Joke, ContentReport, UserBlock
 from jokes.moderation import hidden_user_ids, is_blocked_between, visible_jokes
 from follows import services as follow_services
 from follows.models import Follow
 
 User = get_user_model()
+
+
+def _admin_request(user):
+    req = RequestFactory().post('/')
+    req.user = user
+    req.session = {}
+    req._messages = FallbackStorage(req)
+    return req
 
 
 def _make_joke(fmt, age, lang, creator=None, text='Test', content_tier='tier_1', is_removed=False):
@@ -136,3 +147,42 @@ class ReportDedupTests(ModerationBase):
         r2 = client.post('/api/v1/reports/', {'joke': j.pk, 'reason': 'spam'}, format='json')
         self.assertEqual(r2.status_code, 200)
         self.assertEqual(ContentReport.objects.filter(reporter=self.viewer, joke=j).count(), 1)
+
+
+class ModerationAdminTests(ModerationBase):
+    def test_take_down_joke_removes_and_resolves_reports(self):
+        j = _make_joke(self.fmt, self.age, self.lang, creator=self.creator)
+        ContentReport.objects.create(reporter=self.viewer, joke=j, reason='spam', status='pending')
+        admin_obj = ContentReportAdmin(ContentReport, AdminSite())
+        admin_obj.take_down_joke(_admin_request(self.viewer), ContentReport.objects.filter(joke=j))
+        reloaded = Joke.all_objects.get(pk=j.pk)
+        self.assertTrue(reloaded.is_removed)
+        self.assertIsNotNone(reloaded.removed_at)
+        self.assertFalse(Joke.objects.filter(pk=j.pk).exists())
+        report = ContentReport.objects.get(joke=j)
+        self.assertEqual(report.status, 'resolved')
+        self.assertIsNotNone(report.resolved_at)
+
+    def test_dismiss_reports_leaves_joke_untouched(self):
+        j = _make_joke(self.fmt, self.age, self.lang, creator=self.creator)
+        r = ContentReport.objects.create(reporter=self.viewer, joke=j, reason='spam', status='pending')
+        admin_obj = ContentReportAdmin(ContentReport, AdminSite())
+        admin_obj.dismiss_reports(_admin_request(self.viewer), ContentReport.objects.filter(pk=r.pk))
+        r.refresh_from_db()
+        self.assertEqual(r.status, 'dismissed')
+        self.assertIsNotNone(r.resolved_at)
+        self.assertFalse(Joke.all_objects.get(pk=j.pk).is_removed)
+
+    def test_restore_jokes_action(self):
+        j = _make_joke(self.fmt, self.age, self.lang, creator=self.creator, is_removed=True)
+        admin_obj = JokeAdmin(Joke, AdminSite())
+        admin_obj.restore_jokes(_admin_request(self.viewer), Joke.all_objects.filter(pk=j.pk))
+        j.refresh_from_db()
+        self.assertFalse(j.is_removed)
+        self.assertIsNone(j.removed_at)
+
+    def test_joke_admin_queryset_includes_removed(self):
+        j = _make_joke(self.fmt, self.age, self.lang, creator=self.creator, is_removed=True)
+        admin_obj = JokeAdmin(Joke, AdminSite())
+        qs = admin_obj.get_queryset(_admin_request(self.viewer))
+        self.assertIn(j.pk, set(qs.values_list('pk', flat=True)))
