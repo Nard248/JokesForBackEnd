@@ -1,6 +1,8 @@
 # Wave 2 — Moderation (design)
 
-**Date:** 2026-06-20 · **Status:** in progress · launch-gating (CD7, pre-UGC compliance)
+**Date:** 2026-06-20 · **Status:** ✅ COMPLETE (all 3 phases merged to local main, NOT pushed) · launch-gating (CD7, pre-UGC compliance)
+
+> Done 2026-06-20/21. Backend phases A+B (`bcdeb54`, 387 tests): takedown + block enforcement + admin triage. Frontend phase C (`751f6f3`, 466 tests): report modal, block button, blocked-users list. Block-exclusion is applied at feed + creator profile + follow lists (extendable to daily-joke/mystery-box/packs later; takedowns are global via the manager so those are already covered for removed jokes).
 
 ## What already exists (Wave 1 "Phase 6")
 - `ContentReport` model — reporter, `joke` FK, `reason` (offensive/inappropriate/spam/copyright/harassment/other), `description`, `status` (pending/reviewed/resolved/dismissed), `resolved_at`, `created_at`; indexed on (status, created_at).
