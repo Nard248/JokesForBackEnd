@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.db import transaction
+from django.utils import timezone
 from .models import (
     Joke, Format, AgeRating, Tone, ContextTag, Language, CultureTag, Source,
     UserPreference, Collection, SavedJoke, DailyJoke, JokeRating, ShareEvent,
@@ -56,17 +57,28 @@ class SourceAdmin(admin.ModelAdmin):
 
 @admin.register(Joke)
 class JokeAdmin(admin.ModelAdmin):
-    list_display = ['__str__', 'format', 'age_rating', 'language', 'created_at']
-    list_filter = ['format', 'age_rating', 'tones', 'context_tags', 'language']
+    list_display = ['__str__', 'format', 'age_rating', 'language', 'is_removed', 'created_at']
+    list_filter = ['is_removed', 'format', 'age_rating', 'tones', 'context_tags', 'language']
     search_fields = ['text', 'setup', 'punchline']
     filter_horizontal = ['tones', 'context_tags', 'culture_tags']
-    readonly_fields = ['created_at', 'updated_at']
+    readonly_fields = ['created_at', 'updated_at', 'removed_at']
+    actions = ['restore_jokes']
     fieldsets = [
         ('Content', {'fields': ['text', 'setup', 'punchline']}),
         ('Classification', {'fields': ['format', 'age_rating', 'content_tier', 'language', 'source']}),
         ('Tags', {'fields': ['tones', 'context_tags', 'culture_tags']}),
+        ('Moderation', {'fields': ['is_removed', 'removed_at']}),
         ('Metadata', {'fields': ['created_at', 'updated_at'], 'classes': ['collapse']}),
     ]
+
+    def get_queryset(self, request):
+        # Admin must see removed jokes (the default manager hides them).
+        return Joke.all_objects.get_queryset()
+
+    @admin.action(description='Restore selected jokes (un-remove)')
+    def restore_jokes(self, request, queryset):
+        n = queryset.update(is_removed=False, removed_at=None)
+        self.message_user(request, f'Restored {n} joke(s).')
 
 
 @admin.register(UserPreference)
@@ -231,15 +243,52 @@ class UserAchievementAdmin(admin.ModelAdmin):
 
 @admin.register(ContentReport)
 class ContentReportAdmin(admin.ModelAdmin):
-    list_display = ['reporter', 'joke_preview', 'reason', 'status', 'created_at']
+    list_display = ['reporter', 'joke_preview', 'reason', 'status', 'joke_removed', 'created_at']
     list_filter = ['status', 'reason', 'created_at']
     search_fields = ['reporter__email', 'joke__text', 'description']
     raw_id_fields = ['joke']
-    readonly_fields = ['created_at']
+    readonly_fields = ['created_at', 'resolved_at']
+    actions = ['take_down_joke', 'dismiss_reports', 'mark_resolved']
+
+    def get_queryset(self, request):
+        # Reports may point at already-removed jokes; the FK uses the base manager
+        # so this is fine, but select_related keeps the changelist efficient.
+        return super().get_queryset(request).select_related('joke', 'reporter')
 
     def joke_preview(self, obj):
         return obj.joke.text[:50] + '...' if len(obj.joke.text) > 50 else obj.joke.text
     joke_preview.short_description = 'Joke'
+
+    @admin.display(boolean=True, description='Joke removed')
+    def joke_removed(self, obj):
+        return obj.joke.is_removed
+
+    @admin.action(description='Take down reported joke (remove + resolve its reports)')
+    def take_down_joke(self, request, queryset):
+        from audit.services import record_audit
+        joke_ids = set(queryset.values_list('joke_id', flat=True))
+        now = timezone.now()
+        removed = Joke.all_objects.filter(pk__in=joke_ids, is_removed=False).update(
+            is_removed=True, removed_at=now,
+        )
+        # Resolve every pending/reviewed report against those jokes.
+        ContentReport.objects.filter(joke_id__in=joke_ids).exclude(
+            status__in=['resolved', 'dismissed']
+        ).update(status='resolved', resolved_at=now)
+        for jid in joke_ids:
+            record_audit(request, 'content_takedown', outcome='success', actor=request.user,
+                         target_type='joke', target_id=str(jid))
+        self.message_user(request, f'Removed {removed} joke(s) and resolved their reports.')
+
+    @admin.action(description='Dismiss selected reports (no action on joke)')
+    def dismiss_reports(self, request, queryset):
+        n = queryset.update(status='dismissed', resolved_at=timezone.now())
+        self.message_user(request, f'Dismissed {n} report(s).')
+
+    @admin.action(description='Mark selected reports resolved')
+    def mark_resolved(self, request, queryset):
+        n = queryset.update(status='resolved', resolved_at=timezone.now())
+        self.message_user(request, f'Marked {n} report(s) resolved.')
 
 
 @admin.register(UserBlock)
