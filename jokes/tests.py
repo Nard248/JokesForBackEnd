@@ -318,6 +318,67 @@ class SubmissionApiTests(APITestCase):
         self.assertEqual(body['culture_tags'], [self.culture.slug])
 
 
+class DraftCreateApiTests(APITestCase):
+    """POST /api/v1/jokes/my-drafts/ — minimal draft creation (no full validation)."""
+
+    @classmethod
+    def setUpTestData(cls):
+        cls.user = User.objects.create_user(
+            username='draftcreator', email='draftcreator@example.com', password='pw',
+        )
+
+    def setUp(self):
+        self.client.force_authenticate(user=self.user)
+
+    def test_post_creates_draft_for_user(self):
+        resp = self.client.post(
+            '/api/v1/jokes/my-drafts/', {'format': 'oneliner'}, format='json'
+        )
+        self.assertEqual(resp.status_code, 201, resp.content)
+        body = resp.json()
+        # Returns the list/GET shape so the frontend fromDTO works.
+        self.assertEqual(body['status'], 'draft')
+        self.assertEqual(body['format'], 'oneliner')
+        self.assertIn('id', body)
+        sub = JokeSubmission.objects.get(id=body['id'])
+        self.assertEqual(sub.user, self.user)
+        self.assertEqual(sub.status, 'draft')
+        self.assertEqual(sub.format.slug, 'oneliner')
+        # Non-null FKs are backfilled with defaults.
+        self.assertIsNotNone(sub.age_rating)
+        self.assertIsNotNone(sub.language)
+
+    def test_created_draft_appears_in_users_list(self):
+        create = self.client.post(
+            '/api/v1/jokes/my-drafts/', {'format': 'oneliner'}, format='json'
+        )
+        draft_id = create.json()['id']
+        listing = self.client.get('/api/v1/jokes/my-drafts/')
+        self.assertEqual(listing.status_code, 200)
+        results = listing.json()
+        rows = results['results'] if isinstance(results, dict) else results
+        self.assertIn(draft_id, [r['id'] for r in rows])
+
+    def test_post_unauthenticated_401(self):
+        self.client.force_authenticate(user=None)
+        resp = self.client.post(
+            '/api/v1/jokes/my-drafts/', {'format': 'oneliner'}, format='json'
+        )
+        self.assertEqual(resp.status_code, 401)
+
+    def test_post_missing_format_400(self):
+        resp = self.client.post('/api/v1/jokes/my-drafts/', {}, format='json')
+        self.assertEqual(resp.status_code, 400)
+        self.assertIn('format', resp.json())
+
+    def test_post_unknown_format_400(self):
+        resp = self.client.post(
+            '/api/v1/jokes/my-drafts/', {'format': 'nope-not-real'}, format='json'
+        )
+        self.assertEqual(resp.status_code, 400)
+        self.assertIn('format', resp.json())
+
+
 class FormatSchemaApiTests(APITestCase):
     def test_formats_endpoint_exposes_per_format_schema(self):
         resp = self.client.get('/api/v1/formats/')

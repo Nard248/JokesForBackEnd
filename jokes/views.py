@@ -1168,8 +1168,15 @@ class JokeSubmitView(generics.CreateAPIView):
         )
 
 
-class JokeDraftListView(generics.ListAPIView):
-    """GET /jokes/my-drafts/ — List user's drafts and submissions."""
+class JokeDraftListView(generics.ListCreateAPIView):
+    """GET/POST /jokes/my-drafts/
+
+    GET: List the user's drafts and submissions.
+    POST: Create a minimal draft for the user from a `format` slug. Drafts are
+    allowed to be incomplete — FORMAT_RULES validation only runs at submit
+    (JokeDraftSubmitView), not here. Returns the same shape the list returns so
+    the frontend's fromDTO works.
+    """
 
     permission_classes = [IsAuthenticated]
     serializer_class = JokeSubmissionListSerializer
@@ -1178,6 +1185,63 @@ class JokeDraftListView(generics.ListAPIView):
         return JokeSubmission.objects.filter(
             user=self.request.user
         ).select_related('format', 'age_rating', 'published_joke').prefetch_related('tones', 'context_tags', 'culture_tags')
+
+    def create(self, request, *args, **kwargs):
+        """Create a minimal draft owned by the user from a `format` slug.
+
+        The `format` is required (a Format looked up by slug). The non-null
+        age_rating/language FKs are backfilled with sensible defaults (an
+        optional `age_rating` slug is honored if supplied). No content/format
+        validation is enforced — drafts may be incomplete.
+        """
+        format_slug = (request.data.get('format') or '').strip()
+        if not format_slug:
+            return Response(
+                {'format': ['This field is required.']},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+        try:
+            fmt = Format.objects.get(slug=format_slug)
+        except Format.DoesNotExist:
+            return Response(
+                {'format': [f"Unknown format '{format_slug}'."]},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        # age_rating is a non-null FK; honor a supplied slug, else default.
+        age_rating = None
+        age_rating_slug = (request.data.get('age_rating') or '').strip()
+        if age_rating_slug:
+            age_rating = AgeRating.objects.filter(slug=age_rating_slug).first()
+            if age_rating is None:
+                return Response(
+                    {'age_rating': [f"Unknown age rating '{age_rating_slug}'."]},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
+        if age_rating is None:
+            age_rating = AgeRating.objects.order_by('min_age', 'name').first()
+
+        # language is a non-null FK; default to English, fall back to any.
+        language = (
+            Language.objects.filter(code='en').first()
+            or Language.objects.order_by('code').first()
+        )
+
+        if age_rating is None or language is None:
+            return Response(
+                {'detail': 'Server is missing default age rating / language lookups.'},
+                status=status.HTTP_503_SERVICE_UNAVAILABLE,
+            )
+
+        draft = JokeSubmission.objects.create(
+            user=request.user,
+            format=fmt,
+            age_rating=age_rating,
+            language=language,
+            status='draft',
+        )
+        serializer = self.get_serializer(draft)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
 class JokeDraftDetailView(generics.RetrieveUpdateDestroyAPIView):

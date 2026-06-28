@@ -33,7 +33,7 @@ def _plan_from_price_id(price_id: str):
 def _sync_is_premium(user, entitled: bool):
     """Keep UserProfile.is_premium in sync as a denormalized read-cache."""
     try:
-        profile = user.userprofile
+        profile = user.profile
         if profile.is_premium != entitled:
             profile.is_premium = entitled
             profile.save(update_fields=['is_premium'])
