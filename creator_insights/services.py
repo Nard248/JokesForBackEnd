@@ -9,16 +9,24 @@ serving lock so a creator always sees all of their own content.
 """
 from datetime import timedelta
 
-from django.db.models import Count, Q
+from django.db.models import Avg, Count, Q
 from django.db.models.functions import ExtractHour
 from django.utils import timezone
 
 from jokes.models import (
     Joke, JokeView, JokeReaction, Favorite, SavedJoke, ShareEvent, JokeSubmission,
-    JokeImpression,
+    JokeImpression, JokeDwell,
 )
 from follows.models import Follow
 from jokes.identity import public_display_name, public_handle
+
+
+# A dwell sample counts as a real "read" once it crosses this many milliseconds
+# (vs. a brief glance). Used for read_rate / per-joke read_rate.
+READ_THRESHOLD_MS = 4000
+# A dwell sample with scroll_pct at/above this is treated as "completed"
+# (read all the way through — most meaningful for story-format jokes).
+COMPLETION_SCROLL_PCT = 90
 
 
 # ---------------------------------------------------------------------------
@@ -84,6 +92,27 @@ def _overview(jokes, since):
     # views ÷ impressions, null when no impressions, capped at 1.0.
     open_rate = min(total_views / impressions, 1.0) if impressions else None
 
+    # Dwell / read-time signal (audience telemetry, Phase 2).
+    dwell_qs = JokeDwell.objects.filter(joke__in=jokes)
+    if since:
+        dwell_qs = dwell_qs.filter(created_date__gte=since)
+    dwell_total = dwell_qs.count()
+    if dwell_total:
+        avg_ms = dwell_qs.aggregate(a=Avg('dwell_ms'))['a']
+        avg_read_seconds = round(avg_ms / 1000, 2) if avg_ms is not None else None
+        reads = dwell_qs.filter(dwell_ms__gte=READ_THRESHOLD_MS).count()
+        read_rate = round(reads / dwell_total, 4)
+    else:
+        avg_read_seconds = None
+        read_rate = None
+    # completion_rate is only defined over dwell rows that carry scroll_pct.
+    scroll_total = dwell_qs.filter(scroll_pct__isnull=False).count()
+    if scroll_total:
+        completed = dwell_qs.filter(scroll_pct__gte=COMPLETION_SCROLL_PCT).count()
+        completion_rate = round(completed / scroll_total, 4)
+    else:
+        completion_rate = None
+
     reaction_qs = JokeReaction.objects.filter(joke__in=jokes)
     if since:
         reaction_qs = reaction_qs.filter(created_at__date__gte=since)
@@ -129,6 +158,9 @@ def _overview(jokes, since):
         'unique_reach': unique_reach,
         'open_rate': open_rate,
         'payoff_rate': payoff_rate,
+        'avg_read_seconds': avg_read_seconds,
+        'read_rate': read_rate,
+        'completion_rate': completion_rate,
         'reactions': reactions,
         'favorites': favorites,
         'saves': saves,
@@ -217,11 +249,34 @@ def _top_jokes(jokes, since):
         )
         .order_by('-view_count')[:10]
     )
+    annotated = list(annotated)
+
+    # Per-joke dwell metrics computed in a separate, dwell-only aggregation so the
+    # multi-JOIN annotate above doesn't fan out / distort the averages.
+    top_ids = [j.id for j in annotated]
+    dwell_qs = JokeDwell.objects.filter(joke_id__in=top_ids)
+    if since:
+        dwell_qs = dwell_qs.filter(created_date__gte=since)
+    dwell_by_joke = {
+        row['joke_id']: row
+        for row in dwell_qs.values('joke_id').annotate(
+            avg_ms=Avg('dwell_ms'),
+            total=Count('id'),
+            reads=Count('id', filter=Q(dwell_ms__gte=READ_THRESHOLD_MS)),
+        )
+    }
 
     result = []
     for j in annotated:
         vc = j.view_count
         pc = j.payoff_count
+        d = dwell_by_joke.get(j.id)
+        if d and d['total']:
+            avg_read_seconds = round(d['avg_ms'] / 1000, 2) if d['avg_ms'] is not None else None
+            read_rate = round(d['reads'] / d['total'], 4)
+        else:
+            avg_read_seconds = None
+            read_rate = None
         result.append({
             'id': j.id,
             'text': j.text,
@@ -231,6 +286,8 @@ def _top_jokes(jokes, since):
             'saves': j.save_count,
             'shares': j.share_count,
             'payoff_rate': round(pc / vc, 4) if vc else None,
+            'avg_read_seconds': avg_read_seconds,
+            'read_rate': read_rate,
         })
     return result
 

@@ -20,7 +20,7 @@ from rest_framework.test import APIClient
 
 from jokes.models import (
     Format, AgeRating, Language, Joke, JokeSubmission,
-    JokeView, JokeImpression,
+    JokeView, JokeImpression, JokeDwell,
 )
 from creator_insights.services import build_creator_insights
 
@@ -145,6 +145,107 @@ class TelemetryIngestTests(TestCase):
         self.assertEqual(resp.json()['accepted'], 50)
         self.assertEqual(JokeImpression.objects.count(), 50)
 
+    # --- Phase 2: dwell ---
+
+    def test_dwell_creates_row(self):
+        resp = self.client.post(
+            INGEST_URL,
+            {'events': [
+                {'joke': self.joke.id, 'type': 'dwell', 'value': 5000,
+                 'scroll_pct': 75, 'source': 'feed'},
+            ]},
+            format='json',
+        )
+        self.assertEqual(resp.status_code, 202)
+        self.assertEqual(resp.json()['accepted'], 1)
+        d = JokeDwell.objects.get(user=self.user, joke=self.joke)
+        self.assertEqual(d.dwell_ms, 5000)
+        self.assertEqual(d.scroll_pct, 75)
+        self.assertEqual(d.source, 'feed')
+
+    def test_dwell_value_clamped_to_max(self):
+        resp = self.client.post(
+            INGEST_URL,
+            {'events': [{'joke': self.joke.id, 'type': 'dwell', 'value': 999999999}]},
+            format='json',
+        )
+        self.assertEqual(resp.json()['accepted'], 1)
+        self.assertEqual(JokeDwell.objects.get().dwell_ms, 600000)
+
+    def test_dwell_below_min_skipped(self):
+        resp = self.client.post(
+            INGEST_URL,
+            {'events': [{'joke': self.joke.id, 'type': 'dwell', 'value': 300}]},
+            format='json',
+        )
+        self.assertEqual(resp.json()['accepted'], 0)
+        self.assertEqual(JokeDwell.objects.count(), 0)
+
+    def test_dwell_scroll_pct_clamped(self):
+        resp = self.client.post(
+            INGEST_URL,
+            {'events': [
+                {'joke': self.joke.id, 'type': 'dwell', 'value': 5000, 'scroll_pct': 250},
+                {'joke': self.joke2.id, 'type': 'dwell', 'value': 5000, 'scroll_pct': -10},
+            ]},
+            format='json',
+        )
+        self.assertEqual(resp.json()['accepted'], 2)
+        self.assertEqual(JokeDwell.objects.get(joke=self.joke).scroll_pct, 100)
+        self.assertEqual(JokeDwell.objects.get(joke=self.joke2).scroll_pct, 0)
+
+    def test_dwell_scroll_pct_optional(self):
+        resp = self.client.post(
+            INGEST_URL,
+            {'events': [{'joke': self.joke.id, 'type': 'dwell', 'value': 5000}]},
+            format='json',
+        )
+        self.assertEqual(resp.json()['accepted'], 1)
+        self.assertIsNone(JokeDwell.objects.get().scroll_pct)
+
+    def test_dwell_bad_value_skipped(self):
+        resp = self.client.post(
+            INGEST_URL,
+            {'events': [
+                {'joke': self.joke.id, 'type': 'dwell'},                    # missing value
+                {'joke': self.joke.id, 'type': 'dwell', 'value': 'abc'},    # non-int
+                {'joke': self.joke.id, 'type': 'dwell', 'value': True},     # bool, not int
+            ]},
+            format='json',
+        )
+        self.assertEqual(resp.json()['accepted'], 0)
+        self.assertEqual(JokeDwell.objects.count(), 0)
+
+    def test_dwell_appends_multiple_rows(self):
+        # Unlike impressions, dwell is NOT deduped — every sample is a row.
+        events = [{'joke': self.joke.id, 'type': 'dwell', 'value': 5000}] * 3
+        resp = self.client.post(INGEST_URL, {'events': events}, format='json')
+        self.assertEqual(resp.json()['accepted'], 3)
+        self.assertEqual(
+            JokeDwell.objects.filter(user=self.user, joke=self.joke).count(), 3
+        )
+
+    def test_mixed_batch_all_handled(self):
+        view = JokeView.objects.create(
+            user=self.user, joke=self.joke, source='explore',
+            viewed_date=timezone.now().date(), revealed_punchline=False,
+        )
+        resp = self.client.post(
+            INGEST_URL,
+            {'events': [
+                {'joke': self.joke.id, 'type': 'impression', 'source': 'feed'},
+                {'joke': self.joke.id, 'type': 'reveal'},
+                {'joke': self.joke.id, 'type': 'dwell', 'value': 5000, 'scroll_pct': 95},
+            ]},
+            format='json',
+        )
+        self.assertEqual(resp.status_code, 202)
+        self.assertEqual(resp.json()['accepted'], 3)
+        self.assertEqual(JokeImpression.objects.count(), 1)
+        view.refresh_from_db()
+        self.assertTrue(view.revealed_punchline)
+        self.assertEqual(JokeDwell.objects.count(), 1)
+
 
 class TelemetryInsightsIntegrationTests(TestCase):
 
@@ -209,3 +310,42 @@ class TelemetryInsightsIntegrationTests(TestCase):
 
         ov_after = build_creator_insights(self.creator, 'month')['overview']
         self.assertGreater(ov_after['payoff_rate'], 0)
+
+    # --- Phase 2: dwell-driven read metrics ---
+
+    def test_read_metrics_null_without_dwell(self):
+        ov = build_creator_insights(self.creator, 'month')['overview']
+        self.assertIsNone(ov['avg_read_seconds'])
+        self.assertIsNone(ov['read_rate'])
+        self.assertIsNone(ov['completion_rate'])
+
+    def test_read_metrics_computed(self):
+        today = timezone.now().date()
+        # 4 dwell samples: 2000, 6000, 8000, 10000 ms -> avg 6.5s.
+        # READ_THRESHOLD_MS=4000 -> 3 of 4 are reads -> read_rate 0.75.
+        # scroll_pct on 3 rows: 50, 95, 100 -> 2 of 3 >= 90 -> completion 0.6667.
+        for ms, sp in [(2000, 50), (6000, 95), (8000, 100), (10000, None)]:
+            JokeDwell.objects.create(
+                user=self.viewer1, joke=self.joke, dwell_ms=ms,
+                scroll_pct=sp, source='feed', created_date=today,
+            )
+        ov = build_creator_insights(self.creator, 'month')['overview']
+        self.assertEqual(ov['avg_read_seconds'], 6.5)
+        self.assertEqual(ov['read_rate'], 0.75)
+        self.assertEqual(ov['completion_rate'], round(2 / 3, 4))
+
+        # Per top_jokes row carries avg_read_seconds + read_rate too.
+        row = build_creator_insights(self.creator, 'month')['top_jokes'][0]
+        self.assertEqual(row['avg_read_seconds'], 6.5)
+        self.assertEqual(row['read_rate'], 0.75)
+
+    def test_completion_rate_null_when_no_scroll(self):
+        today = timezone.now().date()
+        JokeDwell.objects.create(
+            user=self.viewer1, joke=self.joke, dwell_ms=5000,
+            scroll_pct=None, source='feed', created_date=today,
+        )
+        ov = build_creator_insights(self.creator, 'month')['overview']
+        self.assertEqual(ov['avg_read_seconds'], 5.0)
+        self.assertEqual(ov['read_rate'], 1.0)
+        self.assertIsNone(ov['completion_rate'])

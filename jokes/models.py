@@ -1082,6 +1082,54 @@ class JokeImpression(models.Model):
 
 
 # =============================================================================
+# JokeDwell — audience telemetry Phase 2: "user kept this joke visible for N ms
+# (and scrolled S%)". Powers read-time / read-rate / completion analytics.
+# Append-only (multiple rows per user/joke ok — we average/sum). Ingested in
+# bulk via POST /api/v1/telemetry/events (request-driven only).
+# =============================================================================
+
+class JokeDwell(models.Model):
+    """A user kept this joke's card/detail visible for ``dwell_ms`` milliseconds,
+    optionally scrolling ``scroll_pct`` of the way through (for long/story jokes).
+
+    Unlike JokeImpression this is intentionally NOT deduped — every dwell sample
+    is a row and we average / sum across them to compute read-time and
+    read-through metrics.
+    """
+
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='joke_dwells',
+    )
+    joke = models.ForeignKey(
+        Joke,
+        on_delete=models.CASCADE,
+        related_name='dwells',
+    )
+    dwell_ms = models.PositiveIntegerField()
+    # 0–100, optional read-through depth (most meaningful for long/story jokes).
+    scroll_pct = models.PositiveSmallIntegerField(null=True, blank=True)
+    source = models.CharField(max_length=16, default='other')
+    created_at = models.DateTimeField(auto_now_add=True)
+    created_date = models.DateField(db_index=True)
+
+    class Meta:
+        indexes = [
+            models.Index(fields=['joke', 'created_date']),
+        ]
+
+    def save(self, *args, **kwargs):
+        if not self.created_date:
+            from django.utils import timezone
+            self.created_date = timezone.now().date()
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f"{self.user.email} dwelt {self.dwell_ms}ms on joke {self.joke_id} @ {self.created_date}"
+
+
+# =============================================================================
 # Streak (P6 of Pivot Plan) — daily-return loop with forgiveness
 # =============================================================================
 
