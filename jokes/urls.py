@@ -58,6 +58,9 @@ urlpatterns = [
     # Insights (P9 of Pivot Plan)
     path('users/me/taste-profile/', views.TasteProfileView.as_view(), name='taste-profile'),
 
+    # Audience telemetry ingest (Phase 1) — bulk, fire-and-forget
+    path('telemetry/events', views.TelemetryIngestView.as_view(), name='telemetry-ingest'),
+
     # Trending & Discovery (Phase 5) — non-router endpoints
     path('tags/trending/', views.TagsTrendingView.as_view(), name='tags-trending'),
     path('tags/rising/', views.TagsRisingView.as_view(), name='tags-rising'),

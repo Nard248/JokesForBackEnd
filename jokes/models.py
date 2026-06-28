@@ -1019,6 +1019,69 @@ class JokeView(models.Model):
 
 
 # =============================================================================
+# JokeImpression — audience telemetry: "a real user saw this joke card in a
+# list/feed" (vs JokeView which is a detail-open). Powers reach / open-rate.
+# Ingested in bulk via POST /api/v1/telemetry/events (request-driven only).
+# =============================================================================
+
+class JokeImpression(models.Model):
+    """A user saw this joke's card in a list/feed surface (not a detail open).
+
+    Deduped to at most one row per (user, joke, created_date) at ingest time so
+    distinct-reach stays honest. This is the missing impression/reach signal:
+    JokeView is a detail-open, JokeImpression is a card-seen.
+    """
+
+    SOURCE_FEED = 'feed'
+    SOURCE_EXPLORE = 'explore'
+    SOURCE_SEARCH = 'search'
+    SOURCE_DAILY = 'daily'
+    SOURCE_PACK = 'pack'
+    SOURCE_OTHER = 'other'
+    SOURCE_CHOICES = [
+        (SOURCE_FEED,    'Feed'),
+        (SOURCE_EXPLORE, 'Explore'),
+        (SOURCE_SEARCH,  'Search'),
+        (SOURCE_DAILY,   'Daily'),
+        (SOURCE_PACK,    'Pack'),
+        (SOURCE_OTHER,   'Other'),
+    ]
+
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='joke_impressions',
+    )
+    joke = models.ForeignKey(
+        Joke,
+        on_delete=models.CASCADE,
+        related_name='impressions',
+    )
+    source = models.CharField(
+        max_length=16,
+        choices=SOURCE_CHOICES,
+        default=SOURCE_OTHER,
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    created_date = models.DateField(db_index=True)
+
+    class Meta:
+        indexes = [
+            models.Index(fields=['joke', 'created_date']),
+            models.Index(fields=['user', 'joke', 'created_date']),
+        ]
+
+    def save(self, *args, **kwargs):
+        if not self.created_date:
+            from django.utils import timezone
+            self.created_date = timezone.now().date()
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f"{self.user.email} saw joke {self.joke_id} @ {self.created_date}"
+
+
+# =============================================================================
 # Streak (P6 of Pivot Plan) — daily-return loop with forgiveness
 # =============================================================================
 

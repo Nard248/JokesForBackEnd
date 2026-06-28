@@ -63,6 +63,7 @@ from .models import (
     MysteryBoxRoll,
     JokeReaction,
     JokeView,
+    JokeImpression,
     Streak,
     StreakDay,
     JokePack,
@@ -2648,5 +2649,99 @@ class TasteProfileView(APIView):
             'top_formats': [{'label': r['joke__format__name'], 'count': r['c']} for r in top_formats],
             'daily_reads_28d': daily_reads_28d,
         })
+
+
+class TelemetryIngestView(APIView):
+    """Bulk, fire-and-forget audience-telemetry ingest.
+
+    POST /api/v1/telemetry/events
+    Body: {"events": [{"joke": <id>, "type": "impression"|"reveal", "source": "<str>"}]}
+
+    Request-driven only (no Celery/cron). Cheap: caps the batch, dedups
+    impressions to one per (user, joke, day), and never 500s on partial bad
+    data — bad/unknown events are skipped silently. Returns 202 + {"accepted": N}.
+    """
+    permission_classes = [IsAuthenticated]
+
+    MAX_BATCH = 50
+
+    @extend_schema(
+        request={
+            'application/json': {
+                'type': 'object',
+                'properties': {
+                    'events': {
+                        'type': 'array',
+                        'items': {
+                            'type': 'object',
+                            'properties': {
+                                'joke': {'type': 'integer'},
+                                'type': {'type': 'string', 'enum': ['impression', 'reveal']},
+                                'source': {'type': 'string'},
+                            },
+                        },
+                    },
+                },
+            }
+        },
+        responses={202: {'type': 'object', 'properties': {'accepted': {'type': 'integer'}}}},
+    )
+    def post(self, request):
+        events = request.data.get('events') or []
+        if not isinstance(events, list):
+            events = []
+        events = events[:self.MAX_BATCH]
+
+        user = request.user
+        today = timezone.now().date()
+        accepted = 0
+
+        for event in events:
+            try:
+                if not isinstance(event, dict):
+                    continue
+                joke_id = event.get('joke')
+                etype = event.get('type')
+                source = event.get('source') or 'other'
+                if not isinstance(source, str):
+                    source = 'other'
+                source = source[:16]
+
+                if joke_id is None or etype not in ('impression', 'reveal'):
+                    continue
+                if not Joke.objects.filter(pk=joke_id).exists():
+                    continue
+
+                if etype == 'impression':
+                    # Dedup to one impression per (user, joke, day).
+                    JokeImpression.objects.get_or_create(
+                        user=user,
+                        joke_id=joke_id,
+                        created_date=today,
+                        defaults={'source': source},
+                    )
+                    accepted += 1
+                else:  # 'reveal'
+                    view = (
+                        JokeView.objects.filter(user=user, joke_id=joke_id)
+                        .order_by('-viewed_at').first()
+                    )
+                    if view is not None:
+                        if not view.revealed_punchline:
+                            view.revealed_punchline = True
+                            view.save(update_fields=['revealed_punchline'])
+                    else:
+                        JokeView.objects.create(
+                            user=user,
+                            joke_id=joke_id,
+                            source=source,
+                            revealed_punchline=True,
+                        )
+                    accepted += 1
+            except Exception:
+                # Fire-and-forget: never fail the batch on one bad event.
+                continue
+
+        return Response({'accepted': accepted}, status=status.HTTP_202_ACCEPTED)
 
 
