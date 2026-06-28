@@ -101,6 +101,11 @@ class WebhookCheckoutCompletedTests(TestCase):
         self.assertEqual(sub.stripe_customer_id, 'cus_webhook_001')
         self.assertEqual(sub.plan.slug, 'creator_pro')
 
+        # Denormalized is_premium cache must be synced (regression: the sync
+        # used the wrong reverse accessor and silently no-op'd).
+        self.user.profile.refresh_from_db()
+        self.assertTrue(self.user.profile.is_premium)
+
         evt = ProcessedStripeEvent.objects.get(event_id=event.id)
         self.assertEqual(evt.event_type, 'checkout.session.completed')
 
