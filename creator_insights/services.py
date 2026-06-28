@@ -15,6 +15,7 @@ from django.utils import timezone
 
 from jokes.models import (
     Joke, JokeView, JokeReaction, Favorite, SavedJoke, ShareEvent, JokeSubmission,
+    JokeImpression,
 )
 from follows.models import Follow
 from jokes.identity import public_display_name, public_handle
@@ -74,6 +75,15 @@ def _overview(jokes, since):
     revealed_views = view_qs.filter(revealed_punchline=True).count()
     payoff_rate = (revealed_views / total_views) if total_views else None
 
+    # Impression / reach signal (audience telemetry, Phase 1).
+    impression_qs = JokeImpression.objects.filter(joke__in=jokes)
+    if since:
+        impression_qs = impression_qs.filter(created_date__gte=since)
+    impressions = impression_qs.count()
+    unique_reach = impression_qs.values('user').distinct().count()
+    # views ÷ impressions, null when no impressions, capped at 1.0.
+    open_rate = min(total_views / impressions, 1.0) if impressions else None
+
     reaction_qs = JokeReaction.objects.filter(joke__in=jokes)
     if since:
         reaction_qs = reaction_qs.filter(created_at__date__gte=since)
@@ -115,6 +125,9 @@ def _overview(jokes, since):
         'published_jokes': published_jokes,
         'reach': reach,
         'views': total_views,
+        'impressions': impressions,
+        'unique_reach': unique_reach,
+        'open_rate': open_rate,
         'payoff_rate': payoff_rate,
         'reactions': reactions,
         'favorites': favorites,
@@ -196,6 +209,11 @@ def _top_jokes(jokes, since):
                 ),
                 distinct=True,
             ),
+            impression_count=Count(
+                'impressions',
+                filter=Q(impressions__created_date__gte=since) if since else Q(),
+                distinct=True,
+            ),
         )
         .order_by('-view_count')[:10]
     )
@@ -208,6 +226,7 @@ def _top_jokes(jokes, since):
             'id': j.id,
             'text': j.text,
             'views': vc,
+            'impressions': j.impression_count,
             'reactions': j.reaction_count,
             'saves': j.save_count,
             'shares': j.share_count,
