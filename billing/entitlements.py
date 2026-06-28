@@ -16,7 +16,9 @@ from django.db.models import F
 # Registry: canonical list of gateable capabilities + their FREE defaults.
 # Editing this dict is the ONLY place a developer needs to touch to add a gate.
 KNOWN_FEATURES: dict[str, bool] = {
-    'creator_analytics': False,
+    # Creator analytics is free for all creators (matches the Free-plan card +
+    # original design — don't lock existing creators out of their own insights).
+    'creator_analytics': True,
     'daily_joke_preview': False,
     'mature_content_addon': False,
 }
