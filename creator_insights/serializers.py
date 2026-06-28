@@ -14,6 +14,9 @@ class OverviewSerializer(serializers.Serializer):
     unique_reach = serializers.IntegerField()
     open_rate = serializers.FloatField(allow_null=True)
     payoff_rate = serializers.FloatField(allow_null=True)
+    avg_read_seconds = serializers.FloatField(allow_null=True)
+    read_rate = serializers.FloatField(allow_null=True)
+    completion_rate = serializers.FloatField(allow_null=True)
     reactions = serializers.IntegerField()
     favorites = serializers.IntegerField()
     saves = serializers.IntegerField()
@@ -48,6 +51,8 @@ class TopJokeSerializer(serializers.Serializer):
     saves = serializers.IntegerField()
     shares = serializers.IntegerField()
     payoff_rate = serializers.FloatField(allow_null=True)
+    avg_read_seconds = serializers.FloatField(allow_null=True)
+    read_rate = serializers.FloatField(allow_null=True)
 
 
 class AudienceLabelCountSerializer(serializers.Serializer):

@@ -64,6 +64,7 @@ from .models import (
     JokeReaction,
     JokeView,
     JokeImpression,
+    JokeDwell,
     Streak,
     StreakDay,
     JokePack,
@@ -2655,15 +2656,23 @@ class TelemetryIngestView(APIView):
     """Bulk, fire-and-forget audience-telemetry ingest.
 
     POST /api/v1/telemetry/events
-    Body: {"events": [{"joke": <id>, "type": "impression"|"reveal", "source": "<str>"}]}
+    Body: {"events": [
+        {"joke": <id>, "type": "impression"|"reveal", "source": "<str>"},
+        {"joke": <id>, "type": "dwell", "value": <ms>, "scroll_pct": <0-100>, "source": "<str>"},
+    ]}
 
     Request-driven only (no Celery/cron). Cheap: caps the batch, dedups
-    impressions to one per (user, joke, day), and never 500s on partial bad
-    data — bad/unknown events are skipped silently. Returns 202 + {"accepted": N}.
+    impressions to one per (user, joke, day), appends dwell samples, and never
+    500s on partial bad data — bad/unknown events are skipped silently.
+    Returns 202 + {"accepted": N}.
     """
     permission_classes = [IsAuthenticated]
 
     MAX_BATCH = 50
+
+    # Dwell clamps (Phase 2): cap at 10 min, ignore sub-half-second blips as noise.
+    DWELL_MAX_MS = 600000
+    DWELL_MIN_MS = 500
 
     @extend_schema(
         request={
@@ -2676,7 +2685,9 @@ class TelemetryIngestView(APIView):
                             'type': 'object',
                             'properties': {
                                 'joke': {'type': 'integer'},
-                                'type': {'type': 'string', 'enum': ['impression', 'reveal']},
+                                'type': {'type': 'string', 'enum': ['impression', 'reveal', 'dwell']},
+                                'value': {'type': 'integer', 'description': 'dwell milliseconds (dwell events only)'},
+                                'scroll_pct': {'type': 'integer', 'description': '0-100 read-through depth (optional, dwell events only)'},
                                 'source': {'type': 'string'},
                             },
                         },
@@ -2707,12 +2718,37 @@ class TelemetryIngestView(APIView):
                     source = 'other'
                 source = source[:16]
 
-                if joke_id is None or etype not in ('impression', 'reveal'):
+                if joke_id is None or etype not in ('impression', 'reveal', 'dwell'):
                     continue
                 if not Joke.objects.filter(pk=joke_id).exists():
                     continue
 
-                if etype == 'impression':
+                if etype == 'dwell':
+                    # Append-only dwell sample. Clamp ms to [0, 10min];
+                    # drop sub-DWELL_MIN_MS blips as noise.
+                    raw = event.get('value')
+                    if not isinstance(raw, int) or isinstance(raw, bool):
+                        continue
+                    dwell_ms = max(0, min(raw, self.DWELL_MAX_MS))
+                    if dwell_ms < self.DWELL_MIN_MS:
+                        continue
+
+                    scroll_pct = event.get('scroll_pct')
+                    if isinstance(scroll_pct, bool) or not isinstance(scroll_pct, int):
+                        scroll_pct = None
+                    else:
+                        scroll_pct = max(0, min(scroll_pct, 100))
+
+                    JokeDwell.objects.create(
+                        user=user,
+                        joke_id=joke_id,
+                        dwell_ms=dwell_ms,
+                        scroll_pct=scroll_pct,
+                        source=source,
+                        created_date=today,
+                    )
+                    accepted += 1
+                elif etype == 'impression':
                     # Dedup to one impression per (user, joke, day).
                     JokeImpression.objects.get_or_create(
                         user=user,
@@ -2722,6 +2758,7 @@ class TelemetryIngestView(APIView):
                     )
                     accepted += 1
                 else:  # 'reveal'
+                    # (etype == 'reveal')
                     view = (
                         JokeView.objects.filter(user=user, joke_id=joke_id)
                         .order_by('-viewed_at').first()
