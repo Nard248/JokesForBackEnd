@@ -163,7 +163,12 @@ class Command(BaseCommand):
     #  Cleanup helpers                                                     #
     # ------------------------------------------------------------------ #
     def _seeded_users_qs(self, email):
-        return User.objects.filter(Q(email__iendswith=SEED_DOMAIN) | Q(email__iexact=email))
+        # Never match a real, pre-existing account: only fold in `email` when it
+        # is itself a seed-domain account, so --fresh can't delete a real user.
+        q = Q(email__iendswith=SEED_DOMAIN)
+        if email.lower().endswith(SEED_DOMAIN):
+            q |= Q(email__iexact=email)
+        return User.objects.filter(q)
 
     def _full_wipe(self, email):
         """--fresh: delete seeded jokes (cascades their engagement) then all
@@ -177,12 +182,12 @@ class Command(BaseCommand):
 
     def _reset_demo_dataset(self, creator):
         """Idempotent reset run on every invocation: drop the creator's seeded
-        jokes (cascades all engagement on them) and every viewer user (cascades
-        their engagement/follows)."""
+        jokes (cascades all engagement on them) and only THIS creator's viewers
+        (cascades their engagement/follows). Other seeded creators are untouched,
+        so demo + a real account can each hold their own rich dataset."""
         Joke.all_objects.filter(creator=creator).delete()
         (User.objects
-         .filter(email__iendswith=SEED_DOMAIN)
-         .exclude(pk=creator.pk)
+         .filter(email__istartswith=f'demo.viewer.{creator.pk}.')
          .delete())
 
     # ------------------------------------------------------------------ #
@@ -220,31 +225,48 @@ class Command(BaseCommand):
     def _get_or_make_creator(self, email, password):
         creator = User.objects.filter(email__iexact=email).first()
         username = email.split('@')[0].replace('.', '_')[:150]
+        is_seed_account = email.lower().endswith(SEED_DOMAIN)
+        # A real, pre-existing account (e.g. the owner's) is only ATTRIBUTED demo
+        # content — never re-credentialed, re-activated, or identity-clobbered.
+        preserve = creator is not None and not is_seed_account
         if creator is None:
             creator = User(username=username, email=email, is_active=True)
             creator.set_password(password)
             creator.save()  # triggers signals -> UserProfile / Preference / Collection
-        else:
+        elif not preserve:
             creator.is_active = True
             creator.set_password(password)
             creator.save()
+
         # Public identity for the profile/insights header.
         profile = creator.profile
-        profile.display_name = DISPLAY_NAME
-        # handle is globally unique; only claim it if free (or already ours).
-        clash = User.objects.filter(profile__handle=HANDLE).exclude(pk=creator.pk).exists()
-        profile.handle = HANDLE if not clash else f'{HANDLE}{creator.pk}'
+        if not preserve:
+            profile.display_name = DISPLAY_NAME
+            # handle is globally unique; only claim it if free (or already ours).
+            clash = User.objects.filter(profile__handle=HANDLE).exclude(pk=creator.pk).exists()
+            profile.handle = HANDLE if not clash else f'{HANDLE}{creator.pk}'
+            profile.bio = 'Serving up daily one-liners and slow-burn story jokes. Reply guy of the punchline.'
+        else:
+            # Fill only what's empty — never overwrite the real account's identity.
+            if not (profile.display_name or '').strip():
+                profile.display_name = DISPLAY_NAME
+            if not (profile.handle or '').strip():
+                clash = User.objects.filter(profile__handle=HANDLE).exclude(pk=creator.pk).exists()
+                profile.handle = HANDLE if not clash else f'{HANDLE}{creator.pk}'
+            if not (profile.bio or '').strip():
+                profile.bio = 'Serving up daily one-liners and slow-burn story jokes.'
         profile.public_profile = True
-        profile.bio = 'Serving up daily one-liners and slow-burn story jokes. Reply guy of the punchline.'
         profile.save()
         return creator
 
-    def _make_viewers(self, n):
-        """Lightweight fake viewers for distinct-interaction attribution."""
+    def _make_viewers(self, n, creator):
+        """Lightweight fake viewers for distinct-interaction attribution,
+        namespaced per creator (demo.viewer.<creator_pk>.<i>) so multiple seeded
+        creators never share — and therefore never wipe — each other's audience."""
         viewers = [
             User(
-                username=f'demo_viewer_{i}',
-                email=f'demo.viewer.{i}{SEED_DOMAIN}',
+                username=f'demo_viewer_{creator.pk}_{i}',
+                email=f'demo.viewer.{creator.pk}.{i}{SEED_DOMAIN}',
                 is_active=True,
                 password='!',  # unusable; viewers never log in
             )
@@ -297,7 +319,7 @@ class Command(BaseCommand):
         fmt, tones, themes, cultures, age, lang = self._lookup()
         creator = self._get_or_make_creator(email, password)
         self._reset_demo_dataset(creator)  # idempotent: clear prior jokes + viewers
-        viewers = self._make_viewers(n_viewers)
+        viewers = self._make_viewers(n_viewers, creator)
 
         today = timezone.localdate()
         # date + upward-trend scale for each day index (0 = oldest, days-1 = today)
