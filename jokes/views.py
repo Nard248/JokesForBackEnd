@@ -73,6 +73,7 @@ from .models import (
 )
 from .recommendations import get_personalized_joke, get_recently_shown_joke_ids
 from .serving import allowed_tiers
+from .submission_rules import validate_per_format
 from .identity import (
     public_display_name, public_handle, normalize_handle, is_valid_handle,
 )
@@ -1264,6 +1265,16 @@ class JokeDraftDetailView(generics.RetrieveUpdateDestroyAPIView):
             return JokeSubmissionCreateSerializer
         return JokeSubmissionListSerializer
 
+    def get_serializer_context(self):
+        # Draft autosave: a partial PATCH of an in-progress draft may still be
+        # missing required per-format fields. Skip that validation here so the
+        # editor's 800ms autosave persists (returns 200) instead of 400ing and
+        # losing typed text. Format validation is enforced at submit instead.
+        context = super().get_serializer_context()
+        if self.request.method == 'PATCH':
+            context['skip_format_validation'] = True
+        return context
+
     def update(self, request, *args, **kwargs):
         instance = self.get_object()
         if instance.status not in ('draft', 'rejected'):
@@ -1286,6 +1297,21 @@ class JokeDraftSubmitView(APIView):
                 {'detail': 'Can only submit drafts or rejected submissions for review.'},
                 status=status.HTTP_400_BAD_REQUEST,
             )
+
+        # Draft PATCH skips per-format validation so autosave never loses work;
+        # enforce it HERE so an incomplete draft can't reach moderation.
+        errors = validate_per_format(
+            submission.format.slug,
+            {
+                'text': submission.text,
+                'setup': submission.setup,
+                'punchline': submission.punchline,
+                'lines': submission.lines,
+            },
+        )
+        if errors:
+            return Response(errors, status=status.HTTP_400_BAD_REQUEST)
+
         submission.status = 'pending'
         submission.save(update_fields=['status', 'updated_at'])
         return Response({'id': submission.id, 'status': 'pending'})

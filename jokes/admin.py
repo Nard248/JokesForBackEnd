@@ -195,6 +195,13 @@ class JokeSubmissionAdmin(admin.ModelAdmin):
                     source_obj, _ = Source.objects.get_or_create(
                         name=submission.source or 'original'
                     )
+                    # COPPA age-gating keys entirely on content_tier (see
+                    # jokes/serving.allowed_tiers): tier_1 is universal and
+                    # reaches minors/anon; tier_2 is mature and adults-only.
+                    # Derive the tier from the submission's age rating so
+                    # adult/mature jokes (min_age >= 18) don't ship as universal.
+                    min_age = getattr(submission.age_rating, 'min_age', None) or 0
+                    content_tier = 'tier_2' if min_age >= 18 else 'tier_1'
                     joke = Joke.objects.create(
                         text=submission.text,
                         setup=submission.setup,
@@ -205,7 +212,7 @@ class JokeSubmissionAdmin(admin.ModelAdmin):
                         language=submission.language,
                         source=source_obj,
                         creator=submission.user,
-                        content_tier='tier_1',
+                        content_tier=content_tier,
                     )
                     joke.tones.set(submission.tones.all())
                     joke.context_tags.set(submission.context_tags.all())
