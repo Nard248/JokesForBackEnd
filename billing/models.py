@@ -39,6 +39,13 @@ class Plan(models.Model):
 
 class Subscription(models.Model):
     ACTIVE_STATUSES = {'active', 'trialing'}
+    # Statuses that represent a LIVE Stripe subscription that bills (or will bill).
+    # Used to guard checkout: opening a second Stripe subscription while one of
+    # these is live double-bills the customer. past_due is included because the
+    # subscription is still live in Stripe (payment retries in progress) — it is
+    # NOT canceled, so a fresh checkout would create a parallel paying sub.
+    # (Deliberately excludes free / canceled / incomplete_expired: no live sub.)
+    LIVE_PAID_STATUSES = {'active', 'trialing', 'past_due'}
 
     user = models.OneToOneField(
         settings.AUTH_USER_MODEL,
