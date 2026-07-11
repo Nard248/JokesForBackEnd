@@ -452,6 +452,12 @@ ACCOUNT_SIGNUP_FIELDS = ['email*', 'password1*', 'password2*']  # Email required
 ACCOUNT_EMAIL_VERIFICATION = 'none'  # Disable for development, 'mandatory' for production
 ACCOUNT_UNIQUE_EMAIL = True
 
+# COPPA age gate for the Google OAuth signup path. The adapter's
+# pre_social_login enforces DOB / under-13 on NEW users before any row commits,
+# and save_user persists DOB to user.profile.date_of_birth (mirroring the email
+# path). Returning/linked users are unaffected. See JokesForProject/adapters.py.
+SOCIALACCOUNT_ADAPTER = 'JokesForProject.adapters.SocialAccountAdapter'
+
 # Google OAuth settings
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
