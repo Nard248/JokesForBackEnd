@@ -55,6 +55,31 @@ class CheckoutSessionView(APIView):
                 status=status.HTTP_422_UNPROCESSABLE_ENTITY,
             )
 
+        # Payment-integrity guard: never open a SECOND subscription checkout while
+        # the user already has a live paid subscription — that orphans the first
+        # sub (webhook overwrites stripe_subscription_id) and double-bills them.
+        # Send them to the Customer Portal to change/cancel their plan instead.
+        active_sub = (
+            Subscription.objects
+            .filter(user=request.user, status__in=Subscription.LIVE_PAID_STATUSES)
+            .exclude(stripe_subscription_id='', stripe_customer_id='')
+            .first()
+        )
+        if active_sub:
+            body = {
+                'detail': 'You already have an active subscription — manage or change '
+                          'your plan from the billing portal.',
+                'code': 'active_subscription',
+            }
+            if active_sub.stripe_customer_id:
+                try:
+                    from billing.stripe_gateway import create_portal_session
+                    portal = create_portal_session(active_sub.stripe_customer_id)
+                    body['portal_url'] = portal.url
+                except Exception as exc:  # portal is a convenience — never block the 409 on it
+                    logger.warning('billing.checkout: portal_url unavailable for guard: %s', exc)
+            return Response(body, status=status.HTTP_409_CONFLICT)
+
         try:
             session = create_checkout_session(request.user, plan)
             return Response({'url': session.url})

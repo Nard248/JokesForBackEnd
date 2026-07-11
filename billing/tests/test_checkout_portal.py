@@ -81,6 +81,94 @@ class CheckoutTests(APITestCase):
         resp = self.client.post('/api/v1/billing/checkout-session', {'plan_slug': 'creator_pro'})
         self.assertEqual(resp.status_code, 401)
 
+    def _priced_pro(self):
+        from billing.models import Plan
+        pro = Plan.objects.get(slug='creator_pro')
+        pro.stripe_price_id = 'price_fake_pro'
+        pro.save()
+        return pro
+
+    @override_settings(STRIPE_SECRET_KEY='sk_test_fake')
+    @patch('billing.stripe_gateway.stripe')
+    def test_checkout_blocked_when_active_subscription(self, mstripe):
+        """A subscribed user is blocked (409) and no 2nd Stripe session opens."""
+        from billing.models import Subscription
+        pro = self._priced_pro()
+        Subscription.objects.create(
+            user=self.user, plan=pro, status='active',
+            stripe_customer_id='cus_live_1', stripe_subscription_id='sub_live_1',
+        )
+        mock_portal = MagicMock()
+        mock_portal.url = 'https://billing.stripe.com/p/session/guard'
+        mstripe.billing_portal.Session.create.return_value = mock_portal
+
+        resp = self.client.post('/api/v1/billing/checkout-session', {'plan_slug': 'creator_pro'})
+        self.assertEqual(resp.status_code, 409)
+        self.assertEqual(resp.data['code'], 'active_subscription')
+        self.assertEqual(resp.data['portal_url'], 'https://billing.stripe.com/p/session/guard')
+        # No SECOND subscription checkout was created.
+        mstripe.checkout.Session.create.assert_not_called()
+
+    @override_settings(STRIPE_SECRET_KEY='sk_test_fake')
+    @patch('billing.stripe_gateway.stripe')
+    def test_checkout_blocked_for_past_due_subscription(self, mstripe):
+        """past_due is a live (retrying) sub — still guarded to avoid a parallel bill."""
+        from billing.models import Subscription
+        pro = self._priced_pro()
+        Subscription.objects.create(
+            user=self.user, plan=pro, status='past_due',
+            stripe_customer_id='cus_live_2', stripe_subscription_id='sub_live_2',
+        )
+        mock_portal = MagicMock()
+        mock_portal.url = 'https://billing.stripe.com/p/session/guard2'
+        mstripe.billing_portal.Session.create.return_value = mock_portal
+
+        resp = self.client.post('/api/v1/billing/checkout-session', {'plan_slug': 'creator_pro'})
+        self.assertEqual(resp.status_code, 409)
+        self.assertEqual(resp.data['code'], 'active_subscription')
+        mstripe.checkout.Session.create.assert_not_called()
+
+    @override_settings(STRIPE_SECRET_KEY='sk_test_fake')
+    @patch('billing.stripe_gateway.stripe')
+    def test_checkout_allowed_after_cancel(self, mstripe):
+        """A canceled sub is NOT live-paid — the guard must let checkout proceed."""
+        from billing.models import Subscription
+        pro = self._priced_pro()
+        Subscription.objects.create(
+            user=self.user, plan=pro, status='canceled',
+            stripe_customer_id='cus_old_1', stripe_subscription_id='sub_old_1',
+        )
+        mstripe.api_key = ''
+        mstripe.api_version = ''
+        mock_session = MagicMock()
+        mock_session.url = 'https://stripe.test/cs_test_resub'
+        mstripe.checkout.Session.create.return_value = mock_session
+
+        resp = self.client.post('/api/v1/billing/checkout-session', {'plan_slug': 'creator_pro'})
+        self.assertEqual(resp.status_code, 200)
+        self.assertEqual(resp.data['url'], 'https://stripe.test/cs_test_resub')
+        mstripe.checkout.Session.create.assert_called_once()
+
+    @override_settings(STRIPE_SECRET_KEY='sk_test_fake')
+    @patch('billing.stripe_gateway.stripe')
+    def test_checkout_allowed_for_free_status_with_customer_id(self, mstripe):
+        """A free-status sub carrying only a customer id (abandoned checkout) is allowed."""
+        from billing.models import Subscription
+        pro = self._priced_pro()
+        Subscription.objects.create(
+            user=self.user, plan=pro, status='free',
+            stripe_customer_id='cus_free_1',
+        )
+        mstripe.api_key = ''
+        mstripe.api_version = ''
+        mock_session = MagicMock()
+        mock_session.url = 'https://stripe.test/cs_test_free'
+        mstripe.checkout.Session.create.return_value = mock_session
+
+        resp = self.client.post('/api/v1/billing/checkout-session', {'plan_slug': 'creator_pro'})
+        self.assertEqual(resp.status_code, 200)
+        mstripe.checkout.Session.create.assert_called_once()
+
 
 class PortalTests(APITestCase):
     """Portal session with mocked Stripe."""
