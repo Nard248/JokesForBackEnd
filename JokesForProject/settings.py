@@ -334,6 +334,13 @@ CORS_ALLOWED_ORIGINS = [
 ] + [o.strip() for o in os.getenv('CORS_ALLOWED_ORIGINS', '').split(',') if o.strip()]
 CORS_ALLOW_CREDENTIALS = True  # Required for httpOnly cookie auth
 
+# The cross-site SPA echoes the CSRF token back in the X-CSRFToken request
+# header (it can't read the SameSite=None cookie via JS across origins), so the
+# preflight must allow that header. django-cors-headers' default_headers already
+# lists 'x-csrftoken'; we spell it out explicitly since CSRF now depends on it.
+from corsheaders.defaults import default_headers  # noqa: E402
+CORS_ALLOW_HEADERS = (*default_headers, 'x-csrftoken')
+
 # Absolute base URL of the SPA frontend. Used to build user-facing links that
 # must resolve in the browser (e.g. the password-reset email link). Defaults to
 # the production Firebase Hosting origin; override per-environment via env.
@@ -341,7 +348,17 @@ FRONTEND_URL = os.getenv('FRONTEND_URL', 'https://jokesforfront.web.app')
 
 # CSRF: when behind Cloud Run / any TLS-terminating proxy, Django must trust
 # the origin header. Same env-overlay pattern as CORS.
+#
+# For a cross-site SPA, Django's CSRF check ALSO verifies the request Origin (or
+# Referer) against this list — a cross-origin mutation from the SPA carries
+# Origin: https://jokesforfront.web.app, which must be trusted or every
+# authenticated POST/PUT/PATCH/DELETE 403s regardless of a valid token. We seed
+# the SPA origin (FRONTEND_URL) as a default so protection can't silently break
+# if the env var is unset; extra origins (e.g. the *.run.app URL, custom domain)
+# come from CSRF_TRUSTED_ORIGINS.
 CSRF_TRUSTED_ORIGINS = [o.strip() for o in os.getenv('CSRF_TRUSTED_ORIGINS', '').split(',') if o.strip()]
+if FRONTEND_URL and FRONTEND_URL not in CSRF_TRUSTED_ORIGINS:
+    CSRF_TRUSTED_ORIGINS.append(FRONTEND_URL)
 
 # Cloud Run terminates TLS at the load balancer and forwards X-Forwarded-Proto.
 # Without this, request.is_secure() returns False inside the container and
@@ -352,12 +369,23 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # frontend talking to *.run.app backend), JWT_COOKIE_SAMESITE=None is required
 # so cookies cross the origin boundary. Browsers reject SameSite=None without
 # Secure=True, so we mirror that pairing onto Django's other cookies in prod.
+#
+# The CSRF cookie MUST cross the origin boundary too: the browser has to send it
+# on the SPA's cross-site mutations for the double-submit check to succeed. So it
+# inherits the exact same SameSite=None + Secure pairing as the JWT cookies.
 _COOKIE_SAMESITE = os.getenv('JWT_COOKIE_SAMESITE', 'Lax')
 if _COOKIE_SAMESITE == 'None':
     CSRF_COOKIE_SAMESITE = 'None'
     SESSION_COOKIE_SAMESITE = 'None'
 CSRF_COOKIE_SECURE = not DEBUG
 SESSION_COOKIE_SECURE = not DEBUG
+# Keep the CSRF cookie readable to JS is NOT the point here — the SPA lives on a
+# different origin and can't read the cookie regardless. It obtains the token
+# VALUE from GET /api/v1/auth/csrf/. We leave CSRF_COOKIE_HTTPONLY at its default
+# (False) so the classic double-submit still works for any same-origin caller
+# (Django admin, the API docs), and echo the value via the token endpoint for the
+# cross-site SPA. (Django reads the token from the X-CSRFToken header either way.)
+CSRF_COOKIE_HTTPONLY = False
 
 # Transport security — production only. Local dev runs over plain http, so these
 # stay OFF when DEBUG=True. SECURE_PROXY_SSL_HEADER (set above) lets Django see
@@ -388,6 +416,18 @@ REST_AUTH = {
     'JWT_AUTH_COOKIE': 'jokes-access-token',
     'JWT_AUTH_REFRESH_COOKIE': 'jokes-refresh-token',
     'JWT_AUTH_HTTPONLY': True,
+    # CSRF enforcement for cookie-authenticated requests. With httpOnly JWT
+    # cookies sent SameSite=None, any external site can otherwise ride a logged-in
+    # victim's cookie to issue authenticated state-changing requests. This flag
+    # makes JWTCookieAuthentication.enforce_csrf run whenever the JWT cookie is
+    # present AND there is no Authorization header — i.e. exactly the cookie-auth
+    # path (see dj_rest_auth/jwt_auth.py authenticate()). It does NOT trigger when
+    # the JWT cookie is absent (login/register/google/verify are unauthenticated,
+    # so raw_token is None → no CSRF check → bootstrap keeps working with no
+    # token), nor for Bearer-header requests. The token/refresh + token/verify
+    # views set authentication_classes=() (simplejwt TokenViewBase), so they are
+    # NOT CSRF-checked either. ROLLBACK: set this back to False and redeploy.
+    'JWT_AUTH_COOKIE_USE_CSRF': True,
     'JWT_AUTH_SECURE': not DEBUG,  # True in production (HTTPS), False for local dev
     'JWT_AUTH_SAMESITE': os.getenv('JWT_COOKIE_SAMESITE', 'Lax'),
     'SESSION_LOGIN': False,  # Disable session auth, use JWT only

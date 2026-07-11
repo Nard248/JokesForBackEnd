@@ -21,7 +21,7 @@ from drf_spectacular.views import (
     SpectacularRedocView,
     SpectacularSwaggerView,
 )
-from jokes.views import CookieRegisterView, GoogleLogin, joke_share_page
+from jokes.views import CookieRegisterView, GoogleLogin, csrf_token_view, joke_share_page
 
 from JokesForProject.health import healthz, readyz
 
@@ -47,6 +47,10 @@ urlpatterns = [
     path('api/v1/billing/', include('billing.urls')),
 
     # Authentication
+    # CSRF bootstrap: the cross-site SPA GETs this to obtain the CSRF cookie +
+    # token value before issuing any authenticated mutation. Declared before the
+    # dj_rest_auth include (no conflict — dj_rest_auth defines no `csrf/` route).
+    path('api/v1/auth/csrf/', csrf_token_view, name='csrf-token'),
     path('api/v1/auth/', include('dj_rest_auth.urls')),
     # Override registration root with cookie-setting variant; include still owns
     # sub-paths (verify-email, resend-email, account-confirm-email).
