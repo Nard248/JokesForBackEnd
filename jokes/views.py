@@ -741,10 +741,17 @@ class GoogleLogin(SocialLoginView):
 
     Request body:
     {
-        "code": "authorization_code_from_google"
+        "code": "authorization_code_from_google",
+        "date_of_birth": "2000-01-01"  # ISO yyyy-mm-dd; required for NEW users
     }
 
-    Response:
+    COPPA age gate (SocialAccountAdapter.pre_social_login):
+    - Existing/linked user: logs in, date_of_birth ignored, existing DOB kept.
+    - New user, no date_of_birth: 400 {"code": "dob_required", ...}, no account.
+    - New user, age < 13: 400 {"date_of_birth": ["...at least 13..."]}, no account.
+    - New user, age >= 13: account created with DOB persisted to the profile.
+
+    Response (success):
     {
         "access": "jwt_access_token",  # Also set as HttpOnly cookie
         "refresh": "jwt_refresh_token",  # Also set as HttpOnly cookie
@@ -754,6 +761,14 @@ class GoogleLogin(SocialLoginView):
     adapter_class = GoogleOAuth2Adapter
     callback_url = settings.GOOGLE_OAUTH_CALLBACK_URL
     client_class = OAuth2Client
+
+    def post(self, request, *args, **kwargs):
+        # allauth hands the SocialAccountAdapter the unwrapped Django
+        # HttpRequest, whose .POST is empty for a JSON body. Stash the raw DOB
+        # from the parsed DRF body onto it so pre_social_login can read it.
+        from JokesForProject.adapters import DOB_REQUEST_ATTR
+        setattr(request._request, DOB_REQUEST_ATTR, request.data.get('date_of_birth'))
+        return super().post(request, *args, **kwargs)
 
 
 # =============================================================================
