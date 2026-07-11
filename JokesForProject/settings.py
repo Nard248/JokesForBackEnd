@@ -334,6 +334,11 @@ CORS_ALLOWED_ORIGINS = [
 ] + [o.strip() for o in os.getenv('CORS_ALLOWED_ORIGINS', '').split(',') if o.strip()]
 CORS_ALLOW_CREDENTIALS = True  # Required for httpOnly cookie auth
 
+# Absolute base URL of the SPA frontend. Used to build user-facing links that
+# must resolve in the browser (e.g. the password-reset email link). Defaults to
+# the production Firebase Hosting origin; override per-environment via env.
+FRONTEND_URL = os.getenv('FRONTEND_URL', 'https://jokesforfront.web.app')
+
 # CSRF: when behind Cloud Run / any TLS-terminating proxy, Django must trust
 # the origin header. Same env-overlay pattern as CORS.
 CSRF_TRUSTED_ORIGINS = [o.strip() for o in os.getenv('CSRF_TRUSTED_ORIGINS', '').split(',') if o.strip()]
@@ -388,6 +393,14 @@ REST_AUTH = {
     'SESSION_LOGIN': False,  # Disable session auth, use JWT only
     'REGISTER_SERIALIZER': 'JokesForProject.serializers.EmailOnlyRegisterSerializer',
     'USER_DETAILS_SERIALIZER': 'JokesForProject.serializers.JokesForUserDetailsSerializer',
+    # Emails the SPA reset link (jokes/password_reset.py). Without this override
+    # dj-rest-auth's default reverse('password_reset_confirm') raises
+    # NoReverseMatch and no reset email is ever sent.
+    'PASSWORD_RESET_SERIALIZER': 'jokes.password_reset.FrontendPasswordResetSerializer',
+    # Require the current password on change. Interim CSRF mitigation: with
+    # cookie-JWT auth an external page could otherwise form-POST a new password
+    # and silently take over a logged-in account.
+    'OLD_PASSWORD_FIELD_ENABLED': True,
 }
 
 
