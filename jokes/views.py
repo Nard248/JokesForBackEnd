@@ -12,10 +12,16 @@ import json
 import zipfile
 
 from rest_framework import generics, mixins, status, viewsets
-from rest_framework.decorators import action
+from rest_framework.decorators import (
+    action,
+    api_view,
+    authentication_classes,
+    permission_classes,
+)
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from django.middleware.csrf import get_token
 from drf_spectacular.utils import extend_schema, OpenApiParameter
 from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
 from allauth.socialaccount.providers.oauth2.client import OAuth2Client
@@ -654,6 +660,33 @@ class UserPreferenceViewSet(viewsets.GenericViewSet):
             'status': 'onboarding_completed',
             'onboarding_completed': True
         })
+
+
+# =============================================================================
+# CSRF token endpoint
+# =============================================================================
+
+@api_view(['GET'])
+@authentication_classes([])  # never cookie-authenticate; usable pre- and post-login
+@permission_classes([AllowAny])
+def csrf_token_view(request):
+    """GET /api/v1/auth/csrf/ — issue the CSRF cookie and return its token value.
+
+    The SPA lives on a different origin than this API, so it cannot read the
+    SameSite=None CSRF cookie via document.cookie. Instead it reads the token
+    VALUE from this JSON body and echoes it back in the X-CSRFToken header on
+    every mutating request; the browser sends the matching cookie automatically
+    and Django's double-submit check compares the two.
+
+    Calling get_token() flags request.META['CSRF_COOKIE_NEEDS_UPDATE'], which
+    CsrfViewMiddleware.process_response reads to set the cookie on the way out —
+    this is exactly what the @ensure_csrf_cookie decorator does internally, but
+    without the decorator-from-middleware wrapping that composes awkwardly with
+    DRF's @api_view. authentication_classes=[] keeps this endpoint free of the
+    JWT-cookie authenticator so it never depends on a token the caller is trying
+    to obtain (a GET would pass enforce_csrf anyway, but this removes all doubt).
+    """
+    return Response({'csrfToken': get_token(request)})
 
 
 # =============================================================================
