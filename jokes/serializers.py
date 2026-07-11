@@ -717,9 +717,14 @@ class JokeSubmissionCreateSerializer(serializers.ModelSerializer):
                      else (self.instance.lines if self.instance else None),
         }
 
-        errors = validate_per_format(fmt.slug, attrs)
-        if errors:
-            raise serializers.ValidationError(errors)
+        # Draft autosave (JokeDraftDetailView PATCH) sets this flag so an
+        # in-progress draft with unfilled required fields persists instead of
+        # 400ing and losing the creator's typed text. Per-format validation is
+        # enforced later, at submit (JokeDraftSubmitView), and on normal CREATE.
+        if not self.context.get('skip_format_validation'):
+            errors = validate_per_format(fmt.slug, attrs)
+            if errors:
+                raise serializers.ValidationError(errors)
 
         # Backfill `text` for formats that don't have it as a creator input
         # (setup-punchline, anti-joke, knock-knock). Keeps the submission's

@@ -252,18 +252,49 @@ class SubmissionApiTests(APITestCase):
             [self.culture.slug],
         )
 
-    def test_patch_draft_revalidates(self):
+    def test_patch_draft_skips_format_validation(self):
+        """Draft autosave must persist incomplete state (200), not 400 and lose
+        the creator's typed text. Format validation is deferred to submit."""
         sub = JokeSubmission.objects.create(
-            user=self.user, format=self.fmt_oneliner, age_rating=self.age,
-            language=self.lang, text='A.', status='draft',
+            user=self.user, format=self.fmt_knock, age_rating=self.age,
+            language=self.lang, status='draft',
         )
+        # Knock requires `lines`; this partial autosave has none yet.
         resp = self.client.patch(
             f'/api/v1/jokes/my-drafts/{sub.id}/',
-            {'format': 'knock', 'text': ''},
+            {'setup': 'Work in progress...'},
             format='json',
         )
-        self.assertEqual(resp.status_code, 400)
+        self.assertEqual(resp.status_code, 200, resp.content)
+        sub.refresh_from_db()
+        self.assertEqual(sub.setup, 'Work in progress...')
+        self.assertEqual(sub.status, 'draft')
+
+    def test_submit_incomplete_draft_rejected(self):
+        """Submitting an incomplete draft must 400 with per-format errors so it
+        can't reach moderation."""
+        sub = JokeSubmission.objects.create(
+            user=self.user, format=self.fmt_knock, age_rating=self.age,
+            language=self.lang, status='draft',
+        )
+        resp = self.client.post(f'/api/v1/jokes/my-drafts/{sub.id}/submit/')
+        self.assertEqual(resp.status_code, 400, resp.content)
         self.assertIn('lines', resp.json())
+        sub.refresh_from_db()
+        self.assertEqual(sub.status, 'draft')
+
+    def test_submit_complete_draft_pending(self):
+        """A complete draft submits successfully and flips to pending."""
+        sub = JokeSubmission.objects.create(
+            user=self.user, format=self.fmt_knock, age_rating=self.age,
+            language=self.lang, status='draft',
+            lines=['Knock, knock.', "Who's there?", 'Olive.', 'Olive who?'],
+        )
+        resp = self.client.post(f'/api/v1/jokes/my-drafts/{sub.id}/submit/')
+        self.assertEqual(resp.status_code, 200, resp.content)
+        self.assertEqual(resp.json()['status'], 'pending')
+        sub.refresh_from_db()
+        self.assertEqual(sub.status, 'pending')
 
     def test_patch_format_falls_back_to_instance(self):
         """A PATCH with no `format` key should reuse the instance's format."""
