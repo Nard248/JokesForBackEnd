@@ -891,7 +891,9 @@ class CollectionViewSet(viewsets.ModelViewSet):
                 'name': c.name,
                 'joke_count': c.joke_count,
                 'saves_this_week': c.saves_this_week,
-                'creator_name': c.user.first_name or c.user.email.split('@')[0],
+                # public_display_name never exposes the email (chosen name →
+                # real name → opaque user_<pk>); this endpoint is AllowAny.
+                'creator_name': public_display_name(c.user),
             })
 
         return Response({'results': results})
