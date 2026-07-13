@@ -15,7 +15,7 @@ from django.utils import timezone
 
 from jokes.models import (
     Format, AgeRating, Language, Tone, ContextTag, Joke, JokeSubmission,
-    JokeView, JokeReaction, Favorite, SavedJoke, ShareEvent,
+    JokeView, JokeReaction, Favorite, SavedJoke, ShareEvent, JokeImpression,
 )
 
 User = get_user_model()
@@ -762,3 +762,90 @@ class WhatResonatesFanoutTests(TestCase):
             rate, 1.0, places=3,
             msg=f"Expected reactions_per_view=1.0 (in-period only) but got {rate} — likely BUG 3 (all-time reactions)",
         )
+
+
+class TopJokesMultiRelationFanoutTests(TestCase):
+    """PERF #14 — _top_jokes must NOT LEFT-JOIN views × reactions × saves ×
+    shares × impressions in one query (the cartesian product that hangs Neon).
+
+    Setup (one joke with rows on ALL five relations simultaneously — the exact
+    shape that fans out): 3 views (2 revealed), 2 reactions, 2 saves, 2 shares,
+    3 impressions.  A naive multi-JOIN annotate materialises
+    3×2×2×2×3 = 72 intermediate rows per joke; the counts must instead be
+    exactly the real per-relation totals.
+    """
+
+    @classmethod
+    def setUpTestData(cls):
+        cls.fmt = Format.objects.get(slug='oneliner')
+        cls.age = AgeRating.objects.first()
+        cls.lang = Language.objects.get(code='en')
+
+        cls.creator = User.objects.create_user(
+            username='mrfanout_creator@svc.com', email='mrfanout_creator@svc.com', password='x'
+        )
+        cls.r1 = User.objects.create_user(username='mrf_r1@svc.com', email='mrf_r1@svc.com', password='x')
+        cls.r2 = User.objects.create_user(username='mrf_r2@svc.com', email='mrf_r2@svc.com', password='x')
+        cls.r3 = User.objects.create_user(username='mrf_r3@svc.com', email='mrf_r3@svc.com', password='x')
+
+        _, cls.joke = _make_published_submission(
+            cls.creator, cls.fmt, cls.age, cls.lang, text='Multi-relation fan-out joke'
+        )
+
+        # 3 views (2 revealed) -> views=3, payoff_rate=2/3
+        _view(cls.r1, cls.joke, revealed=True, days_ago=1)
+        _view(cls.r2, cls.joke, revealed=True, days_ago=2)
+        _view(cls.r3, cls.joke, revealed=False, days_ago=3)
+
+        # 2 reactions (distinct users — unique_together user+joke)
+        JokeReaction.objects.create(user=cls.r1, joke=cls.joke, reaction='lol')
+        JokeReaction.objects.create(user=cls.r2, joke=cls.joke, reaction='crying')
+
+        # 2 saves (distinct users — unique_together user+joke+collection)
+        SavedJoke.objects.create(user=cls.r1, joke=cls.joke)
+        SavedJoke.objects.create(user=cls.r2, joke=cls.joke)
+
+        # 2 shares (no unique constraint)
+        ShareEvent.objects.create(joke=cls.joke, user=cls.r1, platform='whatsapp')
+        ShareEvent.objects.create(joke=cls.joke, user=cls.r2, platform='twitter')
+
+        # 3 impressions (no unique constraint)
+        JokeImpression.objects.create(user=cls.r1, joke=cls.joke, source='feed')
+        JokeImpression.objects.create(user=cls.r2, joke=cls.joke, source='explore')
+        JokeImpression.objects.create(user=cls.r3, joke=cls.joke, source='feed')
+
+    def test_counts_are_correct_not_fanned_out(self):
+        """Every per-joke count equals the real relation total, not a join product."""
+        from creator_insights.services import build_creator_insights
+        row = build_creator_insights(self.creator, 'all')['top_jokes'][0]
+        self.assertEqual(row['views'], 3)
+        self.assertEqual(row['reactions'], 2)
+        self.assertEqual(row['saves'], 2)
+        self.assertEqual(row['shares'], 2)
+        self.assertEqual(row['impressions'], 3)
+        self.assertAlmostEqual(row['payoff_rate'], round(2 / 3, 4), places=4)
+
+    def test_top_jokes_query_has_no_multi_relation_join(self):
+        """The annotated top-jokes query must compute each metric as its own
+        correlated subquery — zero LEFT OUTER JOINs to the five relation tables
+        (that JOIN set is exactly the cartesian-product fan-out)."""
+        from creator_insights.services import _annotated_top_jokes_qs, resolve_creator_jokes, window_since
+        qs = _annotated_top_jokes_qs(resolve_creator_jokes(self.creator), window_since('all'))[:10]
+        sql = str(qs.query)
+        for model in (JokeView, JokeReaction, SavedJoke, ShareEvent, JokeImpression):
+            table = model._meta.db_table
+            self.assertNotIn(
+                f'LEFT OUTER JOIN "{table}"', sql,
+                msg=f'{table} is LEFT-JOINed into the top-jokes query — multi-relation fan-out is back',
+            )
+            # still referenced (inside its own scalar subquery)
+            self.assertIn(f'"{table}"', sql)
+
+    def test_top_jokes_query_count_bounded(self):
+        """_top_jokes issues a bounded, constant number of queries (annotate +
+        dwell aggregation) regardless of relation-row volume — no N+1."""
+        from creator_insights.services import _top_jokes, resolve_creator_jokes, window_since
+        jokes = resolve_creator_jokes(self.creator)
+        since = window_since('all')
+        with self.assertNumQueries(2):
+            _top_jokes(jokes, since)

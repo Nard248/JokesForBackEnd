@@ -9,8 +9,8 @@ serving lock so a creator always sees all of their own content.
 """
 from datetime import timedelta
 
-from django.db.models import Avg, Count, Q
-from django.db.models.functions import ExtractHour
+from django.db.models import Avg, Count, IntegerField, OuterRef, Q, Subquery
+from django.db.models.functions import Coalesce, ExtractHour
 from django.utils import timezone
 
 from jokes.models import (
@@ -201,55 +201,66 @@ def _breakdowns(jokes, since):
     return reactions_breakdown, shares_breakdown, source_mix
 
 
+def _joke_count_subquery(model, since_q=None, extra_q=None):
+    """Correlated subquery: number of ``model`` rows attached to the OuterRef joke.
+
+    Each metric is computed as its own scalar subquery so the top-jokes query
+    NEVER LEFT-JOINs several relations at once. Stacking multiple
+    ``Count(rel, distinct=True)`` over different relations in a single annotate()
+    makes Postgres materialise the cartesian product of every joined relation
+    per joke before DISTINCT de-dupes (cost ~ views×reactions×saves×shares×
+    impressions) — a real timeout for a successful creator. Correlated subqueries
+    keep each count independent, so the DB never builds that product.
+
+    The value is identical to the old ``Count(rel, distinct=True)``: a single
+    relation join has one row per related object, so a plain COUNT of that
+    relation equals the DISTINCT count. Coalesce keeps the empty case at 0.
+    """
+    rows = model.objects.filter(joke=OuterRef('pk'))
+    if extra_q is not None:
+        rows = rows.filter(extra_q)
+    if since_q is not None:
+        rows = rows.filter(since_q)
+    counted = rows.order_by().values('joke').annotate(c=Count('id')).values('c')
+    return Coalesce(Subquery(counted, output_field=IntegerField()), 0)
+
+
+def _annotated_top_jokes_qs(jokes, since):
+    """Annotate the creator's jokes with per-joke count metrics via correlated
+    subqueries (one scalar subquery per relation — no multi-relation JOIN
+    fan-out), ordered by view count descending.
+
+    Values match the previous ``Count(rel, distinct=True)`` annotate exactly and
+    reaction/save/share/impression counts stay period-filtered when ``since`` is
+    set (all-time when it is None).
+    """
+    return jokes.annotate(
+        view_count=_joke_count_subquery(
+            JokeView, since_q=Q(viewed_date__gte=since) if since else None,
+        ),
+        reaction_count=_joke_count_subquery(
+            JokeReaction, since_q=Q(created_at__date__gte=since) if since else None,
+        ),
+        save_count=_joke_count_subquery(
+            SavedJoke, since_q=Q(created_at__date__gte=since) if since else None,
+        ),
+        share_count=_joke_count_subquery(
+            ShareEvent, since_q=Q(created_at__date__gte=since) if since else None,
+        ),
+        payoff_count=_joke_count_subquery(
+            JokeView,
+            since_q=Q(viewed_date__gte=since) if since else None,
+            extra_q=Q(revealed_punchline=True),
+        ),
+        impression_count=_joke_count_subquery(
+            JokeImpression, since_q=Q(created_date__gte=since) if since else None,
+        ),
+    ).order_by('-view_count')
+
+
 def _top_jokes(jokes, since):
     """Return top 10 jokes ordered by view count descending with per-joke metrics."""
-    view_qs = JokeView.objects.filter(joke__in=jokes)
-    if since:
-        view_qs = view_qs.filter(viewed_date__gte=since)
-
-    # Annotate per-joke metrics; all counts use distinct=True so that multiple
-    # LEFT JOINs (views × reactions × saves × shares) don't fan out row counts.
-    # reaction/save/share are also period-filtered for internal consistency.
-    annotated = (
-        jokes.annotate(
-            view_count=Count(
-                'views',
-                filter=Q(views__viewed_date__gte=since) if since else Q(),
-                distinct=True,
-            ),
-            reaction_count=Count(
-                'reactions_v2',
-                filter=Q(reactions_v2__created_at__date__gte=since) if since else Q(),
-                distinct=True,
-            ),
-            save_count=Count(
-                'saved_by',
-                filter=Q(saved_by__created_at__date__gte=since) if since else Q(),
-                distinct=True,
-            ),
-            share_count=Count(
-                'share_events',
-                filter=Q(share_events__created_at__date__gte=since) if since else Q(),
-                distinct=True,
-            ),
-            payoff_count=Count(
-                'views',
-                filter=(
-                    Q(views__revealed_punchline=True, views__viewed_date__gte=since)
-                    if since
-                    else Q(views__revealed_punchline=True)
-                ),
-                distinct=True,
-            ),
-            impression_count=Count(
-                'impressions',
-                filter=Q(impressions__created_date__gte=since) if since else Q(),
-                distinct=True,
-            ),
-        )
-        .order_by('-view_count')[:10]
-    )
-    annotated = list(annotated)
+    annotated = list(_annotated_top_jokes_qs(jokes, since)[:10])
 
     # Per-joke dwell metrics computed in a separate, dwell-only aggregation so the
     # multi-JOIN annotate above doesn't fan out / distort the averages.
