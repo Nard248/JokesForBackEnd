@@ -79,6 +79,7 @@ from .models import (
 )
 from .recommendations import get_personalized_joke, get_recently_shown_joke_ids
 from .serving import allowed_tiers
+from .paywall import paywall_state
 from .submission_rules import validate_per_format
 from .identity import (
     public_display_name, public_handle, normalize_handle, is_valid_handle,
@@ -144,10 +145,26 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
         # Moderation: hide removed jokes (global) + blocked users' jokes (per-viewer).
         return visible_jokes(qs, self.request)
 
+    def get_serializer_context(self):
+        """Inject the once-per-request paywall decision so JokeSerializer can
+        lock/strip the payoff uniformly for list + retrieve."""
+        ctx = super().get_serializer_context()
+        ctx['paywall_state'] = paywall_state(self.request)
+        return ctx
+
     def retrieve(self, request, *args, **kwargs):
-        """Log a JokeView (P5) on retrieve with 60s debouncing per (user, joke)."""
+        """Return a joke and log a JokeView (P5) ONLY when it is delivered
+        UNLOCKED — a within-limit new open, or a re-open of an already-consumed
+        joke. A LOCKED delivery (free user over the cap, new joke) yields no
+        payoff, so it must NOT count against / into the ledger. 60s debounce
+        still applies to unlocked re-opens.
+        """
         response = super().retrieve(request, *args, **kwargs)
         if request.user.is_authenticated and response.status_code == 200:
+            # is_locked is computed by the serializer from paywall_state; a
+            # locked joke gave the user no payoff, so do not log consumption.
+            if response.data.get('is_locked'):
+                return response
             from django.utils import timezone
             from datetime import timedelta
             joke_id = response.data.get('id')
@@ -327,8 +344,39 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
                 {'detail': 'No jokes found.'},
                 status=status.HTTP_404_NOT_FOUND,
             )
-        serializer = JokeSerializer(joke)
+        serializer = JokeSerializer(
+            joke,
+            context={'request': request, 'paywall_state': paywall_state(request)},
+        )
         return Response(serializer.data)
+
+    @extend_schema(
+        description=(
+            'Free daily-read cap state for the freemium punchline paywall. '
+            'Paid/unlimited tiers return limit=null, remaining=null, over=false.'
+        ),
+        responses={200: {'type': 'object', 'properties': {
+            'limit': {'type': 'integer', 'nullable': True},
+            'used': {'type': 'integer'},
+            'remaining': {'type': 'integer', 'nullable': True},
+            'over': {'type': 'boolean'},
+            'reset_at': {'type': 'string', 'format': 'date-time'},
+        }}},
+    )
+    @action(
+        detail=False, methods=['get'],
+        permission_classes=[IsAuthenticated], url_path='daily-reads',
+    )
+    def daily_reads(self, request):
+        """GET /api/v1/jokes/daily-reads/ — remaining free reads for the nudge."""
+        state = paywall_state(request)
+        return Response({
+            'limit': state.limit,           # null == unlimited (paid)
+            'used': state.used,
+            'remaining': state.remaining,   # null == unlimited
+            'over': state.over,
+            'reset_at': state.reset_at,
+        })
 
     @extend_schema(
         description='Rate a joke with thumbs up (1) or thumbs down (-1). Updates existing rating if present.',
@@ -494,8 +542,11 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
 
         page = self.paginate_queryset(jokes)
         results = []
+        pw_state = paywall_state(request)  # compute once for the whole page
         for rank, joke in enumerate(page or jokes[:20], 1):
-            data = JokeSerializer(joke, context={'request': request}).data
+            data = JokeSerializer(
+                joke, context={'request': request, 'paywall_state': pw_state},
+            ).data
             results.append({
                 'rank': rank,
                 'joke': data,
@@ -860,12 +911,14 @@ class CollectionViewSet(viewsets.ModelViewSet):
             joke__content_tier__in=allowed_tiers(request),
         ).select_related('joke', 'collection')
 
+        # Paywall flows into the nested JokeSerializer via the root context.
+        ctx = {'request': request, 'paywall_state': paywall_state(request)}
         page = self.paginate_queryset(saved_jokes)
         if page is not None:
-            serializer = SavedJokeSerializer(page, many=True)
+            serializer = SavedJokeSerializer(page, many=True, context=ctx)
             return self.get_paginated_response(serializer.data)
 
-        serializer = SavedJokeSerializer(saved_jokes, many=True)
+        serializer = SavedJokeSerializer(saved_jokes, many=True, context=ctx)
         return Response(serializer.data)
 
     @action(detail=False, methods=['get'], permission_classes=[AllowAny])
@@ -1137,15 +1190,23 @@ class DailyJokeViewSet(viewsets.GenericViewSet):
         })
 
     @extend_schema(
-        description='Get user\'s daily joke history (last 30 days).',
+        description=(
+            'Get the user\'s daily joke history as a rolling window. The window '
+            'length is the daily_joke_history_days entitlement (free 30 / '
+            'supporter 90 / creator_pro 365) and rolls with the clock.'
+        ),
         responses={200: DailyJokeSerializer(many=True)},
     )
     @action(detail=False, methods=['get'])
     def history(self, request):
+        """Get the user's daily joke history.
+
+        Rolling "last N days" DATE window (not a fixed row count): entries older
+        than ``today - daily_joke_history_days`` roll off as the clock advances,
+        and the window honors the per-plan entitlement.
         """
-        Get user's daily joke history.
-        Returns last 30 days of daily jokes.
-        """
+        from datetime import timedelta
+
         queryset = self.get_queryset().select_related(
             'joke',
             'joke__format',
@@ -1154,7 +1215,14 @@ class DailyJokeViewSet(viewsets.GenericViewSet):
         ).prefetch_related(
             'joke__tones',
             'joke__context_tags'
-        )[:30]
+        )
+
+        window_days = entitlements.get_limit(
+            request.user, 'daily_joke_history_days', 30
+        )
+        if window_days is not None:
+            cutoff = timezone.now().date() - timedelta(days=window_days)
+            queryset = queryset.filter(date__gte=cutoff)
 
         serializer = DailyJokeSerializer(queryset, many=True)
         return Response(serializer.data)
@@ -2465,6 +2533,12 @@ class JokePackViewSet(viewsets.ReadOnlyModelViewSet):
             return JokePackDetailSerializer
         return JokePackListSerializer
 
+    def get_serializer_context(self):
+        """Inject the paywall decision so embedded pack jokes lock/strip too."""
+        ctx = super().get_serializer_context()
+        ctx['paywall_state'] = paywall_state(self.request)
+        return ctx
+
     @extend_schema(
         description='The currently featured pack (the Today screen Weekly Special).',
         responses={200: JokePackDetailSerializer, 404: None},
@@ -2478,7 +2552,8 @@ class JokePackViewSet(viewsets.ReadOnlyModelViewSet):
                 {'detail': 'No featured pack at the moment.'},
                 status=status.HTTP_404_NOT_FOUND,
             )
-        return Response(JokePackDetailSerializer(pack, context={'request': request}).data)
+        ctx = {'request': request, 'paywall_state': paywall_state(request)}
+        return Response(JokePackDetailSerializer(pack, context=ctx).data)
 
 
 class JokePackProgressView(APIView):
