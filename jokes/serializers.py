@@ -123,6 +123,15 @@ class SourceSerializer(serializers.ModelSerializer):
 # Joke Serializers
 # =============================================================================
 
+# Formats where the joke IS the ``text`` field (no separate setup teaser): the
+# whole card blurs when locked by the paywall. Derived from the canonical
+# per-format schema so it stays in sync (oneliner / story / observ).
+TEXT_ONLY_FORMATS = frozenset(
+    slug for slug, rule in FORMAT_RULES.items()
+    if rule.get('required') == ['text']
+)
+
+
 class JokeSerializer(serializers.ModelSerializer):
     """
     Full joke serializer with nested related models.
@@ -149,6 +158,10 @@ class JokeSerializer(serializers.ModelSerializer):
     # Share card URL
     share_image_url = serializers.SerializerMethodField()
 
+    # Freemium paywall: True when this joke's payoff is withheld for this
+    # request (free user over the daily read cap, joke not yet opened today).
+    is_locked = serializers.SerializerMethodField()
+
     class Meta:
         model = Joke
         fields = [
@@ -167,6 +180,7 @@ class JokeSerializer(serializers.ModelSerializer):
             'categories',   # alias of tones
             'culture_tags',
             'share_image_url',
+            'is_locked',
             'created_at',
             'updated_at',
         ]
@@ -180,6 +194,38 @@ class JokeSerializer(serializers.ModelSerializer):
                 return request.build_absolute_uri(obj.share_image.url)
             return obj.share_image.url
         return None
+
+    def _is_locked(self, obj) -> bool:
+        """Resolve lock state from the once-per-request paywall_state context.
+
+        Locked iff a free user is over their daily read cap AND this joke was
+        not already opened today. The daily editorial joke is exempt simply by
+        never having paywall_state injected into its serving path.
+        """
+        state = self.context.get('paywall_state')
+        if state is None or not state.over:
+            return False
+        return obj.id not in state.consumed_ids
+
+    def get_is_locked(self, obj) -> bool:
+        return self._is_locked(obj)
+
+    def to_representation(self, obj):
+        """Strip the payoff SERVER-SIDE when locked — the ONLY place fields are
+        withheld, so every serving path inherits it via context.
+
+        Always null ``punchline`` + ``lines``; also null ``text`` for text-only
+        formats (the whole card blurs — no teaser). ``setup`` (the teaser for
+        two-part jokes) is always kept.
+        """
+        data = super().to_representation(obj)
+        if self._is_locked(obj):
+            data['punchline'] = None
+            data['lines'] = None
+            fmt = getattr(obj.format, 'slug', None) if obj.format_id else None
+            if fmt in TEXT_ONLY_FORMATS:
+                data['text'] = None
+        return data
 
 
 class JokeListSerializer(serializers.ModelSerializer):

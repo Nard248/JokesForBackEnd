@@ -28,6 +28,9 @@ KNOWN_LIMITS: dict[str, Optional[int]] = {
     'submissions_per_day': 5,
     'daily_jokes_per_day': 1,
     'daily_joke_history_days': 30,
+    # Freemium punchline paywall: DISTINCT joke reveals/day before the punchline
+    # is withheld server-side. Free=10; paid tiers set None (unlimited).
+    'free_joke_reads_per_day': 10,
 }
 
 
