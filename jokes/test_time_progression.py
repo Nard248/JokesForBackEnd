@@ -18,7 +18,6 @@ Run:
     DB_HOST=localhost DB_PORT=5432 \
     .venv/bin/python manage.py test jokes.test_time_progression --keepdb
 """
-import unittest
 from datetime import date
 from unittest.mock import patch
 
@@ -252,12 +251,11 @@ class RecentlyShownWindowTests(APITestCase):
 
 
 class HistoryEndpointWindowTests(APITestCase):
-    """Behavior 5 (finding): DailyJokeViewSet.history is row-count-based, NOT a
-    rolling date window, despite the "last 30 days" docstring.
+    """Behavior 5 (FIXED): DailyJokeViewSet.history is a rolling "last N days"
+    DATE window driven by the ``daily_joke_history_days`` entitlement (free 30 /
+    supporter 90 / creator_pro 365), NOT a fixed row count.
 
-    This test PINS the actual behavior: an ancient DailyJoke row still shows up
-    (because it is among the newest 30 rows), and advancing the clock does NOT
-    evict it. Documented as a finding, not asserted as a bug.
+    Was a documented bug (`[:30]` row cap, no date cutoff); now enforced.
     """
 
     @classmethod
@@ -266,34 +264,28 @@ class HistoryEndpointWindowTests(APITestCase):
             username='hist@example.com', email='hist@example.com', password='pw',
         )
         cls.old_joke = _make_joke('ancient joke')
-        # A very old delivery (well outside any 30-day window).
+        cls.recent_joke = _make_joke('recent joke')
+        # A very old delivery (well outside the free 30-day window).
         DailyJoke.objects.create(user=cls.user, joke=cls.old_joke, date=date(2024, 1, 1))
+        # A recent delivery INSIDE the window on the frozen "today".
+        DailyJoke.objects.create(user=cls.user, joke=cls.recent_joke, date=date(2026, 7, 1))
 
     def setUp(self):
         self.client.force_authenticate(user=self.user)
 
-    def test_history_is_row_count_not_date_window(self):
+    def test_history_returns_entries_within_window(self):
+        # Free window cutoff on 2026-07-14 == 2026-06-14; 2026-07-01 is inside.
         with freeze_time('2026-07-14T12:00:00Z'):
             r = self.client.get('/api/v1/daily-jokes/history/')
             self.assertEqual(r.status_code, 200, r.content)
             dates = [row['date'] for row in r.data]
-        # The 2.5-year-old row is still returned: history is "last 30 ROWS",
-        # not a rolling date window. Advancing the clock never evicts it.
-        self.assertIn('2024-01-01', dates)
+        self.assertIn('2026-07-01', dates)
 
-    @unittest.expectedFailure
-    def test_history_SHOULD_roll_off_entries_older_than_window(self):
-        """BUG (jokes/views.py:1149-1157): DailyJokeViewSet.history returns the
-        newest 30 ROWS (`[:30]`) with NO date cutoff and never consults the
-        `daily_joke_history_days` entitlement (30/90/365 across plans, defined in
-        billing/entitlements.py:30 + seeded in billing/migrations/0002).
-
-        Intended behavior: a rolling "last N days" window that EVICTS stale
-        entries as the clock advances. This test asserts that intent and is
-        marked expectedFailure to document the gap — a 2.5-year-old delivery
-        must NOT appear once the clock is well past its 30-day window.
-        """
-        with freeze_time('2026-07-14T12:00:00Z'):
+    def test_history_rolls_off_entries_older_than_window(self):
+        """A 2.5-year-old delivery is EVICTED once the clock is well past its
+        30-day window (free entitlement) — the fix that flipped the old
+        expectedFailure into enforced behavior."""
+        with freeze_time('2026-07-14T12:00:00Z'):  # cutoff = 2026-06-14
             r = self.client.get('/api/v1/daily-jokes/history/')
             dates = [row['date'] for row in r.data]
         self.assertNotIn('2024-01-01', dates)
