@@ -776,3 +776,101 @@ class MediaPublishAndLifecycleTests(TestCase):
         zf = zipfile.ZipFile(io.BytesIO(response.content))
         payload = json.loads(zf.read('jokes-for-data-export.json'))
         self.assertEqual(len(payload['media_assets']), 1)
+
+
+# =============================================================================
+# Task 8: Anonymous paywall — signed-cookie ledger + reveal endpoint
+# =============================================================================
+from django.core import signing as django_signing
+
+from jokes.paywall import (
+    ANON_COOKIE_NAME, ANON_COOKIE_SALT, FREE_READS_DEFAULT, paywall_state,
+)
+
+
+def _seed_text_jokes(n):
+    fmt, _ = Format.objects.get_or_create(slug='oneliner', defaults={'name': 'One-liner'})
+    age, _ = AgeRating.objects.get_or_create(slug='all-ages', defaults={'name': 'All Ages'})
+    lang, _ = Language.objects.get_or_create(code='en', defaults={'name': 'English'})
+    # local machine lacks libcairo; share-image generation is out of scope here
+    # (same workaround as make_image_joke / _filler_joke above).
+    with mock.patch('jokes.models.Joke._generate_share_image'):
+        return [
+            Joke.objects.create(
+                text=f'joke {i}', format=fmt, age_rating=age, language=lang,
+            )
+            for i in range(n)
+        ]
+
+
+class AnonPaywallTests(TestCase):
+    def setUp(self):
+        self.client = APIClient()
+        self.jokes = _seed_text_jokes(12)
+
+    def _reveal(self, joke):
+        return self.client.post(f'/api/v1/jokes/{joke.pk}/reveal/')
+
+    def test_reveal_consumes_and_reports_state(self):
+        response = self._reveal(self.jokes[0])
+        self.assertEqual(response.status_code, 200)
+        body = response.json()
+        self.assertEqual(body['used'], 1)
+        self.assertEqual(body['limit'], FREE_READS_DEFAULT)
+        self.assertFalse(body['over'])
+        self.assertIn(ANON_COOKIE_NAME, response.cookies)
+
+    def test_over_cap_locks_new_jokes_but_not_consumed_ones(self):
+        for joke in self.jokes[:10]:
+            self._reveal(joke)
+        listing = self.client.get('/api/v1/jokes/')
+        rows = listing.json()['results']
+        by_id = {row['id']: row for row in rows}
+        consumed_id = self.jokes[0].pk
+        fresh_id = self.jokes[11].pk
+        if consumed_id in by_id:
+            self.assertFalse(by_id[consumed_id]['is_locked'])
+        if fresh_id in by_id:
+            self.assertTrue(by_id[fresh_id]['is_locked'])
+
+    def test_reveal_when_over_does_not_extend(self):
+        for joke in self.jokes[:10]:
+            self._reveal(joke)
+        response = self._reveal(self.jokes[11])
+        body = response.json()
+        self.assertTrue(body['over'])
+        self.assertEqual(body['used'], 10)
+
+    def test_tampered_cookie_resets_ledger(self):
+        self._reveal(self.jokes[0])
+        self.client.cookies[ANON_COOKIE_NAME] = 'tampered-garbage'
+        response = self._reveal(self.jokes[1])
+        self.assertEqual(response.json()['used'], 1)
+
+    def test_midnight_utc_reset(self):
+        with freeze_time('2026-07-20 23:30:00'):
+            for joke in self.jokes[:10]:
+                self._reveal(joke)
+            self.assertTrue(self._reveal(self.jokes[10]).json()['over'])
+        with freeze_time('2026-07-21 00:30:00'):
+            response = self._reveal(self.jokes[10])
+            self.assertEqual(response.json()['used'], 1)
+            self.assertFalse(response.json()['over'])
+
+    def test_authenticated_caller_gets_204_noop(self):
+        user = make_user('authed@example.com')
+        self.client.force_authenticate(user)
+        response = self._reveal(self.jokes[0])
+        self.assertEqual(response.status_code, 204)
+
+    def test_anon_detail_get_consumes(self):
+        response = self.client.get(f'/api/v1/jokes/{self.jokes[0].pk}/')
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(ANON_COOKIE_NAME, response.cookies)
+
+    def test_daily_reads_reports_anon_state(self):
+        self._reveal(self.jokes[0])
+        response = self.client.get('/api/v1/jokes/daily-reads/')
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()['used'], 1)
+        self.assertEqual(response.json()['limit'], FREE_READS_DEFAULT)

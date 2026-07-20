@@ -33,6 +33,7 @@ urlpatterns = [
 
     # Joke Submission & Drafts (Phase 2)
     path('jokes/submit/', views.JokeSubmitView.as_view(), name='joke-submit'),
+    path('jokes/<int:pk>/reveal/', views.JokeRevealView.as_view(), name='joke-reveal'),
     path('jokes/my-drafts/', views.JokeDraftListView.as_view(), name='joke-drafts-list'),
     path('jokes/my-drafts/<int:pk>/', views.JokeDraftDetailView.as_view(), name='joke-draft-detail'),
     path('jokes/my-drafts/<int:pk>/submit/', views.JokeDraftSubmitView.as_view(), name='joke-draft-submit'),
