@@ -323,13 +323,18 @@ class ContentReportAdmin(admin.ModelAdmin):
         ContentReport.objects.filter(joke_id__in=joke_ids).exclude(
             status__in=['resolved', 'dismissed']
         ).update(status='resolved', resolved_at=now)
-        # Media lifecycle: takedown deletes the storage objects too — the DB
-        # flag alone leaves files world-readable on the public bucket.
-        media_assets = MediaAsset.objects.filter(
-            joke_links__joke_id__in=joke_ids,
-        ).distinct()
+        # Media lifecycle: detach the taken-down jokes' media, then delete
+        # files ONLY for assets no longer attached to any live joke — an
+        # asset shared with a joke that was NOT taken down must survive.
+        # (Deleting the files matters: the DB flag alone leaves them
+        # world-readable on the public bucket.)
+        asset_ids = list(
+            MediaAsset.objects.filter(joke_links__joke_id__in=joke_ids)
+            .distinct().values_list('pk', flat=True)
+        )
+        JokeMedia.objects.filter(joke_id__in=joke_ids).delete()
         media_deleted = 0
-        for asset in media_assets:
+        for asset in MediaAsset.objects.filter(pk__in=asset_ids, joke_links__isnull=True):
             asset.delete_with_files()
             media_deleted += 1
         if media_deleted:
