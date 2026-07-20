@@ -8,10 +8,14 @@ from django.contrib.auth import get_user_model
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
 from django.test import TestCase, override_settings
+from PIL import Image
 
 from jokes.models import (
     AgeRating, Format, Joke, JokeMedia, JokeSubmission, JokeSubmissionMedia,
     Language, MediaAsset,
+)
+from jokes.media_processing import (
+    MAX_IMAGE_BYTES, MediaValidationError, process_image,
 )
 
 User = get_user_model()
@@ -62,3 +66,56 @@ class MediaAssetModelTests(TestCase):
         JokeSubmissionMedia.objects.create(submission=sub, asset=asset, position=0)
         asset.delete_with_files()
         self.assertEqual(sub.media.count(), 0)
+
+
+def make_image_bytes(width=1200, height=900, fmt='JPEG', exif=None):
+    img = Image.new('RGB', (width, height), color=(120, 40, 200))
+    buf = io.BytesIO()
+    kwargs = {'format': fmt}
+    if exif is not None:
+        kwargs['exif'] = exif
+    img.save(buf, **kwargs)
+    buf.seek(0)
+    buf.name = f'test.{fmt.lower()}'
+    return buf
+
+
+class ImageProcessingTests(TestCase):
+    def test_valid_jpeg_is_reencoded_to_webp_with_dims_and_phash(self):
+        result = process_image(make_image_bytes(1200, 900))
+        self.assertEqual((result.width, result.height), (1200, 900))
+        self.assertEqual(len(result.phash), 16)
+        out = Image.open(io.BytesIO(result.data))
+        self.assertEqual(out.format, 'WEBP')
+
+    def test_oversize_dimensions_rejected(self):
+        with self.assertRaises(MediaValidationError) as ctx:
+            process_image(make_image_bytes(5000, 100))
+        self.assertIn('file', ctx.exception.errors)
+
+    def test_downscales_to_1600_longest_edge(self):
+        result = process_image(make_image_bytes(3200, 1600))
+        self.assertEqual((result.width, result.height), (1600, 800))
+
+    def test_non_image_rejected(self):
+        buf = io.BytesIO(b'this is not an image at all')
+        buf.name = 'evil.jpg'
+        with self.assertRaises(MediaValidationError):
+            process_image(buf)
+
+    def test_gif_rejected_in_wave_1(self):
+        with self.assertRaises(MediaValidationError):
+            process_image(make_image_bytes(fmt='GIF'))
+
+    def test_exif_is_stripped(self):
+        exif = Image.Exif()
+        exif[0x010F] = 'TestCam Make'          # Make tag
+        src = make_image_bytes(exif=exif.tobytes())
+        result = process_image(src)
+        out = Image.open(io.BytesIO(result.data))
+        self.assertEqual(dict(out.getexif()), {})
+
+    def test_phash_is_deterministic(self):
+        a = process_image(make_image_bytes())
+        b = process_image(make_image_bytes())
+        self.assertEqual(a.phash, b.phash)
