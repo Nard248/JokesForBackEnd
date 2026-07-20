@@ -334,6 +334,8 @@ class ContentReportAdmin(admin.ModelAdmin):
         )
         JokeMedia.objects.filter(joke_id__in=joke_ids).delete()
         media_deleted = 0
+        # submission_links are intentionally ignored here: a taken-down image
+        # must not survive via the author's drafts/submissions either.
         for asset in MediaAsset.objects.filter(pk__in=asset_ids, joke_links__isnull=True):
             asset.delete_with_files()
             media_deleted += 1

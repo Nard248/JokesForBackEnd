@@ -764,6 +764,40 @@ class MediaPublishAndLifecycleTests(TestCase):
         self.assertFalse(MediaAsset.objects.filter(pk=asset.pk).exists())
         self.assertFalse(default_storage.exists(name))
 
+    def test_account_delete_takes_down_emptied_media_jokes_but_spares_text(self):
+        # Image joke: account delete strips the owner's MediaAsset rows, so a
+        # published image-format joke would otherwise survive anonymized with
+        # media: [] forever (caption over an empty box). It must be taken down.
+        oneliner_fmt, _ = Format.objects.get_or_create(
+            slug='oneliner', defaults={'name': 'One-liners'},
+        )
+        with mock.patch('jokes.models.Joke._generate_share_image'):
+            image_joke = Joke.objects.create(
+                text='img joke', setup='img joke', format=self.fmt,
+                age_rating=self.age, language=self.lang, creator=self.user,
+            )
+            # Plain text joke: existing anonymized-survival policy is unchanged.
+            text_joke = Joke.objects.create(
+                text='plain text joke', format=oneliner_fmt,
+                age_rating=self.age, language=self.lang, creator=self.user,
+            )
+        asset = make_asset(self.user)
+        JokeMedia.objects.create(joke=image_joke, asset=asset, position=0)
+
+        client = APIClient()
+        client.force_authenticate(self.user)
+        response = client.delete(
+            '/api/v1/users/me/', {'password': 'x'}, format='json',
+        )
+        self.assertIn(response.status_code, (200, 204))
+
+        image_joke = Joke.all_objects.get(pk=image_joke.pk)
+        self.assertTrue(image_joke.is_removed)
+
+        text_joke = Joke.all_objects.get(pk=text_joke.pk)
+        self.assertFalse(text_joke.is_removed)
+        self.assertIsNone(text_joke.creator_id)
+
     def test_data_export_lists_media_assets(self):
         make_asset(self.user)
         client = APIClient()
