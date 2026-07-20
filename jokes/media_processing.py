@@ -56,7 +56,11 @@ def process_image(uploaded):
     rejection (size, type, dimensions, corrupt data).
     """
     size = getattr(uploaded, 'size', None)
-    if size is not None and size > MAX_IMAGE_BYTES:
+    if size is None:                         # raw stream (no Django File): measure it
+        uploaded.seek(0, 2)
+        size = uploaded.tell()
+        uploaded.seek(0)
+    if size > MAX_IMAGE_BYTES:
         raise MediaValidationError(
             {'file': f'Image exceeds the {MAX_IMAGE_BYTES // (1024 * 1024)}MB limit.'}
         )
@@ -64,11 +68,14 @@ def process_image(uploaded):
     try:
         probe = Image.open(uploaded)
         probe.verify()                       # cheap integrity check
-    except (UnidentifiedImageError, OSError, ValueError):
+    except (Image.DecompressionBombError, UnidentifiedImageError, OSError, ValueError):
         raise MediaValidationError({'file': 'Not a valid image.'})
 
     uploaded.seek(0)
-    img = Image.open(uploaded)               # verify() invalidates; reopen
+    try:
+        img = Image.open(uploaded)           # verify() invalidates; reopen
+    except (Image.DecompressionBombError, UnidentifiedImageError, OSError, ValueError):
+        raise MediaValidationError({'file': 'Not a valid image.'})
     if img.format not in ALLOWED_SOURCE_FORMATS:
         raise MediaValidationError(
             {'file': 'Only JPEG, PNG, or WebP images are supported.'}
@@ -78,16 +85,21 @@ def process_image(uploaded):
             {'file': f'Image dimensions exceed {MAX_SOURCE_DIM}px.'}
         )
 
-    img = ImageOps.exif_transpose(img)       # bake orientation BEFORE strip
-    if max(img.size) > OUT_MAX_DIM:
-        img.thumbnail((OUT_MAX_DIM, OUT_MAX_DIM), Image.LANCZOS)
+    try:
+        img = ImageOps.exif_transpose(img)   # bake orientation BEFORE strip
+        if max(img.size) > OUT_MAX_DIM:
+            img.thumbnail((OUT_MAX_DIM, OUT_MAX_DIM), Image.LANCZOS)
 
-    has_alpha = img.mode in ('RGBA', 'LA', 'PA') or 'transparency' in img.info
-    img = img.convert('RGBA' if has_alpha else 'RGB')
+        has_alpha = img.mode in ('RGBA', 'LA', 'PA') or 'transparency' in img.info
+        img = img.convert('RGBA' if has_alpha else 'RGB')
 
-    phash = dhash_hex(img)
-    out = io.BytesIO()
-    img.save(out, format='WEBP', quality=OUT_QUALITY)   # fresh encode = no EXIF
+        phash = dhash_hex(img)
+        out = io.BytesIO()
+        img.save(out, format='WEBP', quality=OUT_QUALITY)   # fresh encode = no EXIF
+    except (OSError, ValueError):
+        # verify() is a header check, not a decode guarantee — truncated data
+        # can still blow up during decode/transform/encode.
+        raise MediaValidationError({'file': 'Not a valid image.'})
     return ProcessedImage(
         data=out.getvalue(), width=img.width, height=img.height, phash=phash,
     )
