@@ -461,3 +461,75 @@ class TextBackfillScopeTests(TestCase):
         self.assertEqual(response.status_code, 200)
         draft = JokeSubmission.objects.get(pk=draft_id)
         self.assertEqual(draft.text, 'caption')
+
+
+from rest_framework.test import APIRequestFactory
+
+from jokes.paywall import PaywallState
+from jokes.serializers import JokeListSerializer, JokeSerializer
+
+
+def make_image_joke(user, setup='the caption'):
+    fmt, age, lang = _taxonomy()
+    with mock.patch('jokes.models.Joke._generate_share_image'):
+        joke = Joke.objects.create(
+            text=setup, setup=setup, format=fmt, age_rating=age, language=lang,
+            creator=user,
+        )
+    asset = make_asset(user)
+    JokeMedia.objects.create(joke=joke, asset=asset, position=0)
+    return joke
+
+
+def locked_state(consumed=frozenset()):
+    return PaywallState(
+        over=True, used=10, limit=10, remaining=0,
+        consumed_ids=consumed, reset_at='2026-07-21T00:00:00+00:00',
+    )
+
+
+@override_settings(MEDIA_ROOT=_MEDIA_ROOT)
+class MediaLockingContractTests(TestCase):
+    def setUp(self):
+        self.user = make_user('lockme@example.com')
+        self.joke = make_image_joke(self.user)
+        self.request = APIRequestFactory().get('/api/v1/jokes/')
+
+    def test_unlocked_serves_full_media(self):
+        data = JokeSerializer(
+            self.joke, context={'request': self.request}
+        ).data
+        self.assertEqual(len(data['media']), 1)
+        item = data['media'][0]
+        self.assertIn('url', item)
+        self.assertTrue(item['url'])
+        self.assertFalse(data['is_locked'])
+
+    def test_locked_serves_dimensions_only(self):
+        data = JokeSerializer(
+            self.joke,
+            context={'request': self.request, 'paywall_state': locked_state()},
+        ).data
+        self.assertTrue(data['is_locked'])
+        item = data['media'][0]
+        self.assertEqual(
+            set(item.keys()), {'kind', 'width', 'height'}
+        )
+        self.assertEqual(data['setup'], 'the caption')  # teaser survives
+
+    def test_consumed_joke_keeps_media(self):
+        state = locked_state(consumed=frozenset({self.joke.id}))
+        data = JokeSerializer(
+            self.joke,
+            context={'request': self.request, 'paywall_state': state},
+        ).data
+        self.assertFalse(data['is_locked'])
+        self.assertIn('url', data['media'][0])
+
+    def test_list_serializer_never_serves_urls(self):
+        data = JokeListSerializer(
+            self.joke, context={'request': self.request}
+        ).data
+        self.assertEqual(
+            set(data['media'][0].keys()), {'kind', 'width', 'height'}
+        )

@@ -191,6 +191,9 @@ class JokeSerializer(serializers.ModelSerializer):
     # request (free user over the daily read cap, joke not yet opened today).
     is_locked = serializers.SerializerMethodField()
 
+    # Media attachments (Wave 1). Locked jokes get dimensions only.
+    media = serializers.SerializerMethodField()
+
     class Meta:
         model = Joke
         fields = [
@@ -199,6 +202,7 @@ class JokeSerializer(serializers.ModelSerializer):
             'setup',
             'punchline',
             'lines',        # P10: knock-knock dialogue (null for other formats)
+            'media',
             'format',
             'age_rating',
             'language',
@@ -238,6 +242,32 @@ class JokeSerializer(serializers.ModelSerializer):
 
     def get_is_locked(self, obj) -> bool:
         return self._is_locked(obj)
+
+    def get_media(self, obj) -> list[dict]:
+        """Media attachments in position order. LOCKED jokes get dimensions
+        only — URLs are withheld SERVER-SIDE (spec §6.2): a client-side blur
+        over a real URL would still download the payoff."""
+        links = list(obj.media.all())
+        if not links:
+            return []
+        if self._is_locked(obj):
+            return [
+                {'kind': l.asset.kind, 'width': l.asset.width, 'height': l.asset.height}
+                for l in links
+            ]
+        serializer = MediaAssetSerializer(context=self.context)
+        return [
+            {
+                'kind': l.asset.kind,
+                'url': serializer._absolute(l.asset.file),
+                'poster_url': serializer._absolute(l.asset.poster),
+                'width': l.asset.width,
+                'height': l.asset.height,
+                'duration_ms': l.asset.duration_ms,
+                'is_gif': l.asset.is_gif,
+            }
+            for l in links
+        ]
 
     def to_representation(self, obj):
         """Strip the payoff SERVER-SIDE when locked — the ONLY place fields are
@@ -289,6 +319,9 @@ class JokeListSerializer(serializers.ModelSerializer):
     # Share card URL
     share_image_url = serializers.SerializerMethodField()
 
+    # Media attachments (Wave 1). Dims-only ALWAYS — see get_media().
+    media = serializers.SerializerMethodField()
+
     class Meta:
         model = Joke
         fields = [
@@ -299,6 +332,7 @@ class JokeListSerializer(serializers.ModelSerializer):
             'tones',
             'categories',   # alias of tones
             'share_image_url',
+            'media',
         ]
 
     def get_text(self, obj):
@@ -315,6 +349,15 @@ class JokeListSerializer(serializers.ModelSerializer):
                 return request.build_absolute_uri(obj.share_image.url)
             return obj.share_image.url
         return None
+
+    def get_media(self, obj) -> list[dict]:
+        """Dims-only ALWAYS: this serializer has no paywall context (it serves
+        the public creator profile) — emitting URLs here would bypass the
+        paywall entirely."""
+        return [
+            {'kind': l.asset.kind, 'width': l.asset.width, 'height': l.asset.height}
+            for l in obj.media.all()
+        ]
 
 
 # =============================================================================

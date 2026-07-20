@@ -149,7 +149,7 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
             content_tier__in=allowed_tiers(self.request)
         ).select_related(
             'format', 'age_rating', 'language', 'source'
-        ).prefetch_related('tones', 'context_tags', 'culture_tags')
+        ).prefetch_related('tones', 'context_tags', 'culture_tags', 'media__asset')
         # Moderation: hide removed jokes (global) + blocked users' jokes (per-viewer).
         return visible_jokes(qs, self.request)
 
