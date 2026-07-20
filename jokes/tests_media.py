@@ -284,3 +284,133 @@ class MediaUploadEndpointTests(TestCase):
                 self._upload()
         self.assertEqual(MediaAsset.objects.count(), 0)
         self.assertEqual(self._media_files_on_disk(), before)
+
+
+from jokes.submission_rules import validate_per_format
+
+
+def _taxonomy():
+    fmt, _ = Format.objects.get_or_create(slug='image', defaults={'name': 'Image'})
+    age, _ = AgeRating.objects.get_or_create(slug='all-ages', defaults={'name': 'All Ages'})
+    lang, _ = Language.objects.get_or_create(code='en', defaults={'name': 'English'})
+    return fmt, age, lang
+
+
+class ImageFormatRuleTests(TestCase):
+    def test_image_requires_setup_and_media(self):
+        errors = validate_per_format('image', {'setup': '', 'media': []})
+        self.assertIn('setup', errors)
+        self.assertIn('media', errors)
+
+    def test_image_happy_path(self):
+        errors = validate_per_format(
+            'image', {'setup': 'caption', 'media': ['image']}
+        )
+        self.assertEqual(errors, {})
+
+    def test_image_rejects_punchline(self):
+        errors = validate_per_format(
+            'image',
+            {'setup': 'caption', 'punchline': 'nope', 'media': ['image']},
+        )
+        self.assertIn('punchline', errors)
+
+    def test_image_max_six_attachments(self):
+        errors = validate_per_format(
+            'image', {'setup': 'caption', 'media': ['image'] * 7}
+        )
+        self.assertIn('media', errors)
+
+    def test_image_rejects_wrong_kind(self):
+        errors = validate_per_format(
+            'image', {'setup': 'caption', 'media': ['video']}
+        )
+        self.assertIn('media', errors)
+
+
+@override_settings(MEDIA_ROOT=_MEDIA_ROOT)
+class ImageDraftFlowTests(TestCase):
+    def setUp(self):
+        self.fmt, self.age, self.lang = _taxonomy()
+        self.user = make_user('imagecreator@example.com')
+        self.client = APIClient()
+        self.client.force_authenticate(self.user)
+
+    def _make_draft(self):
+        response = self.client.post('/api/v1/jokes/my-drafts/', {'format': 'image'})
+        self.assertEqual(response.status_code, 201)
+        return response.json()['id']
+
+    def test_draft_patch_attaches_media_in_order(self):
+        draft_id = self._make_draft()
+        a1 = make_asset(self.user)
+        a2 = make_asset(self.user)
+        response = self.client.patch(
+            f'/api/v1/jokes/my-drafts/{draft_id}/',
+            {'setup': 'caption here', 'media_asset_ids': [str(a2.pk), str(a1.pk)]},
+            format='json',
+        )
+        self.assertEqual(response.status_code, 200)
+        draft = JokeSubmission.objects.get(pk=draft_id)
+        self.assertEqual(
+            [m.asset_id for m in draft.media.all()], [a2.pk, a1.pk]
+        )
+
+    def test_cannot_attach_someone_elses_asset(self):
+        draft_id = self._make_draft()
+        other = make_asset(make_user('other@example.com'))
+        response = self.client.patch(
+            f'/api/v1/jokes/my-drafts/{draft_id}/',
+            {'media_asset_ids': [str(other.pk)]}, format='json',
+        )
+        self.assertEqual(response.status_code, 400)
+
+    def test_submit_without_media_400(self):
+        draft_id = self._make_draft()
+        self.client.patch(
+            f'/api/v1/jokes/my-drafts/{draft_id}/',
+            {'setup': 'caption'}, format='json',
+        )
+        response = self.client.post(f'/api/v1/jokes/my-drafts/{draft_id}/submit/')
+        self.assertEqual(response.status_code, 400)
+        self.assertIn('media', response.json())
+
+    def test_submit_happy_path_backfills_text_from_setup(self):
+        draft_id = self._make_draft()
+        asset = make_asset(self.user)
+        self.client.patch(
+            f'/api/v1/jokes/my-drafts/{draft_id}/',
+            {'setup': 'the caption', 'media_asset_ids': [str(asset.pk)]},
+            format='json',
+        )
+        response = self.client.post(f'/api/v1/jokes/my-drafts/{draft_id}/submit/')
+        self.assertEqual(response.status_code, 200)
+        draft = JokeSubmission.objects.get(pk=draft_id)
+        self.assertEqual(draft.status, 'pending')
+        self.assertEqual(draft.text, 'the caption')
+
+    def test_draft_list_includes_media(self):
+        draft_id = self._make_draft()
+        asset = make_asset(self.user)
+        self.client.patch(
+            f'/api/v1/jokes/my-drafts/{draft_id}/',
+            {'media_asset_ids': [str(asset.pk)]}, format='json',
+        )
+        response = self.client.get('/api/v1/jokes/my-drafts/')
+        rows = response.json()['results'] if 'results' in response.json() else response.json()
+        row = next(r for r in rows if r['id'] == draft_id)
+        self.assertEqual(len(row['media']), 1)
+        self.assertEqual(row['media'][0]['kind'], 'image')
+
+    def test_draft_delete_removes_solely_referenced_assets(self):
+        draft_id = self._make_draft()
+        asset = make_asset(self.user)
+        self.client.patch(
+            f'/api/v1/jokes/my-drafts/{draft_id}/',
+            {'media_asset_ids': [str(asset.pk)]}, format='json',
+        )
+        name = asset.file.name
+        response = self.client.delete(f'/api/v1/jokes/my-drafts/{draft_id}/')
+        self.assertEqual(response.status_code, 204)
+        self.assertFalse(MediaAsset.objects.filter(pk=asset.pk).exists())
+        self.assertFalse(default_storage.exists(name))

@@ -39,6 +39,15 @@ FORMAT_RULES = {
         'required':  ['text'],
         'forbidden': ['setup', 'punchline', 'lines'],
     },
+    'image': {
+        'required':  ['setup', 'media'],
+        'forbidden': ['punchline', 'lines'],
+        'constraints': {
+            'media_kind': 'image',
+            'min_media': 1,
+            'max_media': 6,
+        },
+    },
 }
 
 
@@ -119,5 +128,27 @@ def validate_per_format(format_slug, attrs):
             errors['text'] = (
                 f"{format_slug.capitalize()} must be at least {min_words} words."
             )
+
+    if {'media_kind', 'min_media', 'max_media'} & constraints.keys():
+        media = attrs.get('media') or []
+        if 'media' not in errors:
+            min_media = constraints.get('min_media')
+            max_media = constraints.get('max_media')
+            media_kind = constraints.get('media_kind')
+            if min_media is not None and len(media) < min_media:
+                errors['media'] = (
+                    f"{format_slug.capitalize()} format requires at least "
+                    f"{min_media} media attachment(s)."
+                )
+            elif max_media is not None and len(media) > max_media:
+                errors['media'] = (
+                    f"{format_slug.capitalize()} format allows at most "
+                    f"{max_media} media attachment(s)."
+                )
+            elif media_kind is not None and any(k != media_kind for k in media):
+                errors['media'] = (
+                    f"All attachments must be {media_kind} for "
+                    f"{format_slug} format."
+                )
 
     return errors

@@ -38,6 +38,7 @@ from .models import (
     JokePackEntry,
     JokePackProgress,
     MediaAsset,
+    JokeSubmissionMedia,
 )
 
 
@@ -689,6 +690,7 @@ class JokeSubmissionListSerializer(serializers.ModelSerializer):
     themes = serializers.SerializerMethodField()
     last_edited_at = serializers.DateTimeField(source='updated_at', read_only=True)
     likes = serializers.SerializerMethodField()
+    media = serializers.SerializerMethodField()
 
     class Meta:
         model = JokeSubmission
@@ -699,7 +701,7 @@ class JokeSubmissionListSerializer(serializers.ModelSerializer):
             'categories',  # alias of tones
             'themes',      # alias of context_tags
             'last_edited_at',
-            'created_at', 'likes', 'rejection_reason',
+            'created_at', 'likes', 'rejection_reason', 'media',
         ]
 
     def get_tones(self, obj) -> list[str]:
@@ -721,6 +723,12 @@ class JokeSubmissionListSerializer(serializers.ModelSerializer):
         if obj.published_joke:
             return obj.published_joke.ratings.filter(rating=1).count()
         return None
+
+    def get_media(self, obj) -> list[dict]:
+        return [
+            MediaAssetSerializer(link.asset, context=self.context).data
+            for link in obj.media.all()
+        ]
 
 
 class JokeSubmissionCreateSerializer(serializers.ModelSerializer):
@@ -753,6 +761,9 @@ class JokeSubmissionCreateSerializer(serializers.ModelSerializer):
         slug_field='slug', queryset=CultureTag.objects.all(), many=True, required=False,
     )
     lines = serializers.JSONField(required=False, allow_null=True)
+    media_asset_ids = serializers.ListField(
+        child=serializers.UUIDField(), required=False, write_only=True,
+    )
 
     class Meta:
         model = JokeSubmission
@@ -760,7 +771,7 @@ class JokeSubmissionCreateSerializer(serializers.ModelSerializer):
             'format', 'setup', 'punchline', 'text', 'lines',
             'tones', 'categories', 'themes',
             'age_rating', 'context_tags', 'culture_tags',
-            'source', 'language',
+            'source', 'language', 'media_asset_ids',
         ]
 
     def to_internal_value(self, data):
@@ -790,6 +801,34 @@ class JokeSubmissionCreateSerializer(serializers.ModelSerializer):
                      else (self.instance.lines if self.instance else None),
         }
 
+        # Resolve media attachments for per-format validation. When the key is
+        # absent on a PATCH, the instance's existing attachments stand.
+        self._media_provided = 'media_asset_ids' in data
+        if self._media_provided:
+            media_ids = data.get('media_asset_ids') or []
+            if len(set(media_ids)) != len(media_ids):
+                raise serializers.ValidationError(
+                    {'media_asset_ids': 'Duplicate media attachments.'}
+                )
+            request = self.context.get('request')
+            owner = getattr(request, 'user', None)
+            assets = {
+                a.id: a for a in MediaAsset.objects.filter(
+                    id__in=media_ids, owner=owner,
+                )
+            }
+            missing = [str(i) for i in media_ids if i not in assets]
+            if missing:
+                raise serializers.ValidationError(
+                    {'media_asset_ids': 'One or more media assets were not found.'}
+                )
+            self._media_assets = [assets[i] for i in media_ids]
+            attrs['media'] = [a.kind for a in self._media_assets]
+        elif self.instance is not None:
+            attrs['media'] = [m.asset.kind for m in self.instance.media.all()]
+        else:
+            attrs['media'] = []
+
         # Draft autosave (JokeDraftDetailView PATCH) sets this flag so an
         # in-progress draft with unfilled required fields persists instead of
         # 400ing and losing the creator's typed text. Per-format validation is
@@ -809,8 +848,32 @@ class JokeSubmissionCreateSerializer(serializers.ModelSerializer):
                 data['text'] = f"{attrs['setup']} {attrs['punchline']}"
             elif attrs['lines']:
                 data['text'] = ' '.join(attrs['lines'])
+            elif attrs['setup']:
+                # Media formats: the setup teaser IS the searchable/share text.
+                data['text'] = attrs['setup']
 
         return data
+
+    def create(self, validated_data):
+        validated_data.pop('media_asset_ids', None)
+        instance = super().create(validated_data)
+        self._sync_media(instance)
+        return instance
+
+    def update(self, instance, validated_data):
+        validated_data.pop('media_asset_ids', None)
+        instance = super().update(instance, validated_data)
+        self._sync_media(instance)
+        return instance
+
+    def _sync_media(self, submission):
+        if not getattr(self, '_media_provided', False):
+            return
+        submission.media.all().delete()
+        for position, asset in enumerate(getattr(self, '_media_assets', [])):
+            JokeSubmissionMedia.objects.create(
+                submission=submission, asset=asset, position=position,
+            )
 
 
 # =============================================================================
