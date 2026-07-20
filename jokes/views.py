@@ -86,7 +86,7 @@ from .media_processing import MediaValidationError, process_image
 from .media_screening import get_matcher, screen_image
 from .recommendations import get_personalized_joke, get_recently_shown_joke_ids
 from .serving import allowed_tiers
-from .paywall import paywall_state
+from .paywall import paywall_state, record_anon_read
 from .submission_rules import validate_per_format
 from .identity import (
     public_display_name, public_handle, normalize_handle, is_valid_handle,
@@ -189,6 +189,10 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
                     JokeView.objects.create(
                         user=request.user, joke_id=joke_id, source=source
                     )
+        elif response.status_code == 200 and not response.data.get('is_locked'):
+            joke_id = response.data.get('id')
+            if joke_id:
+                record_anon_read(response, request, joke_id)
         return response
 
     @extend_schema(
@@ -373,7 +377,7 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
     )
     @action(
         detail=False, methods=['get'],
-        permission_classes=[IsAuthenticated], url_path='daily-reads',
+        permission_classes=[AllowAny], url_path='daily-reads',
     )
     def daily_reads(self, request):
         """GET /api/v1/jokes/daily-reads/ — remaining free reads for the nudge."""
@@ -616,6 +620,46 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
             'share_url': share_url,
             'joke_id': joke.pk,
         }, status=status.HTTP_201_CREATED)
+
+
+class JokeRevealView(APIView):
+    """POST /jokes/{id}/reveal/ — anonymous consumption ledger write.
+
+    Anonymous in-feed reveals can't ride telemetry (consent-gated), so the
+    frontend calls this when an unauthenticated reader taps reveal.
+    Authenticated readers 204 no-op: their ledger is JokeView (retrieve +
+    telemetry). Soft wall: response carries the updated counters.
+    """
+
+    permission_classes = [AllowAny]
+
+    def post(self, request, pk):
+        if request.user.is_authenticated:
+            return Response(status=status.HTTP_204_NO_CONTENT)
+
+        joke = get_object_or_404(
+            visible_jokes(
+                Joke.objects.filter(content_tier__in=allowed_tiers(request)),
+                request,
+            ),
+            pk=pk,
+        )
+        state = paywall_state(request)
+        consumed = set(state.consumed_ids)
+        will_consume = joke.pk not in consumed and not state.over
+        if will_consume:
+            consumed.add(joke.pk)
+        used = len(consumed)
+        response = Response({
+            'limit': state.limit,
+            'used': used,
+            'remaining': max(0, (state.limit or 0) - used),
+            'over': used >= (state.limit or 0),
+            'reset_at': state.reset_at,
+        })
+        if will_consume:
+            record_anon_read(response, request, joke.pk)
+        return response
 
 
 # =============================================================================
