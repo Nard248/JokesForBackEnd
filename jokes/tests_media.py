@@ -3,6 +3,7 @@ import io
 import shutil
 import tempfile
 import uuid
+from unittest import mock
 
 from django.contrib.auth import get_user_model
 from django.core.files.base import ContentFile
@@ -119,3 +120,32 @@ class ImageProcessingTests(TestCase):
         a = process_image(make_image_bytes())
         b = process_image(make_image_bytes())
         self.assertEqual(a.phash, b.phash)
+
+    def test_oversize_bytes_rejected_via_size_attribute(self):
+        buf = make_image_bytes()               # valid small image
+        buf.size = MAX_IMAGE_BYTES + 1         # Django-File-style size attr
+        with self.assertRaises(MediaValidationError) as ctx:
+            process_image(buf)
+        self.assertIn('limit', ctx.exception.errors['file'])
+
+    def test_oversize_bytes_rejected_without_size_attribute(self):
+        buf = io.BytesIO(b'x' * (MAX_IMAGE_BYTES + 1))   # no .size attr
+        buf.name = 'big.jpg'
+        with self.assertRaises(MediaValidationError) as ctx:
+            process_image(buf)
+        # Must be the size error, not 'Not a valid image': the byte cap has
+        # to run BEFORE Pillow ever parses the stream.
+        self.assertIn('limit', ctx.exception.errors['file'])
+
+    def test_truncated_image_raises_validation_error_not_oserror(self):
+        good = make_image_bytes().getvalue()
+        bad = io.BytesIO(good[: int(len(good) * 0.6)])
+        bad.name = 'trunc.jpg'
+        with self.assertRaises(MediaValidationError):
+            process_image(bad)
+
+    def test_decompression_bomb_raises_validation_error(self):
+        buf = make_image_bytes(1200, 900)      # 1.08M px > 2 * patched cap
+        with mock.patch.object(Image, 'MAX_IMAGE_PIXELS', 1000):
+            with self.assertRaises(MediaValidationError):
+                process_image(buf)
