@@ -6,6 +6,7 @@ Provides serializers for all 8 models:
 - JokeSerializer: Nested detail view with all related models
 - JokeListSerializer: Compact list view with slugs only
 """
+from django.db import transaction
 from rest_framework import serializers
 
 from jokes.submission_rules import FORMAT_RULES, validate_per_format
@@ -848,8 +849,12 @@ class JokeSubmissionCreateSerializer(serializers.ModelSerializer):
                 data['text'] = f"{attrs['setup']} {attrs['punchline']}"
             elif attrs['lines']:
                 data['text'] = ' '.join(attrs['lines'])
-            elif attrs['setup']:
+            elif attrs['setup'] and 'media' in FORMAT_RULES.get(fmt.slug, {}).get('required', []):
                 # Media formats: the setup teaser IS the searchable/share text.
+                # Scoped to media formats only — for setup/anti formats an
+                # autosave PATCH of just {setup} must NOT set text, or the
+                # later {punchline} PATCH would see non-blank text and skip
+                # the full "setup punchline" backfill forever.
                 data['text'] = attrs['setup']
 
         return data
@@ -869,11 +874,12 @@ class JokeSubmissionCreateSerializer(serializers.ModelSerializer):
     def _sync_media(self, submission):
         if not getattr(self, '_media_provided', False):
             return
-        submission.media.all().delete()
-        for position, asset in enumerate(getattr(self, '_media_assets', [])):
-            JokeSubmissionMedia.objects.create(
-                submission=submission, asset=asset, position=position,
-            )
+        with transaction.atomic():
+            submission.media.all().delete()
+            for position, asset in enumerate(getattr(self, '_media_assets', [])):
+                JokeSubmissionMedia.objects.create(
+                    submission=submission, asset=asset, position=position,
+                )
 
 
 # =============================================================================

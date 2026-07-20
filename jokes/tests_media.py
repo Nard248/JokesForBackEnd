@@ -414,3 +414,50 @@ class ImageDraftFlowTests(TestCase):
         self.assertEqual(response.status_code, 204)
         self.assertFalse(MediaAsset.objects.filter(pk=asset.pk).exists())
         self.assertFalse(default_storage.exists(name))
+
+
+class TextBackfillScopeTests(TestCase):
+    """Regression: the media-format setup-only text backfill must NOT fire
+    for text formats. For a `setup`-format draft under autosave, a PATCH of
+    just {setup} would set text = setup; the next PATCH of {punchline} then
+    sees non-blank instance text and skips the backfill, freezing text at
+    setup-only forever (corrupting search/share text after publish)."""
+
+    def setUp(self):
+        _taxonomy()
+        Format.objects.get_or_create(
+            slug='setup', defaults={'name': 'Setup-Punchline'},
+        )
+        self.user = make_user('backfill@example.com')
+        self.client = APIClient()
+        self.client.force_authenticate(self.user)
+
+    def _make_draft(self, fmt):
+        response = self.client.post('/api/v1/jokes/my-drafts/', {'format': fmt})
+        self.assertEqual(response.status_code, 201)
+        return response.json()['id']
+
+    def test_setup_format_autosave_still_backfills_full_text(self):
+        draft_id = self._make_draft('setup')
+        response = self.client.patch(
+            f'/api/v1/jokes/my-drafts/{draft_id}/',
+            {'setup': 'Why?'}, format='json',
+        )
+        self.assertEqual(response.status_code, 200)
+        response = self.client.patch(
+            f'/api/v1/jokes/my-drafts/{draft_id}/',
+            {'punchline': 'Because.'}, format='json',
+        )
+        self.assertEqual(response.status_code, 200)
+        draft = JokeSubmission.objects.get(pk=draft_id)
+        self.assertEqual(draft.text, 'Why? Because.')
+
+    def test_image_format_setup_patch_backfills_text(self):
+        draft_id = self._make_draft('image')
+        response = self.client.patch(
+            f'/api/v1/jokes/my-drafts/{draft_id}/',
+            {'setup': 'caption'}, format='json',
+        )
+        self.assertEqual(response.status_code, 200)
+        draft = JokeSubmission.objects.get(pk=draft_id)
+        self.assertEqual(draft.text, 'caption')
