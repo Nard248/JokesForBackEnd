@@ -1409,7 +1409,9 @@ class JokeDraftListView(generics.ListCreateAPIView):
     def get_queryset(self):
         return JokeSubmission.objects.filter(
             user=self.request.user
-        ).select_related('format', 'age_rating', 'published_joke').prefetch_related('tones', 'context_tags', 'culture_tags')
+        ).select_related('format', 'age_rating', 'published_joke').prefetch_related(
+            'tones', 'context_tags', 'culture_tags', 'media__asset',
+        )
 
     def create(self, request, *args, **kwargs):
         """Create a minimal draft owned by the user from a `format` slug.
@@ -1506,6 +1508,16 @@ class JokeDraftDetailView(generics.RetrieveUpdateDestroyAPIView):
             )
         return super().update(request, *args, **kwargs)
 
+    def perform_destroy(self, instance):
+        assets = [link.asset for link in instance.media.select_related('asset')]
+        super().perform_destroy(instance)
+        for asset in assets:
+            still_used = (
+                asset.submission_links.exists() or asset.joke_links.exists()
+            )
+            if not still_used:
+                asset.delete_with_files()
+
 
 class JokeDraftSubmitView(APIView):
     """POST /jokes/my-drafts/{id}/submit/ — Submit a draft for review."""
@@ -1529,6 +1541,7 @@ class JokeDraftSubmitView(APIView):
                 'setup': submission.setup,
                 'punchline': submission.punchline,
                 'lines': submission.lines,
+                'media': [m.asset.kind for m in submission.media.all()],
             },
         )
         if errors:
