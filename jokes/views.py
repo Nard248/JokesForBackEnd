@@ -985,7 +985,9 @@ class SavedJokeViewSet(
         ).select_related(
             'joke', 'joke__format', 'joke__age_rating', 'joke__language', 'joke__source',
             'collection'
-        ).prefetch_related('joke__tones', 'joke__context_tags', 'joke__culture_tags')
+        ).prefetch_related(
+            'joke__tones', 'joke__context_tags', 'joke__culture_tags', 'joke__media__asset'
+        )
 
         ordering = self.request.query_params.get('ordering', '-saved_at')
         ordering_map = {
@@ -1002,6 +1004,13 @@ class SavedJokeViewSet(
         if self.action == 'create':
             return SavedJokeCreateSerializer
         return SavedJokeSerializer
+
+    def get_serializer_context(self):
+        """Inject the once-per-request paywall decision so the nested
+        JokeSerializer can lock/strip the payoff (mirrors JokeViewSet)."""
+        ctx = super().get_serializer_context()
+        ctx['paywall_state'] = paywall_state(self.request)
+        return ctx
 
     def perform_create(self, serializer):
         """Set the user when saving a joke."""
@@ -1042,12 +1051,13 @@ class SavedJokeViewSet(
             joke__content_tier__in=tiers,
         )
 
+        ctx = self.get_serializer_context()
         page = self.paginate_queryset(saved_jokes)
         if page is not None:
-            serializer = SavedJokeSerializer(page, many=True)
+            serializer = SavedJokeSerializer(page, many=True, context=ctx)
             return self.get_paginated_response(serializer.data)
 
-        serializer = SavedJokeSerializer(saved_jokes, many=True)
+        serializer = SavedJokeSerializer(saved_jokes, many=True, context=ctx)
         return Response(serializer.data)
 
 
@@ -1580,7 +1590,9 @@ class FavoriteViewSet(
             joke__content_tier__in=allowed_tiers(self.request),
         ).select_related(
             'joke', 'joke__format', 'joke__age_rating', 'joke__language', 'joke__source'
-        ).prefetch_related('joke__tones', 'joke__context_tags', 'joke__culture_tags')
+        ).prefetch_related(
+            'joke__tones', 'joke__context_tags', 'joke__culture_tags', 'joke__media__asset'
+        )
 
         # Filter by tones
         tones_param = self.request.query_params.get('tones', '').strip()
@@ -1605,6 +1617,13 @@ class FavoriteViewSet(
         if self.action == 'create':
             return FavoriteCreateSerializer
         return FavoriteSerializer
+
+    def get_serializer_context(self):
+        """Inject the once-per-request paywall decision so the nested
+        JokeSerializer can lock/strip the payoff (mirrors JokeViewSet)."""
+        ctx = super().get_serializer_context()
+        ctx['paywall_state'] = paywall_state(self.request)
+        return ctx
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
@@ -2481,8 +2500,9 @@ class MysteryBoxRollView(APIView):
                 rolled_date=today,
             )
 
+        ctx = {'request': request, 'paywall_state': paywall_state(request)}
         return Response({
-            'joke': JokeSerializer(joke, context={'request': request}).data,
+            'joke': JokeSerializer(joke, context=ctx).data,
             'rolls_remaining_today': entitlements.get_limit(request.user, 'mystery_box_rolls_per_day', default=MysteryBoxRoll.MAX_DAILY_ROLLS) - used - 1,
             'source_vibe': VibeSerializer(source_vibe).data if source_vibe else None,
         })
@@ -2516,10 +2536,11 @@ class RecentlyViewedView(APIView):
                 joke__content_tier__in=allowed_tiers(request),
             )
             .select_related('joke', 'joke__format', 'joke__age_rating', 'joke__language')
-            .prefetch_related('joke__tones', 'joke__context_tags')
+            .prefetch_related('joke__tones', 'joke__context_tags', 'joke__media__asset')
             .order_by('-viewed_at')[:limit]
         )
-        return Response(JokeViewSerializer(qs, many=True, context={'request': request}).data)
+        ctx = {'request': request, 'paywall_state': paywall_state(request)}
+        return Response(JokeViewSerializer(qs, many=True, context=ctx).data)
 
 
 # =============================================================================
