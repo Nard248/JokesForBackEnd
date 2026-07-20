@@ -118,11 +118,20 @@ created on first text keystroke).
 
 ### 4.2 `JokeMedia` / `JokeSubmissionMedia` (ordered through-models)
 
-`(submission|joke) FK, asset FK (PROTECT), position int` — unique on
+`(submission|joke) FK, asset FK (CASCADE), position int` — unique on
 (parent, position). Images: 1–6 rows. Video/audio: exactly 1 (enforced by
 FORMAT_RULES constraint). `approve_and_publish` copies the submission's
 rows to the Joke (extending the existing explicit field-copy — the
 silently-dropping-fields trap).
+
+> **Amended 2026-07-20 (implementation):** the asset FK is **CASCADE**, not
+> PROTECT — the shipped deletion lifecycle depends on it (takedown's
+> detach-then-reap, account deletion, `delete_with_files()` letting link
+> rows fall away). Consequences, both deliberate: a reaped asset's links
+> vanish everywhere, and takedown's reap intentionally ignores
+> `submission_links` (a taken-down image must not survive via the author's
+> drafts). Shared-asset safety is enforced in the takedown action itself
+> (assets still linked to a live joke are spared), not by the FK.
 
 ### 4.3 Lifecycle & deletion (request-triggered, no cron)
 
@@ -132,6 +141,15 @@ replacement in the editor, admin `take_down_joke` (extended — today it only
 flips `is_removed`), account deletion (extended — today it only deletes
 avatars), and the **lazy orphan sweep**: each new upload deletes that same
 user's unattached assets older than 24h. Data export includes media URLs.
+
+> **Amended 2026-07-20 (implementation):** account deletion additionally
+> **removes (is_removed) the user's published media-format jokes** left with
+> zero media rows after asset erasure — a media joke without its media is
+> broken content, and erasure wins over the anonymized-survival policy that
+> text jokes keep. Also recorded for clarity: the daily-joke paywall
+> exemption is **by viewset** — `/daily-jokes/history/` serves past daily
+> jokes unlocked forever, which is deliberate (each was that day's exempt
+> editorial joke).
 
 ## 5. Upload pipeline
 
