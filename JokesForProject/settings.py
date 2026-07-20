@@ -280,6 +280,11 @@ STORAGES = {
     'staticfiles': {'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage'},
 }
 
+# Media upload pre-screening (spec §7). Dormant unless enabled — mirrors the
+# Stripe-gateway pattern: local dev/tests run with it off; prod sets
+# SAFESEARCH_ENABLED=true (Cloud Run env) and uses ADC for the Vision API.
+SAFESEARCH_ENABLED = os.getenv('SAFESEARCH_ENABLED', '').strip().lower() in ('1', 'true', 'yes')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 

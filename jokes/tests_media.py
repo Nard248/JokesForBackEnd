@@ -149,3 +149,54 @@ class ImageProcessingTests(TestCase):
         with mock.patch.object(Image, 'MAX_IMAGE_PIXELS', 1000):
             with self.assertRaises(MediaValidationError):
                 process_image(buf)
+
+
+from unittest.mock import MagicMock, patch
+
+from jokes.media_screening import NullMatcher, get_matcher, screen_image
+
+
+def _mock_annotation(adult='VERY_UNLIKELY', violence='VERY_UNLIKELY',
+                     racy='VERY_UNLIKELY'):
+    ann = MagicMock()
+    for cat, value in (('adult', adult), ('violence', violence), ('racy', racy),
+                       ('medical', 'VERY_UNLIKELY'), ('spoof', 'VERY_UNLIKELY')):
+        getattr(ann, cat).name = value
+    resp = MagicMock()
+    resp.safe_search_annotation = ann
+    resp.error.message = ''
+    return resp
+
+
+class ScreeningTests(TestCase):
+    def test_disabled_returns_skipped(self):
+        with override_settings(SAFESEARCH_ENABLED=False):
+            self.assertEqual(screen_image(b'bytes'), {'status': 'skipped'})
+
+    @override_settings(SAFESEARCH_ENABLED=True)
+    def test_clean_image_ok(self):
+        client = MagicMock()
+        client.safe_search_detection.return_value = _mock_annotation()
+        with patch('jokes.media_screening._client', return_value=client):
+            verdict = screen_image(b'bytes')
+        self.assertEqual(verdict['status'], 'ok')
+        self.assertEqual(verdict['adult'], 'VERY_UNLIKELY')
+
+    @override_settings(SAFESEARCH_ENABLED=True)
+    def test_likely_adult_blocked(self):
+        client = MagicMock()
+        client.safe_search_detection.return_value = _mock_annotation(adult='LIKELY')
+        with patch('jokes.media_screening._client', return_value=client):
+            self.assertEqual(screen_image(b'bytes')['status'], 'blocked')
+
+    @override_settings(SAFESEARCH_ENABLED=True)
+    def test_racy_alone_does_not_block(self):
+        client = MagicMock()
+        client.safe_search_detection.return_value = _mock_annotation(racy='VERY_LIKELY')
+        with patch('jokes.media_screening._client', return_value=client):
+            self.assertEqual(screen_image(b'bytes')['status'], 'ok')
+
+    def test_null_matcher_never_matches(self):
+        matcher = get_matcher()
+        self.assertIsInstance(matcher, NullMatcher)
+        self.assertIsNone(matcher.match('0000000000000000'))
