@@ -2144,7 +2144,14 @@ class UserAccountDeleteView(APIView):
                 for ot in OutstandingToken.objects.filter(user=user):
                     BlacklistedToken.objects.get_or_create(token=ot)
 
-            # 2. Delete avatar file from the storage backend (safe/idempotent)
+            # 2. Media lifecycle: remove the user's uploaded assets from
+            #    storage explicitly — the DB CASCADE alone would orphan the
+            #    files (MediaAsset.owner is CASCADE but delete_with_files()
+            #    is the only path that also deletes the storage objects).
+            for asset in MediaAsset.objects.filter(owner=user):
+                asset.delete_with_files()
+
+            # 3. Delete avatar file from the storage backend (safe/idempotent)
             profile = UserProfile.objects.filter(user=user).first()
             if profile and profile.avatar:
                 try:
@@ -2152,7 +2159,7 @@ class UserAccountDeleteView(APIView):
                 except Exception:
                     pass  # Missing file must not block account deletion
 
-            # 3. Purge email records.
+            # 4. Purge email records.
             #    EmailMessageLog.user is SET_NULL, so its rows SURVIVE user.delete()
             #    and MUST be purged explicitly. We match on the user FK OR the
             #    account email; email is immutable in this app (set only at
@@ -2164,7 +2171,7 @@ class UserAccountDeleteView(APIView):
             ).delete()
             EmailVerification.objects.filter(user=user).delete()
 
-            # 4. Cascade-delete the user (removes all FK=CASCADE rows)
+            # 5. Cascade-delete the user (removes all FK=CASCADE rows)
             user.delete()
 
         # Record audit AFTER delete; actor=None (user gone), hash preserved
@@ -2271,6 +2278,15 @@ class DataExportView(APIView):
                     'id', 'text', 'setup', 'punchline', 'status', 'created_at'
                 )
             ),
+            'media_assets': [
+                {
+                    'id': str(asset.pk),
+                    'kind': asset.kind,
+                    'url': request.build_absolute_uri(asset.file.url) if asset.file else None,
+                    'created_at': asset.created_at.isoformat(),
+                }
+                for asset in MediaAsset.objects.filter(owner=u)
+            ],
             'reports_filed': list(
                 ContentReport.objects.filter(reporter=u).values(
                     'joke_id', 'reason', 'description', 'status', 'created_at'

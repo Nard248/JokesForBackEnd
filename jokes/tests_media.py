@@ -1,9 +1,11 @@
 """Tests for media jokes (Wave 1): assets, pipeline, formats, locking, anon paywall."""
 import io
+import json
 import os
 import shutil
 import tempfile
 import uuid
+import zipfile
 from unittest import mock
 
 from django.contrib.auth import get_user_model
@@ -630,3 +632,106 @@ class PaywallContextCoverageTests(TestCase):
         self.assertEqual(resp.status_code, 200, resp.content)
         row = next(r for r in resp.data if r['joke']['id'] == target.id)
         self._assert_locked_media_joke(row['joke'])
+
+
+from django.contrib.admin.sites import AdminSite
+
+from jokes.admin import ContentReportAdmin, JokeSubmissionAdmin
+from jokes.models import ContentReport
+
+
+@override_settings(MEDIA_ROOT=_MEDIA_ROOT)
+class MediaPublishAndLifecycleTests(TestCase):
+    def setUp(self):
+        self.fmt, self.age, self.lang = _taxonomy()
+        self.user = make_user('publisher@example.com')
+        self.admin_user = User.objects.create_superuser(
+            username='admin@example.com', email='admin@example.com', password='x',
+        )
+        self.factory = APIRequestFactory()
+
+    def _pending_submission(self):
+        sub = JokeSubmission.objects.create(
+            user=self.user, format=self.fmt, age_rating=self.age,
+            language=self.lang, setup='caption', text='caption', status='pending',
+        )
+        a1, a2 = make_asset(self.user), make_asset(self.user)
+        JokeSubmissionMedia.objects.create(submission=sub, asset=a1, position=0)
+        JokeSubmissionMedia.objects.create(submission=sub, asset=a2, position=1)
+        return sub
+
+    def _admin_request(self):
+        from django.contrib.messages.storage.fallback import FallbackStorage
+        from django.contrib.sessions.middleware import SessionMiddleware
+        request = self.factory.post('/admin/')
+        request.user = self.admin_user
+        SessionMiddleware(lambda r: None).process_request(request)
+        request._messages = FallbackStorage(request)   # message_user() needs this
+        return request
+
+    def test_approve_and_publish_copies_media_in_order(self):
+        sub = self._pending_submission()
+        admin_obj = JokeSubmissionAdmin(JokeSubmission, AdminSite())
+        # local machine lacks libcairo; share-image generation is out of scope here.
+        with mock.patch('jokes.models.Joke._generate_share_image'):
+            admin_obj.approve_and_publish(
+                self._admin_request(), JokeSubmission.objects.filter(pk=sub.pk),
+            )
+        sub.refresh_from_db()
+        joke = sub.published_joke
+        self.assertIsNotNone(joke)
+        self.assertEqual(
+            [m.position for m in joke.media.all()], [0, 1]
+        )
+        self.assertEqual(
+            [m.asset_id for m in joke.media.all()],
+            [m.asset_id for m in sub.media.all()],
+        )
+
+    def test_takedown_deletes_storage_files(self):
+        sub = self._pending_submission()
+        admin_obj = JokeSubmissionAdmin(JokeSubmission, AdminSite())
+        with mock.patch('jokes.models.Joke._generate_share_image'):
+            admin_obj.approve_and_publish(
+                self._admin_request(), JokeSubmission.objects.filter(pk=sub.pk),
+            )
+        sub.refresh_from_db()
+        joke = sub.published_joke
+        names = [m.asset.file.name for m in joke.media.all()]
+        report = ContentReport.objects.create(
+            reporter=self.admin_user, joke=joke, reason='inappropriate',
+        )
+        report_admin = ContentReportAdmin(ContentReport, AdminSite())
+        report_admin.take_down_joke(
+            self._admin_request(), ContentReport.objects.filter(pk=report.pk),
+        )
+        joke.refresh_from_db()
+        self.assertTrue(joke.is_removed)
+        for name in names:
+            self.assertFalse(default_storage.exists(name))
+        self.assertEqual(MediaAsset.objects.filter(owner=self.user).count(), 0)
+
+    def test_account_delete_removes_assets(self):
+        asset = make_asset(self.user)
+        name = asset.file.name
+        client = APIClient()
+        client.force_authenticate(self.user)
+        response = client.delete(
+            '/api/v1/users/me/', {'password': 'x'}, format='json',
+        )
+        self.assertIn(response.status_code, (200, 204))
+        self.assertFalse(MediaAsset.objects.filter(pk=asset.pk).exists())
+        self.assertFalse(default_storage.exists(name))
+
+    def test_data_export_lists_media_assets(self):
+        make_asset(self.user)
+        client = APIClient()
+        client.force_authenticate(self.user)
+        response = client.get('/api/v1/users/me/data-export/')
+        self.assertEqual(response.status_code, 200)
+        # ADAPTATION: DataExportView returns a zipped JSON attachment
+        # (application/zip), not a raw JSON body — response.json() would
+        # fail against the real contract. Unzip and parse the payload inside.
+        zf = zipfile.ZipFile(io.BytesIO(response.content))
+        payload = json.loads(zf.read('jokes-for-data-export.json'))
+        self.assertEqual(len(payload['media_assets']), 1)
