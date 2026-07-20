@@ -711,6 +711,47 @@ class MediaPublishAndLifecycleTests(TestCase):
             self.assertFalse(default_storage.exists(name))
         self.assertEqual(MediaAsset.objects.filter(owner=self.user).count(), 0)
 
+    def test_takedown_spares_assets_shared_with_live_jokes(self):
+        # Cross-joke asset reuse is designed-for: taking down joke A must not
+        # strip the shared image off unrelated live joke B.
+        shared = make_asset(self.user)
+        only_a = make_asset(self.user)
+        with mock.patch('jokes.models.Joke._generate_share_image'):
+            joke_a = Joke.objects.create(
+                text='joke a', setup='joke a', format=self.fmt,
+                age_rating=self.age, language=self.lang, creator=self.user,
+            )
+            joke_b = Joke.objects.create(
+                text='joke b', setup='joke b', format=self.fmt,
+                age_rating=self.age, language=self.lang, creator=self.user,
+            )
+        JokeMedia.objects.create(joke=joke_a, asset=shared, position=0)
+        JokeMedia.objects.create(joke=joke_a, asset=only_a, position=1)
+        JokeMedia.objects.create(joke=joke_b, asset=shared, position=0)
+        shared_name = shared.file.name
+        only_a_name = only_a.file.name
+
+        report = ContentReport.objects.create(
+            reporter=self.admin_user, joke=joke_a, reason='inappropriate',
+        )
+        report_admin = ContentReportAdmin(ContentReport, AdminSite())
+        report_admin.take_down_joke(
+            self._admin_request(), ContentReport.objects.filter(pk=report.pk),
+        )
+
+        # A's media rows detached; B's intact.
+        self.assertFalse(JokeMedia.objects.filter(joke=joke_a).exists())
+        self.assertEqual(
+            list(JokeMedia.objects.filter(joke=joke_b).values_list('asset_id', flat=True)),
+            [shared.pk],
+        )
+        # Shared asset survives — row AND storage object.
+        self.assertTrue(MediaAsset.objects.filter(pk=shared.pk).exists())
+        self.assertTrue(default_storage.exists(shared_name))
+        # A-only asset is reaped — row AND storage object.
+        self.assertFalse(MediaAsset.objects.filter(pk=only_a.pk).exists())
+        self.assertFalse(default_storage.exists(only_a_name))
+
     def test_account_delete_removes_assets(self):
         asset = make_asset(self.user)
         name = asset.file.name
