@@ -87,7 +87,7 @@ from .media_screening import get_matcher, screen_image
 from .recommendations import get_personalized_joke, get_recently_shown_joke_ids
 from .serving import allowed_tiers
 from .paywall import paywall_state, record_anon_read
-from .submission_rules import validate_per_format
+from .submission_rules import validate_per_format, FORMAT_RULES
 from .identity import (
     public_display_name, public_handle, normalize_handle, is_valid_handle,
 )
@@ -1207,7 +1207,7 @@ class DailyJokeViewSet(viewsets.GenericViewSet):
             daily.save(update_fields=['delivered_at'])
 
         # P9: include newspaper-style issue label
-        data = DailyJokeSerializer(daily).data
+        data = DailyJokeSerializer(daily, context={'request': request}).data
         data['issue_label'] = _issue_label_for(daily.date)
         return Response(data)
 
@@ -2215,7 +2215,19 @@ class UserAccountDeleteView(APIView):
             ).delete()
             EmailVerification.objects.filter(user=user).delete()
 
-            # 5. Cascade-delete the user (removes all FK=CASCADE rows)
+            # 5. Media-format jokes are broken without their media (the payoff is the
+            #    image); erasure wins over anonymized survival — remove them like a
+            #    takedown. Text jokes keep the existing anonymized-survival policy.
+            media_slugs = [
+                slug for slug, rule in FORMAT_RULES.items()
+                if 'media' in rule.get('required', [])
+            ]
+            Joke.all_objects.filter(
+                creator=user, format__slug__in=media_slugs,
+                media__isnull=True, is_removed=False,
+            ).update(is_removed=True, removed_at=timezone.now())
+
+            # 6. Cascade-delete the user (removes all FK=CASCADE rows)
             user.delete()
 
         # Record audit AFTER delete; actor=None (user gone), hash preserved
