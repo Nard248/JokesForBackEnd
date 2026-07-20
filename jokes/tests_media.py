@@ -533,3 +533,100 @@ class MediaLockingContractTests(TestCase):
         self.assertEqual(
             set(data['media'][0].keys()), {'kind', 'width', 'height'}
         )
+
+
+# =============================================================================
+# Task 6b: paywall_state context coverage across serving paths
+#
+# JokeSerializer._is_locked() silently returns False when `paywall_state` is
+# absent from context. These tests prove that four serving paths inject it
+# (mirroring CollectionViewSet.jokes / JokeViewSet.get_serializer_context /
+# JokePackViewSet.get_serializer_context) so an over-cap free user gets a
+# locked, stripped joke (and dims-only media) through EVERY surface — not
+# just JokeViewSet.retrieve. DailyJokeViewSet is intentionally exempt and is
+# untouched here.
+# =============================================================================
+from jokes.models import JokeView, SavedJoke
+from jokes.paywall import FREE_READS_DEFAULT as FREE_CAP
+
+
+def _filler_joke(n):
+    """A distinct joke used purely to occupy the free-read ledger."""
+    fmt, age, lang = _taxonomy()
+    with mock.patch('jokes.models.Joke._generate_share_image'):
+        return Joke.objects.create(
+            text=f'filler {n}', setup=f'filler {n}',
+            format=fmt, age_rating=age, language=lang,
+        )
+
+
+@override_settings(MEDIA_ROOT=_MEDIA_ROOT)
+class PaywallContextCoverageTests(TestCase):
+    def setUp(self):
+        self.user = make_user('paywallcov@example.com')
+        self.client = APIClient()
+        self.client.force_authenticate(self.user)
+
+    def _consume_cap(self, start=9000):
+        """Seed FREE_CAP distinct JokeView rows for TODAY -> user is over cap."""
+        for i in range(FREE_CAP):
+            JokeView.objects.create(user=self.user, joke=_filler_joke(start + i))
+
+    def _assert_locked_media_joke(self, joke_data):
+        self.assertTrue(joke_data['is_locked'])
+        self.assertIsNone(joke_data['punchline'])
+        self.assertEqual(len(joke_data['media']), 1)
+        self.assertNotIn('url', joke_data['media'][0])
+
+    def test_favorites_list_and_create_lock_over_cap_joke(self):
+        self._consume_cap()
+        joke = make_image_joke(self.user, setup='fav target')
+
+        create_resp = self.client.post('/api/v1/favorites/', {'joke': joke.id})
+        self.assertEqual(create_resp.status_code, 201, create_resp.content)
+        self._assert_locked_media_joke(create_resp.data['joke'])
+
+        list_resp = self.client.get('/api/v1/favorites/')
+        self.assertEqual(list_resp.status_code, 200, list_resp.content)
+        results = list_resp.data.get('results', list_resp.data) if isinstance(list_resp.data, dict) else list_resp.data
+        row = next(r for r in results if r['joke']['id'] == joke.id)
+        self._assert_locked_media_joke(row['joke'])
+
+    def test_saved_jokes_search_locks_over_cap_joke(self):
+        self._consume_cap()
+        joke = make_image_joke(self.user, setup='searchable unique caption zzzflarp')
+        SavedJoke.objects.create(user=self.user, joke=joke)
+
+        resp = self.client.get('/api/v1/saved-jokes/search/', {'q': 'zzzflarp'})
+        self.assertEqual(resp.status_code, 200, resp.content)
+        results = resp.data.get('results', resp.data) if isinstance(resp.data, dict) else resp.data
+        self.assertEqual(len(results), 1)
+        self._assert_locked_media_joke(results[0]['joke'])
+
+    def test_mystery_box_roll_locks_over_cap_joke(self):
+        self._consume_cap()
+        target = make_image_joke(self.user, setup='roll target')
+
+        # Force the roll to pick `target` deterministically — the real pool
+        # also contains unrelated seed/demo jokes from migrations, and which
+        # one gets randomly picked is not what this test is about.
+        with mock.patch(
+            'jokes.views._mystery_pool_for_user',
+            return_value=(Joke.objects.filter(pk=target.pk), None),
+        ):
+            resp = self.client.post('/api/v1/mystery-box/roll/')
+        self.assertEqual(resp.status_code, 200, resp.content)
+        self._assert_locked_media_joke(resp.data['joke'])
+
+    def test_recently_viewed_locks_over_cap_joke(self):
+        self._consume_cap()
+        target = make_image_joke(self.user, setup='recently viewed target')
+        with freeze_time('2020-01-01 12:00:00'):
+            # Viewed on a PAST day: shows up in recently-viewed history but is
+            # not part of TODAY's consumed_ids ledger, so it stays lockable.
+            JokeView.objects.create(user=self.user, joke=target)
+
+        resp = self.client.get('/api/v1/users/me/recently-viewed/')
+        self.assertEqual(resp.status_code, 200, resp.content)
+        row = next(r for r in resp.data if r['joke']['id'] == target.id)
+        self._assert_locked_media_joke(row['joke'])
