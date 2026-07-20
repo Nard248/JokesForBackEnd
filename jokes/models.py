@@ -5,6 +5,7 @@ from django.core.files.base import ContentFile
 from django.db import models
 from django.utils import timezone
 import pgtrigger
+import uuid
 
 from .managers import JokeManager
 
@@ -1294,3 +1295,88 @@ class JokePackProgress(models.Model):
 
     def __str__(self):
         return f"{self.user.email} → {self.pack.title} (#{self.last_read_entry})"
+
+
+# =============================================================================
+# Media Assets (Wave 1: image jokes; video/audio arrive in Wave 2)
+# =============================================================================
+
+def media_asset_path(instance, filename):
+    """Unguessable, stable storage path: media-assets/<uuid>/<name>."""
+    return f'media-assets/{instance.pk}/{filename}'
+
+
+class MediaAsset(models.Model):
+    """A user-owned uploaded media file (the display derivative, never the
+    original). Owned by the USER, not a draft, so uploads may precede draft
+    creation. Files live in the default storage (GCS in prod) at UUID paths;
+    pre-moderation exposure at unguessable public URLs is an accepted spec
+    trade-off (spec §3.3). Deletion must go through delete_with_files() so
+    storage objects never orphan (no cron exists to sweep them)."""
+
+    KIND_CHOICES = [('image', 'Image'), ('video', 'Video'), ('audio', 'Audio')]
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    owner = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE,
+        related_name='media_assets',
+    )
+    kind = models.CharField(max_length=10, choices=KIND_CHOICES)
+    file = models.FileField(upload_to=media_asset_path)
+    poster = models.ImageField(upload_to=media_asset_path, blank=True)
+    width = models.PositiveIntegerField(null=True, blank=True)
+    height = models.PositiveIntegerField(null=True, blank=True)
+    duration_ms = models.PositiveIntegerField(null=True, blank=True)
+    is_gif = models.BooleanField(default=False)
+    safesearch = models.JSONField(null=True, blank=True)
+    phash = models.CharField(max_length=32, blank=True, db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def delete_with_files(self):
+        """Delete storage objects, then the row (links CASCADE away)."""
+        for field_file in (self.file, self.poster):
+            if field_file:
+                field_file.delete(save=False)
+        self.delete()
+
+    def __str__(self):
+        return f'{self.kind} asset {self.id} ({self.owner_id})'
+
+
+class JokeSubmissionMedia(models.Model):
+    """Ordered media attachment on a draft/submission."""
+    submission = models.ForeignKey(
+        JokeSubmission, on_delete=models.CASCADE, related_name='media',
+    )
+    asset = models.ForeignKey(
+        MediaAsset, on_delete=models.CASCADE, related_name='submission_links',
+    )
+    position = models.PositiveSmallIntegerField(default=0)
+
+    class Meta:
+        ordering = ['position']
+        constraints = [
+            models.UniqueConstraint(
+                fields=['submission', 'position'],
+                name='uniq_submission_media_position',
+            ),
+        ]
+
+
+class JokeMedia(models.Model):
+    """Ordered media attachment on a published joke (copied at publish)."""
+    joke = models.ForeignKey(
+        Joke, on_delete=models.CASCADE, related_name='media',
+    )
+    asset = models.ForeignKey(
+        MediaAsset, on_delete=models.CASCADE, related_name='joke_links',
+    )
+    position = models.PositiveSmallIntegerField(default=0)
+
+    class Meta:
+        ordering = ['position']
+        constraints = [
+            models.UniqueConstraint(
+                fields=['joke', 'position'], name='uniq_joke_media_position',
+            ),
+        ]
