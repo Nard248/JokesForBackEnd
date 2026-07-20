@@ -28,6 +28,9 @@ router.register('favorites', views.FavoriteViewSet, basename='favorite')
 
 # Explicit URL patterns for non-router endpoints
 urlpatterns = [
+    # Media uploads (Wave 1)
+    path('media/uploads/', views.MediaUploadView.as_view(), name='media-upload'),
+
     # Joke Submission & Drafts (Phase 2)
     path('jokes/submit/', views.JokeSubmitView.as_view(), name='joke-submit'),
     path('jokes/my-drafts/', views.JokeDraftListView.as_view(), name='joke-drafts-list'),

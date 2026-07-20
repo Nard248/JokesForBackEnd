@@ -37,6 +37,7 @@ from .models import (
     JokePack,
     JokePackEntry,
     JokePackProgress,
+    MediaAsset,
 )
 
 
@@ -117,6 +118,32 @@ class SourceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Source
         fields = ['id', 'name', 'url', 'description']
+
+
+class MediaAssetSerializer(serializers.ModelSerializer):
+    """Read shape for an uploaded media asset (upload response + attachments)."""
+
+    url = serializers.SerializerMethodField()
+    poster_url = serializers.SerializerMethodField()
+
+    class Meta:
+        model = MediaAsset
+        fields = [
+            'id', 'kind', 'url', 'poster_url',
+            'width', 'height', 'duration_ms', 'is_gif', 'created_at',
+        ]
+
+    def _absolute(self, field_file):
+        if not field_file:
+            return None
+        request = self.context.get('request')
+        return request.build_absolute_uri(field_file.url) if request else field_file.url
+
+    def get_url(self, obj) -> str | None:
+        return self._absolute(obj.file)
+
+    def get_poster_url(self, obj) -> str | None:
+        return self._absolute(obj.poster)
 
 
 # =============================================================================

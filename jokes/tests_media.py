@@ -200,3 +200,68 @@ class ScreeningTests(TestCase):
         matcher = get_matcher()
         self.assertIsInstance(matcher, NullMatcher)
         self.assertIsNone(matcher.match('0000000000000000'))
+
+
+from datetime import timedelta
+
+from django.utils import timezone
+from freezegun import freeze_time
+from rest_framework.test import APIClient
+
+
+@override_settings(MEDIA_ROOT=_MEDIA_ROOT)
+class MediaUploadEndpointTests(TestCase):
+    def setUp(self):
+        self.user = make_user('uploader@example.com')
+        self.client = APIClient()
+        self.client.force_authenticate(self.user)
+
+    def _upload(self, buf=None, kind='image'):
+        buf = buf or make_image_bytes()
+        return self.client.post(
+            '/api/v1/media/uploads/', {'file': buf, 'kind': kind},
+            format='multipart',
+        )
+
+    def test_upload_creates_asset_with_metadata(self):
+        response = self._upload()
+        self.assertEqual(response.status_code, 201)
+        body = response.json()
+        self.assertEqual(body['kind'], 'image')
+        self.assertEqual(body['width'], 1200)
+        self.assertEqual(body['height'], 900)
+        self.assertTrue(body['url'].startswith('http'))
+        asset = MediaAsset.objects.get(pk=body['id'])
+        self.assertEqual(asset.owner, self.user)
+        self.assertEqual(len(asset.phash), 16)
+
+    def test_anon_rejected(self):
+        self.client.force_authenticate(None)
+        self.assertEqual(self._upload().status_code, 401)
+
+    def test_invalid_file_rejected_400(self):
+        buf = io.BytesIO(b'not an image')
+        buf.name = 'x.jpg'
+        self.assertEqual(self._upload(buf).status_code, 400)
+
+    def test_video_kind_rejected_wave_1(self):
+        self.assertEqual(self._upload(kind='video').status_code, 400)
+
+    def test_screening_block_returns_422_and_no_asset(self):
+        with patch(
+            'jokes.views.screen_image',
+            return_value={'status': 'blocked', 'adult': 'LIKELY'},
+        ):
+            response = self._upload()
+        self.assertEqual(response.status_code, 422)
+        self.assertEqual(MediaAsset.objects.count(), 0)
+
+    def test_orphan_sweep_deletes_stale_unattached_assets(self):
+        with freeze_time('2026-07-18 12:00:00'):
+            stale = make_asset(self.user)
+            stale_name = stale.file.name
+        with freeze_time('2026-07-20 12:00:00'):
+            response = self._upload()
+        self.assertEqual(response.status_code, 201)
+        self.assertFalse(MediaAsset.objects.filter(pk=stale.pk).exists())
+        self.assertFalse(default_storage.exists(stale_name))
