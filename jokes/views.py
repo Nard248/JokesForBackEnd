@@ -10,6 +10,7 @@ Provides viewsets for all models:
 import io
 import json
 import zipfile
+from datetime import timedelta
 
 from rest_framework import generics, mixins, status, viewsets
 from rest_framework.decorators import (
@@ -18,9 +19,12 @@ from rest_framework.decorators import (
     authentication_classes,
     permission_classes,
 )
+from rest_framework.parsers import FormParser, MultiPartParser
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
+from rest_framework.throttling import ScopedRateThrottle
 from rest_framework.views import APIView
+from django.core.files.base import ContentFile
 from django.middleware.csrf import get_token
 from drf_spectacular.utils import extend_schema, OpenApiParameter
 from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
@@ -76,7 +80,10 @@ from .models import (
     JokePack,
     JokePackEntry,
     JokePackProgress,
+    MediaAsset,
 )
+from .media_processing import MediaValidationError, process_image
+from .media_screening import get_matcher, screen_image
 from .recommendations import get_personalized_joke, get_recently_shown_joke_ids
 from .serving import allowed_tiers
 from .paywall import paywall_state
@@ -116,6 +123,7 @@ from .serializers import (
     JokePackListSerializer,
     JokePackDetailSerializer,
     JokePackProgressUpdateSerializer,
+    MediaAssetSerializer,
 )
 
 
@@ -1264,6 +1272,96 @@ def joke_share_page(request, pk):
         'canonical_url': canonical_url,
         'badge_text': badge_text,
     })
+
+
+# =============================================================================
+# Media Uploads (Wave 1: images; video/audio arrive in Wave 2)
+# =============================================================================
+
+def _sweep_orphan_assets(user):
+    """Request-triggered orphan cleanup (no cron exists): on each upload,
+    delete this user's own unattached assets older than 24h."""
+    cutoff = timezone.now() - timedelta(hours=24)
+    orphans = MediaAsset.objects.filter(
+        owner=user, created_at__lt=cutoff,
+        submission_links__isnull=True, joke_links__isnull=True,
+    )
+    for asset in orphans:
+        asset.delete_with_files()
+
+
+class MediaUploadView(APIView):
+    """POST /media/uploads/ — validate, screen, and store one media file.
+
+    The returned asset id is what the editor attaches to a draft via
+    `media_asset_ids`. The whole pipeline is synchronous and in-request
+    (single-app constraint): Pillow validate/re-encode → SafeSearch →
+    hash-matcher → GCS write.
+    """
+
+    permission_classes = [IsAuthenticated]
+    parser_classes = [MultiPartParser, FormParser]
+    throttle_classes = [ScopedRateThrottle]
+    throttle_scope = 'media-upload'
+
+    def post(self, request):
+        from audit.services import record_audit
+
+        kind = (request.data.get('kind') or 'image').strip()
+        if kind != 'image':
+            return Response(
+                {'kind': ["Only 'image' uploads are supported. Video and audio arrive in Wave 2."]},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+        uploaded = request.FILES.get('file')
+        if uploaded is None:
+            return Response(
+                {'file': ['This field is required.']},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        try:
+            processed = process_image(uploaded)
+        except MediaValidationError as exc:
+            return Response(exc.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        verdict = screen_image(processed.data)
+        if verdict.get('status') == 'blocked':
+            record_audit(
+                request, 'safesearch_block', outcome='blocked',
+                actor=request.user, target_type='media_upload', target_id='',
+            )
+            return Response(
+                {'file': ['This image was rejected by automated content screening.']},
+                status=status.HTTP_422_UNPROCESSABLE_ENTITY,
+            )
+
+        hit = get_matcher().match(processed.phash)
+        if hit:
+            record_audit(
+                request, 'hash_match_hit', outcome='blocked',
+                actor=request.user, target_type='media_upload', target_id='',
+            )
+            return Response(
+                {'file': ['This image cannot be uploaded.']},
+                status=status.HTTP_422_UNPROCESSABLE_ENTITY,
+            )
+
+        asset = MediaAsset(
+            owner=request.user, kind='image',
+            width=processed.width, height=processed.height,
+            phash=processed.phash, safesearch=verdict,
+        )
+        asset.file.save('image.webp', ContentFile(processed.data), save=False)
+        asset.save()
+
+        _sweep_orphan_assets(request.user)
+        record_audit(
+            request, 'media_upload', outcome='success', actor=request.user,
+            target_type='media_asset', target_id=str(asset.pk),
+        )
+        serializer = MediaAssetSerializer(asset, context={'request': request})
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
 # =============================================================================
