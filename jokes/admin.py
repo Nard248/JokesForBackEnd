@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.db import transaction
 from django.utils import timezone
+from django.utils.html import format_html
 from .models import (
     Joke, Format, AgeRating, Tone, ContextTag, Language, CultureTag, Source,
     UserPreference, Collection, SavedJoke, DailyJoke, JokeRating, ShareEvent,
@@ -8,6 +9,7 @@ from .models import (
     ContentReport, UserBlock,
     Vibe, UserVibe, MysteryBoxRoll, JokeReaction, JokeView, Streak, StreakDay,
     JokePack, JokePackEntry, JokePackProgress,
+    JokeMedia, MediaAsset,
 )
 
 
@@ -171,7 +173,8 @@ class FavoriteAdmin(admin.ModelAdmin):
 
 @admin.register(JokeSubmission)
 class JokeSubmissionAdmin(admin.ModelAdmin):
-    list_display = ['user', 'text_preview', 'format', 'status', 'updated_at']
+    list_display = ['user', 'text_preview', 'media_preview', 'safesearch_flags',
+                    'format', 'status', 'updated_at']
     list_filter = ['status', 'format', 'age_rating']
     search_fields = ['user__email', 'text', 'setup', 'punchline']
     filter_horizontal = ['tones', 'context_tags', 'culture_tags']
@@ -183,6 +186,30 @@ class JokeSubmissionAdmin(admin.ModelAdmin):
         text = obj.text or obj.setup or (obj.lines[0] if obj.lines else '')
         return text[:50] + '...' if len(text) > 50 else text
     text_preview.short_description = 'Content'
+
+    def media_preview(self, obj):
+        link = obj.media.select_related('asset').first()
+        if not link or not link.asset.file:
+            return '—'
+        return format_html(
+            '<img src="{}" style="max-height:60px;max-width:100px;'
+            'border-radius:4px;" />',
+            link.asset.file.url,
+        )
+    media_preview.short_description = 'Media'
+
+    def safesearch_flags(self, obj):
+        flags = []
+        for link in obj.media.select_related('asset'):
+            verdict = link.asset.safesearch or {}
+            flags.extend(
+                f'{category}:{level}'
+                for category, level in verdict.items()
+                if category != 'status'
+                and level in ('POSSIBLE', 'LIKELY', 'VERY_LIKELY')
+            )
+        return ', '.join(flags) or '—'
+    safesearch_flags.short_description = 'Screen flags'
 
     @admin.action(description='Approve and publish selected submissions')
     def approve_and_publish(self, request, queryset):
@@ -217,6 +244,10 @@ class JokeSubmissionAdmin(admin.ModelAdmin):
                     joke.tones.set(submission.tones.all())
                     joke.context_tags.set(submission.context_tags.all())
                     joke.culture_tags.set(submission.culture_tags.all())
+                    for link in submission.media.all():
+                        JokeMedia.objects.create(
+                            joke=joke, asset=link.asset, position=link.position,
+                        )
                     submission.published_joke = joke
                     submission.status = 'published'
                     submission.save(update_fields=['published_joke', 'status', 'updated_at'])
@@ -292,6 +323,21 @@ class ContentReportAdmin(admin.ModelAdmin):
         ContentReport.objects.filter(joke_id__in=joke_ids).exclude(
             status__in=['resolved', 'dismissed']
         ).update(status='resolved', resolved_at=now)
+        # Media lifecycle: takedown deletes the storage objects too — the DB
+        # flag alone leaves files world-readable on the public bucket.
+        media_assets = MediaAsset.objects.filter(
+            joke_links__joke_id__in=joke_ids,
+        ).distinct()
+        media_deleted = 0
+        for asset in media_assets:
+            asset.delete_with_files()
+            media_deleted += 1
+        if media_deleted:
+            record_audit(
+                request, 'media_takedown', outcome='success',
+                actor=request.user, target_type='joke',
+                target_id=','.join(str(j) for j in sorted(joke_ids)),
+            )
         for jid in joke_ids:
             record_audit(request, 'content_takedown', outcome='success', actor=request.user,
                          target_type='joke', target_id=str(jid))
