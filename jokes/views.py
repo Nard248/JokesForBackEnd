@@ -1353,7 +1353,13 @@ class MediaUploadView(APIView):
             phash=processed.phash, safesearch=verdict,
         )
         asset.file.save('image.webp', ContentFile(processed.data), save=False)
-        asset.save()
+        try:
+            asset.save()
+        except Exception:
+            # The row never landed, so the orphan sweep (which queries
+            # MediaAsset) could never reclaim this file — delete it now.
+            asset.file.delete(save=False)
+            raise
 
         _sweep_orphan_assets(request.user)
         record_audit(

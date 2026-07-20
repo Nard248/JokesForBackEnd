@@ -1,5 +1,6 @@
 """Tests for media jokes (Wave 1): assets, pipeline, formats, locking, anon paywall."""
 import io
+import os
 import shutil
 import tempfile
 import uuid
@@ -265,3 +266,21 @@ class MediaUploadEndpointTests(TestCase):
         self.assertEqual(response.status_code, 201)
         self.assertFalse(MediaAsset.objects.filter(pk=stale.pk).exists())
         self.assertFalse(default_storage.exists(stale_name))
+
+    def _media_files_on_disk(self):
+        return {
+            os.path.join(root, name)
+            for root, _, files in os.walk(_MEDIA_ROOT)
+            for name in files
+        }
+
+    def test_db_failure_after_storage_write_cleans_up_file(self):
+        """A DB failure in asset.save() must not strand the just-written
+        storage object: with no MediaAsset row, the orphan sweep can never
+        reclaim the file (and no cron exists)."""
+        before = self._media_files_on_disk()
+        with patch.object(MediaAsset, 'save', side_effect=RuntimeError('db down')):
+            with self.assertRaises(RuntimeError):
+                self._upload()
+        self.assertEqual(MediaAsset.objects.count(), 0)
+        self.assertEqual(self._media_files_on_disk(), before)
