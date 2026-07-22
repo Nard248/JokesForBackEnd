@@ -1680,7 +1680,10 @@ class JokeDraftSubmitView(APIView):
                 'setup': submission.setup,
                 'punchline': submission.punchline,
                 'lines': submission.lines,
-                'media': [m.asset.kind for m in submission.media.all()],
+                'media': [
+                    {'kind': m.asset.kind, 'duration_ms': m.asset.duration_ms}
+                    for m in submission.media.all()
+                ],
             },
         )
         if errors:

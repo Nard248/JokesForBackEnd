@@ -4,10 +4,13 @@ from jokes.submission_rules import FORMAT_RULES, validate_per_format
 
 
 class FormatRulesTests(SimpleTestCase):
-    def test_all_seven_format_slugs_present(self):
+    def test_all_nine_format_slugs_present(self):
         self.assertEqual(
             set(FORMAT_RULES.keys()),
-            {'oneliner', 'setup', 'knock', 'story', 'anti', 'observ', 'image'},
+            {
+                'oneliner', 'setup', 'knock', 'story', 'anti', 'observ',
+                'image', 'video', 'audio',
+            },
         )
 
     # oneliner

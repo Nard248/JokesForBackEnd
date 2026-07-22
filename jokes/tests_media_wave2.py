@@ -446,3 +446,281 @@ class MediaUploadWave2Tests(TestCase):
                 self._upload(self._clip_buf(seconds=2), 'video')
         self.assertEqual(MediaAsset.objects.count(), 0)
         self.assertEqual(self._media_files_on_disk(), before)
+
+
+# =============================================================================
+# Task 4: video / audio formats — registry, seed, wave-1 machinery
+# verification
+#
+# The wave-1 media machinery (publish copy, locking, account-delete via
+# FORMAT_RULES-derived media_slugs, draft attach, submit gate) is
+# format-agnostic BY DESIGN. These tests register `video`/`audio` in
+# FORMAT_RULES and prove the existing machinery picks them up untouched.
+# =============================================================================
+from django.contrib.admin.sites import AdminSite
+from django.contrib.auth import get_user_model
+from rest_framework.test import APIRequestFactory
+
+from jokes.admin import JokeSubmissionAdmin
+from jokes.models import (
+    AgeRating, Format, Joke, JokeSubmission, JokeSubmissionMedia, Language,
+)
+from jokes.serializers import JokeSerializer
+from jokes.submission_rules import validate_per_format
+from jokes.tests_media import locked_state, make_asset
+
+Wave2User = get_user_model()
+
+
+def _format_taxonomy(slug, name):
+    fmt, _ = Format.objects.get_or_create(slug=slug, defaults={'name': name})
+    age, _ = AgeRating.objects.get_or_create(
+        slug='all-ages', defaults={'name': 'All Ages'},
+    )
+    lang, _ = Language.objects.get_or_create(code='en', defaults={'name': 'English'})
+    return fmt, age, lang
+
+
+class VideoFormatRuleTests(TestCase):
+    """Mirrors Wave 1's ImageFormatRuleTests for the new `video` slug."""
+
+    def test_video_requires_setup_and_media(self):
+        errors = validate_per_format('video', {'setup': '', 'media': []})
+        self.assertIn('setup', errors)
+        self.assertIn('media', errors)
+
+    def test_video_happy_path(self):
+        errors = validate_per_format(
+            'video',
+            {'setup': 'watch this', 'media': [{'kind': 'video', 'duration_ms': 5000}]},
+        )
+        self.assertEqual(errors, {})
+
+    def test_video_rejects_punchline(self):
+        errors = validate_per_format(
+            'video',
+            {
+                'setup': 'watch this', 'punchline': 'nope',
+                'media': [{'kind': 'video', 'duration_ms': 5000}],
+            },
+        )
+        self.assertIn('punchline', errors)
+
+    def test_video_max_one_attachment(self):
+        errors = validate_per_format(
+            'video',
+            {
+                'setup': 'watch this',
+                'media': [{'kind': 'video', 'duration_ms': 5000}] * 2,
+            },
+        )
+        self.assertIn('media', errors)
+
+    def test_video_rejects_wrong_kind(self):
+        errors = validate_per_format(
+            'video',
+            {'setup': 'watch this', 'media': [{'kind': 'image', 'duration_ms': None}]},
+        )
+        self.assertIn('media', errors)
+
+    def test_video_rejects_over_duration_cap(self):
+        errors = validate_per_format(
+            'video',
+            {
+                'setup': 'watch this',
+                'media': [{'kind': 'video', 'duration_ms': 60001}],
+            },
+        )
+        self.assertIn('media', errors)
+        self.assertIn('60 seconds', errors['media'])
+
+    def test_video_allows_duration_at_cap(self):
+        errors = validate_per_format(
+            'video',
+            {
+                'setup': 'watch this',
+                'media': [{'kind': 'video', 'duration_ms': 60000}],
+            },
+        )
+        self.assertEqual(errors, {})
+
+
+class AudioFormatRuleTests(TestCase):
+    """Mirrors VideoFormatRuleTests for the new `audio` slug."""
+
+    def test_audio_requires_setup_and_media(self):
+        errors = validate_per_format('audio', {'setup': '', 'media': []})
+        self.assertIn('setup', errors)
+        self.assertIn('media', errors)
+
+    def test_audio_happy_path(self):
+        errors = validate_per_format(
+            'audio',
+            {'setup': 'listen up', 'media': [{'kind': 'audio', 'duration_ms': 5000}]},
+        )
+        self.assertEqual(errors, {})
+
+    def test_audio_rejects_punchline(self):
+        errors = validate_per_format(
+            'audio',
+            {
+                'setup': 'listen up', 'punchline': 'nope',
+                'media': [{'kind': 'audio', 'duration_ms': 5000}],
+            },
+        )
+        self.assertIn('punchline', errors)
+
+    def test_audio_max_one_attachment(self):
+        errors = validate_per_format(
+            'audio',
+            {
+                'setup': 'listen up',
+                'media': [{'kind': 'audio', 'duration_ms': 5000}] * 2,
+            },
+        )
+        self.assertIn('media', errors)
+
+    def test_audio_rejects_wrong_kind(self):
+        errors = validate_per_format(
+            'audio',
+            {'setup': 'listen up', 'media': [{'kind': 'video', 'duration_ms': None}]},
+        )
+        self.assertIn('media', errors)
+
+    def test_audio_rejects_over_duration_cap(self):
+        errors = validate_per_format(
+            'audio',
+            {
+                'setup': 'listen up',
+                'media': [{'kind': 'audio', 'duration_ms': 90000}],
+            },
+        )
+        self.assertIn('media', errors)
+        self.assertIn('60 seconds', errors['media'])
+
+
+@override_settings(MEDIA_ROOT=_MEDIA_ROOT)
+class VideoDraftFlowTests(TestCase):
+    """API flow: draft attach + submit gate, for the video format."""
+
+    def setUp(self):
+        self.video_fmt, self.age, self.lang = _format_taxonomy('video', 'Video')
+        self.image_fmt, _, _ = _format_taxonomy('image', 'Image')
+        self.user = make_user('videocreator@example.com')
+        self.client = APIClient()
+        self.client.force_authenticate(self.user)
+
+    def _make_draft(self, fmt_slug):
+        response = self.client.post('/api/v1/jokes/my-drafts/', {'format': fmt_slug})
+        self.assertEqual(response.status_code, 201)
+        return response.json()['id']
+
+    def test_submit_happy_path_with_video_asset(self):
+        draft_id = self._make_draft('video')
+        asset = make_asset(self.user, kind='video', duration_ms=5000)
+        patch_response = self.client.patch(
+            f'/api/v1/jokes/my-drafts/{draft_id}/',
+            {'setup': 'watch this', 'media_asset_ids': [str(asset.pk)]},
+            format='json',
+        )
+        self.assertEqual(patch_response.status_code, 200)
+        response = self.client.post(f'/api/v1/jokes/my-drafts/{draft_id}/submit/')
+        self.assertEqual(response.status_code, 200)
+        draft = JokeSubmission.objects.get(pk=draft_id)
+        self.assertEqual(draft.status, 'pending')
+
+    def test_video_asset_on_image_draft_rejected_at_submit(self):
+        draft_id = self._make_draft('image')
+        asset = make_asset(self.user, kind='video', duration_ms=5000)
+        # Draft autosave (PATCH) skips per-format validation, so the kind
+        # mismatch isn't caught yet — it's a submit-time gate.
+        patch_response = self.client.patch(
+            f'/api/v1/jokes/my-drafts/{draft_id}/',
+            {'setup': 'watch this', 'media_asset_ids': [str(asset.pk)]},
+            format='json',
+        )
+        self.assertEqual(patch_response.status_code, 200)
+        response = self.client.post(f'/api/v1/jokes/my-drafts/{draft_id}/submit/')
+        self.assertEqual(response.status_code, 400)
+        self.assertIn('media', response.json())
+
+
+@override_settings(MEDIA_ROOT=_MEDIA_ROOT)
+class VideoPublishLockingAndAccountDeleteTests(TestCase):
+    """Publish copy, locking (poster_url stripped), and account-delete
+    media_slugs auto-derivation — all wave-1 machinery, proven for video."""
+
+    def setUp(self):
+        self.fmt, self.age, self.lang = _format_taxonomy('video', 'Video')
+        self.user = make_user('videopublisher@example.com')
+        self.admin_user = Wave2User.objects.create_superuser(
+            username='videoadmin@example.com', email='videoadmin@example.com',
+            password='x',
+        )
+        self.factory = APIRequestFactory()
+
+    def _admin_request(self):
+        from django.contrib.messages.storage.fallback import FallbackStorage
+        from django.contrib.sessions.middleware import SessionMiddleware
+        request = self.factory.post('/admin/')
+        request.user = self.admin_user
+        SessionMiddleware(lambda r: None).process_request(request)
+        request._messages = FallbackStorage(request)
+        return request
+
+    def _publish_video_joke(self, setup='watch this'):
+        sub = JokeSubmission.objects.create(
+            user=self.user, format=self.fmt, age_rating=self.age,
+            language=self.lang, setup=setup, text=setup, status='pending',
+        )
+        asset = make_asset(self.user, kind='video', duration_ms=5000)
+        JokeSubmissionMedia.objects.create(submission=sub, asset=asset, position=0)
+        admin_obj = JokeSubmissionAdmin(JokeSubmission, AdminSite())
+        with patch('jokes.models.Joke._generate_share_image'):
+            admin_obj.approve_and_publish(
+                self._admin_request(), JokeSubmission.objects.filter(pk=sub.pk),
+            )
+        sub.refresh_from_db()
+        return sub.published_joke
+
+    def test_approve_and_publish_copies_video_media(self):
+        joke = self._publish_video_joke()
+        self.assertIsNotNone(joke)
+        self.assertEqual(joke.media.count(), 1)
+        self.assertEqual(joke.media.first().asset.kind, 'video')
+
+    def test_locked_video_joke_serves_dims_only_no_poster_url(self):
+        joke = self._publish_video_joke()
+        request = APIRequestFactory().get('/api/v1/jokes/')
+        data = JokeSerializer(
+            joke, context={'request': request, 'paywall_state': locked_state()},
+        ).data
+        self.assertTrue(data['is_locked'])
+        item = data['media'][0]
+        self.assertEqual(set(item.keys()), {'kind', 'width', 'height'})
+        self.assertNotIn('poster_url', item)
+        self.assertNotIn('url', item)
+        self.assertNotIn('duration_ms', item)
+
+    def test_unlocked_video_joke_serves_poster_url(self):
+        joke = self._publish_video_joke()
+        request = APIRequestFactory().get('/api/v1/jokes/')
+        data = JokeSerializer(joke, context={'request': request}).data
+        self.assertFalse(data['is_locked'])
+        item = data['media'][0]
+        self.assertIn('poster_url', item)
+        self.assertIn('url', item)
+
+    def test_account_delete_removes_emptied_video_joke(self):
+        # media_slugs auto-derivation (jokes/views.py DataDeleteView) reads
+        # FORMAT_RULES for every slug requiring 'media' — video now qualifies
+        # automatically, with no production edit beyond FORMAT_RULES itself.
+        joke = self._publish_video_joke()
+        client = APIClient()
+        client.force_authenticate(self.user)
+        response = client.delete(
+            '/api/v1/users/me/', {'password': 'x'}, format='json',
+        )
+        self.assertIn(response.status_code, (200, 204))
+        joke = Joke.all_objects.get(pk=joke.pk)
+        self.assertTrue(joke.is_removed)
