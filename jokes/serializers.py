@@ -867,9 +867,15 @@ class JokeSubmissionCreateSerializer(serializers.ModelSerializer):
                     {'media_asset_ids': 'One or more media assets were not found.'}
                 )
             self._media_assets = [assets[i] for i in media_ids]
-            attrs['media'] = [a.kind for a in self._media_assets]
+            attrs['media'] = [
+                {'kind': a.kind, 'duration_ms': a.duration_ms}
+                for a in self._media_assets
+            ]
         elif self.instance is not None:
-            attrs['media'] = [m.asset.kind for m in self.instance.media.all()]
+            attrs['media'] = [
+                {'kind': m.asset.kind, 'duration_ms': m.asset.duration_ms}
+                for m in self.instance.media.all()
+            ]
         else:
             attrs['media'] = []
 

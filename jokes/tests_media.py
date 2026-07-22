@@ -306,26 +306,35 @@ class ImageFormatRuleTests(TestCase):
 
     def test_image_happy_path(self):
         errors = validate_per_format(
-            'image', {'setup': 'caption', 'media': ['image']}
+            'image',
+            {'setup': 'caption', 'media': [{'kind': 'image', 'duration_ms': None}]},
         )
         self.assertEqual(errors, {})
 
     def test_image_rejects_punchline(self):
         errors = validate_per_format(
             'image',
-            {'setup': 'caption', 'punchline': 'nope', 'media': ['image']},
+            {
+                'setup': 'caption', 'punchline': 'nope',
+                'media': [{'kind': 'image', 'duration_ms': None}],
+            },
         )
         self.assertIn('punchline', errors)
 
     def test_image_max_six_attachments(self):
         errors = validate_per_format(
-            'image', {'setup': 'caption', 'media': ['image'] * 7}
+            'image',
+            {
+                'setup': 'caption',
+                'media': [{'kind': 'image', 'duration_ms': None}] * 7,
+            },
         )
         self.assertIn('media', errors)
 
     def test_image_rejects_wrong_kind(self):
         errors = validate_per_format(
-            'image', {'setup': 'caption', 'media': ['video']}
+            'image',
+            {'setup': 'caption', 'media': [{'kind': 'video', 'duration_ms': None}]},
         )
         self.assertIn('media', errors)
 

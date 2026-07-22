@@ -48,6 +48,26 @@ FORMAT_RULES = {
             'max_media': 6,
         },
     },
+    'video': {
+        'required':  ['setup', 'media'],
+        'forbidden': ['punchline', 'lines'],
+        'constraints': {
+            'media_kind': 'video',
+            'min_media': 1,
+            'max_media': 1,
+            'max_duration_ms': 60000,
+        },
+    },
+    'audio': {
+        'required':  ['setup', 'media'],
+        'forbidden': ['punchline', 'lines'],
+        'constraints': {
+            'media_kind': 'audio',
+            'min_media': 1,
+            'max_media': 1,
+            'max_duration_ms': 60000,
+        },
+    },
 }
 
 
@@ -145,10 +165,21 @@ def validate_per_format(format_slug, attrs):
                     f"{format_slug.capitalize()} format allows at most "
                     f"{max_media} media attachment(s)."
                 )
-            elif media_kind is not None and any(k != media_kind for k in media):
+            elif media_kind is not None and any(
+                item.get('kind') != media_kind for item in media
+            ):
                 errors['media'] = (
                     f"All attachments must be {media_kind} for "
                     f"{format_slug} format."
                 )
+
+            max_duration = constraints.get('max_duration_ms')
+            if max_duration is not None and 'media' not in errors:
+                for item in media:
+                    if item.get('duration_ms') and item['duration_ms'] > max_duration:
+                        errors['media'] = (
+                            f'Clips must be {max_duration // 1000} seconds or shorter.'
+                        )
+                        break
 
     return errors
