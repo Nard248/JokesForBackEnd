@@ -37,6 +37,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         libpango-1.0-0 \
         libpangocairo-1.0-0 \
         libpq5 \
+        ffmpeg \
     && rm -rf /var/lib/apt/lists/* \
     && groupadd --system app \
     && useradd --system --gid app --home-dir /app --shell /usr/sbin/nologin app
@@ -62,10 +63,13 @@ EXPOSE 8080
 # stdout (Cloud Run auto-ingests). Gunicorn's own plain-text access log is
 # disabled (--access-logfile removed) to avoid a duplicate unparsed entry.
 # Worker errors / timeouts still go to stderr via --error-logfile -.
+# --timeout 300 matches the Cloud Run request timeout: in-request video
+# normalization (wave 2) can legitimately run for minutes; gthread heartbeats
+# keep the arbiter satisfied while a worker thread encodes.
 CMD exec gunicorn JokesForProject.wsgi:application \
     --bind 0.0.0.0:${PORT} \
     --workers 2 \
     --threads 4 \
     --worker-class gthread \
-    --timeout 60 \
+    --timeout 300 \
     --error-logfile -
