@@ -172,6 +172,12 @@ cairosvg — latent breakage).
 - Accepted containers: MP4/MOV/WebM (video), MP3/M4A/AAC (audio), GIF.
 - Caps: ≤60s duration (ffprobe-verified), ≤100MB upload (video), ≤25MB
   (GIF), ≤10MB (audio).
+
+> **Amended 2026-07-22 (implementation + final review):** video ≤**30MB**
+> (Cloud Run HTTP/1 ingress rejects >32MiB — 100MB/60MB were unreachable),
+> GIF ≤15MB, input resolution ≤~1080p (memory envelope on 1Gi; 4K decode
+> RSS would OOM), ≤2 concurrent encodes per instance (semaphore → 429).
+> 1Gi Cloud Run memory is a deploy gate.
 - ffprobe validates; ffmpeg **normalizes in-request** to H.264/AAC
   progressive MP4, 720p max, `+faststart` (accepts iPhone HEVC `.mov`,
   Android WebM). GIF → silent looping MP4 (`is_gif=true`).
