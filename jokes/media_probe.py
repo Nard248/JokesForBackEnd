@@ -46,7 +46,7 @@ def probe_media(path):
         raise MediaValidationError({'file': 'Could not read this media file.'})
     if completed.returncode != 0:
         logger.warning(
-            'ffmpeg failed (rc=%s): %s',
+            'ffprobe failed (rc=%s): %s',
             completed.returncode, (completed.stderr or b'')[-500:],
         )
         raise MediaValidationError({'file': 'Not a valid media file.'})

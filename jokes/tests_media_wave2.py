@@ -124,7 +124,7 @@ class FfmpegDiagnosticsLoggingTests(TestCase):
             with self.assertLogs('jokes.media_probe', level='WARNING') as logs:
                 with self.assertRaises(MediaValidationError):
                     probe_media(f.name)
-        self.assertTrue(any('ffmpeg failed' in m for m in logs.output))
+        self.assertTrue(any('ffprobe failed' in m for m in logs.output))
 
 
 from PIL import Image
@@ -577,7 +577,8 @@ class MediaUploadWave2Tests(TestCase):
 @unittest.skipUnless(FFMPEG, 'ffmpeg not installed')
 @override_settings(MEDIA_ROOT=_MEDIA_ROOT)
 class EncodeConcurrencyGuardTests(TestCase):
-    """FIX 5: _ENCODE_SLOTS is a BoundedSemaphore(2) — exhausting it must
+    """FIX 5: _ENCODE_SLOTS is a per-worker BoundedSemaphore(1) (gunicorn
+    --workers 2 ⇒ 2 concurrent encodes per instance) — exhausting it must
     surface as a 429 with a Retry-After header, not a 500 or a hang."""
 
     def setUp(self):
@@ -603,7 +604,6 @@ class EncodeConcurrencyGuardTests(TestCase):
         from jokes.media_processing import _ENCODE_SLOTS
 
         self.assertTrue(_ENCODE_SLOTS.acquire(blocking=False))
-        self.assertTrue(_ENCODE_SLOTS.acquire(blocking=False))
         try:
             response = self._upload(self._clip_buf(seconds=2), 'video')
             self.assertEqual(response.status_code, 429)
@@ -612,7 +612,6 @@ class EncodeConcurrencyGuardTests(TestCase):
             self.assertEqual(response.headers['Retry-After'], '30')
             self.assertEqual(MediaAsset.objects.count(), 0)
         finally:
-            _ENCODE_SLOTS.release()
             _ENCODE_SLOTS.release()
 
         response = self._upload(self._clip_buf(seconds=2), 'video')
