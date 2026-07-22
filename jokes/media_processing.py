@@ -144,13 +144,14 @@ MAX_MEDIA_DURATION_MS = 60_000
 MAX_VIDEO_PIXELS = 1920 * 1080 * 1.2   # 20% margin over 1080p for odd sensor AR
 FFMPEG_TIMEOUT = 240   # hard subprocess ceiling; leaves headroom under 300s
 
-# Caps in-process encode concurrency to 2 simultaneous ffmpeg jobs. This is
-# per-instance backpressure (single Cloud Run container, request-triggered,
-# no workers): two single-threaded x264 encodes can share one vCPU without
-# starving other gthread request handlers, but a third would. Cloud Run
-# scaling out adds more instances — each gets its own 2 slots — which is the
-# intended relief valve, not a shared/global limit.
-_ENCODE_SLOTS = threading.BoundedSemaphore(2)
+# PER-WORKER encode-concurrency guard. This semaphore lives in one gunicorn
+# worker process (module state is not shared across workers), and the
+# Dockerfile runs --workers 2, so the per-INSTANCE cap is
+# workers × slots = 2 × 1 = 2 concurrent encodes — the documented budget for
+# the 1Gi / single-vCPU envelope. Cloud Run scaling out adds more instances,
+# each with its own 2, which is the intended relief valve — this is
+# per-instance backpressure, not a shared/global limit.
+_ENCODE_SLOTS = threading.BoundedSemaphore(1)
 
 
 class _EncodeSlot:
@@ -286,10 +287,9 @@ def process_video(uploaded, is_gif=False):
         out = os.path.join(workdir, 'out.mp4')
         # '-fpsmax' (NOT '-fps_max' / '-max_fps') requires ffmpeg >=4.4 —
         # prod (5.1) and dev (8.1) are both safe. Get the spelling wrong and
-        # ffmpeg exits non-zero on an unrecognized option, which surfaces to
-        # the caller only as the generic "Could not process this media file"
-        # (_run_ffmpeg has no argv-specific error path) — there's no other
-        # signal to catch a typo here besides this comment and the tests.
+        # ffmpeg exits non-zero on an unrecognized option: the user sees the
+        # generic "Could not process this media file", but _run_ffmpeg now
+        # logs the stderr (including the bad-option message) at WARNING.
         args = ['-i', src,
                 '-vf', "scale='min(1280,iw)':'min(720,ih)':force_original_aspect_ratio=decrease,scale=trunc(iw/2)*2:trunc(ih/2)*2",
                 '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '23',
