@@ -843,9 +843,118 @@ class TopJokesMultiRelationFanoutTests(TestCase):
 
     def test_top_jokes_query_count_bounded(self):
         """_top_jokes issues a bounded, constant number of queries (annotate +
-        dwell aggregation) regardless of relation-row volume — no N+1."""
+        dwell aggregation + watch media-kind lookup + watch aggregation)
+        regardless of relation-row volume — no N+1."""
         from creator_insights.services import _top_jokes, resolve_creator_jokes, window_since
         jokes = resolve_creator_jokes(self.creator)
         since = window_since('all')
-        with self.assertNumQueries(2):
+        with self.assertNumQueries(4):
             _top_jokes(jokes, since)
+
+
+# =============================================================================
+# Task 5: Watch telemetry — per-joke avg_watch_seconds / watch_completion_rate
+# in top_jokes. Only meaningful for jokes whose media includes a video/audio
+# asset; text/image jokes carry the keys as None (never accrue JokeWatch rows,
+# so this is provably a no-op for them). Mirrors the dwell-based
+# avg_read_seconds / completion_rate computation style.
+# =============================================================================
+
+import shutil
+import tempfile
+
+from django.test import override_settings
+
+from jokes.models import JokeMedia, JokeWatch
+from jokes.tests_media import make_asset
+
+_WATCH_MEDIA_ROOT = tempfile.mkdtemp()
+
+
+@override_settings(MEDIA_ROOT=_WATCH_MEDIA_ROOT)
+class WatchMetricsTests(TestCase):
+
+    @classmethod
+    def tearDownClass(cls):
+        super().tearDownClass()
+        shutil.rmtree(_WATCH_MEDIA_ROOT, ignore_errors=True)
+
+    @classmethod
+    def setUpTestData(cls):
+        cls.fmt_text = Format.objects.get(slug='oneliner')
+        cls.fmt_video = Format.objects.get(slug='video')
+        cls.age = AgeRating.objects.first()
+        cls.lang = Language.objects.get(code='en')
+
+        cls.creator = User.objects.create_user(
+            username='watch_creator@svc.com', email='watch_creator@svc.com', password='x'
+        )
+        cls.reader = User.objects.create_user(
+            username='watch_reader@svc.com', email='watch_reader@svc.com', password='x'
+        )
+
+        cls._, cls.text_joke = _make_published_submission(
+            cls.creator, cls.fmt_text, cls.age, cls.lang, text='Text joke'
+        )
+        cls._, cls.video_joke = _make_published_submission(
+            cls.creator, cls.fmt_video, cls.age, cls.lang, text='Video joke'
+        )
+        asset = make_asset(cls.creator, kind='video', duration_ms=8000)
+        JokeMedia.objects.create(joke=cls.video_joke, asset=asset, position=0)
+
+        # A view each so both jokes surface deterministically in top_jokes.
+        _view(cls.reader, cls.text_joke, revealed=True, source='explore')
+        _view(cls.reader, cls.video_joke, revealed=True, source='explore')
+
+    def _row(self, data, joke_id):
+        return next(r for r in data['top_jokes'] if r['id'] == joke_id)
+
+    def test_keys_present_and_null_for_text_joke(self):
+        from creator_insights.services import build_creator_insights
+        data = build_creator_insights(self.creator, 'all')
+        row = self._row(data, self.text_joke.id)
+        self.assertIn('avg_watch_seconds', row)
+        self.assertIn('watch_completion_rate', row)
+        self.assertIsNone(row['avg_watch_seconds'])
+        self.assertIsNone(row['watch_completion_rate'])
+        # Untouched existing stat, proving the addition is neutral for text jokes.
+        self.assertEqual(row['payoff_rate'], 1.0)
+
+    def test_keys_null_for_video_joke_without_watch_samples(self):
+        from creator_insights.services import build_creator_insights
+        data = build_creator_insights(self.creator, 'all')
+        row = self._row(data, self.video_joke.id)
+        self.assertIsNone(row['avg_watch_seconds'])
+        self.assertIsNone(row['watch_completion_rate'])
+
+    def test_avg_watch_seconds_and_completion_rate_computed(self):
+        from creator_insights.services import build_creator_insights
+        # 4 watch samples: 2000, 6000, 8000, 10000 ms -> avg 6.5s.
+        # watch_pct on 3 of 4 rows: 50, 95, 100 -> 2 of 3 >= 90 -> completion 0.6667.
+        for ms, pct in [(2000, 50), (6000, 95), (8000, 100), (10000, None)]:
+            JokeWatch.objects.create(
+                user=self.reader, joke=self.video_joke, watch_ms=ms, watch_pct=pct,
+                source='feed',
+            )
+        data = build_creator_insights(self.creator, 'all')
+        row = self._row(data, self.video_joke.id)
+        self.assertEqual(row['avg_watch_seconds'], 6.5)
+        self.assertEqual(row['watch_completion_rate'], round(2 / 3, 4))
+
+        # Text joke stays null — no cross-joke leakage from the video joke's
+        # watch rows — and its other stats are unaffected.
+        text_row = self._row(data, self.text_joke.id)
+        self.assertIsNone(text_row['avg_watch_seconds'])
+        self.assertIsNone(text_row['watch_completion_rate'])
+        self.assertEqual(text_row['payoff_rate'], 1.0)
+
+    def test_watch_completion_rate_null_without_pct_samples(self):
+        from creator_insights.services import build_creator_insights
+        JokeWatch.objects.create(
+            user=self.reader, joke=self.video_joke, watch_ms=5000, watch_pct=None,
+            source='feed',
+        )
+        data = build_creator_insights(self.creator, 'all')
+        row = self._row(data, self.video_joke.id)
+        self.assertEqual(row['avg_watch_seconds'], 5.0)
+        self.assertIsNone(row['watch_completion_rate'])

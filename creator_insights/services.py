@@ -15,7 +15,7 @@ from django.utils import timezone
 
 from jokes.models import (
     Joke, JokeView, JokeReaction, Favorite, SavedJoke, ShareEvent, JokeSubmission,
-    JokeImpression, JokeDwell,
+    JokeImpression, JokeDwell, JokeWatch, JokeMedia,
 )
 from follows.models import Follow
 from jokes.identity import public_display_name, public_handle
@@ -27,6 +27,9 @@ READ_THRESHOLD_MS = 4000
 # A dwell sample with scroll_pct at/above this is treated as "completed"
 # (read all the way through — most meaningful for story-format jokes).
 COMPLETION_SCROLL_PCT = 90
+# A watch sample with watch_pct at/above this is treated as "completed"
+# (watched all the way through). Mirrors COMPLETION_SCROLL_PCT for dwell.
+WATCH_COMPLETION_PCT = 90
 
 
 # ---------------------------------------------------------------------------
@@ -277,6 +280,28 @@ def _top_jokes(jokes, since):
         )
     }
 
+    # Watch-time metrics (Wave 2 media telemetry), same separate-aggregation
+    # style as dwell above. Only meaningful for jokes whose media includes a
+    # video/audio asset — text/image jokes never accrue JokeWatch rows, so
+    # this is provably a no-op for them.
+    media_joke_ids = set(
+        JokeMedia.objects.filter(
+            joke_id__in=top_ids, asset__kind__in=('video', 'audio'),
+        ).values_list('joke_id', flat=True).distinct()
+    )
+    watch_qs = JokeWatch.objects.filter(joke_id__in=top_ids)
+    if since:
+        watch_qs = watch_qs.filter(watched_at__date__gte=since)
+    watch_by_joke = {
+        row['joke_id']: row
+        for row in watch_qs.values('joke_id').annotate(
+            avg_ms=Avg('watch_ms'),
+            total=Count('id'),
+            pct_total=Count('id', filter=Q(watch_pct__isnull=False)),
+            pct_completed=Count('id', filter=Q(watch_pct__gte=WATCH_COMPLETION_PCT)),
+        )
+    }
+
     result = []
     for j in annotated:
         vc = j.view_count
@@ -288,6 +313,17 @@ def _top_jokes(jokes, since):
         else:
             avg_read_seconds = None
             read_rate = None
+
+        w = watch_by_joke.get(j.id) if j.id in media_joke_ids else None
+        if w and w['total']:
+            avg_watch_seconds = round(w['avg_ms'] / 1000, 2) if w['avg_ms'] is not None else None
+        else:
+            avg_watch_seconds = None
+        if w and w['pct_total']:
+            watch_completion_rate = round(w['pct_completed'] / w['pct_total'], 4)
+        else:
+            watch_completion_rate = None
+
         result.append({
             'id': j.id,
             'text': j.text,
@@ -299,6 +335,8 @@ def _top_jokes(jokes, since):
             'payoff_rate': round(pc / vc, 4) if vc else None,
             'avg_read_seconds': avg_read_seconds,
             'read_rate': read_rate,
+            'avg_watch_seconds': avg_watch_seconds,
+            'watch_completion_rate': watch_completion_rate,
         })
     return result
 
