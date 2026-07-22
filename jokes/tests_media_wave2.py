@@ -102,6 +102,31 @@ class ProbeTests(TestCase):
                 probe_media(f.name)
 
 
+@unittest.skipUnless(FFMPEG, 'ffmpeg not installed')
+class FfmpegDiagnosticsLoggingTests(TestCase):
+    """FIX 4: ffmpeg/ffprobe stderr must be logged before raising, so a
+    generic 'Could not process this media file' report is debuggable in prod
+    without needing a repro."""
+
+    def test_run_ffmpeg_logs_stderr_on_nonzero_exit(self):
+        from jokes.media_processing import MediaValidationError, _run_ffmpeg
+        with self.assertLogs('jokes.media_processing', level='WARNING') as logs:
+            with self.assertRaises(MediaValidationError):
+                _run_ffmpeg(['-i', '/no/such/file.mp4', '/tmp/wont-be-created.mp4'])
+        self.assertTrue(any('ffmpeg failed' in m for m in logs.output))
+
+    def test_probe_media_logs_stderr_on_nonzero_exit(self):
+        from jokes.media_probe import probe_media
+        from jokes.media_processing import MediaValidationError
+        with tempfile.NamedTemporaryFile(suffix='.mp4') as f:
+            f.write(b'this is not a video')
+            f.flush()
+            with self.assertLogs('jokes.media_probe', level='WARNING') as logs:
+                with self.assertRaises(MediaValidationError):
+                    probe_media(f.name)
+        self.assertTrue(any('ffmpeg failed' in m for m in logs.output))
+
+
 from PIL import Image
 
 
@@ -154,6 +179,20 @@ class VideoPipelineTests(TestCase):
                     process_video(self._upload_from(clip))
                 encode.assert_not_called()
 
+    def test_above_1080p_rejected_before_transcode(self):
+        from jokes.media_probe import MediaProbe
+        from jokes.media_processing import MediaValidationError, process_video
+        with tempfile.TemporaryDirectory() as d:
+            clip = make_clip(f'{d}/in.mp4', seconds=2)
+            # Fake a 4K probe so we don't have to encode/ship a real 4K fixture.
+            uhd_probe = MediaProbe('mov', 'h264', 'aac', 3840, 2160, 2000)
+            with patch('jokes.media_processing.probe_media', return_value=uhd_probe), \
+                 patch('jokes.media_processing._run_ffmpeg') as encode:
+                with self.assertRaises(MediaValidationError) as ctx:
+                    process_video(self._upload_from(clip))
+                encode.assert_not_called()
+        self.assertIn('1080p', ctx.exception.errors['file'])
+
     def test_oversize_video_rejected(self):
         from jokes.media_processing import MAX_VIDEO_BYTES, MediaValidationError, process_video
         buf = io.BytesIO(b'x')
@@ -181,6 +220,93 @@ class VideoPipelineTests(TestCase):
         buf.name = 'x.mp4'
         with self.assertRaises(MediaValidationError):
             process_video(buf)
+
+    def test_post_encode_duration_lie_rejected_and_workdir_cleaned(self):
+        """ffprobe metadata can lie (forged/malformed duration atoms) — the
+        pre-encode probe passed, but what ffmpeg actually produced is
+        overlong. Patch ONLY the post-encode probe call (the one against the
+        ffmpeg output path) to report 70s; the pre-encode probe still runs
+        for real against the short fixture clip."""
+        from jokes.media_probe import MediaProbe
+        from jokes.media_probe import probe_media as real_probe_media
+        from jokes.media_processing import MediaValidationError, process_video
+
+        def fake_probe(path):
+            info = real_probe_media(path)
+            if path.endswith('out.mp4'):
+                return MediaProbe(
+                    info.container, info.video_codec, info.audio_codec,
+                    info.width, info.height, 70_000,
+                )
+            return info
+
+        workdirs_before = {
+            p for p in os.listdir(tempfile.gettempdir())
+            if p.startswith('media-video-')
+        }
+        with tempfile.TemporaryDirectory() as d:
+            clip = make_clip(f'{d}/in.mp4', seconds=2)
+            with patch('jokes.media_processing.probe_media', side_effect=fake_probe):
+                with self.assertRaises(MediaValidationError) as ctx:
+                    process_video(self._upload_from(clip))
+        self.assertIn('60 seconds', ctx.exception.errors['file'])
+        workdirs_after = {
+            p for p in os.listdir(tempfile.gettempdir())
+            if p.startswith('media-video-')
+        }
+        self.assertEqual(workdirs_after, workdirs_before)
+
+
+class _TempPathUpload:
+    """Duck-typed stand-in for Django's TemporaryUploadedFile: exposes
+    `.size` and `temporary_file_path()` without the full file-like read
+    interface _spool_to_disk would need."""
+
+    def __init__(self, path):
+        self._path = path
+        self.name = os.path.basename(path)
+        self.size = os.path.getsize(path)
+
+    def temporary_file_path(self):
+        return self._path
+
+
+@unittest.skipUnless(FFMPEG, 'ffmpeg not installed')
+class SpoolReuseTests(TestCase):
+    """FIX 3: an uploaded object exposing temporary_file_path() (Django's own
+    on-disk spool) must be used directly — no second copy — and process_video
+    must not delete Django's temp file itself (Django cleans it up)."""
+
+    def test_temporary_file_path_used_directly_no_copy(self):
+        from jokes.media_processing import process_video
+        with tempfile.TemporaryDirectory() as d:
+            clip = make_clip(f'{d}/in.mp4', seconds=2)
+            uploaded = _TempPathUpload(clip)
+            with patch('jokes.media_processing._spool_to_disk') as spool:
+                result = process_video(uploaded)
+            spool.assert_not_called()
+            # Django's own temp file must still be there — process_video must
+            # not have unlinked a file it doesn't own.
+            self.assertTrue(os.path.exists(clip))
+        self.assertTrue(result.duration_ms > 0)
+
+    def test_in_memory_upload_still_spools_a_copy(self):
+        """The BytesIO fallback path (no temporary_file_path) must still work
+        — this is the pre-existing behavior for in-memory uploads."""
+        import jokes.media_processing as media_processing
+        from jokes.media_processing import process_video
+        with tempfile.TemporaryDirectory() as d:
+            clip = make_clip(f'{d}/in.mp4', seconds=2)
+            with open(clip, 'rb') as f:
+                buf = io.BytesIO(f.read())
+            buf.name = 'in.mp4'
+            with patch.object(
+                media_processing, '_spool_to_disk',
+                wraps=media_processing._spool_to_disk,
+            ) as spool:
+                result = process_video(buf)
+            spool.assert_called_once()
+        self.assertTrue(result.duration_ms > 0)
 
 
 @unittest.skipUnless(FFMPEG, 'ffmpeg not installed')
@@ -446,6 +572,51 @@ class MediaUploadWave2Tests(TestCase):
                 self._upload(self._clip_buf(seconds=2), 'video')
         self.assertEqual(MediaAsset.objects.count(), 0)
         self.assertEqual(self._media_files_on_disk(), before)
+
+
+@unittest.skipUnless(FFMPEG, 'ffmpeg not installed')
+@override_settings(MEDIA_ROOT=_MEDIA_ROOT)
+class EncodeConcurrencyGuardTests(TestCase):
+    """FIX 5: _ENCODE_SLOTS is a BoundedSemaphore(2) — exhausting it must
+    surface as a 429 with a Retry-After header, not a 500 or a hang."""
+
+    def setUp(self):
+        self.user = make_user('busy-uploader@example.com')
+        self.client = APIClient()
+        self.client.force_authenticate(self.user)
+
+    def _upload(self, buf, kind):
+        return self.client.post(
+            '/api/v1/media/uploads/', {'file': buf, 'kind': kind},
+            format='multipart',
+        )
+
+    def _clip_buf(self, name='in.mp4', **kwargs):
+        with tempfile.TemporaryDirectory() as d:
+            clip = make_clip(f'{d}/in.mp4', **kwargs)
+            with open(clip, 'rb') as f:
+                buf = io.BytesIO(f.read())
+        buf.name = name
+        return buf
+
+    def test_upload_429s_while_slots_exhausted_then_succeeds_after_release(self):
+        from jokes.media_processing import _ENCODE_SLOTS
+
+        self.assertTrue(_ENCODE_SLOTS.acquire(blocking=False))
+        self.assertTrue(_ENCODE_SLOTS.acquire(blocking=False))
+        try:
+            response = self._upload(self._clip_buf(seconds=2), 'video')
+            self.assertEqual(response.status_code, 429)
+            self.assertEqual(response.json()['detail'],
+                              'Media processing is busy — try again in a moment.')
+            self.assertEqual(response.headers['Retry-After'], '30')
+            self.assertEqual(MediaAsset.objects.count(), 0)
+        finally:
+            _ENCODE_SLOTS.release()
+            _ENCODE_SLOTS.release()
+
+        response = self._upload(self._clip_buf(seconds=2), 'video')
+        self.assertEqual(response.status_code, 201)
 
 
 # =============================================================================
@@ -724,6 +895,87 @@ class VideoPublishLockingAndAccountDeleteTests(TestCase):
         self.assertIn(response.status_code, (200, 204))
         joke = Joke.all_objects.get(pk=joke.pk)
         self.assertTrue(joke.is_removed)
+
+
+from django.core.files.base import ContentFile
+
+
+@override_settings(MEDIA_ROOT=_MEDIA_ROOT)
+class AdminMediaPreviewTests(TestCase):
+    """FIX 6: media_preview must render something useful for video (poster
+    thumbnail + play badge) and audio (a link with duration) — previously it
+    unconditionally rendered `<img src=asset.file.url>`, which for
+    audio/video assets points at a non-image file."""
+
+    def setUp(self):
+        self.fmt_video, self.age, self.lang = _format_taxonomy('video', 'Video')
+        self.fmt_audio, _, _ = _format_taxonomy('audio', 'Audio')
+        self.user = make_user('adminpreview@example.com')
+        self.admin_obj = JokeSubmissionAdmin(JokeSubmission, AdminSite())
+
+    def _submission(self, fmt, asset):
+        sub = JokeSubmission.objects.create(
+            user=self.user, format=fmt, age_rating=self.age, language=self.lang,
+            setup='x', text='x', status='pending',
+        )
+        JokeSubmissionMedia.objects.create(submission=sub, asset=asset, position=0)
+        return sub
+
+    def test_video_preview_renders_poster_with_play_badge(self):
+        asset = MediaAsset(owner=self.user, kind='video', width=1280, height=720,
+                            duration_ms=5000)
+        asset.file.save('video.mp4', ContentFile(b'fake-mp4-bytes'), save=False)
+        asset.poster.save('poster.jpg', ContentFile(b'fake-jpg-bytes'), save=False)
+        asset.save()
+        sub = self._submission(self.fmt_video, asset)
+        html = str(self.admin_obj.media_preview(sub))
+        self.assertIn(asset.poster.url, html)
+        self.assertIn('▶', html)
+
+    def test_video_preview_without_poster_falls_back_to_dash(self):
+        asset = MediaAsset(owner=self.user, kind='video', width=1280, height=720,
+                            duration_ms=5000)
+        asset.file.save('video.mp4', ContentFile(b'fake-mp4-bytes'), save=False)
+        asset.save()
+        sub = self._submission(self.fmt_video, asset)
+        self.assertEqual(self.admin_obj.media_preview(sub), '—')
+
+    def test_audio_preview_renders_link_with_duration(self):
+        asset = MediaAsset(owner=self.user, kind='audio', duration_ms=45000)
+        asset.file.save('audio.m4a', ContentFile(b'fake-m4a-bytes'), save=False)
+        asset.save()
+        sub = self._submission(self.fmt_audio, asset)
+        html = str(self.admin_obj.media_preview(sub))
+        self.assertIn(asset.file.url, html)
+        self.assertIn('45', html)
+
+
+class AdminSafesearchFlagsTests(TestCase):
+    """FIX 7: safesearch_flags must also descend into verdict['frames'] —
+    the per-sampled-frame screening results attached to video assets — not
+    just the top-level verdict keys."""
+
+    def setUp(self):
+        self.fmt, self.age, self.lang = _format_taxonomy('video', 'Video')
+        self.user = make_user('adminflags@example.com')
+        self.admin_obj = JokeSubmissionAdmin(JokeSubmission, AdminSite())
+
+    def test_flags_include_nested_frame_verdicts(self):
+        verdict = {
+            'status': 'ok',
+            'frames': [
+                {'status': 'ok'},
+                {'status': 'ok', 'adult': 'POSSIBLE'},
+            ],
+        }
+        asset = make_asset(self.user, kind='video', duration_ms=5000, safesearch=verdict)
+        sub = JokeSubmission.objects.create(
+            user=self.user, format=self.fmt, age_rating=self.age, language=self.lang,
+            setup='x', text='x', status='pending',
+        )
+        JokeSubmissionMedia.objects.create(submission=sub, asset=asset, position=0)
+        flags = self.admin_obj.safesearch_flags(sub)
+        self.assertIn('adult:POSSIBLE', flags)
 
 
 # =============================================================================

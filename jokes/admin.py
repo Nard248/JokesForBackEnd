@@ -191,10 +191,30 @@ class JokeSubmissionAdmin(admin.ModelAdmin):
         link = obj.media.select_related('asset').first()
         if not link or not link.asset.file:
             return '—'
+        asset = link.asset
+        if asset.kind == 'video':
+            if not asset.poster:
+                return '—'
+            return format_html(
+                '<span style="position:relative;display:inline-block;">'
+                '<img src="{}" style="max-height:60px;max-width:100px;'
+                'border-radius:4px;" />'
+                '<span style="position:absolute;bottom:2px;right:2px;'
+                'background:rgba(0,0,0,.6);color:#fff;border-radius:50%;'
+                'width:16px;height:16px;font-size:10px;line-height:16px;'
+                'text-align:center;">▶</span>'
+                '</span>',
+                asset.poster.url,
+            )
+        if asset.kind == 'audio':
+            seconds = round((asset.duration_ms or 0) / 1000)
+            return format_html(
+                '<a href="{}">audio ({}s)</a>', asset.file.url, seconds,
+            )
         return format_html(
             '<img src="{}" style="max-height:60px;max-width:100px;'
             'border-radius:4px;" />',
-            link.asset.file.url,
+            asset.file.url,
         )
     media_preview.short_description = 'Media'
 
@@ -202,12 +222,17 @@ class JokeSubmissionAdmin(admin.ModelAdmin):
         flags = []
         for link in obj.media.select_related('asset'):
             verdict = link.asset.safesearch or {}
-            flags.extend(
-                f'{category}:{level}'
-                for category, level in verdict.items()
-                if category != 'status'
-                and level in ('POSSIBLE', 'LIKELY', 'VERY_LIKELY')
-            )
+            # Video verdicts nest per-frame screening results under 'frames'
+            # (one dict per sampled frame, same category/level shape as the
+            # top-level verdict) — descend into those too, not just the
+            # top-level keys.
+            for frame in [verdict, *(verdict.get('frames') or [])]:
+                flags.extend(
+                    f'{category}:{level}'
+                    for category, level in frame.items()
+                    if category not in ('status', 'frames')
+                    and level in ('POSSIBLE', 'LIKELY', 'VERY_LIKELY')
+                )
         return ', '.join(flags) or '—'
     safesearch_flags.short_description = 'Screen flags'
 
