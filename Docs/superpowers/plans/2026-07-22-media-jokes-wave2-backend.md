@@ -710,7 +710,8 @@ git commit -m "telemetry: watch events for media jokes with insights watch-time 
 
 ## Deployment notes (owner-visible, not tasks)
 
-- **Recommended before deploy: bump Cloud Run memory** — `gcloud run services update jokesforbackend --region=us-east1 --project=jokesfor --memory=1Gi` (currently 512Mi; a 60MB upload + ffmpeg working set + RAM-backed /tmp is tight). CPU can stay 1000m (measured budget fits). OWNER CALL — surface before the backend push.
+- **DEPLOY GATE (final review C1, 2026-07-22): the 1Gi memory bump is REQUIRED, not optional** — `gcloud run services update jokesforbackend --region=us-east1 --project=jokesfor --memory=1Gi`. At 512Mi a single real video upload OOMs the instance (RAM-backed /tmp + ffmpeg working set), killing every in-flight request. The code side adds a 1080p input cap + spool reuse to keep the envelope inside 1Gi. CPU stays 1000m.
+- **Caps amended (final review C2): video upload cap is 30MB** — Cloud Run's HTTP/1 ingress rejects >32MiB requests before Django ever sees them, so the spec's 60MB was unreachable. FE copy must say 30MB. Post-deploy smoke MUST include a >32MB upload to confirm the ingress behavior (expect a platform 413).
 - Cloud Run request timeout already 300s ✓ (verified 2026-07-22). Dockerfile raises gunicorn to match.
 - Deploy order: frontend wave-2 (rendering/editors) first, backend second — same rationale as Wave 1; the FE unknown-format guard already hides `video`/`audio` jokes from old bundles.
 - Post-deploy smoke: upload a real phone video (HEVC .mov) — the normalization pipeline's reason for existing.
