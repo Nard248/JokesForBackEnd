@@ -82,7 +82,9 @@ from .models import (
     JokePackProgress,
     MediaAsset,
 )
-from .media_processing import MediaValidationError, process_image
+from .media_processing import (
+    MediaValidationError, process_audio, process_image, process_video,
+)
 from .media_screening import get_matcher, screen_image
 from .recommendations import get_personalized_joke, get_recently_shown_joke_ids
 from .serving import allowed_tiers
@@ -1329,7 +1331,7 @@ def joke_share_page(request, pk):
 
 
 # =============================================================================
-# Media Uploads (Wave 1: images; video/audio arrive in Wave 2)
+# Media Uploads (image, video, audio, GIF)
 # =============================================================================
 
 def _sweep_orphan_assets(user):
@@ -1344,13 +1346,48 @@ def _sweep_orphan_assets(user):
         asset.delete_with_files()
 
 
+def _finalize_media_upload(request, asset):
+    """Shared tail for every upload kind: persist the row, clean up storage
+    on a DB failure, sweep orphans, audit, and serialize the response.
+
+    Callers build an unsaved `asset` with its file (and, for video, poster)
+    already written via `.save(..., save=False)`, then hand it here. Kept as
+    ONE block rather than duplicated per kind so the DB-failure cleanup (and
+    everything else in the tail) can't drift between image/video/audio.
+    """
+    from audit.services import record_audit
+
+    try:
+        asset.save()
+    except Exception:
+        # The row never landed, so the orphan sweep (which queries
+        # MediaAsset) could never reclaim these files — delete them now.
+        asset.file.delete(save=False)
+        if asset.poster:
+            asset.poster.delete(save=False)
+        raise
+
+    _sweep_orphan_assets(request.user)
+    record_audit(
+        request, 'media_upload', outcome='success', actor=request.user,
+        target_type='media_asset', target_id=str(asset.pk),
+    )
+    serializer = MediaAssetSerializer(asset, context={'request': request})
+    return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+
 class MediaUploadView(APIView):
     """POST /media/uploads/ — validate, screen, and store one media file.
 
     The returned asset id is what the editor attaches to a draft via
     `media_asset_ids`. The whole pipeline is synchronous and in-request
-    (single-app constraint): Pillow validate/re-encode → SafeSearch →
+    (single-app constraint): normalize (Pillow / ffmpeg) → SafeSearch →
     hash-matcher → GCS write.
+
+    `kind` selects the pipeline (image/video/audio), but a `.gif` upload is
+    always routed through the video pipeline regardless of which `kind` was
+    submitted — a GIF is video-shaped (multi-frame, no audio), and accepting
+    it under `kind=image` too keeps older frontend callers working.
     """
 
     permission_classes = [IsAuthenticated]
@@ -1362,9 +1399,9 @@ class MediaUploadView(APIView):
         from audit.services import record_audit
 
         kind = (request.data.get('kind') or 'image').strip()
-        if kind != 'image':
+        if kind not in ('image', 'video', 'audio'):
             return Response(
-                {'kind': ["Only 'image' uploads are supported. Video and audio arrive in Wave 2."]},
+                {'kind': ["Unsupported kind."]},
                 status=status.HTTP_400_BAD_REQUEST,
             )
         uploaded = request.FILES.get('file')
@@ -1374,54 +1411,102 @@ class MediaUploadView(APIView):
                 status=status.HTTP_400_BAD_REQUEST,
             )
 
-        try:
-            processed = process_image(uploaded)
-        except MediaValidationError as exc:
-            return Response(exc.errors, status=status.HTTP_400_BAD_REQUEST)
+        content_type = (uploaded.content_type or '').lower()
+        name = (uploaded.name or '').lower()
+        is_gif = content_type == 'image/gif' or name.endswith('.gif')
 
-        verdict = screen_image(processed.data)
-        if verdict.get('status') == 'blocked':
-            record_audit(
-                request, 'safesearch_block', outcome='blocked',
-                actor=request.user, target_type='media_upload', target_id='',
-            )
-            return Response(
-                {'file': ['This image was rejected by automated content screening.']},
-                status=status.HTTP_422_UNPROCESSABLE_ENTITY,
-            )
+        if kind == 'image' and not is_gif:
+            try:
+                processed = process_image(uploaded)
+            except MediaValidationError as exc:
+                return Response(exc.errors, status=status.HTTP_400_BAD_REQUEST)
 
-        hit = get_matcher().match(processed.phash)
-        if hit:
-            record_audit(
-                request, 'hash_match_hit', outcome='blocked',
-                actor=request.user, target_type='media_upload', target_id='',
-            )
-            return Response(
-                {'file': ['This image cannot be uploaded.']},
-                status=status.HTTP_422_UNPROCESSABLE_ENTITY,
-            )
+            verdict = screen_image(processed.data)
+            if verdict.get('status') == 'blocked':
+                record_audit(
+                    request, 'safesearch_block', outcome='blocked',
+                    actor=request.user, target_type='media_upload', target_id='',
+                )
+                return Response(
+                    {'file': ['This image was rejected by automated content screening.']},
+                    status=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                )
 
-        asset = MediaAsset(
-            owner=request.user, kind='image',
-            width=processed.width, height=processed.height,
-            phash=processed.phash, safesearch=verdict,
-        )
-        asset.file.save('image.webp', ContentFile(processed.data), save=False)
-        try:
-            asset.save()
-        except Exception:
-            # The row never landed, so the orphan sweep (which queries
-            # MediaAsset) could never reclaim this file — delete it now.
-            asset.file.delete(save=False)
-            raise
+            hit = get_matcher().match(processed.phash)
+            if hit:
+                record_audit(
+                    request, 'hash_match_hit', outcome='blocked',
+                    actor=request.user, target_type='media_upload', target_id='',
+                )
+                return Response(
+                    {'file': ['This image cannot be uploaded.']},
+                    status=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                )
 
-        _sweep_orphan_assets(request.user)
-        record_audit(
-            request, 'media_upload', outcome='success', actor=request.user,
-            target_type='media_asset', target_id=str(asset.pk),
-        )
-        serializer = MediaAssetSerializer(asset, context={'request': request})
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+            asset = MediaAsset(
+                owner=request.user, kind='image',
+                width=processed.width, height=processed.height,
+                phash=processed.phash, safesearch=verdict,
+            )
+            asset.file.save('image.webp', ContentFile(processed.data), save=False)
+
+        elif kind == 'audio':
+            try:
+                processed = process_audio(uploaded)
+            except MediaValidationError as exc:
+                return Response(exc.errors, status=status.HTTP_400_BAD_REQUEST)
+
+            verdict = {'status': 'not_applicable'}   # no visual to screen
+            asset = MediaAsset(
+                owner=request.user, kind='audio',
+                duration_ms=processed.duration_ms, safesearch=verdict,
+            )
+            asset.file.save('audio.m4a', ContentFile(processed.data), save=False)
+
+        else:   # kind == 'video', or a GIF submitted under either kind
+            try:
+                processed = process_video(uploaded, is_gif=is_gif)
+            except MediaValidationError as exc:
+                return Response(exc.errors, status=status.HTTP_400_BAD_REQUEST)
+
+            frame_verdicts = [screen_image(processed.poster)] + [
+                screen_image(frame) for frame in processed.sample_frames
+            ]
+            if any(v.get('status') == 'blocked' for v in frame_verdicts):
+                record_audit(
+                    request, 'safesearch_block', outcome='blocked',
+                    actor=request.user, target_type='media_upload', target_id='',
+                )
+                return Response(
+                    {'file': ['This clip was rejected by automated content screening.']},
+                    status=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                )
+
+            hit = get_matcher().match(processed.phash)
+            if hit:
+                record_audit(
+                    request, 'hash_match_hit', outcome='blocked',
+                    actor=request.user, target_type='media_upload', target_id='',
+                )
+                return Response(
+                    {'file': ['This clip cannot be uploaded.']},
+                    status=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                )
+
+            verdict = {
+                'status': 'ok' if all(v.get('status') in ('ok', 'skipped') for v in frame_verdicts) else 'error',
+                'frames': frame_verdicts,
+            }
+            asset = MediaAsset(
+                owner=request.user, kind='video',
+                width=processed.width, height=processed.height,
+                duration_ms=processed.duration_ms, is_gif=is_gif,
+                phash=processed.phash, safesearch=verdict,
+            )
+            asset.file.save('video.mp4', ContentFile(processed.data), save=False)
+            asset.poster.save('poster.jpg', ContentFile(processed.poster), save=False)
+
+        return _finalize_media_upload(request, asset)
 
 
 # =============================================================================

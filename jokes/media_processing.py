@@ -215,6 +215,12 @@ def process_video(uploaded, is_gif=False):
             )
 
         out = os.path.join(workdir, 'out.mp4')
+        # '-fpsmax' (NOT '-fps_max' / '-max_fps') requires ffmpeg >=4.4 —
+        # prod (5.1) and dev (8.1) are both safe. Get the spelling wrong and
+        # ffmpeg exits non-zero on an unrecognized option, which surfaces to
+        # the caller only as the generic "Could not process this media file"
+        # (_run_ffmpeg has no argv-specific error path) — there's no other
+        # signal to catch a typo here besides this comment and the tests.
         args = ['-i', src,
                 '-vf', "scale='min(1280,iw)':'min(720,ih)':force_original_aspect_ratio=decrease,scale=trunc(iw/2)*2:trunc(ih/2)*2",
                 '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '23',
