@@ -6,8 +6,11 @@ MediaValidationError so callers keep the single-exception contract from
 jokes.media_processing.
 """
 import json
+import logging
 import subprocess
 from dataclasses import dataclass
+
+logger = logging.getLogger(__name__)
 
 FFPROBE_TIMEOUT = 30
 
@@ -36,9 +39,16 @@ def probe_media(path):
              '-show_format', '-show_streams', path],
             capture_output=True, timeout=FFPROBE_TIMEOUT, check=False,
         )
-    except (subprocess.TimeoutExpired, OSError):
+    except subprocess.TimeoutExpired:
+        logger.warning('ffprobe timed out after %ss', FFPROBE_TIMEOUT)
+        raise MediaValidationError({'file': 'Could not read this media file.'})
+    except OSError:
         raise MediaValidationError({'file': 'Could not read this media file.'})
     if completed.returncode != 0:
+        logger.warning(
+            'ffmpeg failed (rc=%s): %s',
+            completed.returncode, (completed.stderr or b'')[-500:],
+        )
         raise MediaValidationError({'file': 'Not a valid media file.'})
     try:
         data = json.loads(completed.stdout or b'{}')

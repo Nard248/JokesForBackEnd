@@ -84,7 +84,8 @@ from .models import (
     MediaAsset,
 )
 from .media_processing import (
-    MediaValidationError, process_audio, process_image, process_video,
+    MediaBusyError, MediaValidationError, process_audio, process_image,
+    process_video,
 )
 from .media_screening import get_matcher, screen_image
 from .recommendations import get_personalized_joke, get_recently_shown_joke_ids
@@ -1456,6 +1457,12 @@ class MediaUploadView(APIView):
                 processed = process_audio(uploaded)
             except MediaValidationError as exc:
                 return Response(exc.errors, status=status.HTTP_400_BAD_REQUEST)
+            except MediaBusyError:
+                return Response(
+                    {'detail': 'Media processing is busy — try again in a moment.'},
+                    status=status.HTTP_429_TOO_MANY_REQUESTS,
+                    headers={'Retry-After': '30'},
+                )
 
             verdict = {'status': 'not_applicable'}   # no visual to screen
             asset = MediaAsset(
@@ -1469,6 +1476,12 @@ class MediaUploadView(APIView):
                 processed = process_video(uploaded, is_gif=is_gif)
             except MediaValidationError as exc:
                 return Response(exc.errors, status=status.HTTP_400_BAD_REQUEST)
+            except MediaBusyError:
+                return Response(
+                    {'detail': 'Media processing is busy — try again in a moment.'},
+                    status=status.HTTP_429_TOO_MANY_REQUESTS,
+                    headers={'Retry-After': '30'},
+                )
 
             frame_verdicts = [screen_image(processed.poster)] + [
                 screen_image(frame) for frame in processed.sample_frames

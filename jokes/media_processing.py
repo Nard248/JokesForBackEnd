@@ -6,9 +6,12 @@ re-encode is ALSO the EXIF strip — no metadata survives a fresh encode. The
 original upload is never stored.
 """
 import io
+import logging
 from dataclasses import dataclass
 
 from PIL import Image, ImageOps, UnidentifiedImageError
+
+logger = logging.getLogger(__name__)
 
 ALLOWED_SOURCE_FORMATS = {'JPEG', 'PNG', 'WEBP'}   # GIF is Wave 2 (video-shaped)
 MAX_IMAGE_BYTES = 10 * 1024 * 1024
@@ -23,6 +26,14 @@ class MediaValidationError(Exception):
     def __init__(self, errors):
         self.errors = errors
         super().__init__(str(errors))
+
+
+class MediaBusyError(Exception):
+    """The in-process encode-concurrency guard (_ENCODE_SLOTS) rejected a new
+    video/audio job — every slot is in use. Single-container, request-triggered
+    app: this is per-instance backpressure, not a global limit — Cloud Run
+    scaling out adds more instances, each with its own two slots, which is the
+    point (no shared state to coordinate)."""
 
 
 @dataclass(frozen=True)
@@ -118,14 +129,43 @@ import os
 import shutil
 import subprocess
 import tempfile
+import threading
 
 from .media_probe import probe_media
 
-MAX_VIDEO_BYTES = 60 * 1024 * 1024
+# Cloud Run's HTTP/1 ingress hard-rejects request bodies over 32MiB before
+# they ever reach Django (no MediaValidationError, no JSON — just a bare
+# gateway error). 30MB leaves ~2MiB of multipart/form overhead headroom under
+# that ceiling, so oversize uploads always fail through OUR error path.
+MAX_VIDEO_BYTES = 30 * 1024 * 1024
 MAX_GIF_BYTES = 15 * 1024 * 1024
 MAX_AUDIO_BYTES = 10 * 1024 * 1024
 MAX_MEDIA_DURATION_MS = 60_000
+MAX_VIDEO_PIXELS = 1920 * 1080 * 1.2   # 20% margin over 1080p for odd sensor AR
 FFMPEG_TIMEOUT = 240   # hard subprocess ceiling; leaves headroom under 300s
+
+# Caps in-process encode concurrency to 2 simultaneous ffmpeg jobs. This is
+# per-instance backpressure (single Cloud Run container, request-triggered,
+# no workers): two single-threaded x264 encodes can share one vCPU without
+# starving other gthread request handlers, but a third would. Cloud Run
+# scaling out adds more instances — each gets its own 2 slots — which is the
+# intended relief valve, not a shared/global limit.
+_ENCODE_SLOTS = threading.BoundedSemaphore(2)
+
+
+class _EncodeSlot:
+    """Non-blocking acquire of an encode slot; raises MediaBusyError instead
+    of queuing so a caller under load fails fast with a 429 rather than
+    tying up a Cloud Run request thread waiting on ffmpeg capacity."""
+
+    def __enter__(self):
+        if not _ENCODE_SLOTS.acquire(blocking=False):
+            raise MediaBusyError()
+        return self
+
+    def __exit__(self, exc_type, exc, tb):
+        _ENCODE_SLOTS.release()
+        return False
 
 # ffprobe reports the whole QuickTime family (mp4/mov/m4a/3gp) as 'mov' —
 # never the literal 'mp4' — so it's the 'mov' entry below that admits mp4
@@ -172,6 +212,24 @@ def _spool_to_disk(uploaded, suffix):
     return handle.name
 
 
+def _source_path(uploaded, suffix):
+    """Return (path, owned) for the uploaded object's on-disk bytes.
+
+    Django's TemporaryUploadedFile (the parser's default for multipart bodies
+    above FILE_UPLOAD_MAX_MEMORY_SIZE) has ALREADY spooled the upload to a
+    real temp file — `temporary_file_path()` hands us that path directly, so
+    we skip a second full copy of the payload. Django owns that file and
+    cleans it up itself post-request, so `owned=False` here. In-memory
+    uploads (InMemoryUploadedFile, bare BytesIO, etc.) have no on-disk path
+    yet, so those still go through `_spool_to_disk` and `owned=True` — WE
+    created that file, so WE must unlink it.
+    """
+    temp_path = getattr(uploaded, 'temporary_file_path', None)
+    if callable(temp_path):
+        return temp_path(), False
+    return _spool_to_disk(uploaded, suffix), True
+
+
 def _run_ffmpeg(args):
     try:
         completed = subprocess.run(
@@ -179,12 +237,17 @@ def _run_ffmpeg(args):
             capture_output=True, timeout=FFMPEG_TIMEOUT, check=False,
         )
     except subprocess.TimeoutExpired:
+        logger.warning('ffmpeg timed out after %ss', FFMPEG_TIMEOUT)
         raise MediaValidationError(
             {'file': 'Processing timed out — try a shorter or smaller clip.'}
         )
     except OSError:
         raise MediaValidationError({'file': 'Media processing is unavailable.'})
     if completed.returncode != 0:
+        logger.warning(
+            'ffmpeg failed (rc=%s): %s',
+            completed.returncode, (completed.stderr or b'')[-500:],
+        )
         raise MediaValidationError({'file': 'Could not process this media file.'})
 
 
@@ -200,8 +263,9 @@ def process_video(uploaded, is_gif=False):
     _enforce_size(uploaded, MAX_GIF_BYTES if is_gif else MAX_VIDEO_BYTES,
                   'GIF' if is_gif else 'Video')
     workdir = tempfile.mkdtemp(prefix='media-video-')
+    src, owned = None, False
     try:
-        src = _spool_to_disk(uploaded, '.gif' if is_gif else '.bin')
+        src, owned = _source_path(uploaded, '.gif' if is_gif else '.bin')
         info = probe_media(src)
         if info.video_codec is None:
             raise MediaValidationError({'file': 'No video track found.'})
@@ -212,6 +276,11 @@ def process_video(uploaded, is_gif=False):
         if info.duration_ms is None or info.duration_ms > MAX_MEDIA_DURATION_MS:
             raise MediaValidationError(
                 {'file': f'Clips must be {MAX_MEDIA_DURATION_MS // 1000} seconds or shorter.'}
+            )
+        if info.width and info.height and info.width * info.height > MAX_VIDEO_PIXELS:
+            raise MediaValidationError(
+                {'file': 'Videos larger than 1080p are not supported yet — '
+                         'export at 1080p or lower.'}
             )
 
         out = os.path.join(workdir, 'out.mp4')
@@ -230,17 +299,28 @@ def process_video(uploaded, is_gif=False):
         else:
             args += ['-c:a', 'aac', '-b:a', '128k']
         args += [out]
-        _run_ffmpeg(args)
 
-        out_info = probe_media(out)
-        duration_ms = out_info.duration_ms or info.duration_ms
-        seconds = duration_ms / 1000.0
-        poster = _extract_frame(out, min(1.0, seconds / 2), os.path.join(workdir, 'poster.jpg'))
-        samples = [
-            _extract_frame(out, seconds / 3, os.path.join(workdir, 's1.jpg')),
-            _extract_frame(out, 2 * seconds / 3, os.path.join(workdir, 's2.jpg')),
-        ]
-        phash = dhash_hex(Image.open(io.BytesIO(poster)))
+        with _EncodeSlot():
+            _run_ffmpeg(args)
+
+            out_info = probe_media(out)
+            duration_ms = out_info.duration_ms or info.duration_ms
+            # Belt-and-suspenders: the pre-encode probe already rejected
+            # anything over MAX_MEDIA_DURATION_MS, but metadata can lie
+            # (malformed/forged duration atoms) — recheck what ffmpeg
+            # actually produced. 2s slack absorbs container rounding.
+            if duration_ms > MAX_MEDIA_DURATION_MS + 2000:
+                raise MediaValidationError(
+                    {'file': f'Clips must be {MAX_MEDIA_DURATION_MS // 1000} seconds or shorter.'}
+                )
+            seconds = duration_ms / 1000.0
+            poster = _extract_frame(out, min(1.0, seconds / 2), os.path.join(workdir, 'poster.jpg'))
+            samples = [
+                _extract_frame(out, seconds / 3, os.path.join(workdir, 's1.jpg')),
+                _extract_frame(out, 2 * seconds / 3, os.path.join(workdir, 's2.jpg')),
+            ]
+            phash = dhash_hex(Image.open(io.BytesIO(poster)))
+
         with open(out, 'rb') as fh:
             data = fh.read()
         return ProcessedVideo(
@@ -250,18 +330,20 @@ def process_video(uploaded, is_gif=False):
         )
     finally:
         shutil.rmtree(workdir, ignore_errors=True)
-        try:
-            os.unlink(src)
-        except (OSError, UnboundLocalError):
-            pass
+        if owned and src:
+            try:
+                os.unlink(src)
+            except OSError:
+                pass
 
 
 def process_audio(uploaded):
     """Re-encode one audio upload to AAC/M4A."""
     _enforce_size(uploaded, MAX_AUDIO_BYTES, 'Audio')
     workdir = tempfile.mkdtemp(prefix='media-audio-')
+    src, owned = None, False
     try:
-        src = _spool_to_disk(uploaded, '.bin')
+        src, owned = _source_path(uploaded, '.bin')
         info = probe_media(src)
         if info.video_codec is not None:
             raise MediaValidationError(
@@ -276,14 +358,16 @@ def process_audio(uploaded):
                 {'file': f'Clips must be {MAX_MEDIA_DURATION_MS // 1000} seconds or shorter.'}
             )
         out = os.path.join(workdir, 'out.m4a')
-        _run_ffmpeg(['-i', src, '-vn', '-c:a', 'aac', '-b:a', '128k', out])
-        out_info = probe_media(out)
+        with _EncodeSlot():
+            _run_ffmpeg(['-i', src, '-vn', '-c:a', 'aac', '-b:a', '128k', out])
+            out_info = probe_media(out)
         with open(out, 'rb') as fh:
             data = fh.read()
         return ProcessedAudio(data=data, duration_ms=out_info.duration_ms or info.duration_ms)
     finally:
         shutil.rmtree(workdir, ignore_errors=True)
-        try:
-            os.unlink(src)
-        except (OSError, UnboundLocalError):
-            pass
+        if owned and src:
+            try:
+                os.unlink(src)
+            except OSError:
+                pass
