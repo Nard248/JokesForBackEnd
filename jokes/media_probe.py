@@ -9,8 +9,6 @@ import json
 import subprocess
 from dataclasses import dataclass
 
-from .media_processing import MediaValidationError
-
 FFPROBE_TIMEOUT = 30
 
 
@@ -25,6 +23,13 @@ class MediaProbe:
 
 
 def probe_media(path):
+    # Imported here, not at module level: jokes.media_processing imports
+    # probe_media from this module at ITS module level, so a top-level
+    # `from .media_processing import MediaValidationError` here would form
+    # a circular import that raises ImportError whenever media_probe is the
+    # first of the two modules to be imported in a fresh interpreter.
+    from .media_processing import MediaValidationError
+
     try:
         completed = subprocess.run(
             ['ffprobe', '-v', 'error', '-print_format', 'json',
@@ -45,7 +50,15 @@ def probe_media(path):
     if not streams:
         raise MediaValidationError({'file': 'Not a valid media file.'})
 
-    video = next((s for s in streams if s.get('codec_type') == 'video'), None)
+    # Skip attached-picture streams when picking the video stream: iTunes/ID3
+    # cover art on an MP3 reports as an mjpeg/png "video" stream, which would
+    # otherwise make an audio upload look like a video (spec: cover art must
+    # not block audio uploads).
+    video = next(
+        (s for s in streams
+         if s.get('codec_type') == 'video' and not (s.get('disposition') or {}).get('attached_pic')),
+        None,
+    )
     audio = next((s for s in streams if s.get('codec_type') == 'audio'), None)
 
     duration_ms = None
