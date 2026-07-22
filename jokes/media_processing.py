@@ -103,3 +103,181 @@ def process_image(uploaded):
     return ProcessedImage(
         data=out.getvalue(), width=img.width, height=img.height, phash=phash,
     )
+
+
+# =============================================================================
+# Wave 2: video / GIF / audio normalization (spec §5.2)
+# =============================================================================
+# ffmpeg as a subprocess on temp files. Probe first so cheap rejections
+# (wrong kind, overlong) never pay transcode cost. Single-threaded x264 on
+# purpose: one encode must not starve the other gthread request handlers on
+# Cloud Run's single vCPU. Measured 2026-07-22: 60s 1080p→720p ≈ 19s CPU on
+# an M-series core ⇒ well inside the 300s gunicorn/Cloud Run ceiling even at
+# 2-3× slower per-core.
+import os
+import shutil
+import subprocess
+import tempfile
+
+from .media_probe import probe_media
+
+MAX_VIDEO_BYTES = 60 * 1024 * 1024
+MAX_GIF_BYTES = 15 * 1024 * 1024
+MAX_AUDIO_BYTES = 10 * 1024 * 1024
+MAX_MEDIA_DURATION_MS = 60_000
+FFMPEG_TIMEOUT = 240   # hard subprocess ceiling; leaves headroom under 300s
+
+# ffprobe reports the whole QuickTime family (mp4/mov/m4a/3gp) as 'mov' —
+# never the literal 'mp4' — so it's the 'mov' entry below that admits mp4
+# uploads, not a separate 'mp4' entry.
+_VIDEO_CONTAINERS = {'mov', 'mp4', 'm4a', 'matroska', 'webm', 'gif'}
+_AUDIO_CODECS_IN = {'mp3', 'aac', 'alac', 'pcm_s16le', 'vorbis', 'opus', 'flac'}
+
+
+@dataclass(frozen=True)
+class ProcessedVideo:
+    data: bytes
+    width: int
+    height: int
+    duration_ms: int
+    poster: bytes
+    sample_frames: list
+    phash: str
+
+
+@dataclass(frozen=True)
+class ProcessedAudio:
+    data: bytes
+    duration_ms: int
+
+
+def _enforce_size(uploaded, cap, label):
+    size = getattr(uploaded, 'size', None)
+    if size is None:
+        uploaded.seek(0, 2)
+        size = uploaded.tell()
+        uploaded.seek(0)
+    if size > cap:
+        raise MediaValidationError(
+            {'file': f'{label} exceeds the {cap // (1024 * 1024)}MB limit.'}
+        )
+
+
+def _spool_to_disk(uploaded, suffix):
+    handle = tempfile.NamedTemporaryFile(suffix=suffix, delete=False)
+    uploaded.seek(0)
+    shutil.copyfileobj(uploaded, handle)
+    handle.flush()
+    handle.close()
+    return handle.name
+
+
+def _run_ffmpeg(args):
+    try:
+        completed = subprocess.run(
+            ['ffmpeg', '-y', '-loglevel', 'error'] + args,
+            capture_output=True, timeout=FFMPEG_TIMEOUT, check=False,
+        )
+    except subprocess.TimeoutExpired:
+        raise MediaValidationError(
+            {'file': 'Processing timed out — try a shorter or smaller clip.'}
+        )
+    except OSError:
+        raise MediaValidationError({'file': 'Media processing is unavailable.'})
+    if completed.returncode != 0:
+        raise MediaValidationError({'file': 'Could not process this media file.'})
+
+
+def _extract_frame(src, at_seconds, out_path):
+    _run_ffmpeg(['-ss', f'{max(0.0, at_seconds):.2f}', '-i', src,
+                 '-frames:v', '1', '-q:v', '4', out_path])
+    with open(out_path, 'rb') as fh:
+        return fh.read()
+
+
+def process_video(uploaded, is_gif=False):
+    """Normalize one video/GIF upload to H.264/AAC progressive MP4 ≤720p."""
+    _enforce_size(uploaded, MAX_GIF_BYTES if is_gif else MAX_VIDEO_BYTES,
+                  'GIF' if is_gif else 'Video')
+    workdir = tempfile.mkdtemp(prefix='media-video-')
+    try:
+        src = _spool_to_disk(uploaded, '.gif' if is_gif else '.bin')
+        info = probe_media(src)
+        if info.video_codec is None:
+            raise MediaValidationError({'file': 'No video track found.'})
+        if info.container not in _VIDEO_CONTAINERS:
+            raise MediaValidationError(
+                {'file': 'Only MP4, MOV, WebM, or GIF uploads are supported.'}
+            )
+        if info.duration_ms is None or info.duration_ms > MAX_MEDIA_DURATION_MS:
+            raise MediaValidationError(
+                {'file': f'Clips must be {MAX_MEDIA_DURATION_MS // 1000} seconds or shorter.'}
+            )
+
+        out = os.path.join(workdir, 'out.mp4')
+        args = ['-i', src,
+                '-vf', "scale='min(1280,iw)':'min(720,ih)':force_original_aspect_ratio=decrease,scale=trunc(iw/2)*2:trunc(ih/2)*2",
+                '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '23',
+                '-threads', '1', '-movflags', '+faststart', '-fpsmax', '30']
+        if is_gif or info.audio_codec is None:
+            args += ['-an']
+        else:
+            args += ['-c:a', 'aac', '-b:a', '128k']
+        args += [out]
+        _run_ffmpeg(args)
+
+        out_info = probe_media(out)
+        duration_ms = out_info.duration_ms or info.duration_ms
+        seconds = duration_ms / 1000.0
+        poster = _extract_frame(out, min(1.0, seconds / 2), os.path.join(workdir, 'poster.jpg'))
+        samples = [
+            _extract_frame(out, seconds / 3, os.path.join(workdir, 's1.jpg')),
+            _extract_frame(out, 2 * seconds / 3, os.path.join(workdir, 's2.jpg')),
+        ]
+        phash = dhash_hex(Image.open(io.BytesIO(poster)))
+        with open(out, 'rb') as fh:
+            data = fh.read()
+        return ProcessedVideo(
+            data=data, width=out_info.width, height=out_info.height,
+            duration_ms=duration_ms, poster=poster, sample_frames=samples,
+            phash=phash,
+        )
+    finally:
+        shutil.rmtree(workdir, ignore_errors=True)
+        try:
+            os.unlink(src)
+        except (OSError, UnboundLocalError):
+            pass
+
+
+def process_audio(uploaded):
+    """Re-encode one audio upload to AAC/M4A."""
+    _enforce_size(uploaded, MAX_AUDIO_BYTES, 'Audio')
+    workdir = tempfile.mkdtemp(prefix='media-audio-')
+    try:
+        src = _spool_to_disk(uploaded, '.bin')
+        info = probe_media(src)
+        if info.video_codec is not None:
+            raise MediaValidationError(
+                {'file': 'This looks like a video — upload it as a video joke.'}
+            )
+        if info.audio_codec not in _AUDIO_CODECS_IN:
+            raise MediaValidationError(
+                {'file': 'Only MP3, M4A/AAC, or common audio formats are supported.'}
+            )
+        if info.duration_ms is None or info.duration_ms > MAX_MEDIA_DURATION_MS:
+            raise MediaValidationError(
+                {'file': f'Clips must be {MAX_MEDIA_DURATION_MS // 1000} seconds or shorter.'}
+            )
+        out = os.path.join(workdir, 'out.m4a')
+        _run_ffmpeg(['-i', src, '-vn', '-c:a', 'aac', '-b:a', '128k', out])
+        out_info = probe_media(out)
+        with open(out, 'rb') as fh:
+            data = fh.read()
+        return ProcessedAudio(data=data, duration_ms=out_info.duration_ms or info.duration_ms)
+    finally:
+        shutil.rmtree(workdir, ignore_errors=True)
+        try:
+            os.unlink(src)
+        except (OSError, UnboundLocalError):
+            pass
