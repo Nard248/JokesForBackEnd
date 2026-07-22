@@ -53,6 +53,8 @@ class TopJokeSerializer(serializers.Serializer):
     payoff_rate = serializers.FloatField(allow_null=True)
     avg_read_seconds = serializers.FloatField(allow_null=True)
     read_rate = serializers.FloatField(allow_null=True)
+    avg_watch_seconds = serializers.FloatField(allow_null=True)
+    watch_completion_rate = serializers.FloatField(allow_null=True)
 
 
 class AudienceLabelCountSerializer(serializers.Serializer):

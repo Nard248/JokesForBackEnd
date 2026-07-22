@@ -75,6 +75,7 @@ from .models import (
     JokeView,
     JokeImpression,
     JokeDwell,
+    JokeWatch,
     Streak,
     StreakDay,
     JokePack,
@@ -3108,6 +3109,7 @@ class TelemetryIngestView(APIView):
     Body: {"events": [
         {"joke": <id>, "type": "impression"|"reveal", "source": "<str>"},
         {"joke": <id>, "type": "dwell", "value": <ms>, "scroll_pct": <0-100>, "source": "<str>"},
+        {"joke": <id>, "type": "watch", "watch_ms": <ms>, "watch_pct": <0-100>, "source": "<str>"},
     ]}
 
     Request-driven only (no Celery/cron). Cheap: caps the batch, dedups
@@ -3123,6 +3125,10 @@ class TelemetryIngestView(APIView):
     DWELL_MAX_MS = 600000
     DWELL_MIN_MS = 500
 
+    # Watch clamps (Phase 3): mirrors dwell — cap at 10 min, ignore sub-half-second blips.
+    WATCH_MAX_MS = 600000
+    WATCH_MIN_MS = 500
+
     @extend_schema(
         request={
             'application/json': {
@@ -3134,9 +3140,11 @@ class TelemetryIngestView(APIView):
                             'type': 'object',
                             'properties': {
                                 'joke': {'type': 'integer'},
-                                'type': {'type': 'string', 'enum': ['impression', 'reveal', 'dwell']},
+                                'type': {'type': 'string', 'enum': ['impression', 'reveal', 'dwell', 'watch']},
                                 'value': {'type': 'integer', 'description': 'dwell milliseconds (dwell events only)'},
                                 'scroll_pct': {'type': 'integer', 'description': '0-100 read-through depth (optional, dwell events only)'},
+                                'watch_ms': {'type': 'integer', 'description': 'watch milliseconds (watch events only)'},
+                                'watch_pct': {'type': 'integer', 'description': '0-100 watch-through depth (optional, watch events only)'},
                                 'source': {'type': 'string'},
                             },
                         },
@@ -3167,12 +3175,36 @@ class TelemetryIngestView(APIView):
                     source = 'other'
                 source = source[:16]
 
-                if joke_id is None or etype not in ('impression', 'reveal', 'dwell'):
+                if joke_id is None or etype not in ('impression', 'reveal', 'dwell', 'watch'):
                     continue
                 if not Joke.objects.filter(pk=joke_id).exists():
                     continue
 
-                if etype == 'dwell':
+                if etype == 'watch':
+                    # Append-only watch sample. Clamp ms to [0, 10min];
+                    # drop sub-WATCH_MIN_MS blips as noise. Mirrors dwell exactly.
+                    raw = event.get('watch_ms')
+                    if not isinstance(raw, int) or isinstance(raw, bool):
+                        continue
+                    watch_ms = max(0, min(raw, self.WATCH_MAX_MS))
+                    if watch_ms < self.WATCH_MIN_MS:
+                        continue
+
+                    watch_pct = event.get('watch_pct')
+                    if isinstance(watch_pct, bool) or not isinstance(watch_pct, int):
+                        watch_pct = None
+                    else:
+                        watch_pct = max(0, min(watch_pct, 100))
+
+                    JokeWatch.objects.create(
+                        user=user,
+                        joke_id=joke_id,
+                        watch_ms=watch_ms,
+                        watch_pct=watch_pct,
+                        source=source,
+                    )
+                    accepted += 1
+                elif etype == 'dwell':
                     # Append-only dwell sample. Clamp ms to [0, 10min];
                     # drop sub-DWELL_MIN_MS blips as noise.
                     raw = event.get('value')

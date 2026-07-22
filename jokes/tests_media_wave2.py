@@ -724,3 +724,141 @@ class VideoPublishLockingAndAccountDeleteTests(TestCase):
         self.assertIn(response.status_code, (200, 204))
         joke = Joke.all_objects.get(pk=joke.pk)
         self.assertTrue(joke.is_removed)
+
+
+# =============================================================================
+# Task 5: Watch telemetry — JokeWatch ingest.
+#
+# `watch` is a new etype alongside impression/reveal/dwell on the same
+# POST /api/v1/telemetry/events endpoint (see TelemetryIngestView in
+# jokes/views.py). Validation/clamping mirrors the dwell branch exactly:
+# drop watch_ms < 500, clamp both fields, silently skip bad joke ids, and
+# count toward the 202 accepted total. Append-only — no dedupe.
+# =============================================================================
+
+from jokes.models import JokeWatch
+
+WATCH_INGEST_URL = '/api/v1/telemetry/events'
+
+
+def _make_watch_joke(fmt, age, lang, text='Watch joke'):
+    with patch('jokes.models.Joke._generate_share_image'):
+        return Joke.objects.create(text=text, format=fmt, age_rating=age, language=lang)
+
+
+class WatchTelemetryIngestTests(TestCase):
+
+    @classmethod
+    def setUpTestData(cls):
+        cls.fmt = Format.objects.get(slug='oneliner')
+        cls.age = AgeRating.objects.first()
+        cls.lang = Language.objects.get(code='en')
+        cls.user = Wave2User.objects.create_user(
+            username='watchtele@test.com', email='watchtele@test.com', password='x',
+        )
+        cls.joke = _make_watch_joke(cls.fmt, cls.age, cls.lang, text='W1')
+
+    def setUp(self):
+        self.client = APIClient()
+        self.client.force_authenticate(self.user)
+
+    def test_watch_creates_row_and_counts_accepted(self):
+        resp = self.client.post(
+            WATCH_INGEST_URL,
+            {'events': [
+                {'joke': self.joke.id, 'type': 'watch', 'watch_ms': 5000,
+                 'watch_pct': 80, 'source': 'feed'},
+            ]},
+            format='json',
+        )
+        self.assertEqual(resp.status_code, 202)
+        self.assertEqual(resp.json()['accepted'], 1)
+        w = JokeWatch.objects.get(user=self.user, joke=self.joke)
+        self.assertEqual(w.watch_ms, 5000)
+        self.assertEqual(w.watch_pct, 80)
+        self.assertEqual(w.source, 'feed')
+
+    def test_watch_ms_clamped_to_max(self):
+        resp = self.client.post(
+            WATCH_INGEST_URL,
+            {'events': [{'joke': self.joke.id, 'type': 'watch', 'watch_ms': 999999999}]},
+            format='json',
+        )
+        self.assertEqual(resp.json()['accepted'], 1)
+        self.assertEqual(JokeWatch.objects.get().watch_ms, 600000)
+
+    def test_watch_below_min_dropped(self):
+        resp = self.client.post(
+            WATCH_INGEST_URL,
+            {'events': [{'joke': self.joke.id, 'type': 'watch', 'watch_ms': 300}]},
+            format='json',
+        )
+        self.assertEqual(resp.json()['accepted'], 0)
+        self.assertEqual(JokeWatch.objects.count(), 0)
+
+    def test_watch_pct_clamped(self):
+        joke2 = _make_watch_joke(self.fmt, self.age, self.lang, text='W2')
+        resp = self.client.post(
+            WATCH_INGEST_URL,
+            {'events': [
+                {'joke': self.joke.id, 'type': 'watch', 'watch_ms': 5000, 'watch_pct': 250},
+                {'joke': joke2.id, 'type': 'watch', 'watch_ms': 5000, 'watch_pct': -10},
+            ]},
+            format='json',
+        )
+        self.assertEqual(resp.json()['accepted'], 2)
+        self.assertEqual(JokeWatch.objects.get(joke=self.joke).watch_pct, 100)
+        self.assertEqual(JokeWatch.objects.get(joke=joke2).watch_pct, 0)
+
+    def test_watch_pct_optional(self):
+        resp = self.client.post(
+            WATCH_INGEST_URL,
+            {'events': [{'joke': self.joke.id, 'type': 'watch', 'watch_ms': 5000}]},
+            format='json',
+        )
+        self.assertEqual(resp.json()['accepted'], 1)
+        self.assertIsNone(JokeWatch.objects.get().watch_pct)
+
+    def test_watch_bad_value_skipped(self):
+        resp = self.client.post(
+            WATCH_INGEST_URL,
+            {'events': [
+                {'joke': self.joke.id, 'type': 'watch'},                     # missing watch_ms
+                {'joke': self.joke.id, 'type': 'watch', 'watch_ms': 'abc'},  # non-int
+                {'joke': self.joke.id, 'type': 'watch', 'watch_ms': True},   # bool, not int
+            ]},
+            format='json',
+        )
+        self.assertEqual(resp.json()['accepted'], 0)
+        self.assertEqual(JokeWatch.objects.count(), 0)
+
+    def test_watch_bad_joke_id_skipped_silently(self):
+        resp = self.client.post(
+            WATCH_INGEST_URL,
+            {'events': [
+                {'joke': 999999, 'type': 'watch', 'watch_ms': 5000},        # unknown joke
+                {'joke': self.joke.id, 'type': 'watch', 'watch_ms': 5000},  # valid
+            ]},
+            format='json',
+        )
+        self.assertEqual(resp.status_code, 202)
+        self.assertEqual(resp.json()['accepted'], 1)
+        self.assertEqual(JokeWatch.objects.count(), 1)
+
+    def test_watch_appends_multiple_rows_no_dedupe(self):
+        # Unlike impressions, watch is NOT deduped — every sample is a row.
+        events = [{'joke': self.joke.id, 'type': 'watch', 'watch_ms': 5000}] * 3
+        resp = self.client.post(WATCH_INGEST_URL, {'events': events}, format='json')
+        self.assertEqual(resp.json()['accepted'], 3)
+        self.assertEqual(
+            JokeWatch.objects.filter(user=self.user, joke=self.joke).count(), 3
+        )
+
+    def test_watch_mixed_with_other_etypes_all_counted(self):
+        events = [
+            {'joke': self.joke.id, 'type': 'impression'},
+            {'joke': self.joke.id, 'type': 'watch', 'watch_ms': 5000},
+        ]
+        resp = self.client.post(WATCH_INGEST_URL, {'events': events}, format='json')
+        self.assertEqual(resp.status_code, 202)
+        self.assertEqual(resp.json()['accepted'], 2)

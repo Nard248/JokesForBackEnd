@@ -1131,6 +1131,48 @@ class JokeDwell(models.Model):
 
 
 # =============================================================================
+# JokeWatch — audience telemetry Phase 3: "user watched N ms of this joke's
+# video/audio media, reaching P% of it". Powers watch-time / watch-completion
+# analytics for media (video/audio) jokes. Append-only (multiple rows per
+# user/joke ok — we average/sum), mirrors JokeDwell exactly. Ingested in bulk
+# via POST /api/v1/telemetry/events (request-driven only).
+# =============================================================================
+
+class JokeWatch(models.Model):
+    """A user watched this joke's video/audio media for ``watch_ms``
+    milliseconds, reaching ``watch_pct`` percent of the media's duration.
+
+    Unlike JokeImpression this is intentionally NOT deduped — every watch
+    sample is a row and we average across them to compute watch-time and
+    watch-completion metrics.
+    """
+
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='joke_watches',
+    )
+    joke = models.ForeignKey(
+        Joke,
+        on_delete=models.CASCADE,
+        related_name='watches',
+    )
+    watch_ms = models.PositiveIntegerField()
+    # 0–100, percent of media duration watched.
+    watch_pct = models.PositiveSmallIntegerField(null=True, blank=True)
+    source = models.CharField(max_length=16, default='other')
+    watched_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        indexes = [
+            models.Index(fields=['joke', 'watched_at']),
+        ]
+
+    def __str__(self):
+        return f"{self.user.email} watched {self.watch_ms}ms of joke {self.joke_id} @ {self.watched_at}"
+
+
+# =============================================================================
 # Streak (P6 of Pivot Plan) — daily-return loop with forgiveness
 # =============================================================================
 
