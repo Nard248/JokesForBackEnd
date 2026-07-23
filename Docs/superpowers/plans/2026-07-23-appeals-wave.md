@@ -19,7 +19,7 @@
 ---
 
 ### Task 1 (backend): Appeal model + notices
-**Files:** jokes/models.py (Appeal + constraints), migration, inbox verb `joke_rejected` (inbox/models VERB_CHOICES) + rejection-transition signal (jokes/signals.py — read how existing signals register), richer takedown notification payload (jokes/admin.py take_down_joke: most-common report reason + deadline in notify kwargs — READ inbox.services.notify signature first and extend payload the way existing verbs do).
+**Files:** jokes/models.py (Appeal + constraints), migration, inbox verb `joke_rejected` + `Notification.data` JSONField + `notify(..., **extra)` + serializer exposure (inbox/models, services, serializers — AMENDED scope 2026-07-24) + rejection-transition signal (jokes/signals.py — read how existing signals register), richer takedown notification payload (jokes/admin.py take_down_joke: most-common report reason + deadline in notify kwargs — READ inbox.services.notify signature first and extend payload the way existing verbs do).
 **Produces:** `Appeal` exactly per spec §Model; `notify(user, 'joke_rejected', ...)` on transition; takedown notice carries `{reason, appeal_deadline}`.
 **Tests (TDD):** model constraints (one-of-target check, single open appeal); rejection transition fires notice once (not on other transitions); takedown notice payload.
 Commit: `appeals: Appeal model, rejection notices, reasoned takedown notices`.

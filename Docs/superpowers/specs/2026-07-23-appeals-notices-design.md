@@ -22,8 +22,11 @@ rejection → submission `updated_at` at rejection).
 
 - Takedown: the existing `joke_removed` notification gains a reason (most
   common `reason` among the triggering reports, fallback 'other') and the
-  appeal deadline. Carried via the notification payload the inbox already
-  renders.
+  appeal deadline. Carried via a NEW generic `Notification.data` JSONField
+  (default `{}`) + `notify(..., **extra)`, exposed through the inbox
+  serializer — **amended 2026-07-24**: the inbox previously had no payload
+  mechanism at all; this additive field also carries Task 3's
+  appeal-outcome notices.
 - Rejection: new inbox verb `joke_rejected`, fired automatically when a
   submission transitions to `rejected` (signal on status change — the
   admin's existing manual workflow is untouched), carrying
