@@ -1422,3 +1422,67 @@ class JokeMedia(models.Model):
                 fields=['joke', 'position'], name='uniq_joke_media_position',
             ),
         ]
+
+
+class Appeal(models.Model):
+    """Creator appeal against a takedown (removed Joke) or a rejected
+    JokeSubmission. Exactly one of joke/submission is set (DB check
+    constraint); at most one PENDING appeal may exist per target (partial
+    unique index) — a resolved appeal (upheld/reversed) doesn't block filing
+    a new one against the same target."""
+
+    ACTION_CHOICES = [
+        ('takedown', 'Takedown'),
+        ('rejection', 'Rejection'),
+    ]
+    STATUS_CHOICES = [
+        ('pending', 'Pending'),
+        ('upheld', 'Upheld'),
+        ('reversed', 'Reversed'),
+    ]
+
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='appeals',
+    )
+    joke = models.ForeignKey(
+        Joke, on_delete=models.CASCADE, null=True, blank=True, related_name='appeals',
+    )
+    submission = models.ForeignKey(
+        JokeSubmission, on_delete=models.CASCADE, null=True, blank=True, related_name='appeals',
+    )
+    action_type = models.CharField(max_length=10, choices=ACTION_CHOICES)
+    reason_text = models.TextField()
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='pending')
+    created_at = models.DateTimeField(auto_now_add=True)
+    resolved_at = models.DateTimeField(null=True, blank=True)
+    resolver = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True,
+        related_name='+',
+    )
+    resolution_note = models.TextField(blank=True)
+
+    class Meta:
+        ordering = ['-created_at']
+        constraints = [
+            models.CheckConstraint(
+                check=(
+                    models.Q(joke__isnull=False, submission__isnull=True)
+                    | models.Q(joke__isnull=True, submission__isnull=False)
+                ),
+                name='appeal_exactly_one_target',
+            ),
+            models.UniqueConstraint(
+                fields=['user', 'joke'],
+                condition=models.Q(status='pending'),
+                name='uniq_pending_appeal_per_user_joke',
+            ),
+            models.UniqueConstraint(
+                fields=['user', 'submission'],
+                condition=models.Q(status='pending'),
+                name='uniq_pending_appeal_per_user_submission',
+            ),
+        ]
+
+    def __str__(self):
+        target = f'joke {self.joke_id}' if self.joke_id else f'submission {self.submission_id}'
+        return f'Appeal({self.action_type}) by {self.user_id} on {target} [{self.status}]'

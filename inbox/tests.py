@@ -33,6 +33,47 @@ class NotifyServiceTests(TestCase):
         self.assertIsNone(notify(None, 'joke_removed'))
 
 
+class NotifyPayloadTests(TestCase):
+    """notify(**extra) lands in Notification.data; old-style calls stay valid."""
+
+    @classmethod
+    def setUpTestData(cls):
+        cls.a = User.objects.create_user(username='pa@t.com', email='pa@t.com', password='x')
+        cls.b = User.objects.create_user(username='pb@t.com', email='pb@t.com', password='x')
+
+    def test_notify_stores_extra_kwargs_in_data(self):
+        n = notify(
+            self.a, 'joke_removed',
+            reason='spam', appeal_deadline='2026-08-07T00:00:00+00:00',
+        )
+        self.assertEqual(
+            n.data,
+            {'reason': 'spam', 'appeal_deadline': '2026-08-07T00:00:00+00:00'},
+        )
+
+    def test_old_style_notify_defaults_to_empty_data(self):
+        n = notify(self.a, 'followed_you', actor=self.b)
+        self.assertEqual(n.data, {})
+
+    def test_serializer_exposes_data(self):
+        notify(self.a, 'joke_removed', reason='harassment', appeal_deadline='2026-08-07')
+        client = APIClient()
+        client.force_authenticate(self.a)
+        resp = client.get(LIST_URL)
+        self.assertEqual(resp.status_code, 200)
+        row = resp.data['results'][0]
+        self.assertEqual(
+            row['data'], {'reason': 'harassment', 'appeal_deadline': '2026-08-07'},
+        )
+
+    def test_serializer_exposes_empty_data_for_old_style_notification(self):
+        notify(self.a, 'followed_you', actor=self.b)
+        client = APIClient()
+        client.force_authenticate(self.a)
+        resp = client.get(LIST_URL)
+        self.assertEqual(resp.data['results'][0]['data'], {})
+
+
 class FollowCreatesNotificationTests(TestCase):
     @classmethod
     def setUpTestData(cls):

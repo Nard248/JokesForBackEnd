@@ -10,6 +10,7 @@ class Notification(models.Model):
         ('followed_you', 'Followed you'),
         ('joke_published', 'Your joke was published'),
         ('joke_removed', 'Your joke was removed'),
+        ('joke_rejected', 'Your submission was rejected'),
     ]
 
     recipient = models.ForeignKey(
@@ -26,6 +27,9 @@ class Notification(models.Model):
     joke = models.ForeignKey(
         'jokes.Joke', on_delete=models.SET_NULL, null=True, blank=True, related_name='+',
     )
+    # Verb-specific payload the inbox renders (e.g. moderation reason, appeal
+    # deadline). Empty dict for verbs that carry no extra context.
+    data = models.JSONField(default=dict, blank=True)
     read = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
