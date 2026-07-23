@@ -10,6 +10,7 @@ class NotificationSerializer(serializers.Serializer):
     verb = serializers.CharField()
     read = serializers.BooleanField()
     created_at = serializers.DateTimeField()
+    data = serializers.JSONField()
     actor = serializers.SerializerMethodField()
     joke = serializers.SerializerMethodField()
 

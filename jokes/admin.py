@@ -1,3 +1,6 @@
+from collections import Counter
+from datetime import timedelta
+
 from django.contrib import admin
 from django.db import transaction
 from django.utils import timezone
@@ -335,15 +338,27 @@ class ContentReportAdmin(admin.ModelAdmin):
         now = timezone.now()
         # Notify creators before flipping the flag (need the creator FK; the row
         # stays, only is_removed changes). One notification per affected joke.
+        # Statement of reasons (DSA): the notice carries the most common reason
+        # among the reports driving THIS takedown (fallback 'other') and the
+        # appeal deadline (removed_at + 14 days, ISO).
         from inbox.services import notify
+        reasons_by_joke = {}
+        for jid, reason in queryset.values_list('joke_id', 'reason'):
+            reasons_by_joke.setdefault(jid, []).append(reason)
         to_remove = list(
             Joke.all_objects.filter(pk__in=joke_ids, is_removed=False).select_related('creator')
         )
         removed = Joke.all_objects.filter(pk__in=joke_ids, is_removed=False).update(
             is_removed=True, removed_at=now,
         )
+        appeal_deadline = (now + timedelta(days=14)).isoformat()
         for jk in to_remove:
-            notify(jk.creator, 'joke_removed', joke=jk)
+            reasons = reasons_by_joke.get(jk.pk)
+            top_reason = Counter(reasons).most_common(1)[0][0] if reasons else 'other'
+            notify(
+                jk.creator, 'joke_removed', joke=jk,
+                reason=top_reason, appeal_deadline=appeal_deadline,
+            )
         # Resolve every pending/reviewed report against those jokes.
         ContentReport.objects.filter(joke_id__in=joke_ids).exclude(
             status__in=['resolved', 'dismissed']

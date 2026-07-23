@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.db.models.signals import post_save
+from django.db.models.signals import post_save, pre_save
 from django.dispatch import receiver
 
 
@@ -132,3 +132,33 @@ def create_default_collection(sender, instance, created, **kwargs):
             name='Favorites',
             is_default=True
         )
+
+
+# =============================================================================
+# Appeals wave — statement of reasons on submission rejection
+# =============================================================================
+
+@receiver(pre_save, sender='jokes.JokeSubmission')
+def stash_submission_status(sender, instance, **kwargs):
+    """Stash the DB status before save so post_save can detect the transition
+    into 'rejected' (queryset .update() bypasses signals; the admin's manual
+    change-form save and full .save() calls go through here)."""
+    if instance.pk:
+        instance._pre_save_status = (
+            sender.objects.filter(pk=instance.pk).values_list('status', flat=True).first()
+        )
+    else:
+        instance._pre_save_status = None
+
+
+@receiver(post_save, sender='jokes.JokeSubmission')
+def notify_submission_rejected(sender, instance, created, **kwargs):
+    """Notify the author exactly once when their submission transitions to
+    'rejected', carrying the rejection_reason (DSA statement of reasons).
+    Re-saves while already rejected and other transitions fire nothing."""
+    if created:
+        return
+    old_status = getattr(instance, '_pre_save_status', None)
+    if instance.status == 'rejected' and old_status != 'rejected':
+        from inbox.services import notify
+        notify(instance.user, 'joke_rejected', rejection_reason=instance.rejection_reason)
