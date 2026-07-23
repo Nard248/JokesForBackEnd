@@ -10,7 +10,11 @@ NCMEC, Thorn Safer) needs owner-side onboarding paperwork before activation.
 When credentials exist, implement HashMatcher and swap it in get_matcher() —
 the upload view, audit actions, and schema are already wired (spec §7.3).
 """
+import logging
+
 from django.conf import settings
+
+logger = logging.getLogger(__name__)
 
 _LIKELIHOOD_ORDER = [
     'UNKNOWN', 'VERY_UNLIKELY', 'UNLIKELY', 'POSSIBLE', 'LIKELY', 'VERY_LIKELY',
@@ -33,9 +37,18 @@ def screen_image(image_bytes):
         return {'status': 'skipped'}
 
     from google.cloud import vision
-    response = _client().safe_search_detection(
-        image=vision.Image(content=image_bytes)
-    )
+    try:
+        response = _client().safe_search_detection(
+            image=vision.Image(content=image_bytes)
+        )
+    except Exception as exc:
+        # A THROWN client failure (grpc PERMISSION_DENIED, quota, network,
+        # auth) must follow the same fail-open policy as an in-response
+        # error: never hard-fail the upload on infrastructure — the human
+        # review queue remains the publish gate. Without this, every
+        # image/video upload 500s the moment Vision hiccups.
+        logger.warning('SafeSearch client call failed: %s', str(exc)[:300])
+        return {'status': 'error', 'detail': str(exc)[:200]}
     if getattr(response.error, 'message', ''):
         # Vision API failure: don't hard-fail the upload on infrastructure —
         # record the failure; the human reviewer remains the gate.

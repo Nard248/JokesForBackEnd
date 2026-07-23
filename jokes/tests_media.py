@@ -199,6 +199,16 @@ class ScreeningTests(TestCase):
         with patch('jokes.media_screening._client', return_value=client):
             self.assertEqual(screen_image(b'bytes')['status'], 'ok')
 
+    @override_settings(SAFESEARCH_ENABLED=True)
+    def test_thrown_client_failure_fails_open_as_error(self):
+        """A raised client error (grpc PERMISSION_DENIED, quota, network) must
+        fail open like an in-response error — never a 500 (found by prod E2E)."""
+        with patch('jokes.media_screening._client',
+                   side_effect=RuntimeError('grpc PERMISSION_DENIED')):
+            verdict = screen_image(b'bytes')
+        self.assertEqual(verdict['status'], 'error')
+        self.assertIn('PERMISSION_DENIED', verdict['detail'])
+
     def test_null_matcher_never_matches(self):
         matcher = get_matcher()
         self.assertIsInstance(matcher, NullMatcher)
