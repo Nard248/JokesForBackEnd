@@ -1027,9 +1027,16 @@ class SavedJokeViewSet(
     permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
-        """Return saved jokes for the current user with related data."""
+        """Return saved jokes for the current user with related data.
+
+        Removed (taken-down) jokes vanish from the list entirely: the FK
+        traversal bypasses JokeManager's is_removed gate, and post
+        quarantine-rework the JokeMedia links (and quarantine-path URLs)
+        still exist — so the filter must be explicit here.
+        """
         qs = SavedJoke.objects.filter(
-            user=self.request.user
+            user=self.request.user,
+            joke__is_removed=False,
         ).select_related(
             'joke', 'joke__format', 'joke__age_rating', 'joke__language', 'joke__source',
             'collection'
@@ -1733,9 +1740,13 @@ class FavoriteViewSet(
     permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
+        # joke__is_removed: same explicit gate as SavedJokeViewSet — the FK
+        # traversal bypasses JokeManager, and a taken-down joke must vanish
+        # from favorites (its quarantined media URLs would serialize).
         qs = Favorite.objects.filter(
             user=self.request.user,
             joke__content_tier__in=allowed_tiers(self.request),
+            joke__is_removed=False,
         ).select_related(
             'joke', 'joke__format', 'joke__age_rating', 'joke__language', 'joke__source'
         ).prefetch_related(
