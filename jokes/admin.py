@@ -3,17 +3,22 @@ from datetime import timedelta
 
 from django.contrib import admin
 from django.db import transaction
+from django.db.models import Case, IntegerField, Value, When
 from django.utils import timezone
 from django.utils.html import format_html
 from .models import (
     Joke, Format, AgeRating, Tone, ContextTag, Language, CultureTag, Source,
     UserPreference, Collection, SavedJoke, DailyJoke, JokeRating, ShareEvent,
     UserProfile, Favorite, JokeSubmission, Achievement, UserAchievement,
-    ContentReport, UserBlock,
+    ContentReport, UserBlock, Appeal,
     Vibe, UserVibe, MysteryBoxRoll, JokeReaction, JokeView, Streak, StreakDay,
     JokePack, JokePackEntry, JokePackProgress,
     JokeMedia, MediaAsset,
 )
+
+# 36h/48h SLA clock values (spec verbatim) — shared by AppealAdmin's
+# hours_open red flag and the "overdue" list filter.
+APPEAL_SLA_RED_HOURS = 36
 
 
 @admin.register(Format)
@@ -430,6 +435,158 @@ class UserBlockAdmin(admin.ModelAdmin):
     list_display = ['blocker', 'blocked', 'created_at']
     search_fields = ['blocker__email', 'blocked__email']
     readonly_fields = ['created_at']
+
+
+# =============================================================================
+# Appeals (Appeals & Notices wave) — resolution queue with SLA clock
+# =============================================================================
+
+class OverdueAppealFilter(admin.SimpleListFilter):
+    """Appeals still pending more than the 36h SLA-warning threshold."""
+
+    title = f'overdue (>{APPEAL_SLA_RED_HOURS}h open & pending)'
+    parameter_name = 'overdue'
+
+    def lookups(self, request, model_admin):
+        return [('yes', 'Yes')]
+
+    def queryset(self, request, queryset):
+        if self.value() != 'yes':
+            return queryset
+        cutoff = timezone.now() - timedelta(hours=APPEAL_SLA_RED_HOURS)
+        return queryset.filter(status='pending', created_at__lt=cutoff)
+
+
+@admin.register(Appeal)
+class AppealAdmin(admin.ModelAdmin):
+    """Moderator resolution queue. Pending appeals surface first (oldest
+    first within pending, so the closest-to-SLA-breach are worked first);
+    resolved appeals sort after, newest first."""
+
+    list_display = ['target_preview', 'action_type', 'hours_open', 'status', 'created_at']
+    list_filter = ['status', 'action_type', OverdueAppealFilter]
+    search_fields = ['user__email', 'reason_text']
+    raw_id_fields = ['user', 'joke', 'submission', 'resolver']
+    readonly_fields = ['created_at', 'resolved_at']
+    actions = ['uphold_appeals', 'reverse_appeals']
+
+    def get_queryset(self, request):
+        qs = super().get_queryset(request).select_related('joke', 'submission', 'user')
+        # Annotate pending-vs-resolved so pending rows always sort first,
+        # regardless of created_at.
+        qs = qs.annotate(
+            _pending_first=Case(
+                When(status='pending', then=Value(0)),
+                default=Value(1),
+                output_field=IntegerField(),
+            )
+        )
+        return qs.order_by('_pending_first', 'created_at')
+
+    @admin.display(description='Target')
+    def target_preview(self, obj):
+        if obj.joke_id:
+            text = obj.joke.text if obj.joke else ''
+            return f'Joke #{obj.joke_id}: {text[:40]}'
+        text = obj.submission.text if obj.submission else ''
+        return f'Submission #{obj.submission_id}: {text[:40]}'
+
+    @admin.display(description='Hours open')
+    def hours_open(self, obj):
+        end = obj.resolved_at or timezone.now()
+        hours = (end - obj.created_at).total_seconds() / 3600
+        label = f'{hours:.1f}h'
+        if obj.status == 'pending' and hours >= APPEAL_SLA_RED_HOURS:
+            return format_html('<span style="color:red;font-weight:bold;">{}</span>', label)
+        return label
+
+    @admin.action(description='Uphold selected appeals (purge quarantined media)')
+    def uphold_appeals(self, request, queryset):
+        from audit.services import record_audit
+        from inbox.services import notify
+
+        pending = list(queryset.filter(status='pending'))
+        skipped = queryset.exclude(status='pending').count()
+        now = timezone.now()
+        n = 0
+        for appeal in pending:
+            if appeal.joke_id:
+                assets = MediaAsset.objects.filter(
+                    joke_links__joke_id=appeal.joke_id, quarantined_at__isnull=False,
+                ).distinct()
+                for asset in assets:
+                    asset.purge()
+            appeal.status = 'upheld'
+            appeal.resolver = request.user
+            appeal.resolved_at = now
+            appeal.save(update_fields=['status', 'resolver', 'resolved_at'])
+            record_audit(
+                request, 'appeal_upheld', outcome='success', actor=request.user,
+                target_type=appeal.action_type,
+                target_id=str(appeal.joke_id or appeal.submission_id),
+            )
+            notify(
+                appeal.user, 'appeal_resolved', joke=appeal.joke,
+                outcome='upheld', action_type=appeal.action_type,
+                submission_id=appeal.submission_id,
+            )
+            n += 1
+        msg = f'Upheld {n} appeal(s) (quarantined media purged where applicable).'
+        if skipped:
+            msg += f' Skipped {skipped} non-pending appeal(s).'
+        self.message_user(request, msg)
+
+    @admin.action(description='Reverse selected appeals (restore joke / draft submission)')
+    def reverse_appeals(self, request, queryset):
+        from audit.services import record_audit
+        from inbox.services import notify
+
+        pending = list(queryset.filter(status='pending'))
+        skipped = queryset.exclude(status='pending').count()
+        now = timezone.now()
+        n = 0
+        for appeal in pending:
+            if appeal.action_type == 'takedown' and appeal.joke_id:
+                assets = MediaAsset.objects.filter(
+                    joke_links__joke_id=appeal.joke_id, quarantined_at__isnull=False,
+                ).distinct()
+                for asset in assets:
+                    asset.release()
+                # Mirrors JokeAdmin.restore_jokes: un-remove via the
+                # unfiltered manager (the default manager hides removed jokes).
+                Joke.all_objects.filter(pk=appeal.joke_id).update(
+                    is_removed=False, removed_at=None,
+                )
+                notify(
+                    appeal.user, 'appeal_resolved', joke=appeal.joke,
+                    outcome='reversed', action_type='takedown',
+                )
+            elif appeal.action_type == 'rejection' and appeal.submission_id:
+                submission = appeal.submission
+                submission.status = 'draft'
+                submission.rejection_reason = (
+                    f'Appeal reversed on {now:%Y-%m-%d} — you can edit and resubmit.'
+                )
+                submission.save(update_fields=['status', 'rejection_reason', 'updated_at'])
+                notify(
+                    appeal.user, 'appeal_resolved',
+                    outcome='reversed', action_type='rejection',
+                    submission_id=submission.pk,
+                )
+            appeal.status = 'reversed'
+            appeal.resolver = request.user
+            appeal.resolved_at = now
+            appeal.save(update_fields=['status', 'resolver', 'resolved_at'])
+            record_audit(
+                request, 'appeal_reversed', outcome='success', actor=request.user,
+                target_type=appeal.action_type,
+                target_id=str(appeal.joke_id or appeal.submission_id),
+            )
+            n += 1
+        msg = f'Reversed {n} appeal(s).'
+        if skipped:
+            msg += f' Skipped {skipped} non-pending appeal(s).'
+        self.message_user(request, msg)
 
 
 # =============================================================================

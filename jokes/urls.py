@@ -73,6 +73,9 @@ urlpatterns = [
 
     # Compliance & Account Management (Phase 6)
     path('reports/', views.ContentReportView.as_view(), name='content-report'),
+    # Appeals (Appeals & Notices wave)
+    path('appeals/', views.AppealCreateView.as_view(), name='appeal-create'),
+    path('users/me/appeals/', views.MyAppealsView.as_view(), name='my-appeals'),
     path('users/me/blocks/', views.MyBlocksView.as_view(), name='my-blocks'),
     path('users/<int:user_id>/block/', views.UserBlockView.as_view(), name='user-block'),
     path('users/me/', views.UserAccountDeleteView.as_view(), name='user-account-delete'),

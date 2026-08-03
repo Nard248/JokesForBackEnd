@@ -10,19 +10,23 @@ import tempfile
 from datetime import timedelta
 from unittest.mock import patch
 
+from django.conf import settings
 from django.contrib.admin.sites import AdminSite
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
 from django.db import IntegrityError, transaction
 from django.test import RequestFactory, TestCase, override_settings
 from django.contrib.messages.storage.fallback import FallbackStorage
+from django.utils import timezone
 from freezegun import freeze_time
 from rest_framework.test import APIClient
 
 from rest_framework.test import APIRequestFactory
 
+from audit.models import AuditLog
 from inbox.models import Notification
-from jokes.admin import ContentReportAdmin
+from inbox.services import notify
+from jokes.admin import AppealAdmin, ContentReportAdmin, OverdueAppealFilter
 from jokes.models import (
     Appeal, ContentReport, Favorite, Joke, JokeMedia, JokePack, JokePackEntry,
     JokeSubmission, MediaAsset, SavedJoke,
@@ -55,6 +59,14 @@ def _make_submission(user, fmt, age, lang, status='draft'):
         user=user, format=fmt, age_rating=age, language=lang,
         text='Test submission', status=status,
     )
+
+
+def _removed_joke(fmt, age, lang, creator, removed_at=None):
+    """A removed joke with `removed_at` actually stamped (unlike the bare
+    `_make_joke(is_removed=True)`, needed for the appeal window checks)."""
+    joke = _make_joke(fmt, age, lang, creator=creator, is_removed=True)
+    Joke.all_objects.filter(pk=joke.pk).update(removed_at=removed_at or timezone.now())
+    return Joke.all_objects.get(pk=joke.pk)
 
 
 class AppealTargetConstraintTests(TestCase):
@@ -615,3 +627,423 @@ class AccountDeleteQuarantineTests(TestCase):
         self.assertIn(response.status_code, (200, 204))
         self.assertFalse(MediaAsset.objects.filter(pk=asset.pk).exists())
         self.assertFalse(default_storage.exists(name))
+
+
+# =============================================================================
+# Task 3: POST /appeals/ — create validation matrix
+# =============================================================================
+
+class AppealCreateHappyPathTests(TestCase):
+    def setUp(self):
+        self.fmt, self.age, self.lang = _taxonomy()
+        self.user = make_user('appeal-happy@example.com')
+        self.client = APIClient()
+        self.client.force_authenticate(self.user)
+
+    def test_takedown_appeal_returns_201_pending_row_and_audit(self):
+        joke = _removed_joke(self.fmt, self.age, self.lang, creator=self.user)
+        response = self.client.post(
+            '/api/v1/appeals/',
+            {'joke_id': joke.pk, 'reason_text': 'please review my joke'},
+            format='json',
+        )
+        self.assertEqual(response.status_code, 201, response.content)
+        data = response.json()
+        self.assertEqual(data['status'], 'pending')
+        self.assertEqual(data['action_type'], 'takedown')
+        self.assertEqual(data['target_type'], 'joke')
+        self.assertEqual(data['target_id'], joke.pk)
+        appeal = Appeal.objects.get(user=self.user, joke=joke)
+        self.assertEqual(appeal.status, 'pending')
+        self.assertTrue(AuditLog.objects.filter(action='appeal_filed').exists())
+
+    def test_rejection_appeal_returns_201_pending_row_and_audit(self):
+        sub = _make_submission(self.user, self.fmt, self.age, self.lang, status='rejected')
+        response = self.client.post(
+            '/api/v1/appeals/',
+            {'submission_id': sub.pk, 'reason_text': 'please reconsider'},
+            format='json',
+        )
+        self.assertEqual(response.status_code, 201, response.content)
+        data = response.json()
+        self.assertEqual(data['status'], 'pending')
+        self.assertEqual(data['action_type'], 'rejection')
+        self.assertEqual(data['target_type'], 'submission')
+        self.assertEqual(data['target_id'], sub.pk)
+        appeal = Appeal.objects.get(user=self.user, submission=sub)
+        self.assertEqual(appeal.status, 'pending')
+        self.assertTrue(AuditLog.objects.filter(action='appeal_filed').exists())
+
+
+class AppealCreateValidationTests(TestCase):
+    """The security surface: every rejection path must be a clean 400/404.
+    404 for not-your-target/nonexistent (avoid existence leaks); 400 for
+    window/duplicate/wrong-state (caller already knows it's their own)."""
+
+    def setUp(self):
+        self.fmt, self.age, self.lang = _taxonomy()
+        self.user = make_user('appeal-validate@example.com')
+        self.other = make_user('appeal-validate-other@example.com')
+        self.client = APIClient()
+        self.client.force_authenticate(self.user)
+
+    def test_both_targets_given_is_400(self):
+        joke = _removed_joke(self.fmt, self.age, self.lang, creator=self.user)
+        sub = _make_submission(self.user, self.fmt, self.age, self.lang, status='rejected')
+        response = self.client.post(
+            '/api/v1/appeals/',
+            {'joke_id': joke.pk, 'submission_id': sub.pk, 'reason_text': 'x'},
+            format='json',
+        )
+        self.assertEqual(response.status_code, 400)
+
+    def test_neither_target_given_is_400(self):
+        response = self.client.post(
+            '/api/v1/appeals/', {'reason_text': 'x'}, format='json',
+        )
+        self.assertEqual(response.status_code, 400)
+
+    def test_nonexistent_joke_is_404(self):
+        response = self.client.post(
+            '/api/v1/appeals/', {'joke_id': 9_999_999, 'reason_text': 'x'}, format='json',
+        )
+        self.assertEqual(response.status_code, 404)
+
+    def test_nonexistent_submission_is_404(self):
+        response = self.client.post(
+            '/api/v1/appeals/', {'submission_id': 9_999_999, 'reason_text': 'x'}, format='json',
+        )
+        self.assertEqual(response.status_code, 404)
+
+    def test_not_your_joke_is_404(self):
+        joke = _removed_joke(self.fmt, self.age, self.lang, creator=self.other)
+        response = self.client.post(
+            '/api/v1/appeals/', {'joke_id': joke.pk, 'reason_text': 'x'}, format='json',
+        )
+        self.assertEqual(response.status_code, 404)
+
+    def test_not_your_submission_is_404(self):
+        sub = _make_submission(self.other, self.fmt, self.age, self.lang, status='rejected')
+        response = self.client.post(
+            '/api/v1/appeals/', {'submission_id': sub.pk, 'reason_text': 'x'}, format='json',
+        )
+        self.assertEqual(response.status_code, 404)
+
+    def test_joke_not_removed_is_400(self):
+        joke = _make_joke(self.fmt, self.age, self.lang, creator=self.user, is_removed=False)
+        response = self.client.post(
+            '/api/v1/appeals/', {'joke_id': joke.pk, 'reason_text': 'x'}, format='json',
+        )
+        self.assertEqual(response.status_code, 400)
+
+    def test_submission_not_rejected_is_400(self):
+        sub = _make_submission(self.user, self.fmt, self.age, self.lang, status='draft')
+        response = self.client.post(
+            '/api/v1/appeals/', {'submission_id': sub.pk, 'reason_text': 'x'}, format='json',
+        )
+        self.assertEqual(response.status_code, 400)
+
+    def test_takedown_window_lapsed_is_400(self):
+        joke = _removed_joke(
+            self.fmt, self.age, self.lang, creator=self.user,
+            removed_at=timezone.now() - timedelta(days=15),
+        )
+        response = self.client.post(
+            '/api/v1/appeals/', {'joke_id': joke.pk, 'reason_text': 'x'}, format='json',
+        )
+        self.assertEqual(response.status_code, 400)
+
+    def test_rejection_window_lapsed_is_400(self):
+        with freeze_time(timezone.now() - timedelta(days=15)):
+            sub = _make_submission(self.user, self.fmt, self.age, self.lang, status='rejected')
+        response = self.client.post(
+            '/api/v1/appeals/', {'submission_id': sub.pk, 'reason_text': 'x'}, format='json',
+        )
+        self.assertEqual(response.status_code, 400)
+
+    def test_duplicate_open_takedown_appeal_is_400(self):
+        joke = _removed_joke(self.fmt, self.age, self.lang, creator=self.user)
+        Appeal.objects.create(
+            user=self.user, joke=joke, action_type='takedown', reason_text='first',
+        )
+        response = self.client.post(
+            '/api/v1/appeals/', {'joke_id': joke.pk, 'reason_text': 'second'}, format='json',
+        )
+        self.assertEqual(response.status_code, 400)
+
+    def test_duplicate_open_rejection_appeal_is_400(self):
+        sub = _make_submission(self.user, self.fmt, self.age, self.lang, status='rejected')
+        Appeal.objects.create(
+            user=self.user, submission=sub, action_type='rejection', reason_text='first',
+        )
+        response = self.client.post(
+            '/api/v1/appeals/', {'submission_id': sub.pk, 'reason_text': 'second'}, format='json',
+        )
+        self.assertEqual(response.status_code, 400)
+
+
+class AppealThrottleScopeTests(TestCase):
+    def test_appeals_throttle_scope_is_registered(self):
+        rates = settings.REST_FRAMEWORK['DEFAULT_THROTTLE_RATES']
+        self.assertIn('appeals', rates)
+        self.assertEqual(rates['appeals'], '10/day')
+
+
+class MyAppealsViewTests(TestCase):
+    def setUp(self):
+        self.fmt, self.age, self.lang = _taxonomy()
+        self.user = make_user('my-appeals@example.com')
+        self.other = make_user('my-appeals-other@example.com')
+        self.client = APIClient()
+        self.client.force_authenticate(self.user)
+
+    def test_returns_only_callers_appeals(self):
+        joke = _removed_joke(self.fmt, self.age, self.lang, creator=self.user)
+        other_joke = _removed_joke(self.fmt, self.age, self.lang, creator=self.other)
+        mine = Appeal.objects.create(
+            user=self.user, joke=joke, action_type='takedown', reason_text='mine',
+        )
+        Appeal.objects.create(
+            user=self.other, joke=other_joke, action_type='takedown', reason_text='theirs',
+        )
+        response = self.client.get('/api/v1/users/me/appeals/')
+        self.assertEqual(response.status_code, 200)
+        payload = response.json()
+        results = payload.get('results', payload) if isinstance(payload, dict) else payload
+        ids = {item['id'] for item in results}
+        self.assertEqual(ids, {mine.pk})
+
+
+class NotificationDataEncoderTests(TestCase):
+    """Injected item 1: Notification.data needs encoder=DjangoJSONEncoder or
+    a raw datetime in notify(**extra) crashes create() at write time."""
+
+    def test_datetime_in_notify_payload_survives(self):
+        user = make_user('encoder-datetime@example.com')
+        notice = notify(user, 'appeal_resolved', outcome='upheld', resolved_at=timezone.now())
+        notice.refresh_from_db()
+        self.assertIsInstance(notice.data['resolved_at'], str)
+        self.assertEqual(notice.data['outcome'], 'upheld')
+
+
+# =============================================================================
+# Task 3: AppealAdmin resolution actions (uphold / reverse)
+# =============================================================================
+
+@override_settings(MEDIA_ROOT=_MEDIA_ROOT)
+class AppealUpholdTests(TestCase):
+    def setUp(self):
+        self.fmt, self.age, self.lang = _taxonomy()
+        self.creator = make_user('uphold-creator@example.com')
+        self.admin_user = make_user('uphold-mod@example.com')
+        self.report_admin = ContentReportAdmin(ContentReport, AdminSite())
+        self.appeal_admin = AppealAdmin(Appeal, AdminSite())
+
+    def _take_down(self, joke):
+        report = ContentReport.objects.create(
+            reporter=self.admin_user, joke=joke, reason='spam',
+        )
+        self.report_admin.take_down_joke(
+            _admin_request(self.admin_user), ContentReport.objects.filter(pk=report.pk),
+        )
+
+    def test_uphold_purges_quarantined_media_and_notifies(self):
+        joke = make_image_joke(self.creator)
+        asset = JokeMedia.objects.get(joke=joke).asset
+        self._take_down(joke)
+        asset.refresh_from_db()
+        file_name = asset.file.name
+        self.assertIsNotNone(asset.quarantined_at)
+        self.assertTrue(default_storage.exists(file_name))
+
+        appeal = Appeal.objects.create(
+            user=self.creator, joke=Joke.all_objects.get(pk=joke.pk),
+            action_type='takedown', reason_text='please review',
+        )
+        req = _admin_request(self.admin_user)
+        self.appeal_admin.uphold_appeals(req, Appeal.objects.filter(pk=appeal.pk))
+
+        appeal.refresh_from_db()
+        self.assertEqual(appeal.status, 'upheld')
+        self.assertEqual(appeal.resolver_id, self.admin_user.pk)
+        self.assertIsNotNone(appeal.resolved_at)
+        # The media asset's row AND its storage file are truly gone.
+        self.assertFalse(MediaAsset.objects.filter(pk=asset.pk).exists())
+        self.assertFalse(default_storage.exists(file_name))
+
+        notice = Notification.objects.get(recipient=self.creator, verb='appeal_resolved')
+        self.assertEqual(notice.data['outcome'], 'upheld')
+        self.assertEqual(notice.data['action_type'], 'takedown')
+
+    def test_uphold_skips_non_pending_appeal(self):
+        joke = _removed_joke(self.fmt, self.age, self.lang, creator=self.creator)
+        appeal = Appeal.objects.create(
+            user=self.creator, joke=joke, action_type='takedown',
+            reason_text='x', status='reversed',
+        )
+        req = _admin_request(self.admin_user)
+        self.appeal_admin.uphold_appeals(req, Appeal.objects.filter(pk=appeal.pk))
+        appeal.refresh_from_db()
+        self.assertEqual(appeal.status, 'reversed')
+        self.assertFalse(
+            Notification.objects.filter(recipient=self.creator, verb='appeal_resolved').exists()
+        )
+
+
+@override_settings(MEDIA_ROOT=_MEDIA_ROOT)
+class AppealReverseTests(TestCase):
+    def setUp(self):
+        self.fmt, self.age, self.lang = _taxonomy()
+        self.creator = make_user('reverse-creator@example.com')
+        self.admin_user = make_user('reverse-mod@example.com')
+        self.report_admin = ContentReportAdmin(ContentReport, AdminSite())
+        self.appeal_admin = AppealAdmin(Appeal, AdminSite())
+
+    def _take_down(self, joke):
+        report = ContentReport.objects.create(
+            reporter=self.admin_user, joke=joke, reason='spam',
+        )
+        self.report_admin.take_down_joke(
+            _admin_request(self.admin_user), ContentReport.objects.filter(pk=report.pk),
+        )
+
+    def test_reverse_takedown_restores_media_joke_and_serving(self):
+        joke = make_image_joke(self.creator)
+        asset = JokeMedia.objects.get(joke=joke).asset
+        self._take_down(joke)
+        asset.refresh_from_db()
+        self.assertIsNotNone(asset.quarantined_at)
+
+        appeal = Appeal.objects.create(
+            user=self.creator, joke=Joke.all_objects.get(pk=joke.pk),
+            action_type='takedown', reason_text='please review',
+        )
+        req = _admin_request(self.admin_user)
+        self.appeal_admin.reverse_appeals(req, Appeal.objects.filter(pk=appeal.pk))
+
+        appeal.refresh_from_db()
+        self.assertEqual(appeal.status, 'reversed')
+        self.assertEqual(appeal.resolver_id, self.admin_user.pk)
+
+        asset.refresh_from_db()
+        self.assertIsNone(asset.quarantined_at)
+        self.assertTrue(asset.file.name.startswith(f'media-assets/{asset.pk}/'))
+        self.assertTrue(default_storage.exists(asset.file.name))
+
+        # Visible again through the default (filtered) manager.
+        restored = Joke.objects.get(pk=joke.pk)
+        self.assertFalse(restored.is_removed)
+        self.assertIsNone(restored.removed_at)
+
+        # Serving again: media URLs present post-reverse.
+        request = APIRequestFactory().get('/api/v1/jokes/')
+        data = JokeSerializer(restored, context={'request': request}).data
+        self.assertEqual(len(data['media']), 1)
+        self.assertTrue(data['media'][0]['url'])
+
+        notice = Notification.objects.get(recipient=self.creator, verb='appeal_resolved')
+        self.assertEqual(notice.data['outcome'], 'reversed')
+        self.assertEqual(notice.data['action_type'], 'takedown')
+
+    def test_reverse_rejection_sets_draft_and_notifies(self):
+        sub = JokeSubmission.objects.create(
+            user=self.creator, format=self.fmt, age_rating=self.age, language=self.lang,
+            text='Test submission', status='rejected', rejection_reason='duplicate',
+        )
+        appeal = Appeal.objects.create(
+            user=self.creator, submission=sub, action_type='rejection',
+            reason_text='please reconsider',
+        )
+        req = _admin_request(self.admin_user)
+        self.appeal_admin.reverse_appeals(req, Appeal.objects.filter(pk=appeal.pk))
+
+        appeal.refresh_from_db()
+        self.assertEqual(appeal.status, 'reversed')
+
+        sub.refresh_from_db()
+        self.assertEqual(sub.status, 'draft')
+
+        notice = Notification.objects.get(recipient=self.creator, verb='appeal_resolved')
+        self.assertEqual(notice.data['outcome'], 'reversed')
+        self.assertEqual(notice.data['action_type'], 'rejection')
+
+    def test_reverse_skips_non_pending_appeal(self):
+        joke = _removed_joke(self.fmt, self.age, self.lang, creator=self.creator)
+        appeal = Appeal.objects.create(
+            user=self.creator, joke=joke, action_type='takedown',
+            reason_text='x', status='upheld',
+        )
+        req = _admin_request(self.admin_user)
+        self.appeal_admin.reverse_appeals(req, Appeal.objects.filter(pk=appeal.pk))
+        appeal.refresh_from_db()
+        self.assertEqual(appeal.status, 'upheld')
+        self.assertFalse(
+            Notification.objects.filter(recipient=self.creator, verb='appeal_resolved').exists()
+        )
+
+
+# =============================================================================
+# Task 3: AppealAdmin display — hours_open SLA flag, overdue filter, ordering
+# =============================================================================
+
+class AppealAdminDisplayTests(TestCase):
+    def setUp(self):
+        self.fmt, self.age, self.lang = _taxonomy()
+        self.creator = make_user('admin-display@example.com')
+        self.admin_obj = AppealAdmin(Appeal, AdminSite())
+
+    def test_hours_open_is_red_when_pending_over_36h(self):
+        joke = _removed_joke(self.fmt, self.age, self.lang, creator=self.creator)
+        appeal = Appeal.objects.create(
+            user=self.creator, joke=joke, action_type='takedown', reason_text='x',
+        )
+        Appeal.objects.filter(pk=appeal.pk).update(
+            created_at=timezone.now() - timedelta(hours=40),
+        )
+        appeal.refresh_from_db()
+        html = str(self.admin_obj.hours_open(appeal))
+        self.assertIn('color:red', html)
+
+    def test_hours_open_not_red_under_36h(self):
+        joke = _removed_joke(self.fmt, self.age, self.lang, creator=self.creator)
+        appeal = Appeal.objects.create(
+            user=self.creator, joke=joke, action_type='takedown', reason_text='x',
+        )
+        html = str(self.admin_obj.hours_open(appeal))
+        self.assertNotIn('color:red', html)
+
+    def test_overdue_filter_returns_only_lapsed_pending(self):
+        old_joke = _removed_joke(self.fmt, self.age, self.lang, creator=self.creator)
+        recent_joke = _removed_joke(self.fmt, self.age, self.lang, creator=self.creator)
+        old = Appeal.objects.create(
+            user=self.creator, joke=old_joke, action_type='takedown', reason_text='old',
+        )
+        Appeal.objects.filter(pk=old.pk).update(
+            created_at=timezone.now() - timedelta(hours=40),
+        )
+        recent = Appeal.objects.create(
+            user=self.creator, joke=recent_joke, action_type='takedown', reason_text='recent',
+        )
+        # SimpleListFilter expects QueryDict-style params: a list per key
+        # (it indexes `value[-1]`), so a plain {'overdue': 'yes'} would
+        # silently resolve to 's' (the last char of the string) instead.
+        filt = OverdueAppealFilter(None, {'overdue': ['yes']}, Appeal, self.admin_obj)
+        qs = filt.queryset(None, Appeal.objects.all())
+        ids = set(qs.values_list('pk', flat=True))
+        self.assertIn(old.pk, ids)
+        self.assertNotIn(recent.pk, ids)
+
+    def test_pending_first_ordering(self):
+        joke_a = _removed_joke(self.fmt, self.age, self.lang, creator=self.creator)
+        joke_b = _removed_joke(self.fmt, self.age, self.lang, creator=self.creator)
+        resolved = Appeal.objects.create(
+            user=self.creator, joke=joke_a, action_type='takedown',
+            reason_text='r', status='upheld',
+        )
+        pending = Appeal.objects.create(
+            user=self.creator, joke=joke_b, action_type='takedown', reason_text='p',
+        )
+        req = _admin_request(self.creator)
+        qs = self.admin_obj.get_queryset(req)
+        ids = list(qs.values_list('pk', flat=True))
+        self.assertLess(ids.index(pending.pk), ids.index(resolved.pk))

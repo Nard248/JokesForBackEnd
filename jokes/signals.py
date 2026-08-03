@@ -144,6 +144,11 @@ def stash_submission_status(sender, instance, **kwargs):
     into 'rejected' (queryset .update() bypasses signals; the admin's manual
     change-form save and full .save() calls go through here)."""
     if instance.pk:
+        # Check-then-act race boundary: this re-query and the post_save that
+        # reads it are only safe because Django admin's change-form save is a
+        # single request/thread — a concurrent writer between this SELECT and
+        # the eventual UPDATE could produce a stale `_pre_save_status`. No
+        # concurrent writers exist on this path today (admin-only transition).
         instance._pre_save_status = (
             sender.objects.filter(pk=instance.pk).values_list('status', flat=True).first()
         )
