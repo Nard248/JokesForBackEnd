@@ -87,6 +87,25 @@ class JokeAdmin(admin.ModelAdmin):
 
     @admin.action(description='Restore selected jokes (un-remove)')
     def restore_jokes(self, request, queryset):
+        # Release any quarantined media BEFORE un-removing (mirrors
+        # AppealAdmin.reverse_appeals' release-before-unremoved ordering): a
+        # restored live joke must serve real media URLs, not quarantine
+        # paths — and leaving assets quarantined would let the lazy sweep
+        # hard-delete a LIVE joke's media at the 14-day mark.
+        joke_ids = list(queryset.values_list('pk', flat=True))
+        assets = MediaAsset.objects.filter(
+            joke_links__joke_id__in=joke_ids, quarantined_at__isnull=False,
+        ).distinct()
+        for asset in assets:
+            try:
+                asset.release()
+            except Exception:
+                self.message_user(
+                    request,
+                    f'Release FAILED for asset {asset.pk} — it stays quarantined; '
+                    'retry the restore.',
+                    level='WARNING',
+                )
         n = queryset.update(is_removed=False, removed_at=None)
         self.message_user(request, f'Restored {n} joke(s).')
 
@@ -341,8 +360,9 @@ class ContentReportAdmin(admin.ModelAdmin):
         from audit.services import record_audit
         joke_ids = set(queryset.values_list('joke_id', flat=True))
         now = timezone.now()
-        # Notify creators before flipping the flag (need the creator FK; the row
-        # stays, only is_removed changes). One notification per affected joke.
+        # Capture the affected jokes (is_removed=False) BEFORE the flip: after
+        # the update() below they no longer match, and we still need their
+        # creator FKs to notify. The row itself stays — only is_removed flips.
         # Statement of reasons (DSA): the notice carries the most common reason
         # among the reports driving THIS takedown (fallback 'other') and the
         # appeal deadline (removed_at + 14 days, ISO).
@@ -509,41 +529,67 @@ class AppealAdmin(admin.ModelAdmin):
         skipped = queryset.exclude(status='pending').count()
         now = timezone.now()
         n = 0
+        failed = []
         for appeal in pending:
-            if appeal.joke_id:
-                assets = MediaAsset.objects.filter(
-                    joke_links__joke_id=appeal.joke_id, quarantined_at__isnull=False,
-                ).distinct()
-                for asset in assets:
-                    # Mirror take_down_joke's still_shared guard: between
-                    # quarantine and this uphold, the asset may have been
-                    # re-attached to a different, still-live joke (e.g. a
-                    # reversal-era reshare). Purging it here would destroy
-                    # media that joke is still serving — skip it.
-                    still_shared = JokeMedia.objects.filter(
-                        asset=asset, joke__is_removed=False,
-                    ).exclude(joke_id=appeal.joke_id).exists()
-                    if still_shared:
-                        continue
-                    asset.purge()
-            appeal.status = 'upheld'
-            appeal.resolver = request.user
-            appeal.resolved_at = now
-            appeal.save(update_fields=['status', 'resolver', 'resolved_at'])
-            record_audit(
-                request, 'appeal_upheld', outcome='success', actor=request.user,
-                target_type=appeal.action_type,
-                target_id=str(appeal.joke_id or appeal.submission_id),
-            )
-            notify(
-                appeal.user, 'appeal_resolved', joke=appeal.joke,
-                outcome='upheld', action_type=appeal.action_type,
-                submission_id=appeal.submission_id,
-            )
-            n += 1
+            try:
+                if appeal.joke_id:
+                    assets = MediaAsset.objects.filter(
+                        joke_links__joke_id=appeal.joke_id, quarantined_at__isnull=False,
+                    ).distinct()
+                    for asset in assets:
+                        # Mirror take_down_joke's still_shared guard: between
+                        # quarantine and this uphold, the asset may have been
+                        # re-attached to a different, still-live joke (e.g. a
+                        # reversal-era reshare). Purging it here would destroy
+                        # media that joke is still serving — skip it.
+                        still_shared = JokeMedia.objects.filter(
+                            asset=asset, joke__is_removed=False,
+                        ).exclude(joke_id=appeal.joke_id).exists()
+                        if still_shared:
+                            continue
+                        # Sibling-appeal guard: another joke sharing this asset
+                        # may be under its OWN pending appeal (both co-taken-
+                        # down). Purging now would make THAT appeal's reversal
+                        # unable to restore the media — skip if any other
+                        # linked joke has a pending appeal.
+                        sibling_joke_ids = list(
+                            JokeMedia.objects.filter(asset=asset)
+                            .exclude(joke_id=appeal.joke_id)
+                            .values_list('joke_id', flat=True)
+                        )
+                        if sibling_joke_ids and Appeal.objects.filter(
+                            status='pending', joke_id__in=sibling_joke_ids,
+                        ).exists():
+                            continue
+                        asset.purge()
+                appeal.status = 'upheld'
+                appeal.resolver = request.user
+                appeal.resolved_at = now
+                appeal.save(update_fields=['status', 'resolver', 'resolved_at'])
+                record_audit(
+                    request, 'appeal_upheld', outcome='success', actor=request.user,
+                    target_type=appeal.action_type,
+                    target_id=str(appeal.joke_id or appeal.submission_id),
+                )
+                notify(
+                    appeal.user, 'appeal_resolved', joke=appeal.joke,
+                    outcome='upheld', action_type=appeal.action_type,
+                    submission_id=appeal.submission_id,
+                )
+                n += 1
+            except Exception:
+                # Per-item isolation (mirrors take_down_joke): one storage/DB
+                # failure must not abort the rest of the batch.
+                failed.append(appeal.pk)
         msg = f'Upheld {n} appeal(s) (quarantined media purged where applicable).'
         if skipped:
             msg += f' Skipped {skipped} non-pending appeal(s).'
+        if failed:
+            self.message_user(
+                request,
+                'Uphold FAILED for appeal(s): ' + ', '.join(str(pk) for pk in failed),
+                level='WARNING',
+            )
         self.message_user(request, msg)
 
     @admin.action(description='Reverse selected appeals (restore joke / draft submission)')
@@ -555,47 +601,59 @@ class AppealAdmin(admin.ModelAdmin):
         skipped = queryset.exclude(status='pending').count()
         now = timezone.now()
         n = 0
+        failed = []
         for appeal in pending:
-            if appeal.action_type == 'takedown' and appeal.joke_id:
-                assets = MediaAsset.objects.filter(
-                    joke_links__joke_id=appeal.joke_id, quarantined_at__isnull=False,
-                ).distinct()
-                for asset in assets:
-                    asset.release()
-                # Mirrors JokeAdmin.restore_jokes: un-remove via the
-                # unfiltered manager (the default manager hides removed jokes).
-                Joke.all_objects.filter(pk=appeal.joke_id).update(
-                    is_removed=False, removed_at=None,
+            try:
+                if appeal.action_type == 'takedown' and appeal.joke_id:
+                    assets = MediaAsset.objects.filter(
+                        joke_links__joke_id=appeal.joke_id, quarantined_at__isnull=False,
+                    ).distinct()
+                    for asset in assets:
+                        asset.release()
+                    # Mirrors JokeAdmin.restore_jokes: un-remove via the
+                    # unfiltered manager (the default manager hides removed jokes).
+                    Joke.all_objects.filter(pk=appeal.joke_id).update(
+                        is_removed=False, removed_at=None,
+                    )
+                    notify(
+                        appeal.user, 'appeal_resolved', joke=appeal.joke,
+                        outcome='reversed', action_type='takedown',
+                    )
+                elif appeal.action_type == 'rejection' and appeal.submission_id:
+                    submission = appeal.submission
+                    submission.status = 'draft'
+                    submission.rejection_reason = (
+                        f'Appeal reversed on {now:%Y-%m-%d} — you can edit and resubmit.'
+                    )
+                    submission.save(update_fields=['status', 'rejection_reason', 'updated_at'])
+                    notify(
+                        appeal.user, 'appeal_resolved',
+                        outcome='reversed', action_type='rejection',
+                        submission_id=submission.pk,
+                    )
+                appeal.status = 'reversed'
+                appeal.resolver = request.user
+                appeal.resolved_at = now
+                appeal.save(update_fields=['status', 'resolver', 'resolved_at'])
+                record_audit(
+                    request, 'appeal_reversed', outcome='success', actor=request.user,
+                    target_type=appeal.action_type,
+                    target_id=str(appeal.joke_id or appeal.submission_id),
                 )
-                notify(
-                    appeal.user, 'appeal_resolved', joke=appeal.joke,
-                    outcome='reversed', action_type='takedown',
-                )
-            elif appeal.action_type == 'rejection' and appeal.submission_id:
-                submission = appeal.submission
-                submission.status = 'draft'
-                submission.rejection_reason = (
-                    f'Appeal reversed on {now:%Y-%m-%d} — you can edit and resubmit.'
-                )
-                submission.save(update_fields=['status', 'rejection_reason', 'updated_at'])
-                notify(
-                    appeal.user, 'appeal_resolved',
-                    outcome='reversed', action_type='rejection',
-                    submission_id=submission.pk,
-                )
-            appeal.status = 'reversed'
-            appeal.resolver = request.user
-            appeal.resolved_at = now
-            appeal.save(update_fields=['status', 'resolver', 'resolved_at'])
-            record_audit(
-                request, 'appeal_reversed', outcome='success', actor=request.user,
-                target_type=appeal.action_type,
-                target_id=str(appeal.joke_id or appeal.submission_id),
-            )
-            n += 1
+                n += 1
+            except Exception:
+                # Per-item isolation (mirrors take_down_joke): one storage/DB
+                # failure must not abort the rest of the batch.
+                failed.append(appeal.pk)
         msg = f'Reversed {n} appeal(s).'
         if skipped:
             msg += f' Skipped {skipped} non-pending appeal(s).'
+        if failed:
+            self.message_user(
+                request,
+                'Reverse FAILED for appeal(s): ' + ', '.join(str(pk) for pk in failed),
+                level='WARNING',
+            )
         self.message_user(request, msg)
 
 

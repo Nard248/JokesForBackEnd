@@ -26,13 +26,16 @@ from rest_framework.test import APIRequestFactory
 from audit.models import AuditLog
 from inbox.models import Notification
 from inbox.services import notify
-from jokes.admin import AppealAdmin, ContentReportAdmin, OverdueAppealFilter
+from jokes.admin import AppealAdmin, ContentReportAdmin, JokeAdmin, OverdueAppealFilter
 from jokes.models import (
-    Appeal, ContentReport, Favorite, Joke, JokeMedia, JokePack, JokePackEntry,
-    JokeSubmission, MediaAsset, SavedJoke,
+    Appeal, Collection, ContentReport, DailyJoke, Favorite, Joke, JokeMedia,
+    JokePack, JokePackEntry, JokeSubmission, JokeSubmissionMedia, JokeView,
+    MediaAsset, SavedJoke,
 )
 from jokes.quarantine import purge_lapsed_quarantine
-from jokes.serializers import JokeListSerializer, JokeSerializer
+from jokes.serializers import (
+    JokeListSerializer, JokeSerializer, JokeSubmissionListSerializer,
+)
 from jokes.tests_media import make_asset, make_image_joke, make_user, _taxonomy
 
 _MEDIA_ROOT = tempfile.mkdtemp()
@@ -1157,3 +1160,298 @@ class AppealCreateNullRemovedAtTests(TestCase):
         )
         self.assertEqual(response.status_code, 400, response.content)
         self.assertIn('not eligible for appeal', str(response.data))
+
+
+# =============================================================================
+# Whole-branch review fixes
+# =============================================================================
+
+def _take_down(admin_user, joke):
+    report = ContentReport.objects.create(
+        reporter=admin_user, joke=joke, reason='spam', status='pending',
+    )
+    ContentReportAdmin(ContentReport, AdminSite()).take_down_joke(
+        _admin_request(admin_user), ContentReport.objects.filter(pk=report.pk),
+    )
+
+
+@override_settings(MEDIA_ROOT=_MEDIA_ROOT)
+class C1QuarantineUrlOwnerLeakTests(TestCase):
+    """C1: the taken-down content's OWNER must never get a resolvable
+    quarantine URL back — path-unguessability is the whole takedown model."""
+
+    def setUp(self):
+        self.fmt, self.age, self.lang = _taxonomy()
+        self.owner = make_user('c1-owner@example.com')
+        self.admin_user = make_user('c1-mod@example.com')
+
+    def _published_then_removed_with_submission_link(self):
+        """A media joke that was published (so the submission keeps its
+        JokeSubmissionMedia link) and then taken down (asset quarantined)."""
+        joke = make_image_joke(self.owner, setup='doomed')
+        asset = joke.media.first().asset
+        sub = _make_submission(self.owner, self.fmt, self.age, self.lang, status='published')
+        sub.published_joke = joke
+        sub.save(update_fields=['published_joke', 'status'])
+        JokeSubmissionMedia.objects.create(submission=sub, asset=asset, position=0)
+        _take_down(self.admin_user, joke)
+        asset.refresh_from_db()
+        self.assertIsNotNone(asset.quarantined_at)  # precondition
+        return sub, asset
+
+    def test_drafts_serializer_emits_dims_only_for_quarantined_asset(self):
+        sub, asset = self._published_then_removed_with_submission_link()
+        request = APIRequestFactory().get('/api/v1/jokes/my-drafts/')
+        data = JokeSubmissionListSerializer(sub, context={'request': request}).data
+        self.assertEqual(len(data['media']), 1)
+        item = data['media'][0]
+        # No resolvable URL for a quarantined asset.
+        self.assertIsNone(item.get('url'))
+        self.assertIsNone(item.get('poster_url'))
+        # The quarantine path must not appear anywhere in the payload.
+        self.assertNotIn('quarantine/', str(item))
+
+    def test_drafts_list_endpoint_has_no_quarantine_url(self):
+        sub, asset = self._published_then_removed_with_submission_link()
+        client = APIClient()
+        client.force_authenticate(self.owner)
+        resp = client.get('/api/v1/jokes/my-drafts/')
+        self.assertEqual(resp.status_code, 200)
+        self.assertNotIn('quarantine/', resp.content.decode())
+
+    def test_data_export_omits_url_for_quarantined_asset(self):
+        joke = make_image_joke(self.owner)
+        asset = joke.media.first().asset
+        _take_down(self.admin_user, joke)
+        asset.refresh_from_db()
+        self.assertIsNotNone(asset.quarantined_at)
+        client = APIClient()
+        client.force_authenticate(self.owner)
+        resp = client.get('/api/v1/users/me/data-export/')
+        self.assertEqual(resp.status_code, 200)
+        import io, json, zipfile
+        payload = json.loads(
+            zipfile.ZipFile(io.BytesIO(resp.content)).read('jokes-for-data-export.json')
+        )
+        rows = [r for r in payload['media_assets'] if r['id'] == str(asset.pk)]
+        self.assertEqual(len(rows), 1)
+        self.assertIsNone(rows[0]['url'])
+        self.assertEqual(rows[0].get('status'), 'quarantined')
+        self.assertNotIn('quarantine/', json.dumps(payload))
+
+
+@override_settings(MEDIA_ROOT=_MEDIA_ROOT)
+class C2RestoreVsLapseSweepTests(TestCase):
+    """C2: restoring a taken-down joke must release its quarantined assets,
+    and the lapse sweep must never purge media of a LIVE joke."""
+
+    def setUp(self):
+        self.fmt, self.age, self.lang = _taxonomy()
+        self.owner = make_user('c2-owner@example.com')
+        self.admin_user = make_user('c2-mod@example.com')
+
+    def _quarantined_joke(self):
+        joke = make_image_joke(self.owner)
+        _take_down(self.admin_user, joke)
+        asset = joke.media.first().asset
+        asset.refresh_from_db()
+        self.assertIsNotNone(asset.quarantined_at)
+        return joke, asset
+
+    def test_restore_jokes_releases_quarantined_assets(self):
+        joke, asset = self._quarantined_joke()
+        JokeAdmin(Joke, AdminSite()).restore_jokes(
+            _admin_request(self.admin_user),
+            Joke.all_objects.filter(pk=joke.pk),
+        )
+        joke.refresh_from_db()
+        asset.refresh_from_db()
+        self.assertFalse(joke.is_removed)
+        # Asset released back to a serving path, stamp cleared.
+        self.assertIsNone(asset.quarantined_at)
+        self.assertTrue(asset.file.name.startswith(f'media-assets/{asset.pk}/'))
+        self.assertTrue(default_storage.exists(asset.file.name))
+
+    def test_lapse_sweep_never_purges_live_joke_media(self):
+        # Quarantine at T; restore (joke live again, asset released); then a
+        # 15-day-later sweep must NOT purge it. Belt: even without release,
+        # the live-joke guard alone protects it.
+        joke = make_image_joke(self.owner)
+        with freeze_time('2026-07-01 12:00:00'):
+            _take_down(self.admin_user, joke)
+        asset = joke.media.first().asset
+        JokeAdmin(Joke, AdminSite()).restore_jokes(
+            _admin_request(self.admin_user), Joke.all_objects.filter(pk=joke.pk),
+        )
+        with freeze_time('2026-07-16 12:00:01'):
+            purge_lapsed_quarantine()
+        self.assertTrue(MediaAsset.objects.filter(pk=asset.pk).exists())
+        asset.refresh_from_db()  # released → name now points at media-assets/
+        self.assertTrue(default_storage.exists(asset.file.name))
+
+    def test_lapse_sweep_live_link_guard_without_release(self):
+        # Directly exercise the guard: an asset still quarantined but linked
+        # to a live joke must be skipped even though 15d elapsed and no appeal.
+        joke = make_image_joke(self.owner)
+        asset = joke.media.first().asset
+        with freeze_time('2026-07-01 12:00:00'):
+            asset.quarantine()
+        # Joke stays live (is_removed=False) — the guard must protect it.
+        with freeze_time('2026-07-16 12:00:01'):
+            purge_lapsed_quarantine()
+        self.assertTrue(MediaAsset.objects.filter(pk=asset.pk).exists())
+
+    def test_lapse_sweep_still_purges_removed_joke_media(self):
+        # Control: no restore, joke stays removed, no appeal → purged at 15d.
+        joke, asset = self._quarantined_joke()
+        with freeze_time('2026-07-16 12:00:01'):
+            # quarantine happened 'now' in setUp (real time); re-quarantine
+            # under a frozen past so it's genuinely lapsed.
+            pass
+        # Re-stamp the quarantine time to 15 days before the sweep.
+        MediaAsset.objects.filter(pk=asset.pk).update(
+            quarantined_at=timezone.now() - timedelta(days=15),
+        )
+        purge_lapsed_quarantine()
+        self.assertFalse(MediaAsset.objects.filter(pk=asset.pk).exists())
+
+
+@override_settings(MEDIA_ROOT=_MEDIA_ROOT)
+class I1RemovedJokeGateTests(TestCase):
+    """I1: four more surfaces must drop removed jokes (text + share_image +
+    media leak): collection jokes, recently-viewed, daily today/history,
+    data-export saved/favorites."""
+
+    def setUp(self):
+        self.fmt, self.age, self.lang = _taxonomy()
+        self.creator = make_user('i1-creator@example.com')
+        self.admin_user = make_user('i1-mod@example.com')
+        self.viewer = make_user('i1-viewer@example.com')
+        self.live = make_image_joke(self.creator, setup='live one')
+        self.removed = make_image_joke(self.creator, setup='doomed one')
+
+    def _client(self):
+        c = APIClient()
+        c.force_authenticate(self.viewer)
+        return c
+
+    def test_collection_jokes_excludes_removed(self):
+        col = Collection.objects.create(user=self.viewer, name='c', is_default=True)
+        SavedJoke.objects.create(user=self.viewer, joke=self.live, collection=col)
+        SavedJoke.objects.create(user=self.viewer, joke=self.removed, collection=col)
+        _take_down(self.admin_user, self.removed)
+        resp = self._client().get(f'/api/v1/collections/{col.id}/jokes/')
+        self.assertEqual(resp.status_code, 200)
+        data = resp.json()
+        results = data.get('results', data)
+        ids = {r['joke']['id'] for r in results}
+        self.assertIn(self.live.pk, ids)
+        self.assertNotIn(self.removed.pk, ids)
+
+    def test_recently_viewed_excludes_removed(self):
+        JokeView.objects.create(user=self.viewer, joke=self.live, source='explore')
+        JokeView.objects.create(user=self.viewer, joke=self.removed, source='explore')
+        _take_down(self.admin_user, self.removed)
+        resp = self._client().get('/api/v1/users/me/recently-viewed/')
+        self.assertEqual(resp.status_code, 200)
+        ids = {r['joke']['id'] for r in resp.json()}
+        self.assertIn(self.live.pk, ids)
+        self.assertNotIn(self.removed.pk, ids)
+
+    def test_daily_today_regenerates_when_stored_joke_removed(self):
+        # A DailyJoke row exists for the viewer pointing at a joke that then
+        # gets removed. today/ must NOT serve the removed joke.
+        DailyJoke.objects.create(
+            user=self.viewer, joke=self.removed, date=timezone.now().date(),
+        )
+        _take_down(self.admin_user, self.removed)
+        resp = self._client().get('/api/v1/daily-jokes/today/')
+        # Either regenerated to a live joke, or 404 if none available — never
+        # the removed joke.
+        if resp.status_code == 200:
+            self.assertNotEqual(resp.json()['joke']['id'], self.removed.pk)
+        else:
+            self.assertEqual(resp.status_code, 404)
+
+    def test_daily_history_excludes_removed(self):
+        DailyJoke.objects.create(
+            user=self.viewer, joke=self.live, date=timezone.now().date(),
+        )
+        DailyJoke.objects.create(
+            user=self.viewer, joke=self.removed,
+            date=timezone.now().date() - timedelta(days=1),
+        )
+        _take_down(self.admin_user, self.removed)
+        resp = self._client().get('/api/v1/daily-jokes/history/')
+        self.assertEqual(resp.status_code, 200)
+        ids = {r['joke']['id'] for r in resp.json()}
+        self.assertIn(self.live.pk, ids)
+        self.assertNotIn(self.removed.pk, ids)
+
+    def test_data_export_excludes_removed_joke_text(self):
+        # Viewer saved + favorited a joke that later gets removed — export
+        # must not leak that other-user joke's text back to the viewer.
+        SavedJoke.objects.create(user=self.viewer, joke=self.removed)
+        Favorite.objects.create(user=self.viewer, joke=self.removed)
+        SavedJoke.objects.create(user=self.viewer, joke=self.live)
+        _take_down(self.admin_user, self.removed)
+        client = APIClient()
+        client.force_authenticate(self.viewer)
+        resp = client.get('/api/v1/users/me/data-export/')
+        self.assertEqual(resp.status_code, 200)
+        import io, json, zipfile
+        payload = json.loads(
+            zipfile.ZipFile(io.BytesIO(resp.content)).read('jokes-for-data-export.json')
+        )
+        saved_ids = {r['joke_id'] for r in payload['saved_jokes']}
+        fav_ids = {r['joke_id'] for r in payload['favorites']}
+        self.assertIn(self.live.pk, saved_ids)
+        self.assertNotIn(self.removed.pk, saved_ids)
+        self.assertNotIn(self.removed.pk, fav_ids)
+
+
+@override_settings(MEDIA_ROOT=_MEDIA_ROOT)
+class I2UpholdSiblingAppealGuardTests(TestCase):
+    """I2: upholding appeal A must not purge an asset that a co-taken-down
+    joke B (also under a pending appeal) needs to be restorable."""
+
+    def setUp(self):
+        self.fmt, self.age, self.lang = _taxonomy()
+        self.owner = make_user('i2-owner@example.com')
+        self.admin_user = make_user('i2-mod@example.com')
+
+    def test_uphold_a_spares_asset_shared_with_pending_appeal_joke_b(self):
+        joke_a = make_image_joke(self.owner)
+        joke_b = make_image_joke(self.owner)
+        shared = make_asset(self.owner)
+        # Both jokes link the shared asset (plus their own from make_image_joke).
+        JokeMedia.objects.create(joke=joke_a, asset=shared, position=1)
+        JokeMedia.objects.create(joke=joke_b, asset=shared, position=1)
+        # Take both down together so the shared asset is quarantined once.
+        report_a = ContentReport.objects.create(
+            reporter=self.admin_user, joke=joke_a, reason='spam', status='pending',
+        )
+        report_b = ContentReport.objects.create(
+            reporter=self.admin_user, joke=joke_b, reason='spam', status='pending',
+        )
+        ContentReportAdmin(ContentReport, AdminSite()).take_down_joke(
+            _admin_request(self.admin_user),
+            ContentReport.objects.filter(pk__in=[report_a.pk, report_b.pk]),
+        )
+        shared.refresh_from_db()
+        self.assertIsNotNone(shared.quarantined_at)
+        # Both jokes get a pending appeal.
+        appeal_a = Appeal.objects.create(
+            user=self.owner, joke=joke_a, action_type='takedown', reason_text='a',
+        )
+        Appeal.objects.create(
+            user=self.owner, joke=joke_b, action_type='takedown', reason_text='b',
+        )
+        # Uphold only A — must NOT purge the shared asset (B still pending).
+        AppealAdmin(Appeal, AdminSite()).uphold_appeals(
+            _admin_request(self.admin_user), Appeal.objects.filter(pk=appeal_a.pk),
+        )
+        self.assertTrue(
+            MediaAsset.objects.filter(pk=shared.pk).exists(),
+            'shared asset was purged despite joke B having a pending appeal',
+        )

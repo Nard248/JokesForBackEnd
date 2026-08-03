@@ -796,10 +796,24 @@ class JokeSubmissionListSerializer(serializers.ModelSerializer):
         return None
 
     def get_media(self, obj) -> list[dict]:
-        return [
-            MediaAssetSerializer(link.asset, context=self.context).data
-            for link in obj.media.all()
-        ]
+        # A published-then-taken-down joke keeps its JokeSubmissionMedia links,
+        # and the asset is now quarantined — its file sits at an unguessable
+        # quarantine/ path that is the WHOLE takedown model. Never hand that
+        # URL back, not even to the owner: emit dims-only for a quarantined
+        # asset (mirrors JokeSerializer.get_media's removed-joke guard shape).
+        out = []
+        for link in obj.media.all():
+            asset = link.asset
+            if asset.quarantined_at:
+                out.append(
+                    {'id': str(asset.pk), 'kind': asset.kind, 'url': None,
+                     'poster_url': None, 'width': asset.width, 'height': asset.height,
+                     'duration_ms': asset.duration_ms, 'is_gif': asset.is_gif,
+                     'created_at': asset.created_at}
+                )
+            else:
+                out.append(MediaAssetSerializer(asset, context=self.context).data)
+        return out
 
 
 class JokeSubmissionCreateSerializer(serializers.ModelSerializer):
