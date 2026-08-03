@@ -1,10 +1,13 @@
 """Share card generation using SVG templates and CairoSVG."""
 import base64
 import io
+import logging
 
 import cairosvg
 from django.template.loader import render_to_string
 from PIL import Image
+
+logger = logging.getLogger(__name__)
 
 MEDIA_CARD_TEMPLATE = 'jokes/share_cards/media_card.svg'
 MAX_RASTER_WIDTH = 1200
@@ -27,7 +30,14 @@ def get_template_for_joke(joke):
 
 
 def get_badge_text(joke):
-    """Get badge text based on joke's primary tone."""
+    """Get badge text based on joke's primary tone.
+
+    Audio-format jokes always get the 'Audio' badge in place of the tone
+    badge: audio has no visual to embed (media_share_card_png declines), so
+    it renders via the text-card path, and the spec calls for that card's
+    badge to read 'Audio' rather than the joke's tone."""
+    if joke.format_id and joke.format.slug == 'audio':
+        return 'Audio'
     tone = joke.tones.first()
     return tone.name if tone else 'Joke'
 
@@ -85,30 +95,40 @@ def media_share_card_png(joke):
 
     Returns None (caller falls back to the text card) when the joke has no
     usable raster: audio jokes, jokes with no media, or a video/GIF asset
-    whose poster hasn't been generated yet.
+    whose poster hasn't been generated yet. Also returns None -- fail open,
+    never propagating -- if the raster is corrupt/unreadable or rasterizing
+    the SVG otherwise blows up: a bad embed must never 500 Joke.save() (same
+    fail-open policy as media_screening.screen_image, commit 77e995a).
     """
-    raw_bytes, asset = _primary_media_raster(joke)
-    if raw_bytes is None:
+    try:
+        raw_bytes, asset = _primary_media_raster(joke)
+        if raw_bytes is None:
+            return None
+
+        jpeg_bytes = _downscale_raster(raw_bytes)
+        data_uri = 'data:image/jpeg;base64,' + base64.b64encode(jpeg_bytes).decode('ascii')
+
+        svg_content = render_to_string(MEDIA_CARD_TEMPLATE, {
+            'raster_data_uri': data_uri,
+            'joke_text': joke.text,
+            'badge_text': _format_badge_for_asset(asset),
+        })
+
+        png_buffer = io.BytesIO()
+        cairosvg.svg2png(
+            bytestring=svg_content.encode('utf-8'),
+            write_to=png_buffer,
+            output_width=1200,
+            output_height=630,
+        )
+        png_buffer.seek(0)
+        return png_buffer
+    except Exception as exc:
+        logger.warning(
+            'media_share_card_png failed for joke %s; falling back to text card: %s',
+            joke.pk, str(exc)[:300],
+        )
         return None
-
-    jpeg_bytes = _downscale_raster(raw_bytes)
-    data_uri = 'data:image/jpeg;base64,' + base64.b64encode(jpeg_bytes).decode('ascii')
-
-    svg_content = render_to_string(MEDIA_CARD_TEMPLATE, {
-        'raster_data_uri': data_uri,
-        'joke_text': joke.text,
-        'badge_text': _format_badge_for_asset(asset),
-    })
-
-    png_buffer = io.BytesIO()
-    cairosvg.svg2png(
-        bytestring=svg_content.encode('utf-8'),
-        write_to=png_buffer,
-        output_width=1200,
-        output_height=630,
-    )
-    png_buffer.seek(0)
-    return png_buffer
 
 
 def generate_share_card_png(joke):
