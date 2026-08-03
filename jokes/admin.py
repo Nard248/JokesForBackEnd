@@ -515,6 +515,16 @@ class AppealAdmin(admin.ModelAdmin):
                     joke_links__joke_id=appeal.joke_id, quarantined_at__isnull=False,
                 ).distinct()
                 for asset in assets:
+                    # Mirror take_down_joke's still_shared guard: between
+                    # quarantine and this uphold, the asset may have been
+                    # re-attached to a different, still-live joke (e.g. a
+                    # reversal-era reshare). Purging it here would destroy
+                    # media that joke is still serving — skip it.
+                    still_shared = JokeMedia.objects.filter(
+                        asset=asset, joke__is_removed=False,
+                    ).exclude(joke_id=appeal.joke_id).exists()
+                    if still_shared:
+                        continue
                     asset.purge()
             appeal.status = 'upheld'
             appeal.resolver = request.user
