@@ -328,6 +328,57 @@ class TakedownShareImageLeakTests(TestCase):
         self.assertFalse(removed.share_image)
         self.assertFalse(default_storage.exists(old_name))
 
+    def test_partial_share_image_delete_failure_continues_batch_and_warns(self):
+        """One joke's share_image.delete() blowing up (transient GCS
+        auth/quota/network) must not abort the takedown batch: the OTHER
+        joke still gets taken down and its card blanked, and the admin sees
+        a WARNING naming the failed joke. Mirrors
+        test_partial_quarantine_failure_continues_batch_and_warns."""
+        good = self._publish_media_joke(caption='good joke survives the batch')
+        bad = self._publish_media_joke(caption='bad joke fails to delete')
+        good_old_name = good.share_image.name
+        bad_old_name = bad.share_image.name
+        self.assertTrue(good_old_name)
+        self.assertTrue(bad_old_name)
+
+        report_good = ContentReport.objects.create(reporter=self.mod, joke=good, reason='spam')
+        report_bad = ContentReport.objects.create(reporter=self.mod, joke=bad, reason='spam')
+
+        real_delete = FieldFile.delete
+
+        def flaky_delete(self, save=True):
+            if self.instance.pk == bad.pk:
+                raise RuntimeError('gcs delete failed')
+            return real_delete(self, save=save)
+
+        req = _admin_request(self.mod)
+        with mock.patch.object(FieldFile, 'delete', flaky_delete):
+            ContentReportAdmin(ContentReport, AdminSite()).take_down_joke(
+                req, ContentReport.objects.filter(pk__in=[report_good.pk, report_bad.pk]),
+            )
+
+        # Batch not aborted -- both jokes still taken down.
+        good_removed = Joke.all_objects.get(pk=good.pk)
+        bad_removed = Joke.all_objects.get(pk=bad.pk)
+        self.assertTrue(good_removed.is_removed)
+        self.assertTrue(bad_removed.is_removed)
+
+        # good: delete succeeded -- field cleared AND file gone.
+        self.assertFalse(good_removed.share_image)
+        self.assertFalse(default_storage.exists(good_old_name))
+
+        # bad: delete failed -- field left pointing at a file that may
+        # still exist (the delete raised before removing it) rather than a
+        # cleared field pointing at nothing (the safe, consistent state).
+        self.assertEqual(bad_removed.share_image.name, bad_old_name)
+        self.assertTrue(default_storage.exists(bad_old_name))
+
+        msgs = [str(m) for m in req._messages]
+        self.assertTrue(
+            any('share-card delete' in m.lower() and str(bad.pk) in m for m in msgs),
+            f'expected a warning naming joke {bad.pk}, got: {msgs}',
+        )
+
 
 @override_settings(MEDIA_ROOT=_MEDIA_ROOT)
 class ReversalRegenerationTests(TestCase):

@@ -93,6 +93,13 @@ class JokeAdmin(admin.ModelAdmin):
         # paths — and leaving assets quarantined would let the lazy sweep
         # hard-delete a LIVE joke's media at the 14-day mark.
         joke_ids = list(queryset.values_list('pk', flat=True))
+        # Minor: only jokes actually is_removed=True are being flipped by the
+        # update() below -- scope the (potentially expensive) share-card
+        # regen to those, not every joke in the selection (a no-op reselect
+        # of an already-live joke shouldn't pay for a rebuild).
+        to_restore_ids = list(
+            queryset.filter(is_removed=True).values_list('pk', flat=True)
+        )
         assets = MediaAsset.objects.filter(
             joke_links__joke_id__in=joke_ids, quarantined_at__isnull=False,
         ).distinct()
@@ -110,8 +117,23 @@ class JokeAdmin(admin.ModelAdmin):
         # REVERSAL: the share card was blanked at takedown time (or, for a
         # media joke, may still be an old pre-fix text-only card) -- rebuild
         # it now that the joke is live and its media has been released.
-        for joke in Joke.all_objects.filter(pk__in=joke_ids):
-            joke.regenerate_share_image()
+        # Per-item isolation (mirrors the asset.release() loop above): one
+        # joke's regen failure must not stop the rest of the batch from
+        # getting a fresh card.
+        failed_regen_ids = []
+        for joke in Joke.all_objects.filter(pk__in=to_restore_ids):
+            try:
+                joke.regenerate_share_image()
+            except Exception:
+                failed_regen_ids.append(joke.pk)
+        if failed_regen_ids:
+            self.message_user(
+                request,
+                'Share-card regeneration FAILED for joke(s): '
+                + ', '.join(str(pk) for pk in failed_regen_ids)
+                + ' — the card may be stale; retry the restore.',
+                level='WARNING',
+            )
         self.message_user(request, f'Restored {n} joke(s).')
 
 
@@ -396,10 +418,34 @@ class ContentReportAdmin(admin.ModelAdmin):
         # underlying MediaAsset is quarantined. Blank it -- delete the
         # stored file and clear the field -- for every joke actually
         # removed by this action.
+        # Per-item isolation (mirrors the asset.quarantine() loop below): one
+        # joke's storage delete failing (transient GCS auth/quota/network)
+        # must not abort notify/report-resolve/quarantine for the rest of
+        # the batch. Only clear the field for jokes whose file delete
+        # actually succeeded -- a joke whose delete failed keeps its field
+        # pointing at a file that may still exist, which is the safe,
+        # consistent state (and the warning below names it for retry).
+        blanked_ids = []
+        failed_share_image_ids = []
         for jk in to_remove:
-            if jk.share_image:
+            if not jk.share_image:
+                continue
+            try:
                 jk.share_image.delete(save=False)
-        Joke.all_objects.filter(pk__in=[jk.pk for jk in to_remove]).update(share_image='')
+            except Exception:
+                failed_share_image_ids.append(jk.pk)
+                continue
+            blanked_ids.append(jk.pk)
+        if blanked_ids:
+            Joke.all_objects.filter(pk__in=blanked_ids).update(share_image='')
+        if failed_share_image_ids:
+            self.message_user(
+                request,
+                'Share-card delete FAILED for joke(s): '
+                + ', '.join(str(pk) for pk in failed_share_image_ids)
+                + ' — the old card may still be served; retry the takedown for this joke.',
+                level='WARNING',
+            )
         appeal_deadline = (now + timedelta(days=14)).isoformat()
         for jk in to_remove:
             reasons = reasons_by_joke.get(jk.pk)
