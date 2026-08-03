@@ -1376,12 +1376,21 @@ class MediaAsset(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     quarantined_at = models.DateTimeField(null=True, blank=True)
 
-    def _move_stored_files(self, path_for):
-        """Copy-then-delete every populated FieldFile (file, poster) to the
-        path `path_for(basename)` computes, via default_storage — this works
-        on both FileSystemStorage and GCS (no direct google.cloud.storage
-        use, no signing needed). Updates the FieldFile's `.name` in place and
-        returns the list of field names actually moved."""
+    def _move_stored_files(self, path_for, extra_update_fields):
+        """Crash-safe move of every populated FieldFile (file, poster) to the
+        path `path_for(basename)` computes, via default_storage — works on
+        both FileSystemStorage and GCS (no direct google.cloud.storage use,
+        no signing needed).
+
+        Ordering matters: copy ALL fields' bytes to their new paths, persist
+        the new names (+ `extra_update_fields`, already set by the caller) in
+        ONE model save, and only THEN delete the old objects. A crash at any
+        point leaves at worst a harmless duplicate at the new path — the DB
+        never points at a deleted object, and a retry completes the move. If
+        a new path already exists from a prior partial attempt it is
+        overwritten (deleted first — FileSystemStorage would otherwise
+        suffix-rename; GCS with file_overwrite=True overwrites anyway)."""
+        old_names = []
         moved = []
         for field_name in ('file', 'poster'):
             field_file = getattr(self, field_name)
@@ -1392,11 +1401,15 @@ class MediaAsset(models.Model):
             new_name = path_for(basename)
             with default_storage.open(old_name, 'rb') as fh:
                 content = fh.read()
+            if default_storage.exists(new_name):
+                default_storage.delete(new_name)
             saved_name = default_storage.save(new_name, ContentFile(content))
-            default_storage.delete(old_name)
             field_file.name = saved_name
+            old_names.append(old_name)
             moved.append(field_name)
-        return moved
+        self.save(update_fields=moved + extra_update_fields)
+        for old_name in old_names:
+            default_storage.delete(old_name)
 
     def quarantine(self):
         """Move every stored file to quarantine/<uuid>/<basename> (unguessable
@@ -1404,9 +1417,10 @@ class MediaAsset(models.Model):
         Idempotent: a no-op if already quarantined."""
         if self.quarantined_at:
             return
-        moved = self._move_stored_files(lambda basename: f'quarantine/{self.pk}/{basename}')
         self.quarantined_at = timezone.now()
-        self.save(update_fields=moved + ['quarantined_at'])
+        self._move_stored_files(
+            lambda basename: f'quarantine/{self.pk}/{basename}', ['quarantined_at'],
+        )
 
     def release(self):
         """Reverse of quarantine(): move files back to the original-style
@@ -1414,9 +1428,10 @@ class MediaAsset(models.Model):
         a no-op if not currently quarantined."""
         if not self.quarantined_at:
             return
-        moved = self._move_stored_files(lambda basename: f'media-assets/{self.pk}/{basename}')
         self.quarantined_at = None
-        self.save(update_fields=moved + ['quarantined_at'])
+        self._move_stored_files(
+            lambda basename: f'media-assets/{self.pk}/{basename}', ['quarantined_at'],
+        )
 
     def purge(self):
         """Hard deletion. Thin alias — delete_with_files() stays the ONLY

@@ -19,11 +19,17 @@ from django.contrib.messages.storage.fallback import FallbackStorage
 from freezegun import freeze_time
 from rest_framework.test import APIClient
 
+from rest_framework.test import APIRequestFactory
+
 from inbox.models import Notification
 from jokes.admin import ContentReportAdmin
-from jokes.models import Appeal, ContentReport, Joke, JokeMedia, JokeSubmission, MediaAsset
+from jokes.models import (
+    Appeal, ContentReport, Favorite, Joke, JokeMedia, JokePack, JokePackEntry,
+    JokeSubmission, MediaAsset, SavedJoke,
+)
 from jokes.quarantine import purge_lapsed_quarantine
-from jokes.tests_media import make_asset, make_user, _taxonomy
+from jokes.serializers import JokeListSerializer, JokeSerializer
+from jokes.tests_media import make_asset, make_image_joke, make_user, _taxonomy
 
 _MEDIA_ROOT = tempfile.mkdtemp()
 
@@ -365,6 +371,168 @@ class TakedownQuarantineReworkTests(TestCase):
         # Both links intact — joke_a's too (kept, not detached).
         self.assertTrue(JokeMedia.objects.filter(joke=joke_a, asset=shared).exists())
         self.assertTrue(JokeMedia.objects.filter(joke=joke_b, asset=shared).exists())
+
+    def test_partial_quarantine_failure_continues_batch_and_warns(self):
+        # One asset's quarantine() blowing up must not abort the batch:
+        # the other asset still gets quarantined, the takedown completes,
+        # and the admin sees a WARNING naming the failed asset.
+        joke = _make_joke(self.fmt, self.age, self.lang, creator=self.creator)
+        good = make_asset(self.creator)
+        bad = make_asset(self.creator)
+        JokeMedia.objects.create(joke=joke, asset=good, position=0)
+        JokeMedia.objects.create(joke=joke, asset=bad, position=1)
+        report = ContentReport.objects.create(
+            reporter=self.admin_user, joke=joke, reason='spam',
+        )
+        real_quarantine = MediaAsset.quarantine
+
+        def flaky_quarantine(asset_self):
+            if asset_self.pk == bad.pk:
+                raise RuntimeError('storage down')
+            return real_quarantine(asset_self)
+
+        req = _admin_request(self.admin_user)
+        with patch.object(MediaAsset, 'quarantine', flaky_quarantine):
+            self.admin_obj.take_down_joke(
+                req, ContentReport.objects.filter(pk=report.pk),
+            )
+        joke.refresh_from_db()
+        self.assertTrue(joke.is_removed)
+        good.refresh_from_db()
+        bad.refresh_from_db()
+        self.assertIsNotNone(good.quarantined_at)
+        self.assertIsNone(bad.quarantined_at)
+        msgs = [str(m) for m in req._messages]
+        self.assertTrue(
+            any('quarantine' in m.lower() and str(bad.pk) in m for m in msgs),
+            f'expected a warning naming asset {bad.pk}, got: {msgs}',
+        )
+
+
+# =============================================================================
+# Fix: crash-safe quarantine ordering (copy-all -> save -> delete-old)
+# =============================================================================
+
+@override_settings(MEDIA_ROOT=_MEDIA_ROOT)
+class QuarantineCrashSafetyTests(TestCase):
+    """_move_stored_files must persist the new paths BEFORE deleting the old
+    objects: a failed delete leaves at worst a recoverable duplicate — never a
+    DB row pointing at an already-deleted path."""
+
+    def test_failed_old_delete_leaves_recoverable_state(self):
+        user = make_user('crash-safety@example.com')
+        asset = make_asset(user)
+        old_name = asset.file.name
+        with patch(
+            'jokes.models.default_storage.delete', side_effect=OSError('gcs 500'),
+        ):
+            with self.assertRaises(OSError):
+                asset.quarantine()
+        asset.refresh_from_db()
+        # The DB already points at the NEW path and the bytes are there.
+        self.assertTrue(asset.file.name.startswith(f'quarantine/{asset.pk}/'))
+        self.assertTrue(default_storage.exists(asset.file.name))
+        self.assertIsNotNone(asset.quarantined_at)
+        # The old object still exists — a harmless duplicate, not a lost file.
+        self.assertTrue(default_storage.exists(old_name))
+        # A re-run completes cleanly (idempotent on the stamped asset).
+        asset.quarantine()
+        self.assertTrue(asset.file.name.startswith(f'quarantine/{asset.pk}/'))
+        self.assertTrue(default_storage.exists(asset.file.name))
+
+
+# =============================================================================
+# Fix: removed jokes must vanish from saved-jokes / favorites / pack detail
+# =============================================================================
+
+@override_settings(MEDIA_ROOT=_MEDIA_ROOT)
+class RemovedJokeSurfaceGatingTests(TestCase):
+    """CRITICAL: these three surfaces never filtered joke__is_removed, so a
+    taken-down joke kept serving its text AND (post-quarantine-rework, since
+    JokeMedia links are now kept) its quarantine-path media URLs."""
+
+    def setUp(self):
+        self.fmt, self.age, self.lang = _taxonomy()
+        self.creator = make_user('surface-creator@example.com')
+        self.viewer = make_user('surface-viewer@example.com')
+        self.admin_user = make_user('surface-mod@example.com')
+        self.admin_obj = ContentReportAdmin(ContentReport, AdminSite())
+        self.live = make_image_joke(self.creator, setup='live joke')
+        self.removed = make_image_joke(self.creator, setup='doomed joke')
+
+    def _take_down(self, joke):
+        report = ContentReport.objects.create(
+            reporter=self.admin_user, joke=joke, reason='spam',
+        )
+        self.admin_obj.take_down_joke(
+            _admin_request(self.admin_user), ContentReport.objects.filter(pk=report.pk),
+        )
+
+    def _client(self):
+        client = APIClient()
+        client.force_authenticate(self.viewer)
+        return client
+
+    @staticmethod
+    def _joke_ids(resp):
+        data = resp.json()
+        results = data.get('results', data) if isinstance(data, dict) else data
+        return {item['joke']['id'] for item in (results if isinstance(results, list) else [])}
+
+    def test_saved_jokes_list_drops_removed_joke(self):
+        SavedJoke.objects.create(user=self.viewer, joke=self.live)
+        SavedJoke.objects.create(user=self.viewer, joke=self.removed)
+        self._take_down(self.removed)
+        resp = self._client().get('/api/v1/saved-jokes/')
+        self.assertEqual(resp.status_code, 200)
+        ids = self._joke_ids(resp)
+        self.assertIn(self.live.pk, ids)
+        self.assertNotIn(self.removed.pk, ids)
+
+    def test_favorites_list_drops_removed_joke(self):
+        Favorite.objects.create(user=self.viewer, joke=self.live)
+        Favorite.objects.create(user=self.viewer, joke=self.removed)
+        self._take_down(self.removed)
+        resp = self._client().get('/api/v1/favorites/')
+        self.assertEqual(resp.status_code, 200)
+        ids = self._joke_ids(resp)
+        self.assertIn(self.live.pk, ids)
+        self.assertNotIn(self.removed.pk, ids)
+
+    def test_pack_detail_drops_removed_joke(self):
+        pack = JokePack.objects.create(
+            slug='appeals-gating-pack', title='Gating Pack', is_published=True,
+        )
+        JokePackEntry.objects.create(pack=pack, joke=self.live, order=1)
+        JokePackEntry.objects.create(pack=pack, joke=self.removed, order=2)
+        self._take_down(self.removed)
+        resp = APIClient().get(f'/api/v1/packs/{pack.slug}/')
+        self.assertEqual(resp.status_code, 200)
+        ids = {e['joke']['id'] for e in resp.json().get('jokes', [])}
+        self.assertIn(self.live.pk, ids)
+        self.assertNotIn(self.removed.pk, ids)
+
+
+@override_settings(MEDIA_ROOT=_MEDIA_ROOT)
+class RemovedJokeSerializerMediaTests(TestCase):
+    """Defense-in-depth choke point: even if some future path serializes a
+    removed joke, get_media emits [] — no quarantine URLs can leak."""
+
+    def setUp(self):
+        self.user = make_user('serializer-belt@example.com')
+        joke = make_image_joke(self.user)
+        # Flip via queryset update (no model save side effects).
+        Joke.all_objects.filter(pk=joke.pk).update(is_removed=True)
+        self.joke = Joke.all_objects.get(pk=joke.pk)
+        self.request = APIRequestFactory().get('/api/v1/jokes/')
+
+    def test_detail_serializer_emits_empty_media_for_removed_joke(self):
+        data = JokeSerializer(self.joke, context={'request': self.request}).data
+        self.assertEqual(data['media'], [])
+
+    def test_list_serializer_emits_empty_media_for_removed_joke(self):
+        data = JokeListSerializer(self.joke, context={'request': self.request}).data
+        self.assertEqual(data['media'], [])
 
 
 # =============================================================================

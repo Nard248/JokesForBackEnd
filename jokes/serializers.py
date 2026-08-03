@@ -246,7 +246,14 @@ class JokeSerializer(serializers.ModelSerializer):
     def get_media(self, obj) -> list[dict]:
         """Media attachments in position order. LOCKED jokes get dimensions
         only — URLs are withheld SERVER-SIDE (spec §6.2): a client-side blur
-        over a real URL would still download the payoff."""
+        over a real URL would still download the payoff.
+
+        Removed jokes get [] unconditionally (defense-in-depth): after the
+        quarantine rework their JokeMedia links survive takedown, so any
+        serving path that misses an is_removed filter would otherwise emit
+        quarantine-path URLs."""
+        if obj.is_removed:
+            return []
         links = list(obj.media.all())
         if not links:
             return []
@@ -353,7 +360,10 @@ class JokeListSerializer(serializers.ModelSerializer):
     def get_media(self, obj) -> list[dict]:
         """Dims-only ALWAYS: this serializer has no paywall context (it serves
         the public creator profile) — emitting URLs here would bypass the
-        paywall entirely."""
+        paywall entirely. Removed jokes get [] (same defense-in-depth as
+        JokeSerializer.get_media)."""
+        if obj.is_removed:
+            return []
         return [
             {'kind': l.asset.kind, 'width': l.asset.width, 'height': l.asset.height}
             for l in obj.media.all()
@@ -1141,10 +1151,13 @@ class JokePackDetailSerializer(JokePackListSerializer):
         from jokes.serving import allowed_tiers
         request = self.context.get('request')
         tiers = allowed_tiers(request) if request is not None else frozenset({'tier_1'})
+        # joke__is_removed: taken-down jokes vanish from pack detail — the FK
+        # traversal bypasses JokeManager's is_removed gate (same explicit
+        # filter as the tier gate on this exact queryset).
         entries = obj.entries.select_related(
             'joke', 'joke__format', 'joke__age_rating', 'joke__language'
         ).prefetch_related('joke__tones', 'joke__context_tags').filter(
-            joke__content_tier__in=tiers
+            joke__content_tier__in=tiers, joke__is_removed=False,
         ).order_by('order')
         return [
             {

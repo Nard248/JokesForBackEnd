@@ -379,19 +379,35 @@ class ContentReportAdmin(admin.ModelAdmin):
             .distinct().values_list('pk', flat=True)
         )
         quarantined = 0
+        failed_asset_ids = []
         for asset in MediaAsset.objects.filter(pk__in=asset_ids):
             still_shared = JokeMedia.objects.filter(asset=asset, joke__is_removed=False).exclude(
                 joke_id__in=joke_ids
             ).exists()
             if still_shared:
                 continue
-            asset.quarantine()
+            # Per-asset isolation (mirrors approve_and_publish): one asset's
+            # storage failure must not abort the rest of the batch.
+            try:
+                asset.quarantine()
+            except Exception:
+                failed_asset_ids.append(asset.pk)
+                continue
             quarantined += 1
         if quarantined:
             record_audit(
                 request, 'media_quarantined', outcome='success',
                 actor=request.user, target_type='joke',
                 target_id=','.join(str(j) for j in sorted(joke_ids)),
+            )
+        if failed_asset_ids:
+            self.message_user(
+                request,
+                'Quarantine FAILED for asset(s): '
+                + ', '.join(str(pk) for pk in failed_asset_ids)
+                + ' — their files may still sit at serving paths; '
+                'retry the takedown for this joke.',
+                level='WARNING',
             )
         for jid in joke_ids:
             record_audit(request, 'content_takedown', outcome='success', actor=request.user,
