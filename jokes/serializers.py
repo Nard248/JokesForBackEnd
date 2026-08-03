@@ -237,7 +237,16 @@ class JokeSerializer(serializers.ModelSerializer):
         # Explicitly exclude search_vector
 
     def get_share_image_url(self, obj):
-        """Return absolute URL for share image if it exists."""
+        """Return absolute URL for share image if it exists.
+
+        Removed jokes get None unconditionally (defense-in-depth, symmetric
+        with get_media's removed-joke guard): Joke.save()/regenerate_share_image()
+        now refuse to (re)generate a removed joke's card, but a partial
+        takedown failure (share_image.delete() raised) can leave the field
+        intentionally still pointing at a file that may still exist -- this
+        closes that state off at the serializer regardless."""
+        if obj.is_removed:
+            return None
         if obj.share_image:
             request = self.context.get('request')
             if request:
@@ -366,7 +375,16 @@ class JokeListSerializer(serializers.ModelSerializer):
         return obj.text
 
     def get_share_image_url(self, obj):
-        """Return absolute URL for share image if it exists."""
+        """Return absolute URL for share image if it exists.
+
+        Removed jokes get None unconditionally (defense-in-depth, symmetric
+        with get_media's removed-joke guard): Joke.save()/regenerate_share_image()
+        now refuse to (re)generate a removed joke's card, but a partial
+        takedown failure (share_image.delete() raised) can leave the field
+        intentionally still pointing at a file that may still exist -- this
+        closes that state off at the serializer regardless."""
+        if obj.is_removed:
+            return None
         if obj.share_image:
             request = self.context.get('request')
             if request:

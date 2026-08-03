@@ -688,8 +688,20 @@ class AppealAdmin(admin.ModelAdmin):
                     # REVERSAL: share_image was blanked at takedown time;
                     # rebuild it now that the joke is live again and its
                     # media has just been released -- media card if media
-                    # is present, text card otherwise.
-                    Joke.all_objects.get(pk=appeal.joke_id).regenerate_share_image()
+                    # is present, text card otherwise. Isolated in its own
+                    # try/except (mirrors restore_jokes): the joke is
+                    # ALREADY live again at this point, so a card regen
+                    # blip must not block notify/status=reversed/audit for
+                    # the rest of this appeal's resolution.
+                    try:
+                        Joke.all_objects.get(pk=appeal.joke_id).regenerate_share_image()
+                    except Exception:
+                        self.message_user(
+                            request,
+                            f'Share-card regeneration FAILED for joke {appeal.joke_id} '
+                            '— the card may be stale; retry the reversal.',
+                            level='WARNING',
+                        )
                     notify(
                         appeal.user, 'appeal_resolved', joke=appeal.joke,
                         outcome='reversed', action_type='takedown',
