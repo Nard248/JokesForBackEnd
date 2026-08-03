@@ -324,6 +324,29 @@ class QuarantineMethodTests(TestCase):
         self.assertTrue(asset.file.name.startswith(f'media-assets/{asset.pk}/'))
         self.assertIsNone(asset.quarantined_at)
 
+    def test_quarantine_path_is_not_derivable_from_public_path(self):
+        """R1 (final-review): the pk is the SAME uuid that was in the
+        pre-takedown PUBLIC url, so the quarantine path must carry an
+        unguessable segment BEYOND pk/basename — otherwise anyone who saw the
+        live joke can reconstruct the quarantine url by prefix substitution
+        and fetch the taken-down file from the public bucket."""
+        asset = make_asset(self.user)
+        public_name = asset.file.name  # media-assets/<uuid>/image.webp
+        basename = public_name.rsplit('/', 1)[-1]
+        asset.quarantine()
+        derivable = f'quarantine/{asset.pk}/{basename}'
+        # The naive/derivable path must NOT be where the file lives.
+        self.assertNotEqual(asset.file.name, derivable)
+        self.assertFalse(default_storage.exists(derivable))
+        # There is an unguessable segment between the pk dir and the basename.
+        middle = asset.file.name[len(f'quarantine/{asset.pk}/'):-len(basename) - 1]
+        self.assertTrue(len(middle) >= 16)
+        # Two quarantines of two assets don't collide on a shared secret.
+        other = make_asset(self.user)
+        other.quarantine()
+        other_middle = other.file.name[len(f'quarantine/{other.pk}/'):-len(basename) - 1]
+        self.assertNotEqual(middle, other_middle)
+
     def test_release_restores_poster_too(self):
         asset = _asset_with_poster(self.user)
         asset.quarantine()
