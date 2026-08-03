@@ -1,0 +1,40 @@
+{% load mathfilters %}
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <!-- Background fallback (visible only if the raster fails to decode) -->
+  <rect width="1200" height="630" fill="#1a1a2e"/>
+
+  <!-- Media raster, cropped to fill the whole card -->
+  <image x="0" y="0" width="1200" height="630" preserveAspectRatio="xMidYMid slice" href="{{ raster_data_uri }}"/>
+
+  <!-- Caption fade so overlaid text stays legible on any photo -->
+  <defs>
+    <linearGradient id="captionFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.82"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="340" width="1200" height="290" fill="url(#captionFade)"/>
+
+  <!-- Caption text (joke setup/text), capped to 3 lines -->
+  {% with joke_lines=joke_text|wordwrap:40 %}
+  <text fill="white" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="600">
+    {% for line in joke_lines.splitlines|slice:":3" %}
+    <tspan x="60" y="{{ forloop.counter0|multiply:40|add:420 }}">{{ line }}</tspan>
+    {% endfor %}
+  </text>
+  {% endwith %}
+
+  <!-- Brand stripe -->
+  <rect y="580" width="1200" height="50" fill="#e94560"/>
+  <text x="60" y="615" fill="white" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="600">
+    JokesFor.com
+  </text>
+
+  <!-- Format badge -->
+  {% if badge_text %}
+  <rect x="980" y="590" width="160" height="30" rx="15" fill="rgba(255,255,255,0.2)"/>
+  <text x="1060" y="612" fill="white" font-family="Inter, Arial, sans-serif" font-size="14" text-anchor="middle">
+    {{ badge_text }}
+  </text>
+  {% endif %}
+</svg>
