@@ -310,6 +310,7 @@ REST_FRAMEWORK = {
         'verification_resend': '3/15min',
         'creator_insights': '120/hour',
         'media-upload': '30/hour',
+        'appeals': '10/day',
     },
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.URLPathVersioning',

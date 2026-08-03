@@ -6,8 +6,12 @@ Provides serializers for all 8 models:
 - JokeSerializer: Nested detail view with all related models
 - JokeListSerializer: Compact list view with slugs only
 """
+from datetime import timedelta
+
 from django.db import transaction
+from django.utils import timezone
 from rest_framework import serializers
+from rest_framework.exceptions import NotFound
 
 from jokes.submission_rules import FORMAT_RULES, validate_per_format
 
@@ -29,6 +33,7 @@ from .models import (
     Favorite,
     JokeSubmission,
     ContentReport,
+    Appeal,
     Vibe,
     UserVibe,
     MysteryBoxRoll,
@@ -41,6 +46,10 @@ from .models import (
     MediaAsset,
     JokeSubmissionMedia,
 )
+
+# 14-day appeal window (spec value, verbatim). Shared by the create
+# serializer's window checks for both takedown and rejection appeals.
+APPEAL_WINDOW = timedelta(days=14)
 
 
 # =============================================================================
@@ -951,6 +960,135 @@ class ContentReportSerializer(serializers.ModelSerializer):
     class Meta:
         model = ContentReport
         fields = ['joke', 'reason', 'description']
+
+
+# =============================================================================
+# Appeals (Appeals & Notices wave) — spec §API
+# =============================================================================
+
+class AppealSerializer(serializers.ModelSerializer):
+    """Read serializer for an appeal (GET /users/me/appeals/ and the create
+    response). Exposes a lightweight target descriptor rather than nesting
+    the full Joke/JokeSubmission (the caller already knows which one they
+    filed against)."""
+
+    target_type = serializers.SerializerMethodField()
+    target_id = serializers.SerializerMethodField()
+    target_preview = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Appeal
+        fields = [
+            'id', 'action_type', 'status', 'reason_text',
+            'target_type', 'target_id', 'target_preview',
+            'created_at', 'resolved_at', 'resolution_note',
+        ]
+        read_only_fields = fields
+
+    def get_target_type(self, obj) -> str:
+        return 'joke' if obj.joke_id else 'submission'
+
+    def get_target_id(self, obj) -> int:
+        return obj.joke_id or obj.submission_id
+
+    def get_target_preview(self, obj) -> str:
+        if obj.joke_id:
+            text = obj.joke.text if obj.joke else ''
+        else:
+            text = obj.submission.text if obj.submission else ''
+        text = text or ''
+        return text[:60]
+
+
+class AppealCreateSerializer(serializers.ModelSerializer):
+    """Write serializer for POST /appeals/. Accepts
+    `{joke_id | submission_id, reason_text}`.
+
+    Validates, in order: exactly one target given; the target exists AND
+    belongs to the caller (both failures return 404 — indistinguishable, so
+    a probe can't learn whether a joke/submission id exists or is someone
+    else's); the target is in the appealable state (joke removed /
+    submission rejected); the 14-day appeal window hasn't lapsed; no
+    existing OPEN (pending) appeal for this target. The last three are 400s
+    with a clear message — the caller already knows it's their own target,
+    so there's no existence leak to guard against there.
+    """
+
+    joke_id = serializers.IntegerField(required=False, write_only=True)
+    submission_id = serializers.IntegerField(required=False, write_only=True)
+
+    class Meta:
+        model = Appeal
+        fields = ['joke_id', 'submission_id', 'reason_text']
+
+    def validate(self, data):
+        joke_id = data.get('joke_id')
+        submission_id = data.get('submission_id')
+        if bool(joke_id) == bool(submission_id):
+            raise serializers.ValidationError(
+                'Provide exactly one of joke_id or submission_id.'
+            )
+
+        user = self.context['request'].user
+        now = timezone.now()
+
+        if joke_id is not None:
+            # all_objects: the target is a REMOVED joke, hidden from the
+            # default (JokeManager) queryset.
+            try:
+                joke = Joke.all_objects.get(pk=joke_id)
+            except Joke.DoesNotExist:
+                raise NotFound('Joke not found.')
+            if joke.creator_id != user.id:
+                raise NotFound('Joke not found.')
+            if not joke.is_removed:
+                raise serializers.ValidationError(
+                    'This joke has not been removed — nothing to appeal.'
+                )
+            if now > joke.removed_at + APPEAL_WINDOW:
+                raise serializers.ValidationError(
+                    'The 14-day appeal window for this takedown has passed.'
+                )
+            if Appeal.objects.filter(user=user, joke=joke, status='pending').exists():
+                raise serializers.ValidationError(
+                    'An appeal is already pending for this joke.'
+                )
+            self._target = {'joke': joke, 'submission': None, 'action_type': 'takedown'}
+        else:
+            try:
+                submission = JokeSubmission.objects.get(pk=submission_id)
+            except JokeSubmission.DoesNotExist:
+                raise NotFound('Submission not found.')
+            if submission.user_id != user.id:
+                raise NotFound('Submission not found.')
+            if submission.status != 'rejected':
+                raise serializers.ValidationError(
+                    'This submission has not been rejected — nothing to appeal.'
+                )
+            if now > submission.updated_at + APPEAL_WINDOW:
+                raise serializers.ValidationError(
+                    'The 14-day appeal window for this rejection has passed.'
+                )
+            if Appeal.objects.filter(
+                user=user, submission=submission, status='pending'
+            ).exists():
+                raise serializers.ValidationError(
+                    'An appeal is already pending for this submission.'
+                )
+            self._target = {
+                'joke': None, 'submission': submission, 'action_type': 'rejection',
+            }
+        return data
+
+    def create(self, validated_data):
+        target = self._target
+        return Appeal.objects.create(
+            user=self.context['request'].user,
+            joke=target['joke'],
+            submission=target['submission'],
+            action_type=target['action_type'],
+            reason_text=validated_data['reason_text'],
+        )
 
 
 # =============================================================================

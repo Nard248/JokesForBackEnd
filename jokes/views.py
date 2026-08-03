@@ -64,6 +64,7 @@ from .models import (
     Favorite,
     JokeSubmission,
     ContentReport,
+    Appeal,
     UserBlock,
     Achievement,
     UserAchievement,
@@ -117,6 +118,8 @@ from .serializers import (
     JokeSubmissionListSerializer,
     JokeSubmissionCreateSerializer,
     ContentReportSerializer,
+    AppealSerializer,
+    AppealCreateSerializer,
     VibeSerializer,
     UserVibeSerializer,
     UserVibesUpdateSerializer,
@@ -2212,6 +2215,53 @@ class ContentReportView(generics.CreateAPIView):
             target_type='joke',
             target_id=str(instance.joke_id) if hasattr(instance, 'joke_id') else '',
             metadata={'reason': getattr(instance, 'reason', '')},
+        )
+
+
+class AppealCreateView(generics.CreateAPIView):
+    """POST /appeals/ — file an appeal against a takedown (removed own joke)
+    or a rejected own submission. See AppealCreateSerializer for the full
+    validation matrix (ownership/existence -> 404, window/state/duplicate ->
+    400)."""
+
+    permission_classes = [IsAuthenticated]
+    serializer_class = AppealCreateSerializer
+    throttle_classes = [ScopedRateThrottle]
+    throttle_scope = 'appeals'
+
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        appeal = serializer.save()
+
+        from audit.services import record_audit
+        record_audit(
+            request, 'appeal_filed', outcome='success', actor=request.user,
+            target_type=appeal.action_type,
+            target_id=str(appeal.joke_id or appeal.submission_id),
+        )
+
+        # Piggyback the lazy quarantine-expiry sweep on appeal-endpoint hits
+        # (spec: "the appeal-create endpoint" is one of the sweep triggers).
+        from .quarantine import purge_lapsed_quarantine
+        purge_lapsed_quarantine()
+
+        read_serializer = AppealSerializer(appeal, context=self.get_serializer_context())
+        headers = self.get_success_headers(read_serializer.data)
+        return Response(
+            read_serializer.data, status=status.HTTP_201_CREATED, headers=headers,
+        )
+
+
+class MyAppealsView(generics.ListAPIView):
+    """GET /users/me/appeals/ — the caller's own appeals with status."""
+
+    permission_classes = [IsAuthenticated]
+    serializer_class = AppealSerializer
+
+    def get_queryset(self):
+        return Appeal.objects.filter(user=self.request.user).select_related(
+            'joke', 'submission',
         )
 
 

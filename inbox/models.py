@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.core.serializers.json import DjangoJSONEncoder
 from django.db import models
 
 
@@ -11,6 +12,7 @@ class Notification(models.Model):
         ('joke_published', 'Your joke was published'),
         ('joke_removed', 'Your joke was removed'),
         ('joke_rejected', 'Your submission was rejected'),
+        ('appeal_resolved', 'Your appeal was resolved'),
     ]
 
     recipient = models.ForeignKey(
@@ -28,8 +30,11 @@ class Notification(models.Model):
         'jokes.Joke', on_delete=models.SET_NULL, null=True, blank=True, related_name='+',
     )
     # Verb-specific payload the inbox renders (e.g. moderation reason, appeal
-    # deadline). Empty dict for verbs that carry no extra context.
-    data = models.JSONField(default=dict, blank=True)
+    # deadline). Empty dict for verbs that carry no extra context. Uses
+    # DjangoJSONEncoder so datetimes/dates/UUIDs/Decimals in `notify(**extra)`
+    # payloads (e.g. Task 3's appeal-outcome notices) serialize cleanly
+    # instead of crashing create() with a raw, non-JSON-serializable value.
+    data = models.JSONField(default=dict, blank=True, encoder=DjangoJSONEncoder)
     read = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
