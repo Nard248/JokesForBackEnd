@@ -1,17 +1,31 @@
 """Appeals-wave Task 1 tests: Appeal model constraints, rejection-transition
-notice, and reasoned takedown notice payload."""
+notice, and reasoned takedown notice payload.
+
+Task 2 tests (below): MediaAsset.quarantine()/release(), the reworked
+take_down_joke (links kept, quarantine instead of delete), the lazy
+expiry sweep, and the account-delete-still-purges-quarantined-files
+invariant."""
+import shutil
+import tempfile
 from datetime import timedelta
 from unittest.mock import patch
 
 from django.contrib.admin.sites import AdminSite
+from django.core.files.base import ContentFile
+from django.core.files.storage import default_storage
 from django.db import IntegrityError, transaction
-from django.test import RequestFactory, TestCase
+from django.test import RequestFactory, TestCase, override_settings
 from django.contrib.messages.storage.fallback import FallbackStorage
+from freezegun import freeze_time
+from rest_framework.test import APIClient
 
 from inbox.models import Notification
 from jokes.admin import ContentReportAdmin
-from jokes.models import Appeal, ContentReport, Joke, JokeSubmission
-from jokes.tests_media import make_user, _taxonomy
+from jokes.models import Appeal, ContentReport, Joke, JokeMedia, JokeSubmission, MediaAsset
+from jokes.quarantine import purge_lapsed_quarantine
+from jokes.tests_media import make_asset, make_user, _taxonomy
+
+_MEDIA_ROOT = tempfile.mkdtemp()
 
 
 def _admin_request(user):
@@ -214,3 +228,222 @@ class TakedownNoticeTests(TestCase):
         )
         self.assertEqual(notice_a.data['reason'], 'spam')
         self.assertEqual(notice_b.data['reason'], 'copyright')
+
+
+# =============================================================================
+# Task 2: MediaAsset.quarantine()/release()
+# =============================================================================
+
+def _asset_with_poster(owner):
+    asset = make_asset(owner, kind='video')
+    asset.poster.save('poster.jpg', ContentFile(b'fake-jpg-bytes'), save=False)
+    asset.save(update_fields=['poster'])
+    return asset
+
+
+@override_settings(MEDIA_ROOT=_MEDIA_ROOT)
+class QuarantineMethodTests(TestCase):
+    @classmethod
+    def tearDownClass(cls):
+        super().tearDownClass()
+        shutil.rmtree(_MEDIA_ROOT, ignore_errors=True)
+
+    def setUp(self):
+        self.user = make_user('quarantine-owner@example.com')
+
+    def test_quarantine_moves_file_updates_name_and_stamps(self):
+        asset = make_asset(self.user)
+        old_name = asset.file.name
+        asset.quarantine()
+        self.assertFalse(default_storage.exists(old_name))
+        self.assertTrue(asset.file.name.startswith(f'quarantine/{asset.pk}/'))
+        self.assertTrue(default_storage.exists(asset.file.name))
+        self.assertIsNotNone(asset.quarantined_at)
+        # Persisted, not just in-memory.
+        asset.refresh_from_db()
+        self.assertTrue(asset.file.name.startswith(f'quarantine/{asset.pk}/'))
+        self.assertIsNotNone(asset.quarantined_at)
+
+    def test_quarantine_moves_poster_too(self):
+        asset = _asset_with_poster(self.user)
+        old_poster_name = asset.poster.name
+        asset.quarantine()
+        self.assertFalse(default_storage.exists(old_poster_name))
+        self.assertTrue(asset.poster.name.startswith(f'quarantine/{asset.pk}/'))
+        self.assertTrue(default_storage.exists(asset.poster.name))
+        asset.refresh_from_db()
+        self.assertTrue(asset.poster.name.startswith(f'quarantine/{asset.pk}/'))
+
+    def test_quarantine_is_idempotent(self):
+        asset = make_asset(self.user)
+        asset.quarantine()
+        name_after_first = asset.file.name
+        stamp_after_first = asset.quarantined_at
+        asset.quarantine()  # second call must be a no-op
+        self.assertEqual(asset.file.name, name_after_first)
+        self.assertEqual(asset.quarantined_at, stamp_after_first)
+        self.assertTrue(default_storage.exists(asset.file.name))
+
+    def test_release_restores_original_style_path_and_clears_stamp(self):
+        asset = make_asset(self.user)
+        asset.quarantine()
+        quarantine_name = asset.file.name
+        asset.release()
+        self.assertFalse(default_storage.exists(quarantine_name))
+        self.assertTrue(asset.file.name.startswith(f'media-assets/{asset.pk}/'))
+        self.assertTrue(default_storage.exists(asset.file.name))
+        self.assertIsNone(asset.quarantined_at)
+        asset.refresh_from_db()
+        self.assertTrue(asset.file.name.startswith(f'media-assets/{asset.pk}/'))
+        self.assertIsNone(asset.quarantined_at)
+
+    def test_release_restores_poster_too(self):
+        asset = _asset_with_poster(self.user)
+        asset.quarantine()
+        asset.release()
+        self.assertTrue(asset.poster.name.startswith(f'media-assets/{asset.pk}/'))
+        self.assertTrue(default_storage.exists(asset.poster.name))
+
+
+# =============================================================================
+# Task 2: take_down_joke rework — links kept, quarantine instead of delete
+# =============================================================================
+
+@override_settings(MEDIA_ROOT=_MEDIA_ROOT)
+class TakedownQuarantineReworkTests(TestCase):
+    """REPLACES the wave-2 shared-asset takedown semantics (also updated
+    directly in jokes/tests_media.py): takedown no longer detaches links or
+    hard-deletes files. See jokes/tests_media.py::MediaPublishAndLifecycleTests
+    for the equivalent coverage exercised through the publish flow; these
+    tests exercise the same contract directly against JokeMedia."""
+
+    def setUp(self):
+        self.fmt, self.age, self.lang = _taxonomy()
+        self.creator = make_user('media-creator@example.com')
+        self.admin_user = make_user('media-mod@example.com')
+        self.admin_obj = ContentReportAdmin(ContentReport, AdminSite())
+
+    def test_unshared_asset_is_quarantined_and_link_kept(self):
+        joke = _make_joke(self.fmt, self.age, self.lang, creator=self.creator)
+        asset = make_asset(self.creator)
+        JokeMedia.objects.create(joke=joke, asset=asset, position=0)
+        old_name = asset.file.name
+        report = ContentReport.objects.create(
+            reporter=self.admin_user, joke=joke, reason='spam',
+        )
+        self.admin_obj.take_down_joke(
+            _admin_request(self.admin_user), ContentReport.objects.filter(pk=report.pk),
+        )
+        joke.refresh_from_db()
+        self.assertTrue(joke.is_removed)
+        # Link KEPT — needed to reverse on appeal.
+        self.assertTrue(JokeMedia.objects.filter(joke=joke, asset=asset).exists())
+        asset.refresh_from_db()
+        self.assertIsNotNone(asset.quarantined_at)
+        self.assertFalse(default_storage.exists(old_name))
+        self.assertTrue(asset.file.name.startswith(f'quarantine/{asset.pk}/'))
+        self.assertTrue(default_storage.exists(asset.file.name))
+        self.assertTrue(MediaAsset.objects.filter(pk=asset.pk).exists())
+
+    def test_asset_shared_with_live_joke_is_untouched(self):
+        joke_a = _make_joke(self.fmt, self.age, self.lang, creator=self.creator)
+        joke_b = _make_joke(self.fmt, self.age, self.lang, creator=self.creator)
+        shared = make_asset(self.creator)
+        JokeMedia.objects.create(joke=joke_a, asset=shared, position=0)
+        JokeMedia.objects.create(joke=joke_b, asset=shared, position=0)
+        shared_name = shared.file.name
+        report = ContentReport.objects.create(
+            reporter=self.admin_user, joke=joke_a, reason='spam',
+        )
+        self.admin_obj.take_down_joke(
+            _admin_request(self.admin_user), ContentReport.objects.filter(pk=report.pk),
+        )
+        shared.refresh_from_db()
+        self.assertIsNone(shared.quarantined_at)
+        self.assertEqual(shared.file.name, shared_name)
+        self.assertTrue(default_storage.exists(shared_name))
+        # Both links intact — joke_a's too (kept, not detached).
+        self.assertTrue(JokeMedia.objects.filter(joke=joke_a, asset=shared).exists())
+        self.assertTrue(JokeMedia.objects.filter(joke=joke_b, asset=shared).exists())
+
+
+# =============================================================================
+# Task 2: lazy expiry sweep
+# =============================================================================
+
+@override_settings(MEDIA_ROOT=_MEDIA_ROOT)
+class QuarantineExpiryTests(TestCase):
+    def setUp(self):
+        self.fmt, self.age, self.lang = _taxonomy()
+        self.creator = make_user('expiry-owner@example.com')
+        self.joke = _make_joke(
+            self.fmt, self.age, self.lang, creator=self.creator, is_removed=True,
+        )
+
+    def _quarantined_asset(self, when):
+        asset = make_asset(self.creator)
+        JokeMedia.objects.create(joke=self.joke, asset=asset, position=0)
+        with freeze_time(when):
+            asset.quarantine()
+        return asset
+
+    def test_lapsed_15d_no_open_appeal_is_purged(self):
+        asset = self._quarantined_asset('2026-07-01 12:00:00')
+        name = asset.file.name
+        with freeze_time('2026-07-16 12:00:01'):  # 15 days + 1s later
+            purge_lapsed_quarantine()
+        self.assertFalse(MediaAsset.objects.filter(pk=asset.pk).exists())
+        self.assertFalse(default_storage.exists(name))
+
+    def test_lapsed_15d_with_open_appeal_is_kept(self):
+        asset = self._quarantined_asset('2026-07-01 12:00:00')
+        Appeal.objects.create(
+            user=self.creator, joke=self.joke, action_type='takedown',
+            reason_text='please review',
+        )
+        with freeze_time('2026-07-16 12:00:01'):
+            purge_lapsed_quarantine()
+        self.assertTrue(MediaAsset.objects.filter(pk=asset.pk).exists())
+        asset.refresh_from_db()
+        self.assertIsNotNone(asset.quarantined_at)
+
+    def test_not_yet_lapsed_13d_is_kept(self):
+        asset = self._quarantined_asset('2026-07-01 12:00:00')
+        with freeze_time('2026-07-14 12:00:00'):  # 13 days later
+            purge_lapsed_quarantine()
+        self.assertTrue(MediaAsset.objects.filter(pk=asset.pk).exists())
+
+    def test_resolved_appeal_no_longer_blocks_purge(self):
+        # An upheld/reversed appeal is no longer OPEN — it must not shield
+        # a lapsed quarantine from the sweep forever.
+        asset = self._quarantined_asset('2026-07-01 12:00:00')
+        appeal = Appeal.objects.create(
+            user=self.creator, joke=self.joke, action_type='takedown',
+            reason_text='please review', status='upheld',
+        )
+        with freeze_time('2026-07-16 12:00:01'):
+            purge_lapsed_quarantine()
+        self.assertFalse(MediaAsset.objects.filter(pk=asset.pk).exists())
+
+
+# =============================================================================
+# Task 2: account deletion still purges quarantined files (erasure wins)
+# =============================================================================
+
+@override_settings(MEDIA_ROOT=_MEDIA_ROOT)
+class AccountDeleteQuarantineTests(TestCase):
+    def test_account_delete_removes_quarantined_files(self):
+        user = make_user('delete-quarantined@example.com')
+        asset = make_asset(user)
+        asset.quarantine()
+        name = asset.file.name
+        self.assertTrue(default_storage.exists(name))
+
+        client = APIClient()
+        client.force_authenticate(user)
+        response = client.delete(
+            '/api/v1/users/me/', {'password': 'x'}, format='json',
+        )
+        self.assertIn(response.status_code, (200, 204))
+        self.assertFalse(MediaAsset.objects.filter(pk=asset.pk).exists())
+        self.assertFalse(default_storage.exists(name))
