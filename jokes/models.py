@@ -6,6 +6,7 @@ from django.core.files.storage import default_storage
 from django.db import models
 from django.utils import timezone
 import pgtrigger
+import secrets
 import uuid
 
 from .managers import JokeManager
@@ -1412,14 +1413,26 @@ class MediaAsset(models.Model):
             default_storage.delete(old_name)
 
     def quarantine(self):
-        """Move every stored file to quarantine/<uuid>/<basename> (unguessable
-        path, out of every serving surface) and stamp quarantined_at.
-        Idempotent: a no-op if already quarantined."""
+        """Move every stored file to quarantine/<uuid>/<random>/<basename> and
+        stamp quarantined_at. Idempotent: a no-op if already quarantined.
+
+        The random path segment is load-bearing for the compliance invariant:
+        the asset pk is the SAME uuid that was in the pre-takedown PUBLIC url
+        (media-assets/<uuid>/...), and the basename is a deterministic
+        derivative name — so without an unguessable segment the quarantine
+        path would be derivable by prefix substitution, letting anyone who
+        saw the live joke (the taken-down creator above all) fetch the file
+        from the public bucket for the 14-day retention. The token lives in
+        the FieldFile name persisted to the DB; release() reconstructs the
+        original media-assets/<uuid>/<basename> path from the basename alone,
+        so the segment is correctly dropped on a legitimate reversal."""
         if self.quarantined_at:
             return
         self.quarantined_at = timezone.now()
+        token = secrets.token_urlsafe(16)
         self._move_stored_files(
-            lambda basename: f'quarantine/{self.pk}/{basename}', ['quarantined_at'],
+            lambda basename: f'quarantine/{self.pk}/{token}/{basename}',
+            ['quarantined_at'],
         )
 
     def release(self):

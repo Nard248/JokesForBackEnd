@@ -36,9 +36,17 @@ rejection → submission `updated_at` at rejection).
 
 Takedown no longer hard-deletes media. Instead:
 - `MediaAsset.quarantined_at` (null datetime). `quarantine()` moves each
-  stored file to `quarantine/<asset-uuid>/<name>` (copy-then-delete through
-  the default storage — no signing needed; unguessable path, out of every
-  serving surface), stamps `quarantined_at`. `release()` moves back and
+  stored file to `quarantine/<asset-uuid>/<random>/<name>` (copy-then-delete
+  through the default storage — no signing needed), stamps `quarantined_at`.
+  **Amended 2026-07-24 (final review R1):** the path MUST include an
+  unguessable random segment (`secrets.token_urlsafe(16)`) — the asset uuid
+  is the SAME one that was in the pre-takedown PUBLIC url
+  (`media-assets/<uuid>/...`) and the basename is deterministic, so
+  `quarantine/<uuid>/<name>` alone would be derivable by prefix
+  substitution, letting the taken-down creator (or anyone who saw the live
+  joke) fetch the file from the public bucket during the 14-day retention.
+  The token lives in the persisted FieldFile name; `release()` reconstructs
+  the original path from the basename, dropping it. `release()` moves back and
   clears the stamp. `purge()` = existing `delete_with_files()`.
 - `take_down_joke` reworked: JokeMedia links are KEPT (restore needs them);
   assets not shared with a live joke are `quarantine()`d (shared assets
