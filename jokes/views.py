@@ -968,6 +968,7 @@ class CollectionViewSet(viewsets.ModelViewSet):
         saved_jokes = SavedJoke.objects.filter(
             collection=collection,
             joke__content_tier__in=allowed_tiers(request),
+            joke__is_removed=False,  # taken-down jokes vanish (FK bypasses JokeManager)
         ).select_related('joke', 'collection')
 
         # Paywall flows into the nested JokeSerializer via the root context.
@@ -1180,10 +1181,14 @@ class DailyJokeViewSet(viewsets.GenericViewSet):
                 'date': today_date.isoformat(),
             })
 
-        # Authenticated users get personalized daily joke
+        # Authenticated users get personalized daily joke. Gate the stored
+        # joke on is_removed: if today's DailyJoke points at a since-removed
+        # joke, treat it as absent and regenerate — a taken-down joke must
+        # never serve as the daily.
         daily = DailyJoke.objects.filter(
             user=request.user,
-            date=today_date
+            date=today_date,
+            joke__is_removed=False,
         ).select_related(
             'joke',
             'joke__format',
@@ -1204,10 +1209,13 @@ class DailyJokeViewSet(viewsets.GenericViewSet):
             )
 
             if joke:
-                daily = DailyJoke.objects.create(
+                # update_or_create, not create: a stale row for (user, today)
+                # may already exist (removed-joke case above) — the (user,
+                # date) unique constraint would otherwise raise.
+                daily, _ = DailyJoke.objects.update_or_create(
                     user=request.user,
-                    joke=joke,
-                    date=today_date
+                    date=today_date,
+                    defaults={'joke': joke, 'delivered_at': None},
                 )
             else:
                 return Response(
@@ -1283,7 +1291,9 @@ class DailyJokeViewSet(viewsets.GenericViewSet):
         """
         from datetime import timedelta
 
-        queryset = self.get_queryset().select_related(
+        queryset = self.get_queryset().filter(
+            joke__is_removed=False,  # a taken-down joke drops out of history
+        ).select_related(
             'joke',
             'joke__format',
             'joke__age_rating',
@@ -2454,6 +2464,9 @@ class DataExportView(APIView):
             'collections': list(
                 Collection.objects.filter(user=u).values('id', 'name', 'description', 'is_public', 'created_at')
             ),
+            # Exclude removed jokes: a joke the user saved/favorited that was
+            # later taken down must not leak its (another creator's) text back
+            # through this export.
             'saved_jokes': [
                 {
                     'joke_id': s.joke_id,
@@ -2462,7 +2475,8 @@ class DataExportView(APIView):
                     'note': s.note,
                     'created_at': s.created_at,
                 }
-                for s in SavedJoke.objects.filter(user=u).select_related('joke', 'collection')
+                for s in SavedJoke.objects.filter(user=u, joke__is_removed=False)
+                .select_related('joke', 'collection')
             ],
             'favorites': [
                 {
@@ -2470,7 +2484,8 @@ class DataExportView(APIView):
                     'joke_text': f.joke.text,
                     'created_at': f.created_at,
                 }
-                for f in Favorite.objects.filter(user=u).select_related('joke')
+                for f in Favorite.objects.filter(user=u, joke__is_removed=False)
+                .select_related('joke')
             ],
             'ratings': list(
                 JokeRating.objects.filter(user=u).values('joke_id', 'rating', 'created_at')
@@ -2499,11 +2514,19 @@ class DataExportView(APIView):
                     'id', 'text', 'setup', 'punchline', 'status', 'created_at'
                 )
             ),
+            # Quarantined assets (of a taken-down joke) must NOT expose a
+            # resolvable URL even to their owner — the quarantine path's
+            # unguessability is the whole takedown model. Emit a status
+            # marker and no URL for those; live assets keep their URL.
             'media_assets': [
                 {
                     'id': str(asset.pk),
                     'kind': asset.kind,
-                    'url': request.build_absolute_uri(asset.file.url) if asset.file else None,
+                    'url': (
+                        None if asset.quarantined_at
+                        else (request.build_absolute_uri(asset.file.url) if asset.file else None)
+                    ),
+                    'status': 'quarantined' if asset.quarantined_at else 'active',
                     'created_at': asset.created_at.isoformat(),
                 }
                 for asset in MediaAsset.objects.filter(owner=u)
@@ -2771,6 +2794,7 @@ class RecentlyViewedView(APIView):
             JokeView.objects.filter(
                 user=request.user,
                 joke__content_tier__in=allowed_tiers(request),
+                joke__is_removed=False,  # taken-down jokes vanish (FK bypasses JokeManager)
             )
             .select_related('joke', 'joke__format', 'joke__age_rating', 'joke__language')
             .prefetch_related('joke__tones', 'joke__context_tags', 'joke__media__asset')
