@@ -185,8 +185,11 @@ class Joke(models.Model):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self._original_text = self.text if self.pk else None
+        self._original_is_removed = self.is_removed if self.pk else False
 
     def save(self, *args, **kwargs):
+        was_existing = bool(self.pk)
+
         # Check if we need to regenerate share image
         regenerate = False
         if self.pk:
@@ -201,6 +204,32 @@ class Joke(models.Model):
         if not regenerate and not self.share_image:
             regenerate = True
 
+        # CRITICAL: a removed joke must NEVER (re)generate a share card.
+        # Its card was deliberately blanked at takedown time (or on a
+        # direct is_removed transition, see below) -- without this guard, a
+        # moderator opening the removed joke in the JokeAdmin change form
+        # and hitting Save trips the "not self.share_image" branch above,
+        # reads the still-readable (merely quarantined -- quarantine only
+        # moves the file within the bucket) media asset, and writes a fresh
+        # PNG straight back to the PUBLIC share-cards/joke-<pk>.png path
+        # (GCS file_overwrite=True reclaims the exact cached URL) --
+        # re-leaking the removed joke's poster. The persistence update()
+        # below also uses the FILTERED default manager, so for a removed
+        # joke it would silently match 0 rows -- the DB field stays blank
+        # while the file exists on disk/bucket, and nothing warns.
+        if self.is_removed:
+            regenerate = False
+
+        # IMPORTANT: a live->removed transition made directly via save()
+        # (e.g. the JokeAdmin change form, which bypasses
+        # ContentReportAdmin.take_down_joke entirely) must blank the card
+        # here too, or that path leaves it serving. Only existing jokes can
+        # transition -- a brand-new joke created pre-removed has no card
+        # yet (regenerate is already forced False above).
+        if was_existing and not self._original_is_removed and self.is_removed:
+            if self.share_image:
+                self.share_image.delete(save=False)
+
         # Save first to ensure pk exists
         super().save(*args, **kwargs)
 
@@ -211,6 +240,7 @@ class Joke(models.Model):
             Joke.objects.filter(pk=self.pk).update(share_image=self.share_image.name)
 
         self._original_text = self.text
+        self._original_is_removed = self.is_removed
 
     def _generate_share_image(self):
         """Generate themed share card PNG."""
@@ -232,7 +262,13 @@ class Joke(models.Model):
         appeal reversal/restore. Mirrors save()'s persistence exactly: the
         new file name is written via a queryset .update() rather than a
         recursive save().
+
+        CRITICAL: a removed joke must NEVER (re)generate a card (see the
+        matching guard in save()) -- a no-op here rather than an implicit
+        assumption every caller remembers to check first.
         """
+        if self.is_removed:
+            return
         self._generate_share_image()
         Joke.objects.filter(pk=self.pk).update(share_image=self.share_image.name)
 

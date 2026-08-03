@@ -23,12 +23,15 @@ from django.core.files.storage import default_storage
 from django.db.models.fields.files import FieldFile
 from django.test import RequestFactory, TestCase, override_settings
 from PIL import Image
+from rest_framework.test import APIRequestFactory
 
+from inbox.models import Notification
 from jokes.admin import AppealAdmin, ContentReportAdmin, JokeAdmin, JokeSubmissionAdmin
 from jokes.models import (
     Appeal, ContentReport, Format, Joke, JokeMedia, JokeSubmission,
     JokeSubmissionMedia, MediaAsset, Tone,
 )
+from jokes.serializers import JokeListSerializer, JokeSerializer
 from jokes.share_cards import (
     _downscale_raster, generate_share_card_png, get_badge_text, media_share_card_png,
 )
@@ -381,6 +384,127 @@ class TakedownShareImageLeakTests(TestCase):
 
 
 @override_settings(MEDIA_ROOT=_MEDIA_ROOT)
+class RemovedJokeSaveGuardTests(TestCase):
+    """CRITICAL: a removed joke's blanked share card must never come back
+    via Joke.save(). Pre-fix, save()'s `if not regenerate and not
+    self.share_image: regenerate = True` branch fires for ANY removed joke
+    (its card was blanked at takedown) -- a moderator opening the removed
+    joke in the JokeAdmin change form (get_queryset=all_objects, editable
+    fieldsets) and hitting Save runs _generate_share_image(), which reads
+    the QUARANTINED asset (storage reads still work -- quarantine only
+    moves the file within the bucket) and writes share-cards/joke-<pk>.png
+    straight back to PUBLIC storage (GCS file_overwrite=True reclaims the
+    exact cached URL). The follow-up Joke.objects.filter(pk=).update() then
+    matches 0 rows (default manager hides removed jokes), so the DB field
+    stays blank and NOTHING warns -- an invisible file-level leak.
+
+    IMPORTANT: the takedown-by-change-form path -- flipping is_removed via
+    a direct save() rather than ContentReportAdmin.take_down_joke -- must
+    ALSO blank the card, or that path leaves it serving."""
+
+    @classmethod
+    def tearDownClass(cls):
+        super().tearDownClass()
+        shutil.rmtree(_MEDIA_ROOT, ignore_errors=True)
+
+    def setUp(self):
+        self.user = make_user('save-guard@example.com')
+        self.mod = make_user('save-guard-mod@example.com')
+        self.fmt, self.age, self.lang = _taxonomy()
+
+    def _publish_media_joke(self, caption='a save-guard photo'):
+        sub = JokeSubmission.objects.create(
+            user=self.user, format=self.fmt, age_rating=self.age, language=self.lang,
+            setup=caption, text=caption, status='pending',
+        )
+        JokeSubmissionMedia.objects.create(
+            submission=sub, asset=make_image_asset(self.user), position=0,
+        )
+        JokeSubmissionAdmin(JokeSubmission, AdminSite()).approve_and_publish(
+            _admin_request(self.mod), JokeSubmission.objects.filter(pk=sub.pk),
+        )
+        sub.refresh_from_db()
+        return sub.published_joke
+
+    def _take_down(self, joke):
+        report = ContentReport.objects.create(reporter=self.mod, joke=joke, reason='spam')
+        ContentReportAdmin(ContentReport, AdminSite()).take_down_joke(
+            _admin_request(self.mod), ContentReport.objects.filter(pk=report.pk),
+        )
+
+    def _share_card_files(self):
+        try:
+            _, files = default_storage.listdir('share-cards')
+        except FileNotFoundError:
+            return set()
+        return set(files)
+
+    def test_removed_joke_save_does_not_regenerate_card(self):
+        """The headline regression, at the storage level: take_down_joke
+        blanks the card; a change-form Save on the still-removed joke must
+        not (re)create a share-card file anywhere."""
+        joke = self._publish_media_joke()
+        self._take_down(joke)
+        removed = Joke.all_objects.get(pk=joke.pk)
+        self.assertTrue(removed.is_removed)
+        self.assertFalse(removed.share_image)
+        before_files = self._share_card_files()
+
+        removed.save()  # simulates the JokeAdmin change-form Save button
+
+        after_files = self._share_card_files()
+        self.assertEqual(
+            after_files, before_files,
+            'save() (re)created a share-card file for a removed joke',
+        )
+        removed.refresh_from_db()
+        self.assertFalse(removed.share_image)
+
+    def test_removed_joke_save_does_not_call_generate(self):
+        """Precise unit-level pin on the guard itself, independent of
+        storage-backend quirks (local FileSystemStorage's non-overwriting
+        get_available_name could otherwise mask the regression above under
+        some file-naming coincidences)."""
+        joke = self._publish_media_joke()
+        self._take_down(joke)
+        removed = Joke.all_objects.get(pk=joke.pk)
+
+        with mock.patch('jokes.models.Joke._generate_share_image') as mock_generate:
+            removed.save()
+        mock_generate.assert_not_called()
+
+    def test_live_joke_save_still_regenerates_on_text_change(self):
+        """Regression: the is_removed guard must not neuter regeneration
+        for ordinary live jokes."""
+        joke = make_joke(self.user, 'oneliner', text='still alive and well')
+        old_name = joke.share_image.name
+        self.assertTrue(old_name)
+
+        joke.text = 'still alive and well, edited'
+        joke.save()
+
+        joke.refresh_from_db()
+        self.assertTrue(joke.share_image)
+
+    def test_direct_is_removed_transition_blanks_and_deletes_card(self):
+        """The takedown-by-change-form path: flipping is_removed True via a
+        direct save() (not going through
+        ContentReportAdmin.take_down_joke) must ALSO blank the card."""
+        joke = self._publish_media_joke()
+        old_name = joke.share_image.name
+        self.assertTrue(old_name)
+        self.assertTrue(default_storage.exists(old_name))
+
+        joke.is_removed = True
+        joke.save()
+
+        self.assertFalse(default_storage.exists(old_name))
+        joke.refresh_from_db()
+        self.assertFalse(joke.share_image)
+        self.assertTrue(joke.is_removed)
+
+
+@override_settings(MEDIA_ROOT=_MEDIA_ROOT)
 class ReversalRegenerationTests(TestCase):
     """On appeal reversal (and on the JokeAdmin restore_jokes action), the
     share card must come back -- a media card if media is present."""
@@ -458,6 +582,102 @@ class ReversalRegenerationTests(TestCase):
         restored = Joke.objects.get(pk=joke.pk)
         self.assertFalse(restored.is_removed)
         self._assert_media_card_restored(restored)
+
+    def test_reverse_appeals_regen_failure_still_resolves_appeal_and_warns(self):
+        """IMPORTANT: reverse_appeals' card regen must be isolated -- the
+        joke is ALREADY live again by the time regen runs, so a regen blip
+        must not abort status=reversed/notify/audit for the rest of this
+        appeal's resolution (asymmetric otherwise with restore_jokes, which
+        already isolates its own regen loop)."""
+        joke = self._publish_media_joke()
+        self._take_down(joke)
+        removed = Joke.all_objects.get(pk=joke.pk)
+
+        appeal = Appeal.objects.create(
+            user=self.user, joke=removed, action_type='takedown',
+            reason_text='please review',
+        )
+        req = _admin_request(self.mod)
+        with mock.patch.object(
+            Joke, 'regenerate_share_image', side_effect=RuntimeError('cairo blew up'),
+        ):
+            AppealAdmin(Appeal, AdminSite()).reverse_appeals(
+                req, Appeal.objects.filter(pk=appeal.pk),
+            )
+
+        appeal.refresh_from_db()
+        self.assertEqual(appeal.status, 'reversed')
+        restored = Joke.objects.get(pk=joke.pk)
+        self.assertFalse(restored.is_removed)
+
+        notice = Notification.objects.get(recipient=self.user, verb='appeal_resolved')
+        self.assertEqual(notice.data['outcome'], 'reversed')
+
+        msgs = [str(m) for m in req._messages]
+        self.assertTrue(
+            any(
+                'share-card regeneration' in m.lower() and str(joke.pk) in m
+                for m in msgs
+            ),
+            f'expected a warning naming joke {joke.pk}, got: {msgs}',
+        )
+
+    def test_restore_jokes_regen_failure_does_not_abort_restore_and_warns(self):
+        """Symmetric forced-failure coverage for restore_jokes' regen
+        loop (already isolated per-item; this pins it with an actual
+        induced failure rather than only the happy path)."""
+        joke = self._publish_media_joke()
+        self._take_down(joke)
+
+        req = _admin_request(self.mod)
+        with mock.patch.object(
+            Joke, 'regenerate_share_image', side_effect=RuntimeError('cairo blew up'),
+        ):
+            JokeAdmin(Joke, AdminSite()).restore_jokes(
+                req, Joke.all_objects.filter(pk=joke.pk),
+            )
+
+        restored = Joke.objects.get(pk=joke.pk)
+        self.assertFalse(restored.is_removed)
+
+        msgs = [str(m) for m in req._messages]
+        self.assertTrue(
+            any(
+                'share-card regeneration failed' in m.lower() and str(joke.pk) in m
+                for m in msgs
+            ),
+            f'expected a warning naming joke {joke.pk}, got: {msgs}',
+        )
+
+
+@override_settings(MEDIA_ROOT=_MEDIA_ROOT)
+class RemovedJokeShareImageUrlGuardTests(TestCase):
+    """IMPORTANT #5: defense-in-depth in get_share_image_url. Simulates the
+    partial-takedown-failure state directly (is_removed=True with
+    share_image STILL populated -- exactly what a failed
+    share_image.delete() in take_down_joke leaves behind) to prove the
+    serializer guard does real work, not just trivially return None because
+    the field happens to already be blank."""
+
+    def setUp(self):
+        self.user = make_user('share-url-guard@example.com')
+        joke = make_joke(self.user, 'oneliner', text='removed but card field still set')
+        # Bypass save()'s own takedown-blanking guard on purpose (a
+        # queryset .update() has no model save side effects) so the field
+        # stays populated on a removed joke -- the partial-failure state.
+        Joke.all_objects.filter(pk=joke.pk).update(
+            is_removed=True, share_image='share-cards/joke-leaked.png',
+        )
+        self.joke = Joke.all_objects.get(pk=joke.pk)
+        self.request = APIRequestFactory().get('/api/v1/jokes/')
+
+    def test_detail_serializer_share_image_url_is_none_for_removed_joke(self):
+        data = JokeSerializer(self.joke, context={'request': self.request}).data
+        self.assertIsNone(data['share_image_url'])
+
+    def test_list_serializer_share_image_url_is_none_for_removed_joke(self):
+        data = JokeListSerializer(self.joke, context={'request': self.request}).data
+        self.assertIsNone(data['share_image_url'])
 
 
 @override_settings(MEDIA_ROOT=_MEDIA_ROOT)

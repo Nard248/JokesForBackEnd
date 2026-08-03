@@ -8,9 +8,11 @@
     <!-- Open Graph -->
     <meta property="og:title" content="{{ joke.text|truncatechars:60 }}" />
     <meta property="og:description" content="Find more jokes at JokesFor.com - the world's best joke search engine" />
+    {% if share_image_url %}
     <meta property="og:image" content="{{ share_image_url }}" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    {% endif %}
     <meta property="og:type" content="article" />
     <meta property="og:url" content="{{ canonical_url }}" />
     <meta property="og:site_name" content="JokesFor" />
@@ -19,7 +21,9 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="{{ joke.text|truncatechars:60 }}" />
     <meta name="twitter:description" content="Find more jokes at JokesFor.com" />
+    {% if share_image_url %}
     <meta name="twitter:image" content="{{ share_image_url }}" />
+    {% endif %}
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }

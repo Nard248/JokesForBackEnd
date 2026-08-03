@@ -578,6 +578,14 @@ class RemovedJokeSerializerMediaTests(TestCase):
         data = JokeListSerializer(self.joke, context={'request': self.request}).data
         self.assertEqual(data['media'], [])
 
+    def test_detail_serializer_share_image_url_is_none_for_removed_joke(self):
+        data = JokeSerializer(self.joke, context={'request': self.request}).data
+        self.assertIsNone(data['share_image_url'])
+
+    def test_list_serializer_share_image_url_is_none_for_removed_joke(self):
+        data = JokeListSerializer(self.joke, context={'request': self.request}).data
+        self.assertIsNone(data['share_image_url'])
+
 
 # =============================================================================
 # Task 2: lazy expiry sweep
