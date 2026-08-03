@@ -166,4 +166,7 @@ def notify_submission_rejected(sender, instance, created, **kwargs):
     old_status = getattr(instance, '_pre_save_status', None)
     if instance.status == 'rejected' and old_status != 'rejected':
         from inbox.services import notify
-        notify(instance.user, 'joke_rejected', rejection_reason=instance.rejection_reason)
+        notify(
+            instance.user, 'joke_rejected',
+            submission_id=instance.id, rejection_reason=instance.rejection_reason,
+        )

@@ -177,9 +177,11 @@ class RejectionNoticeTests(TestCase):
         sub.save()
         notices = self._rejected_notices()
         self.assertEqual(notices.count(), 1)
+        notice = notices.get()
         self.assertEqual(
-            notices.get().data.get('rejection_reason'), 'Duplicate of an existing joke',
+            notice.data.get('rejection_reason'), 'Duplicate of an existing joke',
         )
+        self.assertEqual(notice.data.get('submission_id'), sub.pk)
 
     def test_saving_again_while_rejected_does_not_duplicate(self):
         sub = _make_submission(self.user, self.fmt, self.age, self.lang, status='draft')
@@ -222,6 +224,10 @@ class TakedownNoticeTests(TestCase):
             _admin_request(self.admin_user), ContentReport.objects.filter(joke=joke),
         )
         notice = Notification.objects.get(recipient=self.creator, verb='joke_removed')
+        # The joke FK (not `data`) is how the FE deep-links the appeal for a
+        # removed joke: the notification serializer's `joke` field already
+        # exposes {'id': ..., 'preview': ...} off this FK, so no joke_id
+        # needs duplicating into `data`.
         self.assertEqual(notice.joke_id, joke.pk)
         self.assertEqual(notice.data['reason'], 'spam')
         removed_at = Joke.all_objects.get(pk=joke.pk).removed_at
