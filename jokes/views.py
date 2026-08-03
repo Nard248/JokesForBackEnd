@@ -1370,6 +1370,8 @@ def _finalize_media_upload(request, asset):
         raise
 
     _sweep_orphan_assets(request.user)
+    from .quarantine import purge_lapsed_quarantine
+    purge_lapsed_quarantine()
     record_audit(
         request, 'media_upload', outcome='success', actor=request.user,
         target_type='media_asset', target_id=str(asset.pk),

@@ -2,6 +2,7 @@ from django.conf import settings
 from django.contrib.postgres.indexes import GinIndex
 from django.contrib.postgres.search import SearchVectorField
 from django.core.files.base import ContentFile
+from django.core.files.storage import default_storage
 from django.db import models
 from django.utils import timezone
 import pgtrigger
@@ -1373,6 +1374,54 @@ class MediaAsset(models.Model):
     safesearch = models.JSONField(null=True, blank=True)
     phash = models.CharField(max_length=32, blank=True, db_index=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    quarantined_at = models.DateTimeField(null=True, blank=True)
+
+    def _move_stored_files(self, path_for):
+        """Copy-then-delete every populated FieldFile (file, poster) to the
+        path `path_for(basename)` computes, via default_storage — this works
+        on both FileSystemStorage and GCS (no direct google.cloud.storage
+        use, no signing needed). Updates the FieldFile's `.name` in place and
+        returns the list of field names actually moved."""
+        moved = []
+        for field_name in ('file', 'poster'):
+            field_file = getattr(self, field_name)
+            if not field_file:
+                continue
+            old_name = field_file.name
+            basename = old_name.rsplit('/', 1)[-1]
+            new_name = path_for(basename)
+            with default_storage.open(old_name, 'rb') as fh:
+                content = fh.read()
+            saved_name = default_storage.save(new_name, ContentFile(content))
+            default_storage.delete(old_name)
+            field_file.name = saved_name
+            moved.append(field_name)
+        return moved
+
+    def quarantine(self):
+        """Move every stored file to quarantine/<uuid>/<basename> (unguessable
+        path, out of every serving surface) and stamp quarantined_at.
+        Idempotent: a no-op if already quarantined."""
+        if self.quarantined_at:
+            return
+        moved = self._move_stored_files(lambda basename: f'quarantine/{self.pk}/{basename}')
+        self.quarantined_at = timezone.now()
+        self.save(update_fields=moved + ['quarantined_at'])
+
+    def release(self):
+        """Reverse of quarantine(): move files back to the original-style
+        media-assets/<uuid>/<basename> path and clear the stamp. Idempotent:
+        a no-op if not currently quarantined."""
+        if not self.quarantined_at:
+            return
+        moved = self._move_stored_files(lambda basename: f'media-assets/{self.pk}/{basename}')
+        self.quarantined_at = None
+        self.save(update_fields=moved + ['quarantined_at'])
+
+    def purge(self):
+        """Hard deletion. Thin alias — delete_with_files() stays the ONLY
+        storage-deletion path."""
+        self.delete_with_files()
 
     def delete_with_files(self):
         """Delete storage objects, then the row (links CASCADE away)."""

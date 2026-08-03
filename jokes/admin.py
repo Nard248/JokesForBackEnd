@@ -363,25 +363,33 @@ class ContentReportAdmin(admin.ModelAdmin):
         ContentReport.objects.filter(joke_id__in=joke_ids).exclude(
             status__in=['resolved', 'dismissed']
         ).update(status='resolved', resolved_at=now)
-        # Media lifecycle: detach the taken-down jokes' media, then delete
-        # files ONLY for assets no longer attached to any live joke — an
-        # asset shared with a joke that was NOT taken down must survive.
-        # (Deleting the files matters: the DB flag alone leaves them
-        # world-readable on the public bucket.)
+        # Media lifecycle (reversible takedown): JokeMedia links are KEPT —
+        # a reversal (appeal upheld) needs them to restore serving. Nothing
+        # is deleted at takedown time anymore. Instead, quarantine() every
+        # affected asset that is NOT also linked to a live (non-removed)
+        # joke outside this takedown set — that moves the file to an
+        # unguessable quarantine/ path, out of every serving surface, while
+        # keeping the row (and the option to release() on reversal). An
+        # asset shared with a joke that was NOT taken down (and is still
+        # live) is left untouched, as before. `to_remove` was already
+        # flipped to is_removed=True above, so `joke__is_removed=False`
+        # here only matches genuinely external live jokes.
         asset_ids = list(
             MediaAsset.objects.filter(joke_links__joke_id__in=joke_ids)
             .distinct().values_list('pk', flat=True)
         )
-        JokeMedia.objects.filter(joke_id__in=joke_ids).delete()
-        media_deleted = 0
-        # submission_links are intentionally ignored here: a taken-down image
-        # must not survive via the author's drafts/submissions either.
-        for asset in MediaAsset.objects.filter(pk__in=asset_ids, joke_links__isnull=True):
-            asset.delete_with_files()
-            media_deleted += 1
-        if media_deleted:
+        quarantined = 0
+        for asset in MediaAsset.objects.filter(pk__in=asset_ids):
+            still_shared = JokeMedia.objects.filter(asset=asset, joke__is_removed=False).exclude(
+                joke_id__in=joke_ids
+            ).exists()
+            if still_shared:
+                continue
+            asset.quarantine()
+            quarantined += 1
+        if quarantined:
             record_audit(
-                request, 'media_takedown', outcome='success',
+                request, 'media_quarantined', outcome='success',
                 actor=request.user, target_type='joke',
                 target_id=','.join(str(j) for j in sorted(joke_ids)),
             )

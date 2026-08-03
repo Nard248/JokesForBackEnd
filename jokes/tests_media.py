@@ -707,7 +707,12 @@ class MediaPublishAndLifecycleTests(TestCase):
             [m.asset_id for m in sub.media.all()],
         )
 
-    def test_takedown_deletes_storage_files(self):
+    def test_takedown_quarantines_storage_files(self):
+        # Appeals-wave Task 2 REWORK: takedown no longer hard-deletes media.
+        # It quarantines it (reversible on appeal) — links are KEPT, rows
+        # survive, and the files move to the quarantine/ path rather than
+        # being deleted outright. (Was: test_takedown_deletes_storage_files,
+        # which asserted files+rows gone; that contract no longer holds.)
         sub = self._pending_submission()
         admin_obj = JokeSubmissionAdmin(JokeSubmission, AdminSite())
         with mock.patch('jokes.models.Joke._generate_share_image'):
@@ -716,6 +721,7 @@ class MediaPublishAndLifecycleTests(TestCase):
             )
         sub.refresh_from_db()
         joke = sub.published_joke
+        asset_ids = [m.asset_id for m in joke.media.all()]
         names = [m.asset.file.name for m in joke.media.all()]
         report = ContentReport.objects.create(
             reporter=self.admin_user, joke=joke, reason='inappropriate',
@@ -726,13 +732,25 @@ class MediaPublishAndLifecycleTests(TestCase):
         )
         joke.refresh_from_db()
         self.assertTrue(joke.is_removed)
+        # JokeMedia links are KEPT (needed to reverse on appeal).
+        self.assertEqual(
+            sorted(joke.media.values_list('asset_id', flat=True)), sorted(asset_ids),
+        )
+        # Old paths are gone, but the rows survive, quarantined.
         for name in names:
             self.assertFalse(default_storage.exists(name))
-        self.assertEqual(MediaAsset.objects.filter(owner=self.user).count(), 0)
+        self.assertEqual(MediaAsset.objects.filter(owner=self.user).count(), 2)
+        for asset in MediaAsset.objects.filter(pk__in=asset_ids):
+            self.assertIsNotNone(asset.quarantined_at)
+            self.assertTrue(asset.file.name.startswith(f'quarantine/{asset.pk}/'))
+            self.assertTrue(default_storage.exists(asset.file.name))
 
     def test_takedown_spares_assets_shared_with_live_jokes(self):
         # Cross-joke asset reuse is designed-for: taking down joke A must not
-        # strip the shared image off unrelated live joke B.
+        # quarantine the shared image off unrelated live joke B. (Appeals-wave
+        # Task 2 REWORK: the unshared asset is now quarantined, not deleted,
+        # and A's JokeMedia links are KEPT rather than detached — was:
+        # asserted link-detach + hard-delete of the unshared asset.)
         shared = make_asset(self.user)
         only_a = make_asset(self.user)
         with mock.patch('jokes.models.Joke._generate_share_image'):
@@ -758,18 +776,28 @@ class MediaPublishAndLifecycleTests(TestCase):
             self._admin_request(), ContentReport.objects.filter(pk=report.pk),
         )
 
-        # A's media rows detached; B's intact.
-        self.assertFalse(JokeMedia.objects.filter(joke=joke_a).exists())
+        # A's media rows are KEPT (needed to reverse on appeal); B's intact.
+        self.assertEqual(
+            list(JokeMedia.objects.filter(joke=joke_a).values_list('asset_id', flat=True)),
+            [shared.pk, only_a.pk],
+        )
         self.assertEqual(
             list(JokeMedia.objects.filter(joke=joke_b).values_list('asset_id', flat=True)),
             [shared.pk],
         )
-        # Shared asset survives — row AND storage object.
+        # Shared asset survives untouched — row, storage object, AND not
+        # quarantined (still shared with live joke B).
+        shared.refresh_from_db()
         self.assertTrue(MediaAsset.objects.filter(pk=shared.pk).exists())
         self.assertTrue(default_storage.exists(shared_name))
-        # A-only asset is reaped — row AND storage object.
-        self.assertFalse(MediaAsset.objects.filter(pk=only_a.pk).exists())
+        self.assertIsNone(shared.quarantined_at)
+        # A-only asset is quarantined — row survives, old path gone, new
+        # quarantine path exists.
+        only_a.refresh_from_db()
+        self.assertTrue(MediaAsset.objects.filter(pk=only_a.pk).exists())
+        self.assertIsNotNone(only_a.quarantined_at)
         self.assertFalse(default_storage.exists(only_a_name))
+        self.assertTrue(default_storage.exists(only_a.file.name))
 
     def test_account_delete_removes_assets(self):
         asset = make_asset(self.user)
