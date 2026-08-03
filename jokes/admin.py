@@ -107,6 +107,11 @@ class JokeAdmin(admin.ModelAdmin):
                     level='WARNING',
                 )
         n = queryset.update(is_removed=False, removed_at=None)
+        # REVERSAL: the share card was blanked at takedown time (or, for a
+        # media joke, may still be an old pre-fix text-only card) -- rebuild
+        # it now that the joke is live and its media has been released.
+        for joke in Joke.all_objects.filter(pk__in=joke_ids):
+            joke.regenerate_share_image()
         self.message_user(request, f'Restored {n} joke(s).')
 
 
@@ -300,6 +305,13 @@ class JokeSubmissionAdmin(admin.ModelAdmin):
                         JokeMedia.objects.create(
                             joke=joke, asset=link.asset, position=link.position,
                         )
+                    # ORDERING TRAP: Joke.objects.create() above already fired
+                    # save() -> a share card, but the media didn't exist yet at
+                    # that point, so it's the text-only card. Now that
+                    # JokeMedia is attached, force a rebuild so a media
+                    # submission publishes with its media card, not a stale
+                    # text-only one.
+                    joke.regenerate_share_image()
                     submission.published_joke = joke
                     submission.status = 'published'
                     submission.save(update_fields=['published_joke', 'status', 'updated_at'])
@@ -376,6 +388,18 @@ class ContentReportAdmin(admin.ModelAdmin):
         removed = Joke.all_objects.filter(pk__in=joke_ids, is_removed=False).update(
             is_removed=True, removed_at=now,
         )
+        # TAKEDOWN LEAK: the share card is a SEPARATELY generated PNG (not
+        # the media asset itself) embedding a downscaled copy of the
+        # poster/image at a guessable share-cards/joke-<pk>.png path. Left
+        # in place, it would keep serving a removed joke's poster to OG
+        # crawlers (and anyone hitting the URL directly) even after the
+        # underlying MediaAsset is quarantined. Blank it -- delete the
+        # stored file and clear the field -- for every joke actually
+        # removed by this action.
+        for jk in to_remove:
+            if jk.share_image:
+                jk.share_image.delete(save=False)
+        Joke.all_objects.filter(pk__in=[jk.pk for jk in to_remove]).update(share_image='')
         appeal_deadline = (now + timedelta(days=14)).isoformat()
         for jk in to_remove:
             reasons = reasons_by_joke.get(jk.pk)
@@ -615,6 +639,11 @@ class AppealAdmin(admin.ModelAdmin):
                     Joke.all_objects.filter(pk=appeal.joke_id).update(
                         is_removed=False, removed_at=None,
                     )
+                    # REVERSAL: share_image was blanked at takedown time;
+                    # rebuild it now that the joke is live again and its
+                    # media has just been released -- media card if media
+                    # is present, text card otherwise.
+                    Joke.all_objects.get(pk=appeal.joke_id).regenerate_share_image()
                     notify(
                         appeal.user, 'appeal_resolved', joke=appeal.joke,
                         outcome='reversed', action_type='takedown',

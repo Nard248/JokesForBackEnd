@@ -220,6 +220,22 @@ class Joke(models.Model):
         filename = f'joke-{self.pk}.png'
         self.share_image.save(filename, ContentFile(png_buffer.read()), save=False)
 
+    def regenerate_share_image(self):
+        """Public wrapper around _generate_share_image() so admin code can
+        force a card rebuild outside of save()'s text-changed check.
+
+        Needed because `save()` only regenerates when `text` changes or no
+        image exists yet -- it has no way to notice that a joke's MEDIA
+        arrived after its row was created (approve_and_publish's ordering
+        trap: JokeMedia is copied AFTER Joke.objects.create() already fired
+        save()), or that media was released back from quarantine on an
+        appeal reversal/restore. Mirrors save()'s persistence exactly: the
+        new file name is written via a queryset .update() rather than a
+        recursive save().
+        """
+        self._generate_share_image()
+        Joke.objects.filter(pk=self.pk).update(share_image=self.share_image.name)
+
     def __str__(self):
         return self.text[:50] + ('...' if len(self.text) > 50 else '')
 

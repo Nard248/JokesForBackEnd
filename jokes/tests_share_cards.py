@@ -4,19 +4,34 @@ Deliberately does NOT patch Joke._generate_share_image / cairosvg — card
 generation is the code under test here (unlike jokes/tests_media.py, which
 stubs it out because it's irrelevant to what those tests cover). Requires a
 working libcairo (see run notes in the task report).
+
+Task 2 tests (below): regeneration triggers -- the ordering trap
+(approve_and_publish), the takedown leak (take_down_joke blanking
+share_image), reversal regeneration (reverse_appeals / restore_jokes), the
+audio badge, and the fail-open guard on a corrupt raster. Also real
+generation throughout -- these exercise the actual admin actions end to end.
 """
 import io
 import shutil
 import tempfile
 from unittest import mock
 
+from django.contrib.admin.sites import AdminSite
+from django.contrib.messages.storage.fallback import FallbackStorage
 from django.core.files.base import ContentFile
+from django.core.files.storage import default_storage
 from django.db.models.fields.files import FieldFile
-from django.test import TestCase, override_settings
+from django.test import RequestFactory, TestCase, override_settings
 from PIL import Image
 
-from jokes.models import Format, Joke, JokeMedia, MediaAsset
-from jokes.share_cards import _downscale_raster, generate_share_card_png, media_share_card_png
+from jokes.admin import AppealAdmin, ContentReportAdmin, JokeAdmin, JokeSubmissionAdmin
+from jokes.models import (
+    Appeal, ContentReport, Format, Joke, JokeMedia, JokeSubmission,
+    JokeSubmissionMedia, MediaAsset, Tone,
+)
+from jokes.share_cards import (
+    _downscale_raster, generate_share_card_png, get_badge_text, media_share_card_png,
+)
 from jokes.tests_media import _taxonomy, make_user
 
 _MEDIA_ROOT = tempfile.mkdtemp()
@@ -195,3 +210,283 @@ class DownscaleRasterTests(TestCase):
         img = Image.open(io.BytesIO(out))
         self.assertEqual(img.format, 'JPEG')
         self.assertEqual(img.mode, 'RGB')
+
+
+# =============================================================================
+# Task 2: regeneration triggers -- ordering trap, takedown leak, reversal,
+# audio badge, fail-open.
+# =============================================================================
+
+def _admin_request(user):
+    req = RequestFactory().post('/')
+    req.user = user
+    req.session = {}
+    req._messages = FallbackStorage(req)
+    return req
+
+
+@override_settings(MEDIA_ROOT=_MEDIA_ROOT)
+class OrderingTrapRegenerationTests(TestCase):
+    """approve_and_publish creates the Joke (firing save() -> a text-only
+    card, since JokeMedia doesn't exist yet) and only copies JokeMedia
+    afterward. Without an explicit rebuild, a published media joke would be
+    stuck with the text-only card forever (text never changes post-publish)."""
+
+    @classmethod
+    def tearDownClass(cls):
+        super().tearDownClass()
+        shutil.rmtree(_MEDIA_ROOT, ignore_errors=True)
+
+    def setUp(self):
+        self.user = make_user('ordering-trap@example.com')
+        self.mod = make_user('ordering-trap-mod@example.com')
+        self.fmt, self.age, self.lang = _taxonomy()
+
+    def _publish_media_submission(self, caption='a captioned photo'):
+        sub = JokeSubmission.objects.create(
+            user=self.user, format=self.fmt, age_rating=self.age, language=self.lang,
+            setup=caption, text=caption, status='pending',
+        )
+        JokeSubmissionMedia.objects.create(
+            submission=sub, asset=make_image_asset(self.user), position=0,
+        )
+        JokeSubmissionAdmin(JokeSubmission, AdminSite()).approve_and_publish(
+            _admin_request(self.mod), JokeSubmission.objects.filter(pk=sub.pk),
+        )
+        sub.refresh_from_db()
+        return sub.published_joke
+
+    def test_published_media_joke_gets_media_card_not_text_card(self):
+        caption = 'a captioned photo'
+        joke = self._publish_media_submission(caption)
+        self.assertIsNotNone(joke)
+
+        # What the ordering-trap bug would have produced: the text-only card
+        # for the same caption.
+        text_joke = make_joke(self.user, 'oneliner', text=caption)
+        text_card_bytes = generate_share_card_png(text_joke).getvalue()
+
+        joke.refresh_from_db()
+        self.assertTrue(joke.share_image)
+        with joke.share_image.open('rb') as fh:
+            published_bytes = fh.read()
+
+        _assert_valid_png_1200x630(self, io.BytesIO(published_bytes))
+        self.assertNotEqual(
+            published_bytes, text_card_bytes,
+            'published media joke got the text-only card -- the ordering trap regressed',
+        )
+
+
+@override_settings(MEDIA_ROOT=_MEDIA_ROOT)
+class TakedownShareImageLeakTests(TestCase):
+    """The share card is a SEPARATELY generated PNG embedding a downscaled
+    copy of the poster/image at a guessable share-cards/joke-<pk>.png path.
+    take_down_joke must blank it, or the OG crawler (and anyone hitting the
+    URL directly) keeps serving a removed joke's poster."""
+
+    @classmethod
+    def tearDownClass(cls):
+        super().tearDownClass()
+        shutil.rmtree(_MEDIA_ROOT, ignore_errors=True)
+
+    def setUp(self):
+        self.user = make_user('takedown-share@example.com')
+        self.mod = make_user('takedown-share-mod@example.com')
+        self.fmt, self.age, self.lang = _taxonomy()
+
+    def _publish_media_joke(self, caption='a takedown-bound photo'):
+        sub = JokeSubmission.objects.create(
+            user=self.user, format=self.fmt, age_rating=self.age, language=self.lang,
+            setup=caption, text=caption, status='pending',
+        )
+        JokeSubmissionMedia.objects.create(
+            submission=sub, asset=make_image_asset(self.user), position=0,
+        )
+        JokeSubmissionAdmin(JokeSubmission, AdminSite()).approve_and_publish(
+            _admin_request(self.mod), JokeSubmission.objects.filter(pk=sub.pk),
+        )
+        sub.refresh_from_db()
+        return sub.published_joke
+
+    def _take_down(self, joke):
+        report = ContentReport.objects.create(reporter=self.mod, joke=joke, reason='spam')
+        ContentReportAdmin(ContentReport, AdminSite()).take_down_joke(
+            _admin_request(self.mod), ContentReport.objects.filter(pk=report.pk),
+        )
+
+    def test_takedown_blanks_field_and_deletes_stored_file(self):
+        joke = self._publish_media_joke()
+        old_name = joke.share_image.name
+        self.assertTrue(old_name)
+        self.assertTrue(default_storage.exists(old_name))
+
+        self._take_down(joke)
+
+        removed = Joke.all_objects.get(pk=joke.pk)
+        self.assertTrue(removed.is_removed)
+        self.assertFalse(removed.share_image)
+        self.assertFalse(default_storage.exists(old_name))
+
+
+@override_settings(MEDIA_ROOT=_MEDIA_ROOT)
+class ReversalRegenerationTests(TestCase):
+    """On appeal reversal (and on the JokeAdmin restore_jokes action), the
+    share card must come back -- a media card if media is present."""
+
+    @classmethod
+    def tearDownClass(cls):
+        super().tearDownClass()
+        shutil.rmtree(_MEDIA_ROOT, ignore_errors=True)
+
+    def setUp(self):
+        self.user = make_user('reversal-share@example.com')
+        self.mod = make_user('reversal-share-mod@example.com')
+        self.fmt, self.age, self.lang = _taxonomy()
+        self.caption = 'a reversal-bound photo'
+
+    def _publish_media_joke(self):
+        sub = JokeSubmission.objects.create(
+            user=self.user, format=self.fmt, age_rating=self.age, language=self.lang,
+            setup=self.caption, text=self.caption, status='pending',
+        )
+        JokeSubmissionMedia.objects.create(
+            submission=sub, asset=make_image_asset(self.user), position=0,
+        )
+        JokeSubmissionAdmin(JokeSubmission, AdminSite()).approve_and_publish(
+            _admin_request(self.mod), JokeSubmission.objects.filter(pk=sub.pk),
+        )
+        sub.refresh_from_db()
+        return sub.published_joke
+
+    def _take_down(self, joke):
+        report = ContentReport.objects.create(reporter=self.mod, joke=joke, reason='spam')
+        ContentReportAdmin(ContentReport, AdminSite()).take_down_joke(
+            _admin_request(self.mod), ContentReport.objects.filter(pk=report.pk),
+        )
+
+    def _assert_media_card_restored(self, restored_joke):
+        text_joke = make_joke(self.user, 'oneliner', text=self.caption)
+        text_card_bytes = generate_share_card_png(text_joke).getvalue()
+        self.assertTrue(restored_joke.share_image)
+        with restored_joke.share_image.open('rb') as fh:
+            restored_bytes = fh.read()
+        _assert_valid_png_1200x630(self, io.BytesIO(restored_bytes))
+        self.assertNotEqual(restored_bytes, text_card_bytes)
+
+    def test_reverse_appeals_regenerates_media_card(self):
+        joke = self._publish_media_joke()
+        self._take_down(joke)
+        removed = Joke.all_objects.get(pk=joke.pk)
+        self.assertFalse(removed.share_image)  # blanked at takedown
+
+        appeal = Appeal.objects.create(
+            user=self.user, joke=removed, action_type='takedown',
+            reason_text='please review',
+        )
+        AppealAdmin(Appeal, AdminSite()).reverse_appeals(
+            _admin_request(self.mod), Appeal.objects.filter(pk=appeal.pk),
+        )
+
+        appeal.refresh_from_db()
+        self.assertEqual(appeal.status, 'reversed')
+        restored = Joke.objects.get(pk=joke.pk)
+        self.assertFalse(restored.is_removed)
+        self._assert_media_card_restored(restored)
+
+    def test_restore_jokes_admin_action_regenerates_media_card(self):
+        joke = self._publish_media_joke()
+        self._take_down(joke)
+        removed = Joke.all_objects.get(pk=joke.pk)
+        self.assertFalse(removed.share_image)  # blanked at takedown
+
+        JokeAdmin(Joke, AdminSite()).restore_jokes(
+            _admin_request(self.mod), Joke.all_objects.filter(pk=joke.pk),
+        )
+
+        restored = Joke.objects.get(pk=joke.pk)
+        self.assertFalse(restored.is_removed)
+        self._assert_media_card_restored(restored)
+
+
+@override_settings(MEDIA_ROOT=_MEDIA_ROOT)
+class AudioBadgeTests(TestCase):
+    """Audio jokes have no visual to embed (media_share_card_png declines),
+    so they render via the text-card path -- but with the tone badge
+    REPLACED by an 'Audio' badge."""
+
+    @classmethod
+    def tearDownClass(cls):
+        super().tearDownClass()
+        shutil.rmtree(_MEDIA_ROOT, ignore_errors=True)
+
+    def setUp(self):
+        self.user = make_user('audio-badge@example.com')
+
+    def test_audio_joke_gets_audio_badge_even_with_a_tone_set(self):
+        joke = make_joke(self.user, 'audio', text='knock knock, who is there')
+        JokeMedia.objects.create(joke=joke, asset=make_audio_asset(self.user), position=0)
+        tone, _ = Tone.objects.get_or_create(
+            slug='dad-jokes', defaults={'name': 'Dad Jokes'},
+        )
+        joke.tones.add(tone)
+
+        # The tone badge would otherwise win -- Audio must replace it.
+        self.assertEqual(get_badge_text(joke), 'Audio')
+
+        # media_share_card_png must still decline (no visual for audio).
+        self.assertIsNone(media_share_card_png(joke))
+
+        buf = generate_share_card_png(joke)
+        _assert_valid_png_1200x630(self, buf)
+
+    def test_non_audio_joke_badge_is_unaffected(self):
+        joke = make_joke(self.user, 'oneliner', text='why did the chicken cross the road')
+        tone, _ = Tone.objects.get_or_create(
+            slug='puns', defaults={'name': 'Puns'},
+        )
+        joke.tones.add(tone)
+        self.assertEqual(get_badge_text(joke), 'Puns')
+
+
+@override_settings(MEDIA_ROOT=_MEDIA_ROOT)
+class MediaCardFailOpenTests(TestCase):
+    """A corrupt/unreadable raster must never propagate out of
+    media_share_card_png -- it must fail open to the text card, exactly
+    like the SafeSearch fail-open precedent (commit 77e995a)."""
+
+    @classmethod
+    def tearDownClass(cls):
+        super().tearDownClass()
+        shutil.rmtree(_MEDIA_ROOT, ignore_errors=True)
+
+    def setUp(self):
+        self.user = make_user('failopen@example.com')
+
+    def _corrupt_image_asset(self):
+        asset = MediaAsset(owner=self.user, kind='image')
+        asset.file.save(
+            'image.webp', ContentFile(b'not a real image, corrupt bytes'), save=False,
+        )
+        asset.save()
+        return asset
+
+    def test_corrupt_raster_returns_none_and_falls_back_to_text_card(self):
+        joke = make_joke(self.user, 'image', text='corrupt raster joke')
+        JokeMedia.objects.create(joke=joke, asset=self._corrupt_image_asset(), position=0)
+
+        self.assertIsNone(media_share_card_png(joke))
+
+        buf = generate_share_card_png(joke)
+        _assert_valid_png_1200x630(self, buf)
+
+    def test_joke_save_with_broken_raster_does_not_raise(self):
+        joke = make_joke(self.user, 'image', text='another corrupt raster joke')
+        JokeMedia.objects.create(joke=joke, asset=self._corrupt_image_asset(), position=0)
+
+        # Forces regeneration (text changed) -- must not 500.
+        joke.text = 'another corrupt raster joke, edited'
+        joke.save()
+
+        joke.refresh_from_db()
+        self.assertTrue(joke.share_image)
