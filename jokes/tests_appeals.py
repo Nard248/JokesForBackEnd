@@ -889,6 +889,33 @@ class AppealUpholdTests(TestCase):
             Notification.objects.filter(recipient=self.creator, verb='appeal_resolved').exists()
         )
 
+    def test_uphold_skips_purge_for_asset_shared_with_live_joke(self):
+        """Minor fix: uphold's purge must mirror take_down_joke's
+        still_shared guard — a quarantined asset that got re-attached to a
+        different, still-live joke (a reversal-era reshare) must survive."""
+        joke_a = make_image_joke(self.creator)
+        asset = JokeMedia.objects.get(joke=joke_a).asset
+        self._take_down(joke_a)
+        asset.refresh_from_db()
+        self.assertIsNotNone(asset.quarantined_at)
+        file_name = asset.file.name
+
+        joke_b = make_image_joke(self.creator)  # live, untouched
+        JokeMedia.objects.create(joke=joke_b, asset=asset, position=1)
+
+        appeal = Appeal.objects.create(
+            user=self.creator, joke=Joke.all_objects.get(pk=joke_a.pk),
+            action_type='takedown', reason_text='please review',
+        )
+        req = _admin_request(self.admin_user)
+        self.appeal_admin.uphold_appeals(req, Appeal.objects.filter(pk=appeal.pk))
+
+        appeal.refresh_from_db()
+        self.assertEqual(appeal.status, 'upheld')
+        # Survives — still shared with the live joke_b.
+        self.assertTrue(MediaAsset.objects.filter(pk=asset.pk).exists())
+        self.assertTrue(default_storage.exists(file_name))
+
 
 @override_settings(MEDIA_ROOT=_MEDIA_ROOT)
 class AppealReverseTests(TestCase):
@@ -1047,3 +1074,80 @@ class AppealAdminDisplayTests(TestCase):
         qs = self.admin_obj.get_queryset(req)
         ids = list(qs.values_list('pk', flat=True))
         self.assertLess(ids.index(pending.pk), ids.index(resolved.pk))
+
+
+# =============================================================================
+# Task 3 review-fix: race-to-500 on the create() IntegrityError path
+# =============================================================================
+
+class AppealCreateRaceConditionTests(TestCase):
+    """validate()'s duplicate check is check-then-act; the DB's partial
+    unique index (uniq_pending_appeal_per_user_joke/_submission) is the real
+    guard. Two concurrent same-user POSTs can both pass validate() before
+    either commits — the second .create() must surface as a clean 400 with
+    the same message validate() uses, never an uncaught 500."""
+
+    def setUp(self):
+        self.fmt, self.age, self.lang = _taxonomy()
+        self.user = make_user('race-appeal@example.com')
+        self.client = APIClient()
+        self.client.force_authenticate(self.user)
+
+    def test_duplicate_caught_by_validate_is_400_with_message(self):
+        joke = _removed_joke(self.fmt, self.age, self.lang, creator=self.user)
+        Appeal.objects.create(
+            user=self.user, joke=joke, action_type='takedown', reason_text='first',
+        )
+        response = self.client.post(
+            '/api/v1/appeals/', {'joke_id': joke.pk, 'reason_text': 'second'}, format='json',
+        )
+        self.assertEqual(response.status_code, 400)
+        self.assertIn('already pending', str(response.data))
+
+    def test_integrity_error_race_bypassing_validate_is_400_not_500(self):
+        joke = _removed_joke(self.fmt, self.age, self.lang, creator=self.user)
+        # The "winning" concurrent request's row, already committed.
+        Appeal.objects.create(
+            user=self.user, joke=joke, action_type='takedown', reason_text='racer',
+        )
+        # Simulate THIS request having evaluated validate()'s duplicate
+        # pre-check before the winner landed (the actual race window): the
+        # pre-check is the ONLY use of Appeal.objects.filter() reached during
+        # this request, so patching it to report "no duplicate" reproduces
+        # exactly that interleaving, leaving the DB's partial unique index
+        # as the sole thing standing between this request and a 500.
+        with patch('jokes.serializers.Appeal.objects.filter') as mock_filter:
+            mock_filter.return_value.exists.return_value = False
+            response = self.client.post(
+                '/api/v1/appeals/',
+                {'joke_id': joke.pk, 'reason_text': 'second'},
+                format='json',
+            )
+        self.assertEqual(response.status_code, 400, response.content)
+        self.assertIn('already pending', str(response.data))
+        # The race loser never landed — still exactly one appeal for this joke.
+        self.assertEqual(Appeal.objects.filter(joke=joke).count(), 1)
+
+
+# =============================================================================
+# Task 3 review-fix: null removed_at on a manually is_removed=True joke
+# =============================================================================
+
+class AppealCreateNullRemovedAtTests(TestCase):
+    def setUp(self):
+        self.fmt, self.age, self.lang = _taxonomy()
+        self.user = make_user('null-removed-at@example.com')
+        self.client = APIClient()
+        self.client.force_authenticate(self.user)
+
+    def test_is_removed_true_but_removed_at_none_is_400_not_500(self):
+        # A moderator can flip is_removed via the JokeAdmin change form
+        # directly (removed_at stays null there — that path bypasses
+        # take_down_joke entirely, so no takedown timestamp is ever set).
+        joke = _make_joke(self.fmt, self.age, self.lang, creator=self.user, is_removed=True)
+        self.assertIsNone(Joke.all_objects.get(pk=joke.pk).removed_at)
+        response = self.client.post(
+            '/api/v1/appeals/', {'joke_id': joke.pk, 'reason_text': 'x'}, format='json',
+        )
+        self.assertEqual(response.status_code, 400, response.content)
+        self.assertIn('not eligible for appeal', str(response.data))

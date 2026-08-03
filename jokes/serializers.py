@@ -8,7 +8,7 @@ Provides serializers for all 8 models:
 """
 from datetime import timedelta
 
-from django.db import transaction
+from django.db import IntegrityError, transaction
 from django.utils import timezone
 from rest_framework import serializers
 from rest_framework.exceptions import NotFound
@@ -50,6 +50,14 @@ from .models import (
 # 14-day appeal window (spec value, verbatim). Shared by the create
 # serializer's window checks for both takedown and rejection appeals.
 APPEAL_WINDOW = timedelta(days=14)
+
+# Duplicate-pending-appeal messages, shared between AppealCreateSerializer's
+# validate() check-then-act pre-check AND the create() IntegrityError handler
+# (the DB's partial unique index is the real guard — two concurrent requests
+# can both pass validate() before either commits, so the message must match
+# whichever path actually catches it).
+DUPLICATE_JOKE_APPEAL_MSG = 'An appeal is already pending for this joke.'
+DUPLICATE_SUBMISSION_APPEAL_MSG = 'An appeal is already pending for this submission.'
 
 
 # =============================================================================
@@ -1045,14 +1053,22 @@ class AppealCreateSerializer(serializers.ModelSerializer):
                 raise serializers.ValidationError(
                     'This joke has not been removed — nothing to appeal.'
                 )
+            if joke.removed_at is None:
+                # A moderator can flip is_removed via the JokeAdmin change
+                # form directly (removed_at stays readonly/blank there —
+                # that path bypasses take_down_joke entirely). With no
+                # takedown timestamp there's no window to compute and no
+                # takedown notice was ever sent, so treat it as not
+                # appealable rather than crashing on `None + timedelta`.
+                raise serializers.ValidationError(
+                    'This removal is not eligible for appeal.'
+                )
             if now > joke.removed_at + APPEAL_WINDOW:
                 raise serializers.ValidationError(
                     'The 14-day appeal window for this takedown has passed.'
                 )
             if Appeal.objects.filter(user=user, joke=joke, status='pending').exists():
-                raise serializers.ValidationError(
-                    'An appeal is already pending for this joke.'
-                )
+                raise serializers.ValidationError(DUPLICATE_JOKE_APPEAL_MSG)
             self._target = {'joke': joke, 'submission': None, 'action_type': 'takedown'}
         else:
             try:
@@ -1065,6 +1081,13 @@ class AppealCreateSerializer(serializers.ModelSerializer):
                 raise serializers.ValidationError(
                     'This submission has not been rejected — nothing to appeal.'
                 )
+            if submission.updated_at is None:
+                # Belt-and-suspenders: updated_at is auto_now so this can't
+                # actually happen, but guard it the same way as removed_at
+                # rather than trusting that invariant forever.
+                raise serializers.ValidationError(
+                    'This rejection is not eligible for appeal.'
+                )
             if now > submission.updated_at + APPEAL_WINDOW:
                 raise serializers.ValidationError(
                     'The 14-day appeal window for this rejection has passed.'
@@ -1072,9 +1095,7 @@ class AppealCreateSerializer(serializers.ModelSerializer):
             if Appeal.objects.filter(
                 user=user, submission=submission, status='pending'
             ).exists():
-                raise serializers.ValidationError(
-                    'An appeal is already pending for this submission.'
-                )
+                raise serializers.ValidationError(DUPLICATE_SUBMISSION_APPEAL_MSG)
             self._target = {
                 'joke': None, 'submission': submission, 'action_type': 'rejection',
             }
@@ -1082,13 +1103,28 @@ class AppealCreateSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         target = self._target
-        return Appeal.objects.create(
-            user=self.context['request'].user,
-            joke=target['joke'],
-            submission=target['submission'],
-            action_type=target['action_type'],
-            reason_text=validated_data['reason_text'],
-        )
+        try:
+            with transaction.atomic():
+                return Appeal.objects.create(
+                    user=self.context['request'].user,
+                    joke=target['joke'],
+                    submission=target['submission'],
+                    action_type=target['action_type'],
+                    reason_text=validated_data['reason_text'],
+                )
+        except IntegrityError:
+            # Check-then-act race: validate()'s duplicate check above is not
+            # atomic with this insert, so two concurrent requests for the
+            # same user+target can both pass validate() before either
+            # commits. The DB's partial unique index (uniq_pending_appeal_
+            # per_user_joke / _submission) is the real guard — catch its
+            # IntegrityError here and surface the SAME message validate()
+            # would have used, as a clean 400 instead of an uncaught 500.
+            # Wrapped in its own atomic() block/savepoint so the failure
+            # doesn't poison an outer transaction (e.g. under TestCase).
+            if target['joke'] is not None:
+                raise serializers.ValidationError(DUPLICATE_JOKE_APPEAL_MSG)
+            raise serializers.ValidationError(DUPLICATE_SUBMISSION_APPEAL_MSG)
 
 
 # =============================================================================
