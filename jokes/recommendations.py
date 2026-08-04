@@ -97,15 +97,26 @@ def get_daily_editorial_joke(target_date=None):
     joke id for determinism. A since-removed joke is never eligible even if
     it was the day's most-delivered pick.
 
-    Returns None if no DailyJoke exists yet for the date (nobody has opened
-    the app today) — callers should treat that as "skip the daily digest",
-    not generate one out of thin air for an email nobody triggered by using
-    the app.
+    content_tier='tier_1' (Universal) ONLY. Per-user DailyJoke rows can be
+    tier_2 (Mature, 18+ opt-in) for eligible adults -- every other serving
+    path gates content_tier per-viewer, but the digest audience is
+    active+opt_in with NO age/tier filtering (it's a broadcast to everyone
+    who opted in, not a personalized read). Without this filter, a tier_2
+    joke that happened to be the day's most-delivered pick would get its
+    setup mass-emailed to every subscriber, mature content included. So a
+    day where only tier_2 jokes were delivered has no eligible "editorial"
+    pick at all -- see the None case below.
+
+    Returns None if no tier_1 DailyJoke exists yet for the date (nobody has
+    opened the app today, or only mature jokes were delivered) — callers
+    should treat that as "skip the daily digest", not generate one out of
+    thin air for an email nobody triggered by using the app, and never
+    broadcast mature content.
     """
     target_date = target_date or timezone.now().date()
     top = (
         DailyJoke.objects
-        .filter(date=target_date, joke__is_removed=False)
+        .filter(date=target_date, joke__is_removed=False, joke__content_tier='tier_1')
         .values('joke_id')
         .annotate(n=Count('id'))
         .order_by('-n', 'joke_id')

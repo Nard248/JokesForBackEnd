@@ -17,6 +17,7 @@ from freezegun import freeze_time
 from jokes.models import (
     AgeRating, DailyJoke, Format, Joke, JokeReaction, Language,
 )
+from jokes.recommendations import get_daily_editorial_joke
 from notifications.digests import run_daily_digests
 from notifications.models import DigestRun, EmailMessageLog
 from notifications.unsubscribe import load_unsubscribe_token
@@ -35,11 +36,11 @@ def _taxonomy():
 
 
 def _make_joke(fmt, age, lang, *, creator=None, setup='Why did the chicken cross the road?',
-               punchline='To get to the other side.', is_removed=False):
+               punchline='To get to the other side.', is_removed=False, content_tier='tier_1'):
     with patch('jokes.models.Joke._generate_share_image'):
         return Joke.objects.create(
             text='', setup=setup, punchline=punchline, format=fmt, age_rating=age,
-            language=lang, content_tier='tier_1', creator=creator, is_removed=is_removed,
+            language=lang, content_tier=content_tier, creator=creator, is_removed=is_removed,
         )
 
 
@@ -54,6 +55,61 @@ def _make_user(email, *, is_active=True, digest_opt_in=True, milestone_opt_in=Tr
 
 def _react(user, joke):
     JokeReaction.objects.create(user=user, joke=joke, reaction=JokeReaction.REACTION_LOL)
+
+
+class DailyEditorialJokeTierGateTests(TestCase):
+    """Compliance gate (review fold): the digest is a BROADCAST to every
+    opted-in user with no per-recipient age/tier check, unlike every other
+    serving path. get_daily_editorial_joke must never surface a tier_2
+    (Mature, 18+ opt-in) joke, even if it was the day's most-delivered pick."""
+
+    def setUp(self):
+        self.fmt, self.age, self.lang = _taxonomy()
+
+    def test_tier_1_joke_featured_over_more_delivered_tier_2_joke(self):
+        tier1_joke = _make_joke(self.fmt, self.age, self.lang, setup='Universal setup', content_tier='tier_1')
+        tier2_joke = _make_joke(self.fmt, self.age, self.lang, setup='Mature setup', content_tier='tier_2')
+
+        with freeze_time(TODAY):
+            today = timezone.now().date()
+            # tier_2 delivered to 2 users (would win the "most-delivered" mode
+            # with no tier filter); tier_1 delivered to only 1.
+            DailyJoke.objects.create(user=_make_user('t2-a@example.com'), joke=tier2_joke, date=today)
+            DailyJoke.objects.create(user=_make_user('t2-b@example.com'), joke=tier2_joke, date=today)
+            DailyJoke.objects.create(user=_make_user('t1-a@example.com'), joke=tier1_joke, date=today)
+
+            featured = get_daily_editorial_joke(today)
+
+        self.assertEqual(featured.pk, tier1_joke.pk)
+
+    def test_returns_none_when_only_tier_2_delivered_today(self):
+        tier2_joke = _make_joke(self.fmt, self.age, self.lang, content_tier='tier_2')
+
+        with freeze_time(TODAY):
+            today = timezone.now().date()
+            DailyJoke.objects.create(user=_make_user('t2-only@example.com'), joke=tier2_joke, date=today)
+
+            featured = get_daily_editorial_joke(today)
+
+        self.assertIsNone(featured)
+
+    def test_digest_skips_when_only_tier_2_delivered_today(self):
+        # End-to-end: run_daily_digests must skip (not broadcast mature
+        # content) when tier_2 is the only thing delivered today.
+        tier2_joke = _make_joke(self.fmt, self.age, self.lang, content_tier='tier_2')
+
+        with freeze_time(TODAY), override_settings(
+            EMAIL_BACKEND='django.core.mail.backends.locmem.EmailBackend'
+        ):
+            today = timezone.now().date()
+            DailyJoke.objects.create(user=_make_user('t2-only-e2e@example.com'), joke=tier2_joke, date=today)
+            _make_user('would-be-reader@example.com')
+
+            result = run_daily_digests()
+
+        self.assertTrue(result['skipped'])
+        self.assertEqual(result['digests_sent'], 0)
+        self.assertFalse(any(m.to == ['would-be-reader@example.com'] for m in mail.outbox))
 
 
 @override_settings(EMAIL_BACKEND='django.core.mail.backends.locmem.EmailBackend')
