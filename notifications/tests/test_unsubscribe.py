@@ -41,6 +41,13 @@ class UnsubscribeTokenTests(TestCase):
 
 
 class UnsubscribeViewTests(TestCase):
+    """GET renders a confirm page and never mutates (scanner-safe -- Important
+    4, digest-wave final review fold); the actual flip only happens on POST,
+    either from the confirm page's own form or a mail provider's RFC 8058
+    List-Unsubscribe-Post one-click POST (token via the query string in that
+    case, since providers post straight to the header URL with a fixed body,
+    never rendering/visiting the page)."""
+
     def setUp(self):
         self.user = User.objects.create_user(
             username='reader2@example.com', email='reader2@example.com', password='pw',
@@ -52,34 +59,25 @@ class UnsubscribeViewTests(TestCase):
     def _get(self, token):
         return self.client.get(self.url, {'token': token})
 
-    def test_valid_digest_token_flips_flag_and_confirms(self):
+    def _post(self, token):
+        return self.client.post(self.url, {'token': token})
+
+    # ── GET: confirm page only, no mutation ─────────────────────────────
+
+    def test_get_valid_digest_token_renders_confirm_page_without_flipping(self):
         token = unsubscribe_token(self.user, 'digest')
         response = self._get(token)
 
         self.assertEqual(response.status_code, 200)
-        self.assertIn(b'unsubscribed', response.content.lower())
+        self.assertIn(b'<form', response.content)
+        self.assertIn(b'unsubscribe', response.content.lower())
         self.profile.refresh_from_db()
-        self.assertFalse(self.profile.email_digest_opt_in)
-        self.assertTrue(self.profile.creator_milestone_opt_in)  # untouched
+        self.assertTrue(self.profile.email_digest_opt_in)  # NOT flipped by GET
 
-    def test_digest_unsubscribe_is_idempotent(self):
+    def test_get_confirm_page_embeds_the_token_for_the_form_post(self):
         token = unsubscribe_token(self.user, 'digest')
-        first = self._get(token)
-        second = self._get(token)
-
-        self.assertEqual(first.status_code, 200)
-        self.assertEqual(second.status_code, 200)
-        self.profile.refresh_from_db()
-        self.assertFalse(self.profile.email_digest_opt_in)
-
-    def test_valid_milestone_token_flips_only_milestone_flag(self):
-        token = unsubscribe_token(self.user, 'milestone')
         response = self._get(token)
-
-        self.assertEqual(response.status_code, 200)
-        self.profile.refresh_from_db()
-        self.assertFalse(self.profile.creator_milestone_opt_in)
-        self.assertTrue(self.profile.email_digest_opt_in)  # untouched
+        self.assertIn(token.encode(), response.content)
 
     def test_tampered_token_returns_friendly_error_not_500(self):
         token = unsubscribe_token(self.user, 'digest')
@@ -120,20 +118,82 @@ class UnsubscribeViewTests(TestCase):
         self.profile.refresh_from_db()
         self.assertTrue(self.profile.email_digest_opt_in)
 
-    def test_deleted_user_returns_friendly_error_not_500(self):
-        # FOLD (Task 1 review): a token minted before the account was deleted
-        # (or purged) must still resolve to a clean 400, never a crash --
-        # apply_unsubscribe's `User.objects.filter(pk=...).first()` returns
-        # None for a since-deleted uid and raises InvalidUnsubscribeToken,
-        # which the view renders as the same friendly error page.
-        token = unsubscribe_token(self.user, 'digest')
-        self.user.delete()
+    # ── POST: the actual mutation ───────────────────────────────────────
 
-        response = self._get(token)
+    def test_post_valid_digest_token_flips_flag_and_confirms(self):
+        token = unsubscribe_token(self.user, 'digest')
+        response = self._post(token)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(b'unsubscribed', response.content.lower())
+        self.profile.refresh_from_db()
+        self.assertFalse(self.profile.email_digest_opt_in)
+        self.assertTrue(self.profile.creator_milestone_opt_in)  # untouched
+
+    def test_post_digest_unsubscribe_is_idempotent(self):
+        token = unsubscribe_token(self.user, 'digest')
+        first = self._post(token)
+        second = self._post(token)
+
+        self.assertEqual(first.status_code, 200)
+        self.assertEqual(second.status_code, 200)
+        self.profile.refresh_from_db()
+        self.assertFalse(self.profile.email_digest_opt_in)
+
+    def test_post_valid_milestone_token_flips_only_milestone_flag(self):
+        token = unsubscribe_token(self.user, 'milestone')
+        response = self._post(token)
+
+        self.assertEqual(response.status_code, 200)
+        self.profile.refresh_from_db()
+        self.assertFalse(self.profile.creator_milestone_opt_in)
+        self.assertTrue(self.profile.email_digest_opt_in)  # untouched
+
+    def test_post_tampered_token_returns_friendly_error_not_500(self):
+        token = unsubscribe_token(self.user, 'digest')
+        tampered = token[:-1] + ('a' if token[-1] != 'a' else 'b')
+
+        response = self._post(tampered)
 
         self.assertEqual(response.status_code, 400)
         self.assertTrue(response.get('Content-Type', '').startswith('text/html'))
         self.assertNotIn(b'Traceback', response.content)
+        self.profile.refresh_from_db()
+        self.assertTrue(self.profile.email_digest_opt_in)  # unchanged
+
+    def test_post_deleted_user_returns_friendly_error_not_500(self):
+        # FOLD (Task 1 review): a token minted before the account was deleted
+        # (or purged) must still resolve to a clean 400, never a crash --
+        # apply_unsubscribe's `User.objects.filter(pk=...).first()` returns
+        # None for a since-deleted uid and raises InvalidUnsubscribeToken,
+        # which the view renders as the same friendly error page. (GET for
+        # this same token still renders the confirm page fine -- it never
+        # looks the user up, only decodes the signature -- the deleted-user
+        # check only bites on the actual mutating POST, which is correct:
+        # the confirm page carries no information a valid signed token
+        # didn't already carry.)
+        token = unsubscribe_token(self.user, 'digest')
+        self.user.delete()
+
+        response = self._post(token)
+
+        self.assertEqual(response.status_code, 400)
+        self.assertTrue(response.get('Content-Type', '').startswith('text/html'))
+        self.assertNotIn(b'Traceback', response.content)
+
+    def test_post_token_via_query_string_works_for_rfc8058_one_click(self):
+        # RFC 8058 List-Unsubscribe-Post: the mail provider POSTs a fixed
+        # body ('List-Unsubscribe=One-Click') straight to the URL from the
+        # List-Unsubscribe header -- which already carries the token in its
+        # own query string, not in the POST body.
+        token = unsubscribe_token(self.user, 'digest')
+        response = self.client.post(
+            f'{self.url}?token={token}', {'List-Unsubscribe': 'One-Click'},
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.profile.refresh_from_db()
+        self.assertFalse(self.profile.email_digest_opt_in)
 
 
 class UserProfileDefaultsTests(TestCase):

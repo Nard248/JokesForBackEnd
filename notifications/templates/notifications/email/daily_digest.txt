@@ -7,3 +7,5 @@ Reveal the punchline: {{ reveal_url }}
 ---
 You're getting this because you're subscribed to the Jokes For daily digest.
 Unsubscribe: {{ unsubscribe_url }}
+
+Jokes For - [COMPANY POSTAL ADDRESS]
