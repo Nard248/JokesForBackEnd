@@ -1,0 +1,95 @@
+name: CI
+
+# Independent test/lint gate — additive to the existing Google Cloud Build
+# deploy pipeline (cloudbuild.yaml), not a replacement for it.
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: jokesfor
+        ports:
+          - 5432:5432
+        # The postgres user provisioned by this image already has CREATEDB,
+        # which manage.py test needs to create/destroy its own test_jokesfor db.
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    env:
+      DATABASE_URL: ''
+      DB_NAME: jokesfor
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_HOST: localhost
+      DB_PORT: 5432
+      # DEBUG=True (not a real SECRET_KEY) matches local dev: settings.py only
+      # *requires* SECRET_KEY when DEBUG=False, and running with DEBUG=False
+      # here flips on SECURE_SSL_REDIRECT, which 301s every plain-http test
+      # request the Django test client makes. Verified locally: the suite is
+      # green under DEBUG=True with no .env file present, and fails almost
+      # entirely under DEBUG=False for that reason.
+      DEBUG: 'True'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      # System libs the app needs at import/runtime, not just for editing:
+      #   ffmpeg                                    — video/GIF/audio normalization (jokes/media_processing.py)
+      #   libcairo2, libpango-1.0-0, libpangocairo-1.0-0 — cairosvg share-card rendering (jokes/share_cards.py)
+      # Mirrors the runtime stage of Dockerfile.
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            ffmpeg \
+            libcairo2 \
+            libpango-1.0-0 \
+            libpangocairo-1.0-0
+
+      - name: Install Python dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install ruff bandit pip-audit
+
+      - name: ruff check (lint gate)
+        run: ruff check .
+
+      # Security/dependency scans report but don't fail the build yet — see
+      # pyproject.toml for the current bandit triage and the PR description
+      # for the pip-audit findings. Flip these to blocking once the backlog
+      # they'd surface is under control.
+      - name: bandit (security scan, non-blocking)
+        run: bandit -c pyproject.toml -r JokesForProject jokes notifications creator_insights follows audit billing inbox || true
+
+      - name: pip-audit (dependency vulnerabilities, non-blocking)
+        run: pip-audit -r requirements.txt || true
+
+      - name: Django system check
+        run: python manage.py check
+
+      # manage.py test creates/destroys its own test_jokesfor database per
+      # run, so an explicit `migrate` isn't required first.
+      - name: Run test suite
+        run: python manage.py test --noinput
+
+# NOTE: this workflow is correct-by-construction against a local repro of the
+# same env (Postgres 15, no .env file, DEBUG=True, DB_* vars above) but has
+# not been run on actual GitHub Actions infrastructure yet — the first push
+# may need a small tweak (apt package name drift, cache key, etc).
