@@ -481,6 +481,18 @@ EMAIL_VERIFICATION_REQUIRED = os.getenv('EMAIL_VERIFICATION_REQUIRED', 'false').
 EMAIL_VERIFICATION_CODE_TTL_MINUTES = int(os.getenv('EMAIL_VERIFICATION_CODE_TTL_MINUTES', '10'))
 EMAIL_VERIFICATION_MAX_ATTEMPTS = int(os.getenv('EMAIL_VERIFICATION_MAX_ATTEMPTS', '5'))
 
+# Backend's own public origin — distinct from FRONTEND_URL (the SPA's static
+# host). Digest emails' unsubscribe link points at this Django app's own
+# /api/v1/email/unsubscribe/ view, not the SPA, so it needs its own base.
+BACKEND_URL = os.getenv('BACKEND_URL', 'https://jokesforbackend-332865216810.us-east1.run.app')
+
+# Email digest wave (notifications.digests). Cap bounds sends per
+# run_daily_digests() call (batched, idempotent re-runs drain any backlog);
+# threshold is the new-reactions-since-last-email bar for a creator milestone
+# summary. Both tunable without redeploy.
+DIGEST_SEND_CAP = int(os.getenv('DIGEST_SEND_CAP', '500'))
+DIGEST_MILESTONE_THRESHOLD = int(os.getenv('DIGEST_MILESTONE_THRESHOLD', '10'))
+
 # Stripe / billing — env-gated (dormant when STRIPE_SECRET_KEY is unset)
 STRIPE_SECRET_KEY      = os.getenv('STRIPE_SECRET_KEY', '').strip()
 STRIPE_PUBLISHABLE_KEY = os.getenv('STRIPE_PUBLISHABLE_KEY', '').strip()

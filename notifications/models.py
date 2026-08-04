@@ -62,3 +62,27 @@ class EmailVerification(models.Model):
     @property
     def is_consumed(self):
         return self.consumed_at is not None
+
+
+class DigestRun(models.Model):
+    """One row per calendar date the digest engine (notifications.digests)
+    has run for. This is observability + a per-day anchor, NOT the
+    idempotency ledger — that's EmailMessageLog (queried per-user/per-creator
+    for "did we already send template=X today"). A date can be touched by
+    several calls (retries, cap-bounded continuations); counts accumulate.
+    """
+
+    date = models.DateField(unique=True)
+    started_at = models.DateTimeField()
+    finished_at = models.DateTimeField(null=True, blank=True)
+    digests_sent = models.PositiveIntegerField(default=0)
+    milestones_sent = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        ordering = ['-date']
+
+    def __str__(self):
+        return (
+            f'DigestRun {self.date} '
+            f'(digests={self.digests_sent}, milestones={self.milestones_sent})'
+        )
