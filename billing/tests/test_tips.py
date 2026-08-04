@@ -80,7 +80,8 @@ class TipCheckoutValidationTests(APITestCase):
         resp = self.client.post(
             CHECKOUT_URL, {'creator_id': non_creator.pk, 'amount_cents': 100},
         )
-        self.assertIn(resp.status_code, (400, 404))
+        self.assertEqual(resp.status_code, 400)
+        self.assertEqual(resp.data.get('code'), 'not_a_creator')
         self.assertEqual(Tip.objects.count(), 0)
 
     @override_settings(STRIPE_SECRET_KEY='sk_test_fake')
@@ -204,3 +205,121 @@ class TipCheckoutHappyPathTests(APITestCase):
 
         _, kwargs = mstripe.checkout.Session.create.call_args
         self.assertEqual(kwargs['metadata']['joke_id'], '')
+
+
+class TipCheckoutRemovedOnlyJokeNotCreatorTests(APITestCase):
+    """A user whose ONLY joke is is_removed=True is NOT a creator.
+
+    Joke.objects (the default manager) excludes is_removed=True globally —
+    takedown enforcement, see jokes/managers.py:JokeManager. The checkout
+    view's is-a-creator check already queries through that manager, so a
+    moderated-away joke must not count.
+    """
+
+    def setUp(self):
+        self.sender = make_user('removedcheck-sender@example.com')
+        self.target = make_user('removedcheck-target@example.com')
+        joke = make_joke(self.target, text='will be removed')
+        joke.is_removed = True
+        joke.save()
+        self.client.force_authenticate(self.sender)
+
+    @override_settings(STRIPE_SECRET_KEY='sk_test_fake')
+    def test_removed_only_joke_target_rejected_not_a_creator(self):
+        resp = self.client.post(CHECKOUT_URL, {
+            'creator_id': self.target.pk, 'amount_cents': 100,
+        })
+        self.assertEqual(resp.status_code, 400)
+        self.assertEqual(resp.data.get('code'), 'not_a_creator')
+        self.assertEqual(Tip.objects.count(), 0)
+
+
+class TipCheckoutThrottleTests(APITestCase):
+    """Payments endpoint gets its own scoped throttle, off the 1000/hr global."""
+
+    def test_throttle_scope_registered_in_settings(self):
+        from django.conf import settings
+        rates = settings.REST_FRAMEWORK['DEFAULT_THROTTLE_RATES']
+        self.assertIn('tips-checkout', rates)
+
+    def test_view_uses_scoped_throttle(self):
+        from rest_framework.throttling import ScopedRateThrottle
+        from billing.views import TipCheckoutView
+        self.assertEqual(TipCheckoutView.throttle_scope, 'tips-checkout')
+        self.assertIn(ScopedRateThrottle, TipCheckoutView.throttle_classes)
+
+
+class TipAmountTiersTypeTests(APITestCase):
+    def test_tip_amount_tiers_is_frozenset(self):
+        from billing.views import TIP_AMOUNT_TIERS_CENTS
+        self.assertIsInstance(TIP_AMOUNT_TIERS_CENTS, frozenset)
+
+
+class CreatorTipsSummaryTests(APITestCase):
+    """GET /api/v1/creators/{id}/tips/summary/ — public, only succeeded tips counted."""
+
+    def setUp(self):
+        self.creator = make_creator('summary-creator@example.com')
+        self.sender = make_user('summary-sender@example.com')
+
+    def _url(self, creator_id):
+        return f'/api/v1/creators/{creator_id}/tips/summary/'
+
+    def test_only_succeeded_tips_counted(self):
+        Tip.objects.create(sender=self.sender, creator=self.creator, amount_cents=100, status='pending')
+        Tip.objects.create(sender=self.sender, creator=self.creator, amount_cents=300, status='failed')
+        Tip.objects.create(sender=self.sender, creator=self.creator, amount_cents=500, status='succeeded')
+        Tip.objects.create(sender=self.sender, creator=self.creator, amount_cents=1000, status='succeeded')
+
+        resp = self.client.get(self._url(self.creator.pk))
+
+        self.assertEqual(resp.status_code, 200)
+        self.assertEqual(resp.data['count'], 2)
+        self.assertEqual(resp.data['total_cents'], 1500)
+
+    def test_no_tips_returns_zero(self):
+        other = make_creator('summary-empty@example.com')
+        resp = self.client.get(self._url(other.pk))
+        self.assertEqual(resp.status_code, 200)
+        self.assertEqual(resp.data['count'], 0)
+        self.assertEqual(resp.data['total_cents'], 0)
+
+    def test_is_public_no_auth_required(self):
+        self.client.force_authenticate(None)
+        Tip.objects.create(sender=self.sender, creator=self.creator, amount_cents=500, status='succeeded')
+        resp = self.client.get(self._url(self.creator.pk))
+        self.assertEqual(resp.status_code, 200)
+        self.assertEqual(resp.data['count'], 1)
+
+
+class MyTipsHistoryTests(APITestCase):
+    """GET /api/v1/users/me/tips/ — caller's sent tips only, most recent first."""
+
+    MY_TIPS_URL = '/api/v1/users/me/tips/'
+
+    def setUp(self):
+        self.sender = make_user('mytips-sender@example.com')
+        self.other_sender = make_user('mytips-other@example.com')
+        self.creator = make_creator('mytips-creator@example.com')
+
+    def test_requires_auth(self):
+        resp = self.client.get(self.MY_TIPS_URL)
+        self.assertEqual(resp.status_code, 401)
+
+    def test_returns_only_my_sent_tips_most_recent_first(self):
+        other_tip = Tip.objects.create(
+            sender=self.other_sender, creator=self.creator, amount_cents=100, status='succeeded',
+        )
+        tip1 = Tip.objects.create(sender=self.sender, creator=self.creator, amount_cents=300, status='succeeded')
+        tip2 = Tip.objects.create(sender=self.sender, creator=self.creator, amount_cents=500, status='pending')
+
+        self.client.force_authenticate(self.sender)
+        resp = self.client.get(self.MY_TIPS_URL)
+
+        self.assertEqual(resp.status_code, 200)
+        results = resp.data['results']
+        self.assertEqual(len(results), 2, 'Only the caller\'s own tips')
+        self.assertEqual(results[0]['id'], tip2.id, 'Most recent first')
+        self.assertEqual(results[1]['id'], tip1.id)
+        returned_ids = {r['id'] for r in results}
+        self.assertNotIn(other_tip.id, returned_ids, 'Isolation: another user\'s tip must not appear')

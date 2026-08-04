@@ -5,7 +5,7 @@ from django.contrib.auth import get_user_model
 from django.test import TestCase, override_settings
 from rest_framework.test import APITestCase
 
-from billing.models import Plan, ProcessedStripeEvent, Subscription
+from billing.models import Plan, ProcessedStripeEvent, Subscription, Tip
 
 User = get_user_model()
 
@@ -197,6 +197,123 @@ class WebhookSubscriptionEventTests(TestCase):
         handle_event(event)
 
         sub = Subscription.objects.get(user=self.user)
+        self.assertEqual(sub.plan.slug, 'creator_pro')
+
+
+class WebhookTipCompletedTests(TestCase):
+    """checkout.session.completed with tip metadata marks the Tip succeeded.
+
+    Creator-Tips-Wave Task 2. Idempotency is security-critical here (unlike
+    the subscription UPSERT, re-running this handler is NOT naturally
+    idempotent — stamping completed_at twice would be a real bug), so this
+    covers both the outer event.id dedup AND the inner already-succeeded
+    guard (belt-and-suspenders — see billing/webhooks.py:_handle_tip_completed).
+    """
+
+    def setUp(self):
+        self.sender = User.objects.create_user(
+            username='tipsender@example.com', email='tipsender@example.com', password='pw',
+        )
+        self.creator = User.objects.create_user(
+            username='tipcreator@example.com', email='tipcreator@example.com', password='pw',
+        )
+
+    def _make_pending_tip(self, session_id):
+        return Tip.objects.create(
+            sender=self.sender,
+            creator=self.creator,
+            amount_cents=500,
+            status='pending',
+            stripe_checkout_session_id=session_id,
+        )
+
+    def _tip_event(self, tip, session_id, event_id, payment_intent='pi_test'):
+        return _make_stripe_event('checkout.session.completed', {
+            'id': session_id,
+            'payment_intent': payment_intent,
+            'metadata': {
+                'type': 'tip',
+                'tip_id': str(tip.id),
+                'creator_id': str(self.creator.id),
+                'joke_id': '',
+            },
+        }, event_id=event_id)
+
+    def test_tip_checkout_completed_marks_succeeded(self):
+        from billing.webhooks import handle_event
+
+        tip = self._make_pending_tip('cs_test_tip_001')
+        event = self._tip_event(tip, 'cs_test_tip_001', 'evt_tip_001', payment_intent='pi_test_tip_001')
+
+        handle_event(event)
+
+        tip.refresh_from_db()
+        self.assertEqual(tip.status, 'succeeded')
+        self.assertEqual(tip.stripe_payment_intent_id, 'pi_test_tip_001')
+        self.assertIsNotNone(tip.completed_at)
+
+    def test_replayed_event_is_a_no_op(self):
+        """Same event.id delivered twice -> second delivery never re-processes
+        (outer ProcessedStripeEvent dedup, same mechanism the subscription
+        path relies on)."""
+        from billing.webhooks import handle_event
+
+        tip = self._make_pending_tip('cs_test_tip_002')
+        event = self._tip_event(tip, 'cs_test_tip_002', 'evt_tip_002', payment_intent='pi_test_tip_002')
+
+        handle_event(event)
+        tip.refresh_from_db()
+        first_completed_at = tip.completed_at
+        self.assertEqual(tip.status, 'succeeded')
+
+        handle_event(event)  # Replay: identical event object, same event.id.
+
+        tip.refresh_from_db()
+        self.assertEqual(tip.status, 'succeeded')
+        self.assertEqual(tip.completed_at, first_completed_at, 'Replay must not re-stamp completed_at')
+        self.assertEqual(ProcessedStripeEvent.objects.filter(event_id='evt_tip_002').count(), 1)
+
+    def test_second_completion_for_already_succeeded_tip_is_a_no_op(self):
+        """Defense-in-depth: even a genuinely distinct event.id for the same
+        underlying session/tip must not double-stamp completed_at or
+        overwrite the payment_intent once the Tip is already succeeded."""
+        from billing.webhooks import handle_event
+
+        tip = self._make_pending_tip('cs_test_tip_003')
+        event1 = self._tip_event(tip, 'cs_test_tip_003', 'evt_tip_003a', payment_intent='pi_test_tip_003')
+        handle_event(event1)
+        tip.refresh_from_db()
+        first_completed_at = tip.completed_at
+        self.assertEqual(tip.status, 'succeeded')
+
+        event2 = self._tip_event(tip, 'cs_test_tip_003', 'evt_tip_003b', payment_intent='pi_test_tip_003_dup')
+        handle_event(event2)
+
+        tip.refresh_from_db()
+        self.assertEqual(tip.status, 'succeeded')
+        self.assertEqual(tip.completed_at, first_completed_at, 'Must not re-stamp completed_at')
+        self.assertEqual(
+            tip.stripe_payment_intent_id, 'pi_test_tip_003',
+            'Must not overwrite payment_intent_id from a duplicate completion',
+        )
+
+    def test_non_tip_checkout_session_unaffected_regression(self):
+        """A subscription checkout.session.completed must never touch the tip
+        path — regression guard for the metadata-type branch added in Task 2."""
+        from billing.webhooks import handle_event
+
+        event = _make_stripe_event('checkout.session.completed', {
+            'metadata': {'user_id': str(self.sender.pk), 'plan_slug': 'creator_pro'},
+            'customer': 'cus_webhook_notip',
+            'subscription': 'sub_webhook_notip',
+            'client_reference_id': str(self.sender.pk),
+        }, event_id='evt_notip_001')
+
+        handle_event(event)
+
+        self.assertEqual(Tip.objects.count(), 0)
+        sub = Subscription.objects.get(user=self.sender)
+        self.assertEqual(sub.status, 'active')
         self.assertEqual(sub.plan.slug, 'creator_pro')
 
 

@@ -1,23 +1,26 @@
 import logging
 
+from django.db.models import Count, Sum
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
+from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
+from rest_framework.throttling import ScopedRateThrottle
 from rest_framework.views import APIView
 from rest_framework import status
 
 from billing import entitlements
 from billing.models import Plan, Subscription, Tip
 from billing.serializers import (
-    PlanPublicSerializer, MySubscriptionSerializer, EntitlementsSerializer,
+    PlanPublicSerializer, MySubscriptionSerializer, EntitlementsSerializer, TipSerializer,
 )
 from billing.stripe_gateway import BillingUnavailable, is_enabled
 
 logger = logging.getLogger('jokesfor')
 
 # Fixed tip tiers, in cents — abuse/laundering guard: no arbitrary amounts.
-TIP_AMOUNT_TIERS_CENTS = {100, 300, 500, 1000}
+TIP_AMOUNT_TIERS_CENTS = frozenset({100, 300, 500, 1000})
 
 
 def _billing_unavailable():
@@ -102,6 +105,9 @@ class TipCheckoutView(APIView):
     creator (has published jokes); self-tipping is rejected.
     """
     permission_classes = [IsAuthenticated]
+    # A payments endpoint shouldn't ride the 1000/hr default user throttle.
+    throttle_classes = [ScopedRateThrottle]
+    throttle_scope = 'tips-checkout'
 
     def post(self, request):
         if not is_enabled():
@@ -174,6 +180,38 @@ class TipCheckoutView(APIView):
         except Exception as exc:
             logger.exception('billing.tip_checkout error: %s', exc)
             return Response({'detail': 'Checkout error.'}, status=status.HTTP_502_BAD_GATEWAY)
+
+
+class CreatorTipsSummaryView(APIView):
+    """GET /api/v1/creators/{id}/tips/summary/ — public tips-received summary
+    for a creator's profile.
+
+    Only SUCCEEDED tips are counted — pending/failed tips never inflate what a
+    creator appears to have received.
+    """
+    permission_classes = [AllowAny]
+
+    def get(self, request, creator_id):
+        agg = Tip.objects.filter(creator_id=creator_id, status='succeeded').aggregate(
+            count=Count('id'), total_cents=Sum('amount_cents'),
+        )
+        return Response({
+            'count': agg['count'] or 0,
+            'total_cents': agg['total_cents'] or 0,
+        })
+
+
+class MyTipsView(APIView):
+    """GET /api/v1/users/me/tips/ — the caller's sent-tip history, most recent first."""
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        tips = Tip.objects.filter(sender=request.user)  # Tip.Meta.ordering = -created_at
+        paginator = PageNumberPagination()
+        paginator.page_size = 10
+        page = paginator.paginate_queryset(tips, request, view=self)
+        serializer = TipSerializer(page, many=True)
+        return paginator.get_paginated_response(serializer.data)
 
 
 class PortalSessionView(APIView):
