@@ -88,6 +88,7 @@ class WebhookCheckoutCompletedTests(TestCase):
         from billing.webhooks import handle_event
 
         event = _make_stripe_event('checkout.session.completed', {
+            'mode': 'subscription',
             'metadata': {'user_id': str(self.user.pk), 'plan_slug': 'creator_pro'},
             'customer': 'cus_webhook_001',
             'subscription': 'sub_webhook_001',
@@ -377,6 +378,7 @@ class WebhookTipCompletedTests(TestCase):
         from billing.webhooks import handle_event
 
         event = _make_stripe_event('checkout.session.completed', {
+            'mode': 'subscription',
             'metadata': {'user_id': str(self.sender.pk), 'plan_slug': 'creator_pro'},
             'customer': 'cus_webhook_notip',
             'subscription': 'sub_webhook_notip',
@@ -388,6 +390,36 @@ class WebhookTipCompletedTests(TestCase):
         self.assertEqual(Tip.objects.count(), 0)
         sub = Subscription.objects.get(user=self.sender)
         self.assertEqual(sub.status, 'active')
+        self.assertEqual(sub.plan.slug, 'creator_pro')
+
+    def test_payment_mode_without_tip_metadata_does_not_downgrade_sender(self):
+        """The real anti-downgrade guard: a payment-mode checkout.session.completed
+        that lost its tip 'type' metadata must NOT reach the subscription upsert.
+        Without the guard, _user_from_event's customer-id fallback resolves the
+        SENDER (tips reuse the sender's Stripe customer id) and _upsert_subscription
+        would downgrade their real subscription to free. mode='payment' is never a
+        subscription, so the handler must ignore it."""
+        from billing.webhooks import handle_event
+
+        pro = Plan.objects.get(slug='creator_pro')
+        Subscription.objects.create(
+            user=self.sender, plan=pro,
+            stripe_customer_id='cus_sender_paid', status='active',
+        )
+        event = _make_stripe_event('checkout.session.completed', {
+            'id': 'cs_lost_meta_001',
+            'mode': 'payment',
+            'payment_status': 'paid',
+            'customer': 'cus_sender_paid',   # resolves to the sender via fallback
+            'subscription': '',
+            'client_reference_id': '',
+            'metadata': {},                  # lost its type='tip'
+        }, event_id='evt_lost_meta_001')
+
+        handle_event(event)
+
+        sub = Subscription.objects.get(user=self.sender)
+        self.assertEqual(sub.status, 'active', 'payment-mode session must not downgrade the sender')
         self.assertEqual(sub.plan.slug, 'creator_pro')
 
 

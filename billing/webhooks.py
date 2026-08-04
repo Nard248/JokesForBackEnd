@@ -144,14 +144,32 @@ def _handle_tip_completed(session, metadata):
 
 def _handle_checkout_completed(session):
     metadata = getattr(session, 'metadata', {}) or {}
-    # Defensive mode gate: a tip session always has mode='payment' (set at
-    # creation, billing/stripe_gateway.py:create_tip_checkout_session).
-    # Requiring it here means a session that somehow lost its tip metadata
-    # can never fall through into the subscription branch below on a stray
-    # type='tip' value — unreachable with server-set metadata, but cheap
-    # insurance on a money path.
-    if metadata.get('type') == 'tip' and getattr(session, 'mode', '') == 'payment':
+    # Tip completion runs only for a genuine payment-mode tip session (mode is
+    # set at creation, billing/stripe_gateway.py:create_tip_checkout_session).
+    # Requiring mode=='payment' here keeps a corrupted subscription-mode
+    # session that carried a stray type='tip' out of the tip handler; the
+    # anti-downgrade protection for the reverse case lives in the guard below.
+    mode = getattr(session, 'mode', '')
+    if metadata.get('type') == 'tip' and mode == 'payment':
         _handle_tip_completed(session, metadata)
+        return
+
+    # A payment-mode session is NEVER a subscription, so the subscription
+    # upsert below must not run for one. This closes the hole the tips review
+    # flagged: a payment/tip session that lost its 'type' metadata would
+    # otherwise fall through here, and _user_from_event's customer-id fallback
+    # resolves the *sender* (tips reuse the sender's Stripe customer id) —
+    # _upsert_subscription would then downgrade that sender's real
+    # subscription to free/active. Unreachable with server-set metadata, but
+    # this is the guard that actually prevents it. An empty/missing mode
+    # (older fixtures, and belt-and-suspenders) is treated as "proceed": real
+    # Stripe subscription completions always carry mode='subscription'.
+    if mode and mode != 'subscription':
+        logger.warning(
+            'billing.webhook: ignoring checkout.session %s completed in '
+            'mode=%s — not a subscription and not a recognized tip',
+            getattr(session, 'id', ''), mode,
+        )
         return
 
     user = _user_from_event(session)
