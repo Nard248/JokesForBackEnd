@@ -22,6 +22,7 @@ from drf_spectacular.views import (
     SpectacularSwaggerView,
 )
 
+from jokes.sitemap import sitemap_view
 from jokes.views import CookieRegisterView, GoogleLogin, csrf_token_view, joke_share_page
 from JokesForProject.health import healthz, readyz
 from notifications.views import EmailUnsubscribeView, RunDigestsView
@@ -33,6 +34,10 @@ urlpatterns = [
     # Readiness probe — verifies DB + cache; returns 503 if either is down.
     # Point Cloud Monitoring uptime checks here; do NOT use for liveness.
     path('readyz', readyz, name='readyz'),
+
+    # Public XML sitemap of frontend routes — a Firebase Hosting rewrite
+    # maps /sitemap.xml on the frontend origin here. See jokes/sitemap.py.
+    path('sitemap.xml', sitemap_view, name='sitemap'),
 
     # Admin
     path('admin/', admin.site.urls),
