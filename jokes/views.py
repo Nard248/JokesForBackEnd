@@ -1357,27 +1357,43 @@ def joke_share_page(request, pk):
     actual joke experience, just a crawler-facing shell. Social scrapers read
     the meta tags and ignore the meta-refresh/JS redirect; browsers do the
     opposite.
+
+    The joke is fetched WITHOUT a content_tier filter -- `Joke.objects` (the
+    default manager) already excludes is_removed=True, so this 404s only for
+    genuinely missing/removed jokes. If the requester isn't allowed this
+    joke's tier (e.g. an anon or minor hitting a tier_2/mature share link),
+    we don't 404 -- a 404 would be a dead link for an otherwise-real joke,
+    handing scrapers no preview and humans a raw backend error instead of
+    the app's own age-gate. Instead we render a minimal, content-free
+    redirect shell (share_redirect.html) that bounces the human to the SPA
+    -- which enforces the age-gate itself -- while exposing zero joke
+    content (no text, no image, no JSON-LD) to anon/scraper eyes.
     """
     joke = get_object_or_404(
         Joke.objects.select_related('format', 'age_rating').prefetch_related('tones'),
         pk=pk,
-        content_tier__in=allowed_tiers(request),
     )
+
+    frontend_origin = settings.FRONTEND_URL.rstrip('/')
+    frontend_joke_url = f'{frontend_origin}/jokes/{joke.id}'
+
+    if joke.content_tier not in allowed_tiers(request):
+        # Tier-gated for this requester: content-free redirect only, no
+        # og:image/description/JSON-LD, no joke text of any kind.
+        return render(request, 'jokes/share_redirect.html', {
+            'frontend_joke_url': frontend_joke_url,
+        })
 
     # Build absolute URLs
     share_image_url = ''
     if joke.share_image:
         share_image_url = request.build_absolute_uri(joke.share_image.url)
 
-    frontend_origin = settings.FRONTEND_URL.rstrip('/')
-    frontend_joke_url = f'{frontend_origin}/jokes/{joke.id}'
-
-    title = Truncator(joke.text or joke.setup or '').chars(60, truncate='…')
-
-    # Teaser for the description meta tags: the setup for two-part jokes,
-    # else the joke text itself. NEVER punchline/lines -- this page
-    # advertises the joke, it must not spoil it.
+    # Teaser for the title/JSON-LD `name` and the description meta tags: the
+    # setup for two-part jokes, else the joke text itself. NEVER the
+    # punchline -- this page advertises the joke, it must not spoil it.
     teaser_source = joke.setup or joke.text or ''
+    title = Truncator(teaser_source).chars(60, truncate='…')
     description = Truncator(teaser_source).chars(160, truncate='…')
 
     # Get badge text from primary tone

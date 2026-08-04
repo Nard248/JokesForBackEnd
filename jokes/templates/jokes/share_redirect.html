@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JokesFor</title>
+
+    <!-- This joke's content_tier isn't allowed for this requester (e.g. an
+         anonymous or minor visitor hitting a mature/tier_2 share link).
+         Deliberately content-free: no joke text, no og:image/description,
+         no JSON-LD -- nothing about the joke is exposed here. A real
+         browser is bounced to the SPA, which applies its own age-gate;
+         a scraper without the joke's content_tier gets nothing to preview,
+         which is the point. -->
+    <meta http-equiv="refresh" content="0; url={{ frontend_joke_url }}">
+    <meta name="robots" content="noindex">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: #1a1a2e;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+        }
+        a { color: #e94560; }
+    </style>
+</head>
+<body>
+    <p>Redirecting&hellip; <a href="{{ frontend_joke_url }}">Open in JokesFor</a></p>
+
+    <script>location.replace("{{ frontend_joke_url|escapejs }}");</script>
+</body>
+</html>

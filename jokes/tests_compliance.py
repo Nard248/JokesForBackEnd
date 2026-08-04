@@ -9,6 +9,7 @@ Test classes:
 """
 from unittest.mock import patch
 
+from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.test import TestCase, override_settings
 from django.utils import timezone
@@ -260,10 +261,12 @@ class AllowedTiersResolverTests(TestCase):
 # Task 4: ServingLockTests — per-endpoint tier exclusion
 # ---------------------------------------------------------------------------
 
-def _make_joke(fmt, age_rating, lang, content_tier, text_seed):
+def _make_joke(fmt, age_rating, lang, content_tier, text_seed, setup='', punchline=''):
     """Create a Joke with the given content_tier and a unique searchable text."""
     return Joke.objects.create(
         text=f'A {text_seed} joke that is uniquely {text_seed}able',
+        setup=setup,
+        punchline=punchline,
         format=fmt,
         age_rating=age_rating,
         language=lang,
@@ -296,7 +299,14 @@ class ServingLockTests(APITestCase):
         # Patch out PNG generation (no PIL in test env)
         with patch.object(Joke, '_generate_share_image', return_value=None):
             cls.joke_t1 = _make_joke(fmt, age_rating, lang, 'tier_1', 'servinglock')
-            cls.joke_t2 = _make_joke(fmt, age_rating, lang, 'tier_2', 'servinglock')
+            # tier_2 joke carries a real setup/punchline so the share-page
+            # redirect tests can assert those exact strings never leak into
+            # the gated response body.
+            cls.joke_t2 = _make_joke(
+                fmt, age_rating, lang, 'tier_2', 'servinglock',
+                setup='Why did the mature servinglock joke cross the road?',
+                punchline='To reach the tier_2 punchline on the other side.',
+            )
             cls.joke_t3 = _make_joke(fmt, age_rating, lang, 'tier_3', 'servinglock')
 
         # Users
@@ -530,18 +540,60 @@ class ServingLockTests(APITestCase):
         self.client.force_authenticate(user=None)
 
     # -- SHARE PAGE (surface 1) --
+    #
+    # A tier-gated share page no longer 404s -- a 404 here was a dead-link
+    # regression: scrapers got no preview and human recipients got a raw
+    # backend 404 instead of being bounced to the SPA's own age-gate. It now
+    # 200s with a minimal, content-free redirect shell (share_redirect.html)
+    # that sends the human on to the frontend while exposing NONE of the
+    # joke's mature content (no text/setup/punchline, no og:image, no
+    # JSON-LD) to the anon/scraper eyes that can't see it. This preserves
+    # the compliance intent -- no mature content served to anon/minors --
+    # while fixing the dead-link UX. The `full preview 200` behavior for an
+    # allowed (opted-in adult) requester is unchanged and covered below.
 
-    def test_share_page_anon_tier2_returns_404(self):
-        """GET /jokes/<tier2_id>/share/ as anon must 404."""
-        resp = self.client.get(f'/jokes/{self.joke_t2.id}/share/')
-        self.assertEqual(resp.status_code, 404, "anon must get 404 for tier_2 share page")
+    def _assert_gated_redirect_shell(self, resp, joke):
+        """Shared assertions for a tier-gated share-page response: 200,
+        redirects to the frontend joke URL, and leaks none of the joke's
+        mature content."""
+        self.assertEqual(resp.status_code, 200, "gated share page must 200 with a redirect shell, not 404")
+        body = resp.content.decode('utf-8')
 
-    def test_share_page_minor_tier2_returns_404(self):
-        """GET /jokes/<tier2_id>/share/ as minor must 404."""
-        self.client.force_authenticate(user=self.minor)
+        expected_target = f"{settings.FRONTEND_URL.rstrip('/')}/jokes/{joke.id}"
+        self.assertIn(expected_target, body, "redirect shell must point at the frontend joke URL")
+
+        # None of the joke's actual content may appear in the response.
+        self.assertNotIn(joke.text, body, "joke text leaked into gated share page")
+        self.assertNotIn(joke.setup, body, "joke setup leaked into gated share page")
+        self.assertNotIn(joke.punchline, body, "joke punchline leaked into gated share page")
+        if joke.share_image:
+            self.assertNotIn(joke.share_image.name, body, "share_image leaked into gated share page")
+        # Check actual tag markup (not a bare substring match) since the
+        # template's own explanatory comment mentions "og:image" by name.
+        self.assertNotIn('property="og:image"', body, "og:image tag must not appear on the gated share page")
+        self.assertNotIn('name="twitter:image"', body, "twitter:image tag must not appear on the gated share page")
+        self.assertNotIn('application/ld+json', body, "JSON-LD must not appear on the gated share page")
+        return body
+
+    def test_share_page_anon_tier2_returns_gated_redirect_no_content_leak(self):
+        """GET /jokes/<tier2_id>/share/ as anon must NOT 404 (dead link) and
+        must NOT leak any of the joke's mature content."""
         resp = self.client.get(f'/jokes/{self.joke_t2.id}/share/')
-        self.assertEqual(resp.status_code, 404, "minor must get 404 for tier_2 share page")
-        self.client.force_authenticate(user=None)
+        self._assert_gated_redirect_shell(resp, self.joke_t2)
+
+    def test_share_page_minor_tier2_returns_gated_redirect_no_content_leak(self):
+        """GET /jokes/<tier2_id>/share/ as minor must NOT 404 (dead link) and
+        must NOT leak any of the joke's mature content.
+
+        Uses force_login (session auth), not force_authenticate: this is a
+        plain Django view (not a DRF view), so force_authenticate -- which
+        only patches the DRF Request object -- has no effect on it and would
+        silently leave the request looking anonymous.
+        """
+        self.client.force_login(self.minor)
+        resp = self.client.get(f'/jokes/{self.joke_t2.id}/share/')
+        self._assert_gated_redirect_shell(resp, self.joke_t2)
+        self.client.logout()
 
     def test_share_page_adult_opt_tier2_returns_200(self):
         """GET /jokes/<tier2_id>/share/ as opted-in adult must return 200.
