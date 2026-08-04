@@ -20,13 +20,12 @@ default) -- digest first, then milestones with whatever's left. Eligible
 work beyond the budget is reported back as `remaining` so the caller/operator
 knows another call will keep draining it.
 """
-import hashlib
 import logging
+from datetime import timedelta
 
 from django.conf import settings
 from django.contrib.auth import get_user_model
-from django.db import connection
-from django.db.models import F
+from django.db.models import F, Q
 from django.utils import timezone
 
 from jokes.models import Joke, JokeReaction
@@ -164,60 +163,87 @@ def _send_creator_milestone(creator, new_reaction_count):
     )
 
 
-def _advisory_lock_key(today):
-    """Deterministic pg advisory-lock key for one calendar date's digest
-    run, derived from a fixed 'digest-run' namespace + the ISO date so two
-    overlapping run_daily_digests() calls for the same day contend on the
-    same key (and different days never collide). pg_advisory_lock takes a
-    signed bigint; truncating the sha256 hex digest to 15 hex chars (60
-    bits) keeps the value comfortably inside that range."""
-    digest = hashlib.sha256(f'digest-run:{today.isoformat()}'.encode()).hexdigest()
-    return int(digest[:15], 16)
-
-
 def run_daily_digests(cap=None):
     """Run one bounded batch of daily-digest + creator-milestone sends.
 
     Returns {'digests_sent', 'milestones_sent', 'failed', 'skipped',
-    'remaining'}. `skipped` is True iff the daily-digest phase was skipped
-    because no daily joke exists yet for today (milestones still run).
-    `remaining` is the count of eligible sends (both types combined) left
-    undone because `cap` ran out -- call again to keep draining it. `failed`
-    is the count of individual sends that raised (bad address, transport
-    error, provider outage) -- see the per-send try/except below; those
-    recipients already have a 'failed' EmailMessageLog row (send_email
+    'remaining', 'locked'}. `skipped` is True iff the daily-digest phase was
+    skipped because no daily joke exists yet for today (milestones still
+    run). `remaining` is the count of eligible sends (both types combined)
+    left undone because `cap` ran out -- call again to keep draining it.
+    `failed` is the count of individual sends that raised (bad address,
+    transport error, provider outage) -- see the per-send try/except below;
+    those recipients already have a 'failed' EmailMessageLog row (send_email
     writes it before the transport call), so a subsequent run's ledger
-    lookup naturally skips them rather than retrying forever.
+    lookup naturally skips them rather than retrying forever. `locked` is
+    True iff this call bailed out immediately because another run already
+    holds today's claim (see below) -- every other key is a no-op zero/False
+    in that case.
 
-    Concurrency: wrapped in a session-scoped pg advisory lock (see
-    _advisory_lock_key) keyed on 'today', so two overlapping invocations for
-    the same date -- a scheduler retry racing a manual re-run, or two Cloud
-    Run instances both firing -- serialize instead of both reading the same
-    "not sent yet" user/creator sets and double-sending (EmailMessageLog has
-    no (user, template, day) DB-level uniqueness backing the ledger, only
-    this read-then-send convention). Deliberately session-scoped rather than
-    a transaction-scoped `pg_advisory_xact_lock` wrapping the whole run in
-    one `transaction.atomic()`: each send below still autocommits its own
-    EmailMessageLog row immediately, exactly as before this fix. Sending a
-    real email is an irreversible external side effect -- if the entire run
-    (all the sends' DB writes included) sat inside one transaction and a
-    later, unrelated exception rolled it back, the ledger rows for emails
-    that had already gone out over the wire would vanish too, and the next
-    run would re-send them. The per-send try/except immediately below is
-    exactly what makes that "later, unrelated exception" a real
-    possibility to guard against, not a theoretical one -- the two fixes
-    have to compose safely together.
+    Concurrency: a pooling-safe compare-and-set claim on today's DigestRun
+    row, NOT a Postgres advisory lock. This app's prod DB connection goes
+    through Neon's `-pooler` endpoint, which is PgBouncer in TRANSACTION
+    pooling mode (see JokesForProject/settings.py's `-pooler` handling,
+    right above where DATABASES is built) -- under transaction pooling with
+    Django's autocommit, each individual statement can be served by a
+    *different* backend connection. A session-scoped `pg_advisory_lock`
+    taken in one statement and released via `pg_advisory_unlock` in a later
+    statement is therefore NOT safe here: the unlock can land on a different
+    backend than the lock, return "not owner", and silently fail to release
+    -- leaking the lock onto some idle pooled connection forever (no DISCARD
+    between transactions in transaction-pooling mode). Every subsequent
+    same-day call -- a manual re-run, or this very function's own
+    cap-drain contract ("call `remaining` again to keep draining it") --
+    would then block forever on `pg_advisory_lock` (it has no timeout),
+    eventually hit gunicorn's worker timeout, and 500. In short: the first
+    real run of the day would deadlock every run after it. A prior version
+    of this function used exactly that advisory-lock approach; it passed
+    every local test because the local/test DB is a single direct Postgres
+    connection (session-scoped locks are trivially safe, and even re-entrant,
+    on one session) -- the pooling failure mode has no way to manifest
+    locally, so a green suite proved nothing about prod safety here.
+
+    The claim below is safe under pooling because each operation is exactly
+    one SQL statement, and Postgres serializes concurrent UPDATEs on the
+    same row itself (the second racer's UPDATE blocks until the first
+    commits, then re-evaluates its WHERE clause against the now-committed
+    row and matches zero rows) -- no cross-statement session affinity is
+    required at all:
+      1. `get_or_create` the row for today (idempotent, already existed).
+      2. ONE conditional `UPDATE ... WHERE claimed_until IS NULL OR
+         claimed_until < now() SET claimed_until = now() + 10min`. Two
+         overlapping callers both reach this after both having
+         get_or_create'd the same row; only one UPDATE's WHERE clause still
+         matches by the time Postgres serializes them, so only one caller
+         sees `updated == 1` and proceeds -- the other sees `updated == 0`
+         and returns immediately with `locked=True`, sending nothing.
+      3. On the way out (`finally`), ONE unconditional `UPDATE ... SET
+         claimed_until = NULL` releases the claim for the next legitimate
+         call (including this function's own cap-drain continuations)
+         without waiting for the window to expire. The 10-minute window
+         itself only matters if the process is SIGKILLed mid-run and the
+         `finally` never executes -- it's a self-heal ceiling, not the
+         normal release path.
     """
     cap = settings.DIGEST_SEND_CAP if cap is None else cap
     today = timezone.now().date()
-    lock_key = _advisory_lock_key(today)
 
-    with connection.cursor() as cursor:
-        cursor.execute('SELECT pg_advisory_lock(%s)', [lock_key])
+    DigestRun.objects.get_or_create(date=today, defaults={'started_at': timezone.now()})
+
+    now = timezone.now()
+    claimed = (
+        DigestRun.objects.filter(date=today)
+        .filter(Q(claimed_until__isnull=True) | Q(claimed_until__lt=now))
+        .update(claimed_until=now + timedelta(minutes=10))
+    )
+    if not claimed:
+        return {
+            'digests_sent': 0, 'milestones_sent': 0, 'failed': 0,
+            'skipped': False, 'remaining': 0, 'locked': True,
+        }
+
     try:
-        run, _created = DigestRun.objects.get_or_create(
-            date=today, defaults={'started_at': timezone.now()}
-        )
+        run = DigestRun.objects.get(date=today)
 
         budget = cap
         digests_sent = 0
@@ -266,13 +292,13 @@ def run_daily_digests(cap=None):
                 )
         remaining += len(leftover)
 
-        # F()-expression update, not a Python read-modify-write: two
-        # sequential holders of the advisory lock above still shouldn't
-        # clobber each other's increment on the (unlikely but cheap-to-guard)
-        # chance this statement itself races something else touching the
-        # same row. Correctness of sends themselves never depends on this
-        # counter -- EmailMessageLog is the idempotency ledger -- this is
-        # purely the observability total staying accurate.
+        # F()-expression update, not a Python read-modify-write: the claim
+        # above is what serializes concurrent runs now, but this stays an
+        # F() update anyway (cheap, and correctness of sends themselves
+        # never depends on this counter -- EmailMessageLog is the
+        # idempotency ledger -- this is purely the observability total
+        # staying accurate under any future path that touches this row
+        # without going through the claim).
         DigestRun.objects.filter(pk=run.pk).update(
             digests_sent=F('digests_sent') + digests_sent,
             milestones_sent=F('milestones_sent') + milestones_sent,
@@ -285,14 +311,14 @@ def run_daily_digests(cap=None):
             'failed': failed,
             'skipped': skipped,
             'remaining': remaining,
+            'locked': False,
         }
     finally:
-        # Always release, even if something above raised past our own
-        # per-send guards (e.g. a DB error building the eligible sets) --
-        # pg would also auto-release on connection loss, but an explicit
-        # unlock keeps the lock's lifetime tied to this call under normal
-        # operation instead of the whole DB connection's lifetime (which,
-        # under connection pooling/persistent connections, can outlive any
-        # single request by a lot).
-        with connection.cursor() as cursor:
-            cursor.execute('SELECT pg_advisory_unlock(%s)', [lock_key])
+        # Release the claim unconditionally, even if something above raised
+        # past our own per-send guards (e.g. a DB error building the
+        # eligible sets) -- one single-statement UPDATE, safe under
+        # transaction pooling for the same reason the claim UPDATE is: no
+        # cross-statement session affinity required. The 10-minute window
+        # is the only thing standing in for this if the process is
+        # SIGKILLed before `finally` runs.
+        DigestRun.objects.filter(date=today).update(claimed_until=None)

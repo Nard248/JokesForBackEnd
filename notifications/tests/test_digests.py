@@ -20,7 +20,7 @@ from jokes.models import (
     AgeRating, DailyJoke, Format, Joke, JokeReaction, Language,
 )
 from jokes.recommendations import get_daily_editorial_joke
-from notifications.digests import _advisory_lock_key, run_daily_digests
+from notifications.digests import run_daily_digests
 from notifications.models import DigestRun, EmailMessageLog
 from notifications.service import EmailSendError
 from notifications.unsubscribe import load_unsubscribe_token
@@ -410,45 +410,111 @@ class DigestPerSendFailureIsolationTests(TestCase):
         self.assertIsNotNone(run.finished_at)
 
 
-class DigestConcurrencyLockTests(TestCase):
-    """Final-review Important 2: a pg advisory lock keyed on 'digest run for
-    today' serializes overlapping run_daily_digests() calls so two racing
-    invocations can't both read the same not-yet-sent user/creator set and
-    double-send (EmailMessageLog has no (user, template, day) DB-level
-    uniqueness backing the ledger). True concurrent-thread racing isn't
-    reliably testable from a single-threaded test without over-engineering
-    a multi-process/thread harness for a slim behavioral guarantee, so this
-    documents + exercises the property that actually matters operationally:
-    the lock is always acquired and released cleanly, so sequential calls --
-    which is what a scheduler retry or manual re-run actually looks like in
-    this single-app, no-worker deployment -- keep working, and the key is
-    deterministic and correctly date-scoped."""
+class DigestClaimConcurrencyTests(TestCase):
+    """Final-review Important 2 (revised): a single-statement conditional
+    UPDATE claim on today's DigestRun row (claimed_until) serializes
+    overlapping run_daily_digests() calls -- see the run_daily_digests
+    docstring for why this replaced a session-scoped pg advisory lock. That
+    lock was broken under Neon's `-pooler` PgBouncer transaction-pooling
+    mode in prod (the lock and its unlock could land on different pooled
+    backend connections, silently failing to release and deadlocking every
+    subsequent same-day call) -- and the previous version of this test class
+    passed every time locally anyway, because the local/test DB is one
+    direct Postgres session where that failure mode structurally cannot
+    manifest. A green suite proved nothing about prod safety there. The
+    claim's actual mechanism -- a row already claimed makes a fresh call
+    bail out immediately, and a released/expired claim lets the next call
+    through -- IS deterministically testable by forcing the claimed state
+    directly, which is what these tests do instead of relying on a
+    "sequential calls didn't hang" proxy."""
 
     def setUp(self):
         self.fmt, self.age, self.lang = _taxonomy()
 
-    def test_lock_key_is_deterministic_and_date_scoped(self):
-        d = timezone.now().date()
-        self.assertEqual(_advisory_lock_key(d), _advisory_lock_key(d))
-        self.assertNotEqual(_advisory_lock_key(d), _advisory_lock_key(d + timedelta(days=1)))
-
     @override_settings(EMAIL_BACKEND='django.core.mail.backends.locmem.EmailBackend')
-    def test_sequential_runs_both_complete_lock_not_leaked(self):
-        # If the advisory lock leaked (never unlocked), this second call
-        # would hang waiting on pg_advisory_lock and the test would time out
-        # instead of completing -- so a normal pass here is itself the
-        # "lock released cleanly" assertion, on top of the idempotency check.
+    def test_in_flight_claim_makes_a_second_call_bail_out_locked(self):
         joke = _make_joke(self.fmt, self.age, self.lang)
         with freeze_time(TODAY):
-            recipient = _make_user('lock-seed@example.com')
-            DailyJoke.objects.create(user=recipient, joke=joke, date=timezone.now().date())
-            _make_user('lock-reader@example.com')
+            today = timezone.now().date()
+            recipient = _make_user('claim-seed@example.com')
+            DailyJoke.objects.create(user=recipient, joke=joke, date=today)
 
-            first = run_daily_digests()
-            second = run_daily_digests()
+            # Simulate an in-flight run: another call already holds the
+            # claim (claimed_until still in the future).
+            run = DigestRun.objects.create(
+                date=today, started_at=timezone.now(),
+                claimed_until=timezone.now() + timedelta(minutes=5),
+            )
 
-        self.assertEqual(first['digests_sent'], 2)
-        self.assertEqual(second['digests_sent'], 0)
+            result = run_daily_digests()
+
+        self.assertEqual(result, {
+            'digests_sent': 0, 'milestones_sent': 0, 'failed': 0,
+            'skipped': False, 'remaining': 0, 'locked': True,
+        })
+        self.assertEqual(len(mail.outbox), 0)
+        # Bailing out must never touch (let alone clear) a claim it doesn't
+        # own -- the in-flight run's own `finally` is what releases it.
+        run.refresh_from_db()
+        self.assertIsNotNone(run.claimed_until)
+
+    @override_settings(EMAIL_BACKEND='django.core.mail.backends.locmem.EmailBackend')
+    def test_clearing_the_claim_lets_the_next_run_proceed(self):
+        joke = _make_joke(self.fmt, self.age, self.lang)
+        with freeze_time(TODAY):
+            today = timezone.now().date()
+            recipient = _make_user('claim-clear-seed@example.com')
+            DailyJoke.objects.create(user=recipient, joke=joke, date=today)
+            DigestRun.objects.create(
+                date=today, started_at=timezone.now(),
+                claimed_until=timezone.now() + timedelta(minutes=5),
+            )
+
+            locked_result = run_daily_digests()
+            self.assertTrue(locked_result['locked'])
+
+            # Clear the claim -- exactly what the in-flight run's own
+            # `finally` does when it finishes -- and confirm the next call
+            # now proceeds normally instead of staying locked out.
+            DigestRun.objects.filter(date=today).update(claimed_until=None)
+            proceeded_result = run_daily_digests()
+
+        self.assertFalse(proceeded_result['locked'])
+        self.assertEqual(proceeded_result['digests_sent'], 1)
+
+    @override_settings(EMAIL_BACKEND='django.core.mail.backends.locmem.EmailBackend')
+    def test_expired_claim_window_does_not_block_a_new_run(self):
+        # The 10-minute window is a SIGKILL self-heal ceiling, not the
+        # normal release path -- a claim whose window already passed must
+        # not block a fresh call even if nothing ever explicitly cleared it.
+        joke = _make_joke(self.fmt, self.age, self.lang)
+        with freeze_time(TODAY):
+            today = timezone.now().date()
+            recipient = _make_user('claim-expired-seed@example.com')
+            DailyJoke.objects.create(user=recipient, joke=joke, date=today)
+            DigestRun.objects.create(
+                date=today, started_at=timezone.now(),
+                claimed_until=timezone.now() - timedelta(minutes=1),
+            )
+
+            result = run_daily_digests()
+
+        self.assertFalse(result['locked'])
+        self.assertEqual(result['digests_sent'], 1)
+
+    @override_settings(EMAIL_BACKEND='django.core.mail.backends.locmem.EmailBackend')
+    def test_normal_run_clears_its_own_claim_on_the_way_out(self):
+        joke = _make_joke(self.fmt, self.age, self.lang)
+        with freeze_time(TODAY):
+            today = timezone.now().date()
+            recipient = _make_user('claim-selfclear-seed@example.com')
+            DailyJoke.objects.create(user=recipient, joke=joke, date=today)
+
+            result = run_daily_digests()
+
+        self.assertFalse(result['locked'])
+        run = DigestRun.objects.get(date=today)
+        self.assertIsNone(run.claimed_until)
 
 
 @override_settings(EMAIL_BACKEND='django.core.mail.backends.locmem.EmailBackend')

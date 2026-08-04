@@ -77,6 +77,14 @@ class DigestRun(models.Model):
     finished_at = models.DateTimeField(null=True, blank=True)
     digests_sent = models.PositiveIntegerField(default=0)
     milestones_sent = models.PositiveIntegerField(default=0)
+    # Pooling-safe run claim (replaces a session-scoped pg advisory lock,
+    # which is unsafe under Neon's `-pooler` PgBouncer transaction-pooling
+    # mode -- see notifications.digests.run_daily_digests). NULL/in-the-past
+    # means unclaimed; a single conditional UPDATE flips it forward for the
+    # claim window, and a `finally` clears it back to NULL when the run
+    # finishes. The window itself is only a crash/SIGKILL self-heal
+    # fallback, not the normal release path.
+    claimed_until = models.DateTimeField(null=True, blank=True)
 
     class Meta:
         ordering = ['-date']
