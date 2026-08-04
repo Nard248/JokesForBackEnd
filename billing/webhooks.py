@@ -117,6 +117,25 @@ def _handle_tip_completed(session, metadata):
     if tip.status == 'succeeded':
         return  # Already processed — idempotent no-op.
 
+    # Money-truth guard: checkout.session.completed fires as soon as the
+    # customer finishes Checkout, which for a delayed-notification payment
+    # method (e.g. ACH debit) is BEFORE the payment actually settles —
+    # payment_status is 'unpaid'/'processing' until a later async event.
+    # Marking the tip succeeded here would let the public tips-received
+    # total overstate money that may never arrive if the async payment
+    # later fails. Understating (leaving it pending) is the safe default;
+    # we don't yet handle checkout.session.async_payment_succeeded, so a
+    # non-'paid' session just stays pending rather than being completed by
+    # a handler we don't have (a later wave can add that event).
+    payment_status = getattr(session, 'payment_status', 'paid')
+    if payment_status != 'paid':
+        logger.info(
+            'billing.webhook: tip %s checkout.session %s completed with '
+            'payment_status=%s (not settled) — leaving pending',
+            tip.id, session_id, payment_status,
+        )
+        return
+
     tip.status = 'succeeded'
     tip.stripe_payment_intent_id = getattr(session, 'payment_intent', '') or ''
     tip.completed_at = timezone.now()
@@ -125,7 +144,13 @@ def _handle_tip_completed(session, metadata):
 
 def _handle_checkout_completed(session):
     metadata = getattr(session, 'metadata', {}) or {}
-    if metadata.get('type') == 'tip':
+    # Defensive mode gate: a tip session always has mode='payment' (set at
+    # creation, billing/stripe_gateway.py:create_tip_checkout_session).
+    # Requiring it here means a session that somehow lost its tip metadata
+    # can never fall through into the subscription branch below on a stray
+    # type='tip' value — unreachable with server-set metadata, but cheap
+    # insurance on a money path.
+    if metadata.get('type') == 'tip' and getattr(session, 'mode', '') == 'payment':
         _handle_tip_completed(session, metadata)
         return
 

@@ -99,6 +99,14 @@ def create_tip_checkout_session(sender, creator, joke, amount_cents: int):
     session = s.checkout.Session.create(
         mode='payment',
         customer=customer_id,
+        # Card-only (belt-and-suspenders with the webhook's payment_status
+        # guard, see billing/webhooks.py:_handle_tip_completed): cards settle
+        # synchronously, so checkout.session.completed always carries
+        # payment_status='paid'. Without this, live-mode dashboard config
+        # could enable a delayed-notification method (e.g. ACH debit), whose
+        # completed event fires with payment_status='unpaid'/'processing' —
+        # money that may still fail to arrive. Card-only is fine for tips v1.
+        payment_method_types=['card'],
         line_items=[{
             'price_data': {
                 'currency': tip.currency,
