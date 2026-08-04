@@ -5,6 +5,15 @@
       <tr><td style="font-size:20px; font-weight:700; color:#6A1CF6; padding-bottom:16px;">Jokes For</td></tr>
       <tr><td style="font-size:15px; color:#222; line-height:1.5;">{% block content %}{% endblock %}</td></tr>
       <tr><td style="font-size:12px; color:#888; padding-top:24px;">{% block footer %}If you didn't request this, you can ignore this email.{% endblock %}</td></tr>
+      {# CAN-SPAM: every commercial email needs the sender's physical postal
+         address. This row is OUTSIDE the `footer` block on purpose so it
+         renders unconditionally for every email that extends this base,
+         even daily_digest/creator_milestone which fully override `footer`
+         (no {{ block.super }} call) rather than appending to it.
+         OWNER ACTION: replace [COMPANY POSTAL ADDRESS] below with the real
+         registered business address before enabling digests in prod --
+         see Docs/superpowers/plans/2026-07-24-email-digest-wave.md. #}
+      <tr><td style="font-size:11px; color:#aaa; padding-top:12px;">Jokes For &middot; [COMPANY POSTAL ADDRESS]</td></tr>
     </table>
   </body>
 </html>

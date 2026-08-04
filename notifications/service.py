@@ -18,8 +18,13 @@ class EmailSendError(Exception):
     """Raised when the transport layer fails to send. Caller decides UX."""
 
 
-def send_email(to_email, template_name, context, user=None):
-    """Render, log, and dispatch an email. Returns the EmailMessageLog row."""
+def send_email(to_email, template_name, context, user=None, headers=None):
+    """Render, log, and dispatch an email. Returns the EmailMessageLog row.
+
+    `headers` (optional dict) passes through to EmailMultiAlternatives as
+    raw extra headers -- e.g. List-Unsubscribe/List-Unsubscribe-Post for
+    digest emails (see notifications.digests._list_unsubscribe_headers).
+    """
     subject, html_body, text_body = render_template(template_name, context)
 
     log = EmailMessageLog.objects.create(
@@ -30,6 +35,7 @@ def send_email(to_email, template_name, context, user=None):
         msg = EmailMultiAlternatives(
             subject=subject, body=text_body,
             from_email=settings.DEFAULT_FROM_EMAIL, to=[to_email],
+            headers=headers,
         )
         msg.attach_alternative(html_body, 'text/html')
         msg.send()

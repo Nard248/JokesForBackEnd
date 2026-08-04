@@ -14,12 +14,15 @@ from django.test import TestCase, override_settings
 from django.utils import timezone
 from freezegun import freeze_time
 
+from django.core.mail import EmailMultiAlternatives
+
 from jokes.models import (
     AgeRating, DailyJoke, Format, Joke, JokeReaction, Language,
 )
 from jokes.recommendations import get_daily_editorial_joke
-from notifications.digests import run_daily_digests
+from notifications.digests import _advisory_lock_key, run_daily_digests
 from notifications.models import DigestRun, EmailMessageLog
+from notifications.service import EmailSendError
 from notifications.unsubscribe import load_unsubscribe_token
 
 User = get_user_model()
@@ -327,3 +330,159 @@ class DigestRunModelTests(TestCase):
             run = DigestRun.objects.get(date=timezone.now().date())
             self.assertEqual(run.digests_sent, 1)
             self.assertIsNotNone(run.finished_at)
+
+
+@override_settings(EMAIL_BACKEND='django.core.mail.backends.locmem.EmailBackend')
+class DigestPerSendFailureIsolationTests(TestCase):
+    """Final-review Important 1 (the key fix): one bad recipient in a batch
+    must never 500 the whole run, skip the DigestRun counts update, or stop
+    the rest of the day's sends -- each send is individually try/except-
+    wrapped in run_daily_digests, incrementing `failed` and continuing."""
+
+    def setUp(self):
+        self.fmt, self.age, self.lang = _taxonomy()
+
+    def test_middle_send_failure_is_isolated_others_still_send(self):
+        joke = _make_joke(self.fmt, self.age, self.lang)
+        with freeze_time(TODAY):
+            today = timezone.now().date()
+            # 4 eligible recipients (the seed used to plant today's
+            # DailyJoke counts as a subscriber too): seed, a, b (fails), c.
+            seed = _make_user('failtest-seed@example.com')
+            DailyJoke.objects.create(user=seed, joke=joke, date=today)
+            _make_user('failtest-a@example.com')
+            _make_user('failtest-b@example.com')
+            _make_user('failtest-c@example.com')
+
+            original_send = EmailMultiAlternatives.send
+
+            def flaky_transport_send(self, *args, **kwargs):
+                # Simulate a real transport failure (bad address, Resend
+                # 429, network blip) for exactly one recipient -- everyone
+                # else goes through the real locmem send path unmodified.
+                if self.to == ['failtest-b@example.com']:
+                    raise Exception('simulated transport failure')
+                return original_send(self, *args, **kwargs)
+
+            with patch.object(EmailMultiAlternatives, 'send', flaky_transport_send):
+                result = run_daily_digests()
+
+        # No 500 -- run_daily_digests returned a normal summary dict, and
+        # the batch didn't stop at the failure.
+        self.assertEqual(result['failed'], 1)
+        self.assertEqual(result['digests_sent'], 3)  # seed + a + c (b failed)
+
+        recipients = {m.to[0] for m in mail.outbox}
+        self.assertIn('failtest-a@example.com', recipients)
+        self.assertIn('failtest-c@example.com', recipients)
+        self.assertNotIn('failtest-b@example.com', recipients)
+
+        # DigestRun counts reflect only the successful sends -- not skipped,
+        # not corrupted by the mid-batch exception.
+        run = DigestRun.objects.get(date=today)
+        self.assertEqual(run.digests_sent, 3)
+
+        # The failed EmailMessageLog row send_email wrote before the
+        # transport call is exactly the ledger entry that makes a retry
+        # skip this recipient rather than re-attempting them forever.
+        failed_log = EmailMessageLog.objects.get(
+            to_email='failtest-b@example.com', template_name='daily_digest',
+        )
+        self.assertEqual(failed_log.status, 'failed')
+
+    def test_all_sends_failing_still_returns_a_summary_not_500(self):
+        joke = _make_joke(self.fmt, self.age, self.lang)
+        with freeze_time(TODAY):
+            today = timezone.now().date()
+            seed = _make_user('allfail-seed@example.com')
+            DailyJoke.objects.create(user=seed, joke=joke, date=today)
+            _make_user('allfail-a@example.com')
+
+            with patch(
+                'notifications.digests.send_email', side_effect=EmailSendError('down'),
+            ):
+                result = run_daily_digests()
+
+        self.assertEqual(result['digests_sent'], 0)
+        self.assertEqual(result['failed'], 2)
+        run = DigestRun.objects.get(date=today)
+        self.assertEqual(run.digests_sent, 0)
+        self.assertIsNotNone(run.finished_at)
+
+
+class DigestConcurrencyLockTests(TestCase):
+    """Final-review Important 2: a pg advisory lock keyed on 'digest run for
+    today' serializes overlapping run_daily_digests() calls so two racing
+    invocations can't both read the same not-yet-sent user/creator set and
+    double-send (EmailMessageLog has no (user, template, day) DB-level
+    uniqueness backing the ledger). True concurrent-thread racing isn't
+    reliably testable from a single-threaded test without over-engineering
+    a multi-process/thread harness for a slim behavioral guarantee, so this
+    documents + exercises the property that actually matters operationally:
+    the lock is always acquired and released cleanly, so sequential calls --
+    which is what a scheduler retry or manual re-run actually looks like in
+    this single-app, no-worker deployment -- keep working, and the key is
+    deterministic and correctly date-scoped."""
+
+    def setUp(self):
+        self.fmt, self.age, self.lang = _taxonomy()
+
+    def test_lock_key_is_deterministic_and_date_scoped(self):
+        d = timezone.now().date()
+        self.assertEqual(_advisory_lock_key(d), _advisory_lock_key(d))
+        self.assertNotEqual(_advisory_lock_key(d), _advisory_lock_key(d + timedelta(days=1)))
+
+    @override_settings(EMAIL_BACKEND='django.core.mail.backends.locmem.EmailBackend')
+    def test_sequential_runs_both_complete_lock_not_leaked(self):
+        # If the advisory lock leaked (never unlocked), this second call
+        # would hang waiting on pg_advisory_lock and the test would time out
+        # instead of completing -- so a normal pass here is itself the
+        # "lock released cleanly" assertion, on top of the idempotency check.
+        joke = _make_joke(self.fmt, self.age, self.lang)
+        with freeze_time(TODAY):
+            recipient = _make_user('lock-seed@example.com')
+            DailyJoke.objects.create(user=recipient, joke=joke, date=timezone.now().date())
+            _make_user('lock-reader@example.com')
+
+            first = run_daily_digests()
+            second = run_daily_digests()
+
+        self.assertEqual(first['digests_sent'], 2)
+        self.assertEqual(second['digests_sent'], 0)
+
+
+@override_settings(EMAIL_BACKEND='django.core.mail.backends.locmem.EmailBackend')
+class DigestListUnsubscribeHeaderTests(TestCase):
+    """Final-review Important 4 (partial fold): List-Unsubscribe +
+    List-Unsubscribe-Post headers (RFC 2369 / RFC 8058) on both digest email
+    types, so Gmail/Yahoo/Outlook.com show a native one-click unsubscribe
+    action."""
+
+    def test_daily_digest_has_list_unsubscribe_headers(self):
+        fmt, age, lang = _taxonomy()
+        joke = _make_joke(fmt, age, lang)
+        with freeze_time(TODAY):
+            reader = _make_user('headers-reader@example.com')
+            DailyJoke.objects.create(user=reader, joke=joke, date=timezone.now().date())
+
+            run_daily_digests()
+
+        msg = next(m for m in mail.outbox if m.to == ['headers-reader@example.com'])
+        self.assertIn('/api/v1/email/unsubscribe/?token=', msg.extra_headers['List-Unsubscribe'])
+        self.assertTrue(msg.extra_headers['List-Unsubscribe'].startswith('<'))
+        self.assertTrue(msg.extra_headers['List-Unsubscribe'].endswith('>'))
+        self.assertEqual(msg.extra_headers['List-Unsubscribe-Post'], 'List-Unsubscribe=One-Click')
+
+    def test_creator_milestone_has_list_unsubscribe_headers(self):
+        fmt, age, lang = _taxonomy()
+        with freeze_time(TODAY):
+            creator = _make_user('headers-creator@example.com')
+            joke = _make_joke(fmt, age, lang, creator=creator)
+            for i in range(10):
+                _react(_make_user(f'headers-reactor{i}@example.com'), joke)
+
+            run_daily_digests()
+
+        msg = next(m for m in mail.outbox if m.to == ['headers-creator@example.com'])
+        self.assertIn('/api/v1/email/unsubscribe/?token=', msg.extra_headers['List-Unsubscribe'])
+        self.assertEqual(msg.extra_headers['List-Unsubscribe-Post'], 'List-Unsubscribe=One-Click')

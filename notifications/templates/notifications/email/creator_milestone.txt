@@ -7,3 +7,5 @@ See your jokes: {{ profile_url }}
 ---
 You're getting this because you're subscribed to Jokes For creator milestone emails.
 Unsubscribe: {{ unsubscribe_url }}
+
+Jokes For - [COMPANY POSTAL ADDRESS]

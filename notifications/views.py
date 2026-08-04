@@ -3,6 +3,7 @@ import hmac
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.http import Http404, HttpResponse
+from django.utils.html import escape
 from drf_spectacular.utils import extend_schema
 from rest_framework import status
 from rest_framework.permissions import AllowAny
@@ -17,7 +18,9 @@ from . import verification
 from .digests import run_daily_digests
 from .serializers import VerifyEmailSerializer, ResendVerificationSerializer
 from .throttles import ResendThrottle
-from .unsubscribe import apply_unsubscribe, InvalidUnsubscribeToken
+from .unsubscribe import (
+    KINDS, apply_unsubscribe, InvalidUnsubscribeToken, load_unsubscribe_token,
+)
 
 User = get_user_model()
 
@@ -124,28 +127,82 @@ def _html_page(heading, message):
 </html>"""
 
 
-class EmailUnsubscribeView(APIView):
-    """GET /api/v1/email/unsubscribe/?token=<signed> — one-click CAN-SPAM
-    unsubscribe, no login required. Flips the matching UserProfile flag and
-    renders a tiny confirmation page. Any bad/tampered/expired token gets a
-    clean friendly error page, never a 500."""
+def _confirm_page(label, token, action_url):
+    """Confirm-then-POST page rendered for the unsubscribe GET link.
 
+    SECURITY: unlike `_html_page`'s heading/message (always hardcoded
+    literal copy at every call site), `token` here is request-derived --
+    an attacker controls the querystring. It's interpolated into an HTML
+    attribute, so it MUST be escaped (django.core.signing's own output is
+    URL-safe base64 + ':' separators with no HTML metacharacters, but
+    escaping doesn't depend on that holding forever, or on this token
+    having actually passed signature validation the way it does today).
+    `label` is always one of the two hardcoded notifications.unsubscribe.
+    KINDS labels, never user input, so no escaping is required there.
+    """
+    return f"""<!DOCTYPE html>
+<html>
+  <body style="font-family: -apple-system, Segoe UI, Roboto, sans-serif; background:#f6f6f8;
+               margin:0; padding:24px; display:flex; justify-content:center;">
+    <div style="max-width:480px; background:#ffffff; border-radius:12px; padding:32px;
+                text-align:center;">
+      <div style="font-size:20px; font-weight:700; color:#6A1CF6; padding-bottom:16px;">Jokes For</div>
+      <h1 style="font-size:17px; color:#222; margin:0 0 8px;">Unsubscribe from {label}?</h1>
+      <p style="font-size:14px; color:#555; line-height:1.5; margin:0 0 20px;">
+        Click below to confirm. You can always turn this back on later from your account settings.
+      </p>
+      <form method="POST" action="{escape(action_url)}">
+        <input type="hidden" name="token" value="{escape(token)}">
+        <button type="submit" style="background:#6A1CF6; color:#fff; border:none; border-radius:8px;
+                padding:10px 24px; font-size:14px; font-weight:600; cursor:pointer;">Unsubscribe</button>
+      </form>
+    </div>
+  </body>
+</html>"""
+
+
+class EmailUnsubscribeView(APIView):
+    """/api/v1/email/unsubscribe/?token=<signed> — CAN-SPAM one-click
+    unsubscribe, no login required.
+
+    GET renders a confirm page and NEVER mutates state: link
+    scanners/prefetchers (Outlook SafeLinks, some corporate mail proxies)
+    fetch every URL in an email body, and a mutating GET would let a scan
+    silently unsubscribe someone who never clicked anything themselves. The
+    actual flip only happens on POST -- either the confirm page's own form
+    submit (token in the request body), or a mail provider's RFC 8058
+    List-Unsubscribe-Post one-click POST straight to this same URL (token
+    already in the query string, no page render, no browser involved --
+    see notifications.digests._list_unsubscribe_headers). Any bad/tampered/
+    expired token gets the same clean friendly error page on either method,
+    never a 500.
+    """
+
+    authentication_classes = []
     permission_classes = [AllowAny]
 
     def get(self, request):
         token = request.query_params.get('token', '')
         try:
+            data = load_unsubscribe_token(token)
+        except InvalidUnsubscribeToken:
+            return self._error_page()
+
+        _, label = KINDS[data['type']]
+        return HttpResponse(
+            _confirm_page(label, token, request.path),
+            content_type='text/html',
+        )
+
+    def post(self, request):
+        # Confirm-page form submit puts the token in the POST body; a mail
+        # provider's RFC 8058 one-click POST instead hits the header URL
+        # verbatim, so the token is only in the query string there.
+        token = request.data.get('token') or request.query_params.get('token', '')
+        try:
             label = apply_unsubscribe(token)
         except InvalidUnsubscribeToken:
-            return HttpResponse(
-                _html_page(
-                    "This link isn't working",
-                    "It may be expired or invalid. You can manage your email "
-                    "preferences from your account settings instead.",
-                ),
-                content_type='text/html',
-                status=status.HTTP_400_BAD_REQUEST,
-            )
+            return self._error_page()
 
         return HttpResponse(
             _html_page(
@@ -154,6 +211,18 @@ class EmailUnsubscribeView(APIView):
                 "anytime from your account settings.",
             ),
             content_type='text/html',
+        )
+
+    @staticmethod
+    def _error_page():
+        return HttpResponse(
+            _html_page(
+                "This link isn't working",
+                "It may be expired or invalid. You can manage your email "
+                "preferences from your account settings instead.",
+            ),
+            content_type='text/html',
+            status=status.HTTP_400_BAD_REQUEST,
         )
 
 
