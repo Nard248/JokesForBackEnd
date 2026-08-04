@@ -11,7 +11,7 @@ from django.contrib.auth import get_user_model
 from django.db import transaction
 from django.utils import timezone
 
-from billing.models import Plan, ProcessedStripeEvent, Subscription
+from billing.models import Plan, ProcessedStripeEvent, Subscription, Tip
 
 logger = logging.getLogger('jokesfor')
 
@@ -91,7 +91,44 @@ def _user_from_event(event_obj):
     return None
 
 
+def _handle_tip_completed(session, metadata):
+    """Mark a Tip succeeded for a tip-mode checkout.session.completed.
+
+    Idempotent two ways: (1) the outer handle_event() dedups on event.id, so a
+    replayed Stripe delivery never reaches here at all; (2) this function ALSO
+    no-ops when the Tip is already succeeded, so a second completion for the
+    same session/tip (e.g. a distinct event.id for the same underlying
+    session) can never re-stamp completed_at or overwrite the payment_intent.
+    """
+    tip_id = metadata.get('tip_id')
+    session_id = getattr(session, 'id', '') or ''
+
+    tip_qs = Tip.objects.select_for_update()
+    tip = None
+    if tip_id:
+        tip = tip_qs.filter(pk=tip_id).first()
+    if not tip and session_id:
+        tip = tip_qs.filter(stripe_checkout_session_id=session_id).first()
+
+    if not tip:
+        logger.warning('billing.webhook: no Tip for checkout.session %s', session_id)
+        return
+
+    if tip.status == 'succeeded':
+        return  # Already processed — idempotent no-op.
+
+    tip.status = 'succeeded'
+    tip.stripe_payment_intent_id = getattr(session, 'payment_intent', '') or ''
+    tip.completed_at = timezone.now()
+    tip.save(update_fields=['status', 'stripe_payment_intent_id', 'completed_at'])
+
+
 def _handle_checkout_completed(session):
+    metadata = getattr(session, 'metadata', {}) or {}
+    if metadata.get('type') == 'tip':
+        _handle_tip_completed(session, metadata)
+        return
+
     user = _user_from_event(session)
     if not user:
         logger.warning('billing.webhook: no user for checkout.session %s', session.id)
@@ -102,7 +139,7 @@ def _handle_checkout_completed(session):
         pass  # Not available in webhook payload; resolved via subscription event
     subscription_id = getattr(session, 'subscription', '')
     customer_id = getattr(session, 'customer', '')
-    plan_slug = (getattr(session, 'metadata', {}) or {}).get('plan_slug', '')
+    plan_slug = metadata.get('plan_slug', '')
     plan = Plan.objects.filter(slug=plan_slug).first() if plan_slug else None
     if not plan:
         plan = _free_plan()
