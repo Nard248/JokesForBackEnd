@@ -27,6 +27,8 @@ from django.http import HttpResponse
 from django.middleware.csrf import get_token
 from django.shortcuts import get_object_or_404, render
 from django.utils import timezone
+from django.utils.safestring import mark_safe
+from django.utils.text import Truncator
 from django.views.decorators.http import require_GET
 from drf_spectacular.utils import OpenApiParameter, extend_schema
 from rest_framework import generics, mixins, status, viewsets
@@ -1331,14 +1333,30 @@ class DailyJokeViewSet(viewsets.GenericViewSet):
 # Public Share Page View
 # =============================================================================
 
+# Same three characters Django's own `json_script` filter escapes (see
+# django.utils.html._json_script_escapes) -- prevents joke text containing
+# "</script>" or "&" from breaking out of the <script> tag. We can't use
+# json_script itself: it hardcodes type="application/json", but schema.org
+# JSON-LD requires exactly type="application/ld+json".
+_JSON_LD_ESCAPES = {ord('<'): '\\u003C', ord('>'): '\\u003E', ord('&'): '\\u0026'}
+
+
+def _ld_json_script(data):
+    """Serialize `data` as a schema.org <script type="application/ld+json">
+    block, HTML-safely escaped so embedded joke text can't break the tag."""
+    json_str = json.dumps(data, cls=DjangoJSONEncoder).translate(_JSON_LD_ESCAPES)
+    return mark_safe(f'<script type="application/ld+json">{json_str}</script>')
+
+
 @require_GET
 def joke_share_page(request, pk):
     """
-    Public share page for a joke with OG meta tags.
-
-    This page is designed for social media crawlers. It returns
-    an HTML page with proper Open Graph and Twitter Card meta tags
-    so the joke preview looks great when shared.
+    Public share page for a joke: real Open Graph/Twitter/JSON-LD metadata so
+    the joke preview looks great when shared, but a *human* landing here gets
+    bounced straight to the SPA's joke page -- this Django template is not the
+    actual joke experience, just a crawler-facing shell. Social scrapers read
+    the meta tags and ignore the meta-refresh/JS redirect; browsers do the
+    opposite.
     """
     joke = get_object_or_404(
         Joke.objects.select_related('format', 'age_rating').prefetch_related('tones'),
@@ -1351,17 +1369,47 @@ def joke_share_page(request, pk):
     if joke.share_image:
         share_image_url = request.build_absolute_uri(joke.share_image.url)
 
-    canonical_url = request.build_absolute_uri()
+    frontend_origin = settings.FRONTEND_URL.rstrip('/')
+    frontend_joke_url = f'{frontend_origin}/jokes/{joke.id}'
+
+    title = Truncator(joke.text or joke.setup or '').chars(60, truncate='…')
+
+    # Teaser for the description meta tags: the setup for two-part jokes,
+    # else the joke text itself. NEVER punchline/lines -- this page
+    # advertises the joke, it must not spoil it.
+    teaser_source = joke.setup or joke.text or ''
+    description = Truncator(teaser_source).chars(160, truncate='…')
 
     # Get badge text from primary tone
     tone = joke.tones.first()
     badge_text = tone.name if tone else None
 
+    # schema.org CreativeWork. The joke serializer never exposes the
+    # individual creator's identity on this surface, so attribute to the
+    # JokesFor org rather than fabricate a Person.
+    json_ld = {
+        '@context': 'https://schema.org',
+        '@type': 'CreativeWork',
+        'name': title,
+        'headline': title,
+        'url': frontend_joke_url,
+        'author': {
+            '@type': 'Organization',
+            'name': 'JokesFor',
+        },
+    }
+    if share_image_url:
+        json_ld['image'] = share_image_url
+
     return render(request, 'jokes/share.html', {
         'joke': joke,
         'share_image_url': share_image_url,
-        'canonical_url': canonical_url,
+        'frontend_origin': frontend_origin,
+        'frontend_joke_url': frontend_joke_url,
+        'title': title,
+        'description': description,
         'badge_text': badge_text,
+        'json_ld_script': _ld_json_script(json_ld),
     })
 
 
