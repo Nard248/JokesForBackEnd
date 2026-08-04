@@ -39,6 +39,7 @@ Full backend suite green.
 ## Deployment notes (owner-visible)
 - Backend-only wave. Set `DIGEST_CRON_TOKEN` (Cloud Run env, a long random secret) — until set, the endpoint 404s and no digests send (safe).
 - Create the Cloud Scheduler job (owner action, gcloud):
-  `gcloud scheduler jobs create http jokesfor-daily-digest --schedule="0 15 * * *" --uri="https://<service>/api/v1/internal/run-digests/" --http-method=POST --headers="X-Digest-Token=<token>" --location=us-east1 --project=jokesfor`
+  `gcloud scheduler jobs create http jokesfor-daily-digest --schedule="0 15 * * *" --uri="https://<service>/api/v1/internal/run-digests/" --http-method=POST --headers="X-Digest-Token=<token>" --attempt-deadline=320s --location=us-east1 --project=jokesfor`
+  **Do NOT enable Scheduler retries** (--max-retry-attempts stays 0) unless/until the run advisory-lock is confirmed — a retry racing an in-flight run is the concurrency hazard the lock guards (final review Important 2). --attempt-deadline=320s so Scheduler waits out a near-cap run rather than declaring failure mid-send.
   (15:00 UTC ≈ mid-morning US; tune). This is the ONLY new infra — GCP-managed, no worker.
 - Opt-in defaults ship True (daily digest + milestones) with unsubscribe — confirm this product call at plan-review; flip the migration default if opt-in-false preferred.
