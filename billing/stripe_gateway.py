@@ -76,6 +76,55 @@ def create_checkout_session(user, plan):
     )
 
 
+def create_tip_checkout_session(sender, creator, joke, amount_cents: int):
+    """Create a Stripe Checkout Session (payment mode) for a one-off tip.
+
+    Creates the Tip(pending) row first, then the Stripe session, then stamps
+    stripe_checkout_session_id on the Tip. Returns the Stripe session (has .url).
+    """
+    from billing.models import Tip
+    from jokes.identity import public_display_name
+
+    s = _client()
+    customer_id = get_or_create_customer(sender)
+
+    tip = Tip.objects.create(
+        sender=sender,
+        creator=creator,
+        joke=joke,
+        amount_cents=amount_cents,
+        status='pending',
+    )
+
+    session = s.checkout.Session.create(
+        mode='payment',
+        customer=customer_id,
+        line_items=[{
+            'price_data': {
+                'currency': tip.currency,
+                'unit_amount': amount_cents,
+                'product_data': {
+                    'name': f'Tip for {public_display_name(creator)}',
+                },
+            },
+            'quantity': 1,
+        }],
+        success_url=settings.BILLING_SUCCESS_URL,
+        cancel_url=settings.BILLING_CANCEL_URL,
+        metadata={
+            'type': 'tip',
+            'tip_id': str(tip.id),
+            'creator_id': str(creator.id),
+            'joke_id': str(joke.id) if joke else '',
+        },
+    )
+
+    tip.stripe_checkout_session_id = session.id
+    tip.save(update_fields=['stripe_checkout_session_id'])
+
+    return session
+
+
 def create_portal_session(stripe_customer_id: str):
     """Create a Stripe Customer Portal Session."""
     s = _client()

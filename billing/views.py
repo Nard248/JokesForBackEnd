@@ -8,13 +8,16 @@ from rest_framework.views import APIView
 from rest_framework import status
 
 from billing import entitlements
-from billing.models import Plan, Subscription
+from billing.models import Plan, Subscription, Tip
 from billing.serializers import (
     PlanPublicSerializer, MySubscriptionSerializer, EntitlementsSerializer,
 )
 from billing.stripe_gateway import BillingUnavailable, is_enabled
 
 logger = logging.getLogger('jokesfor')
+
+# Fixed tip tiers, in cents — abuse/laundering guard: no arbitrary amounts.
+TIP_AMOUNT_TIERS_CENTS = {100, 300, 500, 1000}
 
 
 def _billing_unavailable():
@@ -87,6 +90,89 @@ class CheckoutSessionView(APIView):
             return _billing_unavailable()
         except Exception as exc:
             logger.exception('billing.checkout error: %s', exc)
+            return Response({'detail': 'Checkout error.'}, status=status.HTTP_502_BAD_GATEWAY)
+
+
+class TipCheckoutView(APIView):
+    """POST /api/v1/tips/checkout/ — create a Stripe Checkout Session (payment
+    mode) for a one-off tip to a creator.
+
+    Security: amount must be one of the fixed tiers (server-validated — the
+    client can't send arbitrary cents); creator must exist and be a real
+    creator (has published jokes); self-tipping is rejected.
+    """
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        if not is_enabled():
+            return _billing_unavailable()
+
+        from django.contrib.auth import get_user_model
+
+        from jokes.models import Joke
+
+        User = get_user_model()
+
+        raw_amount = request.data.get('amount_cents')
+        try:
+            amount_cents = int(raw_amount)
+        except (TypeError, ValueError):
+            return Response(
+                {'detail': 'amount_cents must be an integer.', 'code': 'invalid_amount'},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+        if amount_cents not in TIP_AMOUNT_TIERS_CENTS:
+            return Response(
+                {'detail': 'Amount must be one of the fixed tip tiers.', 'code': 'invalid_amount'},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        creator_id = request.data.get('creator_id')
+        if not creator_id:
+            return Response(
+                {'detail': 'creator_id is required.', 'code': 'creator_required'},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+        try:
+            creator = User.objects.get(pk=creator_id)
+        except (User.DoesNotExist, ValueError, TypeError):
+            return Response({'detail': 'Creator not found.'}, status=status.HTTP_404_NOT_FOUND)
+
+        if not Joke.objects.filter(creator=creator).exists():
+            return Response(
+                {'detail': 'This user is not a creator.', 'code': 'not_a_creator'},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        if creator.pk == request.user.pk:
+            return Response(
+                {'detail': 'You cannot tip yourself.', 'code': 'self_tip'},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        joke = None
+        joke_id = request.data.get('joke_id')
+        if joke_id:
+            try:
+                joke = Joke.objects.get(pk=joke_id)
+            except (Joke.DoesNotExist, ValueError, TypeError):
+                return Response({'detail': 'Joke not found.'}, status=status.HTTP_400_BAD_REQUEST)
+            if joke.creator_id != creator.pk:
+                return Response(
+                    {'detail': 'Joke does not belong to this creator.', 'code': 'joke_creator_mismatch'},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
+
+        from billing.stripe_gateway import create_tip_checkout_session
+
+        try:
+            session = create_tip_checkout_session(request.user, creator, joke, amount_cents)
+            tip = Tip.objects.get(stripe_checkout_session_id=session.id)
+            return Response({'checkout_url': session.url, 'tip_id': tip.id})
+        except BillingUnavailable:
+            return _billing_unavailable()
+        except Exception as exc:
+            logger.exception('billing.tip_checkout error: %s', exc)
             return Response({'detail': 'Checkout error.'}, status=status.HTTP_502_BAD_GATEWAY)
 
 
