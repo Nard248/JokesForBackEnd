@@ -4,7 +4,6 @@ from unittest.mock import patch
 from django.contrib.auth import get_user_model
 from django.test import TestCase
 
-from billing import entitlements
 from billing.entitlements import check_and_consume_quota, check_quota_by_count
 from billing.models import Plan, UsageCounter
 

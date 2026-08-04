@@ -6,9 +6,9 @@ resolves against the KNOWN_* registry which supplies safe free-tier defaults.
 
 Fail open: users with no Subscription (and anon users) resolve to FREE.
 """
+from collections.abc import Callable
 from dataclasses import dataclass
 from datetime import date
-from typing import Callable, Optional
 
 from django.db import transaction
 from django.db.models import F
@@ -23,7 +23,7 @@ KNOWN_FEATURES: dict[str, bool] = {
     'mature_content_addon': False,
 }
 
-KNOWN_LIMITS: dict[str, Optional[int]] = {
+KNOWN_LIMITS: dict[str, int | None] = {
     'mystery_box_rolls_per_day': 3,
     'submissions_per_day': 5,
     'daily_jokes_per_day': 1,
@@ -37,7 +37,7 @@ KNOWN_LIMITS: dict[str, Optional[int]] = {
 @dataclass
 class QuotaResult:
     allowed: bool
-    limit: Optional[int]
+    limit: int | None
     used: int
     remaining: int
     reset_at: str  # ISO date string for next period (e.g. "2026-07-01")
@@ -80,7 +80,7 @@ def has_feature(user, key: str) -> bool:
     return plan.features.get(key, free_default)
 
 
-def get_limit(user, key: str, default: Optional[int] = None) -> Optional[int]:
+def get_limit(user, key: str, default: int | None = None) -> int | None:
     """Return the numeric limit for user's effective plan.
 
     None means unlimited. ``default`` overrides the KNOWN_LIMITS registry

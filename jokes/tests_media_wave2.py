@@ -40,7 +40,7 @@ def make_audio(path, seconds=2, codec='libmp3lame'):
 
 def make_gif(path, seconds=1):
     subprocess.run(['ffmpeg', '-y', '-loglevel', 'error',
-                    '-f', 'lavfi', '-i', f'testsrc2=size=160x120:rate=5',
+                    '-f', 'lavfi', '-i', 'testsrc2=size=160x120:rate=5',
                     '-t', str(seconds), path], check=True, timeout=60)
     return path
 
@@ -165,8 +165,13 @@ class VideoPipelineTests(TestCase):
         self.assertEqual(result.width, 1280)
 
     def test_overlong_rejected_before_transcode(self):
-        from jokes.media_processing import MAX_MEDIA_DURATION_MS, MediaValidationError, process_video
         from unittest.mock import patch
+
+        from jokes.media_processing import (
+            MAX_MEDIA_DURATION_MS,
+            MediaValidationError,
+            process_video,
+        )
         with tempfile.TemporaryDirectory() as d:
             clip = make_clip(f'{d}/in.mp4', seconds=2)
             # Fake an overlong probe so we don't generate a >60s fixture.
@@ -633,7 +638,12 @@ from rest_framework.test import APIRequestFactory
 
 from jokes.admin import JokeSubmissionAdmin
 from jokes.models import (
-    AgeRating, Format, Joke, JokeSubmission, JokeSubmissionMedia, Language,
+    AgeRating,
+    Format,
+    Joke,
+    JokeSubmission,
+    JokeSubmissionMedia,
+    Language,
 )
 from jokes.serializers import JokeSerializer
 from jokes.submission_rules import validate_per_format

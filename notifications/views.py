@@ -1,5 +1,6 @@
 import hmac
 
+from dj_rest_auth.jwt_auth import set_jwt_cookies
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.http import Http404, HttpResponse
@@ -10,16 +11,18 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
-from dj_rest_auth.jwt_auth import set_jwt_cookies
 
 from audit.services import record_audit
 
 from . import verification
 from .digests import run_daily_digests
-from .serializers import VerifyEmailSerializer, ResendVerificationSerializer
+from .serializers import ResendVerificationSerializer, VerifyEmailSerializer
 from .throttles import ResendThrottle
 from .unsubscribe import (
-    KINDS, apply_unsubscribe, InvalidUnsubscribeToken, load_unsubscribe_token,
+    KINDS,
+    InvalidUnsubscribeToken,
+    apply_unsubscribe,
+    load_unsubscribe_token,
 )
 
 User = get_user_model()

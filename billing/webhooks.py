@@ -5,7 +5,7 @@ The whole handler is a few ms (no blocking I/O before the return), compliant
 with the no-worker, single-Cloud-Run-app architecture.
 """
 import logging
-from datetime import timezone as dt_timezone
+from datetime import UTC
 
 from django.contrib.auth import get_user_model
 from django.db import transaction
@@ -58,9 +58,9 @@ def _upsert_subscription(user, *, plan, stripe_subscription_id='', stripe_custom
     if stripe_price_id:
         sub.stripe_price_id = stripe_price_id
     if period_start is not None:
-        sub.current_period_start = timezone.datetime.fromtimestamp(period_start, tz=dt_timezone.utc)
+        sub.current_period_start = timezone.datetime.fromtimestamp(period_start, tz=UTC)
     if period_end is not None:
-        sub.current_period_end = timezone.datetime.fromtimestamp(period_end, tz=dt_timezone.utc)
+        sub.current_period_end = timezone.datetime.fromtimestamp(period_end, tz=UTC)
     sub.cancel_at_period_end = cancel_at_period_end
     sub.save()
     _sync_is_premium(user, sub.is_entitled())
@@ -260,7 +260,7 @@ def _handle_invoice_paid(invoice):
         sub_db.status = 'active'
     period_end = getattr(invoice, 'period_end', None)
     if period_end:
-        sub_db.current_period_end = timezone.datetime.fromtimestamp(period_end, tz=dt_timezone.utc)
+        sub_db.current_period_end = timezone.datetime.fromtimestamp(period_end, tz=UTC)
     sub_db.save(update_fields=['status', 'current_period_end'])
     _sync_is_premium(sub_db.user, sub_db.is_entitled())
 

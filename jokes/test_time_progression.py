@@ -26,8 +26,15 @@ from freezegun import freeze_time
 from rest_framework.test import APITestCase
 
 from jokes.models import (
-    AgeRating, DailyJoke, Format, Joke, JokeDwell, JokeImpression, JokeView,
-    Language, MysteryBoxRoll,
+    AgeRating,
+    DailyJoke,
+    Format,
+    Joke,
+    JokeDwell,
+    JokeImpression,
+    JokeView,
+    Language,
+    MysteryBoxRoll,
 )
 from jokes.recommendations import get_recently_shown_joke_ids
 

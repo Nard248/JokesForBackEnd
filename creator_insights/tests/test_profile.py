@@ -4,10 +4,10 @@ from unittest.mock import patch
 from django.contrib.auth import get_user_model
 from django.urls import reverse
 from rest_framework import status
-from rest_framework.test import APITestCase, APIClient
+from rest_framework.test import APIClient, APITestCase
 
 from follows.models import Follow
-from jokes.models import Format, AgeRating, Language, Joke, JokeSubmission
+from jokes.models import AgeRating, Format, Joke, JokeSubmission, Language
 
 User = get_user_model()
 

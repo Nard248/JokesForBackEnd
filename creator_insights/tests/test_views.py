@@ -11,10 +11,10 @@ from unittest.mock import patch
 
 from django.contrib.auth import get_user_model
 from django.test import TestCase
-from django.urls import reverse, NoReverseMatch
+from django.urls import NoReverseMatch, reverse
 from rest_framework.test import APIClient
 
-from jokes.models import Format, AgeRating, Language, Joke, JokeSubmission
+from jokes.models import AgeRating, Format, Joke, JokeSubmission, Language
 
 User = get_user_model()
 

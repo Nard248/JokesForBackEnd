@@ -244,6 +244,7 @@ class TipCheckoutThrottleTests(APITestCase):
 
     def test_view_uses_scoped_throttle(self):
         from rest_framework.throttling import ScopedRateThrottle
+
         from billing.views import TipCheckoutView
         self.assertEqual(TipCheckoutView.throttle_scope, 'tips-checkout')
         self.assertIn(ScopedRateThrottle, TipCheckoutView.throttle_classes)

@@ -1,3 +1,7 @@
+import secrets
+import uuid
+
+import pgtrigger
 from django.conf import settings
 from django.contrib.postgres.indexes import GinIndex
 from django.contrib.postgres.search import SearchVectorField
@@ -5,9 +9,6 @@ from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
 from django.db import models
 from django.utils import timezone
-import pgtrigger
-import secrets
-import uuid
 
 from .managers import JokeManager
 

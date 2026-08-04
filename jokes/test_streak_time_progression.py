@@ -22,7 +22,13 @@ from freezegun import freeze_time
 from rest_framework.test import APITestCase
 
 from jokes.models import (
-    AgeRating, Format, Joke, JokeView, Language, Streak, StreakDay,
+    AgeRating,
+    Format,
+    Joke,
+    JokeView,
+    Language,
+    Streak,
+    StreakDay,
 )
 
 User = get_user_model()

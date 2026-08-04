@@ -18,11 +18,17 @@ from django.test import TestCase
 from django.utils import timezone
 from rest_framework.test import APIClient
 
-from jokes.models import (
-    Format, AgeRating, Language, Joke, JokeSubmission,
-    JokeView, JokeImpression, JokeDwell,
-)
 from creator_insights.services import build_creator_insights
+from jokes.models import (
+    AgeRating,
+    Format,
+    Joke,
+    JokeDwell,
+    JokeImpression,
+    JokeSubmission,
+    JokeView,
+    Language,
+)
 
 User = get_user_model()
 

@@ -7,18 +7,24 @@ Test classes:
   AllowedTiersResolverTests  — allowed_tiers() resolver matrix
   ServingLockTests           — per-endpoint tier exclusion proofs
 """
-from datetime import date
 from unittest.mock import patch
 
 from django.contrib.auth import get_user_model
 from django.test import TestCase, override_settings
-from django.urls import reverse
 from django.utils import timezone
-from rest_framework.test import APITestCase, APIRequestFactory
+from rest_framework.test import APIRequestFactory, APITestCase
 
 from jokes.models import (
-    Joke, Format, AgeRating, Language, UserProfile, UserPreference,
-    Collection, SavedJoke, Favorite, JokePack, JokePackEntry, JokeView,
+    AgeRating,
+    Collection,
+    Favorite,
+    Format,
+    Joke,
+    JokePack,
+    JokePackEntry,
+    JokeView,
+    Language,
+    SavedJoke,
 )
 from jokes.serving import allowed_tiers
 

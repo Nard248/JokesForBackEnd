@@ -16,35 +16,32 @@ from rest_framework.exceptions import NotFound
 from jokes.submission_rules import FORMAT_RULES, validate_per_format
 
 from .models import (
-    Format,
     AgeRating,
-    Tone,
-    ContextTag,
-    Language,
-    CultureTag,
-    Source,
-    Joke,
-    UserPreference,
-    Collection,
-    SavedJoke,
-    DailyJoke,
-    JokeRating,
-    ShareEvent,
-    Favorite,
-    JokeSubmission,
-    ContentReport,
     Appeal,
-    Vibe,
-    UserVibe,
-    MysteryBoxRoll,
+    Collection,
+    ContentReport,
+    ContextTag,
+    CultureTag,
+    DailyJoke,
+    Favorite,
+    Format,
+    Joke,
+    JokePack,
+    JokeRating,
+    JokeSubmission,
+    JokeSubmissionMedia,
     JokeView,
+    Language,
+    MediaAsset,
+    SavedJoke,
+    ShareEvent,
+    Source,
     Streak,
     StreakDay,
-    JokePack,
-    JokePackEntry,
-    JokePackProgress,
-    MediaAsset,
-    JokeSubmissionMedia,
+    Tone,
+    UserPreference,
+    UserVibe,
+    Vibe,
 )
 
 # 14-day appeal window (spec value, verbatim). Shared by the create
@@ -1278,8 +1275,9 @@ class StreakSerializer(serializers.ModelSerializer):
         read_only_fields = fields
 
     def get_last_14_days(self, obj) -> list:
-        from django.utils import timezone
         from datetime import timedelta
+
+        from django.utils import timezone
         today = timezone.now().date()
         start = today - timedelta(days=13)
         days_by_date = {

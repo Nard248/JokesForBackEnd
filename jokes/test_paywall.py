@@ -18,7 +18,12 @@ from rest_framework.test import APITestCase
 
 from billing.models import Plan, Subscription
 from jokes.models import (
-    AgeRating, DailyJoke, Format, Joke, JokeView, Language,
+    AgeRating,
+    DailyJoke,
+    Format,
+    Joke,
+    JokeView,
+    Language,
 )
 
 User = get_user_model()

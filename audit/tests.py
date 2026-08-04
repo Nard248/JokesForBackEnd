@@ -1,7 +1,7 @@
 """Tests for the audit app: AuditLog model, record_audit(), signal hooks,
 and domain-metric choke-points."""
-from django.test import TestCase, RequestFactory
 from django.contrib.auth import get_user_model
+from django.test import RequestFactory, TestCase
 
 from audit.models import AuditLog
 from audit.services import record_audit
@@ -139,8 +139,9 @@ class ChokePointTests(TestCase):
         )
 
     def test_content_tier_decision_emits_metric_for_anon(self):
-        from jokes.serving import allowed_tiers
         from django.test import RequestFactory as RF
+
+        from jokes.serving import allowed_tiers
         request = RF().get('/')
         request.user = type('anon', (), {'is_authenticated': False})()
         with self.assertLogs('jokesfor.metrics', level='INFO') as cm:

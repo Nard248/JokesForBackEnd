@@ -22,9 +22,7 @@ evades it — because the goal is conversion (drive registration), not
 airtight enforcement. See ``record_anon_read`` / ``_read_anon_ledger`` below.
 """
 from dataclasses import dataclass
-from datetime import datetime, time, timedelta
-from datetime import timezone as dt_timezone
-from typing import Optional
+from datetime import UTC, datetime, time, timedelta
 
 from django.conf import settings
 from django.core import signing
@@ -55,8 +53,8 @@ class PaywallState:
     """
     over: bool
     used: int
-    limit: Optional[int]        # None => unlimited (paid tiers)
-    remaining: Optional[int]    # None => unlimited
+    limit: int | None        # None => unlimited (paid tiers)
+    remaining: int | None    # None => unlimited
     consumed_ids: frozenset     # joke_ids already opened today (stay unlocked)
     reset_at: str               # ISO 8601 next midnight UTC
 
@@ -64,7 +62,7 @@ class PaywallState:
 def _next_midnight_utc_iso() -> str:
     """ISO 8601 timestamp for the next midnight UTC (when the cap resets)."""
     tomorrow = (timezone.now() + timedelta(days=1)).date()
-    return datetime.combine(tomorrow, time.min, tzinfo=dt_timezone.utc).isoformat()
+    return datetime.combine(tomorrow, time.min, tzinfo=UTC).isoformat()
 
 
 def _unlimited_state() -> PaywallState:

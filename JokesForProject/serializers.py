@@ -1,14 +1,12 @@
 """
 Custom serializers for authentication.
 """
-from django.contrib.auth import get_user_model
-from django.utils import timezone
-from rest_framework import serializers
-
 from allauth.account.adapter import get_adapter
 from allauth.account.utils import setup_user_email
 from dj_rest_auth.serializers import UserDetailsSerializer
-
+from django.contrib.auth import get_user_model
+from django.utils import timezone
+from rest_framework import serializers
 
 User = get_user_model()
 

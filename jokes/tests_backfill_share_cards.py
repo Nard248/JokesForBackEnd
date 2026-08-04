@@ -4,7 +4,6 @@ import tempfile
 from io import StringIO
 from unittest.mock import patch
 
-from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
 from django.core.management import call_command
 from django.test import TestCase, override_settings

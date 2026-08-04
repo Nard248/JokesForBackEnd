@@ -1,6 +1,6 @@
 from django.urls import path
 
-from follows.views import FollowView, FollowStatusView, FollowersListView
+from follows.views import FollowersListView, FollowStatusView, FollowView
 
 urlpatterns = [
     path('<int:creator_id>/', FollowView.as_view(), name='follow'),

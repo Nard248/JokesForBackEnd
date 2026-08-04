@@ -47,8 +47,9 @@ class VerifyEmailEndpointTests(APITestCase):
 
     def test_verify_expired_code(self):
         code = self._issue()
-        from django.utils import timezone
         from datetime import timedelta
+
+        from django.utils import timezone
         ev = EmailVerification.objects.get(user=self.user)
         ev.expires_at = timezone.now() - timedelta(minutes=1)
         ev.save(update_fields=['expires_at'])

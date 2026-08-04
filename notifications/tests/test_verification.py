@@ -2,8 +2,8 @@ from django.contrib.auth import get_user_model
 from django.core import mail
 from django.test import TestCase, override_settings
 
-from notifications.models import EmailVerification
 from notifications import verification
+from notifications.models import EmailVerification
 
 User = get_user_model()
 
@@ -55,8 +55,9 @@ class VerificationTests(TestCase):
     def test_verify_expired_code(self):
         code = verification.issue_code(self.user)
         ev = EmailVerification.objects.get(user=self.user)
-        from django.utils import timezone
         from datetime import timedelta
+
+        from django.utils import timezone
         ev.expires_at = timezone.now() - timedelta(minutes=1)
         ev.save(update_fields=['expires_at'])
         ok, err = verification.verify_code(self.user, code)

@@ -21,10 +21,10 @@ from drf_spectacular.views import (
     SpectacularRedocView,
     SpectacularSwaggerView,
 )
-from jokes.views import CookieRegisterView, GoogleLogin, csrf_token_view, joke_share_page
-from notifications.views import EmailUnsubscribeView, RunDigestsView
 
+from jokes.views import CookieRegisterView, GoogleLogin, csrf_token_view, joke_share_page
 from JokesForProject.health import healthz, readyz
+from notifications.views import EmailUnsubscribeView, RunDigestsView
 
 urlpatterns = [
     # Unauthenticated liveness probe — no DRF auth/versioning/throttling.

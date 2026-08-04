@@ -27,8 +27,8 @@ User = get_user_model()
 def _admin_request(user):
     request = RequestFactory().post('/admin/')
     request.user = user
-    setattr(request, 'session', {})
-    setattr(request, '_messages', FallbackStorage(request))
+    request.session = {}
+    request._messages = FallbackStorage(request)
     return request
 
 

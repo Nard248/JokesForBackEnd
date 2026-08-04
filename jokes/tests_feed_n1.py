@@ -21,8 +21,16 @@ from django.test import TestCase
 from rest_framework.test import APIClient
 
 from jokes.models import (
-    AgeRating, ContextTag, CultureTag, Format, Joke, JokeMedia, Language,
-    MediaAsset, Source, Tone,
+    AgeRating,
+    ContextTag,
+    CultureTag,
+    Format,
+    Joke,
+    JokeMedia,
+    Language,
+    MediaAsset,
+    Source,
+    Tone,
 )
 
 User = get_user_model()

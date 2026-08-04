@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import VerifyEmailView, ResendVerificationView
+from .views import ResendVerificationView, VerifyEmailView
 
 urlpatterns = [
     path('verify-email/', VerifyEmailView.as_view(), name='verify-email'),

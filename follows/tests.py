@@ -2,10 +2,10 @@
 from django.contrib.auth import get_user_model
 from django.urls import reverse
 from rest_framework import status
-from rest_framework.test import APITestCase, APIClient
+from rest_framework.test import APIClient, APITestCase
 
-from follows.models import Follow
 from follows import services
+from follows.models import Follow
 
 User = get_user_model()
 

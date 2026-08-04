@@ -29,7 +29,7 @@ def get_or_create_customer(user) -> str:
 
     Persists stripe_customer_id on the user's Subscription row.
     """
-    from billing.models import Subscription, Plan
+    from billing.models import Plan, Subscription
 
     s = _client()
 

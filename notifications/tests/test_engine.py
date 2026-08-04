@@ -2,7 +2,7 @@ from django.core import mail
 from django.test import TestCase, override_settings
 
 from notifications.models import EmailMessageLog
-from notifications.service import send_email, EmailSendError
+from notifications.service import EmailSendError, send_email
 
 
 @override_settings(EMAIL_BACKEND='django.core.mail.backends.locmem.EmailBackend')

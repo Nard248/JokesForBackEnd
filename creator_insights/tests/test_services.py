@@ -5,8 +5,7 @@ Covers:
   - resolve_creator_jokes: attribution join, creator-scoped
   - build_creator_insights: overview metrics, breakdowns, top_jokes, audience, suggestions
 """
-import json
-from datetime import date, timedelta
+from datetime import timedelta
 from unittest.mock import patch
 
 from django.contrib.auth import get_user_model
@@ -14,8 +13,19 @@ from django.test import TestCase
 from django.utils import timezone
 
 from jokes.models import (
-    Format, AgeRating, Language, Tone, ContextTag, Joke, JokeSubmission,
-    JokeView, JokeReaction, Favorite, SavedJoke, ShareEvent, JokeImpression,
+    AgeRating,
+    ContextTag,
+    Favorite,
+    Format,
+    Joke,
+    JokeImpression,
+    JokeReaction,
+    JokeSubmission,
+    JokeView,
+    Language,
+    SavedJoke,
+    ShareEvent,
+    Tone,
 )
 
 User = get_user_model()
@@ -829,7 +839,11 @@ class TopJokesMultiRelationFanoutTests(TestCase):
         """The annotated top-jokes query must compute each metric as its own
         correlated subquery — zero LEFT OUTER JOINs to the five relation tables
         (that JOIN set is exactly the cartesian-product fan-out)."""
-        from creator_insights.services import _annotated_top_jokes_qs, resolve_creator_jokes, window_since
+        from creator_insights.services import (
+            _annotated_top_jokes_qs,
+            resolve_creator_jokes,
+            window_since,
+        )
         qs = _annotated_top_jokes_qs(resolve_creator_jokes(self.creator), window_since('all'))[:10]
         sql = str(qs.query)
         for model in (JokeView, JokeReaction, SavedJoke, ShareEvent, JokeImpression):

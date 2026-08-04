@@ -24,8 +24,9 @@ def _ensure_streak(user):
 
 def _refresh_freezes_if_new_month(streak):
     """Lazily reset freeze pool on first interaction of a new calendar month."""
-    from .models import Streak as _S
     from django.utils import timezone
+
+    from .models import Streak as _S
     current = timezone.now().strftime('%Y-%m')
     if streak.last_freeze_refresh_month != current:
         streak.freeze_days_available = _S.FREEZES_PER_MONTH
@@ -41,8 +42,9 @@ def _walk_gap(streak, until_date):
 
     Mutates the streak in place; caller is responsible for .save().
     """
-    from .models import StreakDay
     from datetime import timedelta
+
+    from .models import StreakDay
 
     if not streak.last_active_date:
         return
@@ -78,8 +80,9 @@ def update_streak_on_view(sender, instance, created, **kwargs):
     if not created:
         return  # only the first JokeView in a (user, joke) pair counts
 
-    from .models import StreakDay
     from django.utils import timezone
+
+    from .models import StreakDay
 
     today = instance.viewed_date or timezone.now().date()
     streak = _ensure_streak(instance.user)

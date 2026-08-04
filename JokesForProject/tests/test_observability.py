@@ -5,11 +5,11 @@ runs even when Neon/local Postgres is unreachable.
 """
 import json
 import logging
-from django.test import SimpleTestCase, RequestFactory
+
 from django.http import HttpResponse
+from django.test import RequestFactory, SimpleTestCase
 
 from JokesForProject.observability import context as ctx
-
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Task 1 — contextvars: bind / clear / DB stats

@@ -14,12 +14,20 @@ from django.core.files.storage import default_storage
 from django.test import TestCase, override_settings
 from PIL import Image
 
-from jokes.models import (
-    AgeRating, Format, Joke, JokeMedia, JokeSubmission, JokeSubmissionMedia,
-    Language, MediaAsset,
-)
 from jokes.media_processing import (
-    MAX_IMAGE_BYTES, MediaValidationError, process_image,
+    MAX_IMAGE_BYTES,
+    MediaValidationError,
+    process_image,
+)
+from jokes.models import (
+    AgeRating,
+    Format,
+    Joke,
+    JokeMedia,
+    JokeSubmission,
+    JokeSubmissionMedia,
+    Language,
+    MediaAsset,
 )
 
 User = get_user_model()
@@ -215,9 +223,7 @@ class ScreeningTests(TestCase):
         self.assertIsNone(matcher.match('0000000000000000'))
 
 
-from datetime import timedelta
 
-from django.utils import timezone
 from freezegun import freeze_time
 from rest_framework.test import APIClient
 
@@ -862,10 +868,10 @@ class MediaPublishAndLifecycleTests(TestCase):
 # =============================================================================
 # Task 8: Anonymous paywall — signed-cookie ledger + reveal endpoint
 # =============================================================================
-from django.core import signing as django_signing
 
 from jokes.paywall import (
-    ANON_COOKIE_NAME, ANON_COOKIE_SALT, FREE_READS_DEFAULT, paywall_state,
+    ANON_COOKIE_NAME,
+    FREE_READS_DEFAULT,
 )
 
 

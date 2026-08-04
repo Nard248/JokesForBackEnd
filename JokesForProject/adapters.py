@@ -15,12 +15,12 @@ DOB to the same place the email path stores it: ``user.profile.date_of_birth``.
 """
 from datetime import date
 
-from django.contrib.auth import get_user_model
-from django.utils import timezone
-
 from allauth.account.utils import user_email
 from allauth.socialaccount.adapter import DefaultSocialAccountAdapter
-from rest_framework import serializers as drf_serializers, status
+from django.contrib.auth import get_user_model
+from django.utils import timezone
+from rest_framework import serializers as drf_serializers
+from rest_framework import status
 from rest_framework.exceptions import APIException
 
 # The raw DOB string is stashed on the underlying Django HttpRequest by the

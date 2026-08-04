@@ -348,6 +348,7 @@ CORS_ALLOW_CREDENTIALS = True  # Required for httpOnly cookie auth
 # preflight must allow that header. django-cors-headers' default_headers already
 # lists 'x-csrftoken'; we spell it out explicitly since CSRF now depends on it.
 from corsheaders.defaults import default_headers  # noqa: E402
+
 CORS_ALLOW_HEADERS = (*default_headers, 'x-csrftoken')
 
 # Absolute base URL of the SPA frontend. Used to build user-facing links that
@@ -630,15 +631,19 @@ LOGGING = {
 SENTRY_DSN = os.getenv('SENTRY_DSN', '').strip()
 if SENTRY_DSN:
     import sentry_sdk
-    from sentry_sdk.integrations.django import DjangoIntegration
-    from JokesForProject.observability.sentry import scrub_event
+    from django.http import Http404
 
     # Ignore noisy expected exceptions so they don't consume Sentry quota.
     from rest_framework.exceptions import (
-        Throttled, NotAuthenticated, PermissionDenied, AuthenticationFailed,
+        AuthenticationFailed,
+        NotAuthenticated,
+        PermissionDenied,
+        Throttled,
         ValidationError,
     )
-    from django.http import Http404
+    from sentry_sdk.integrations.django import DjangoIntegration
+
+    from JokesForProject.observability.sentry import scrub_event
     from notifications.service import EmailSendError
 
     sentry_sdk.init(
