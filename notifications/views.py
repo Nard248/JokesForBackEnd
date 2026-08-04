@@ -1,5 +1,8 @@
+import hmac
+
+from django.conf import settings
 from django.contrib.auth import get_user_model
-from django.http import HttpResponse
+from django.http import Http404, HttpResponse
 from rest_framework import status
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
@@ -7,7 +10,10 @@ from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
 from dj_rest_auth.jwt_auth import set_jwt_cookies
 
+from audit.services import record_audit
+
 from . import verification
+from .digests import run_daily_digests
 from .serializers import VerifyEmailSerializer, ResendVerificationSerializer
 from .throttles import ResendThrottle
 from .unsubscribe import apply_unsubscribe, InvalidUnsubscribeToken
@@ -148,3 +154,50 @@ class EmailUnsubscribeView(APIView):
             ),
             content_type='text/html',
         )
+
+
+class RunDigestsView(APIView):
+    """POST /api/v1/internal/run-digests/ — Cloud Scheduler trigger for the
+    daily digest + creator milestone batch (see notifications.digests).
+
+    NOT a user endpoint: no session/JWT auth at all, and no permission check
+    beyond the shared-secret header below. Guarded entirely by `X-Digest-Token`
+    compared (constant-time, via hmac.compare_digest — NEVER `==`, which leaks
+    timing on how many leading bytes match) against settings.DIGEST_CRON_TOKEN.
+
+    Every failure mode — missing header, wrong token, or an unset/empty
+    server-side secret — returns the SAME 404, never 401/403. A 401/403 would
+    confirm to anyone probing the URL that something real lives there; 404
+    makes it indistinguishable from a path that doesn't exist (see spec
+    §Risks). An empty DIGEST_CRON_TOKEN means the endpoint is dormant for
+    every caller until the owner sets a real secret in the deploy env — same
+    pattern as the Stripe/SafeSearch empty-by-default dormant gates.
+
+    Throttle-exempt (`throttle_classes = []`): the token + 404 shape IS the
+    guard, and a legitimate scheduler shouldn't be rate-limited by its own
+    caller. An unauthenticated flood still only costs one cheap constant-time
+    compare + a 404 per request — no DB/email work happens before the token
+    check.
+    """
+
+    authentication_classes = []
+    permission_classes = [AllowAny]
+    throttle_classes = []
+
+    def post(self, request):
+        supplied = request.META.get('HTTP_X_DIGEST_TOKEN', '')
+        expected = settings.DIGEST_CRON_TOKEN
+
+        # Reject up front (no compare at all) when the server-side secret is
+        # unset/empty — dormant by default. Guards against hmac.compare_digest
+        # trivially "matching" an equally-empty supplied header, which would
+        # otherwise let an unconfigured deploy accept every caller.
+        if not expected or not supplied or not hmac.compare_digest(supplied, expected):
+            raise Http404()
+
+        summary = run_daily_digests()
+        record_audit(
+            request, 'digest_run', outcome='success', actor=None,
+            target_type='digest_run', metadata=summary,
+        )
+        return Response(summary, status=status.HTTP_200_OK)

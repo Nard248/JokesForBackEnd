@@ -22,7 +22,7 @@ from drf_spectacular.views import (
     SpectacularSwaggerView,
 )
 from jokes.views import CookieRegisterView, GoogleLogin, csrf_token_view, joke_share_page
-from notifications.views import EmailUnsubscribeView
+from notifications.views import EmailUnsubscribeView, RunDigestsView
 
 from JokesForProject.health import healthz, readyz
 
@@ -63,6 +63,9 @@ urlpatterns = [
     # One-click unsubscribe (CAN-SPAM): signed token, no login. See
     # notifications.unsubscribe for the token helper digest emails embed.
     path('api/v1/email/unsubscribe/', EmailUnsubscribeView.as_view(), name='email-unsubscribe'),
+    # Internal Cloud Scheduler trigger (Email-Digest-Wave Task 3): no user
+    # auth, shared-secret header guard only — see notifications.views.RunDigestsView.
+    path('api/v1/internal/run-digests/', RunDigestsView.as_view(), name='run-digests'),
 
     # API Documentation
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),

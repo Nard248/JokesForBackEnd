@@ -493,6 +493,14 @@ BACKEND_URL = os.getenv('BACKEND_URL', 'https://jokesforbackend-332865216810.us-
 DIGEST_SEND_CAP = int(os.getenv('DIGEST_SEND_CAP', '500'))
 DIGEST_MILESTONE_THRESHOLD = int(os.getenv('DIGEST_MILESTONE_THRESHOLD', '10'))
 
+# Internal trigger (Task 3): shared secret the Cloud Scheduler job presents
+# via the X-Digest-Token header to POST /api/v1/internal/run-digests/ (see
+# notifications.views.RunDigestsView). Unset/empty -> the endpoint 404s for
+# EVERY caller, so it is safely dormant until the owner sets a real secret
+# in the deploy env (same empty-by-default dormant gate as STRIPE_SECRET_KEY
+# below).
+DIGEST_CRON_TOKEN = os.getenv('DIGEST_CRON_TOKEN', '').strip()
+
 # Stripe / billing — env-gated (dormant when STRIPE_SECRET_KEY is unset)
 STRIPE_SECRET_KEY      = os.getenv('STRIPE_SECRET_KEY', '').strip()
 STRIPE_PUBLISHABLE_KEY = os.getenv('STRIPE_PUBLISHABLE_KEY', '').strip()
