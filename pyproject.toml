@@ -91,8 +91,15 @@ skip-magic-trailing-comma = false
 line-ending = "auto"
 
 [tool.bandit]
+# Bandit's exclude_dirs is matched with fnmatch against the *full file path*
+# (not pruned per-directory), so each pattern needs its own trailing glob to
+# actually catch files underneath — "*/tests" alone matches nothing here.
+# Two patterns for tests because this repo mixes tests.py/tests_*.py (flat,
+# e.g. jokes/tests_media.py) with test_*.py under a tests/ package
+# (e.g. billing/tests/test_gating.py).
 exclude_dirs = [
-    "*/migrations",
-    "*/tests",
+    "*/migrations/*",
+    "*/tests*",
+    "*/test_*.py",
     ".venv",
 ]
