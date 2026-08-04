@@ -227,10 +227,13 @@ class WebhookTipCompletedTests(TestCase):
             stripe_checkout_session_id=session_id,
         )
 
-    def _tip_event(self, tip, session_id, event_id, payment_intent='pi_test'):
+    def _tip_event(self, tip, session_id, event_id, payment_intent='pi_test',
+                    payment_status='paid', mode='payment'):
         return _make_stripe_event('checkout.session.completed', {
             'id': session_id,
+            'mode': mode,
             'payment_intent': payment_intent,
+            'payment_status': payment_status,
             'metadata': {
                 'type': 'tip',
                 'tip_id': str(tip.id),
@@ -296,6 +299,77 @@ class WebhookTipCompletedTests(TestCase):
             tip.stripe_payment_intent_id, 'pi_test_tip_003',
             'Must not overwrite payment_intent_id from a duplicate completion',
         )
+
+    def test_unsettled_payment_status_leaves_tip_pending(self):
+        """Money-truth: checkout.session.completed can fire before a
+        delayed-notification payment method (e.g. ACH debit) actually
+        settles — payment_status='unpaid'/'processing' until a later async
+        event. Must NOT mark the tip succeeded (overstating money that may
+        never arrive); it stays pending."""
+        from billing.webhooks import handle_event
+
+        tip = self._make_pending_tip('cs_test_tip_005')
+        event = self._tip_event(
+            tip, 'cs_test_tip_005', 'evt_tip_005',
+            payment_intent='pi_test_tip_005', payment_status='unpaid',
+        )
+
+        handle_event(event)
+
+        tip.refresh_from_db()
+        self.assertEqual(tip.status, 'pending')
+        self.assertIsNone(tip.completed_at)
+        self.assertEqual(tip.stripe_payment_intent_id, '')
+
+    def test_settled_payment_status_marks_succeeded(self):
+        """payment_status='paid' (the normal card-only case) still completes
+        the tip — keeps the happy path green under the new guard."""
+        from billing.webhooks import handle_event
+
+        tip = self._make_pending_tip('cs_test_tip_006')
+        event = self._tip_event(
+            tip, 'cs_test_tip_006', 'evt_tip_006',
+            payment_intent='pi_test_tip_006', payment_status='paid',
+        )
+
+        handle_event(event)
+
+        tip.refresh_from_db()
+        self.assertEqual(tip.status, 'succeeded')
+        self.assertEqual(tip.stripe_payment_intent_id, 'pi_test_tip_006')
+        self.assertIsNotNone(tip.completed_at)
+
+    def test_mode_gate_prevents_tip_completion_when_mode_not_payment(self):
+        """Defensive gate: a session with mode != 'payment' never runs the
+        tip completion, even if metadata carries a stray type='tip'
+        (unreachable with server-set metadata — cheap insurance on a money
+        path). Falls through to the subscription branch, which safely
+        no-ops here since there's nothing identifying a user."""
+        from billing.webhooks import handle_event
+
+        tip = self._make_pending_tip('cs_test_tip_007')
+        event = _make_stripe_event('checkout.session.completed', {
+            'id': 'cs_test_tip_007',
+            'mode': 'subscription',
+            'payment_intent': 'pi_test_tip_007',
+            'payment_status': 'paid',
+            'customer': '',
+            'subscription': '',
+            'client_reference_id': '',
+            'metadata': {
+                'type': 'tip',
+                'tip_id': str(tip.id),
+                'creator_id': str(self.creator.id),
+                'joke_id': '',
+            },
+        }, event_id='evt_tip_007')
+
+        handle_event(event)
+
+        tip.refresh_from_db()
+        self.assertEqual(tip.status, 'pending', 'mode != payment must not run tip completion')
+        self.assertIsNone(tip.completed_at)
+        self.assertEqual(tip.stripe_payment_intent_id, '')
 
     def test_non_tip_checkout_session_unaffected_regression(self):
         """A subscription checkout.session.completed must never touch the tip
