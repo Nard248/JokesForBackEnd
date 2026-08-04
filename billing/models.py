@@ -93,3 +93,49 @@ class ProcessedStripeEvent(models.Model):
 
     def __str__(self):
         return f'{self.event_type} / {self.event_id}'
+
+
+class Tip(models.Model):
+    """A one-off tip from a reader to a creator (Stripe Checkout, payment mode).
+
+    Creator earnings are derived (sum of succeeded tips) — no payout ledger
+    here; Stripe Connect payouts are out of scope for v1 (see
+    Docs/superpowers/specs/2026-07-24-creator-tips-design.md).
+    """
+    STATUS_CHOICES = [
+        ('pending', 'pending'),
+        ('succeeded', 'succeeded'),
+        ('failed', 'failed'),
+        ('refunded', 'refunded'),
+    ]
+
+    sender = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='tips_sent',
+    )
+    creator = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='tips_received',
+    )
+    joke = models.ForeignKey(
+        'jokes.Joke',
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='tips',
+    )
+    amount_cents = models.PositiveIntegerField()
+    currency = models.CharField(max_length=3, default='usd')
+    status = models.CharField(max_length=12, choices=STATUS_CHOICES, default='pending', db_index=True)
+    stripe_payment_intent_id = models.CharField(max_length=80, blank=True, db_index=True)
+    stripe_checkout_session_id = models.CharField(max_length=80, blank=True, db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    completed_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return f'{self.sender_id} -> {self.creator_id} / {self.amount_cents}{self.currency} / {self.status}'

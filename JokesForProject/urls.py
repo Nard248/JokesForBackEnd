@@ -46,6 +46,10 @@ urlpatterns = [
     path('api/v1/follows/', include('follows.urls')),
     path('api/v1/users/', include('follows.user_urls')),
     path('api/v1/billing/', include('billing.urls')),
+    # Creator Tips — deliberately NOT under api/v1/billing/: matches the
+    # spec's resource-oriented paths (creators/{id}/tips/summary, users/me/tips
+    # land under creator_insights/follows in a later wave task, same pattern).
+    path('api/v1/tips/', include('billing.tip_urls')),
 
     # Authentication
     # CSRF bootstrap: the cross-site SPA GETs this to obtain the CSRF cookie +
