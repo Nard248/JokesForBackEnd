@@ -546,6 +546,11 @@ class UserProfile(models.Model):
     # Theme
     theme = models.CharField(max_length=20, choices=THEME_CHOICES, default='light')
 
+    # Email preferences (CAN-SPAM one-click unsubscribe flips these; see
+    # notifications.unsubscribe). Opt-in true by default per product call.
+    email_digest_opt_in = models.BooleanField(default=True)
+    creator_milestone_opt_in = models.BooleanField(default=True)
+
     # Timestamps
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

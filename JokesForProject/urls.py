@@ -22,6 +22,7 @@ from drf_spectacular.views import (
     SpectacularSwaggerView,
 )
 from jokes.views import CookieRegisterView, GoogleLogin, csrf_token_view, joke_share_page
+from notifications.views import EmailUnsubscribeView
 
 from JokesForProject.health import healthz, readyz
 
@@ -59,6 +60,9 @@ urlpatterns = [
     path('api/v1/auth/google/', GoogleLogin.as_view(), name='google_login'),
     path('api/v1/auth/', include('notifications.urls')),
     path('api/v1/notifications/', include('inbox.urls')),
+    # One-click unsubscribe (CAN-SPAM): signed token, no login. See
+    # notifications.unsubscribe for the token helper digest emails embed.
+    path('api/v1/email/unsubscribe/', EmailUnsubscribeView.as_view(), name='email-unsubscribe'),
 
     # API Documentation
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),

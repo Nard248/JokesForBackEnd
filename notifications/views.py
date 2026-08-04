@@ -1,4 +1,5 @@
 from django.contrib.auth import get_user_model
+from django.http import HttpResponse
 from rest_framework import status
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
@@ -9,6 +10,7 @@ from dj_rest_auth.jwt_auth import set_jwt_cookies
 from . import verification
 from .serializers import VerifyEmailSerializer, ResendVerificationSerializer
 from .throttles import ResendThrottle
+from .unsubscribe import apply_unsubscribe, InvalidUnsubscribeToken
 
 User = get_user_model()
 
@@ -88,4 +90,54 @@ class ResendVerificationView(APIView):
         return Response(
             {'detail': 'If that email needs verification, a new code has been sent.'},
             status=status.HTTP_200_OK,
+        )
+
+
+def _html_page(heading, message):
+    """Tiny standalone confirmation/error page for the unsubscribe link
+    (opened directly from an email client, not the SPA — plain HTML, no JS)."""
+    return f"""<!DOCTYPE html>
+<html>
+  <body style="font-family: -apple-system, Segoe UI, Roboto, sans-serif; background:#f6f6f8;
+               margin:0; padding:24px; display:flex; justify-content:center;">
+    <div style="max-width:480px; background:#ffffff; border-radius:12px; padding:32px;
+                text-align:center;">
+      <div style="font-size:20px; font-weight:700; color:#6A1CF6; padding-bottom:16px;">Jokes For</div>
+      <h1 style="font-size:17px; color:#222; margin:0 0 8px;">{heading}</h1>
+      <p style="font-size:14px; color:#555; line-height:1.5; margin:0;">{message}</p>
+    </div>
+  </body>
+</html>"""
+
+
+class EmailUnsubscribeView(APIView):
+    """GET /api/v1/email/unsubscribe/?token=<signed> — one-click CAN-SPAM
+    unsubscribe, no login required. Flips the matching UserProfile flag and
+    renders a tiny confirmation page. Any bad/tampered/expired token gets a
+    clean friendly error page, never a 500."""
+
+    permission_classes = [AllowAny]
+
+    def get(self, request):
+        token = request.query_params.get('token', '')
+        try:
+            label = apply_unsubscribe(token)
+        except InvalidUnsubscribeToken:
+            return HttpResponse(
+                _html_page(
+                    "This link isn't working",
+                    "It may be expired or invalid. You can manage your email "
+                    "preferences from your account settings instead.",
+                ),
+                content_type='text/html',
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        return HttpResponse(
+            _html_page(
+                "You're unsubscribed",
+                f"You won't receive {label} anymore. You can re-enable this "
+                "anytime from your account settings.",
+            ),
+            content_type='text/html',
         )
