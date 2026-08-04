@@ -1,0 +1,63 @@
+# Log-based DISTRIBUTION metric over the app's own per-request latency.
+#
+# The AccessLogMiddleware (JokesForProject/observability/middleware.py) already
+# emits one structured Cloud Logging line per request with jsonPayload.latency_ms
+# (whole-request wall time, INCLUDING synchronous media encode + SafeSearch) and a
+# low-cardinality jsonPayload.route (the URL template, e.g.
+# "api/v1/creators/<int:creator_id>/tips/summary/"). This metric turns those lines
+# into a per-route latency histogram so Cloud Monitoring can report real p50/p95/p99
+# — no app changes, no new dependency.
+#
+# Apply (owner-gated — creates a GCP resource):
+#   gcloud logging metrics create access_request_latency \
+#     --project=jokesfor \
+#     --config-from-file=ops/monitoring/access_latency_metric.yaml
+# Update an existing one:
+#   gcloud logging metrics update access_request_latency \
+#     --project=jokesfor \
+#     --config-from-file=ops/monitoring/access_latency_metric.yaml
+#
+# The resulting metric type is: logging.googleapis.com/user/access_request_latency
+
+description: "Per-request wall-clock latency (ms) from jokesfor.access logs, labelled by route/method/status_class."
+
+# Access-log lines are the ones with message=="request"; they always carry latency_ms.
+filter: |-
+  resource.type="cloud_run_revision"
+  resource.labels.service_name="jokesforbackend"
+  jsonPayload.message="request"
+  jsonPayload.latency_ms>=0
+
+metricDescriptor:
+  metricKind: DELTA
+  valueType: DISTRIBUTION
+  unit: ms
+  labels:
+    - key: route
+      valueType: STRING
+      description: "URL template (low-cardinality), e.g. api/v1/jokes/"
+    - key: method
+      valueType: STRING
+      description: "HTTP method"
+    - key: status_class
+      valueType: STRING
+      description: "First digit of the HTTP status (2/4/5) for success/error grouping"
+
+valueExtractor: EXTRACT(jsonPayload.latency_ms)
+
+labelExtractors:
+  route: EXTRACT(jsonPayload.route)
+  method: EXTRACT(jsonPayload.method)
+  # status is numeric in the payload; REGEXP_EXTRACT coerces to string and takes the
+  # leading digit. If your gcloud rejects regex on a numeric field, swap to
+  #   status_class: EXTRACT(jsonPayload.status)
+  # (full code as the label — slightly higher cardinality, still fine).
+  status_class: REGEXP_EXTRACT(jsonPayload.status, "^(\\d)")
+
+# Exponential buckets from ~1ms upward: 1,2,4,...,~1.05e6 ms (covers sub-ms reads to
+# the 300s request ceiling / cold starts with headroom).
+bucketOptions:
+  exponentialBuckets:
+    numFiniteBuckets: 20
+    growthFactor: 2
+    scale: 1
