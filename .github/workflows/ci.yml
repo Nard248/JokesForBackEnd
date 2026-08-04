@@ -3,8 +3,11 @@ name: CI
 # Independent test/lint gate — additive to the existing Google Cloud Build
 # deploy pipeline (cloudbuild.yaml), not a replacement for it.
 on:
-  push:
   pull_request:
+  # Only main on push (post-merge signal). Feature branches are covered by
+  # pull_request, so this avoids running the whole suite twice per PR push.
+  push:
+    branches: [main]
 
 jobs:
   test:
@@ -66,7 +69,9 @@ jobs:
       - name: Install Python dependencies
         run: |
           pip install -r requirements.txt
-          pip install ruff bandit pip-audit
+          # Pinned: `ruff check` is a HARD gate, so an unpinned ruff could turn
+          # the tree red on a future release with no code change. Bump deliberately.
+          pip install ruff==0.16.1 bandit==1.9.4 pip-audit==2.10.1
 
       - name: ruff check (lint gate)
         run: ruff check .
