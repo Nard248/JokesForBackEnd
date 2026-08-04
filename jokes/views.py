@@ -332,6 +332,15 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
         if hidden:
             queryset = queryset.exclude(creator_id__in=hidden)
 
+        # N+1 guard: this queryset came from Joke.objects.search() (JokeManager),
+        # NOT self.get_queryset() -- so it never got that method's eager loading.
+        # Without this, JokeSerializer's nested fields (format/age_rating/
+        # language/source FKs; tones/context_tags/culture_tags/media__asset
+        # M2M) each re-hit the DB once per joke on the page.
+        queryset = queryset.select_related(
+            'format', 'age_rating', 'language', 'source'
+        ).prefetch_related('tones', 'context_tags', 'culture_tags', 'media__asset')
+
         # Paginate results
         page = self.paginate_queryset(queryset)
         if page is not None:
