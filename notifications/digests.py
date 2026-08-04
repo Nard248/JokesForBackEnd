@@ -22,7 +22,7 @@ knows another call will keep draining it.
 """
 from django.conf import settings
 from django.contrib.auth import get_user_model
-from django.db.models import Count
+from django.db.models import F
 from django.utils import timezone
 
 from jokes.models import Joke, JokeReaction
@@ -175,10 +175,16 @@ def run_daily_digests(cap=None):
         milestones_sent += 1
     remaining += len(leftover)
 
-    run.digests_sent += digests_sent
-    run.milestones_sent += milestones_sent
-    run.finished_at = timezone.now()
-    run.save(update_fields=['digests_sent', 'milestones_sent', 'finished_at'])
+    # F()-expression update, not a Python read-modify-write: two concurrent
+    # invocations (e.g. a scheduler retry racing a manual re-run) must not
+    # clobber each other's increment. Correctness of sends themselves never
+    # depends on this counter -- EmailMessageLog is the idempotency ledger --
+    # this is purely the observability total staying accurate under races.
+    DigestRun.objects.filter(pk=run.pk).update(
+        digests_sent=F('digests_sent') + digests_sent,
+        milestones_sent=F('milestones_sent') + milestones_sent,
+        finished_at=timezone.now(),
+    )
 
     return {
         'digests_sent': digests_sent,
