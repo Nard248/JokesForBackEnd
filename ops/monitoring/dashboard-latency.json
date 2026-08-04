@@ -1,0 +1,119 @@
+{
+  "displayName": "JokesFor — API Latency & Traffic",
+  "dashboardFilters": [],
+  "gridLayout": {
+    "columns": 2,
+    "widgets": [
+      {
+        "title": "p50 request latency by route (ms)",
+        "xyChart": {
+          "dataSets": [
+            {
+              "timeSeriesQuery": {
+                "timeSeriesFilter": {
+                  "filter": "metric.type=\"logging.googleapis.com/user/access_request_latency\" resource.type=\"cloud_run_revision\"",
+                  "aggregation": {
+                    "alignmentPeriod": "60s",
+                    "perSeriesAligner": "ALIGN_PERCENTILE_50",
+                    "crossSeriesReducer": "REDUCE_MEAN",
+                    "groupByFields": ["metric.label.route"]
+                  }
+                }
+              },
+              "plotType": "LINE"
+            }
+          ],
+          "yAxis": { "label": "ms", "scale": "LINEAR" }
+        }
+      },
+      {
+        "title": "p95 request latency by route (ms)",
+        "xyChart": {
+          "dataSets": [
+            {
+              "timeSeriesQuery": {
+                "timeSeriesFilter": {
+                  "filter": "metric.type=\"logging.googleapis.com/user/access_request_latency\" resource.type=\"cloud_run_revision\"",
+                  "aggregation": {
+                    "alignmentPeriod": "60s",
+                    "perSeriesAligner": "ALIGN_PERCENTILE_95",
+                    "crossSeriesReducer": "REDUCE_MEAN",
+                    "groupByFields": ["metric.label.route"]
+                  }
+                }
+              },
+              "plotType": "LINE"
+            }
+          ],
+          "yAxis": { "label": "ms", "scale": "LINEAR" }
+        }
+      },
+      {
+        "title": "p99 request latency by route (ms)",
+        "xyChart": {
+          "dataSets": [
+            {
+              "timeSeriesQuery": {
+                "timeSeriesFilter": {
+                  "filter": "metric.type=\"logging.googleapis.com/user/access_request_latency\" resource.type=\"cloud_run_revision\"",
+                  "aggregation": {
+                    "alignmentPeriod": "60s",
+                    "perSeriesAligner": "ALIGN_PERCENTILE_99",
+                    "crossSeriesReducer": "REDUCE_MEAN",
+                    "groupByFields": ["metric.label.route"]
+                  }
+                }
+              },
+              "plotType": "LINE"
+            }
+          ],
+          "yAxis": { "label": "ms", "scale": "LINEAR" }
+        }
+      },
+      {
+        "title": "Request rate (req/s) by response code class",
+        "xyChart": {
+          "dataSets": [
+            {
+              "timeSeriesQuery": {
+                "timeSeriesFilter": {
+                  "filter": "metric.type=\"run.googleapis.com/request_count\" resource.type=\"cloud_run_revision\" resource.label.\"service_name\"=\"jokesforbackend\"",
+                  "aggregation": {
+                    "alignmentPeriod": "60s",
+                    "perSeriesAligner": "ALIGN_RATE",
+                    "crossSeriesReducer": "REDUCE_SUM",
+                    "groupByFields": ["metric.label.response_code_class"]
+                  }
+                }
+              },
+              "plotType": "STACKED_BAR"
+            }
+          ],
+          "yAxis": { "label": "req/s", "scale": "LINEAR" }
+        }
+      },
+      {
+        "title": "Cloud Run instance count (cold-start signal)",
+        "xyChart": {
+          "dataSets": [
+            {
+              "timeSeriesQuery": {
+                "timeSeriesFilter": {
+                  "filter": "metric.type=\"run.googleapis.com/container/instance_count\" resource.type=\"cloud_run_revision\" resource.label.\"service_name\"=\"jokesforbackend\"",
+                  "aggregation": {
+                    "alignmentPeriod": "60s",
+                    "perSeriesAligner": "ALIGN_MEAN",
+                    "crossSeriesReducer": "REDUCE_SUM",
+                    "groupByFields": ["metric.label.state"]
+                  }
+                }
+              },
+              "plotType": "LINE"
+            }
+          ],
+          "yAxis": { "label": "instances", "scale": "LINEAR" }
+        }
+      }
+    ]
+  }
+}
