@@ -1,0 +1,10 @@
+{% extends "notifications/email/base.html" %}
+{% block content %}
+  <p>Today's joke is ready for you.</p>
+  <p style="font-size:18px; font-weight:600; color:#111; margin:20px 0; line-height:1.4;">{{ setup }}</p>
+  <p><a href="{{ reveal_url }}" style="color:#6A1CF6; font-weight:600; text-decoration:none;">Reveal the punchline &rarr;</a></p>
+{% endblock %}
+{% block footer %}
+  You're getting this because you're subscribed to the Jokes For daily digest.
+  <a href="{{ unsubscribe_url }}" style="color:#888;">Unsubscribe</a>
+{% endblock %}

@@ -85,3 +85,34 @@ def get_personalized_joke(user, exclude_joke_ids=None, allowed_tiers=frozenset({
     return base_queryset.annotate(
         save_count=Count('saved_by')
     ).order_by('-save_count', '?').first()
+
+
+def get_daily_editorial_joke(target_date=None):
+    """Return the joke to feature as "today's joke" in the daily digest email.
+
+    DailyJoke is per-user (personalized) — there's no single stored "joke of
+    the day" row. For the digest, which needs ONE joke to feature for every
+    recipient, we take the mode of today's DailyJoke rows: whichever joke the
+    most authenticated users were personally served today, tie-broken by
+    joke id for determinism. A since-removed joke is never eligible even if
+    it was the day's most-delivered pick.
+
+    Returns None if no DailyJoke exists yet for the date (nobody has opened
+    the app today) — callers should treat that as "skip the daily digest",
+    not generate one out of thin air for an email nobody triggered by using
+    the app.
+    """
+    target_date = target_date or timezone.now().date()
+    top = (
+        DailyJoke.objects
+        .filter(date=target_date, joke__is_removed=False)
+        .values('joke_id')
+        .annotate(n=Count('id'))
+        .order_by('-n', 'joke_id')
+        .first()
+    )
+    if not top:
+        return None
+    return Joke.objects.filter(pk=top['joke_id']).select_related(
+        'format', 'age_rating', 'language'
+    ).first()

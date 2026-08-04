@@ -95,7 +95,14 @@ class ResendVerificationView(APIView):
 
 def _html_page(heading, message):
     """Tiny standalone confirmation/error page for the unsubscribe link
-    (opened directly from an email client, not the SPA — plain HTML, no JS)."""
+    (opened directly from an email client, not the SPA — plain HTML, no JS).
+
+    SECURITY: heading/message are interpolated directly into raw HTML with NO
+    autoescaping (this is an f-string, not a Django template). Every call site
+    in this module passes only hardcoded literal copy — never do so with
+    user-supplied or request-derived text (query params, DB values, etc.),
+    or this becomes a reflected-XSS sink.
+    """
     return f"""<!DOCTYPE html>
 <html>
   <body style="font-family: -apple-system, Segoe UI, Roboto, sans-serif; background:#f6f6f8;

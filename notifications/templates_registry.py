@@ -17,6 +17,16 @@ TEMPLATES = {
         'html': 'notifications/email/verification_code.html',
         'text': 'notifications/email/verification_code.txt',
     },
+    'daily_digest': {
+        'subject': "Today's joke is ready",
+        'html': 'notifications/email/daily_digest.html',
+        'text': 'notifications/email/daily_digest.txt',
+    },
+    'creator_milestone': {
+        'subject': 'Your jokes made people laugh',
+        'html': 'notifications/email/creator_milestone.html',
+        'text': 'notifications/email/creator_milestone.txt',
+    },
 }
 
 

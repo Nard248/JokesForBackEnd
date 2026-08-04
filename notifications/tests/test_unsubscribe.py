@@ -120,6 +120,21 @@ class UnsubscribeViewTests(TestCase):
         self.profile.refresh_from_db()
         self.assertTrue(self.profile.email_digest_opt_in)
 
+    def test_deleted_user_returns_friendly_error_not_500(self):
+        # FOLD (Task 1 review): a token minted before the account was deleted
+        # (or purged) must still resolve to a clean 400, never a crash --
+        # apply_unsubscribe's `User.objects.filter(pk=...).first()` returns
+        # None for a since-deleted uid and raises InvalidUnsubscribeToken,
+        # which the view renders as the same friendly error page.
+        token = unsubscribe_token(self.user, 'digest')
+        self.user.delete()
+
+        response = self._get(token)
+
+        self.assertEqual(response.status_code, 400)
+        self.assertTrue(response.get('Content-Type', '').startswith('text/html'))
+        self.assertNotIn(b'Traceback', response.content)
+
 
 class UserProfileDefaultsTests(TestCase):
     def test_new_profile_defaults_both_flags_true(self):

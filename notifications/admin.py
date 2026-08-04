@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import EmailMessageLog, EmailVerification
+from .models import DigestRun, EmailMessageLog, EmailVerification
 
 
 @admin.register(EmailMessageLog)
@@ -26,6 +26,21 @@ class EmailVerificationAdmin(admin.ModelAdmin):
     list_filter = ['created_at', 'expires_at']
     search_fields = ['user__email']
     readonly_fields = [f.name for f in EmailVerification._meta.fields]
+
+    def has_add_permission(self, request):
+        return False
+
+    def has_change_permission(self, request, obj=None):
+        return False
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+
+@admin.register(DigestRun)
+class DigestRunAdmin(admin.ModelAdmin):
+    list_display = ['date', 'digests_sent', 'milestones_sent', 'started_at', 'finished_at']
+    readonly_fields = [f.name for f in DigestRun._meta.fields]
 
     def has_add_permission(self, request):
         return False

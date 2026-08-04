@@ -1,0 +1,10 @@
+{% extends "notifications/email/base.html" %}
+{% block content %}
+  <p>Your jokes are making people laugh.</p>
+  <p style="font-size:18px; font-weight:600; color:#111; margin:20px 0;">+{{ new_reaction_count }} new reactions since we last checked in.</p>
+  <p><a href="{{ profile_url }}" style="color:#6A1CF6; font-weight:600; text-decoration:none;">See your jokes &rarr;</a></p>
+{% endblock %}
+{% block footer %}
+  You're getting this because you're subscribed to Jokes For creator milestone emails.
+  <a href="{{ unsubscribe_url }}" style="color:#888;">Unsubscribe</a>
+{% endblock %}
