@@ -3,6 +3,7 @@ import hmac
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.http import Http404, HttpResponse
+from drf_spectacular.utils import extend_schema
 from rest_framework import status
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
@@ -157,42 +158,46 @@ class EmailUnsubscribeView(APIView):
 
 
 class RunDigestsView(APIView):
-    """POST /api/v1/internal/run-digests/ — Cloud Scheduler trigger for the
-    daily digest + creator milestone batch (see notifications.digests).
+    """POST — internal Cloud Scheduler trigger for the daily digest batch.
 
-    NOT a user endpoint: no session/JWT auth at all, and no permission check
-    beyond the shared-secret header below. Guarded entirely by `X-Digest-Token`
-    compared (constant-time, via hmac.compare_digest — NEVER `==`, which leaks
-    timing on how many leading bytes match) against settings.DIGEST_CRON_TOKEN.
-
-    Every failure mode — missing header, wrong token, or an unset/empty
-    server-side secret — returns the SAME 404, never 401/403. A 401/403 would
-    confirm to anyone probing the URL that something real lives there; 404
-    makes it indistinguishable from a path that doesn't exist (see spec
-    §Risks). An empty DIGEST_CRON_TOKEN means the endpoint is dormant for
-    every caller until the owner sets a real secret in the deploy env — same
-    pattern as the Stripe/SafeSearch empty-by-default dormant gates.
-
-    Throttle-exempt (`throttle_classes = []`): the token + 404 shape IS the
-    guard, and a legitimate scheduler shouldn't be rate-limited by its own
-    caller. An unauthenticated flood still only costs one cheap constant-time
-    compare + a 404 per request — no DB/email work happens before the token
-    check.
+    Not part of the public API: excluded from the OpenAPI schema below, and
+    deliberately undocumented here too (see notifications/views.py comments
+    on `post()` and Docs/superpowers/specs/2026-07-24-email-digest-design.md
+    §Risks for the auth mechanism) — a leaked docstring would defeat the
+    "don't advertise this endpoint" design as surely as a leaked schema entry.
     """
 
     authentication_classes = []
     permission_classes = [AllowAny]
     throttle_classes = []
 
+    @extend_schema(exclude=True)
     def post(self, request):
-        supplied = request.META.get('HTTP_X_DIGEST_TOKEN', '')
+        # Guarded solely by a shared-secret `X-Digest-Token` header, compared
+        # constant-time (hmac.compare_digest — NEVER `==`, which leaks timing
+        # on how many leading bytes match) against settings.DIGEST_CRON_TOKEN.
+        # Every failure mode -- missing header, wrong token, or an unset/empty
+        # server-side secret -- returns the SAME 404, never 401/403: a 401/403
+        # would confirm to anyone probing the URL that something real lives
+        # there, while 404 is indistinguishable from a path that doesn't
+        # exist. Empty DIGEST_CRON_TOKEN means dormant: reject every caller
+        # until the owner sets a real secret in the deploy env (same pattern
+        # as the Stripe/SafeSearch empty-by-default dormant gates).
+        #
+        # Both sides are stripped of incidental whitespace (a scheduler
+        # header shouldn't fail on that) and encoded to bytes before the
+        # compare: hmac.compare_digest requires ASCII-only input when given
+        # str objects and raises TypeError otherwise, which would 500 an
+        # attacker's non-ASCII probe instead of 404ing it -- encoding first
+        # (with surrogateescape on the untrusted side, so even a header that
+        # decoded to a lone surrogate can't raise) removes that restriction
+        # entirely and keeps every failure path on the same 404.
+        supplied = request.META.get('HTTP_X_DIGEST_TOKEN', '').strip()
         expected = settings.DIGEST_CRON_TOKEN
 
-        # Reject up front (no compare at all) when the server-side secret is
-        # unset/empty — dormant by default. Guards against hmac.compare_digest
-        # trivially "matching" an equally-empty supplied header, which would
-        # otherwise let an unconfigured deploy accept every caller.
-        if not expected or not supplied or not hmac.compare_digest(supplied, expected):
+        if not expected or not supplied or not hmac.compare_digest(
+            supplied.encode('utf-8', 'surrogateescape'), expected.encode('utf-8')
+        ):
             raise Http404()
 
         summary = run_daily_digests()

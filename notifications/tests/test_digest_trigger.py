@@ -17,6 +17,7 @@ from freezegun import freeze_time
 
 from audit.models import AuditLog
 from jokes.models import AgeRating, DailyJoke, Format, Joke, Language
+from JokesForProject.observability.redaction import _DENYLIST
 from notifications import views as notifications_views
 from notifications.models import EmailMessageLog
 
@@ -118,6 +119,44 @@ class RunDigestsViewSecurityTests(TestCase):
 
         self.assertFalse(AuditLog.objects.filter(action='digest_run').exists())
 
+    # ── Critical 2 (review fold): hmac.compare_digest(str, str) requires
+    # ASCII-only input and raises TypeError otherwise -- a 500, not the
+    # uniform 404 this endpoint promises. Both operands are now bytes-encoded
+    # before compare_digest, so any header content is comparable safely. ──
+
+    @override_settings(DIGEST_CRON_TOKEN=TOKEN)
+    def test_non_ascii_token_returns_404_not_500(self):
+        with patch('notifications.views.run_daily_digests') as mock_run:
+            response = self.client.post(self.url, HTTP_X_DIGEST_TOKEN='café')
+
+        self.assertEqual(response.status_code, 404)
+        mock_run.assert_not_called()
+        self.assertEqual(EmailMessageLog.objects.count(), 0)
+
+    @override_settings(DIGEST_CRON_TOKEN=TOKEN)
+    def test_lone_surrogate_token_returns_404_not_500(self):
+        # A raw header byte sequence that doesn't decode cleanly as UTF-8 can
+        # hand the view a string containing a lone surrogate codepoint.
+        # `.encode('utf-8')` with the default 'strict' error handler raises
+        # UnicodeEncodeError on that -- exactly the class of crash this fix
+        # (errors='surrogateescape' on the untrusted side) must prevent.
+        with patch('notifications.views.run_daily_digests') as mock_run:
+            response = self.client.post(self.url, HTTP_X_DIGEST_TOKEN='\udcff')
+
+        self.assertEqual(response.status_code, 404)
+        mock_run.assert_not_called()
+
+    # ── Minor fold: symmetric whitespace stripping so a scheduler header
+    # with incidental padding doesn't fail a token that's otherwise correct.
+
+    @override_settings(DIGEST_CRON_TOKEN=TOKEN)
+    def test_whitespace_padded_correct_token_is_accepted(self):
+        summary = {'digests_sent': 0, 'milestones_sent': 0, 'skipped': True, 'remaining': 0}
+        with patch('notifications.views.run_daily_digests', return_value=summary):
+            response = self.client.post(self.url, HTTP_X_DIGEST_TOKEN=f'  {TOKEN}\t')
+
+        self.assertEqual(response.status_code, 200)
+
 
 class RunDigestsViewConstantTimeCompareTests(TestCase):
     """Structural pin: the timing-safety property itself can't be reliably
@@ -128,3 +167,39 @@ class RunDigestsViewConstantTimeCompareTests(TestCase):
     def test_view_source_uses_hmac_compare_digest(self):
         source = inspect.getsource(notifications_views)
         self.assertIn('hmac.compare_digest', source)
+
+
+class RunDigestsSchemaExclusionTests(TestCase):
+    """Critical 1 (review fold): /api/schema/, /api/docs/, /api/redoc/ are
+    all AllowAny, so anything not explicitly excluded from the generated
+    OpenAPI schema is effectively public. RunDigestsView must never appear
+    there -- its docstring alone would spell out the whole auth mechanism
+    to anyone browsing /api/docs/."""
+
+    def test_run_digests_excluded_from_public_schema(self):
+        response = self.client.get(reverse('schema'), {'format': 'json'})
+
+        self.assertEqual(response.status_code, 200)
+        schema = response.json()
+        self.assertNotIn('/api/v1/internal/run-digests/', schema.get('paths', {}))
+
+        # Belt-and-suspenders: nothing digest-token-related leaks into the
+        # schema body under any other path/operation-id spelling either.
+        raw = response.content.decode('utf-8')
+        self.assertNotIn('run-digests', raw)
+        self.assertNotIn('X-Digest-Token', raw)
+        self.assertNotIn('compare_digest', raw)
+
+
+class DigestTokenRedactionTests(TestCase):
+    """Critical 3 (review fold): defense-in-depth so a live DIGEST_CRON_TOKEN
+    can never ship to Sentry/logs in plaintext via redact_mapping (used by
+    JokesForProject.observability.sentry.scrub_event's before_send hook)."""
+
+    def test_digest_token_header_key_is_denylisted(self):
+        self.assertIn('x-digest-token', _DENYLIST)
+
+    def test_redact_mapping_scrubs_digest_token_header(self):
+        from JokesForProject.observability.redaction import redact_mapping
+        out = redact_mapping({'X-Digest-Token': 'super-secret-value'})
+        self.assertEqual(out['X-Digest-Token'], '[REDACTED]')

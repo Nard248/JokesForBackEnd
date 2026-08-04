@@ -26,6 +26,12 @@ _DENYLIST: frozenset = frozenset({
     # JWT cookie names used by this app (REST_AUTH settings)
     'jokes-access-token',
     'jokes-refresh-token',
+    # Email-Digest-Wave internal trigger shared secret (notifications.views.
+    # RunDigestsView) -- both header-name spellings, since Sentry's request
+    # headers dict uses the hyphenated HTTP form while other consumers may
+    # key off the underscored META-derived form.
+    'x-digest-token',
+    'x_digest_token',
 })
 
 _REDACTED = '[REDACTED]'
