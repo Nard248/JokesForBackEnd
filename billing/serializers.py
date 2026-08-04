@@ -1,7 +1,6 @@
 from rest_framework import serializers
 
 from billing.models import Plan, Subscription, Tip
-from billing import entitlements
 
 
 class PlanPublicSerializer(serializers.ModelSerializer):

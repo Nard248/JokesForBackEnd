@@ -4,9 +4,12 @@ from django.test import TestCase
 from rest_framework.test import APIClient
 
 from jokes.identity import (
-    public_display_name, public_handle, normalize_handle, is_valid_handle,
+    is_valid_handle,
+    normalize_handle,
+    public_display_name,
+    public_handle,
 )
-from jokes.models import Format, AgeRating, Language, JokeSubmission
+from jokes.models import AgeRating, Format, JokeSubmission, Language
 
 User = get_user_model()
 

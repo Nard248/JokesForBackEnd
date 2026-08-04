@@ -28,12 +28,22 @@ from rest_framework.test import APIRequestFactory
 from inbox.models import Notification
 from jokes.admin import AppealAdmin, ContentReportAdmin, JokeAdmin, JokeSubmissionAdmin
 from jokes.models import (
-    Appeal, ContentReport, Format, Joke, JokeMedia, JokeSubmission,
-    JokeSubmissionMedia, MediaAsset, Tone,
+    Appeal,
+    ContentReport,
+    Format,
+    Joke,
+    JokeMedia,
+    JokeSubmission,
+    JokeSubmissionMedia,
+    MediaAsset,
+    Tone,
 )
 from jokes.serializers import JokeListSerializer, JokeSerializer
 from jokes.share_cards import (
-    _downscale_raster, generate_share_card_png, get_badge_text, media_share_card_png,
+    _downscale_raster,
+    generate_share_card_png,
+    get_badge_text,
+    media_share_card_png,
 )
 from jokes.tests_media import _taxonomy, make_user
 

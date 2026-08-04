@@ -125,12 +125,18 @@ import json
 import zipfile
 from datetime import date, timedelta
 
+from django.contrib.auth import get_user_model
 from django.utils import timezone
 from rest_framework.test import APITestCase
-from django.contrib.auth import get_user_model
 
 from jokes.models import (
-    Format, AgeRating, Language, Tone, ContextTag, CultureTag, JokeSubmission,
+    AgeRating,
+    ContextTag,
+    CultureTag,
+    Format,
+    JokeSubmission,
+    Language,
+    Tone,
 )
 
 User = get_user_model()
@@ -525,11 +531,15 @@ class AdminApproveTests(APITestCase):
 # =============================================================================
 
 from jokes.models import (
-    Joke, Collection, SavedJoke, Favorite, JokeRating, JokeReaction,
-    DailyJoke, JokeView, Streak, StreakDay, JokeSubmission as _JS,
-    ContentReport, UserBlock, UserPreference, UserProfile, UserVibe, Vibe,
-    MysteryBoxRoll, ShareEvent, Achievement, UserAchievement,
-    JokePack, JokePackProgress,
+    Collection,
+    ContentReport,
+    DailyJoke,
+    Favorite,
+    JokeRating,
+    JokeReaction,
+    JokeView,
+    SavedJoke,
+    UserBlock,
 )
 from notifications.models import EmailMessageLog, EmailVerification
 
@@ -637,8 +647,8 @@ class DataExportTests(APITestCase):
 # GDPR: AccountDeleteView tests  (Task 3)
 # =============================================================================
 
+from rest_framework_simplejwt.token_blacklist.models import BlacklistedToken, OutstandingToken
 from rest_framework_simplejwt.tokens import RefreshToken
-from rest_framework_simplejwt.token_blacklist.models import OutstandingToken, BlacklistedToken
 
 
 class AccountDeleteTests(APITestCase):

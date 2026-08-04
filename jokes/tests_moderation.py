@@ -5,14 +5,13 @@ from django.contrib.admin.sites import AdminSite
 from django.contrib.auth import get_user_model
 from django.contrib.messages.storage.fallback import FallbackStorage
 from django.test import RequestFactory, TestCase
-from django.utils import timezone
 from rest_framework.test import APIClient
 
-from jokes.admin import ContentReportAdmin, JokeAdmin
-from jokes.models import Format, AgeRating, Language, Joke, ContentReport, UserBlock
-from jokes.moderation import hidden_user_ids, is_blocked_between, visible_jokes
 from follows import services as follow_services
 from follows.models import Follow
+from jokes.admin import ContentReportAdmin, JokeAdmin
+from jokes.models import AgeRating, ContentReport, Format, Joke, Language, UserBlock
+from jokes.moderation import hidden_user_ids, is_blocked_between, visible_jokes
 
 User = get_user_model()
 

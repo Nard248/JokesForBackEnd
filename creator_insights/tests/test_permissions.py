@@ -6,9 +6,9 @@ A user must have at least one published JokeSubmission to pass.
 from unittest.mock import patch
 
 from django.contrib.auth import get_user_model
-from django.test import TestCase, RequestFactory
+from django.test import RequestFactory, TestCase
 
-from jokes.models import Format, AgeRating, Language, JokeSubmission, Joke
+from jokes.models import AgeRating, Format, Joke, JokeSubmission, Language
 
 User = get_user_model()
 
@@ -57,7 +57,6 @@ class IsCreatorPermissionTests(TestCase):
         )
 
     def _request(self, user=None, authenticated=True):
-        from rest_framework.request import Request as DRFRequest
         factory = RequestFactory()
         req = factory.get('/')
         if user and authenticated:

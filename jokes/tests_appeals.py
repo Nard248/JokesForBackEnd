@@ -12,31 +12,42 @@ from unittest.mock import patch
 
 from django.conf import settings
 from django.contrib.admin.sites import AdminSite
+from django.contrib.messages.storage.fallback import FallbackStorage
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
 from django.db import IntegrityError, transaction
 from django.test import RequestFactory, TestCase, override_settings
-from django.contrib.messages.storage.fallback import FallbackStorage
 from django.utils import timezone
 from freezegun import freeze_time
-from rest_framework.test import APIClient
-
-from rest_framework.test import APIRequestFactory
+from rest_framework.test import APIClient, APIRequestFactory
 
 from audit.models import AuditLog
 from inbox.models import Notification
 from inbox.services import notify
 from jokes.admin import AppealAdmin, ContentReportAdmin, JokeAdmin, OverdueAppealFilter
 from jokes.models import (
-    Appeal, Collection, ContentReport, DailyJoke, Favorite, Joke, JokeMedia,
-    JokePack, JokePackEntry, JokeSubmission, JokeSubmissionMedia, JokeView,
-    MediaAsset, SavedJoke,
+    Appeal,
+    Collection,
+    ContentReport,
+    DailyJoke,
+    Favorite,
+    Joke,
+    JokeMedia,
+    JokePack,
+    JokePackEntry,
+    JokeSubmission,
+    JokeSubmissionMedia,
+    JokeView,
+    MediaAsset,
+    SavedJoke,
 )
 from jokes.quarantine import purge_lapsed_quarantine
 from jokes.serializers import (
-    JokeListSerializer, JokeSerializer, JokeSubmissionListSerializer,
+    JokeListSerializer,
+    JokeSerializer,
+    JokeSubmissionListSerializer,
 )
-from jokes.tests_media import make_asset, make_image_joke, make_user, _taxonomy
+from jokes.tests_media import _taxonomy, make_asset, make_image_joke, make_user
 
 _MEDIA_ROOT = tempfile.mkdtemp()
 
@@ -1260,7 +1271,9 @@ class C1QuarantineUrlOwnerLeakTests(TestCase):
         client.force_authenticate(self.owner)
         resp = client.get('/api/v1/users/me/data-export/')
         self.assertEqual(resp.status_code, 200)
-        import io, json, zipfile
+        import io
+        import json
+        import zipfile
         payload = json.loads(
             zipfile.ZipFile(io.BytesIO(resp.content)).read('jokes-for-data-export.json')
         )
@@ -1430,7 +1443,9 @@ class I1RemovedJokeGateTests(TestCase):
         client.force_authenticate(self.viewer)
         resp = client.get('/api/v1/users/me/data-export/')
         self.assertEqual(resp.status_code, 200)
-        import io, json, zipfile
+        import io
+        import json
+        import zipfile
         payload = json.loads(
             zipfile.ZipFile(io.BytesIO(resp.content)).read('jokes-for-data-export.json')
         )

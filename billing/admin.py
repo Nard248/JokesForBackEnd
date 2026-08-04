@@ -1,4 +1,3 @@
-import json
 
 from django.contrib import admin, messages
 from django.core.exceptions import ValidationError

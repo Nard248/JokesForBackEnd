@@ -2,7 +2,6 @@ from django.core.management.base import BaseCommand
 
 from jokes.models import Achievement
 
-
 ACHIEVEMENTS = [
     {
         'slug': 'first_save',

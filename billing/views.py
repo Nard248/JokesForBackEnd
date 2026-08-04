@@ -1,19 +1,21 @@
 import logging
 
 from django.db.models import Count, Sum
-from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import csrf_exempt
+from rest_framework import status
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.throttling import ScopedRateThrottle
 from rest_framework.views import APIView
-from rest_framework import status
 
 from billing import entitlements
 from billing.models import Plan, Subscription, Tip
 from billing.serializers import (
-    PlanPublicSerializer, MySubscriptionSerializer, EntitlementsSerializer, TipSerializer,
+    MySubscriptionSerializer,
+    PlanPublicSerializer,
+    TipSerializer,
 )
 from billing.stripe_gateway import BillingUnavailable, is_enabled
 
@@ -260,9 +262,10 @@ class StripeWebhookView(APIView):
             # Dormant: return 200 so Stripe doesn't retry
             return Response({'detail': 'billing_dormant'})
 
+        import stripe
+
         from billing import webhooks
         from billing.stripe_gateway import construct_event
-        import stripe
 
         payload = request.body
         sig_header = request.META.get('HTTP_STRIPE_SIGNATURE', '')

@@ -12,6 +12,23 @@ import json
 import zipfile
 from datetime import timedelta
 
+from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
+from allauth.socialaccount.providers.oauth2.client import OAuth2Client
+from dj_rest_auth.app_settings import api_settings as rest_auth_settings
+from dj_rest_auth.jwt_auth import set_jwt_cookies
+from dj_rest_auth.registration.views import RegisterView, SocialLoginView
+from django.conf import settings
+from django.core.files.base import ContentFile
+from django.core.serializers.json import DjangoJSONEncoder
+from django.db import transaction
+from django.db.models import Count, Max, Min, Q, Sum
+from django.db.models.functions import ExtractHour
+from django.http import HttpResponse
+from django.middleware.csrf import get_token
+from django.shortcuts import get_object_or_404, render
+from django.utils import timezone
+from django.views.decorators.http import require_GET
+from drf_spectacular.utils import OpenApiParameter, extend_schema
 from rest_framework import generics, mixins, status, viewsets
 from rest_framework.decorators import (
     action,
@@ -20,118 +37,104 @@ from rest_framework.decorators import (
     permission_classes,
 )
 from rest_framework.parsers import FormParser, MultiPartParser
-from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.throttling import ScopedRateThrottle
 from rest_framework.views import APIView
-from django.core.files.base import ContentFile
-from django.middleware.csrf import get_token
-from drf_spectacular.utils import extend_schema, OpenApiParameter
-from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
-from allauth.socialaccount.providers.oauth2.client import OAuth2Client
-from dj_rest_auth.app_settings import api_settings as rest_auth_settings
-from dj_rest_auth.jwt_auth import set_jwt_cookies
-from dj_rest_auth.registration.views import RegisterView, SocialLoginView
-from django.conf import settings
-from django.core.serializers.json import DjangoJSONEncoder
-from django.db import transaction
-from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404
-from django.views.decorators.http import require_GET
 
-from django.utils import timezone
-
-from django.db.models import Count, Max, Min, Q, Sum
-from django.db.models.functions import ExtractHour
-
-from notifications.models import EmailMessageLog, EmailVerification
 from billing import entitlements
+from notifications.models import EmailMessageLog, EmailVerification
 
-from .models import (
-    Joke,
-    Format,
-    AgeRating,
-    Tone,
-    ContextTag,
-    Language,
-    CultureTag,
-    UserPreference,
-    Collection,
-    SavedJoke,
-    DailyJoke,
-    JokeRating,
-    ShareEvent,
-    Favorite,
-    JokeSubmission,
-    ContentReport,
-    Appeal,
-    UserBlock,
-    Achievement,
-    UserAchievement,
-    UserProfile,
-    Vibe,
-    UserVibe,
-    MysteryBoxRoll,
-    JokeReaction,
-    JokeView,
-    JokeImpression,
-    JokeDwell,
-    JokeWatch,
-    Streak,
-    StreakDay,
-    JokePack,
-    JokePackEntry,
-    JokePackProgress,
-    MediaAsset,
+from .identity import (
+    is_valid_handle,
+    normalize_handle,
+    public_display_name,
+    public_handle,
 )
 from .media_processing import (
-    MediaBusyError, MediaValidationError, process_audio, process_image,
+    MediaBusyError,
+    MediaValidationError,
+    process_audio,
+    process_image,
     process_video,
 )
 from .media_screening import get_matcher, screen_image
-from .recommendations import get_personalized_joke, get_recently_shown_joke_ids
-from .serving import allowed_tiers
-from .paywall import paywall_state, record_anon_read
-from .submission_rules import validate_per_format, FORMAT_RULES
-from .identity import (
-    public_display_name, public_handle, normalize_handle, is_valid_handle,
+from .models import (
+    Achievement,
+    AgeRating,
+    Appeal,
+    Collection,
+    ContentReport,
+    ContextTag,
+    CultureTag,
+    DailyJoke,
+    Favorite,
+    Format,
+    Joke,
+    JokeDwell,
+    JokeImpression,
+    JokePack,
+    JokePackProgress,
+    JokeRating,
+    JokeReaction,
+    JokeSubmission,
+    JokeView,
+    JokeWatch,
+    Language,
+    MediaAsset,
+    MysteryBoxRoll,
+    SavedJoke,
+    ShareEvent,
+    Streak,
+    StreakDay,
+    Tone,
+    UserAchievement,
+    UserBlock,
+    UserPreference,
+    UserProfile,
+    UserVibe,
+    Vibe,
 )
-from .moderation import visible_jokes, is_blocked_between, hidden_user_ids
+from .moderation import hidden_user_ids, visible_jokes
+from .paywall import paywall_state, record_anon_read
+from .recommendations import get_personalized_joke, get_recently_shown_joke_ids
 from .serializers import (
-    JokeSerializer,
-    FormatSerializer,
     AgeRatingSerializer,
-    ToneSerializer,
+    AppealCreateSerializer,
+    AppealSerializer,
+    CollectionCreateSerializer,
+    CollectionSerializer,
+    ContentReportSerializer,
     ContextTagSerializer,
-    LanguageSerializer,
     CultureTagSerializer,
+    DailyJokeSerializer,
+    FavoriteCreateSerializer,
+    FavoriteSerializer,
+    FormatSerializer,
+    JokePackDetailSerializer,
+    JokePackListSerializer,
+    JokePackProgressUpdateSerializer,
+    JokeRatingSerializer,
+    JokeSerializer,
+    JokeSubmissionCreateSerializer,
+    JokeSubmissionListSerializer,
+    JokeViewSerializer,
+    LanguageSerializer,
+    MediaAssetSerializer,
+    MysteryBoxRollResponseSerializer,
+    MysteryBoxStatusSerializer,
+    SavedJokeCreateSerializer,
+    SavedJokeSerializer,
+    StreakSerializer,
+    ToneSerializer,
     UserPreferenceSerializer,
     UserPreferenceUpdateSerializer,
-    CollectionSerializer,
-    CollectionCreateSerializer,
-    SavedJokeSerializer,
-    SavedJokeCreateSerializer,
-    DailyJokeSerializer,
-    JokeRatingSerializer,
-    FavoriteSerializer,
-    FavoriteCreateSerializer,
-    JokeSubmissionListSerializer,
-    JokeSubmissionCreateSerializer,
-    ContentReportSerializer,
-    AppealSerializer,
-    AppealCreateSerializer,
-    VibeSerializer,
     UserVibeSerializer,
     UserVibesUpdateSerializer,
-    MysteryBoxStatusSerializer,
-    MysteryBoxRollResponseSerializer,
-    JokeViewSerializer,
-    StreakSerializer,
-    JokePackListSerializer,
-    JokePackDetailSerializer,
-    JokePackProgressUpdateSerializer,
-    MediaAssetSerializer,
+    VibeSerializer,
 )
+from .serving import allowed_tiers
+from .submission_rules import FORMAT_RULES, validate_per_format
 
 
 class JokeViewSet(viewsets.ReadOnlyModelViewSet):
@@ -180,8 +183,9 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
             # locked joke gave the user no payoff, so do not log consumption.
             if response.data.get('is_locked'):
                 return response
-            from django.utils import timezone
             from datetime import timedelta
+
+            from django.utils import timezone
             joke_id = response.data.get('id')
             if joke_id:
                 source = request.query_params.get('source', JokeView.SOURCE_OTHER)
@@ -846,9 +850,9 @@ class CookieRegisterView(RegisterView):
             return response
 
         # Gated flow.
+        from audit.services import record_audit
         from notifications import verification
         from notifications.service import EmailSendError
-        from audit.services import record_audit
 
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -2319,8 +2323,9 @@ class MyBlocksView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        from follows.serializers import PublicUserSerializer
         from django.contrib.auth import get_user_model
+
+        from follows.serializers import PublicUserSerializer
         User = get_user_model()
         blocked_ids = UserBlock.objects.filter(blocker=request.user).values_list('blocked_id', flat=True)
         blocked = User.objects.filter(pk__in=blocked_ids).select_related('profile').order_by('id')
@@ -2367,7 +2372,8 @@ class UserAccountDeleteView(APIView):
             #    with user_id=NULL and filter(user=user) would miss them)
             if 'rest_framework_simplejwt.token_blacklist' in settings.INSTALLED_APPS:
                 from rest_framework_simplejwt.token_blacklist.models import (
-                    OutstandingToken, BlacklistedToken,
+                    BlacklistedToken,
+                    OutstandingToken,
                 )
                 for ot in OutstandingToken.objects.filter(user=user):
                     BlacklistedToken.objects.get_or_create(token=ot)
@@ -2825,6 +2831,7 @@ def _reconcile_streak(streak):
     stays consistent between read-path and write-path reconciliation.
     """
     from django.utils import timezone
+
     from .signals import _walk_gap
 
     if not streak.last_active_date:
@@ -3041,6 +3048,7 @@ class DailyRitualStatusView(APIView):
     )
     def get(self, request):
         from django.utils import timezone
+
         from .models import UserPreference
 
         now = timezone.now()
@@ -3138,8 +3146,9 @@ class TasteProfileView(APIView):
         responses={200: {'type': 'object'}},
     )
     def get(self, request):
-        from django.utils import timezone
         from datetime import timedelta
+
+        from django.utils import timezone
 
         period = request.query_params.get('period', 'month')
         if period == 'week':

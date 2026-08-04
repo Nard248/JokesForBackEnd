@@ -22,16 +22,28 @@ from datetime import datetime, timedelta
 from django.contrib.auth import get_user_model
 from django.core.management.base import BaseCommand
 from django.db import transaction
-from django.db.models import Q, Min, Max
+from django.db.models import Max, Min, Q
 from django.utils import timezone
 
-from jokes.models import (
-    Joke, JokeSubmission, JokeView, JokeImpression, JokeDwell, JokeReaction,
-    SavedJoke, Favorite, ShareEvent,
-    Format, AgeRating, Language, Tone, ContextTag, CultureTag,
-)
-from follows.models import Follow
 from creator_insights.services import build_creator_insights
+from follows.models import Follow
+from jokes.models import (
+    AgeRating,
+    ContextTag,
+    CultureTag,
+    Favorite,
+    Format,
+    Joke,
+    JokeDwell,
+    JokeImpression,
+    JokeReaction,
+    JokeSubmission,
+    JokeView,
+    Language,
+    SavedJoke,
+    ShareEvent,
+    Tone,
+)
 
 User = get_user_model()
 

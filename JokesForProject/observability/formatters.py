@@ -20,7 +20,7 @@ entries in Cloud Logging clickable through to the matching Cloud Trace span.
 import json
 import logging
 import re
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 # Standard LogRecord attributes that should NOT be copied as extras
 _STANDARD_ATTRS = frozenset({
@@ -64,7 +64,7 @@ class GoogleCloudJsonFormatter(logging.Formatter):
         payload: dict = {
             'severity': _SEVERITY.get(record.levelno, 'DEFAULT'),
             'message': record.getMessage(),
-            'timestamp': datetime.fromtimestamp(record.created, tz=timezone.utc).isoformat(),
+            'timestamp': datetime.fromtimestamp(record.created, tz=UTC).isoformat(),
             'sourceLocation': {
                 'file': record.pathname,
                 'line': record.lineno,

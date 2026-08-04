@@ -10,14 +10,18 @@ from unittest.mock import patch
 
 from django.contrib.auth import get_user_model
 from django.core import mail
+from django.core.mail import EmailMultiAlternatives
 from django.test import TestCase, override_settings
 from django.utils import timezone
 from freezegun import freeze_time
 
-from django.core.mail import EmailMultiAlternatives
-
 from jokes.models import (
-    AgeRating, DailyJoke, Format, Joke, JokeReaction, Language,
+    AgeRating,
+    DailyJoke,
+    Format,
+    Joke,
+    JokeReaction,
+    Language,
 )
 from jokes.recommendations import get_daily_editorial_joke
 from notifications.digests import run_daily_digests

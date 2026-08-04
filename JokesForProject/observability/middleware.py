@@ -21,12 +21,12 @@ import uuid
 from django.db import connection
 
 from JokesForProject.observability.context import (
+    add_db_query,
     bind_request_context,
     clear_request_context,
-    reset_db_stats,
-    add_db_query,
     get_db_stats,
     get_log_fields,
+    reset_db_stats,
 )
 from JokesForProject.observability.redaction import mask_ip
 

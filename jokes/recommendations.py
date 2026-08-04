@@ -1,8 +1,9 @@
-from django.db.models import Count, Q
-from django.utils import timezone
 from datetime import timedelta
 
-from .models import Joke, DailyJoke
+from django.db.models import Count, Q
+from django.utils import timezone
+
+from .models import DailyJoke, Joke
 
 
 def get_recently_shown_joke_ids(user, days=30):

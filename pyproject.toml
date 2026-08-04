@@ -1,0 +1,98 @@
+[tool.ruff]
+target-version = "py311"
+# 100 was measured against the codebase (Aug 2026): only ~187/29.6k lines
+# exceed it, vs. 734 at black's 88. Matches the de facto convention already
+# used across jokes/, billing/, notifications/, etc.
+line-length = 100
+extend-exclude = [
+    "*/migrations/*",
+    ".venv",
+    "staticfiles",
+    "manage.py",
+]
+
+[tool.ruff.lint]
+# Curated, high-value rule set — not "all". Each family below earns its
+# keep by catching real bugs or real churn-free style drift:
+#   F   pyflakes        unused imports/vars, undefined names, etc.
+#   E/W pycodestyle     spacing/formatting correctness (errors/warnings)
+#   I   isort           import ordering/grouping
+#   B   bugbear         common bug patterns (mutable defaults, bare except, ...)
+#   UP  pyupgrade       modern Python 3.11 idioms
+#   C4  comprehensions  unnecessary list/dict/set comprehension patterns
+#   DJ  flake8-django   Django-specific footguns (e.g. raw model_name in filter)
+select = ["F", "E", "W", "I", "B", "UP", "C4", "DJ"]
+
+# Repo-wide ignores: legacy noise that would force a mass reformat/refactor
+# with no correctness upside. Adopted as a green baseline (2026-08); ratchet
+# stricter per-rule later rather than reformatting everything at once.
+ignore = [
+    "E501",  # line-too-long: 187 pre-existing long lines repo-wide; no
+             # `ruff format` pass has run yet (deliberately, see below) so
+             # enforcing this now means hand-wrapping unrelated code.
+    "E402",  # module-import-not-at-top-of-file: several test files grew by
+             # appending a new `# === Wave N ===`-style section (with its own
+             # imports) below existing tests rather than merging into the
+             # top import block. Real, but reordering ~65 sites across 7
+             # files is a bigger diff than a tooling-adoption commit should be.
+]
+
+[tool.ruff.lint.per-file-ignores]
+# Django Style Guide field/method ordering + missing __str__ — pure style,
+# not worth reshuffling a 1600-line models module in this pass.
+"jokes/models.py" = ["DJ012", "DJ008"]
+# `l` used as a loop/local var name in a few serializer methods; plus a few
+# bare `raise` sites that intentionally don't chain (mirrors media_probe.py
+# below — pre-existing pattern, not touched here).
+"jokes/serializers.py" = ["E741", "B904"]
+# Pre-existing `raise ... from` omissions in exception-translation code —
+# real (loses the original traceback in logs) but a semantic change per
+# site, not a lint autofix; owner should review individually.
+"JokesForProject/adapters.py" = ["B904"]
+"jokes/media_probe.py" = ["B904"]
+"jokes/media_processing.py" = ["B904"]
+# Demo/seed-only management command (not used in prod request paths):
+# dict()-call style, zip() without strict=, an unused loop var, and one
+# lambda-assignment all confined to this one file.
+"jokes/management/commands/seed_demo_creator.py" = ["C408", "B905", "B007", "E731"]
+# Test files: unused locals are usually intentional (unpacking a factory's
+# return value for readability, or asserting side effects via other means);
+# assertRaises(Exception) is deliberately broad in a couple of negative
+# tests. Not worth chasing across the suite.
+"**/tests.py" = ["F841", "B017"]
+"**/tests_*.py" = ["F841", "B017"]
+"**/test_*.py" = ["F841", "B017"]
+# Single pre-existing '%'-style format call; not worth a one-off rewrite.
+"jokes/tests_storage.py" = ["UP031"]
+# `price_id` is assigned then genuinely unused (see inline comment at the
+# call site — resolved later via the subscription event instead). Dead but
+# harmless; flagged for the owner rather than touched here.
+"billing/webhooks.py" = ["F841"]
+
+[tool.ruff.lint.isort]
+known-first-party = [
+    "JokesForProject",
+    "jokes",
+    "notifications",
+    "creator_insights",
+    "follows",
+    "audit",
+    "billing",
+    "inbox",
+]
+
+[tool.ruff.format]
+# Not run repo-wide yet (would be a big-bang reformat). Config is here so
+# `ruff format <file>` behaves predictably for anyone using it on new/touched
+# files going forward.
+quote-style = "single"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+[tool.bandit]
+exclude_dirs = [
+    "*/migrations",
+    "*/tests",
+    ".venv",
+]

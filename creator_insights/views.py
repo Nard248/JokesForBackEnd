@@ -1,14 +1,14 @@
 from django.contrib.auth import get_user_model
 from django.shortcuts import get_object_or_404
-from drf_spectacular.utils import extend_schema, OpenApiParameter
+from drf_spectacular.utils import OpenApiParameter, extend_schema
 from rest_framework.exceptions import NotFound
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from creator_insights.permissions import IsCreator
 from billing.permissions import HasFeature
+from creator_insights.permissions import IsCreator
 from creator_insights.serializers import CreatorInsightsSerializer, CreatorProfileSerializer
 from creator_insights.services import build_creator_insights, build_creator_profile
 from creator_insights.throttles import CreatorInsightsThrottle

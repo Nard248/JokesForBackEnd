@@ -3,9 +3,9 @@ from django.contrib.auth import get_user_model
 from django.test import TestCase
 from rest_framework.test import APIClient
 
+from follows import services as follow_services
 from inbox.models import Notification
 from inbox.services import notify
-from follows import services as follow_services
 
 User = get_user_model()
 

@@ -1,6 +1,6 @@
 from django.test import TestCase
 
-from notifications.templates_registry import render_template, UnknownTemplate
+from notifications.templates_registry import UnknownTemplate, render_template
 
 
 class RenderTemplateTests(TestCase):

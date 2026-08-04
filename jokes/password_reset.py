@@ -14,12 +14,11 @@ so the emailed link becomes the frontend URL with no reverse() involved.
 The frontend (jokes-for-frontend ForgotPasswordPage) reads ``uid`` and ``token``
 query params at ``/reset-password`` — matched exactly below.
 """
-from django.conf import settings
-
 from allauth.account.utils import user_pk_to_url_str
 from dj_rest_auth.serializers import (
     PasswordResetSerializer as BasePasswordResetSerializer,
 )
+from django.conf import settings
 
 
 def frontend_reset_url_generator(request, user, temp_key):

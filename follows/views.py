@@ -9,7 +9,7 @@ from rest_framework.views import APIView
 
 from follows import services
 from follows.models import Follow
-from follows.serializers import PublicUserSerializer, FollowStatusSerializer
+from follows.serializers import FollowStatusSerializer, PublicUserSerializer
 from jokes.moderation import hidden_user_ids
 
 User = get_user_model()

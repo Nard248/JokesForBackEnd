@@ -7,7 +7,6 @@ back to an opaque, non-reversible id (user_<pk>).
 """
 import re
 
-
 HANDLE_RE = re.compile(r'^[a-z0-9_]{3,30}$')
 
 

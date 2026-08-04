@@ -9,7 +9,7 @@ from django.test import TestCase, override_settings
 from rest_framework.test import APITestCase
 
 from billing.models import Plan, Subscription
-from jokes.models import Format, AgeRating, Language
+from jokes.models import AgeRating, Format, Language
 
 User = get_user_model()
 
@@ -59,8 +59,9 @@ class AdminEditabilityTests(TestCase):
 
     def test_plan_admin_push_to_stripe_skips_free_plan(self):
         """PlanAdmin.push_to_stripe skips plans without amount_cents."""
-        from django.test import RequestFactory
         from django.contrib.admin.sites import AdminSite
+        from django.test import RequestFactory
+
         from billing.admin import PlanAdmin
 
         site = AdminSite()
@@ -72,9 +73,9 @@ class AdminEditabilityTests(TestCase):
         req.user = User.objects.create_superuser(username='admin@example.com', email='admin@example.com', password='pw')
 
         from django.contrib.messages.storage.fallback import FallbackStorage
-        setattr(req, 'session', 'session')
+        req.session = 'session'
         messages = FallbackStorage(req)
-        setattr(req, '_messages', messages)
+        req._messages = messages
 
         free_plan = Plan.objects.get(is_default=True)
         with override_settings(STRIPE_SECRET_KEY='sk_test_fake'):
@@ -98,8 +99,9 @@ class MysteryBoxGatingTests(APITestCase):
 
     def test_roll_blocked_at_plan_limit(self):
         """After free plan's mystery_box_rolls_per_day rolls, next returns 429."""
-        from jokes.models import MysteryBoxRoll, Joke
         from django.utils import timezone
+
+        from jokes.models import Joke, MysteryBoxRoll
 
         today = timezone.now().date()
         fmt, age, lang = _get_joke_fixtures()

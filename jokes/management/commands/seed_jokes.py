@@ -4,9 +4,7 @@ import os
 from django.core.management.base import BaseCommand, CommandError
 from django.db import transaction
 
-from jokes.models import (
-    Joke, Format, AgeRating, Tone, ContextTag, Language, CultureTag, Source
-)
+from jokes.models import AgeRating, ContextTag, CultureTag, Format, Joke, Language, Source, Tone
 
 
 class Command(BaseCommand):
@@ -53,7 +51,7 @@ class Command(BaseCommand):
             )
             return
 
-        with open(fixture_path, 'r', encoding='utf-8') as f:
+        with open(fixture_path, encoding='utf-8') as f:
             jokes_data = json.load(f)
 
         if not jokes_data:

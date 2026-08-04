@@ -13,13 +13,21 @@ from django.db.models import Avg, Count, IntegerField, OuterRef, Q, Subquery
 from django.db.models.functions import Coalesce, ExtractHour
 from django.utils import timezone
 
-from jokes.models import (
-    Joke, JokeView, JokeReaction, Favorite, SavedJoke, ShareEvent, JokeSubmission,
-    JokeImpression, JokeDwell, JokeWatch, JokeMedia,
-)
 from follows.models import Follow
 from jokes.identity import public_display_name, public_handle
-
+from jokes.models import (
+    Favorite,
+    Joke,
+    JokeDwell,
+    JokeImpression,
+    JokeMedia,
+    JokeReaction,
+    JokeSubmission,
+    JokeView,
+    JokeWatch,
+    SavedJoke,
+    ShareEvent,
+)
 
 # A dwell sample counts as a real "read" once it crosses this many milliseconds
 # (vs. a brief glance). Used for read_rate / per-joke read_rate.

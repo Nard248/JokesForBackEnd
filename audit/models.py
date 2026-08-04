@@ -13,9 +13,9 @@ Append-only enforcement:
   A pgtrigger Protect trigger blocks UPDATE and DELETE so rows are
   immutable evidence for DSA/COPPA/GDPR audits.
 """
+import pgtrigger
 from django.conf import settings
 from django.db import models
-import pgtrigger
 
 
 class AuditLog(models.Model):

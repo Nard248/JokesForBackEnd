@@ -2,10 +2,10 @@
 from unittest.mock import patch
 
 from django.contrib.auth import get_user_model
-from django.test import RequestFactory, TestCase
 from django.contrib.messages.storage.fallback import FallbackStorage
+from django.test import RequestFactory, TestCase
 
-from jokes.models import Format, AgeRating, Language, Joke, JokeSubmission
+from jokes.models import AgeRating, Format, Joke, JokeSubmission, Language
 
 User = get_user_model()
 
@@ -62,8 +62,9 @@ class PublishStampsCreatorTests(TestCase):
         )
 
     def test_approve_and_publish_stamps_creator(self):
-        from jokes.admin import JokeSubmissionAdmin
         from django.contrib.admin.sites import AdminSite
+
+        from jokes.admin import JokeSubmissionAdmin
 
         sub = JokeSubmission.objects.create(
             user=self.creator, format=self.fmt, age_rating=self.age,

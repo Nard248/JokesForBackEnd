@@ -5,7 +5,6 @@ Compliance tests for creator_insights:
 2. No cross-user PII leak: no other user's email/username appears in the response.
 3. Strict creator scope: jokes from another creator never appear in this creator's top_jokes.
 """
-import json
 from unittest.mock import patch
 
 from django.contrib.auth import get_user_model
@@ -13,8 +12,13 @@ from django.test import TestCase
 from rest_framework.test import APIClient
 
 from jokes.models import (
-    Format, AgeRating, Language, Joke, JokeSubmission, JokeView,
-    JokeReaction, SavedJoke,
+    AgeRating,
+    Format,
+    Joke,
+    JokeReaction,
+    JokeSubmission,
+    JokeView,
+    Language,
 )
 
 User = get_user_model()
