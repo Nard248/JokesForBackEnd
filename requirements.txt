@@ -36,7 +36,7 @@ python-dotenv==1.2.2
 PyYAML==6.0.3
 referencing==0.37.0
 requests==2.33.1
-rpds-py==0.30.0
+rpds-py==2026.6.3
 sentry-sdk[django]==2.20.0
 stripe==12.2.0
 six==1.17.0
