@@ -4,9 +4,11 @@ GET /jokes/<pk>/share/).
 
 Scope: the decoupled social-share shell -- real per-joke OG/Twitter/JSON-LD
 metadata for scrapers, plus a redirect (meta-refresh + JS) that bounces a
-human visitor straight to the SPA's own joke page. Tier-gating status-code
-behavior (anon/minor tier_2 -> 404, opted-in adult tier_2 -> 200) is already
-covered by jokes.tests_compliance.ServingLockTests and is untouched here.
+human visitor straight to the SPA's own joke page. Tier-gating behavior
+(anon/minor tier_2 -> 200 content-free redirect shell, opted-in adult
+tier_2 -> 200 full preview) is already covered by
+jokes.tests_compliance.ServingLockTests and is untouched here -- all jokes
+in this file are tier_1 (always accessible), so full metadata always renders.
 """
 import json
 import re
@@ -101,6 +103,26 @@ class SharePageMetadataTests(TestCase):
 
         # Must NOT be the backend's own share URL.
         self.assertNotIn(f'/jokes/{self.joke.id}/share/', og_url)
+
+    def test_title_uses_setup_teaser_and_never_punchline(self):
+        html = self._get(self.joke)
+        og_title = _extract_meta_content(html, property_='og:title')
+        twitter_title = _extract_meta_content(html, name='twitter:title')
+
+        self.assertEqual(og_title, self.joke.setup)
+        self.assertEqual(twitter_title, self.joke.setup)
+        self.assertNotIn(self.joke.punchline, og_title)
+        self.assertNotIn(self.joke.punchline, twitter_title)
+
+        data = _extract_json_ld(html)
+        self.assertEqual(data['name'], self.joke.setup)
+        self.assertEqual(data['headline'], self.joke.setup)
+        self.assertNotIn(self.joke.punchline, data['name'])
+
+    def test_title_falls_back_to_text_when_no_setup(self):
+        html = self._get(self.text_only_joke)
+        og_title = _extract_meta_content(html, property_='og:title')
+        self.assertEqual(og_title, self.text_only_joke.text)
 
     def test_description_uses_setup_teaser_and_never_punchline(self):
         html = self._get(self.joke)

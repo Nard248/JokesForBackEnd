@@ -35,8 +35,10 @@ urlpatterns = [
     # Point Cloud Monitoring uptime checks here; do NOT use for liveness.
     path('readyz', readyz, name='readyz'),
 
-    # Public XML sitemap of frontend routes — a Firebase Hosting rewrite
-    # maps /sitemap.xml on the frontend origin here. See jokes/sitemap.py.
+    # Public XML sitemap of frontend routes — the frontend's build pipeline
+    # fetches this at deploy time and writes it to its own
+    # public/sitemap.xml (a static, deploy-time snapshot regenerated on each
+    # frontend deploy, not a live rewrite/proxy). See jokes/sitemap.py.
     path('sitemap.xml', sitemap_view, name='sitemap'),
 
     # Admin

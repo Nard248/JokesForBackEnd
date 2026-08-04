@@ -1,9 +1,11 @@
 """Public XML sitemap of crawlable frontend routes -- served at /sitemap.xml.
 
 This backend generates the sitemap, but every `<loc>` is an ABSOLUTE frontend
-URL (settings.FRONTEND_URL), never this backend's own host: a Firebase
-Hosting rewrite maps `/sitemap.xml` on the frontend origin straight to this
-endpoint, so whatever we emit is what search engines crawl verbatim.
+URL (settings.FRONTEND_URL), never this backend's own host: the frontend's
+build pipeline fetches this endpoint at deploy time and writes the result to
+its own `public/sitemap.xml` -- a static, deploy-time snapshot regenerated on
+each frontend deploy, not a live rewrite/proxy -- so whatever we emit here is
+what gets baked into the frontend's next build.
 
 Visibility mirrors the real anonymous-visitor read paths, not a re-derived
 guess -- a search-engine crawler is, from this app's point of view, just
