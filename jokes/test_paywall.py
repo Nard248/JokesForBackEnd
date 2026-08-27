@@ -9,6 +9,7 @@ Run:
     DB_HOST=localhost DB_PORT=5432 \
     .venv/bin/python manage.py test jokes.test_paywall --keepdb
 """
+import json
 from datetime import date
 from unittest.mock import patch
 
@@ -133,6 +134,32 @@ class FreeOverLimitTests(_Base):
         r = self._retrieve(already)
         self.assertFalse(r.data['is_locked'])
         self.assertEqual(r.data['punchline'], already.punchline)
+
+    def test_locked_joke_never_leaks_punchline_via_backfilled_text(self):
+        """A published two-part joke stores a denormalized ``text`` of
+        "<setup> <punchline>" (the submission pipeline backfills it). Locking
+        must withhold the payoff from EVERY field it appears in, not just
+        ``punchline`` -- otherwise the paywall is bypassed by reading ``text``.
+
+        The other tests in this class build jokes with ``text=''``, so they
+        cannot see this: production rows are not shaped like the fixtures.
+        """
+        self._consume(FREE_CAP)
+        locked = _make_joke(
+            'setup',
+            setup='Why did the coffee file a police report?',
+            punchline='It got mugged.',
+            text='Why did the coffee file a police report? It got mugged.',
+        )
+
+        r = self._retrieve(locked)
+
+        self.assertTrue(r.data['is_locked'])
+        self.assertNotIn(
+            'It got mugged',
+            json.dumps(r.data, default=str),
+            'The punchline must not appear ANYWHERE in a locked payload',
+        )
 
     def test_text_only_format_blurs_whole_card(self):
         self._consume(FREE_CAP)

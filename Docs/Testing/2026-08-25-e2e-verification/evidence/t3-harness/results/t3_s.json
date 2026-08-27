@@ -1,0 +1,83 @@
+[
+ {
+  "id": "T3-S01",
+  "desc": "duplicate report by the same reporter returns the existing pending report (200, not 201)",
+  "expected": "GIVEN a reporter who already has a PENDING ContentReport on a joke, WHEN they POST /api/v1/reports/ for the same joke again, THEN the API returns 200 with the EXISTING report (original reason/description preserved) instead of 201, and no second row is created \u2014 the moderation queue cannot be stacked by one user.",
+  "sanity": "SENSIBLE",
+  "ok": true,
+  "actual": "first=201 {'joke': 493, 'reason': 'offensive', 'description': 'T3-S01 first report'} | second=200 {'joke': 493, 'reason': 'offensive', 'description': 'T3-S01 first report'} | DB rows= 1 [{'id': 13, 'reason': 'offensive', 'status': 'pending', 'description': 'T3-S01 first report'}]",
+  "note": ""
+ },
+ {
+  "id": "T3-S05",
+  "desc": "a raw is_removed flip in JokeAdmin hides the joke with NO DSA notice and NO appeal right",
+  "expected": "GIVEN a moderator who ticks Joke.is_removed on the JokeAdmin change form (instead of running the ContentReport \"Take down\" action), WHEN they save, THEN the joke disappears from every read path, but removed_at stays NULL, no joke_removed notification / statement of reasons is sent, the media is never quarantined, and the creator's later POST /appeals/ is refused 400 \"This removal is not eligible for appeal.\" \u2014 a DSA statement-of-reasons and appeal-right bypass reachable from the admin UI.",
+  "sanity": "QUESTIONABLE",
+  "ok": true,
+  "actual": "flip: is_removed= True | removed_at= None | share_image= None | GET joke -> 404 | notifications before=19 after=19 | appeal -> 400 {'non_field_errors': ['This removal is not eligible for appeal.']} | quarantined assets for this joke = 0",
+  "note": ""
+ },
+ {
+  "id": "T3-S02",
+  "desc": "staff takedown hides the joke everywhere and quarantines its media to an unguessable path",
+  "expected": "GIVEN a reported media joke, WHEN staff run the ContentReport \"Take down reported joke\" action, THEN the joke 404s on detail and vanishes from list/search, its public share page 404s, its share card PNG is deleted and the field blanked, its MediaAsset is moved from media-assets/<uuid>/ to quarantine/<uuid>/<random-token>/ (old path gone from storage), the reports are auto-resolved, and the creator gets a joke_removed statement-of-reasons notification carrying the reason and the 14-day appeal deadline.",
+  "sanity": "SENSIBLE",
+  "ok": true,
+  "actual": "report=201 | pre file= media-assets/9710fe27-ca90-43da-b23f-f068e51f89bc/image.webp | quarantined= None | share_image= share-cards/joke-499_5q7aC7y.png || after takedown: is_removed= True | removed_at set= True | share_image= ''\nasset file= quarantine/9710fe27-ca90-43da-b23f-f068e51f89bc/dTGKpWR2Bsj51LMNtTfFOQ/image.webp | quarantined_at set= True\nnotice verb= joke_removed | data= {'reason': 'offensive', 'appeal_deadline': '2026-09-08T10:34:08.051321+00:00'}\nreports now= ['resolved']\nold public path exists= False\nnew path exists= True || GET detail=404 | search count=0 | share page=404 | old media URL http://localhost:8010/media/media-assets/9710fe27-ca90-43da-b23f-f068e51f89bc/image.webp -> served-from=asset file= quarantine/9710fe27-ca90-43da-b23f-f068e51f89bc/dTGKpWR2Bsj51LMNtTfFOQ/image.webp | quarantined_at set= True",
+  "note": ""
+ },
+ {
+  "id": "T3-S03",
+  "desc": "appeal accepted once inside the 14-day window; duplicate 400; lapsed window 400; foreign 404",
+  "expected": "GIVEN a creator whose joke was taken down, WHEN they POST /api/v1/appeals/ {joke_id, reason_text} inside the 14-day window, THEN 201 with a pending appeal; a second POST while that one is open is refused 400 (duplicate); a POST for someone else's joke is 404 (no existence leak); and a POST for a takedown older than 14 days is refused 400 \"The 14-day appeal window for this takedown has passed.\"",
+  "sanity": "SENSIBLE",
+  "ok": true,
+  "actual": "first=201 {'id': 5, 'action_type': 'takedown', 'status': 'pending', 'reason_text': 'T3-S03: this is my own joke, please review.', 'target_type': 'joke', 'target_id': 499, 'target_preview': 'T3MJ1787654044 the moderation wave test image joke', 'created_at': '2026-08-25T1 | duplicate=400 {'non_field_errors': ['An appeal is already pending for this joke.']} | other-user=404 {'detail': 'Joke not found.'} | lapsed(joke 498)=400 {'non_field_errors': ['The 14-day appeal window for this takedown has passed.']} | DB [{'id': 5, 'joke_id': 499, 'status': 'pending', 'action_type': 'takedown'}]",
+  "note": ""
+ },
+ {
+  "id": "T3-S04",
+  "desc": "reversing an appeal restores the joke, releases the media, and regenerates the share card",
+  "expected": "GIVEN a pending takedown appeal, WHEN staff run the AppealAdmin \"Reverse selected appeals\" action, THEN the quarantined MediaAsset is moved back to media-assets/<uuid>/ with quarantined_at cleared, the joke flips is_removed=False / removed_at=NULL and serves again (API 200 + share page 200), a fresh share card PNG is written, the appeal becomes \"reversed\" with a resolver, and the creator gets an appeal_resolved notification.",
+  "sanity": "SENSIBLE",
+  "ok": true,
+  "actual": "appeal.status= reversed | resolver= e2eadmin\njoke.is_removed= False | removed_at= None | share_image= 'share-cards/joke-499_GEgzSJq.png' | card on disk= True\nasset file= media-assets/9710fe27-ca90-43da-b23f-f068e51f89bc/image.webp | quarantined_at= None | file on disk= True\nnotice= appeal_resolved {'outcome': 'reversed', 'action_type': 'takedown'} || GET detail=200 | share page=200",
+  "note": ""
+ },
+ {
+  "id": "T3-S06",
+  "desc": "blocking a creator hides their jokes, severs follows both ways and 404s their profile; unblocking restores all three",
+  "expected": "GIVEN viewer V following creator C, WHEN V POSTs /users/{C}/block/, THEN C's jokes disappear from V's joke list/search (jokes.moderation.visible_jokes), the Follow rows are deleted in both directions, GET /creators/{C}/profile/ returns 404 for V (and symmetrically for C looking at V), C appears in GET /users/me/blocks/, and DELETE /users/{C}/block/ restores the jokes and the profile.",
+  "sanity": "SENSIBLE",
+  "ok": true,
+  "actual": "follow=201 | before: feed=1 profile=200 || block=201 {'status': 'blocked'} | after: feed=0 profile=404 follow rows= 0 | my-blocks=1 | symmetric reverse-profile=404 || unblock=204 | restored: feed=1 profile=200",
+  "note": ""
+ },
+ {
+  "id": "T3-S07a",
+  "desc": "GET /users/me/data-export/ returns the caller's own data as a downloadable ZIP of JSON",
+  "expected": "GIVEN an authenticated user with favorites and a filed report, WHEN they GET /api/v1/users/me/data-export/, THEN 200 application/zip with Content-Disposition attachment containing jokes-for-data-export.json \u2014 a single JSON document with account/profile/preferences/collections/saved_jokes/favorites/ratings/reactions/views/streak/submissions/media_assets/reports_filed/blocks/... sections scoped to that user only.",
+  "sanity": "SENSIBLE",
+  "ok": true,
+  "actual": "HTTP 200 ct=application/zip cd=attachment; filename=\"jokes-for-data-export.zip\" bytes=1104 | {\"zip_entries\": [\"jokes-for-data-export.json\"], \"top_level_keys\": [\"account\", \"achievements\", \"blocks\", \"collections\", \"daily_jokes\", \"email_logs\", \"export_meta\", \"favorites\", \"media_assets\", \"mystery_rolls\", \"pack_progress\", \"preferences\", \"profile\", \"ratings\", \"reactions\", \"reports_filed\", \"saved_jokes\", \"share_events\", \"streak\", \"streak_days\", \"submissions\", \"vibes\", \"views\"], \"account\": {\"id\": 702, \"email\": \"t3.gdpr@e2e.dev\", \"username\": \"t3gdpr\", \"date_joined\": \"2026-08-25T10:22:26.036Z\", \"last_login\": null, \"is_active\": true}, \"reports_filed\": [{\"joke_id\": 499, \"reason\": \"other\", \"description\": \"T3-S07 export probe\", \"status\": \"pending\", \"created_at\": \"2026-08-25T10:34:10.840Z\"}], \"favorites_n\": 5}",
+  "note": ""
+ },
+ {
+  "id": "T3-S07b",
+  "desc": "DELETE /users/me/ refuses to act without a correct password (re-authentication gate)",
+  "expected": "GIVEN an authenticated user with a usable password, WHEN they DELETE /api/v1/users/me/ with no password or the wrong one, THEN 400 with a field error and NOTHING is mutated \u2014 the account is still usable afterwards.",
+  "sanity": "SENSIBLE",
+  "ok": true,
+  "actual": "no-password=400 {'password': ['This field is required.']} | wrong-password=400 {'password': ['Incorrect password.']} | account still usable: GET profile=200",
+  "note": ""
+ },
+ {
+  "id": "T3-S07c",
+  "desc": "DELETE /users/me/ 500s for any user who has ever logged in \u2014 GDPR erasure is unreachable",
+  "expected": "GIVEN GDPR Art.17 erasure, WHEN a user DELETEs /api/v1/users/me/ with the correct password, THEN the account should cascade away (204). It does NOT: user.delete() has to SET_NULL AuditLog.actor, and audit.models.AuditLog carries a pgtrigger.Protect(Update|Delete) \"append_only\" trigger, so Postgres raises \"pgtrigger: Cannot update or delete rows from audit_auditlog table\" and the request 500s. Every user acquires an AuditLog row on their first successful login (audit/signals.on_user_logged_in), so erasure is impossible for every real account. The transaction rolls the DB back, but the storage deletes in step 2 happen outside it \u2014 the user's uploaded media files are destroyed while their account and DB rows survive.",
+  "sanity": "DEFECT-EXPECTED",
+  "ok": true,
+  "actual": "before: asset file= media-assets/2d2a05bf-32df-4b7c-bd21-55b40321df74/image.webp | on disk= True\naudit rows for this user= 15 ['media_upload', 'data_export', 'content_report', 'media_upload', 'data_export', 'content_report', 'media_upload', 'data_export', 'content_report', 'media_upload', 'data_export', 'content_report', 'data_export', 'data_export', 'content_report'] || DELETE (correct password) -> 500 | session still alive afterwards: GET profile=200 || after: user row still present= True\nmedia row survived= True | FILE still on disk= False\nfavorites left= 5 | reports left= 1 || controlled experiment: no audit row  -> HTTP 204\none audit row -> InternalError: pgtrigger: Cannot update or delete rows from audit_auditlog table\naudited probe user still exists = True",
+  "note": "Backend traceback: jokes/views.py:2485 user.delete() -> django/db/models/deletion.py field_updates -> UPDATE audit_auditlog SET actor_id=NULL -> InternalError \"pgtrigger: Cannot update or delete rows from audit_auditlog table\". The AuditLog.actor docstring literally says \"NULL after account deletion (SET_NULL)\" \u2014 the append-only trigger contradicts it."
+ }
+]

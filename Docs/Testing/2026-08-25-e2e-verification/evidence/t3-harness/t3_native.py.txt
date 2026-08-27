@@ -1,0 +1,63 @@
+"""Simulate a native iOS client: NO cookie jar at all."""
+import sys, json, os, subprocess, requests
+sys.path.insert(0, "/private/tmp/claude-501/-Users-narekmeloyan-PycharmProjects-JokesForProject/2b1dc348-b702-49ec-ad6c-5222c7ee10fc/scratchpad/t3")
+from harness import API, PW, TS, rec, RESULTS, jget
+
+def shell(code):
+    env = dict(os.environ, DATABASE_URL='', DB_NAME='jokesfor', DB_USER='postgres', DB_PASSWORD='6969',
+               DB_HOST='localhost', DB_PORT='5432', DEBUG='True', DYLD_FALLBACK_LIBRARY_PATH='/opt/homebrew/lib')
+    return subprocess.run(['/Users/narekmeloyan/PycharmProjects/JokesForProject/.venv/bin/python','manage.py','shell','-c',code],
+        cwd='/Users/narekmeloyan/PycharmProjects/JokesForProject', capture_output=True, text=True, env=env, timeout=120).stdout
+
+email = f"ios{TS}@test.local"
+shell("from django.contrib.auth import get_user_model as G\n"
+      f"U=G(); u,_=U.objects.get_or_create(username='{email}', defaults=dict(email='{email}'))\n"
+      f"u.email='{email}'; u.is_active=True; u.set_password('{PW}'); u.save()")
+
+# A native client: requests.request() with NO session => no cookie persistence.
+r = requests.post(f"{API}/auth/login/", json={"email": email, "password": PW}, timeout=30)
+body = r.json()
+setcookie = r.headers.get('Set-Cookie', '')
+rec("T3-N01", "Login returns an access token a native client can use, but the refresh token ONLY as a cookie",
+    "GIVEN a cookie-less client, WHEN it logs in, THEN body.access is a usable JWT but body.refresh is empty — "
+    "the real refresh token exists only in Set-Cookie",
+    "QUESTIONABLE",
+    bool(body.get('access')) and body.get('refresh') == '' and 'jokes-refresh-token' in setcookie,
+    f"access_len={len(body.get('access') or '')} refresh_in_body={body.get('refresh')!r} "
+    f"refresh_in_setcookie={'jokes-refresh-token' in setcookie} keys={sorted(body.keys())}",
+    "JWT_AUTH_HTTPONLY=True blanks `refresh` in the body. Correct hardening for the browser; for iOS it means the "
+    "app cannot store a refresh token unless it scrapes Set-Cookie.")
+
+acc = body.get('access')
+h = {"Authorization": f"Bearer {acc}"}
+me = requests.get(f"{API}/auth/user/", headers=h, timeout=30)
+rec("T3-N02", "Bearer access token authenticates every API call with no cookies and no CSRF",
+    "GIVEN only the access token, WHEN calling an authenticated endpoint, THEN 200",
+    "SENSIBLE", me.status_code == 200,
+    f"/auth/user/ -> {me.status_code} email={jget(me).get('email') if me.status_code==200 else ''}")
+
+# Can a native client refresh? Pull the refresh token out of Set-Cookie the way it would have to.
+import re
+m = re.search(r'jokes-refresh-token=([^;]+)', setcookie)
+refresh = m.group(1) if m else None
+r2 = requests.post(f"{API}/auth/token/refresh/", json={"refresh": refresh}, timeout=30) if refresh else None
+b2 = r2.json() if r2 is not None else {}
+rec("T3-N03", "Refreshing rotates the token, but the NEW refresh token is withheld from the body",
+    "GIVEN a native client that refreshes, WHEN it POSTs its refresh token, THEN it gets a new access token but the "
+    "rotated refresh token comes back only in Set-Cookie — so a cookie-less client is locked out after ONE refresh "
+    "(ROTATE_REFRESH_TOKENS + BLACKLIST_AFTER_ROTATION blacklist the old one)",
+    "DEFECT-EXPECTED",
+    r2 is not None and r2.status_code == 200 and bool(b2.get('access')) and 'refresh' not in b2,
+    f"status={r2.status_code if r2 is not None else 'n/a'} keys={sorted(b2.keys())} "
+    f"new_refresh_in_setcookie={'jokes-refresh-token' in (r2.headers.get('Set-Cookie','') if r2 is not None else '')}",
+    "This is the #1 blocking item for iOS: a native app that ignores cookies gets exactly one refresh, then its "
+    "old refresh token is blacklisted and it has no replacement -> forced re-login every 24h (or every 15 min).")
+
+# Prove the lockout: replay the now-blacklisted refresh token
+r3 = requests.post(f"{API}/auth/token/refresh/", json={"refresh": refresh}, timeout=30) if refresh else None
+rec("T3-N04", "The old refresh token is blacklisted immediately after rotation",
+    "replaying it returns 401", "SENSIBLE",
+    r3 is not None and r3.status_code == 401,
+    f"replay status={r3.status_code if r3 is not None else 'n/a'} detail={str(jget(r3))[:80] if r3 is not None else ''}")
+
+print("\n@@RESULTS@@" + json.dumps(RESULTS))

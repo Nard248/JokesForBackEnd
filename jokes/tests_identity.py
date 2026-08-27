@@ -35,6 +35,33 @@ class IdentityHelperTests(TestCase):
         u.profile.save()
         self.assertEqual(public_handle(u), '@janedoe')
 
+    def test_handle_never_falls_back_to_the_username(self):
+        """username is NOT a handle and must never be published.
+
+        Registration stores the full email there, and allauth's social signup
+        stores the email's LOCAL PART — which looks like a valid handle. It is
+        also outside the UserProfile.handle uniqueness check, so publishing it
+        would let two accounts render the same @handle.
+        """
+        u = User.objects.create_user(
+            username='pipetest26', email='pipe@x.com', password='x',
+        )
+        self.assertEqual(public_handle(u), f'@user{u.pk}')
+
+    def test_an_email_local_part_username_is_never_published(self):
+        """The Google signup path stores the email local part as username."""
+        u = User.objects.create_user(
+            username='janedoe', email='janedoe@gmail.com', password='x',
+        )
+        self.assertNotIn('janedoe', public_handle(u))
+        self.assertEqual(public_handle(u), f'@user{u.pk}')
+
+    def test_chosen_profile_handle_is_what_gets_published(self):
+        u = User.objects.create_user(username='fromsignup', email='c@x.com', password='x')
+        u.profile.handle = 'chosenlater'
+        u.profile.save()
+        self.assertEqual(public_handle(u), '@chosenlater')
+
     def test_never_leak_email(self):
         u = User.objects.create_user(username='secretlocal@x.com', email='secretlocal@x.com', password='x')
         self.assertNotIn('secretlocal', public_display_name(u))

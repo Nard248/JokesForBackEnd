@@ -1,0 +1,25 @@
+from django.contrib.auth import get_user_model
+from jokes.models import UserProfile, UserPreference
+from datetime import date
+U = get_user_model()
+PW = "E2ePassw0rd!2026"
+SPECS = [
+    ("t3creator", "t3.creator@e2e.dev", True),
+    ("t3viewer", "t3.viewer@e2e.dev", True),
+    ("t3reporter", "t3.reporter@e2e.dev", True),
+    ("t3blocked", "t3.blocked@e2e.dev", True),
+    ("t3gdpr", "t3.gdpr@e2e.dev", True),
+]
+for uname, email, adult in SPECS:
+    u = U.objects.filter(email=email).first()
+    if not u:
+        u = U.objects.create(username=uname, email=email, is_active=True)
+    u.is_active = True
+    u.set_password(PW)
+    u.save()
+    p, _ = UserProfile.objects.get_or_create(user=u)
+    if adult:
+        p.date_of_birth = date(1990, 1, 1)
+        p.save()
+    UserPreference.objects.get_or_create(user=u)
+    print(uname, u.pk, email, 'is_adult=', getattr(p, 'is_adult', None))

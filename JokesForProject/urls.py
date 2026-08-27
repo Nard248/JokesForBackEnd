@@ -31,6 +31,13 @@ urlpatterns = [
     # Unauthenticated liveness probe — no DRF auth/versioning/throttling.
     # Process-only: never touches DB/cache (a 200 means "don't recycle me").
     path('healthz', healthz, name='healthz'),
+    # Same probe, reachable path. The Google edge intercepts the exact path
+    # `/healthz` on the public *.run.app URL and answers its own HTML 404
+    # before the request reaches the container — verified against production,
+    # where `/healthzz`, `/Healthz` and `/healthz/` all return DJANGO 404s and
+    # `/readyz` returns 200. Container-level probes bypass the edge and are
+    # unaffected; external uptime checks must target `/livez`.
+    path('livez', healthz, name='livez'),
     # Readiness probe — verifies DB + cache; returns 503 if either is down.
     # Point Cloud Monitoring uptime checks here; do NOT use for liveness.
     path('readyz', readyz, name='readyz'),

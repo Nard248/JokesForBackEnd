@@ -1,0 +1,116 @@
+"""T3-P (final) — measure lock state via is_locked, not punchline presence
+   (one-liner/observational formats legitimately have no punchline)."""
+import sys, json, os, subprocess
+sys.path.insert(0, "/private/tmp/claude-501/-Users-narekmeloyan-PycharmProjects-JokesForProject/2b1dc348-b702-49ec-ad6c-5222c7ee10fc/scratchpad/t3")
+from harness import *
+
+def shell(code):
+    env = dict(os.environ, DATABASE_URL='', DB_NAME='jokesfor', DB_USER='postgres', DB_PASSWORD='6969',
+               DB_HOST='localhost', DB_PORT='5432', DEBUG='True', DYLD_FALLBACK_LIBRARY_PATH='/opt/homebrew/lib')
+    p = subprocess.run(['/Users/narekmeloyan/PycharmProjects/JokesForProject/.venv/bin/python','manage.py','shell','-c',code],
+                       cwd='/Users/narekmeloyan/PycharmProjects/JokesForProject', capture_output=True, text=True, env=env, timeout=180)
+    return "\n".join(l for l in p.stdout.splitlines() if l.strip() and 'Warning' not in l
+                     and 'objects imported' not in l and 'email = serial' not in l and 'required=allauth' not in l).strip()
+
+def make_user(tag):
+    email = f"{tag}{TS}@test.local"
+    shell(f"""
+from django.contrib.auth import get_user_model as G
+U=G(); u,_=U.objects.get_or_create(username='{email}', defaults=dict(email='{email}'))
+u.email='{email}'; u.is_active=True; u.set_password('{PW}'); u.save(); print(u.id)
+""")
+    s = sess(); csrf(s)
+    assert s.post(f"{API}/auth/login/", json={"email": email, "password": PW}, timeout=30).status_code == 200
+    csrf(s); return s, email
+
+anon = sess()
+IDS = [j["id"] for j in jget(anon.get(f"{API}/jokes/", timeout=30)).get("results", [])] + \
+      [j["id"] for j in jget(anon.get(f"{API}/jokes/?page=2", timeout=30)).get("results", [])]
+
+# ---- T3-P03: free cap, measured by is_locked ----
+free, femail = make_user("fr3")
+dr0 = jget(free.get(f"{API}/jokes/daily-reads/", timeout=30))
+seq = []
+for jid in IDS[:12]:
+    b = jget(free.get(f"{API}/jokes/{jid}/", timeout=30))
+    seq.append((jid, b.get("is_locked"), bool(b.get("punchline")), b.get("format")))
+dr1 = jget(free.get(f"{API}/jokes/daily-reads/", timeout=30))
+first10_open = all(x[1] is False for x in seq[:10])
+tail_locked  = all(x[1] is True for x in seq[10:])
+rec("T3-P03", "Free user: exactly 10 distinct joke reads/day, then every further joke locks",
+    "daily-reads used 0->10, remaining->0; reads 1-10 have is_locked=false; reads 11-12 have is_locked=true",
+    "SENSIBLE",
+    dr1.get("used") == 10 and dr1.get("remaining") == 0 and first10_open and tail_locked,
+    f"used {dr0.get('used')}->{dr1.get('used')}/{dr1.get('limit')} remaining={dr1.get('remaining')} first10_unlocked={first10_open} tail_locked={tail_locked}",
+    "Lock state read from is_locked; punchline presence is format-dependent (one-liners have none) and is not a valid oracle.")
+
+# ---- T3-P03b: locked payload really withholds content ----
+locked_body = jget(free.get(f"{API}/jokes/{IDS[10]}/", timeout=30))
+withheld = locked_body.get("punchline") is None
+rec("T3-P03b", "A locked joke's payload withholds the punchline field entirely",
+    "is_locked=true AND punchline is null on the wire (client-side hiding is never relied on)",
+    "SENSIBLE",
+    locked_body.get("is_locked") is True and withheld,
+    f"is_locked={locked_body.get('is_locked')} punchline={locked_body.get('punchline')!r} setup_present={bool(locked_body.get('setup'))} text_present={bool(locked_body.get('text'))}")
+
+# ---- T3-P04: re-read stays open ----
+again = jget(free.get(f"{API}/jokes/{IDS[0]}/", timeout=30))
+dr2 = jget(free.get(f"{API}/jokes/daily-reads/", timeout=30))
+rec("T3-P04", "After the cap, re-opening a joke already read today stays unlocked and consumes nothing",
+    "is_locked=false and used stays at 10", "SENSIBLE",
+    again.get("is_locked") is False and dr2.get("used") == 10,
+    f"is_locked={again.get('is_locked')} used={dr2.get('used')}")
+
+# ---- T3-P07: paid unlimited ----
+paid, pemail = make_user("pd3")
+shell(f"""
+from django.contrib.auth import get_user_model as G
+from billing.models import Plan, Subscription
+import datetime; from django.utils import timezone
+u=G().objects.get(email__iexact='{pemail}'); p=Plan.objects.exclude(slug='free').first()
+Subscription.objects.update_or_create(user=u, defaults=dict(plan=p, status='active',
+    current_period_end=timezone.now()+datetime.timedelta(days=30)))
+print('seeded', p.slug)
+""")
+drp = jget(paid.get(f"{API}/jokes/daily-reads/", timeout=30))
+locks = []
+for jid in IDS[:12]:
+    locks.append(jget(paid.get(f"{API}/jokes/{jid}/", timeout=30)).get("is_locked"))
+rec("T3-P07", "A subscribed user reads without limit",
+    "daily-reads limit and remaining are null; all 12 consecutive reads have is_locked=false",
+    "SENSIBLE",
+    drp.get("limit") is None and drp.get("remaining") is None and all(l is False for l in locks),
+    f"limit={drp.get('limit')} remaining={drp.get('remaining')} locked_count={sum(1 for l in locks if l)}/12")
+
+# ---- T3-P09: punchline search oracle ----
+probe = shell("""
+import re
+from jokes.models import Joke
+for j in Joke.objects.filter(is_removed=False).exclude(punchline='').exclude(punchline__isnull=True)[:600]:
+    other=((j.setup or '')+' '+(j.text or '')).lower()
+    ws=[w for w in re.findall(r'[A-Za-z]{7,}', j.punchline or '') if w.lower() not in other]
+    if ws:
+        print(j.id); print(ws[0]); break
+else:
+    print('NONE'); print('NONE')
+""")
+ln=[l for l in probe.splitlines() if l.strip()]
+if len(ln)>=2 and ln[0]!='NONE':
+    jid, word = ln[0], ln[1]
+    a3 = sess()
+    # exhaust the anon allowance so the target joke is definitely locked for this session
+    for k in IDS[:11]:
+        a3.post(f"{API}/jokes/{k}/reveal/", timeout=20)
+    sr = jget(a3.get(f"{API}/jokes/?q={word}", timeout=30))
+    hits=[str(j['id']) for j in sr.get('results',[])]
+    body=next((j for j in sr.get('results',[]) if str(j['id'])==str(jid)), {})
+    rec("T3-P09", "Search indexes punchlines, so a paywalled joke is discoverable by a punchline-only word",
+        "a word appearing ONLY in a joke's punchline still matches it in search while the punchline stays withheld",
+        "QUESTIONABLE",
+        str(jid) in hits,
+        f"probe_word={word!r} joke_id={jid} matched={str(jid) in hits} results={sr.get('count')} is_locked={body.get('is_locked')} punchline_returned={body.get('punchline')!r}",
+        "No punchline text leaks, but its wording is partially inferable by guess-and-check. Decide: strip punchline from search_vector, or accept and document.")
+else:
+    rec("T3-P09","Search punchline oracle","probe","QUESTIONABLE",False,f"probe returned: {probe[:200]}")
+
+print("\n@@RESULTS@@" + json.dumps(RESULTS))

@@ -1,0 +1,47 @@
+[
+ {
+  "id": "T3-B01",
+  "desc": "every money-moving endpoint is dormant (503 billing_unavailable) with blank Stripe keys",
+  "expected": "GIVEN STRIPE_SECRET_KEY is unset so billing.stripe_gateway.is_enabled() is False, WHEN an authenticated user POSTs /billing/checkout-session, /billing/portal-session or /tips/checkout/, THEN each returns 503 with exactly {\"detail\":\"Billing is not configured.\",\"code\":\"billing_unavailable\"} and no Stripe call is attempted \u2014 the dormant check runs before any argument validation.",
+  "sanity": "SENSIBLE",
+  "ok": true,
+  "actual": "checkout=503 {'detail': 'Billing is not configured.', 'code': 'billing_unavailable'} | portal=503 {'detail': 'Billing is not configured.', 'code': 'billing_unavailable'} | tip=503 {'detail': 'Billing is not configured.', 'code': 'billing_unavailable'}",
+  "note": ""
+ },
+ {
+  "id": "T3-B02",
+  "desc": "a FREE user sees the free plan, the 10-reads/day limit and a synthetic \"free\" subscription",
+  "expected": "GIVEN a user with no Subscription row, WHEN they GET /billing/plans (public), /billing/entitlements and /billing/my-subscription, THEN plans lists the active public plans unauthenticated; entitlements resolves plan=\"free\" with limits.free_joke_reads_per_day=10 (the paywall cap), features.creator_analytics=true and the paid-only features false; my-subscription synthesizes {plan_slug:\"free\", status:\"free\", current_period_end:null}; and entitlements requires auth (401 for anon).",
+  "sanity": "SENSIBLE",
+  "ok": true,
+  "actual": "plans(anon)=200 [{\"slug\": \"free\", \"name\": \"Free\", \"description\": \"Get started with JokesFor at no cost.\", \"interval\": \"\", \"amount_cents\": null, \"currency\": \"usd\", \"amount_display\": \"Free\", \"features\": {\"creator_analytics\": true, \"daily_joke_preview\": false, \"mature_content_addon\": false}, \"limits\": {\"daily_jokes_pe | entitlements=200 {\"plan\": \"free\", \"features\": {\"creator_analytics\": true, \"daily_joke_preview\": false, \"mature_content_addon\": false}, \"limits\": {\"mystery_box_rolls_per_day\": 3, \"submissions_per_day\": 5, \"daily_jokes_per_day\": 1, \"daily_joke_history_days\": 30, \"free_joke_reads_per_day\": 10}} | my-subscription=200 {\"plan_slug\": \"free\", \"plan_name\": \"Free\", \"status\": \"free\", \"current_period_end\": null, \"cancel_at_period_end\": false, \"stripe_customer_id\": \"\"} | entitlements(anon)=401",
+  "note": ""
+ },
+ {
+  "id": "T3-B04a",
+  "desc": "while dormant the webhook 200-noops on ANY body/signature and processes nothing",
+  "expected": "GIVEN blank Stripe keys, WHEN an unauthenticated caller POSTs /billing/webhook with a missing or garbage Stripe-Signature, THEN the view short-circuits BEFORE signature verification and returns 200 {\"detail\":\"billing_dormant\"} (deliberate: Stripe must stop retrying a dormant endpoint) \u2014 no event is parsed, no handler runs, no ProcessedStripeEvent row is written.",
+  "sanity": "SENSIBLE",
+  "ok": true,
+  "actual": "no-signature=200 {'detail': 'billing_dormant'} | garbage-signature=200 {'detail': 'billing_dormant'} | DB processed events= 0",
+  "note": ""
+ },
+ {
+  "id": "T3-B04b",
+  "desc": "with billing enabled, an unsigned/garbage-signed webhook is rejected 400 before any handler",
+  "expected": "GIVEN STRIPE_SECRET_KEY/STRIPE_WEBHOOK_SECRET are configured, WHEN a webhook arrives with a missing or forged Stripe-Signature header, THEN construct_event raises SignatureVerificationError and the view returns 400 {\"detail\":\"Invalid signature.\"} \u2014 billing.webhooks.handle_event is never reached and no ProcessedStripeEvent is written. (Proved with dummy keys via override_settings; no signature was forged.)",
+  "sanity": "SENSIBLE",
+  "ok": true,
+  "actual": "missing -> 400 b'{\"detail\":\"Invalid signature.\"}'\ngarbage -> 400 b'{\"detail\":\"Invalid signature.\"}'\nprocessed events after= 0",
+  "note": ""
+ },
+ {
+  "id": "T3-B05",
+  "desc": "the dormant guard short-circuits BEFORE tip amount/creator validation",
+  "expected": "GIVEN billing is dormant, WHEN a user POSTs /tips/checkout/ with an off-tier amount or with themselves as the creator, THEN the response is still 503 billing_unavailable \u2014 is_enabled() is checked first, so the amount-tier and self-tip guards (which would return 400 invalid_amount / self_tip once Stripe is live) are unreachable and cannot be exercised here.",
+  "sanity": "SENSIBLE",
+  "ok": true,
+  "actual": "bad-amount=503 {'detail': 'Billing is not configured.', 'code': 'billing_unavailable'} | self-tip=503 {'detail': 'Billing is not configured.', 'code': 'billing_unavailable'} | DB tip rows= 0",
+  "note": "Not a defect \u2014 just the ordering. Amount-tier / self-tip / not-a-creator guards were read in billing/views.py TipCheckoutView and are only reachable with live keys."
+ }
+]

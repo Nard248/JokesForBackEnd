@@ -99,7 +99,13 @@ class JokeAdmin(admin.ModelAdmin):
     list_filter = ['is_removed', 'format', 'age_rating', 'tones', 'context_tags', 'language']
     search_fields = ['text', 'setup', 'punchline']
     filter_horizontal = ['tones', 'context_tags', 'culture_tags']
-    readonly_fields = ['created_at', 'updated_at', 'removed_at']
+    # `is_removed` is READ-ONLY on purpose. Ticking it by hand hid the joke
+    # without a statement-of-reasons notification, without quarantining its
+    # media, without blanking the share card, and left removed_at NULL — which
+    # then made the creator's appeal ineligible ("This removal is not eligible
+    # for appeal."). Removals must go through the takedown action, which does
+    # all of that; `restore_jokes` remains the supported way back.
+    readonly_fields = ['created_at', 'updated_at', 'removed_at', 'is_removed']
     actions = ['restore_jokes']
     fieldsets = [
         ('Content', {'fields': ['text', 'setup', 'punchline']}),

@@ -303,17 +303,19 @@ class JokeSerializer(serializers.ModelSerializer):
         """Strip the payoff SERVER-SIDE when locked — the ONLY place fields are
         withheld, so every serving path inherits it via context.
 
-        Always null ``punchline`` + ``lines``; also null ``text`` for text-only
-        formats (the whole card blurs — no teaser). ``setup`` (the teaser for
-        two-part jokes) is always kept.
+        Null ``punchline``, ``lines`` AND ``text``. ``text`` is withheld
+        unconditionally, not just for text-only formats: a published two-part
+        joke carries a denormalized ``text`` of "<setup> <punchline>" (the
+        submission pipeline backfills it), so keying the strip on the format
+        slug shipped the payoff to every locked reader of a setup/anti/
+        short-story joke. ``setup`` (the teaser for two-part jokes) is always
+        kept, and the client composes the locked card from it.
         """
         data = super().to_representation(obj)
         if self._is_locked(obj):
             data['punchline'] = None
             data['lines'] = None
-            fmt = getattr(obj.format, 'slug', None) if obj.format_id else None
-            if fmt in TEXT_ONLY_FORMATS:
-                data['text'] = None
+            data['text'] = None
         return data
 
 

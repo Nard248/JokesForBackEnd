@@ -1,0 +1,330 @@
+"""T3-M — creator authoring & media."""
+import io, json, os, subprocess, sys, tempfile
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from common import *   # noqa
+from PIL import Image
+
+CREATOR = 't3.creator@e2e.dev'
+s, _ = login(CREATOR)
+
+def mkdraft(fmt):
+    r = s.post(f"{API}/jokes/my-drafts/", json={"format": fmt}, timeout=30)
+    assert r.status_code == 201, dump(r)
+    return r.json()['id']
+
+# ---------------------------------------------------------------- T3-M01
+draft_id = mkdraft('oneliner')
+create_keys = None
+r_c = s.get(f"{API}/jokes/my-drafts/{draft_id}/", timeout=30)
+create_keys = sorted(r_c.json().keys())
+
+r_patch1 = s.patch(f"{API}/jokes/my-drafts/{draft_id}/",
+                   json={"text": "T3 partial autosa"}, timeout=30)
+r_patch2 = s.patch(f"{API}/jokes/my-drafts/{draft_id}/",
+                   json={"text": "T3 autosave: a one-liner that made it all the way to review.",
+                         "age_rating": "family-friendly"}, timeout=30)
+r_submit = s.post(f"{API}/jokes/my-drafts/{draft_id}/submit/", json={}, timeout=30)
+r_repatch = s.patch(f"{API}/jokes/my-drafts/{draft_id}/",
+                    json={"text": "edited after submit"}, timeout=30)
+r_resubmit = s.post(f"{API}/jokes/my-drafts/{draft_id}/submit/", json={}, timeout=30)
+r_get = s.get(f"{API}/jokes/my-drafts/{draft_id}/", timeout=30)
+
+ok = (r_patch1.status_code == 200 and r_patch2.status_code == 200
+      and r_submit.status_code == 200 and r_submit.json().get('status') == 'pending'
+      and r_repatch.status_code == 400
+      and r_resubmit.status_code == 400
+      and r_get.json().get('status') == 'pending'
+      and r_get.json().get('text') != 'edited after submit')
+rec('T3-M01',
+    'draft create → PATCH autosave → submit flips to pending and locks the draft',
+    'GIVEN an authenticated creator, WHEN they POST /jokes/my-drafts/ {format}, PATCH content '
+    'into it (autosave, partial payloads accepted) and POST .../submit/, THEN the submission '
+    'flips to status "pending" and every further PATCH/submit is refused 400 '
+    '"Can only edit drafts or rejected submissions."',
+    'SENSIBLE', ok,
+    f"create id={draft_id} keys={create_keys}; PATCH#1={r_patch1.status_code}; "
+    f"PATCH#2={r_patch2.status_code}; submit={dump(r_submit,120)}; "
+    f"re-PATCH={dump(r_repatch,140)}; re-submit={dump(r_resubmit,140)}; "
+    f"GET.status={r_get.json().get('status')} text={r_get.json().get('text')!r}")
+
+# ------------------------------------------------------------- T3-M01b (DEFECT)
+# The draft PATCH serializer backfills `text` from setup+punchline / lines.
+# For the three formats whose FORMAT_RULES forbid `text` (setup, anti, knock)
+# that backfilled value makes the draft permanently un-submittable.
+bf = {}
+for fmt, payload in (
+    ('setup', {"setup": "Why did the draft cross the road?", "punchline": "It never got there."}),
+    ('anti',  {"setup": "Two creators walk into a bar.", "punchline": "Nothing happens."}),
+    ('knock', {"lines": ["Knock, knock.", "Who's there?", "Olive.", "Olive who?"]}),
+):
+    did = mkdraft(fmt)
+    p = s.patch(f"{API}/jokes/my-drafts/{did}/", json=payload, timeout=30)
+    sub = s.post(f"{API}/jokes/my-drafts/{did}/submit/", json={}, timeout=30)
+    stored = db(f"from jokes.models import JokeSubmission; "
+                f"x=JokeSubmission.objects.get(pk={did}); print(repr(x.text), x.status)")
+    bf[fmt] = (did, p.status_code, sub.status_code, str(jget(sub))[:160], stored)
+
+# control: the direct POST /jokes/submit/ path (validation BEFORE backfill) works
+r_direct = s.post(f"{API}/jokes/submit/", json={
+    "format": "setup", "age_rating": "family-friendly", "language": "en",
+    "setup": "Why does the direct submit endpoint work?",
+    "punchline": "Because it validates before it backfills."}, timeout=30)
+
+broken = all(v[2] == 400 and 'Not allowed for' in v[3] for v in bf.values())
+rec('T3-M01b',
+    'a setup/anti/knock draft edited through the drafts editor can NEVER be submitted',
+    'GIVEN a draft in a format whose FORMAT_RULES forbid `text` (setup, anti, knock), WHEN the '
+    'autosave PATCH runs, THEN JokeSubmissionCreateSerializer.validate() backfills '
+    'submission.text from setup+punchline / lines, and the later POST .../submit/ re-validates '
+    'that stored text against FORMAT_RULES and 400s "Not allowed for <format> format." '
+    'forever — the creator cannot submit a complete, valid joke.',
+    'DEFECT-EXPECTED', broken,
+    ' || '.join(f'{k}: draft={v[0]} PATCH={v[1]} submit={v[2]} {v[3]} stored_text/status={v[4]}'
+                for k, v in bf.items())
+    + f' || control POST /jokes/submit/ (no backfill re-read) = {dump(r_direct,140)}',
+    note='Affects exactly the 3 formats that forbid `text`. Not caught by jokes/tests.py '
+         'because test_submit_complete_draft_pending builds the JokeSubmission through the ORM '
+         '(text stays "") instead of through the PATCH serializer. The SPA creator editor uses '
+         'this exact path (src/features/create/api.ts).')
+
+# ---------------------------------------------------------------- T3-M02
+cases = []
+kid = mkdraft('knock')
+s.patch(f"{API}/jokes/my-drafts/{kid}/", json={"lines": ["Knock knock", "Who's there?", "T3"]}, timeout=30)
+r_k = s.post(f"{API}/jokes/my-drafts/{kid}/submit/", json={}, timeout=30)
+cases.append(('knock/3-lines', r_k))
+sid = mkdraft('story')
+s.patch(f"{API}/jokes/my-drafts/{sid}/", json={"text": ' '.join(f'w{i}' for i in range(29))}, timeout=30)
+r_s = s.post(f"{API}/jokes/my-drafts/{sid}/submit/", json={}, timeout=30)
+cases.append(('story/29-words', r_s))
+oid = mkdraft('oneliner')
+s.patch(f"{API}/jokes/my-drafts/{oid}/",
+        json={"text": "A one liner.", "setup": "nope", "punchline": "nope"}, timeout=30)
+r_o = s.post(f"{API}/jokes/my-drafts/{oid}/submit/", json={}, timeout=30)
+cases.append(('oneliner/forbidden-fields', r_o))
+
+ok = (r_k.status_code == 400 and 'Knock format requires at least 4 lines.' in json.dumps(jget(r_k))
+      and r_s.status_code == 400 and 'Story must be at least 30 words.' in json.dumps(jget(r_s))
+      and r_o.status_code == 400 and 'Not allowed for oneliner format.' in json.dumps(jget(r_o)))
+rec('T3-M02',
+    'per-format submit validation (knock/story/oneliner)',
+    'GIVEN drafts that violate jokes/submission_rules.FORMAT_RULES, WHEN submitted, THEN 400 '
+    'with the rule-specific message: knock <4 lines → "Knock format requires at least 4 lines."; '
+    'story <30 words → "Story must be at least 30 words."; oneliner carrying setup/punchline → '
+    '"Not allowed for oneliner format." on both fields.',
+    'SENSIBLE', ok,
+    '; '.join(f'{n}: {dump(r,220)}' for n, r in cases),
+    note='knock case also carries a spurious {"text": "Not allowed for knock format."} — the '
+         'same autosave backfill proven in T3-M01b.')
+
+# ---------------------------------------------------------------- T3-M03
+def jpeg(w=800, h=600, color=(200, 30, 60)):
+    buf = io.BytesIO()
+    Image.new('RGB', (w, h), color).save(buf, format='JPEG', quality=90)
+    buf.seek(0)
+    return buf
+
+r_up = s.post(f"{API}/media/uploads/",
+              files={'file': ('t3.jpg', jpeg(), 'image/jpeg')},
+              data={'kind': 'image'}, timeout=120)
+asset = r_up.json() if r_up.status_code == 201 else {}
+asset_id = asset.get('id')
+disk = db(f"""
+from jokes.models import MediaAsset
+from django.conf import settings
+import os
+a = MediaAsset.objects.filter(pk={asset_id!r}).first()
+if a is None:
+    print('NOASSET')
+else:
+    p = os.path.join(settings.MEDIA_ROOT, a.file.name)
+    print(a.file.name, '|exists=', os.path.exists(p), '|bytes=', os.path.getsize(p) if os.path.exists(p) else -1,
+          '|safesearch=', a.safesearch, '|phash=', a.phash, '|owner=', a.owner_id)
+""")
+r_fetch = s.get(asset.get('url'), timeout=30) if asset.get('url') else None
+ok = (r_up.status_code == 201 and asset.get('kind') == 'image'
+      and (asset.get('url') or '').endswith('.webp')
+      and asset.get('width') == 800 and asset.get('height') == 600
+      and 'exists= True' in disk)
+rec('T3-M03',
+    'image upload normalizes to WebP + MediaAsset row + file on disk',
+    'GIVEN a valid 800x600 JPEG, WHEN POSTed multipart to /media/uploads/ with kind=image, THEN '
+    '201 {id,kind,url,poster_url,width,height,duration_ms,is_gif,created_at}, the URL is the '
+    'WebP derivative (EXIF stripped by re-encode), a MediaAsset row exists, and the file is on '
+    'disk under MEDIA_ROOT.',
+    'SENSIBLE', ok,
+    f"HTTP {r_up.status_code} body={json.dumps(asset)[:420]} | DB/disk: {disk} | "
+    f"GET url -> {r_fetch.status_code if r_fetch is not None else 'n/a'} "
+    f"{r_fetch.headers.get('content-type') if r_fetch is not None else ''}")
+
+# ---------------------------------------------------------------- T3-M04
+subcases = {}
+subcases['oversize-11MB'] = s.post(f"{API}/media/uploads/",
+    files={'file': ('big.jpg', io.BytesIO(os.urandom(11 * 1024 * 1024)), 'image/jpeg')},
+    data={'kind': 'image'}, timeout=180)
+bmp = io.BytesIO(); Image.new('RGB', (64, 64), (1, 2, 3)).save(bmp, format='BMP'); bmp.seek(0)
+subcases['wrong-format-BMP'] = s.post(f"{API}/media/uploads/",
+    files={'file': ('x.bmp', bmp, 'image/bmp')}, data={'kind': 'image'}, timeout=60)
+subcases['not-an-image'] = s.post(f"{API}/media/uploads/",
+    files={'file': ('x.jpg', io.BytesIO(b'this is definitely not a jpeg'), 'image/jpeg')},
+    data={'kind': 'image'}, timeout=60)
+huge = io.BytesIO(); Image.new('RGB', (5000, 300), (9, 9, 9)).save(huge, format='PNG'); huge.seek(0)
+subcases['dims-5000px'] = s.post(f"{API}/media/uploads/",
+    files={'file': ('huge.png', huge, 'image/png')}, data={'kind': 'image'}, timeout=120)
+subcases['bad-kind'] = s.post(f"{API}/media/uploads/",
+    files={'file': ('t3.jpg', jpeg(64, 64), 'image/jpeg')}, data={'kind': 'document'}, timeout=60)
+subcases['no-file'] = s.post(f"{API}/media/uploads/", data={'kind': 'image'}, timeout=60)
+vid = os.path.join(tempfile.gettempdir(), 't3_long.mp4')
+if not os.path.exists(vid):
+    subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-f', 'lavfi',
+                    '-i', 'testsrc=size=320x240:rate=15:duration=65',
+                    '-c:v', 'libx264', '-pix_fmt', 'yuv420p', vid], check=True, timeout=300)
+with open(vid, 'rb') as fh:
+    subcases['video-65s'] = s.post(f"{API}/media/uploads/",
+        files={'file': ('long.mp4', fh, 'video/mp4')}, data={'kind': 'video'}, timeout=300)
+
+exp = {
+    'oversize-11MB': (400, 'Image exceeds the 10MB limit.'),
+    'wrong-format-BMP': (400, 'Only JPEG, PNG, or WebP images are supported.'),
+    'not-an-image': (400, 'Not a valid image.'),
+    'dims-5000px': (400, 'Image dimensions exceed 4096px.'),
+    'bad-kind': (400, 'Unsupported kind.'),
+    'no-file': (400, 'This field is required.'),
+    'video-65s': (400, 'Clips must be 60 seconds or shorter.'),
+}
+fails = []
+for name, (code, msg) in exp.items():
+    r = subcases[name]
+    if r.status_code != code or msg not in json.dumps(jget(r)):
+        fails.append(f'{name}: got {dump(r,200)}')
+orphans = db("from jokes.models import MediaAsset; "
+             "print('assets for t3creator =', MediaAsset.objects.filter(owner__email='t3.creator@e2e.dev').count())")
+rec('T3-M04',
+    'oversize / wrong-type / over-long media rejected with a clear, field-keyed error',
+    'GIVEN media violating jokes/media_processing + jokes/media_probe limits (>10MB image, '
+    'non-JPEG/PNG/WebP source, corrupt bytes, >4096px source, unknown kind, missing file, >60s '
+    'clip), WHEN uploaded, THEN 400 with the specific {field: message} and no MediaAsset row.',
+    'SENSIBLE', not fails,
+    '; '.join(f'{n}={subcases[n].status_code} {str(jget(subcases[n]))[:95]}' for n in exp)
+    + ' | ' + orphans,
+    note=('all rejections matched the source-derived messages' if not fails
+          else 'MISMATCH: ' + ' | '.join(fails)))
+
+# ---------------------------------------------------------------- T3-M05
+ss = db(f"""
+from jokes.models import MediaAsset
+from django.conf import settings
+a = MediaAsset.objects.filter(pk={asset_id!r}).first()
+print('SAFESEARCH_ENABLED=', settings.SAFESEARCH_ENABLED, '| stored verdict=', a.safesearch if a else None)
+from jokes.media_screening import screen_image, get_matcher
+print('screen_image(any bytes) ->', screen_image(b'junk'))
+print('get_matcher() ->', type(get_matcher()).__name__, '| match() ->', get_matcher().match('deadbeef'))
+""")
+fail_open = "'status': 'skipped'" in ss and 'NullMatcher' in ss
+rec('T3-M05',
+    'SafeSearch with no Vision credentials fails OPEN — upload stored, verdict "skipped"',
+    'GIVEN SAFESEARCH_ENABLED is false (no Vision credentials), WHEN an image is uploaded, THEN '
+    'jokes/media_screening.screen_image returns {"status":"skipped"}, MediaUploadView\'s '
+    '"blocked" branch is never reached, the CSAM hash matcher is a NullMatcher that returns '
+    'None, and the file is stored and publicly readable at its URL before any human review.',
+    'QUESTIONABLE', fail_open, ss,
+    note='Deliberate (module docstring + the fail-open hotfix for thrown Vision errors), but it '
+         'means a mis-configured/broken Vision integration silently disables the NSFW/CSAM '
+         'pre-screen with no alarm — status "skipped" and status "error" are both stored and '
+         'both non-blocking. The admin review queue is the only remaining gate, and the asset '
+         'is already fetchable at its unguessable-but-public URL.')
+
+# ---------------------------------------------------------------- T3-M06
+scope = db("""
+from django.conf import settings
+from jokes.views import MediaUploadView
+r = settings.REST_FRAMEWORK['DEFAULT_THROTTLE_RATES']
+print('throttle_scope=', MediaUploadView.throttle_scope,
+      '| classes=', [c.__name__ for c in MediaUploadView.throttle_classes],
+      '| media-upload rate=', r.get('media-upload'), '| appeals=', r.get('appeals'),
+      '| tips-checkout=', r.get('tips-checkout'), '| anon=', r.get('anon'), '| user=', r.get('user'))
+""")
+ok = ("throttle_scope= media-upload" in scope and "media-upload rate= 30/hour" in scope
+      and 'ScopedRateThrottle' in scope)
+rec('T3-M06',
+    'media-upload throttle scope is wired and rated 30/hour',
+    'GIVEN MediaUploadView, THEN it declares throttle_classes=[ScopedRateThrottle] with '
+    'throttle_scope="media-upload", and settings.REST_FRAMEWORK maps that scope to 30/hour '
+    '(verified by inspection rather than by firing 30 real uploads).',
+    'SENSIBLE', ok, scope)
+
+# ---------------------------------------------------------------- T3-M07
+pub = db(f"""
+from django.contrib.admin.sites import site
+from django.test import RequestFactory
+from django.contrib.auth import get_user_model
+from django.contrib.messages.storage.fallback import FallbackStorage
+from jokes.models import JokeSubmission, AgeRating
+from inbox.models import Notification
+U = get_user_model(); staff = U.objects.get(username='e2eadmin')
+sub = JokeSubmission.objects.get(pk={draft_id})
+sub.age_rating = AgeRating.objects.get(slug='family-friendly'); sub.save()
+before = Notification.objects.filter(recipient=sub.user).count()
+ma = site._registry[JokeSubmission]
+rf = RequestFactory(); req = rf.post('/admin/'); req.user = staff
+setattr(req, 'session', {{}}); setattr(req, '_messages', FallbackStorage(req))
+ma.approve_and_publish(req, JokeSubmission.objects.filter(pk={draft_id}))
+sub.refresh_from_db(); j = sub.published_joke
+n = Notification.objects.filter(recipient=sub.user).order_by('-id').first()
+print('sub.status=', sub.status, '| joke_id=', getattr(j,'id',None),
+      '| content_tier=', getattr(j,'content_tier',None),
+      '| creator_id=', getattr(j,'creator_id',None),
+      '| age_rating=', getattr(getattr(j,'age_rating',None),'slug',None),
+      '| share_image=', bool(getattr(j,'share_image',None)))
+print('notif_delta=', Notification.objects.filter(recipient=sub.user).count() - before,
+      '| verb=', getattr(n,'verb',None), '| joke=', getattr(n,'joke_id',None), '| data=', getattr(n,'data',None))
+""")
+published_joke_id = None
+for tok in pub.replace('\n', '|').split('|'):
+    if tok.strip().startswith('joke_id='):
+        published_joke_id = tok.split('=')[1].strip()
+ok = ("sub.status= published" in pub and "content_tier= tier_1" in pub
+      and "notif_delta= 1" in pub and "verb= joke_published" in pub)
+rec('T3-M07',
+    'staff approval publishes the joke with a derived tier and notifies the creator',
+    'GIVEN a pending submission rated family-friendly (min_age 0), WHEN staff run the '
+    'JokeSubmissionAdmin "Approve and publish selected submissions" action, THEN a Joke row is '
+    'created with creator=submitter and content_tier derived from age_rating.min_age (tier_1), '
+    'the submission flips to status="published" with published_joke set, and exactly one '
+    'inbox Notification(verb="joke_published") is created for the creator.',
+    'SENSIBLE', ok, pub)
+
+adult_id = mkdraft('oneliner')
+s.patch(f"{API}/jokes/my-drafts/{adult_id}/",
+        json={"text": "T3 mature one-liner for tier derivation.", "age_rating": "adult"}, timeout=30)
+s.post(f"{API}/jokes/my-drafts/{adult_id}/submit/", json={}, timeout=30)
+pub2 = db(f"""
+from django.contrib.admin.sites import site
+from django.test import RequestFactory
+from django.contrib.auth import get_user_model
+from django.contrib.messages.storage.fallback import FallbackStorage
+from jokes.models import JokeSubmission
+U = get_user_model(); staff = U.objects.get(username='e2eadmin')
+ma = site._registry[JokeSubmission]
+rf = RequestFactory(); req = rf.post('/admin/'); req.user = staff
+setattr(req, 'session', {{}}); setattr(req, '_messages', FallbackStorage(req))
+ma.approve_and_publish(req, JokeSubmission.objects.filter(pk={adult_id}))
+sub = JokeSubmission.objects.get(pk={adult_id})
+print('status=', sub.status, '| joke_id=', getattr(sub.published_joke,'id',None),
+      '| content_tier=', getattr(sub.published_joke,'content_tier',None))
+""")
+tier2_joke_id = None
+for tok in pub2.replace('\n', '|').split('|'):
+    if tok.strip().startswith('joke_id='):
+        tier2_joke_id = tok.split('=')[1].strip()
+rec('T3-M07b',
+    'an adult-rated (min_age>=18) submission publishes as tier_2, not universal tier_1',
+    'GIVEN a pending submission rated "adult" (min_age 18), WHEN approved, THEN the published '
+    'Joke gets content_tier=tier_2 so jokes/serving.allowed_tiers keeps it away from anonymous '
+    'and minor viewers.',
+    'SENSIBLE', 'content_tier= tier_2' in pub2, pub2)
+
+print('T3M_PUBLISHED_JOKE_ID=', published_joke_id)
+print('T3M_TIER2_JOKE_ID=', tier2_joke_id)
+print('T3M_ASSET_ID=', asset_id)
+emit("t3_m")

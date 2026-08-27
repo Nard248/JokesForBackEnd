@@ -16,8 +16,8 @@ __pycache__
 
 # Project-local state
 .env
-.env.local
-.env.*.local
+.env.*
+!.env.example
 .planning
 .remember
 .claude

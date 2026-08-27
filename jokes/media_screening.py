@@ -47,11 +47,24 @@ def screen_image(image_bytes):
         # error: never hard-fail the upload on infrastructure — the human
         # review queue remains the publish gate. Without this, every
         # image/video upload 500s the moment Vision hiccups.
-        logger.warning('SafeSearch client call failed: %s', str(exc)[:300])
+        logger.warning(
+            'SafeSearch client call failed: %s', str(exc)[:300],
+            extra={'safesearch_failed': True},
+        )
         return {'status': 'error', 'detail': str(exc)[:200]}
     if getattr(response.error, 'message', ''):
         # Vision API failure: don't hard-fail the upload on infrastructure —
         # record the failure; the human reviewer remains the gate.
+        #
+        # Logged at WARNING with the same 'SafeSearch' marker as the thrown-
+        # failure path above so a single log-based metric alerts on both. This
+        # path used to return silently, which made a dead NSFW/CSAM screen
+        # indistinguishable from a clean pass for as long as it stayed broken.
+        logger.warning(
+            'SafeSearch response carried an error: %s',
+            response.error.message,
+            extra={'safesearch_failed': True},
+        )
         return {'status': 'error', 'detail': response.error.message}
 
     ann = response.safe_search_annotation

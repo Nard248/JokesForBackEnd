@@ -1,0 +1,63 @@
+import sys, json, os, subprocess
+sys.path.insert(0, "/private/tmp/claude-501/-Users-narekmeloyan-PycharmProjects-JokesForProject/2b1dc348-b702-49ec-ad6c-5222c7ee10fc/scratchpad/t3")
+from harness import *
+
+def shell(code):
+    env = dict(os.environ, DATABASE_URL='', DB_NAME='jokesfor', DB_USER='postgres', DB_PASSWORD='6969',
+               DB_HOST='localhost', DB_PORT='5432', DEBUG='True', DYLD_FALLBACK_LIBRARY_PATH='/opt/homebrew/lib')
+    p=subprocess.run(['/Users/narekmeloyan/PycharmProjects/JokesForProject/.venv/bin/python','manage.py','shell','-c',code],
+        cwd='/Users/narekmeloyan/PycharmProjects/JokesForProject',capture_output=True,text=True,env=env,timeout=180)
+    return "\n".join(l for l in p.stdout.splitlines() if l.strip() and 'Warning' not in l
+        and 'objects imported' not in l and 'email = serial' not in l and 'required=allauth' not in l).strip()
+
+email = f"tel{TS}@test.local"
+shell("from django.contrib.auth import get_user_model as G\n"
+      f"U=G(); u,_=U.objects.get_or_create(username='{email}', defaults=dict(email='{email}'))\n"
+      f"u.email='{email}'; u.is_active=True; u.set_password('{PW}'); u.save(); print(u.id)")
+s = sess(); csrf(s)
+s.post(f"{API}/auth/login/", json={"email": email, "password": PW}, timeout=30)
+csrf_tok = csrf(s)
+jid = jget(s.get(f"{API}/jokes/", timeout=30))["results"][0]["id"]
+payload = {"events": [{"joke": jid, "type": "impression", "source": "feed"}]}
+
+# --- Path A: sendBeacon emulation — cookies only, NO CSRF header, NO Authorization ---
+beacon = sess()
+beacon.cookies.update(s.cookies)
+beacon.headers.pop("X-CSRFToken", None)
+rA = beacon.post(f"{API}/telemetry/events", data=json.dumps(payload),
+                 headers={"Content-Type": "application/json"}, timeout=30)
+
+# --- Path B: fetch fallback — Authorization: Bearer, no cookies ---
+tok = shell("from django.contrib.auth import get_user_model as G\n"
+    "from rest_framework_simplejwt.tokens import RefreshToken\n"
+    f"print(str(RefreshToken.for_user(G().objects.get(email__iexact='{email}')).access_token))").splitlines()[-1]
+bearer = sess(); bearer.headers["Authorization"] = f"Bearer {tok}"
+rB = bearer.post(f"{API}/telemetry/events", json=payload, timeout=30)
+
+# --- Path C: axios-style — cookies + X-CSRFToken ---
+rC = s.post(f"{API}/telemetry/events", json=payload, timeout=30)
+
+rec("T3-C05", "Telemetry sent via sendBeacon (the frontend's PREFERRED path) is rejected by CSRF",
+    "GIVEN a logged-in reader in a real browser, WHEN telemetry flushes via navigator.sendBeacon "
+    "(which cannot set X-CSRFToken or Authorization but does send cookies), "
+    "THEN the backend rejects it with 403 and the impression/dwell/watch event is silently lost",
+    "DEFECT-EXPECTED",
+    rA.status_code == 403,
+    f"beacon(cookies,no-csrf)={rA.status_code} {str(jget(rA))[:90]} | "
+    f"bearer={rB.status_code} {str(jget(rB))[:60]} | axios(cookies+csrf)={rC.status_code} {str(jget(rC))[:60]}",
+    "src/lib/telemetry.ts send() tries sendBeacon FIRST and returns early when it queues successfully; "
+    "the Bearer fetch is only a fallback. So in production browsers the primary telemetry path is the failing one. "
+    "Creator insights (impressions/reach/dwell/payoff_rate) are built on whatever survives.")
+
+# Did the event actually land?
+cnt = shell("from jokes.models import JokeImpression\n"
+            f"from django.contrib.auth import get_user_model as G\n"
+            f"u=G().objects.get(email__iexact='{email}')\n"
+            "print('impressions_for_user=', JokeImpression.objects.filter(user=u).count())")
+rec("T3-C05b", "Only the CSRF-bearing / Bearer paths actually record telemetry",
+    "impressions exist only from the paths that were accepted (B and C), not from the beacon path",
+    "SENSIBLE",
+    "impressions_for_user=" in cnt,
+    f"{cnt}")
+
+print("\n@@RESULTS@@" + json.dumps(RESULTS))

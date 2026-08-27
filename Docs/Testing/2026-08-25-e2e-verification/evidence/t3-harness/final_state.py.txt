@@ -1,0 +1,13 @@
+from jokes.models import Joke, UserBlock, ContentReport, Appeal, JokeView, MediaAsset
+from django.contrib.auth import get_user_model
+from django.utils import timezone
+U = get_user_model()
+print('removed jokes:', list(Joke.all_objects.filter(is_removed=True).values_list('id', flat=True)))
+print('blocks:', UserBlock.objects.count())
+print('open reports:', ContentReport.objects.filter(status='pending').count())
+print('appeals:', list(Appeal.objects.values_list('id','status')))
+print('t3 probe users:', list(U.objects.filter(username__startswith='t3del').values_list('username','is_active')))
+n = U.objects.filter(username__startswith='t3del').update(is_active=False)
+print('deactivated probe users:', n)
+print('viewer reads today:', JokeView.objects.filter(user__email='t3.viewer@e2e.dev', viewed_date=timezone.now().date()).count())
+print('live jokes:', Joke.objects.count())

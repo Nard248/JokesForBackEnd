@@ -305,6 +305,38 @@ class SubmissionApiTests(APITestCase):
         sub.refresh_from_db()
         self.assertEqual(sub.status, 'pending')
 
+    def test_editor_flow_setup_format_autosave_then_submit_succeeds(self):
+        """Drive the creator editor's real sequence: PATCH (autosave) then submit.
+
+        The serializer backfills ``text`` = "<setup> <punchline>" on save, and
+        the submit view then re-validates that stored value against
+        FORMAT_RULES, where ``text`` is FORBIDDEN for setup/anti/knock. The
+        creator supplied only the two fields the format requires, so a rejection
+        here is self-inflicted and unavoidable — the draft can never be
+        submitted.
+
+        Every other draft test builds submissions through the ORM, which skips
+        the backfill, so this path was never exercised.
+        """
+        sub = JokeSubmission.objects.create(
+            user=self.user, format=self.fmt_setup, age_rating=self.age,
+            language=self.lang, status='draft',
+        )
+        patch = self.client.patch(
+            f'/api/v1/jokes/my-drafts/{sub.id}/',
+            {'setup': 'Why did the QA engineer walk into a bar?',
+             'punchline': 'To order a beer, 0 beers, and a lizard.'},
+            format='json',
+        )
+        self.assertEqual(patch.status_code, 200, patch.content)
+        sub.refresh_from_db()
+        self.assertTrue(sub.text, 'the serializer backfills text on save')
+
+        resp = self.client.post(f'/api/v1/jokes/my-drafts/{sub.id}/submit/')
+
+        self.assertEqual(resp.status_code, 200, resp.content)
+        self.assertEqual(resp.json()['status'], 'pending')
+
     def test_patch_format_falls_back_to_instance(self):
         """A PATCH with no `format` key should reuse the instance's format."""
         sub = JokeSubmission.objects.create(
@@ -424,7 +456,9 @@ class FormatSchemaApiTests(APITestCase):
         resp = self.client.get('/api/v1/formats/')
         self.assertEqual(resp.status_code, 200)
         body = resp.json()
-        rows = body.get('results', body)  # paginated or not
+        # Lookup catalogues are unpaginated (bounded reference tables); stay
+        # tolerant of either shape.
+        rows = body['results'] if isinstance(body, dict) else body
         by_slug = {row['slug']: row for row in rows}
 
         knock = by_slug['knock']
@@ -737,6 +771,100 @@ class AccountDeleteTests(APITestCase):
         resp = self.client.delete('/api/v1/users/me/', {'confirm': 'DELETE'}, format='json')
         self.assertEqual(resp.status_code, 204)
         self.assertFalse(User.objects.filter(pk=u_pk).exists())
+
+    def test_delete_succeeds_for_a_user_who_has_an_audit_row(self):
+        """GDPR erasure must work for real accounts, which always have audit rows.
+
+        ``AuditLog.actor`` is ``SET_NULL``, so ``user.delete()`` issues an UPDATE
+        against ``audit_auditlog`` -- and the model installs a pgtrigger
+        ``Protect(Update | Delete)``. Every other test in this class builds a user
+        with no audit row, so the collision never fires in the suite while it fires
+        for every user who has ever logged in.
+        """
+        from audit.models import AuditLog
+
+        u = self._make_pw_user()
+        u_pk = u.pk
+        AuditLog.objects.create(actor=u, action='login', outcome='success')
+
+        self.client.force_authenticate(user=u)
+        resp = self.client.delete('/api/v1/users/me/', {'password': 'pw12345!'}, format='json')
+
+        self.assertEqual(resp.status_code, 204)
+        self.assertFalse(User.objects.filter(pk=u_pk).exists())
+        # The audit trail survives the erasure, de-identified rather than deleted.
+        self.assertTrue(AuditLog.objects.filter(actor__isnull=True).exists())
+
+    def test_successful_deletion_does_purge_the_user_s_files(self):
+        """The deferred purge must still actually run once the erasure commits.
+
+        Pairs with the failure test below: storage deletes moved to
+        ``transaction.on_commit`` must not silently become no-ops. on_commit
+        callbacks do not fire inside TestCase's transaction, so this asserts
+        them explicitly via captureOnCommitCallbacks.
+        """
+        import os
+        import tempfile
+
+        from django.core.files.uploadedfile import SimpleUploadedFile
+        from django.test import override_settings
+
+        from jokes.models import UserProfile
+
+        with tempfile.TemporaryDirectory() as media_root, override_settings(MEDIA_ROOT=media_root):
+            u = self._make_pw_user()
+            profile, _ = UserProfile.objects.get_or_create(user=u)
+            profile.avatar.save('b.png', SimpleUploadedFile('b.png', b'not-really-a-png'), save=True)
+            avatar_path = profile.avatar.path
+            self.assertTrue(os.path.exists(avatar_path))
+
+            self.client.force_authenticate(user=u)
+            with self.captureOnCommitCallbacks(execute=True):
+                resp = self.client.delete(
+                    '/api/v1/users/me/', {'password': 'pw12345!'}, format='json',
+                )
+
+            self.assertEqual(resp.status_code, 204)
+            self.assertFalse(os.path.exists(avatar_path), 'the avatar should be purged')
+
+    def test_failed_deletion_does_not_destroy_the_user_s_files(self):
+        """Storage deletes must not outlive a rolled-back transaction.
+
+        Steps 2-3 remove the user's uploaded media and avatar from object
+        storage, which is NOT transactional. If a later step raises, the DB
+        rolls back and the account survives -- but the files are already gone.
+        The user then keeps all their personal data and permanently loses their
+        uploads: the worst of both outcomes.
+        """
+        import os
+        import tempfile
+        from unittest.mock import patch as _patch
+
+        from django.core.files.uploadedfile import SimpleUploadedFile
+        from django.test import override_settings
+
+        from jokes.models import UserProfile
+
+        with tempfile.TemporaryDirectory() as media_root, override_settings(MEDIA_ROOT=media_root):
+            u = self._make_pw_user()
+            profile, _ = UserProfile.objects.get_or_create(user=u)
+            profile.avatar.save('a.png', SimpleUploadedFile('a.png', b'not-really-a-png'), save=True)
+            avatar_path = profile.avatar.path
+            self.assertTrue(os.path.exists(avatar_path))
+
+            self.client.force_authenticate(user=u)
+            # Force the final cascade to fail, exactly as the pgtrigger did.
+            with _patch.object(User, 'delete', side_effect=RuntimeError('boom')):
+                with self.assertRaises(RuntimeError):
+                    self.client.delete(
+                        '/api/v1/users/me/', {'password': 'pw12345!'}, format='json',
+                    )
+
+            self.assertTrue(User.objects.filter(pk=u.pk).exists(), 'account rolled back')
+            self.assertTrue(
+                os.path.exists(avatar_path),
+                'the avatar was destroyed even though the deletion failed',
+            )
 
     def test_delete_blacklists_refresh_token(self):
         u = self._make_pw_user()

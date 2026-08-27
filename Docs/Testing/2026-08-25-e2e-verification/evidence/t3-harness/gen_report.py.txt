@@ -1,0 +1,40 @@
+import json, glob, os
+ORDER = ['t3_m', 't3_s', 't3_b', 't3_o']
+AREA = {'t3_m': 'T3-M creator authoring & media',
+        't3_s': 'T3-S moderation, appeals, compliance',
+        't3_b': 'T3-B billing & tips',
+        't3_o': 'T3-O SEO, share pages, ops'}
+SHORT = {'t3_m': 'M', 't3_s': 'S', 't3_b': 'B', 't3_o': 'O'}
+rows, sections = [], []
+verdict_of = {}
+for key in ORDER:
+    rs = json.load(open(f'results/{key}.json'))
+    for r in rs:
+        if not r['ok']:
+            v = 'FAIL'
+        elif r['sanity'] == 'DEFECT-EXPECTED':
+            v = 'CONFIRMED-DEFECT'
+        elif r['sanity'] == 'QUESTIONABLE':
+            v = 'CONFIRMED-QUIRK'
+        else:
+            v = 'PASS'
+        verdict_of[r['id']] = v
+        exp = r['expected'].replace('|', '\\|').replace('\n', ' ')
+        rows.append(f"| `{r['id']}` | {SHORT[key]} | {exp} | {r['sanity']} | **{v}** |")
+        body = [f"### {r['id']} — {r['desc']}", '',
+                f"**Expected behaviour** — {r['expected']}", '',
+                f"**Sanity verdict:** {r['sanity']} &nbsp;&nbsp; **Result:** **{v}**", '',
+                '**Evidence**', '', '```', r['actual'], '```']
+        if r['note']:
+            body += ['', f"**Note.** {r['note']}"]
+        sections.append('\n'.join(body))
+tally = {}
+for v in verdict_of.values():
+    tally[v] = tally.get(v, 0) + 1
+out = []
+out.append('| ID | Area | Expected behaviour | Sanity | Result |')
+out.append('| --- | --- | --- | --- | --- |')
+out += rows
+open('report_body.md', 'w').write(
+    '\n'.join(out) + '\n\n@@SECTIONS@@\n\n' + '\n\n---\n\n'.join(sections) + '\n')
+print(tally, len(verdict_of))
