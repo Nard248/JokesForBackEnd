@@ -304,15 +304,21 @@ REST_FRAMEWORK = {
         'rest_framework.throttling.AnonRateThrottle',
         'rest_framework.throttling.UserRateThrottle',
     ],
+    # Each rate is env-overridable so the end-to-end suite can raise them for a
+    # run. That suite drives dozens of real signups and reads from ONE IP, which
+    # trips the production limits within a few specs — and a test tier that
+    # throttles itself gets muted, which is the failure mode this whole tier
+    # exists to prevent. Defaults below are the production values; nothing
+    # changes unless a THROTTLE_* var is explicitly set.
     'DEFAULT_THROTTLE_RATES': {
-        'anon': '100/hour',
-        'user': '1000/hour',
-        'verification_resend': '3/15min',
-        'creator_insights': '120/hour',
-        'media-upload': '30/hour',
-        'appeals': '10/day',
+        'anon': os.getenv('THROTTLE_ANON', '100/hour'),
+        'user': os.getenv('THROTTLE_USER', '1000/hour'),
+        'verification_resend': os.getenv('THROTTLE_VERIFICATION_RESEND', '3/15min'),
+        'creator_insights': os.getenv('THROTTLE_CREATOR_INSIGHTS', '120/hour'),
+        'media-upload': os.getenv('THROTTLE_MEDIA_UPLOAD', '30/hour'),
+        'appeals': os.getenv('THROTTLE_APPEALS', '10/day'),
         # Payments endpoint — a scoped rate keeps it off the 1000/hr global.
-        'tips-checkout': '30/hour',
+        'tips-checkout': os.getenv('THROTTLE_TIPS_CHECKOUT', '30/hour'),
     },
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.URLPathVersioning',
@@ -474,6 +480,11 @@ SIMPLE_JWT = {
 EMAIL_BACKEND = os.getenv(
     'EMAIL_BACKEND', 'django.core.mail.backends.console.EmailBackend'
 )
+# Only read by django.core.mail.backends.filebased.EmailBackend, which the E2E
+# suite uses so specs can read the REAL rendered verification email off disk
+# instead of needing a test-only "activate this user" endpoint. Unset (and
+# unused) in production, where EMAIL_BACKEND is Resend.
+EMAIL_FILE_PATH = os.getenv('EMAIL_FILE_PATH', '')
 ANYMAIL = {'RESEND_API_KEY': os.getenv('RESEND_API_KEY', '')}
 DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', 'Jokes For <noreply@localhost>')
 
