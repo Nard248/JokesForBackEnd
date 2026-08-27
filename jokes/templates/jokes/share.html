@@ -96,7 +96,12 @@
         {% if badge_text %}
         <span class="badge">{{ badge_text }}</span>
         {% endif %}
-        <p class="joke-text">{{ joke.text }}</p>
+        {# Teaser only -- NEVER joke.text. A published two-part joke stores a
+           denormalized text of "<setup> <punchline>", so rendering that field
+           handed the payoff to anyone who fetched this URL (no auth, sequential
+           ids). `description` is the punchline-free teaser the view already
+           computes for the OG/Twitter/JSON-LD tags. #}
+        <p class="joke-text">{{ description }}</p>
         <div class="cta">
             <a href="{{ frontend_joke_url }}">Open in JokesFor</a>
         </div>

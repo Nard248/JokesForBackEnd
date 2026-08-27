@@ -135,6 +135,20 @@ class SharePageMetadataTests(TestCase):
         self.assertNotIn(self.joke.punchline, twitter_description)
         self.assertNotIn('JokesFor.com', html)
 
+    def test_page_body_never_renders_the_punchline(self):
+        """The meta tags are punchline-free, but the visible body must be too.
+
+        A published two-part joke stores a denormalized ``text`` of
+        "<setup> <punchline>". Rendering that raw field in the page body hands
+        the payoff to anyone who fetches the URL -- no auth, no paywall, and
+        joke ids are sequential. The existing tests here only inspected the
+        meta tags, so the body was never checked.
+        """
+        html = self._get(self.joke)
+
+        self.assertIn(self.joke.setup, html)          # teaser still advertised
+        self.assertNotIn(self.joke.punchline, html)   # payoff never shipped
+
     def test_description_falls_back_to_text_when_no_setup(self):
         html = self._get(self.text_only_joke)
         og_description = _extract_meta_content(html, property_='og:description')
