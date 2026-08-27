@@ -10,9 +10,12 @@ ENV/
 env/
 
 # Environment files (keep .env.example)
+# Match EVERY .env variant, not just the three known suffixes: an
+# .env.bak.<timestamp> backup sitting in the tree was invisible to the old
+# rules and would have been published by `git add -A` on a public repo.
 .env
-.env.local
-.env.*.local
+.env.*
+!.env.example
 
 # Django
 db.sqlite3
