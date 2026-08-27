@@ -3,6 +3,7 @@ import logging
 from django.db.models import Count, Sum
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
+from drf_spectacular.utils import OpenApiParameter, extend_schema
 from rest_framework import status
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import AllowAny, IsAuthenticated
@@ -25,6 +26,15 @@ logger = logging.getLogger('jokesfor')
 TIP_AMOUNT_TIERS_CENTS = frozenset({100, 300, 500, 1000})
 
 
+# Reusable response fragments. `detail` is DRF's standard error key; `code` is
+# this module's machine-readable discriminator (only some errors carry one).
+_DETAIL_SCHEMA = {'type': 'object', 'properties': {'detail': {'type': 'string'}}}
+_DETAIL_CODE_SCHEMA = {'type': 'object', 'properties': {
+    'detail': {'type': 'string'},
+    'code': {'type': 'string'},
+}}
+
+
 def _billing_unavailable():
     return Response(
         {'detail': 'Billing is not configured.', 'code': 'billing_unavailable'},
@@ -36,6 +46,10 @@ class PlansView(APIView):
     """GET /api/v1/billing/plans — public pricing page data."""
     permission_classes = [AllowAny]
 
+    @extend_schema(
+        description='Active, publicly listed plans in display order. Unpaginated.',
+        responses={200: PlanPublicSerializer(many=True)},
+    )
     def get(self, request):
         plans = Plan.objects.filter(is_active=True, is_public=True).order_by('sort_order')
         return Response(PlanPublicSerializer(plans, many=True).data)
@@ -45,6 +59,32 @@ class CheckoutSessionView(APIView):
     """POST /api/v1/billing/checkout-session — create a Stripe Checkout Session."""
     permission_classes = [IsAuthenticated]
 
+    @extend_schema(
+        description=(
+            'Start a subscription checkout. Returns the Stripe-hosted URL to redirect to. '
+            'Refuses with 409 when the caller already has a live paid subscription (that '
+            'response carries `portal_url` when the Customer Portal could be reached).'
+        ),
+        request={'application/json': {
+            'type': 'object',
+            'properties': {'plan_slug': {'type': 'string'}},
+            'required': ['plan_slug'],
+        }},
+        responses={
+            200: {'type': 'object', 'properties': {
+                'url': {'type': 'string', 'format': 'uri', 'description': 'Stripe Checkout URL.'},
+            }},
+            404: _DETAIL_SCHEMA,
+            409: {'type': 'object', 'properties': {
+                'detail': {'type': 'string'},
+                'code': {'type': 'string', 'enum': ['active_subscription']},
+                'portal_url': {'type': 'string', 'format': 'uri'},
+            }},
+            422: _DETAIL_SCHEMA,
+            502: _DETAIL_SCHEMA,
+            503: _DETAIL_CODE_SCHEMA,
+        },
+    )
     def post(self, request):
         if not is_enabled():
             return _billing_unavailable()
@@ -111,6 +151,40 @@ class TipCheckoutView(APIView):
     throttle_classes = [ScopedRateThrottle]
     throttle_scope = 'tips-checkout'
 
+    @extend_schema(
+        description=(
+            'Start a one-off tip checkout. `amount_cents` must be one of the fixed '
+            'server-side tiers; `joke_id` is optional but must belong to `creator_id` '
+            'when given. Self-tipping and tipping a non-creator are rejected.'
+        ),
+        request={'application/json': {
+            'type': 'object',
+            'properties': {
+                'amount_cents': {'type': 'integer', 'enum': sorted(TIP_AMOUNT_TIERS_CENTS)},
+                'creator_id': {'type': 'integer'},
+                'joke_id': {'type': 'integer', 'description': 'Optional joke the tip is attached to.'},
+            },
+            'required': ['amount_cents', 'creator_id'],
+        }},
+        responses={
+            200: {'type': 'object', 'properties': {
+                'checkout_url': {'type': 'string', 'format': 'uri'},
+                'tip_id': {'type': 'integer'},
+            }},
+            # `code` is absent on the joke-not-found branch, present on the others.
+            400: {'type': 'object', 'properties': {
+                'detail': {'type': 'string'},
+                'code': {'type': 'string', 'enum': [
+                    'invalid_amount', 'creator_required', 'not_a_creator', 'self_tip',
+                    'joke_creator_mismatch',
+                ]},
+            }},
+            404: _DETAIL_SCHEMA,
+            429: _DETAIL_SCHEMA,
+            502: _DETAIL_SCHEMA,
+            503: _DETAIL_CODE_SCHEMA,
+        },
+    )
     def post(self, request):
         if not is_enabled():
             return _billing_unavailable()
@@ -193,6 +267,16 @@ class CreatorTipsSummaryView(APIView):
     """
     permission_classes = [AllowAny]
 
+    @extend_schema(
+        description=(
+            'Public tips-received totals for a creator. Counts SUCCEEDED tips only. '
+            'An unknown creator_id is not a 404 — it simply reports zeroes.'
+        ),
+        responses={200: {'type': 'object', 'properties': {
+            'count': {'type': 'integer'},
+            'total_cents': {'type': 'integer'},
+        }}},
+    )
     def get(self, request, creator_id):
         agg = Tip.objects.filter(creator_id=creator_id, status='succeeded').aggregate(
             count=Count('id'), total_cents=Sum('amount_cents'),
@@ -207,6 +291,34 @@ class MyTipsView(APIView):
     """GET /api/v1/users/me/tips/ — the caller's sent-tip history, most recent first."""
     permission_classes = [IsAuthenticated]
 
+    @extend_schema(
+        description='Tips the caller has sent, newest first. Page-number paginated, page size 10.',
+        parameters=[
+            OpenApiParameter(name='page', type=int, description='1-based page number.'),
+        ],
+        responses={200: {'type': 'object', 'properties': {
+            'count': {'type': 'integer'},
+            'next': {'type': 'string', 'format': 'uri', 'nullable': True},
+            'previous': {'type': 'string', 'format': 'uri', 'nullable': True},
+            # One TipSerializer row. Spelled out rather than referencing the
+            # serializer so `creator_name` (an unhinted SerializerMethodField)
+            # is typed correctly instead of falling back to a bare string.
+            'results': {'type': 'array', 'items': {'type': 'object', 'properties': {
+                'id': {'type': 'integer'},
+                'creator': {'type': 'integer', 'description': 'Recipient user id.'},
+                'creator_name': {'type': 'string', 'description': 'Public display name.'},
+                'joke': {'type': 'integer', 'nullable': True},
+                'amount_cents': {'type': 'integer'},
+                'currency': {'type': 'string'},
+                'status': {
+                    'type': 'string',
+                    'enum': [choice for choice, _ in Tip.STATUS_CHOICES],
+                },
+                'created_at': {'type': 'string', 'format': 'date-time'},
+                'completed_at': {'type': 'string', 'format': 'date-time', 'nullable': True},
+            }}},
+        }}},
+    )
     def get(self, request):
         tips = Tip.objects.filter(sender=request.user)  # Tip.Meta.ordering = -created_at
         paginator = PageNumberPagination()
@@ -220,6 +332,22 @@ class PortalSessionView(APIView):
     """POST /api/v1/billing/portal-session — create a Stripe Customer Portal Session."""
     permission_classes = [IsAuthenticated]
 
+    @extend_schema(
+        description=(
+            'Returns the Stripe-hosted Customer Portal URL for the caller. '
+            '404 when the caller has never had a Stripe customer record. '
+            'Takes no request body.'
+        ),
+        request=None,
+        responses={
+            200: {'type': 'object', 'properties': {
+                'url': {'type': 'string', 'format': 'uri'},
+            }},
+            404: _DETAIL_SCHEMA,
+            502: _DETAIL_SCHEMA,
+            503: _DETAIL_CODE_SCHEMA,
+        },
+    )
     def post(self, request):
         if not is_enabled():
             return _billing_unavailable()
@@ -257,6 +385,29 @@ class StripeWebhookView(APIView):
     permission_classes = [AllowAny]
     authentication_classes = []  # No auth — public endpoint
 
+    @extend_schema(
+        description=(
+            'NOT part of the client-facing API surface — this is Stripe\'s server-to-server '
+            'webhook receiver and must never be called by an app client. The body is a raw '
+            'Stripe Event, authenticated by the `Stripe-Signature` header, and is read from '
+            'the raw request body (re-parsing would break signature verification). Returns '
+            '200 {"detail": "billing_dormant"} when Stripe is not configured, so Stripe '
+            'stops retrying.'
+        ),
+        request={'application/json': {
+            'type': 'object',
+            'description': 'Raw Stripe Event object.',
+            'additionalProperties': True,
+        }},
+        responses={
+            200: {'type': 'object', 'properties': {
+                'received': {'type': 'boolean'},
+                'detail': {'type': 'string', 'enum': ['billing_dormant']},
+            }},
+            400: _DETAIL_SCHEMA,
+            500: _DETAIL_SCHEMA,
+        },
+    )
     def post(self, request):
         if not is_enabled():
             # Dormant: return 200 so Stripe doesn't retry
@@ -291,6 +442,13 @@ class MySubscriptionView(APIView):
     """GET /api/v1/billing/my-subscription — current plan + status for the authenticated user."""
     permission_classes = [IsAuthenticated]
 
+    @extend_schema(
+        description=(
+            'Always 200. A user with no Subscription row gets the same shape synthesised '
+            'from their effective plan, with status="free" and an empty stripe_customer_id.'
+        ),
+        responses={200: MySubscriptionSerializer},
+    )
     def get(self, request):
         try:
             sub = request.user.subscription
@@ -311,6 +469,22 @@ class EntitlementsView(APIView):
     """GET /api/v1/billing/entitlements — resolved features/limits for the frontend."""
     permission_classes = [IsAuthenticated]
 
+    @extend_schema(
+        description=(
+            'Feature flags and numeric limits resolved for the caller\'s effective plan. '
+            'A null limit means unlimited. Keys are exactly the entitlements registry, '
+            'so the schema below is generated from it and cannot drift.'
+        ),
+        responses={200: {'type': 'object', 'properties': {
+            'plan': {'type': 'string', 'description': 'Effective plan slug, or "free".'},
+            'features': {'type': 'object', 'properties': {
+                key: {'type': 'boolean'} for key in entitlements.KNOWN_FEATURES
+            }},
+            'limits': {'type': 'object', 'properties': {
+                key: {'type': 'integer', 'nullable': True} for key in entitlements.KNOWN_LIMITS
+            }},
+        }}},
+    )
     def get(self, request):
         plan = entitlements.effective_plan(request.user)
         features = {k: entitlements.has_feature(request.user, k) for k in entitlements.KNOWN_FEATURES}

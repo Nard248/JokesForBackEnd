@@ -5,7 +5,8 @@ from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.http import Http404, HttpResponse
 from django.utils.html import escape
-from drf_spectacular.utils import extend_schema
+from drf_spectacular.types import OpenApiTypes
+from drf_spectacular.utils import OpenApiParameter, extend_schema
 from rest_framework import status
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
@@ -41,6 +42,41 @@ class VerifyEmailView(APIView):
 
     permission_classes = [AllowAny]
 
+    @extend_schema(
+        description=(
+            'Exchange the 6-digit emailed code for an activated account. On success the '
+            'JWT access/refresh cookies are set on the response (the body carries no '
+            'tokens). Anti-enumeration: an unknown email returns the same 400 as a wrong '
+            'code. 400 bodies are DRF field-error maps ({"code": ["..."]} / '
+            '{"email": ["..."]}) except the already-verified case, which returns {"detail"}.'
+        ),
+        # Declared inline, not as VerifyEmailSerializer: dj-rest-auth registers a
+        # DIFFERENT serializer under the same "VerifyEmail" component name, and
+        # two identically-named components produce a silently wrong schema.
+        request={'application/json': {
+            'type': 'object',
+            'properties': {
+                'email': {'type': 'string', 'format': 'email'},
+                'code': {'type': 'string', 'pattern': r'^\d{6}$'},
+            },
+            'required': ['email', 'code'],
+        }},
+        responses={
+            200: {'type': 'object', 'properties': {
+                'user': {'type': 'object', 'properties': {
+                    'id': {'type': 'integer'},
+                    'email': {'type': 'string', 'format': 'email'},
+                }},
+            }},
+            400: {'type': 'object', 'properties': {
+                'code': {'type': 'array', 'items': {'type': 'string'}},
+                'email': {'type': 'array', 'items': {'type': 'string'}},
+                'detail': {'type': 'string'},
+            }},
+            429: {'type': 'object', 'properties': {'detail': {'type': 'string'}},
+                  'description': 'Too many wrong-code attempts — request a new code.'},
+        },
+    )
     def post(self, request):
         serializer = VerifyEmailSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -89,6 +125,21 @@ class ResendVerificationView(APIView):
     permission_classes = [AllowAny]
     throttle_classes = [ResendThrottle]
 
+    @extend_schema(
+        description=(
+            'Re-send a verification code. Anti-enumeration: the 200 body is identical '
+            'whether or not the email belongs to an existing unverified account — a code '
+            'is only actually sent in the latter case. Rate limited.'
+        ),
+        request=ResendVerificationSerializer,
+        responses={
+            200: {'type': 'object', 'properties': {'detail': {'type': 'string'}}},
+            400: {'type': 'object', 'properties': {
+                'email': {'type': 'array', 'items': {'type': 'string'}},
+            }},
+            429: {'type': 'object', 'properties': {'detail': {'type': 'string'}}},
+        },
+    )
     def post(self, request):
         serializer = ResendVerificationSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -184,6 +235,22 @@ class EmailUnsubscribeView(APIView):
     authentication_classes = []
     permission_classes = [AllowAny]
 
+    @extend_schema(
+        description=(
+            'NOT part of the client-facing API surface — this is the link target in '
+            'outbound emails and renders a standalone HTML page, not JSON. GET never '
+            'mutates state: it only renders a confirm form (so link scanners cannot '
+            'unsubscribe someone). A bad/expired token renders a friendly error page '
+            'with status 400.'
+        ),
+        parameters=[
+            OpenApiParameter(name='token', type=str, required=True, description='Signed unsubscribe token.'),
+        ],
+        responses={
+            (200, 'text/html'): OpenApiTypes.STR,
+            (400, 'text/html'): OpenApiTypes.STR,
+        },
+    )
     def get(self, request):
         token = request.query_params.get('token', '')
         try:
@@ -197,6 +264,26 @@ class EmailUnsubscribeView(APIView):
             content_type='text/html',
         )
 
+    @extend_schema(
+        description=(
+            'NOT part of the client-facing API surface. Performs the actual unsubscribe '
+            'and renders a standalone HTML confirmation page. Reached either by the '
+            'confirm page\'s form submit (token in the body) or by a mail provider\'s '
+            'RFC 8058 List-Unsubscribe-Post one-click POST (token in the query string). '
+            'A bad/expired token renders the error page with status 400.'
+        ),
+        parameters=[
+            OpenApiParameter(name='token', type=str, description='Signed token (RFC 8058 one-click form).'),
+        ],
+        request={'application/x-www-form-urlencoded': {
+            'type': 'object',
+            'properties': {'token': {'type': 'string'}},
+        }},
+        responses={
+            (200, 'text/html'): OpenApiTypes.STR,
+            (400, 'text/html'): OpenApiTypes.STR,
+        },
+    )
     def post(self, request):
         # Confirm-page form submit puts the token in the POST body; a mail
         # provider's RFC 8058 one-click POST instead hits the header URL
