@@ -810,9 +810,13 @@ class MediaPublishAndLifecycleTests(TestCase):
         name = asset.file.name
         client = APIClient()
         client.force_authenticate(self.user)
-        response = client.delete(
-            '/api/v1/users/me/', {'password': 'x'}, format='json',
-        )
+        # Storage purge is deferred to transaction.on_commit (so a failed
+        # erasure cannot destroy the user's files); execute the callback to
+        # observe it.
+        with self.captureOnCommitCallbacks(execute=True):
+            response = client.delete(
+                '/api/v1/users/me/', {'password': 'x'}, format='json',
+            )
         self.assertIn(response.status_code, (200, 204))
         self.assertFalse(MediaAsset.objects.filter(pk=asset.pk).exists())
         self.assertFalse(default_storage.exists(name))
@@ -961,3 +965,46 @@ class AnonPaywallTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json()['used'], 1)
         self.assertEqual(response.json()['limit'], FREE_READS_DEFAULT)
+
+
+class SafeSearchFailureIsObservableTests(TestCase):
+    """A broken SafeSearch must not look identical to a clean pass.
+
+    Screening fails OPEN on purpose (a Vision outage must not 500 every upload;
+    the human review queue is still the publish gate). But {'status':'skipped'}
+    and {'status':'error'} were both silent and indistinguishable from healthy
+    from the outside, so an NSFW/CSAM gate could be dead for days with nothing
+    to alert on. Fail-open is defensible; fail-open AND invisible is not.
+    """
+
+    @override_settings(SAFESEARCH_ENABLED=True)
+    def test_an_error_inside_the_vision_response_is_logged(self):
+        from jokes import media_screening
+
+        class _Err:
+            message = 'PERMISSION_DENIED: Vision API has not been enabled'
+
+        class _Resp:
+            error = _Err()
+
+        with patch.object(media_screening, '_client') as client:
+            client.return_value.safe_search_detection.return_value = _Resp()
+            with self.assertLogs('jokes.media_screening', level='WARNING') as logs:
+                verdict = media_screening.screen_image(b'not-an-image')
+
+        self.assertEqual(verdict['status'], 'error')
+        self.assertTrue(
+            any('safesearch' in line.lower() for line in logs.output),
+            f'no alertable log line emitted: {logs.output}',
+        )
+
+    @override_settings(SAFESEARCH_ENABLED=True)
+    def test_a_thrown_client_failure_is_logged(self):
+        from jokes import media_screening
+
+        with patch.object(media_screening, '_client', side_effect=RuntimeError('boom')):
+            with self.assertLogs('jokes.media_screening', level='WARNING') as logs:
+                verdict = media_screening.screen_image(b'not-an-image')
+
+        self.assertEqual(verdict['status'], 'error')
+        self.assertTrue(any('safesearch' in line.lower() for line in logs.output))

@@ -58,3 +58,27 @@ class ReadyzTests(TestCase):
         body = resp.json()
         self.assertEqual(body['status'], 'not_ready')
         self.assertEqual(body['checks']['cache']['status'], 'error')
+
+
+class LivezAliasTests(TestCase):
+    """`/healthz` is unreachable through the public Cloud Run URL.
+
+    Verified in production: GET /healthz returns a Google-edge HTML 404 with
+    none of Django's security headers, while /healthzz and /healthz/ return
+    Django 404s and /readyz returns 200 — i.e. the edge intercepts that exact
+    reserved path before it reaches the container. The view is fine (it answers
+    200 locally); it just cannot be reached from outside, so any external uptime
+    check pointed at it is dead. /livez is the same probe on a path the edge
+    does not claim.
+    """
+
+    def test_livez_is_an_unauthenticated_liveness_probe(self):
+        resp = self.client.get('/livez')
+        self.assertEqual(resp.status_code, 200)
+        self.assertEqual(resp.json(), {'status': 'ok'})
+
+    def test_livez_matches_healthz_exactly(self):
+        self.assertEqual(
+            self.client.get('/livez').json(),
+            self.client.get('/healthz').json(),
+        )

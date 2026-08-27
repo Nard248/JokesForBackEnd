@@ -672,9 +672,13 @@ class AccountDeleteQuarantineTests(TestCase):
 
         client = APIClient()
         client.force_authenticate(user)
-        response = client.delete(
-            '/api/v1/users/me/', {'password': 'x'}, format='json',
-        )
+        # Storage purge is deferred to transaction.on_commit (so a failed
+        # erasure cannot destroy the user's files); execute the callback to
+        # observe it.
+        with self.captureOnCommitCallbacks(execute=True):
+            response = client.delete(
+                '/api/v1/users/me/', {'password': 'x'}, format='json',
+            )
         self.assertIn(response.status_code, (200, 204))
         self.assertFalse(MediaAsset.objects.filter(pk=asset.pk).exists())
         self.assertFalse(default_storage.exists(name))

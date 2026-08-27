@@ -27,9 +27,11 @@ from django.http import HttpResponse
 from django.middleware.csrf import get_token
 from django.shortcuts import get_object_or_404, render
 from django.utils import timezone
+from django.utils.dateparse import parse_time
 from django.utils.safestring import mark_safe
 from django.utils.text import Truncator
 from django.views.decorators.http import require_GET
+from drf_spectacular.types import OpenApiTypes
 from drf_spectacular.utils import OpenApiParameter, extend_schema
 from rest_framework import generics, mixins, status, viewsets
 from rest_framework.decorators import (
@@ -47,6 +49,7 @@ from rest_framework.views import APIView
 from billing import entitlements
 from notifications.models import EmailMessageLog, EmailVerification
 
+from .achievements import evaluate_for as evaluate_achievements_for
 from .identity import (
     is_valid_handle,
     normalize_handle,
@@ -655,6 +658,26 @@ class JokeRevealView(APIView):
 
     permission_classes = [AllowAny]
 
+    @extend_schema(
+        description=(
+            'Records an anonymous punchline reveal against the cookie-backed paywall '
+            'ledger and returns the updated counters. Authenticated callers are a no-op '
+            '(204, no body) — their ledger is JokeView instead. Takes no request body.'
+        ),
+        request=None,
+        responses={
+            200: {'type': 'object', 'properties': {
+                'limit': {'type': 'integer', 'description': 'Free reveals allowed per day.'},
+                'used': {'type': 'integer', 'description': 'Distinct jokes revealed today.'},
+                'remaining': {'type': 'integer'},
+                'over': {'type': 'boolean', 'description': 'True once used >= limit.'},
+                'reset_at': {'type': 'string', 'format': 'date-time',
+                             'description': 'Next midnight UTC, ISO 8601.'},
+            }},
+            204: None,
+            404: {'type': 'object', 'properties': {'detail': {'type': 'string'}}},
+        },
+    )
     def post(self, request, pk):
         if request.user.is_authenticated:
             return Response(status=status.HTTP_204_NO_CONTENT)
@@ -692,36 +715,66 @@ class FormatViewSet(viewsets.ReadOnlyModelViewSet):
     """Viewset for joke formats (one-liner, setup-punchline, etc.)."""
     queryset = Format.objects.all().order_by('name')
     serializer_class = FormatSerializer
+    # Bounded reference table read once to populate client pickers -- never
+    # paginated. Inheriting the feed's PAGE_SIZE=10 (with no
+    # page_size_query_param) silently truncated the catalogue and made the
+    # remaining rows unreachable in the UI. Matches VibeViewSet.
+    pagination_class = None
 
 
 class AgeRatingViewSet(viewsets.ReadOnlyModelViewSet):
     """Viewset for age ratings (kid-safe, teen, adult, family-friendly)."""
     queryset = AgeRating.objects.all().order_by('min_age', 'name')
     serializer_class = AgeRatingSerializer
+    # Bounded reference table read once to populate client pickers -- never
+    # paginated. Inheriting the feed's PAGE_SIZE=10 (with no
+    # page_size_query_param) silently truncated the catalogue and made the
+    # remaining rows unreachable in the UI. Matches VibeViewSet.
+    pagination_class = None
 
 
 class ToneViewSet(viewsets.ReadOnlyModelViewSet):
     """Viewset for humor tones (clean, dark, dad-jokes, puns, sarcasm)."""
     queryset = Tone.objects.all().order_by('name')
     serializer_class = ToneSerializer
+    # Bounded reference table read once to populate client pickers -- never
+    # paginated. Inheriting the feed's PAGE_SIZE=10 (with no
+    # page_size_query_param) silently truncated the catalogue and made the
+    # remaining rows unreachable in the UI. Matches VibeViewSet.
+    pagination_class = None
 
 
 class ContextTagViewSet(viewsets.ReadOnlyModelViewSet):
     """Viewset for context/situation tags (wedding, work, school, etc.)."""
     queryset = ContextTag.objects.all().order_by('name')
     serializer_class = ContextTagSerializer
+    # Bounded reference table read once to populate client pickers -- never
+    # paginated. Inheriting the feed's PAGE_SIZE=10 (with no
+    # page_size_query_param) silently truncated the catalogue and made the
+    # remaining rows unreachable in the UI. Matches VibeViewSet.
+    pagination_class = None
 
 
 class LanguageViewSet(viewsets.ReadOnlyModelViewSet):
     """Viewset for languages (ISO 639-1 codes)."""
     queryset = Language.objects.all().order_by('name')
     serializer_class = LanguageSerializer
+    # Bounded reference table read once to populate client pickers -- never
+    # paginated. Inheriting the feed's PAGE_SIZE=10 (with no
+    # page_size_query_param) silently truncated the catalogue and made the
+    # remaining rows unreachable in the UI. Matches VibeViewSet.
+    pagination_class = None
 
 
 class CultureTagViewSet(viewsets.ReadOnlyModelViewSet):
     """Viewset for cultural context tags (American, British, universal)."""
     queryset = CultureTag.objects.all().order_by('name')
     serializer_class = CultureTagSerializer
+    # Bounded reference table read once to populate client pickers -- never
+    # paginated. Inheriting the feed's PAGE_SIZE=10 (with no
+    # page_size_query_param) silently truncated the catalogue and made the
+    # remaining rows unreachable in the UI. Matches VibeViewSet.
+    pagination_class = None
 
 
 # =============================================================================
@@ -791,6 +844,17 @@ class UserPreferenceViewSet(viewsets.GenericViewSet):
 # CSRF token endpoint
 # =============================================================================
 
+@extend_schema(
+    description=(
+        'NOT part of the client-facing API surface for a native app — this exists for '
+        'the browser SPA, which cannot read the SameSite=None CSRF cookie via '
+        'document.cookie. It sets that cookie and returns its value so the SPA can echo '
+        'it in the X-CSRFToken header. A native client using bearer tokens never needs it.'
+    ),
+    responses={200: {'type': 'object', 'properties': {
+        'csrfToken': {'type': 'string'},
+    }}},
+)
 @api_view(['GET'])
 @authentication_classes([])  # never cookie-authenticate; usable pre- and post-login
 @permission_classes([AllowAny])
@@ -1176,15 +1240,24 @@ class DailyJokeViewSet(viewsets.GenericViewSet):
         """
         today_date = timezone.now().date()
 
-        # Anonymous users get an editorial pick (tier_1 only — always fail-safe for anon)
+        # Anonymous users get an editorial pick (tier_1 only — always fail-safe
+        # for anon). The pick is DERIVED FROM THE DATE, not random: order_by('?')
+        # re-rolled on every request, so a logged-out reader saw a different joke
+        # on each refresh and a shared "today's joke" link showed something
+        # different to every recipient. Authenticated users already get a stable
+        # per-day pick via DailyJoke; this gives anonymous readers the same
+        # promise without needing a row per visitor.
         if not request.user.is_authenticated:
-            joke = Joke.objects.filter(
+            pool = Joke.objects.filter(
                 content_tier__in=allowed_tiers(request)
             ).select_related(
                 'format', 'age_rating', 'language', 'source'
             ).prefetch_related(
                 'tones', 'context_tags', 'culture_tags'
-            ).order_by('?').first()
+            ).order_by('id')
+
+            total = pool.count()
+            joke = pool[today_date.toordinal() % total] if total else None
 
             if not joke:
                 return Response(
@@ -1496,6 +1569,41 @@ class MediaUploadView(APIView):
     throttle_classes = [ScopedRateThrottle]
     throttle_scope = 'media-upload'
 
+    @extend_schema(
+        description=(
+            'Upload one media file (multipart/form-data). Synchronous: normalize → '
+            'SafeSearch → hash-match → store. A `.gif` always goes through the video '
+            'pipeline whichever `kind` was sent. 422 means the file was rejected by '
+            'content screening; 429 means the encoder concurrency guard is saturated '
+            '(honour the Retry-After header).'
+        ),
+        request={'multipart/form-data': {
+            'type': 'object',
+            'properties': {
+                'file': {'type': 'string', 'format': 'binary'},
+                'kind': {'type': 'string', 'enum': ['image', 'video', 'audio'],
+                         'default': 'image'},
+            },
+            'required': ['file'],
+        }},
+        responses={
+            201: MediaAssetSerializer,
+            # NOTE the two shapes here: this view's own guards emit DRF-style
+            # {"field": ["msg"]} lists, while MediaValidationError.errors is a
+            # {"field": "msg"} single-string dict. Both reach the client as 400.
+            400: {'type': 'object', 'properties': {
+                'file': {'oneOf': [
+                    {'type': 'string'},
+                    {'type': 'array', 'items': {'type': 'string'}},
+                ]},
+                'kind': {'type': 'array', 'items': {'type': 'string'}},
+            }},
+            422: {'type': 'object', 'properties': {
+                'file': {'type': 'array', 'items': {'type': 'string'}},
+            }},
+            429: {'type': 'object', 'properties': {'detail': {'type': 'string'}}},
+        },
+    )
     def post(self, request):
         from audit.services import record_audit
 
@@ -1776,6 +1884,24 @@ class JokeDraftSubmitView(APIView):
 
     permission_classes = [IsAuthenticated]
 
+    @extend_schema(
+        description=(
+            'Move one of the caller\'s own drafts (or a rejected submission) into the '
+            'moderation queue. Takes no request body. The 400 body is either '
+            '{"detail": ...} for a wrong-status submission, or a per-format field-error '
+            'map (e.g. {"punchline": ["..."]}) when the draft is incomplete.'
+        ),
+        request=None,
+        responses={
+            200: {'type': 'object', 'properties': {
+                'id': {'type': 'integer'},
+                'status': {'type': 'string', 'enum': ['pending']},
+            }},
+            400: {'type': 'object', 'properties': {'detail': {'type': 'string'}},
+                  'additionalProperties': {'type': 'array', 'items': {'type': 'string'}}},
+            404: {'type': 'object', 'properties': {'detail': {'type': 'string'}}},
+        },
+    )
     def post(self, request, pk):
         submission = get_object_or_404(JokeSubmission, pk=pk, user=request.user)
         if submission.status not in ('draft', 'rejected'):
@@ -1786,10 +1912,20 @@ class JokeDraftSubmitView(APIView):
 
         # Draft PATCH skips per-format validation so autosave never loses work;
         # enforce it HERE so an incomplete draft can't reach moderation.
+        #
+        # `text` is DERIVED, not a creator input, for any format that forbids it
+        # (setup/anti/knock): the serializer backfills "<setup> <punchline>" on
+        # save for previews/search. Validating that derived value as if it were
+        # typed made those drafts permanently unsubmittable — the creator filled
+        # in exactly the required fields and still got
+        # {"text": "Not allowed for setup format."}. Only the creator's own
+        # inputs are validated here.
+        _rule = FORMAT_RULES.get(submission.format.slug, {})
+        _text_is_derived = 'text' in _rule.get('forbidden', [])
         errors = validate_per_format(
             submission.format.slug,
             {
-                'text': submission.text,
+                'text': '' if _text_is_derived else submission.text,
                 'setup': submission.setup,
                 'punchline': submission.punchline,
                 'lines': submission.lines,
@@ -1919,11 +2055,111 @@ class FavoriteViewSet(
 # Phase 4: User Profile, Activity, Achievements, Preferences
 # =============================================================================
 
+# GET and PATCH on /users/me/profile/ return the identical body (PATCH ends by
+# delegating to get()), so both statuses point at this one schema.
+_USER_PROFILE_SCHEMA = {
+    'type': 'object',
+    'properties': {
+        'name': {'type': 'string', 'description': 'Public display name — never the email.'},
+        'username': {'type': 'string', 'description': 'Public @handle, e.g. "@someone".'},
+        'display_name': {'type': 'string', 'description': 'Raw stored value; empty string when unset.'},
+        'handle': {'type': 'string', 'nullable': True, 'description': 'Raw stored value, no leading "@".'},
+        'email': {'type': 'string', 'format': 'email', 'description': "Own email — this is the caller's own profile."},
+        'bio': {'type': 'string'},
+        'avatar_url': {'type': 'string', 'format': 'uri', 'nullable': True},
+        'member_since': {'type': 'string', 'format': 'date'},
+        'is_premium': {'type': 'boolean'},
+        'stats': {'type': 'object', 'properties': {
+            'jokes_saved': {'type': 'integer'},
+            'jokes_shared': {'type': 'integer'},
+            'collections': {'type': 'integer'},
+            'days_active': {'type': 'integer', 'description': 'Days since signup, not days with activity.'},
+        }},
+        # Top 4 tones across the user's positive interactions; percentages are
+        # rounded independently so they need not total exactly 100.
+        'humor_dna': {'type': 'array', 'items': {'type': 'object', 'properties': {
+            'type': {'type': 'string', 'description': 'Tone name.'},
+            'percentage': {'type': 'integer'},
+        }}},
+    },
+}
+
+_PREFERENCES_SCHEMA = {
+    'type': 'object',
+    'properties': {
+        'humor_types': {'type': 'array', 'items': {'type': 'string'},
+                        'description': 'Tone slugs.'},
+        'notifications': {'type': 'object', 'properties': {
+            'daily_joke': {'type': 'boolean'},
+            'trending_alerts': {'type': 'boolean'},
+            'collection_updates': {'type': 'boolean'},
+            'email_digest': {'type': 'boolean'},
+        }},
+        'privacy': {'type': 'object', 'properties': {
+            'public_profile': {'type': 'boolean'},
+            'show_activity': {'type': 'boolean'},
+            'share_analytics': {'type': 'boolean'},
+        }},
+        'theme': {'type': 'string'},
+        'notification_enabled': {'type': 'boolean'},
+        'notification_time': {'type': 'string', 'nullable': True,
+                              'description': 'HH:MM:SS, or null when unset.'},
+        'notification_days': {'type': 'array', 'items': {
+            'type': 'string', 'enum': ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'],
+        }},
+        'streak_saver_enabled': {'type': 'boolean'},
+        'onboarding_completed': {'type': 'boolean'},
+    },
+}
+
+# PUT and PATCH share one handler, so both are partial updates: only the keys
+# present in the body are touched. Any key outside this set is a 400, never a
+# silent no-op.
+_PREFERENCES_REQUEST_SCHEMA = {
+    'type': 'object',
+    'properties': {
+        'humor_types': {'type': 'array', 'items': {'type': 'string'},
+                        'description': 'Tone slugs; every slug must exist or the whole call 400s.'},
+        'notifications': {'type': 'object', 'properties': {
+            'daily_joke': {'type': 'boolean'},
+            'trending_alerts': {'type': 'boolean'},
+            'collection_updates': {'type': 'boolean'},
+            'email_digest': {'type': 'boolean'},
+        }},
+        'privacy': {'type': 'object', 'properties': {
+            'public_profile': {'type': 'boolean'},
+            'show_activity': {'type': 'boolean'},
+            'share_analytics': {'type': 'boolean'},
+        }},
+        'theme': {'type': 'string'},
+        'notification_enabled': {'type': 'boolean'},
+        'notification_time': {'type': 'string', 'nullable': True,
+                              'description': 'HH:MM or HH:MM:SS; null or "" clears it.'},
+        'notification_days': {'type': 'array', 'items': {
+            'type': 'string', 'enum': ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'],
+        }},
+        'streak_saver_enabled': {'type': 'boolean'},
+        'onboarding_completed': {'type': 'boolean'},
+    },
+    'additionalProperties': False,
+}
+
+# Field-error map returned for an unknown key or a malformed value.
+_PREFERENCES_ERROR_SCHEMA = {
+    'type': 'object',
+    'additionalProperties': {'type': 'array', 'items': {'type': 'string'}},
+}
+
+
 class UserProfileView(APIView):
     """GET/PATCH /users/me/profile/ — User profile with stats and humor DNA."""
 
     permission_classes = [IsAuthenticated]
 
+    @extend_schema(
+        description="The caller's own profile: identity, stats and derived humor DNA.",
+        responses={200: _USER_PROFILE_SCHEMA},
+    )
     def get(self, request):
         user = request.user
         profile = user.profile
@@ -1953,6 +2189,29 @@ class UserProfileView(APIView):
             'humor_dna': humor_dna,
         })
 
+    @extend_schema(
+        description=(
+            'Partial update of the caller\'s profile. Every field is optional; unknown '
+            'keys are ignored. Sending handle="" clears it. Responds with the full '
+            'profile body, identical to GET.'
+        ),
+        request={'application/json': {
+            'type': 'object',
+            'properties': {
+                'first_name': {'type': 'string'},
+                'last_name': {'type': 'string'},
+                'bio': {'type': 'string'},
+                'display_name': {'type': 'string', 'description': 'Truncated to 50 characters.'},
+                'handle': {'type': 'string', 'description': '3-30 chars [a-z0-9_]; "" clears it.'},
+            },
+        }},
+        responses={
+            200: _USER_PROFILE_SCHEMA,
+            400: {'type': 'object', 'properties': {
+                'handle': {'type': 'array', 'items': {'type': 'string'}},
+            }},
+        },
+    )
     def patch(self, request):
         user = request.user
         profile = user.profile
@@ -2010,6 +2269,25 @@ class UserActivityView(APIView):
 
     permission_classes = [IsAuthenticated]
 
+    @extend_schema(
+        description=(
+            "Merged, newest-first feed of the caller's own ratings, saves, favourites "
+            'and shares. Unpaginated — `limit` caps the merged result.'
+        ),
+        parameters=[
+            OpenApiParameter(name='limit', type=int, description='Max rows (default 10).'),
+        ],
+        responses={200: {'type': 'object', 'properties': {
+            'results': {'type': 'array', 'items': {'type': 'object', 'properties': {
+                # Prefixed composite id (e.g. "rating_12", "save_3"), not an integer:
+                # rows come from four different tables.
+                'id': {'type': 'string'},
+                'type': {'type': 'string', 'enum': ['like', 'dislike', 'save', 'share']},
+                'description': {'type': 'string', 'description': 'Pre-rendered human copy.'},
+                'created_at': {'type': 'string', 'format': 'date-time'},
+            }}},
+        }}},
+    )
     def get(self, request):
         limit = int(request.query_params.get('limit', 10))
         activities = []
@@ -2061,8 +2339,29 @@ class UserAchievementsView(APIView):
 
     permission_classes = [IsAuthenticated]
 
+    @extend_schema(
+        description=(
+            'Every achievement in the catalogue with the caller\'s unlock state. '
+            'Reading this endpoint also (idempotently) re-evaluates the caller\'s '
+            'achievements — this app has no workers, so the read is the trigger.'
+        ),
+        responses={200: {'type': 'object', 'properties': {
+            'results': {'type': 'array', 'items': {'type': 'object', 'properties': {
+                'id': {'type': 'string', 'description': 'Achievement slug.'},
+                'title': {'type': 'string'},
+                'description': {'type': 'string'},
+                'icon': {'type': 'string'},
+                'unlocked': {'type': 'boolean'},
+                'unlocked_at': {'type': 'string', 'format': 'date-time', 'nullable': True},
+            }}},
+        }}},
+    )
     def get(self, request):
         user = request.user
+        # Evaluate inline: this project has no workers/cron, so a read is the
+        # trigger. Idempotent and scoped to the requesting user — see
+        # jokes/achievements.py.
+        evaluate_achievements_for(user)
         unlocked = dict(
             UserAchievement.objects.filter(user=user).values_list('achievement__slug', 'unlocked_at')
         )
@@ -2086,6 +2385,20 @@ class UserPreferencesView(APIView):
 
     permission_classes = [IsAuthenticated]
 
+    #: Every key this endpoint understands. Anything else is a 400 rather than a
+    #: silent no-op -- the onboarding flow spent months POSTing six fields that
+    #: were quietly dropped behind a 200 OK, which is exactly the failure mode a
+    #: whitelist prevents.
+    ALLOWED_KEYS = frozenset({
+        'humor_types', 'notifications', 'privacy', 'theme',
+        'notification_enabled', 'notification_time', 'notification_days',
+        'streak_saver_enabled', 'onboarding_completed',
+    })
+
+    @extend_schema(
+        description='Composite preferences read from UserPreference + UserProfile.',
+        responses={200: _PREFERENCES_SCHEMA},
+    )
     def get(self, request):
         pref = request.user.preference
         profile = request.user.profile
@@ -2103,11 +2416,37 @@ class UserPreferencesView(APIView):
                 'share_analytics': profile.share_analytics,
             },
             'theme': profile.theme,
+            # The daily ritual chosen during onboarding. Read back so the client
+            # can show what it actually saved.
+            'notification_enabled': pref.notification_enabled,
+            'notification_time': (
+                pref.notification_time.isoformat() if pref.notification_time else None
+            ),
+            'notification_days': pref.notification_days or [],
+            'streak_saver_enabled': pref.streak_saver_enabled,
+            'onboarding_completed': pref.onboarding_completed,
         })
 
+    @extend_schema(
+        description=(
+            'Update preferences. Despite the verb this is a PARTIAL update — identical '
+            'to PATCH — so omitted keys keep their current value. Responds with the full '
+            'preferences body, identical to GET.'
+        ),
+        request={'application/json': _PREFERENCES_REQUEST_SCHEMA},
+        responses={200: _PREFERENCES_SCHEMA, 400: _PREFERENCES_ERROR_SCHEMA},
+    )
     def put(self, request):
         return self._update(request)
 
+    @extend_schema(
+        description=(
+            'Partial update of preferences. Responds with the full preferences body, '
+            'identical to GET.'
+        ),
+        request={'application/json': _PREFERENCES_REQUEST_SCHEMA},
+        responses={200: _PREFERENCES_SCHEMA, 400: _PREFERENCES_ERROR_SCHEMA},
+    )
     def patch(self, request):
         return self._update(request)
 
@@ -2116,11 +2455,88 @@ class UserPreferencesView(APIView):
         profile = request.user.profile
         data = request.data
 
-        # Update humor_types
+        # Shape first: `set(data)` over a JSON array raises TypeError and turns a
+        # malformed body into a 500. A bad request is the client's error, not the
+        # server's.
+        if not isinstance(data, dict):
+            return Response(
+                {'detail': 'Expected a JSON object.'},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        unknown = sorted(set(data) - self.ALLOWED_KEYS)
+        if unknown:
+            return Response(
+                {k: ['Unrecognized preference field.'] for k in unknown},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        pref_dirty = False
+
+        # Update humor_types (TONE slugs).
+        # A slug that resolves to no Tone is rejected instead of applied: the
+        # old code ran .set() on the empty match and ERASED the user's real
+        # preferences with a 200 OK. get_personalized_joke reads these tones, so
+        # that silent wipe degraded personalization for anyone who onboarded.
         if 'humor_types' in data:
             tone_slugs = data['humor_types']
-            tones = Tone.objects.filter(slug__in=tone_slugs)
+            if not isinstance(tone_slugs, (list, tuple)):
+                return Response(
+                    {'humor_types': ['Expected a list of tone slugs.']},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
+            tones = list(Tone.objects.filter(slug__in=tone_slugs))
+            missing = sorted(set(tone_slugs) - {t.slug for t in tones})
+            if missing:
+                return Response(
+                    {'humor_types': [f'Unknown tone slug(s): {", ".join(missing)}.']},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
             pref.preferred_tones.set(tones)
+
+        # Daily-ritual fields chosen during onboarding. These were accepted and
+        # dropped; each now persists (or 400s) so the client can trust the 200.
+        if 'notification_enabled' in data:
+            pref.notification_enabled = bool(data['notification_enabled'])
+            pref_dirty = True
+
+        if 'notification_time' in data:
+            raw = data['notification_time']
+            if raw in (None, ''):
+                pref.notification_time = None
+            else:
+                parsed = parse_time(str(raw))
+                if parsed is None:
+                    return Response(
+                        {'notification_time': ['Expected HH:MM or HH:MM:SS.']},
+                        status=status.HTTP_400_BAD_REQUEST,
+                    )
+                pref.notification_time = parsed
+            pref_dirty = True
+
+        if 'notification_days' in data:
+            days = data['notification_days']
+            valid = {'mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'}
+            if not isinstance(days, (list, tuple)) or not set(days) <= valid:
+                return Response(
+                    {'notification_days': [
+                        'Expected a list of day codes: mon,tue,wed,thu,fri,sat,sun.',
+                    ]},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
+            pref.notification_days = list(days)
+            pref_dirty = True
+
+        if 'streak_saver_enabled' in data:
+            pref.streak_saver_enabled = bool(data['streak_saver_enabled'])
+            pref_dirty = True
+
+        if 'onboarding_completed' in data:
+            pref.onboarding_completed = bool(data['onboarding_completed'])
+            pref_dirty = True
+
+        if pref_dirty:
+            pref.save()
 
         # Update notifications
         if 'notifications' in data:
@@ -2155,6 +2571,21 @@ class TagsTrendingView(APIView):
 
     permission_classes = [AllowAny]
 
+    @extend_schema(
+        description=(
+            'Top 10 tones by upvotes received in the last 7 days. Unpaginated. '
+            'NOTE: `growth_percent` is currently always 0 here — it is a placeholder '
+            'kept for shape-compatibility with /tags/rising/, which computes it for real.'
+        ),
+        responses={200: {'type': 'object', 'properties': {
+            'results': {'type': 'array', 'items': {'type': 'object', 'properties': {
+                'name': {'type': 'string'},
+                'slug': {'type': 'string'},
+                'count': {'type': 'integer'},
+                'growth_percent': {'type': 'integer'},
+            }}},
+        }}},
+    )
     def get(self, request):
         from datetime import timedelta
         since = timezone.now() - timedelta(days=7)
@@ -2180,6 +2611,19 @@ class TagsRisingView(APIView):
 
     permission_classes = [AllowAny]
 
+    @extend_schema(
+        description=(
+            'Top 10 context tags by week-over-week upvote growth. Unpaginated. '
+            'Unlike /tags/trending/ these rows carry NO `count` field.'
+        ),
+        responses={200: {'type': 'object', 'properties': {
+            'results': {'type': 'array', 'items': {'type': 'object', 'properties': {
+                'name': {'type': 'string'},
+                'slug': {'type': 'string'},
+                'growth_percent': {'type': 'integer'},
+            }}},
+        }}},
+    )
     def get(self, request):
         from datetime import timedelta
         now = timezone.now()
@@ -2208,6 +2652,30 @@ class TopJokestersView(APIView):
 
     permission_classes = [AllowAny]
 
+    @extend_schema(
+        description='Creators ranked by published-joke count. Unpaginated.',
+        parameters=[
+            OpenApiParameter(name='period', type=str,
+                             description='all_time (default) | week | month; anything else = last 365 days.'),
+            OpenApiParameter(name='limit', type=int, description='Max rows (default 5).'),
+        ],
+        responses={200: {'type': 'object', 'properties': {
+            'results': {'type': 'array', 'items': {'type': 'object', 'properties': {
+                'id': {'type': 'integer'},
+                'name': {'type': 'string'},
+                'username': {'type': 'string', 'description': 'Public @handle.'},
+                # Always null today: this endpoint does not resolve avatars.
+                'avatar_url': {'type': 'string', 'format': 'uri', 'nullable': True},
+                'punchline_count': {'type': 'integer'},
+                'rank': {'type': 'integer', 'description': '1-based position in this response.'},
+                'top_vibes': {'type': 'array', 'items': {'type': 'object', 'properties': {
+                    'slug': {'type': 'string'},
+                    'label': {'type': 'string'},
+                    'icon': {'type': 'string'},
+                }}, 'description': "The user's 2 most recently chosen vibes."},
+            }}},
+        }}},
+    )
     def get(self, request):
         from django.contrib.auth import get_user_model
         User = get_user_model()
@@ -2259,6 +2727,15 @@ class ThemesPopularView(APIView):
 
     permission_classes = [AllowAny]
 
+    @extend_schema(
+        description=(
+            'Top 10 context-tag names by total joke count. NOTE: `results` is an array '
+            'of plain strings (names only) — not objects, and with no slug.'
+        ),
+        responses={200: {'type': 'object', 'properties': {
+            'results': {'type': 'array', 'items': {'type': 'string'}},
+        }}},
+    )
     def get(self, request):
         names = list(
             ContextTag.objects.annotate(joke_count=Count('jokes'))
@@ -2357,6 +2834,21 @@ class UserBlockView(APIView):
 
     permission_classes = [IsAuthenticated]
 
+    @extend_schema(
+        description=(
+            'Block a user. Idempotent — always 201, even if the block already existed. '
+            'Also severs any follow relationship in both directions. No request body.'
+        ),
+        request=None,
+        responses={
+            201: {'type': 'object', 'properties': {
+                'status': {'type': 'string', 'enum': ['blocked']},
+            }},
+            400: {'type': 'object', 'properties': {'detail': {'type': 'string'}},
+                  'description': 'Attempted to block yourself.'},
+            404: {'type': 'object', 'properties': {'detail': {'type': 'string'}}},
+        },
+    )
     def post(self, request, user_id):
         from django.contrib.auth import get_user_model
         User = get_user_model()
@@ -2373,6 +2865,14 @@ class UserBlockView(APIView):
                      target_type='user', target_id=str(user_id))
         return Response({'status': 'blocked'}, status=status.HTTP_201_CREATED)
 
+    @extend_schema(
+        description=(
+            'Unblock a user. Idempotent — 204 with no body even if no block existed, '
+            'and no 404 for an unknown user_id. Does not restore the severed follows.'
+        ),
+        request=None,
+        responses={204: None},
+    )
     def delete(self, request, user_id):
         UserBlock.objects.filter(blocker=request.user, blocked_id=user_id).delete()
         from audit.services import record_audit
@@ -2381,11 +2881,35 @@ class UserBlockView(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
+# Shape of one follows.serializers.PublicUserSerializer row. Spelled out rather
+# than referencing the serializer because its fields are SerializerMethodFields
+# with no return-type hints — avatar_url in particular is nullable and would
+# otherwise be typed as a required string.
+_PUBLIC_USER_SCHEMA = {
+    'type': 'object',
+    'properties': {
+        'id': {'type': 'integer'},
+        'name': {'type': 'string'},
+        'username': {'type': 'string', 'description': 'Public @handle.'},
+        'avatar_url': {'type': 'string', 'format': 'uri', 'nullable': True},
+    },
+}
+
+
 class MyBlocksView(APIView):
     """GET /users/me/blocks/ — the users I've blocked (for self-management UI)."""
 
     permission_classes = [IsAuthenticated]
 
+    @extend_schema(
+        description=(
+            'Users the caller has blocked (outbound blocks only — not people who '
+            'blocked the caller). Unpaginated.'
+        ),
+        responses={200: {'type': 'object', 'properties': {
+            'results': {'type': 'array', 'items': _PUBLIC_USER_SCHEMA},
+        }}},
+    )
     def get(self, request):
         from django.contrib.auth import get_user_model
 
@@ -2401,6 +2925,30 @@ class UserAccountDeleteView(APIView):
 
     permission_classes = [IsAuthenticated]
 
+    @extend_schema(
+        description=(
+            'Irreversible hard delete of the caller\'s account, gated on re-auth. '
+            'Accounts with a usable password must send `password`; OAuth accounts '
+            '(no usable password) must instead send confirm="DELETE". Outstanding '
+            'refresh tokens are blacklisted and uploaded media is purged.'
+        ),
+        request={'application/json': {
+            'type': 'object',
+            'properties': {
+                'password': {'type': 'string', 'format': 'password',
+                             'description': 'Required for password accounts.'},
+                'confirm': {'type': 'string', 'enum': ['DELETE'],
+                            'description': 'Required for OAuth / passwordless accounts.'},
+            },
+        }},
+        responses={
+            204: None,
+            400: {'type': 'object', 'properties': {
+                'password': {'type': 'array', 'items': {'type': 'string'}},
+                'confirm': {'type': 'array', 'items': {'type': 'string'}},
+            }},
+        },
+    )
     def delete(self, request):
         user = request.user
         # Re-authentication gate — must happen BEFORE any mutation
@@ -2442,20 +2990,43 @@ class UserAccountDeleteView(APIView):
                 for ot in OutstandingToken.objects.filter(user=user):
                     BlacklistedToken.objects.get_or_create(token=ot)
 
-            # 2. Media lifecycle: remove the user's uploaded assets from
-            #    storage explicitly — the DB CASCADE alone would orphan the
-            #    files (MediaAsset.owner is CASCADE but delete_with_files()
-            #    is the only path that also deletes the storage objects).
+            # 2-3. Media + avatar lifecycle. Object storage is NOT transactional,
+            #    so these deletes are DEFERRED to transaction.on_commit(): if any
+            #    later step raises, the DB rolls back and the account survives —
+            #    and the files must survive with it. Doing them inline destroyed
+            #    the user's uploads on a failed erasure, leaving them with all
+            #    their personal data and none of their content.
+            #    The DB rows still go via the CASCADE on user.delete(); only the
+            #    storage objects are removed after the commit succeeds.
+            #    The asset ROWS are still deleted here, in-transaction: step 5
+            #    below takes down media jokes left empty by that cascade
+            #    (media__isnull=True), so deferring the row deletion too would
+            #    silently stop emptied jokes from being removed.
+            _files_to_purge = []
             for asset in MediaAsset.objects.filter(owner=user):
-                asset.delete_with_files()
-
-            # 3. Delete avatar file from the storage backend (safe/idempotent)
+                _files_to_purge.extend(
+                    ff for ff in (asset.file, asset.poster) if ff
+                )
+                asset.delete()  # row now; its file is purged after commit
             profile = UserProfile.objects.filter(user=user).first()
             if profile and profile.avatar:
-                try:
-                    profile.avatar.delete(save=False)
-                except Exception:
-                    pass  # Missing file must not block account deletion
+                _files_to_purge.append(profile.avatar)
+
+            def _purge_storage(field_files=_files_to_purge):
+                import logging as _purge_logging
+                _purge_log = _purge_logging.getLogger('jokesfor.audit')
+                for field_file in field_files:
+                    try:
+                        field_file.delete(save=False)
+                    except Exception:
+                        # A missing/unreachable object must not leave the account
+                        # half-deleted — the DB erasure has already committed.
+                        _purge_log.warning(
+                            'account_delete: storage purge failed',
+                            extra={'file': getattr(field_file, 'name', '?')},
+                        )
+
+            transaction.on_commit(_purge_storage)
 
             # 4. Purge email records.
             #    EmailMessageLog.user is SET_NULL, so its rows SURVIVE user.delete()
@@ -2481,7 +3052,20 @@ class UserAccountDeleteView(APIView):
                 media__isnull=True, is_removed=False,
             ).update(is_removed=True, removed_at=timezone.now())
 
-            # 6. Cascade-delete the user (removes all FK=CASCADE rows)
+            # 6. De-identify this user's audit trail BEFORE user.delete() tries to.
+            #    AuditLog.actor is SET_NULL, so the cascade issues an UPDATE against
+            #    audit_auditlog — which the model's append_only pgtrigger blocks,
+            #    making erasure impossible for anyone who has ever produced an audit
+            #    row (i.e. anyone who has logged in). The rows must SURVIVE (they are
+            #    the compliance trail) but must stop pointing at a person;
+            #    actor_email_hash is already stored so events stay correlatable.
+            import pgtrigger
+
+            from audit.models import AuditLog
+            with pgtrigger.ignore('audit.AuditLog:append_only'):
+                AuditLog.objects.filter(actor=user).update(actor=None)
+
+            # 7. Cascade-delete the user (removes all FK=CASCADE rows)
             user.delete()
 
         # Record audit AFTER delete; actor=None (user gone), hash preserved
@@ -2501,6 +3085,18 @@ class DataExportView(APIView):
 
     permission_classes = [IsAuthenticated]
 
+    @extend_schema(
+        description=(
+            'GDPR data export. Responds with a ZIP attachment (NOT JSON) containing a '
+            'single file, jokes-for-data-export.json, holding the export object: '
+            'export_meta, account, profile, preferences, collections, saved_jokes, '
+            'favorites, ratings, reactions, daily_jokes, views (capped at 5000), '
+            'streak, streak_days, submissions, media_assets, reports_filed, blocks, '
+            'achievements, vibes, pack_progress, mystery_rolls, share_events and '
+            'email_logs. Built synchronously in-request.'
+        ),
+        responses={(200, 'application/zip'): OpenApiTypes.BINARY},
+    )
     def get(self, request):
         u = request.user
         data = {
@@ -2682,6 +3278,10 @@ class UserVibesView(APIView):
     """
     permission_classes = [IsAuthenticated]
 
+    @extend_schema(
+        description="The caller's selected vibes, most recently chosen first. Unpaginated.",
+        responses={200: UserVibeSerializer(many=True)},
+    )
     def get(self, request):
         qs = (
             UserVibe.objects.filter(user=request.user)
@@ -2702,10 +3302,23 @@ class UserVibesView(APIView):
 
         with transaction.atomic():
             UserVibe.objects.filter(user=request.user).delete()
-            vibes = list(Vibe.objects.filter(slug__in=slugs, is_active=True))
+            vibes = list(
+                Vibe.objects.filter(slug__in=slugs, is_active=True)
+                .prefetch_related('categories', 'themes')
+            )
             UserVibe.objects.bulk_create(
                 [UserVibe(user=request.user, vibe=v) for v in vibes]
             )
+
+            # Project the selection onto the axes that actually drive serving.
+            # A Vibe is a filter recipe over Format/Theme/Category, and
+            # get_personalized_joke() reads preferred_tones/preferred_contexts —
+            # which nothing used to populate, so picking vibes changed nothing
+            # about what the reader was served. UserVibe alone is inert: it is
+            # read by its own CRUD view and the admin, and by no serving path.
+            pref, _ = UserPreference.objects.get_or_create(user=request.user)
+            pref.preferred_tones.set({t for v in vibes for t in v.categories.all()})
+            pref.preferred_contexts.set({c for v in vibes for c in v.themes.all()})
 
         qs = (
             UserVibe.objects.filter(user=request.user)
@@ -2930,6 +3543,18 @@ class StreakFreezeView(APIView):
     """Manual freeze for today — vacation-mode override."""
     permission_classes = [IsAuthenticated]
 
+    @extend_schema(
+        description=(
+            "Spend one freeze day on today so the streak survives a missed read. "
+            'Takes no request body. Returns the updated streak. 400 when no freeze '
+            'days remain this month, or when today already counts as read.'
+        ),
+        request=None,
+        responses={
+            200: StreakSerializer,
+            400: {'type': 'object', 'properties': {'detail': {'type': 'string'}}},
+        },
+    )
     def post(self, request):
         from django.utils import timezone
         streak, _ = Streak.objects.get_or_create(user=request.user)
@@ -2961,6 +3586,17 @@ class StreakFreezeRemoveView(APIView):
     """Undo a freeze used today."""
     permission_classes = [IsAuthenticated]
 
+    @extend_schema(
+        description=(
+            "Undo today's freeze and hand the freeze day back. Takes no request body. "
+            'Returns the updated streak. 400 when today was not frozen.'
+        ),
+        request=None,
+        responses={
+            200: StreakSerializer,
+            400: {'type': 'object', 'properties': {'detail': {'type': 'string'}}},
+        },
+    )
     def post(self, request):
         from django.utils import timezone
         today = timezone.now().date()
@@ -3044,6 +3680,25 @@ class JokePackProgressView(APIView):
     """
     permission_classes = [IsAuthenticated]
 
+    @extend_schema(
+        description=(
+            'Record how far the caller has read into a published pack. Sending an '
+            'entry_order at or past the last entry marks the pack complete; sending a '
+            'lower one un-completes it. 0 restarts.'
+        ),
+        request=JokePackProgressUpdateSerializer,
+        responses={
+            200: {'type': 'object', 'properties': {
+                'last_read_entry': {'type': 'integer'},
+                'completed_at': {'type': 'string', 'format': 'date-time', 'nullable': True},
+                'is_complete': {'type': 'boolean'},
+            }},
+            400: {'type': 'object', 'properties': {
+                'entry_order': {'type': 'array', 'items': {'type': 'string'}},
+            }},
+            404: {'type': 'object', 'properties': {'detail': {'type': 'string'}}},
+        },
+    )
     def post(self, request, slug):
         pack = get_object_or_404(JokePack, slug=slug, is_published=True)
         ser = JokePackProgressUpdateSerializer(data=request.data)
