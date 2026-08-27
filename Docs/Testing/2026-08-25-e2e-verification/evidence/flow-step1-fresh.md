@@ -1,0 +1,92 @@
+- generic [ref=f8e2]:
+  - generic [ref=f8e215]:
+    - banner [ref=f8e216]:
+      - link "JokesFor" [ref=f8e217] [cursor=pointer]:
+        - /url: /
+      - button "Skip" [ref=f8e223] [cursor=pointer]
+    - main [ref=f8e227]:
+      - generic [ref=f8e228]: Step 1 of 3 · Vibes
+      - heading [level=2] [ref=f8e229]:
+        - text: What's your
+        - emphasis [ref=f8e230]: flavor
+        - text: of funny?
+      - paragraph [ref=f8e231]: Pick at least 3. We'll tune your daily joke around these — and you can always change them later.
+      - generic [ref=f8e232]:
+        - generic [ref=f8e233]:
+          - button "💼 Office Meetings · Slack" [ref=f8e234] [cursor=pointer]:
+            - generic [ref=f8e235]: 💼
+            - generic [ref=f8e236]:
+              - generic [ref=f8e237]: Office
+              - generic [ref=f8e238]: Meetings · Slack
+          - button "🧓 Dad jokes Eye-roll guaranteed" [ref=f8e239] [cursor=pointer]:
+            - generic [ref=f8e240]: 🧓
+            - generic [ref=f8e241]:
+              - generic [ref=f8e242]: Dad jokes
+              - generic [ref=f8e243]: Eye-roll guaranteed
+          - button "🎯 Puns Wordplay supreme" [ref=f8e244] [cursor=pointer]:
+            - generic [ref=f8e245]: 🎯
+            - generic [ref=f8e246]:
+              - generic [ref=f8e247]: Puns
+              - generic [ref=f8e248]: Wordplay supreme
+          - button "🌑 Dark humor Black coffee, no sugar" [ref=f8e249] [cursor=pointer]:
+            - generic [ref=f8e250]: 🌑
+            - generic [ref=f8e251]:
+              - generic [ref=f8e252]: Dark humor
+              - generic [ref=f8e253]: Black coffee, no sugar
+          - button "🧪 Nerd Physics · code · maths" [ref=f8e254] [cursor=pointer]:
+            - generic [ref=f8e255]: 🧪
+            - generic [ref=f8e256]:
+              - generic [ref=f8e257]: Nerd
+              - generic [ref=f8e258]: Physics · code · maths
+          - button "🌀 Surreal Logic optional" [ref=f8e259] [cursor=pointer]:
+            - generic [ref=f8e260]: 🌀
+            - generic [ref=f8e261]:
+              - generic [ref=f8e262]: Surreal
+              - generic [ref=f8e263]: Logic optional
+          - button "🌼 Wholesome For the group chat" [ref=f8e264] [cursor=pointer]:
+            - generic [ref=f8e265]: 🌼
+            - generic [ref=f8e266]:
+              - generic [ref=f8e267]: Wholesome
+              - generic [ref=f8e268]: For the group chat
+          - button "👀 Observational Adulthood is…" [ref=f8e269] [cursor=pointer]:
+            - generic [ref=f8e270]: 👀
+            - generic [ref=f8e271]:
+              - generic [ref=f8e272]: Observational
+              - generic [ref=f8e273]: Adulthood is…
+          - button "⚡ One-liners Hit, run, save" [ref=f8e274] [cursor=pointer]:
+            - generic [ref=f8e275]: ⚡
+            - generic [ref=f8e276]:
+              - generic [ref=f8e277]: One-liners
+              - generic [ref=f8e278]: Hit, run, save
+          - button "🍷 Date night Charm a stranger" [ref=f8e279] [cursor=pointer]:
+            - generic [ref=f8e280]: 🍷
+            - generic [ref=f8e281]:
+              - generic [ref=f8e282]: Date night
+              - generic [ref=f8e283]: Charm a stranger
+          - button "🧃 Kids OK School-pickup safe" [ref=f8e284] [cursor=pointer]:
+            - generic [ref=f8e285]: 🧃
+            - generic [ref=f8e286]:
+              - generic [ref=f8e287]: Kids OK
+              - generic [ref=f8e288]: School-pickup safe
+          - button "🍌 Absurd Mostly fruit" [ref=f8e289] [cursor=pointer]:
+            - generic [ref=f8e290]: 🍌
+            - generic [ref=f8e291]:
+              - generic [ref=f8e292]: Absurd
+              - generic [ref=f8e293]: Mostly fruit
+        - generic [ref=f8e294]:
+          - generic [ref=f8e295]: 0 picked
+          - generic [ref=f8e296]: Pick at least 3 to continue.
+    - contentinfo [ref=f8e297]:
+      - generic [ref=f8e298]:
+        - generic [ref=f8e299]: You can change this anytime.
+        - button "Continue" [disabled] [ref=f8e300]
+  - region "Cookie consent" [ref=f8e59]:
+    - generic [ref=f8e60]:
+      - text: We use essential cookies to run the site. With your consent we also use analytics cookies to improve your experience.
+      - link "Cookie Policy" [ref=f8e61] [cursor=pointer]:
+        - /url: /cookie-policy
+    - generic [ref=f8e62]:
+      - button "Reject" [ref=f8e63] [cursor=pointer]
+      - button "Accept" [ref=f8e64] [cursor=pointer]
+  - region "Notifications"
+  - button "Open Tanstack query devtools" [ref=f8e115] [cursor=pointer]

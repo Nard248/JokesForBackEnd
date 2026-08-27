@@ -1,0 +1,56 @@
+[
+ {
+  "id": "T3-O01",
+  "desc": "the share page always renders crawler metadata and bounces humans client-side",
+  "expected": "GIVEN a public tier_1 joke, WHEN /jokes/<id>/share/ is fetched, THEN a 200 HTML shell is returned carrying per-joke og:title/og:description/og:url/og:image, twitter:card=summary_large_image, <link rel=canonical> to the SPA joke URL and a schema.org CreativeWork JSON-LD block; the human bounce is a <meta http-equiv=\"refresh\"> plus location.replace() rather than a 3xx. NOTE: jokes.views.joke_share_page does NOT branch on User-Agent \u2014 bot and browser get byte-identical responses; scrapers simply ignore the refresh/JS while browsers act on it.",
+  "sanity": "SENSIBLE",
+  "ok": true,
+  "actual": "bot UA -> 200 (4174B), browser UA -> 200 (4174B), identical=True | og:title='T3SETUP1787654282 why does the share page need a regression\u2026' | og:description='T3SETUP1787654282 why does the share page need a regression test?' | og:image='http://localhost:8010/media/share-cards/joke-500_UoCohJf.png' | og:url='http://localhost:5273/jokes/500' | twitter:card='summary_large_image' | canonical='http://localhost:5273/jokes/500' | json-ld={\"@context\": \"https://schema.org\", \"@type\": \"CreativeWork\", \"name\": \"T3SETUP1787654282 why does the share page need a regression\\u2026\", \"headline\": \"T3SETUP1787654282 why does the share page need a regression\\u2026\", \"url\": \"http://localhost:5273/jokes/500\", \"author\": {\"@type\": \"Organization\", \"name\": \"JokesFor\"}, \"image\": \"http://localhost:8010/media/share-cards/joke-500_UoCohJf.png\"} | meta-refresh='http://localhost:5273/jokes/500' | js location.replace=True",
+  "note": "No UA sniffing exists; \"redirect for humans\" is purely client-side. A crawler that executes JS (Googlebot does) will also follow it to the SPA."
+ },
+ {
+  "id": "T3-O02",
+  "desc": "the punchline never reaches og:title / og:description / <title> / JSON-LD, and a tier-gated share page exposes no content at all",
+  "expected": "GIVEN a two-part joke, WHEN its share page is scraped, THEN the teaser used for <title>, og:title, og:description, twitter:* and the JSON-LD name/headline is joke.setup ONLY \u2014 the punchline appears in none of them (the spoiler regression fixed in 56e4945 stays fixed). AND GIVEN a tier_2 (mature) joke fetched by an anonymous/minor requester, THEN share_redirect.html is rendered: robots=noindex, no og:description, no og:image, no JSON-LD, no joke text.",
+  "sanity": "SENSIBLE",
+  "ok": true,
+  "actual": "punchline in og:title/description = False; in <title> = False; in JSON-LD = False | tier_2 joke 494 -> HTTP 200, len=1466, og:description=None, og:image=None, json-ld present=False, robots='noindex'",
+  "note": ""
+ },
+ {
+  "id": "T3-O02b",
+  "desc": "the share page body serves the FULL joke text (punchline included) to anyone, bypassing the server-side paywall strip",
+  "expected": "GIVEN the paywall strips the punchline SERVER-SIDE for a free user over the 10-reads/day cap (JokeSerializer.to_representation), WHEN that same joke is fetched at the public, unauthenticated /jokes/<id>/share/ URL, THEN jokes/templates/jokes/share.html renders <p class=\"joke-text\">{{ joke.text }}</p> \u2014 and Joke.text for a setup/anti/knock joke is the backfilled \"setup punchline\" (or the joined knock lines), i.e. the complete payoff. The share page applies only the content_tier gate, never paywall_state, so one anonymous GET returns what the API just refused.",
+  "sanity": "DEFECT-EXPECTED",
+  "ok": true,
+  "actual": "distinct reads today= 10 | API GET /jokes/500/ as capped free user -> is_locked=True, punchline=None, text='T3SETUP1787654282 why does the share page need a regression ' || anonymous GET /jokes/500/share/ -> 200, <p class=\"joke-text\"> = 'T3SETUP1787654282 why does the share page need a regression test? T3PUNCH1787654282 because the punchline is the whole product.', contains punchline = True",
+  "note": "Also an SEO spoiler: the body text a crawler indexes still contains the punchline even though 56e4945 scrubbed it from the meta tags."
+ },
+ {
+  "id": "T3-O03",
+  "desc": "removed and non-existent share pages are indistinguishable 404s; a tier-gated one is a content-free 200 redirect shell",
+  "expected": "GIVEN /jokes/<id>/share/, WHEN the joke is removed, THEN get_object_or_404 on Joke.objects (whose manager already excludes is_removed) returns a bare 404 \u2014 byte-identical to the 404 for an id that never existed, so a scraper cannot tell \"taken down\" from \"never existed\". WHEN the joke merely exceeds the requester's content tier, THEN it is NOT a 404 (that would be a dead link for a real joke) but a 200 content-free share_redirect.html shell.",
+  "sanity": "SENSIBLE",
+  "ok": true,
+  "actual": "removed joke 499 -> 404 (3094B) | non-existent 99999999 -> 404 (3109B) | tier_2 joke 494 -> 200 (1466B, content-free shell)",
+  "note": "The two 404 bodies are Django DEBUG pages locally; in production DEBUG=False makes them the same generic 404. Neither carries joke content."
+ },
+ {
+  "id": "T3-O04",
+  "desc": "GET /sitemap.xml is valid sitemap XML of crawlable FRONTEND routes with gated routes excluded",
+  "expected": "GIVEN an anonymous crawler, WHEN it GETs /sitemap.xml, THEN 200 application/xml with a sitemaps.org <urlset>; every <loc> is an absolute FRONTEND_URL route (never the backend host); the static section is exactly the 7 public marketing/legal routes; jokes are the tier_1 non-removed set an anonymous API caller can actually fetch (tier_2 excluded); creator and pack routes follow the same anonymous-visibility rule; and no authenticated / gated route (/library, /onboarding, /create, /settings, /inbox, ...) appears.",
+  "sanity": "SENSIBLE",
+  "ok": true,
+  "actual": "HTTP 200 ct=application/xml bytes=26577 | urls=326 | statics=['/', '/childrens-privacy', '/cookie-policy', '/daily', '/privacy', '/terms', '/trending'] | jokes=311 | creators=4 | packs=4 | gated routes present=[] | new joke 500 listed=True | tier_2 joke 494 listed=False",
+  "note": ""
+ },
+ {
+  "id": "T3-O07",
+  "desc": "CORS preflight from the SPA origin is allowed with credentials; a foreign origin is not",
+  "expected": "GIVEN CORS_ALLOWED_ORIGINS contains the SPA origin and CORS_ALLOW_CREDENTIALS is on, WHEN the browser sends OPTIONS with Origin: http://localhost:5273 and Access-Control-Request-Method: POST, THEN the response echoes Access-Control-Allow-Origin: http://localhost:5273, Access-Control-Allow-Credentials: true and allows the x-csrftoken header the cookie-JWT CSRF scheme depends on; WHEN the Origin is not allow-listed, THEN NO Access-Control-Allow-Origin header is returned and the browser blocks the request.",
+  "sanity": "SENSIBLE",
+  "ok": true,
+  "actual": "allowed origin -> 200 ACAO='http://localhost:5273' ACAC='true' ACAH='accept, authorization, content-type, user-agent, x-csrftoken, x-requested-with, x-csrftoken' ACAM='DELETE, GET, OPTIONS, PATCH, POST, PUT' || foreign origin -> 200 ACAO=None",
+  "note": ""
+ }
+]

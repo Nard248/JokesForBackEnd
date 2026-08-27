@@ -1,0 +1,34 @@
+- generic [ref=f12e2]:
+  - generic [ref=f12e3]:
+    - banner [ref=f12e4]:
+      - generic [ref=f12e5]:
+        - link "JokesFor" [ref=f12e6] [cursor=pointer]:
+          - /url: /
+        - navigation "Main" [ref=f12e8]:
+          - link "Today" [ref=f12e9] [cursor=pointer]:
+            - /url: /flow-canvas
+          - link "Explore" [ref=f12e10] [cursor=pointer]:
+            - /url: /explore
+          - link "Search" [ref=f12e11] [cursor=pointer]:
+            - /url: /search
+          - link "Trending" [ref=f12e12] [cursor=pointer]:
+            - /url: /trending
+          - link "Daily" [ref=f12e13] [cursor=pointer]:
+            - /url: /daily
+          - link "Favorites" [ref=f12e14] [cursor=pointer]:
+            - /url: /favorites
+          - link "Library" [ref=f12e15] [cursor=pointer]:
+            - /url: /library
+      - generic [ref=f12e16]:
+        - link "Submit a joke" [ref=f12e18] [cursor=pointer]:
+          - /url: /create
+        - button "Notifications" [ref=f12e21] [cursor=pointer]
+        - button "Account menu" [ref=f12e26] [cursor=pointer]: P
+    - main [ref=f12e27]:
+      - generic [ref=f12e28]:
+        - link "Back" [ref=f12e29] [cursor=pointer]:
+          - /url: /create
+        - heading "Pick a format" [level=1] [ref=f12e32]
+        - paragraph [ref=f12e33]: Choose the joke style that fits your idea best.
+  - region "Notifications"
+  - button "Open Tanstack query devtools" [ref=f12e91] [cursor=pointer]

@@ -1,0 +1,160 @@
+"""T3-P — paywall, tiers, search. The monetization core."""
+import sys, json, os, subprocess
+sys.path.insert(0, "/private/tmp/claude-501/-Users-narekmeloyan-PycharmProjects-JokesForProject/2b1dc348-b702-49ec-ad6c-5222c7ee10fc/scratchpad/t3")
+from harness import *
+
+def shell(code):
+    env = dict(os.environ, DATABASE_URL='', DB_NAME='jokesfor', DB_USER='postgres',
+               DB_PASSWORD='6969', DB_HOST='localhost', DB_PORT='5432', DEBUG='True',
+               DYLD_FALLBACK_LIBRARY_PATH='/opt/homebrew/lib')
+    p = subprocess.run(['/Users/narekmeloyan/PycharmProjects/JokesForProject/.venv/bin/python','manage.py','shell','-c',code],
+                       cwd='/Users/narekmeloyan/PycharmProjects/JokesForProject', capture_output=True, text=True, env=env, timeout=120)
+    out=[l for l in p.stdout.splitlines() if l.strip() and 'Warning' not in l and 'objects imported' not in l
+         and 'email = serial' not in l and 'required=allauth' not in l]
+    return "\n".join(out).strip()
+
+def make_user(tag):
+    """Create a verified, active user directly and return a logged-in session."""
+    email = f"{tag}{TS}@test.local"
+    shell(f"""
+from django.contrib.auth import get_user_model as G
+U=G(); u,_=U.objects.get_or_create(username='{email}', defaults=dict(email='{email}'))
+u.email='{email}'; u.is_active=True; u.set_password('{PW}'); u.save(); print(u.id)
+""")
+    s = sess(); csrf(s)
+    r = s.post(f"{API}/auth/login/", json={"email": email, "password": PW}, timeout=30)
+    assert r.status_code == 200, (r.status_code, r.text[:200])
+    csrf(s)
+    return s, email
+
+# ============ T3-P01: anonymous feed strips punchlines ============
+anon = sess()
+r = anon.get(f"{API}/jokes/", timeout=30)
+data = jget(r)
+results = data.get("results", []) if isinstance(data, dict) else []
+tiers = {j.get("content_tier") for j in results}
+locked = [j for j in results if j.get("is_locked")]
+leaked = [j["id"] for j in results if j.get("is_locked") and j.get("punchline")]
+rec("T3-P01", "Anonymous feed: tier_1 only, page size 10, locked jokes carry NO punchline",
+    "only tier_1; len(results)<=10; every is_locked joke has punchline=null (server-side strip)",
+    "SENSIBLE",
+    r.status_code == 200 and tiers <= {"tier_1"} and len(results) <= 10 and not leaked,
+    f"status={r.status_code} count={data.get('count')} page={len(results)} tiers={tiers} locked={len(locked)} leaked_punchlines={leaked}")
+
+# ============ T3-P02: anonymous 10/day cookie ledger ============
+anon2 = sess()
+ids = [j["id"] for j in jget(anon2.get(f"{API}/jokes/?page_size=100", timeout=30)).get("results", [])]
+more = jget(anon2.get(f"{API}/jokes/?page=2", timeout=30)).get("results", [])
+ids += [j["id"] for j in more]
+codes = []
+for jid in ids[:12]:
+    rr = anon2.post(f"{API}/jokes/{jid}/reveal/", timeout=30)
+    codes.append((jid, rr.status_code, bool((jget(rr) or {}).get("punchline")) if isinstance(jget(rr), dict) else None))
+granted = [c for c in codes if c[2]]
+rec("T3-P02", "Anonymous soft-wall: exactly 10 punchlines per day via the signed cookie ledger",
+    "first 10 reveals return a punchline; the 11th+ do not", "SENSIBLE",
+    len(granted) == 10 and all(not c[2] for c in codes[10:]),
+    f"reveals_with_punchline={len(granted)}/{len(codes)} tail={[ (c[1],c[2]) for c in codes[9:12] ]}")
+
+# ============ T3-P03/P04: free authenticated user cap ============
+free, free_email = make_user("free")
+dr0 = jget(free.get(f"{API}/jokes/daily-reads/", timeout=30))
+seq = []
+for jid in ids[:12]:
+    rr = free.post(f"{API}/jokes/{jid}/reveal/", timeout=30)
+    body = jget(rr)
+    seq.append((jid, rr.status_code, bool(body.get("punchline")) if isinstance(body, dict) else None))
+dr1 = jget(free.get(f"{API}/jokes/daily-reads/", timeout=30))
+got = [x for x in seq if x[2]]
+rec("T3-P03", "Free user: 10 distinct reveals then the ledger is exhausted",
+    "daily-reads used->10 remaining->0; the 11th reveal returns no punchline", "SENSIBLE",
+    len(got) == 10 and not seq[10][2],
+    f"before={dr0} after={dr1} granted={len(got)}/12")
+
+# re-read an ALREADY revealed joke after the cap
+again = free.post(f"{API}/jokes/{ids[0]}/reveal/", timeout=30)
+ab = jget(again)
+rec("T3-P04", "After the cap, a joke already read today stays readable (re-reads are free)",
+    "re-revealing joke #1 still returns its punchline and does not consume a new read",
+    "SENSIBLE",
+    isinstance(ab, dict) and bool(ab.get("punchline")),
+    f"status={again.status_code} punchline_present={bool(ab.get('punchline')) if isinstance(ab,dict) else None}")
+
+# locked joke in the LIST for a capped user
+lst = jget(free.get(f"{API}/jokes/?page=2", timeout=30)).get("results", [])
+leak2 = [j["id"] for j in lst if j.get("is_locked") and j.get("punchline")]
+rec("T3-P01b", "Capped free user's feed also strips punchlines from locked jokes",
+    "no locked joke in the list carries a punchline", "SENSIBLE",
+    not leak2, f"locked_with_punchline={leak2} sample_locked={[j.get('is_locked') for j in lst[:5]]}")
+
+# ============ T3-P06: daily joke exempt from the cap ============
+dj = free.get(f"{API}/daily-jokes/today/", timeout=30)
+djb = jget(dj)
+inner = djb.get("joke", djb) if isinstance(djb, dict) else {}
+rec("T3-P06", "The daily joke stays readable after the free cap is exhausted",
+    "GET /daily-jokes/today/ returns a joke with a punchline even at 0 remaining", "SENSIBLE",
+    dj.status_code == 200 and bool(inner.get("punchline")),
+    f"status={dj.status_code} punchline_present={bool(inner.get('punchline'))} is_locked={inner.get('is_locked')}")
+
+# ============ T3-P08: mature tier unreachable ============
+adult, _ = make_user("adult")
+shell(f"""
+from django.contrib.auth import get_user_model as G
+from jokes.models import UserProfile
+u=G().objects.get(email__iexact='adult{TS}@test.local')
+p,_=UserProfile.objects.get_or_create(user=u)
+import datetime; p.date_of_birth=datetime.date(1990,1,1); p.save(); print('ok')
+""")
+t2count = shell("from jokes.models import Joke; print(Joke.objects.filter(content_tier='tier_2').count())")
+r_pref = adult.patch(f"{API}/users/me/preferences/", json={"show_mature": True}, timeout=30)
+after = jget(adult.get(f"{API}/jokes/?page_size=5", timeout=30))
+seen = {j.get("content_tier") for j in after.get("results", [])} if isinstance(after, dict) else set()
+rec("T3-P08", "There is NO API to opt into mature (tier_2) content",
+    "sending show_mature=true changes nothing; tier_2 remains unreachable for every user",
+    "QUESTIONABLE",
+    seen <= {"tier_1"},
+    f"tier_2_jokes_in_db={t2count} pref_patch={r_pref.status_code} tiers_visible={seen}",
+    "Model field exists but has zero serializer/view references — content that no user can ever see.")
+
+# ============ T3-P09: search punchline oracle ============
+probe = shell("""
+from jokes.models import Joke
+j=Joke.objects.filter(is_removed=False, content_tier='tier_1').exclude(punchline='').exclude(punchline=None).first()
+import re
+words=[w for w in re.findall(r'[A-Za-z]{7,}', j.punchline or '') if w.lower() not in (j.setup or '').lower() and w.lower() not in (j.text or '').lower()]
+print(j.id); print(words[0] if words else '')
+""")
+lines = probe.splitlines()
+jid, word = (lines[0], lines[1] if len(lines) > 1 else "")
+if word:
+    sr = jget(anon.get(f"{API}/jokes/?q={word}", timeout=30))
+    hits = [j["id"] for j in sr.get("results", [])] if isinstance(sr, dict) else []
+    hit = str(jid) in [str(h) for h in hits]
+    body = next((j for j in sr.get("results", []) if str(j["id"]) == str(jid)), {})
+    rec("T3-P09", "Full-text search indexes punchlines, so locked jokes are discoverable by punchline-only words",
+        "searching a word that appears ONLY in a locked joke's punchline returns that joke (is_locked=true, punchline=null)",
+        "QUESTIONABLE",
+        hit,
+        f"probe_word={word!r} joke={jid} returned={hit} is_locked={body.get('is_locked')} punchline_null={body.get('punchline') is None}",
+        "No text leaks, but paywalled content is inferable by existence. Decide: strip punchline from search_vector, or accept and document.")
+else:
+    rec("T3-P09", "Punchline search oracle", "n/a", "QUESTIONABLE", False, "no probe word found")
+
+# ============ T3-P10/P11: search filter semantics ============
+r_rel = jget(anon.get(f"{API}/jokes/?ordering=relevance", timeout=30))
+r_multi = jget(anon.get(f"{API}/jokes/?joke_format=setup,oneliner", timeout=30))
+r_single = jget(anon.get(f"{API}/jokes/?joke_format=oneliner", timeout=30))
+rec("T3-P11", "Comma-separated format filter returns ZERO results (exact match, not a list)",
+    "?joke_format=setup,oneliner -> 0 results while a single slug works",
+    "DEFECT-EXPECTED",
+    (r_multi.get("count") == 0) and (r_single.get("count", 0) > 0),
+    f"multi_count={r_multi.get('count')} single_count={r_single.get('count')}",
+    "Any Explore UI that multi-selects formats silently shows an empty feed.")
+
+rec("T3-P10", "ordering=relevance with an empty query silently falls back instead of erroring",
+    "?ordering=relevance without q -> 200 ordered by -created_at (no 400)",
+    "QUESTIONABLE",
+    isinstance(r_rel, dict) and r_rel.get("count", 0) > 0,
+    f"count={r_rel.get('count')}")
+
+print("\n@@RESULTS@@" + json.dumps(RESULTS))

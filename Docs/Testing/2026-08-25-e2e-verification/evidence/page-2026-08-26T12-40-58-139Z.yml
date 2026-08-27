@@ -1,0 +1,29 @@
+- generic [ref=f11e2]:
+  - generic [ref=f11e3]:
+    - banner [ref=f11e4]:
+      - generic [ref=f11e5]:
+        - link "JokesFor" [ref=f11e6] [cursor=pointer]:
+          - /url: /
+        - navigation "Main" [ref=f11e8]:
+          - link "Today" [ref=f11e9] [cursor=pointer]:
+            - /url: /flow-canvas
+          - link "Explore" [ref=f11e10] [cursor=pointer]:
+            - /url: /explore
+          - link "Search" [ref=f11e11] [cursor=pointer]:
+            - /url: /search
+          - link "Trending" [ref=f11e12] [cursor=pointer]:
+            - /url: /trending
+          - link "Daily" [ref=f11e13] [cursor=pointer]:
+            - /url: /daily
+          - link "Favorites" [ref=f11e14] [cursor=pointer]:
+            - /url: /favorites
+          - link "Library" [ref=f11e15] [cursor=pointer]:
+            - /url: /library
+      - generic [ref=f11e16]:
+        - link "Submit a joke" [ref=f11e18] [cursor=pointer]:
+          - /url: /create
+        - button "Notifications" [ref=f11e21] [cursor=pointer]
+        - button "Account menu" [ref=f11e26] [cursor=pointer]: P
+    - main [ref=f11e27]
+  - region "Notifications"
+  - button "Open Tanstack query devtools" [ref=f11e83] [cursor=pointer]

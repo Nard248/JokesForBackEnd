@@ -1,0 +1,57 @@
+import sys, json
+sys.path.insert(0, "/private/tmp/claude-501/-Users-narekmeloyan-PycharmProjects-JokesForProject/2b1dc348-b702-49ec-ad6c-5222c7ee10fc/scratchpad/t3")
+from harness import *
+
+a = sess()
+p1 = jget(a.get(f"{API}/jokes/", timeout=30)); p2 = jget(a.get(f"{API}/jokes/?page=2", timeout=30))
+ids = [j["id"] for j in p1["results"]] + [j["id"] for j in p2["results"]]
+for k in ids[:11]:
+    a.post(f"{API}/jokes/{k}/reveal/", timeout=20)
+st = jget(a.get(f"{API}/jokes/daily-reads/", timeout=20))
+print("anon paywall state:", st)
+
+def probe(label, url):
+    b = jget(a.get(url, timeout=30))
+    rs = b.get("results", b if isinstance(b, list) else [])
+    if isinstance(b, dict) and 'results' not in b: rs = [b] if 'id' in b else []
+    rs = [j for j in rs if isinstance(j, dict) and 'id' in j]
+    unread = [j for j in rs if j.get('id') not in ids[:11]]
+    tgt = unread[:3]
+    print(f"  {label:34} n={len(rs):3} unread_sample=" +
+          str([(j['id'], j.get('is_locked'), bool(j.get('punchline')), bool(j.get('text'))) for j in tgt]))
+    return tgt
+
+print("\n(id, is_locked, punchline_present, text_present) for jokes NOT consumed today:")
+detail_id = [i for i in ids if i not in ids[:11]][0]
+probe("GET /jokes/ (page 3)",        f"{API}/jokes/?page=3")
+probe("GET /jokes/?q=literally",     f"{API}/jokes/?q=literally")
+probe("GET /jokes/trending/",        f"{API}/jokes/trending/")
+probe("GET /jokes/random/",          f"{API}/jokes/random/")
+probe(f"GET /jokes/{detail_id}/ (detail)", f"{API}/jokes/{detail_id}/")
+
+# The same comparison for a CAPPED AUTHENTICATED free user
+import subprocess, os
+def shell(code):
+    env = dict(os.environ, DATABASE_URL='', DB_NAME='jokesfor', DB_USER='postgres', DB_PASSWORD='6969',
+               DB_HOST='localhost', DB_PORT='5432', DEBUG='True', DYLD_FALLBACK_LIBRARY_PATH='/opt/homebrew/lib')
+    return subprocess.run(['/Users/narekmeloyan/PycharmProjects/JokesForProject/.venv/bin/python','manage.py','shell','-c',code],
+        cwd='/Users/narekmeloyan/PycharmProjects/JokesForProject', capture_output=True, text=True, env=env, timeout=180).stdout
+em = f"byp{TS}@test.local"
+shell(f"""
+from django.contrib.auth import get_user_model as G
+U=G(); u,_=U.objects.get_or_create(username='{em}', defaults=dict(email='{em}'))
+u.email='{em}'; u.is_active=True; u.set_password('{PW}'); u.save()
+""")
+b = sess(); csrf(b)
+b.post(f"{API}/auth/login/", json={"email": em, "password": PW}, timeout=30); csrf(b)
+for k in ids[:11]:
+    b.get(f"{API}/jokes/{k}/", timeout=20)
+st2 = jget(b.get(f"{API}/jokes/daily-reads/", timeout=20))
+print("\nauthed free paywall state:", st2)
+a = b  # reuse probe() against the authed session
+print("(id, is_locked, punchline_present, text_present) for jokes NOT consumed today:")
+probe("GET /jokes/ (page 3)",    f"{API}/jokes/?page=3")
+probe("GET /jokes/?q=literally", f"{API}/jokes/?q=literally")
+probe("GET /jokes/trending/",    f"{API}/jokes/trending/")
+probe("GET /jokes/random/",      f"{API}/jokes/random/")
+probe(f"GET /jokes/{detail_id}/", f"{API}/jokes/{detail_id}/")

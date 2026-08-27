@@ -1,0 +1,168 @@
+"""T3-P (corrected) — paywall against the REAL mechanism:
+   authenticated ledger = JokeView rows written on GET /jokes/{id}/ (retrieve);
+   anonymous ledger = signed cookie written by POST /jokes/{id}/reveal/."""
+import sys, json, os, subprocess
+sys.path.insert(0, "/private/tmp/claude-501/-Users-narekmeloyan-PycharmProjects-JokesForProject/2b1dc348-b702-49ec-ad6c-5222c7ee10fc/scratchpad/t3")
+from harness import *
+
+def shell(code):
+    env = dict(os.environ, DATABASE_URL='', DB_NAME='jokesfor', DB_USER='postgres',
+               DB_PASSWORD='6969', DB_HOST='localhost', DB_PORT='5432', DEBUG='True',
+               DYLD_FALLBACK_LIBRARY_PATH='/opt/homebrew/lib')
+    p = subprocess.run(['/Users/narekmeloyan/PycharmProjects/JokesForProject/.venv/bin/python','manage.py','shell','-c',code],
+                       cwd='/Users/narekmeloyan/PycharmProjects/JokesForProject', capture_output=True, text=True, env=env, timeout=180)
+    out=[l for l in p.stdout.splitlines() if l.strip() and 'Warning' not in l and 'objects imported' not in l
+         and 'email = serial' not in l and 'required=allauth' not in l]
+    return "\n".join(out).strip()
+
+def make_user(tag):
+    email = f"{tag}{TS}@test.local"
+    shell(f"""
+from django.contrib.auth import get_user_model as G
+U=G(); u,_=U.objects.get_or_create(username='{email}', defaults=dict(email='{email}'))
+u.email='{email}'; u.is_active=True; u.set_password('{PW}'); u.save(); print(u.id)
+""")
+    s = sess(); csrf(s)
+    r = s.post(f"{API}/auth/login/", json={"email": email, "password": PW}, timeout=30)
+    assert r.status_code == 200, (r.status_code, r.text[:200])
+    csrf(s)
+    return s, email
+
+anon = sess()
+p1 = jget(anon.get(f"{API}/jokes/", timeout=30))
+p2 = jget(anon.get(f"{API}/jokes/?page=2", timeout=30))
+IDS = [j["id"] for j in p1.get("results", [])] + [j["id"] for j in p2.get("results", [])]
+sample = p1["results"][0]
+
+rec("T3-P00", "Joke list serializer exposes the paywall flag and hides nothing it shouldn't",
+    "each item carries is_locked; punchline present only when unlocked", "SENSIBLE",
+    "is_locked" in sample,
+    f"fields={sorted(sample.keys())}")
+
+# ---------- T3-P03 (corrected): free user cap via joke retrieve ----------
+free, free_email = make_user("fr2")
+dr0 = jget(free.get(f"{API}/jokes/daily-reads/", timeout=30))
+seq = []
+for jid in IDS[:12]:
+    rr = free.get(f"{API}/jokes/{jid}/", timeout=30)
+    b = jget(rr)
+    seq.append((jid, rr.status_code, bool(b.get("punchline")) if isinstance(b, dict) else None,
+                b.get("is_locked") if isinstance(b, dict) else None))
+dr1 = jget(free.get(f"{API}/jokes/daily-reads/", timeout=30))
+unlocked = [x for x in seq if x[2]]
+locked_tail = [x for x in seq[10:] if x[3] is True and not x[2]]
+rec("T3-P03", "Free user: exactly 10 distinct joke reads per day, then punchlines lock",
+    "daily-reads used 0->10, remaining->0; reads 1-10 return a punchline; reads 11+ return is_locked=true and punchline=null",
+    "SENSIBLE",
+    dr1.get("used") == 10 and dr1.get("remaining") == 0 and len(unlocked) == 10 and len(locked_tail) == 2,
+    f"before=used {dr0.get('used')}/{dr0.get('limit')} after=used {dr1.get('used')}/{dr1.get('limit')} remaining={dr1.get('remaining')} unlocked={len(unlocked)}/12 locked_tail={len(locked_tail)}")
+
+# ---------- T3-P04: re-read of an already-consumed joke stays open ----------
+again = jget(free.get(f"{API}/jokes/{IDS[0]}/", timeout=30))
+dr2 = jget(free.get(f"{API}/jokes/daily-reads/", timeout=30))
+rec("T3-P04", "After the cap, re-opening a joke already read today stays unlocked and costs nothing",
+    "punchline still present; is_locked=false; used stays at 10", "SENSIBLE",
+    bool(again.get("punchline")) and again.get("is_locked") in (False, None) and dr2.get("used") == 10,
+    f"punchline_present={bool(again.get('punchline'))} is_locked={again.get('is_locked')} used={dr2.get('used')}")
+
+# ---------- T3-P01b: capped user's LIST strips punchlines ----------
+lst = jget(free.get(f"{API}/jokes/?page=3", timeout=30)).get("results", [])
+leak = [j["id"] for j in lst if j.get("is_locked") and j.get("punchline")]
+locked_n = sum(1 for j in lst if j.get("is_locked"))
+rec("T3-P01b", "For a capped user the feed marks unread jokes locked and strips their punchlines",
+    "unread jokes show is_locked=true with punchline=null — no punchline ever reaches the wire",
+    "SENSIBLE",
+    not leak and locked_n > 0,
+    f"locked_in_page={locked_n}/{len(lst)} leaked={leak}")
+
+# ---------- T3-P06: daily joke exempt ----------
+dj = free.get(f"{API}/daily-jokes/today/", timeout=30); djb = jget(dj)
+inner = djb.get("joke", djb) if isinstance(djb, dict) else {}
+rec("T3-P06", "The daily joke remains readable after the cap is exhausted",
+    "200 with a punchline even at remaining=0", "SENSIBLE",
+    dj.status_code == 200 and bool(inner.get("punchline")),
+    f"status={dj.status_code} punchline={bool(inner.get('punchline'))} is_locked={inner.get('is_locked')}")
+
+# ---------- T3-P05: midnight UTC reset ----------
+rec("T3-P05", "The cap resets at midnight UTC",
+    "daily-reads.reset_at is the next 00:00Z", "QUESTIONABLE",
+    str(dr1.get("reset_at","")).endswith("T00:00:00+00:00"),
+    f"reset_at={dr1.get('reset_at')}",
+    "Correct per spec, but for this user's timezone (+04) the daily allowance resets at 04:00 local — a user reading at 01:00 local gets a fresh 10 mid-evening-session.")
+
+# ---------- T3-P07: paid user unlimited ----------
+paid, paid_email = make_user("paid")
+out = shell(f"""
+from django.contrib.auth import get_user_model as G
+from billing.models import Plan, Subscription
+import datetime
+from django.utils import timezone
+u=G().objects.get(email__iexact='{paid_email}')
+p=Plan.objects.exclude(slug='free').first()
+print('plan=', p.slug if p else None)
+if p:
+    Subscription.objects.update_or_create(user=u, defaults=dict(plan=p, status='active',
+        current_period_end=timezone.now()+datetime.timedelta(days=30)))
+print('done')
+""")
+dr_paid = jget(paid.get(f"{API}/jokes/daily-reads/", timeout=30))
+reads = []
+for jid in IDS[:12]:
+    b = jget(paid.get(f"{API}/jokes/{jid}/", timeout=30))
+    reads.append(bool(b.get("punchline")))
+rec("T3-P07", "A subscribed user has an unlimited allowance",
+    "daily-reads limit/remaining are null; 12 consecutive reads all return punchlines",
+    "SENSIBLE",
+    dr_paid.get("limit") is None and all(reads),
+    f"seed={out.splitlines()[-2:] if out else ''} limit={dr_paid.get('limit')} remaining={dr_paid.get('remaining')} unlocked={sum(reads)}/12")
+
+# ---------- T3-P02 (corrected): anonymous cookie ledger ----------
+a2 = sess()
+states = []
+for jid in IDS[:12]:
+    rr = a2.post(f"{API}/jokes/{jid}/reveal/", timeout=30)
+    b = jget(rr)
+    states.append((b.get("used"), b.get("remaining"), b.get("over")))
+final = jget(a2.get(f"{API}/jokes/daily-reads/", timeout=30))
+det = jget(a2.get(f"{API}/jokes/{IDS[11]}/", timeout=30))
+rec("T3-P02", "Anonymous soft-wall: the signed cookie ledger caps reveals at 10/day",
+    "used climbs 1..10 then stops; over=true past 10; an unread joke then serves is_locked=true with punchline=null",
+    "SENSIBLE",
+    states[9][0] == 10 and states[11][0] == 10 and states[11][2] is True
+    and det.get("is_locked") is True and det.get("punchline") is None,
+    f"used_seq={[s[0] for s in states]} over_at_12={states[11][2]} final={final} unread_locked={det.get('is_locked')} punchline={det.get('punchline')}")
+
+rec("T3-P02b", "The anonymous wall is deliberately SOFT (clearing cookies resets it)",
+    "a fresh cookie jar gets a fresh 10 — documented as a conversion nudge, not enforcement",
+    "QUESTIONABLE",
+    jget(sess().get(f"{API}/jokes/daily-reads/", timeout=30)).get("remaining") == 10,
+    f"fresh_session_remaining={jget(sess().get(f'{API}/jokes/daily-reads/', timeout=30)).get('remaining')}",
+    "Intentional per jokes/paywall.py docstring. Real revenue protection rests on the authenticated ledger.")
+
+# ---------- T3-P09 (corrected): search punchline oracle ----------
+probe = shell("""
+import re
+from jokes.models import Joke
+for j in Joke.objects.filter(is_removed=False).exclude(punchline='').exclude(punchline=None)[:400]:
+    other=((j.setup or '')+' '+(j.text or '')+' '+(j.title or '')).lower()
+    ws=[w for w in re.findall(r'[A-Za-z]{8,}', j.punchline or '') if w.lower() not in other]
+    if ws:
+        print(j.id); print(ws[0]); break
+""")
+ln = [l for l in probe.splitlines() if l.strip()]
+if len(ln) >= 2:
+    jid, word = ln[0], ln[1]
+    a3 = sess()
+    sr = jget(a3.get(f"{API}/jokes/?q={word}", timeout=30))
+    hits = [str(j["id"]) for j in sr.get("results", [])]
+    body = next((j for j in sr.get("results", []) if str(j["id"]) == str(jid)), {})
+    rec("T3-P09", "Search indexes punchlines, making paywalled jokes discoverable by punchline-only words",
+        "a word occurring ONLY in a joke's punchline still matches that joke in search",
+        "QUESTIONABLE",
+        str(jid) in hits,
+        f"probe_word={word!r} joke_id={jid} matched={str(jid) in hits} count={sr.get('count')} is_locked={body.get('is_locked')} punchline_returned={body.get('punchline')}",
+        "No punchline text leaks, but its existence/wording is partially inferable. Decide: drop punchline from search_vector, or accept + document.")
+else:
+    rec("T3-P09", "Search punchline oracle", "probe", "QUESTIONABLE", False, f"no probe word found ({probe[:120]})")
+
+print("\n@@RESULTS@@" + json.dumps(RESULTS))

@@ -1,0 +1,161 @@
+- generic [ref=f10e2]:
+  - generic [ref=f10e3]:
+    - banner [ref=f10e4]:
+      - generic [ref=f10e5]:
+        - link "JokesFor" [ref=f10e6] [cursor=pointer]:
+          - /url: /
+        - navigation "Main" [ref=f10e8]:
+          - link "Today" [ref=f10e9] [cursor=pointer]:
+            - /url: /flow-canvas
+          - link "Explore" [ref=f10e10] [cursor=pointer]:
+            - /url: /explore
+          - link "Search" [ref=f10e11] [cursor=pointer]:
+            - /url: /search
+          - link "Trending" [ref=f10e12] [cursor=pointer]:
+            - /url: /trending
+          - link "Daily" [ref=f10e13] [cursor=pointer]:
+            - /url: /daily
+          - link "Favorites" [ref=f10e14] [cursor=pointer]:
+            - /url: /favorites
+          - link "Library" [ref=f10e15] [cursor=pointer]:
+            - /url: /library
+      - generic [ref=f10e16]:
+        - link "Submit a joke" [ref=f10e18] [cursor=pointer]:
+          - /url: /create
+        - button "Notifications" [ref=f10e21] [cursor=pointer]
+        - button "Account menu" [ref=f10e26] [cursor=pointer]: P
+    - main [ref=f10e27]:
+      - generic [ref=f10e28]:
+        - button "Back" [ref=f10e132] [cursor=pointer]
+        - article [ref=f10e135]:
+          - generic [ref=f10e137]:
+            - generic [ref=f10e138]:
+              - generic [ref=f10e139]: Science
+              - generic [ref=f10e140]: Nerd
+              - generic [ref=f10e141]: Teen
+            - text: Setup
+            - generic [ref=f10e142]: Why can't you trust an atom?
+            - generic [ref=f10e143]: Punchline
+            - generic [ref=f10e144]: Because they literally make up everything.
+            - generic [ref=f10e145]:
+              - button "Saved" [active] [ref=f10e146] [cursor=pointer]
+              - button "Share" [ref=f10e150] [cursor=pointer]
+              - button "Copy" [ref=f10e157] [cursor=pointer]
+              - button "Report joke" [ref=f10e161]
+        - generic [ref=f10e164]:
+          - text: How the internet laughed
+          - heading [level=3] [ref=f10e165]:
+            - text: React to
+            - emphasis [ref=f10e166]: land it.
+          - generic [ref=f10e167]:
+            - button "😂 3 LOL" [ref=f10e168] [cursor=pointer]:
+              - generic [ref=f10e169]: 😂
+              - generic [ref=f10e170]: "3"
+              - generic [ref=f10e171]: LOL
+            - button "🤣 2 Dying" [ref=f10e172] [cursor=pointer]:
+              - generic [ref=f10e173]: 🤣
+              - generic [ref=f10e174]: "2"
+              - generic [ref=f10e175]: Dying
+            - button "🤔 0 Hmm" [ref=f10e176] [cursor=pointer]:
+              - generic [ref=f10e177]: 🤔
+              - generic [ref=f10e178]: "0"
+              - generic [ref=f10e179]: Hmm
+            - button "🙄 0 Eyeroll" [ref=f10e180] [cursor=pointer]:
+              - generic [ref=f10e181]: 🙄
+              - generic [ref=f10e182]: "0"
+              - generic [ref=f10e183]: Eyeroll
+        - generic [ref=f10e184]:
+          - text: Why you got this one
+          - heading [level=3] [ref=f10e185]:
+            - text: Picked because
+            - emphasis [ref=f10e186]: kids ok & science.
+          - paragraph [ref=f10e187]:
+            - text: Kids OK is your top vibe — you've saved 1 science this month and react most to nerd ones.
+            - link "Tune your feed →" [ref=f10e188] [cursor=pointer]:
+              - /url: /onboarding
+        - generic [ref=f10e189]:
+          - text: More like this
+          - heading [level=3] [ref=f10e190]:
+            - text: If you liked that,
+            - emphasis [ref=f10e191]: you'll like these.
+          - generic [ref=f10e192]:
+            - link [ref=f10e193] [cursor=pointer]:
+              - /url: /jokes/481?source=other
+              - article [ref=f10e194]:
+                - generic [ref=f10e195]:
+                  - generic [ref=f10e196]: Setup → Punchline
+                  - generic [ref=f10e197]:
+                    - generic [ref=f10e198]: Science
+                    - generic [ref=f10e199]: ·
+                    - generic [ref=f10e200]: Nerd
+                - generic [ref=f10e201]:
+                  - generic [ref=f10e202]: Why can't you trust an atom?
+                  - generic [ref=f10e203]: Because they literally make up everything.
+                  - generic [ref=f10e204]: Tap to reveal punchline →
+                - generic [ref=f10e205]:
+                  - button "LOL" [ref=f10e206]:
+                    - generic [ref=f10e207]: 😂
+                  - button "Dying" [ref=f10e208]:
+                    - generic [ref=f10e209]: 🤣
+                  - button "Hmm" [ref=f10e210]:
+                    - generic [ref=f10e211]: 🤔
+                  - button "Eyeroll" [ref=f10e212]:
+                    - generic [ref=f10e213]: 🙄
+                - generic [ref=f10e215]:
+                  - button "Save" [ref=f10e216]
+                  - button "Share joke" [ref=f10e219]
+            - link [ref=f10e226] [cursor=pointer]:
+              - /url: /jokes/407?source=other
+              - article [ref=f10e227]:
+                - generic [ref=f10e228]:
+                  - generic [ref=f10e229]: One-liner
+                  - generic [ref=f10e230]:
+                    - generic [ref=f10e231]: Puns
+                    - generic [ref=f10e232]: ·
+                    - generic [ref=f10e233]: Dad
+                - generic [ref=f10e234]: I'm reading a book about gravity. It's hard to put down — and impossible if you let go.
+                - generic [ref=f10e235]:
+                  - button "LOL" [ref=f10e236]:
+                    - generic [ref=f10e237]: 😂
+                  - button "Dying" [ref=f10e238]:
+                    - generic [ref=f10e239]: 🤣
+                  - button "Hmm" [ref=f10e240]:
+                    - generic [ref=f10e241]: 🤔
+                  - button "Eyeroll" [ref=f10e242]:
+                    - generic [ref=f10e243]: 🙄
+                - generic [ref=f10e245]:
+                  - button "Save" [ref=f10e246]
+                  - button "Share joke" [ref=f10e249]
+            - link [ref=f10e256] [cursor=pointer]:
+              - /url: /jokes/362?source=other
+              - article [ref=f10e257]:
+                - generic [ref=f10e258]:
+                  - generic [ref=f10e259]: One-liner
+                  - generic [ref=f10e260]:
+                    - generic [ref=f10e261]: Puns
+                    - generic [ref=f10e262]: ·
+                    - generic [ref=f10e263]: Nerd
+                - generic [ref=f10e264]: I would tell a chemistry joke, but I know I wouldn't get a reaction.
+                - generic [ref=f10e265]:
+                  - button "LOL" [ref=f10e266]:
+                    - generic [ref=f10e267]: 😂
+                  - button "Dying" [ref=f10e268]:
+                    - generic [ref=f10e269]: 🤣
+                  - button "Hmm" [ref=f10e270]:
+                    - generic [ref=f10e271]: 🤔
+                  - button "Eyeroll" [ref=f10e272]:
+                    - generic [ref=f10e273]: 🙄
+                - generic [ref=f10e275]:
+                  - button "Save" [ref=f10e276]
+                  - button "Share joke" [ref=f10e279]
+        - generic [ref=f10e286]:
+          - generic [ref=f10e287]:
+            - text: Want another?
+            - generic [ref=f10e288]:
+              - text: Roll a
+              - emphasis [ref=f10e289]: mystery
+              - text: joke.
+          - button "Roll" [ref=f10e290] [cursor=pointer]
+  - region "Notifications" [ref=f10e293]:
+    - generic [ref=f10e294]: Saved to your library.
+  - button "Open Tanstack query devtools" [ref=f10e83] [cursor=pointer]

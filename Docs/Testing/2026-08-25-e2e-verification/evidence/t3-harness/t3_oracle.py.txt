@@ -1,0 +1,25 @@
+import sys, json
+sys.path.insert(0, "/private/tmp/claude-501/-Users-narekmeloyan-PycharmProjects-JokesForProject/2b1dc348-b702-49ec-ad6c-5222c7ee10fc/scratchpad/t3")
+from harness import *
+
+a = sess()
+ids = [j["id"] for j in jget(a.get(f"{API}/jokes/", timeout=30)).get("results", [])]
+ids += [j["id"] for j in jget(a.get(f"{API}/jokes/?page=2", timeout=30)).get("results", [])]
+for k in ids[:11]:
+    a.post(f"{API}/jokes/{k}/reveal/", timeout=20)
+state = jget(a.get(f"{API}/jokes/daily-reads/", timeout=20))
+
+sr = jget(a.get(f"{API}/jokes/?q=literally", timeout=30))
+res = sr.get("results", [])
+target = [j for j in res if j["id"] not in ids[:11]]
+t = target[0] if target else (res[0] if res else {})
+rec("T3-P09", "Full-text search indexes punchlines, so a paywalled joke is discoverable by a punchline-only word",
+    "GIVEN a capped reader, WHEN they search a word that occurs ONLY in a locked joke's punchline, "
+    "THEN that joke is returned with is_locked=true and punchline=null",
+    "QUESTIONABLE",
+    bool(res) and (t.get("is_locked") is True) and t.get("punchline") is None,
+    f"paywall={state.get('used')}/{state.get('limit')} over={state.get('over')} matches={sr.get('count')} "
+    f"target_id={t.get('id')} is_locked={t.get('is_locked')} punchline={t.get('punchline')!r} setup={(t.get('setup') or '')[:40]!r}",
+    "The punchline text itself never leaves the server, but its wording is inferable by guess-and-check "
+    "against the search index. Decide: exclude punchline from search_vector, or accept and document.")
+print("\n@@RESULTS@@" + json.dumps(RESULTS))

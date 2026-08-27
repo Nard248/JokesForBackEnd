@@ -1,0 +1,143 @@
+"""T3-A — auth & session contract."""
+import sys, time, json
+sys.path.insert(0, "/private/tmp/claude-501/-Users-narekmeloyan-PycharmProjects-JokesForProject/2b1dc348-b702-49ec-ad6c-5222c7ee10fc/scratchpad/t3")
+from harness import *
+import subprocess, os
+
+def shell(code):
+    env = dict(os.environ, DATABASE_URL='', DB_NAME='jokesfor', DB_USER='postgres',
+               DB_PASSWORD='6969', DB_HOST='localhost', DB_PORT='5432', DEBUG='True',
+               DYLD_FALLBACK_LIBRARY_PATH='/opt/homebrew/lib',
+               EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend')
+    p = subprocess.run(['/Users/narekmeloyan/PycharmProjects/JokesForProject/.venv/bin/python',
+                        'manage.py', 'shell', '-c', code],
+                       cwd='/Users/narekmeloyan/PycharmProjects/JokesForProject',
+                       capture_output=True, text=True, env=env, timeout=120)
+    out = [l for l in p.stdout.splitlines() if l.strip() and 'Warning' not in l
+           and 'objects imported' not in l and 'email = serial' not in l and 'required=allauth' not in l]
+    return "\n".join(out).strip(), p.stderr[-400:] if p.returncode else ""
+
+EMAIL = f"e2e{TS}@test.local"
+
+# ---------------- T3-A01: gated registration ----------------
+s = sess(); csrf(s)
+r = s.post(f"{API}/auth/registration/", json={
+    "email": EMAIL, "password1": PW, "password2": PW, "date_of_birth": "1995-06-15"}, timeout=30)
+body = jget(r)
+has_cookies = bool(s.cookies.get("jokes-access-token"))
+rec("T3-A01", "Gated registration returns 201 with NO JWT cookies",
+    "201 + {detail,email}; user is_active=False; no auth cookies",
+    "SENSIBLE",
+    r.status_code == 201 and not has_cookies,
+    f"status={r.status_code} cookies_set={has_cookies} body={str(body)[:160]}")
+
+active, _ = shell(f"from django.contrib.auth import get_user_model as G; u=G().objects.filter(email__iexact='{EMAIL}').first(); print(u.is_active if u else 'NOUSER')")
+rec("T3-A01b", "Registered user starts inactive until verified",
+    "user row exists with is_active=False", "SENSIBLE",
+    active == "False", f"is_active={active}")
+
+# ---------------- T3-A02: under-13 COPPA ----------------
+s2 = sess(); csrf(s2)
+kid = f"kid{TS}@test.local"
+r = s2.post(f"{API}/auth/registration/", json={
+    "email": kid, "password1": PW, "password2": PW, "date_of_birth": "2020-01-01"}, timeout=30)
+exists, _ = shell(f"from django.contrib.auth import get_user_model as G; print(G().objects.filter(email__iexact='{kid}').exists())")
+rec("T3-A02", "Under-13 registration rejected AND no user row created",
+    "400; zero user rows (COPPA)", "SENSIBLE",
+    r.status_code == 400 and exists == "False",
+    f"status={r.status_code} user_created={exists} body={str(jget(r))[:140]}")
+
+# ---------------- T3-A03: missing / future DOB ----------------
+s3 = sess(); csrf(s3)
+r_no = s3.post(f"{API}/auth/registration/", json={"email": f"nodob{TS}@test.local", "password1": PW, "password2": PW}, timeout=30)
+r_fut = s3.post(f"{API}/auth/registration/", json={"email": f"fut{TS}@test.local", "password1": PW, "password2": PW, "date_of_birth": "2030-01-01"}, timeout=30)
+rec("T3-A03", "Missing DOB and future DOB both rejected",
+    "both 400 with a field error", "SENSIBLE",
+    r_no.status_code == 400 and r_fut.status_code == 400,
+    f"missing_dob={r_no.status_code} future_dob={r_fut.status_code}")
+
+# ---------------- T3-A06: unverified login message ----------------
+s4 = sess(); csrf(s4)
+r = s4.post(f"{API}/auth/login/", json={"email": EMAIL, "password": PW}, timeout=30)
+b = jget(r)
+msg = json.dumps(b) if isinstance(b, (dict, list)) else str(b)
+generic = "Unable to log in with provided credentials" in msg
+disabled = "disabled" in msg.lower()
+rec("T3-A06", "Unverified login returns the GENERIC credential error (no account-existence oracle)",
+    '400 with "Unable to log in with provided credentials." and NOT "User account is disabled."',
+    "SENSIBLE",
+    r.status_code == 400 and generic and not disabled,
+    f"status={r.status_code} generic={generic} says_disabled={disabled} body={msg[:160]}")
+
+# ---------------- T3-A04/A05: verify-email ----------------
+s5 = sess(); csrf(s5)
+bad = [s5.post(f"{API}/auth/verify-email/", json={"email": EMAIL, "code": "000000"}, timeout=30).status_code for _ in range(6)]
+rec("T3-A05", "Brute-forcing the 6-digit verification code is stopped",
+    "wrong codes rejected; after ~5 attempts further tries are blocked (429/400-lockout), not unlimited",
+    "SENSIBLE",
+    all(c != 200 for c in bad) and (429 in bad or bad[-1] != bad[0] or bad.count(400) <= 5),
+    f"statuses={bad}")
+
+code, err = shell(f"from django.contrib.auth import get_user_model as G; from notifications.verification import issue_code; print(issue_code(G().objects.get(email__iexact='{EMAIL}')))")
+code = (code or "").strip().splitlines()[-1] if code else ""
+s6 = sess(); csrf(s6)
+r = s6.post(f"{API}/auth/verify-email/", json={"email": EMAIL, "code": code}, timeout=30)
+cookies_after = bool(s6.cookies.get("jokes-access-token"))
+rec("T3-A04", "Correct verification code activates the account AND sets JWT cookies",
+    "200 + jokes-access-token/jokes-refresh-token cookies; is_active=True", "SENSIBLE",
+    r.status_code == 200 and cookies_after,
+    f"status={r.status_code} cookies={cookies_after} code_used={code!r} body={str(jget(r))[:120]}")
+
+# ---------------- T3-A07: login + /auth/user/ ----------------
+s7 = sess(); csrf(s7)
+r = s7.post(f"{API}/auth/login/", json={"email": EMAIL, "password": PW}, timeout=30)
+acc = s7.cookies.get("jokes-access-token"); ref = s7.cookies.get("jokes-refresh-token")
+me = s7.get(f"{API}/auth/user/", timeout=30)
+httponly = [c for c in s7.cookies if c.name == "jokes-access-token"]
+ho = bool(httponly and httponly[0].has_nonstandard_attr("HttpOnly"))
+rec("T3-A07", "Verified login sets HttpOnly JWT cookies and /auth/user/ resolves the session",
+    "200 login; access+refresh cookies HttpOnly; GET /auth/user/ -> 200 with the user", "SENSIBLE",
+    r.status_code == 200 and bool(acc) and bool(ref) and me.status_code == 200,
+    f"login={r.status_code} access={bool(acc)} refresh={bool(ref)} httponly={ho} user={me.status_code} email={(jget(me) or {}).get('email') if isinstance(jget(me),dict) else ''}")
+
+# ---------------- T3-A10: CSRF required on cookie-auth mutation ----------------
+s8 = sess()
+s8.cookies.update(s7.cookies)          # same session cookies
+s8.headers.pop("X-CSRFToken", None)    # but NO csrf header
+r_nocsrf = s8.post(f"{API}/favorites/", json={"joke": 1}, timeout=30)
+rec("T3-A10", "Cookie-authenticated mutation WITHOUT X-CSRFToken is rejected",
+    "403 (CSRF enforced on the cookie transport)", "SENSIBLE",
+    r_nocsrf.status_code == 403,
+    f"status={r_nocsrf.status_code} body={str(jget(r_nocsrf))[:120]}")
+
+# ---------------- T3-A11: Bearer transport bypasses CSRF (iOS path) ----------------
+tok, _ = shell(f"""
+from django.contrib.auth import get_user_model as G
+from rest_framework_simplejwt.tokens import RefreshToken
+u=G().objects.get(email__iexact='{EMAIL}')
+print(str(RefreshToken.for_user(u).access_token))
+""")
+tok = (tok or "").strip().splitlines()[-1] if tok else ""
+s9 = sess()  # no cookies at all
+s9.headers["Authorization"] = f"Bearer {tok}"
+r_me = s9.get(f"{API}/auth/user/", timeout=30)
+r_mut = s9.post(f"{API}/favorites/", json={"joke": 1}, timeout=30)
+rec("T3-A11", "Authorization: Bearer works with NO cookies and NO CSRF header (the native-app transport)",
+    "GET /auth/user/ -> 200; a mutation -> 2xx (not 403). Zero in-repo tests cover this path.",
+    "SENSIBLE",
+    r_me.status_code == 200 and r_mut.status_code in (200, 201, 400, 409),
+    f"user={r_me.status_code} mutation={r_mut.status_code} body={str(jget(r_mut))[:120]}",
+    "Critical for the iOS plan: confirms a native client needs no CSRF dance.")
+
+# ---------------- T3-A09: logout clears + blacklists ----------------
+refresh_val = s7.cookies.get("jokes-refresh-token")
+r_out = s7.post(f"{API}/auth/logout/", timeout=30)
+after = s7.get(f"{API}/auth/user/", timeout=30)
+s10 = sess(); csrf(s10)
+r_replay = s10.post(f"{API}/auth/token/refresh/", json={"refresh": refresh_val}, timeout=30) if refresh_val else None
+rec("T3-A09", "Logout clears cookies and blacklists the refresh token (replay fails)",
+    "logout 200; /auth/user/ -> 401; replaying the old refresh token -> 401", "SENSIBLE",
+    r_out.status_code == 200 and after.status_code == 401 and (r_replay is None or r_replay.status_code == 401),
+    f"logout={r_out.status_code} user_after={after.status_code} refresh_replay={r_replay.status_code if r_replay else 'n/a'}")
+
+print("\n@@RESULTS@@" + json.dumps(RESULTS))

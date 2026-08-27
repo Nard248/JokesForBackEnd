@@ -1,0 +1,40 @@
+"""T3 live API contract harness — JokesFor. Read/write against a LOCAL stack only."""
+import json, sys, time, uuid, io
+import requests
+
+BASE = "http://localhost:8010"
+API = BASE + "/api/v1"
+ORIGIN = "http://localhost:5273"
+
+RESULTS = []
+
+def rec(tid, desc, expected, sanity, ok, actual, note=""):
+    RESULTS.append(dict(id=tid, desc=desc, expected=expected, sanity=sanity,
+                        ok=bool(ok), actual=actual, note=note))
+    flag = "PASS" if ok else "FAIL"
+    if sanity in ("QUESTIONABLE", "DEFECT-EXPECTED") and ok:
+        flag = "CONFIRMED-" + ("DEFECT" if sanity == "DEFECT-EXPECTED" else "QUIRK")
+    print(f"[{flag:17}] {tid}  {desc}")
+    print(f"                    actual: {actual}")
+    if note:
+        print(f"                    note:   {note}")
+    sys.stdout.flush()
+
+def sess():
+    s = requests.Session()
+    s.headers.update({"Origin": ORIGIN, "Referer": ORIGIN + "/"})
+    return s
+
+def csrf(s):
+    r = s.get(f"{API}/auth/csrf/", timeout=20)
+    tok = s.cookies.get("csrftoken") or (r.json().get("csrfToken") if r.headers.get("content-type","").startswith("application/json") else None)
+    if tok:
+        s.headers["X-CSRFToken"] = tok
+    return tok
+
+def jget(r):
+    try: return r.json()
+    except Exception: return r.text[:300]
+
+TS = str(int(time.time()))
+PW = "E2ePassw0rd!2026"

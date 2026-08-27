@@ -1,0 +1,134 @@
+- generic [ref=f12e2]:
+  - generic [ref=f12e140]:
+    - banner [ref=f12e141]:
+      - generic [ref=f12e142]:
+        - link "JokesFor" [ref=f12e143] [cursor=pointer]:
+          - /url: /
+        - navigation "Main" [ref=f12e145]:
+          - link "Today" [ref=f12e146] [cursor=pointer]:
+            - /url: /flow-canvas
+          - link "Explore" [ref=f12e147] [cursor=pointer]:
+            - /url: /explore
+          - link "Search" [ref=f12e148] [cursor=pointer]:
+            - /url: /search
+          - link "Trending" [ref=f12e149] [cursor=pointer]:
+            - /url: /trending
+          - link "Daily" [ref=f12e150] [cursor=pointer]:
+            - /url: /daily
+          - link "Favorites" [ref=f12e151] [cursor=pointer]:
+            - /url: /favorites
+          - link "Library" [ref=f12e152] [cursor=pointer]:
+            - /url: /library
+      - generic [ref=f12e153]:
+        - generic [ref=f12e154]:
+          - generic [ref=f12e155]: 🔥
+          - text: 1-day streak
+        - link "Submit a joke" [ref=f12e157] [cursor=pointer]:
+          - /url: /create
+        - button "Notifications" [ref=f12e160] [cursor=pointer]
+        - button "Account menu" [ref=f12e165] [cursor=pointer]: P
+    - main [ref=f12e166]:
+      - generic [ref=f12e167]:
+        - link "Back" [ref=f12e168] [cursor=pointer]:
+          - /url: /create
+        - generic [ref=f12e171]:
+          - generic [ref=f12e172]:
+            - generic [ref=f12e173]: Setup → Punchline
+            - button "Change format" [ref=f12e174]
+          - generic [ref=f12e175]:
+            - button "Edit" [ref=f12e176] [cursor=pointer]
+            - button "Preview" [ref=f12e177] [cursor=pointer]
+          - generic [ref=f12e178]:
+            - generic [ref=f12e179]:
+              - generic [ref=f12e180]:
+                - generic [ref=f12e181]:
+                  - generic [ref=f12e182]: Setup
+                  - textbox "Setup" [ref=f12e183]:
+                    - /placeholder: Set the scene — give enough context to make the punchline land.
+                  - alert [ref=f12e184]:
+                    - generic [ref=f12e187]: setup is required
+                - generic [ref=f12e188]: ↓
+                - generic [ref=f12e189]:
+                  - generic [ref=f12e190]: Punchline
+                  - textbox "Punchline" [ref=f12e191]:
+                    - /placeholder: Deliver the punchline — unexpected, punchy, satisfying.
+                  - alert [ref=f12e192]:
+                    - generic [ref=f12e195]: punchline is required
+              - generic [ref=f12e196]:
+                - generic [ref=f12e197]:
+                  - generic [ref=f12e198]: Themes
+                  - textbox "Filter themes" [ref=f12e199]:
+                    - /placeholder: Filter themes…
+                  - generic [ref=f12e200]:
+                    - button "Animals" [ref=f12e201]
+                    - button "Dating" [ref=f12e202]
+                    - button "Dinner" [ref=f12e203]
+                    - button "Family" [ref=f12e204]
+                    - button "Food" [ref=f12e205]
+                    - button "Icebreaker" [ref=f12e206]
+                    - button "Mondays" [ref=f12e207]
+                    - button "Money" [ref=f12e208]
+                    - button "Party" [ref=f12e209]
+                    - button "Presentation" [ref=f12e210]
+                - generic [ref=f12e211]:
+                  - generic [ref=f12e212]: Categories
+                  - textbox "Filter categories" [ref=f12e213]:
+                    - /placeholder: Filter categories…
+                  - generic [ref=f12e214]:
+                    - button "Clean" [ref=f12e215]
+                    - button "Dad" [ref=f12e216]
+                    - button "Dad Jokes" [ref=f12e217]
+                    - button "Dark" [ref=f12e218]
+                    - button "Edgy" [ref=f12e219]
+                    - button "Kid-safe" [ref=f12e220]
+                    - button "Nerd" [ref=f12e221]
+                    - button "Office-proper" [ref=f12e222]
+                    - button "Puns" [ref=f12e223]
+                    - button "Sarcasm" [ref=f12e224]
+                - generic [ref=f12e225]:
+                  - generic [ref=f12e226]: Cultures
+                  - textbox "Filter cultures" [ref=f12e227]:
+                    - /placeholder: Filter cultures…
+                  - generic [ref=f12e228]:
+                    - button "American" [ref=f12e229]
+                    - button "British" [ref=f12e230]
+                    - button "Universal" [ref=f12e231]
+                - radiogroup "Age rating" [ref=f12e232]:
+                  - generic [ref=f12e233] [cursor=pointer]:
+                    - 'radio "Family-friendly Minimum age: 0" [ref=f12e234]'
+                    - generic [ref=f12e235]:
+                      - generic [ref=f12e236]: Family-friendly
+                      - generic [ref=f12e237]: "Minimum age: 0"
+                  - generic [ref=f12e238] [cursor=pointer]:
+                    - 'radio "Kid-safe Minimum age: 0" [ref=f12e239]'
+                    - generic [ref=f12e240]:
+                      - generic [ref=f12e241]: Kid-safe
+                      - generic [ref=f12e242]: "Minimum age: 0"
+                  - generic [ref=f12e243] [cursor=pointer]:
+                    - 'radio "Teen Minimum age: 13" [ref=f12e244]'
+                    - generic [ref=f12e245]:
+                      - generic [ref=f12e246]: Teen
+                      - generic [ref=f12e247]: "Minimum age: 13"
+                  - generic [ref=f12e248] [cursor=pointer]:
+                    - 'radio "Adult Minimum age: 18" [ref=f12e249]'
+                    - generic [ref=f12e250]:
+                      - generic [ref=f12e251]: Adult
+                      - generic [ref=f12e252]: "Minimum age: 18"
+                  - generic [ref=f12e253] [cursor=pointer]:
+                    - 'radio "Mature Minimum age: 18" [ref=f12e254]'
+                    - generic [ref=f12e255]:
+                      - generic [ref=f12e256]: Mature
+                      - generic [ref=f12e257]: "Minimum age: 18"
+            - paragraph [ref=f12e260]: How readers will see it
+          - generic [ref=f12e264]:
+            - button "Delete draft" [disabled]: Delete
+            - button "Submit for review" [disabled]
+    - status [ref=f12e265]:
+      - generic [ref=f12e270]:
+        - generic [ref=f12e271]: You've enjoyed your 10 free jokes today
+        - generic [ref=f12e272]: Go unlimited with Supporter.
+      - link "Upgrade" [ref=f12e273] [cursor=pointer]:
+        - /url: /settings/billing
+      - button "Dismiss" [ref=f12e274] [cursor=pointer]
+  - region "Notifications"
+  - button "Open Tanstack query devtools" [ref=f12e91] [cursor=pointer]

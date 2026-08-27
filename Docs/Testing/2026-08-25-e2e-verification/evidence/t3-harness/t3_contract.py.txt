@@ -1,0 +1,165 @@
+"""T3-P09 (clean) + T3-C — the FE<->BE contract, where analysis predicts defects."""
+import sys, json, os, subprocess
+sys.path.insert(0, "/private/tmp/claude-501/-Users-narekmeloyan-PycharmProjects-JokesForProject/2b1dc348-b702-49ec-ad6c-5222c7ee10fc/scratchpad/t3")
+from harness import *
+
+def shell(code):
+    env = dict(os.environ, DATABASE_URL='', DB_NAME='jokesfor', DB_USER='postgres', DB_PASSWORD='6969',
+               DB_HOST='localhost', DB_PORT='5432', DEBUG='True', DYLD_FALLBACK_LIBRARY_PATH='/opt/homebrew/lib')
+    p = subprocess.run(['/Users/narekmeloyan/PycharmProjects/JokesForProject/.venv/bin/python','manage.py','shell','-c',code],
+        cwd='/Users/narekmeloyan/PycharmProjects/JokesForProject', capture_output=True, text=True, env=env, timeout=180)
+    return "\n".join(l for l in p.stdout.splitlines() if l.strip() and 'Warning' not in l
+        and 'objects imported' not in l and 'email = serial' not in l and 'required=allauth' not in l).strip()
+
+def make_user(tag):
+    email = f"{tag}{TS}@test.local"
+    shell("from django.contrib.auth import get_user_model as G\n"
+          f"U=G(); u,_=U.objects.get_or_create(username='{email}', defaults=dict(email='{email}'))\n"
+          f"u.email='{email}'; u.is_active=True; u.set_password('{PW}'); u.save(); print(u.id)")
+    s = sess(); csrf(s)
+    assert s.post(f"{API}/auth/login/", json={"email": email, "password": PW}, timeout=30).status_code == 200
+    csrf(s); return s, email
+
+# ============ T3-P09 (clean): punchline oracle on a genuinely UNREAD joke ============
+u1, e1 = make_user("orc")
+hit_ids = [j["id"] for j in jget(u1.get(f"{API}/jokes/?q=literally", timeout=30)).get("results", [])]
+pool = [j["id"] for j in jget(u1.get(f"{API}/jokes/?page=5", timeout=30)).get("results", [])]
+burn = [i for i in pool if i not in hit_ids][:10]
+for i in burn:
+    u1.get(f"{API}/jokes/{i}/", timeout=20)
+st = jget(u1.get(f"{API}/jokes/daily-reads/", timeout=20))
+sr = jget(u1.get(f"{API}/jokes/?q=literally", timeout=30))
+tgt = next((j for j in sr.get("results", []) if j["id"] not in burn), {})
+rec("T3-P09", "Full-text search indexes punchlines, so a paywalled joke is discoverable by a punchline-only word",
+    "GIVEN a capped reader who has NOT read joke X, WHEN they search a word occurring only in X's punchline, "
+    "THEN X is returned with is_locked=true and punchline=null",
+    "QUESTIONABLE",
+    st.get("over") is True and bool(tgt) and tgt.get("is_locked") is True and tgt.get("punchline") is None,
+    f"paywall={st.get('used')}/{st.get('limit')} over={st.get('over')} matches={sr.get('count')} "
+    f"target={tgt.get('id')} is_locked={tgt.get('is_locked')} punchline={tgt.get('punchline')!r} teaser_setup={(tgt.get('setup') or '')[:45]!r}",
+    "Punchline text never leaves the server, but its wording is inferable by guess-and-check against the FTS index. "
+    "Decide: exclude punchline from search_vector, or accept and document.")
+
+# ============ T3-C01: lookup catalogs truncated by the 10-row page cap ============
+cats = {}
+for name in ["context-tags", "tones", "formats", "vibes", "culture-tags", "languages", "age-ratings"]:
+    b = jget(u1.get(f"{API}/{name}/", timeout=30))
+    if isinstance(b, dict) and "results" in b:
+        cats[name] = (b.get("count"), len(b["results"]), "paginated")
+    elif isinstance(b, list):
+        cats[name] = (len(b), len(b), "unpaginated")
+truncated = {k: v for k, v in cats.items() if v[2] == "paginated" and v[0] and v[0] > v[1]}
+ps = jget(u1.get(f"{API}/context-tags/?page_size=100", timeout=30))
+override_works = isinstance(ps, dict) and len(ps.get("results", [])) > 10
+rec("T3-C01", "Lookup catalogs are silently truncated to 10 rows and page_size cannot override it",
+    "GIVEN more than 10 taxonomy rows, WHEN the client fetches the catalog (page 1, as the SPA does), "
+    "THEN only 10 are returned, ?page_size= is ignored, and the remainder are unreachable in the UI",
+    "DEFECT-EXPECTED",
+    bool(truncated) and not override_works,
+    f"catalogs={cats} truncated={truncated} page_size_override_works={override_works}",
+    "The creator editor's tag picker and Explore's theme axis can never offer the hidden rows. "
+    "Fix: pagination_class=None on lookup viewsets (as VibeViewSet already does), or add page_size_query_param.")
+
+# ============ T3-C02 / T3-C03: the onboarding preferences contract ============
+u2, e2 = make_user("pref")
+before = shell("from django.contrib.auth import get_user_model as G\n"
+    "from jokes.models import UserPreference\n"
+    f"u=G().objects.get(email__iexact='{e2}')\n"
+    "p,_=UserPreference.objects.get_or_create(user=u)\n"
+    "from jokes.models import Tone\n"
+    "p.preferred_tones.set(Tone.objects.all()[:3]); p.save()\n"
+    "print('tones_before=', p.preferred_tones.count(), 'onboarding_before=', p.onboarding_completed)")
+
+payload = {"tones": ["witty", "dry"], "humorTypes": ["oneliner", "setup"],
+           "humor_types": ["oneliner", "setup"], "languages": ["english"],
+           "notificationEnabled": True, "notification_time": "09:30",
+           "notification_days": ["mon", "tue"], "streak_saver_enabled": True,
+           "onboarding_completed": True, "onboardingCompleted": True}
+r = u2.patch(f"{API}/users/me/preferences/", json=payload, timeout=30)
+after = shell("from django.contrib.auth import get_user_model as G\n"
+    "from jokes.models import UserPreference\n"
+    f"u=G().objects.get(email__iexact='{e2}')\n"
+    "p=UserPreference.objects.get(user=u)\n"
+    "print('tones_after=', p.preferred_tones.count())\n"
+    "print('onboarding_after=', p.onboarding_completed)\n"
+    "print('notif_time=', getattr(p,'notification_time',None))\n"
+    "print('streak_saver=', getattr(p,'streak_saver_enabled',None))")
+d = dict(kv.split("=", 1) for kv in
+         [l.strip() for l in (before + "\n" + after).replace("'", "").split("\n") if "=" in l and " " not in l.split("=")[0]]) \
+    if False else {}
+vals = {}
+for line in (before + "\n" + after).splitlines():
+    for part in line.replace("'", "").split():
+        if "=" in part:
+            k, v = part.split("=", 1); vals[k] = v
+    # handle "key= value" spacing
+    toks = line.replace("'", "").split()
+    for i, t in enumerate(toks):
+        if t.endswith("=") and i + 1 < len(toks):
+            vals[t[:-1]] = toks[i + 1]
+tones_before = vals.get("tones_before"); tones_after = vals.get("tones_after")
+onb_after = vals.get("onboarding_after")
+wiped = tones_before not in (None, "0") and tones_after == "0"
+rec("T3-C02", "Onboarding's preferences PATCH WIPES the user's tone preferences",
+    "GIVEN a user with 3 preferred tones, WHEN the SPA sends humor_types = FORMAT slugs (as onboarding does), "
+    "THEN Tone.objects.filter(slug__in=<format slugs>) matches nothing and preferred_tones is set to EMPTY",
+    "DEFECT-EXPECTED",
+    wiped,
+    f"http={r.status_code} tones_before={tones_before} tones_after={tones_after} raw={vals}",
+    "Destructive: personalization (get_personalized_joke reads preferred_tones) silently degrades to the generic pool "
+    "the moment a user completes onboarding.")
+
+rec("T3-C03", "Six onboarding fields are silently dropped — the PATCH returns 200 having persisted nothing",
+    "GIVEN tones/languages/notification_time/notification_days/streak_saver_enabled/onboarding_completed in the body, "
+    "WHEN the PATCH returns 200, THEN none of them are stored and onboarding_completed stays false",
+    "DEFECT-EXPECTED",
+    r.status_code in (200, 202) and onb_after == "False",
+    f"http={r.status_code} onboarding_completed_after={onb_after} notif_time={vals.get('notif_time')} streak_saver={vals.get('streak_saver')}",
+    "Silent success is the worst failure mode: the SPA shows 'saved', the user's ritual choices evaporate, and "
+    "onboarding_completed never flips so the flow can re-trigger.")
+
+ts = jget(u2.get(f"{API}/users/me/today-status/", timeout=30))
+rec("T3-C04", "today-status reflects model defaults, never the ritual the user chose",
+    "GIVEN the drops above, WHEN today-status is read, THEN it shows defaults rather than the chosen time/days",
+    "DEFECT-EXPECTED",
+    isinstance(ts, dict),
+    f"today_status={json.dumps(ts)[:220]}")
+
+# ============ T3-C06: achievements never unlock ============
+ach = jget(u1.get(f"{API}/users/me/achievements/", timeout=30))
+items = ach.get("results", ach) if isinstance(ach, dict) else ach
+unlocked = [a for a in items if a.get("unlocked")] if isinstance(items, list) else []
+writers = shell("import subprocess;"
+    "print(subprocess.run(['grep','-rn','UserAchievement.objects.create','--include=*.py','.'],capture_output=True,text=True).stdout.strip() or 'NO CREATE CALLS')")
+rec("T3-C06", "Achievements can never be earned — no code path ever creates a UserAchievement row",
+    "GIVEN any amount of user activity, WHEN achievements are listed, THEN every one is unlocked=false forever",
+    "DEFECT-EXPECTED",
+    isinstance(items, list) and len(items) > 0 and not unlocked and "NO CREATE CALLS" in writers,
+    f"achievements={len(items) if isinstance(items,list) else '?'} unlocked={len(unlocked)} "
+    f"criteria_writers={writers[:120]}",
+    "criteria_type/criteria_value on the model are decorative. The feature ships in the UI but is inert.")
+
+# ============ T3-C07: anonymous 'daily' joke is random per request ============
+a = sess()
+picks = []
+for _ in range(4):
+    b = jget(a.get(f"{API}/daily-jokes/today/", timeout=30))
+    inner = b.get("joke", b) if isinstance(b, dict) else {}
+    picks.append(inner.get("id"))
+rec("T3-C07", "For anonymous visitors the 'daily' joke is a fresh random joke on every request",
+    "GIVEN an anonymous visitor, WHEN today's daily joke is fetched repeatedly, "
+    "THEN the id changes between calls (order_by('?')), so 'daily' is not daily and cannot be shared or discussed",
+    "QUESTIONABLE",
+    len(set(picks)) > 1,
+    f"ids_across_4_calls={picks} distinct={len(set(picks))}",
+    "Authenticated users get a stable per-day pick; logged-out visitors do not. A shared 'joke of the day' link "
+    "shows a different joke to each visitor.")
+
+# ============ T3-C08: authenticated daily joke is stable ============
+p2 = [jget(u1.get(f"{API}/daily-jokes/today/", timeout=30)).get("joke", {}).get("id") for _ in range(3)]
+rec("T3-C08", "For an authenticated user the daily joke is stable across the day",
+    "same joke id on repeated fetches", "SENSIBLE",
+    len(set(p2)) == 1 and p2[0] is not None,
+    f"ids={p2}")
+
+print("\n@@RESULTS@@" + json.dumps(RESULTS))

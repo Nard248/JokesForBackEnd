@@ -1,0 +1,410 @@
+"""T3-S — moderation, appeals, compliance."""
+import io, json, os, sys, zipfile
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from common import *   # noqa
+from PIL import Image
+
+ADMIN_BOOT = """
+from django.contrib.admin.sites import site
+from django.test import RequestFactory
+from django.contrib.auth import get_user_model
+from django.contrib.messages.storage.fallback import FallbackStorage
+def admin_req():
+    U = get_user_model()
+    rf = RequestFactory(); req = rf.post('/admin/'); req.user = U.objects.get(username='e2eadmin')
+    setattr(req, 'session', {}); setattr(req, '_messages', FallbackStorage(req))
+    return req
+"""
+
+# Re-runnable: clear the rows previous runs of this script left behind.
+print(db("""
+from jokes.models import ContentReport, Appeal, Joke
+ContentReport.objects.filter(reporter__email__endswith='@e2e.dev').delete()
+Appeal.objects.filter(user__email__endswith='@e2e.dev').delete()
+Joke.all_objects.filter(creator__email='t3.creator@e2e.dev', is_removed=True).update(is_removed=False, removed_at=None)
+print('cleanup done')
+"""))
+
+TOKEN = 'T3MJ' + TS   # unique per run so search assertions can't collide
+creator, _ = login('t3.creator@e2e.dev')
+reporter, _ = login('t3.reporter@e2e.dev')
+viewer, _ = login('t3.viewer@e2e.dev')
+
+TEXT_JOKE = 493          # tier_1, creator=t3creator (published in T3-M07)
+
+# ---- build a media joke owned by t3creator (image format, real asset) ------
+buf = io.BytesIO(); Image.new('RGB', (400, 300), (12, 180, 90)).save(buf, format='PNG'); buf.seek(0)
+up = creator.post(f"{API}/media/uploads/", files={'file': ('m.png', buf, 'image/png')},
+                  data={'kind': 'image'}, timeout=120)
+media_asset_id = up.json()['id']
+d = creator.post(f"{API}/jokes/my-drafts/", json={"format": "image"}, timeout=30).json()['id']
+creator.patch(f"{API}/jokes/my-drafts/{d}/",
+              json={"setup": f"{TOKEN} the moderation wave test image joke",
+                    "age_rating": "family-friendly", "media_asset_ids": [media_asset_id]}, timeout=30)
+sub_r = creator.post(f"{API}/jokes/my-drafts/{d}/submit/", json={}, timeout=30)
+pubout = db(ADMIN_BOOT + f"""
+from jokes.models import JokeSubmission
+ma = site._registry[JokeSubmission]
+ma.approve_and_publish(admin_req(), JokeSubmission.objects.filter(pk={d}))
+sub = JokeSubmission.objects.get(pk={d})
+j = sub.published_joke
+print('MEDIA_JOKE_ID=', getattr(j, 'id', None), '| status=', sub.status,
+      '| share_image=', getattr(j, 'share_image', None).name if getattr(j,'share_image',None) else None)
+""")
+MEDIA_JOKE = int([t for t in pubout.split('|')[0].split('=') if t.strip().isdigit()][-1])
+
+# ---------------------------------------------------------------- T3-S01
+r1 = reporter.post(f"{API}/reports/", json={"joke": TEXT_JOKE, "reason": "offensive",
+                                            "description": "T3-S01 first report"}, timeout=30)
+r2 = reporter.post(f"{API}/reports/", json={"joke": TEXT_JOKE, "reason": "spam",
+                                            "description": "T3-S01 duplicate report"}, timeout=30)
+cnt = db(f"from jokes.models import ContentReport; "
+         f"print('rows=', ContentReport.objects.filter(joke_id={TEXT_JOKE}, reporter__email='t3.reporter@e2e.dev').count(),"
+         f"list(ContentReport.objects.filter(joke_id={TEXT_JOKE}).values('id','reason','status','description')))")
+ok = (r1.status_code == 201 and r2.status_code == 200
+      and jget(r2).get('description') == 'T3-S01 first report' and 'rows= 1' in cnt)
+rec('T3-S01',
+    'duplicate report by the same reporter returns the existing pending report (200, not 201)',
+    'GIVEN a reporter who already has a PENDING ContentReport on a joke, WHEN they POST '
+    '/api/v1/reports/ for the same joke again, THEN the API returns 200 with the EXISTING '
+    'report (original reason/description preserved) instead of 201, and no second row is '
+    'created — the moderation queue cannot be stacked by one user.',
+    'SENSIBLE', ok,
+    f'first={dump(r1,200)} | second={dump(r2,200)} | DB {cnt}')
+
+# ---------------------------------------------------------------- T3-S05
+# Direct is_removed flip, exactly as the JokeAdmin change form does it
+# (removed_at is readonly there, so it stays NULL).
+before_notes = db("from inbox.models import Notification; "
+                  "print(Notification.objects.filter(recipient__email='t3.creator@e2e.dev').count())")
+flip = db(f"""
+from jokes.models import Joke
+j = Joke.all_objects.get(pk={TEXT_JOKE})
+j.is_removed = True
+j.save()          # exactly what ModelAdmin.save_model() does for the change form
+print('is_removed=', j.is_removed, '| removed_at=', j.removed_at,
+      '| share_image=', j.share_image.name if j.share_image else None)
+""")
+r_list = viewer.get(f"{API}/jokes/{TEXT_JOKE}/", timeout=30)
+r_appeal = creator.post(f"{API}/appeals/",
+                        json={"joke_id": TEXT_JOKE, "reason_text": "T3-S05 appeal after raw flip"},
+                        timeout=30)
+after_notes = db("from inbox.models import Notification; "
+                 "print(Notification.objects.filter(recipient__email='t3.creator@e2e.dev').count())")
+quar = db(f"from jokes.models import MediaAsset; "
+          f"print('quarantined assets for this joke =', MediaAsset.objects.filter(joke_links__joke_id={TEXT_JOKE}, quarantined_at__isnull=False).count())")
+ok = (r_list.status_code == 404 and 'removed_at= None' in flip
+      and before_notes == after_notes
+      and r_appeal.status_code == 400
+      and 'not eligible for appeal' in json.dumps(jget(r_appeal)))
+rec('T3-S05',
+    'a raw is_removed flip in JokeAdmin hides the joke with NO DSA notice and NO appeal right',
+    'GIVEN a moderator who ticks Joke.is_removed on the JokeAdmin change form (instead of '
+    'running the ContentReport "Take down" action), WHEN they save, THEN the joke disappears '
+    'from every read path, but removed_at stays NULL, no joke_removed notification / statement '
+    'of reasons is sent, the media is never quarantined, and the creator\'s later POST /appeals/ '
+    'is refused 400 "This removal is not eligible for appeal." — a DSA statement-of-reasons and '
+    'appeal-right bypass reachable from the admin UI.',
+    'QUESTIONABLE', ok,
+    f'flip: {flip} | GET joke -> {r_list.status_code} | notifications before={before_notes} '
+    f'after={after_notes} | appeal -> {dump(r_appeal,200)} | {quar}')
+db(f"from jokes.models import Joke; Joke.all_objects.filter(pk={TEXT_JOKE}).update(is_removed=False, removed_at=None); print('restored')")
+
+# ---------------------------------------------------------------- T3-S02
+rep = reporter.post(f"{API}/reports/", json={"joke": MEDIA_JOKE, "reason": "offensive",
+                                             "description": "T3-S02 takedown driver"}, timeout=30)
+pre = db(f"""
+from jokes.models import Joke, MediaAsset
+j = Joke.all_objects.get(pk={MEDIA_JOKE})
+a = MediaAsset.objects.get(pk={media_asset_id!r})
+print('pre file=', a.file.name, '| quarantined=', a.quarantined_at, '| share_image=', j.share_image.name if j.share_image else None)
+""")
+td = db(ADMIN_BOOT + f"""
+from jokes.models import ContentReport, Joke, MediaAsset
+ma = site._registry[ContentReport]
+ma.take_down_joke(admin_req(), ContentReport.objects.filter(joke_id={MEDIA_JOKE}))
+j = Joke.all_objects.get(pk={MEDIA_JOKE})
+a = MediaAsset.objects.get(pk={media_asset_id!r})
+from inbox.models import Notification
+n = Notification.objects.filter(recipient=j.creator, verb='joke_removed').order_by('-id').first()
+print('is_removed=', j.is_removed, '| removed_at set=', j.removed_at is not None,
+      '| share_image=', repr(j.share_image.name))
+print('asset file=', a.file.name, '| quarantined_at set=', a.quarantined_at is not None)
+print('notice verb=', getattr(n,'verb',None), '| data=', getattr(n,'data',None))
+print('reports now=', list(ContentReport.objects.filter(joke_id={MEDIA_JOKE}).values_list('status', flat=True)))
+import os
+from django.conf import settings
+print('old public path exists=', os.path.exists(os.path.join(settings.MEDIA_ROOT, 'media-assets/{media_asset_id}/image.webp')))
+print('new path exists=', os.path.exists(os.path.join(settings.MEDIA_ROOT, a.file.name)))
+""")
+r_detail = viewer.get(f"{API}/jokes/{MEDIA_JOKE}/", timeout=30)
+r_search = viewer.get(f"{API}/jokes/?q={TOKEN}", timeout=30)
+r_listall = viewer.get(f"{API}/jokes/?page_size=100", timeout=30)
+r_share = viewer.get(f"{BASE}/jokes/{MEDIA_JOKE}/share/", timeout=30, allow_redirects=False)
+quar_path = [ln for ln in td.splitlines() if ln.startswith('asset file=')][0]
+old_url = f"{BASE}/media/media-assets/{media_asset_id}/image.webp"
+ok = (r_detail.status_code == 404
+      and jget(r_search).get('count') == 0
+      and r_share.status_code == 404
+      and 'quarantined_at set= True' in td
+      and 'quarantine/' in quar_path
+      and "share_image= ''" in td
+      and 'old public path exists= False' in td
+      and 'new path exists= True' in td)
+rec('T3-S02',
+    'staff takedown hides the joke everywhere and quarantines its media to an unguessable path',
+    'GIVEN a reported media joke, WHEN staff run the ContentReport "Take down reported joke" '
+    'action, THEN the joke 404s on detail and vanishes from list/search, its public share page '
+    '404s, its share card PNG is deleted and the field blanked, its MediaAsset is moved from '
+    'media-assets/<uuid>/ to quarantine/<uuid>/<random-token>/ (old path gone from storage), '
+    'the reports are auto-resolved, and the creator gets a joke_removed statement-of-reasons '
+    'notification carrying the reason and the 14-day appeal deadline.',
+    'SENSIBLE', ok,
+    f'report={rep.status_code} | {pre} || after takedown: {td} || GET detail={r_detail.status_code} '
+    f'| search count={jget(r_search).get("count")} | share page={r_share.status_code} '
+    f'| old media URL {old_url} -> served-from={quar_path}')
+
+# ---------------------------------------------------------------- T3-S03
+a1 = creator.post(f"{API}/appeals/", json={"joke_id": MEDIA_JOKE,
+                                           "reason_text": "T3-S03: this is my own joke, please review."}, timeout=30)
+a2 = creator.post(f"{API}/appeals/", json={"joke_id": MEDIA_JOKE,
+                                           "reason_text": "T3-S03 duplicate"}, timeout=30)
+a_foreign = viewer.post(f"{API}/appeals/", json={"joke_id": MEDIA_JOKE,
+                                                 "reason_text": "not mine"}, timeout=30)
+# a second taken-down joke whose removal is backdated past the 14-day window
+lapse = db(ADMIN_BOOT + f"""
+from django.utils import timezone
+from datetime import timedelta
+from jokes.models import Joke, ContentReport
+from django.contrib.auth import get_user_model
+U = get_user_model()
+c = U.objects.get(email='t3.creator@e2e.dev')
+j = Joke.objects.filter(creator=c, is_removed=False).exclude(pk={MEDIA_JOKE}).first()
+Joke.all_objects.filter(pk=j.pk).update(is_removed=True, removed_at=timezone.now() - timedelta(days=15))
+print('LAPSED_JOKE=', j.pk)
+""")
+LAPSED = int(lapse.split('LAPSED_JOKE=')[1].strip())
+a_late = creator.post(f"{API}/appeals/", json={"joke_id": LAPSED, "reason_text": "too late"}, timeout=30)
+rows = db(f"from jokes.models import Appeal; print(list(Appeal.objects.values('id','joke_id','status','action_type')))")
+ok = (a1.status_code == 201 and a2.status_code == 400
+      and 'An appeal is already pending for this joke.' in json.dumps(jget(a2))
+      and a_foreign.status_code == 404
+      and a_late.status_code == 400 and '14-day appeal window' in json.dumps(jget(a_late)))
+rec('T3-S03',
+    'appeal accepted once inside the 14-day window; duplicate 400; lapsed window 400; foreign 404',
+    'GIVEN a creator whose joke was taken down, WHEN they POST /api/v1/appeals/ {joke_id, '
+    'reason_text} inside the 14-day window, THEN 201 with a pending appeal; a second POST while '
+    'that one is open is refused 400 (duplicate); a POST for someone else\'s joke is 404 (no '
+    'existence leak); and a POST for a takedown older than 14 days is refused 400 "The 14-day '
+    'appeal window for this takedown has passed."',
+    'SENSIBLE', ok,
+    f'first={dump(a1,260)} | duplicate={dump(a2,200)} | other-user={dump(a_foreign,140)} '
+    f'| lapsed(joke {LAPSED})={dump(a_late,160)} | DB {rows}')
+
+# ---------------------------------------------------------------- T3-S04
+rev = db(ADMIN_BOOT + f"""
+from jokes.models import Appeal, Joke, MediaAsset
+import os
+from django.conf import settings
+ap = Appeal.objects.filter(joke_id={MEDIA_JOKE}, status='pending').first()
+ma = site._registry[Appeal]
+ma.reverse_appeals(admin_req(), Appeal.objects.filter(pk=ap.pk))
+ap.refresh_from_db()
+j = Joke.all_objects.get(pk={MEDIA_JOKE}); a = MediaAsset.objects.get(pk={media_asset_id!r})
+print('appeal.status=', ap.status, '| resolver=', getattr(ap.resolver,'username',None))
+print('joke.is_removed=', j.is_removed, '| removed_at=', j.removed_at,
+      '| share_image=', repr(j.share_image.name),
+      '| card on disk=', os.path.exists(os.path.join(settings.MEDIA_ROOT, j.share_image.name)) if j.share_image else False)
+print('asset file=', a.file.name, '| quarantined_at=', a.quarantined_at,
+      '| file on disk=', os.path.exists(os.path.join(settings.MEDIA_ROOT, a.file.name)))
+from inbox.models import Notification
+n = Notification.objects.filter(recipient=j.creator, verb='appeal_resolved').order_by('-id').first()
+print('notice=', getattr(n,'verb',None), getattr(n,'data',None))
+""")
+r_detail2 = viewer.get(f"{API}/jokes/{MEDIA_JOKE}/", timeout=30)
+r_share2 = viewer.get(f"{BASE}/jokes/{MEDIA_JOKE}/share/", timeout=30, allow_redirects=False)
+ok = ('appeal.status= reversed' in rev and 'joke.is_removed= False' in rev
+      and 'quarantined_at= None' in rev and 'asset file= media-assets/' in rev
+      and 'file on disk= True' in rev and 'card on disk= True' in rev
+      and r_detail2.status_code == 200 and r_share2.status_code == 200)
+rec('T3-S04',
+    'reversing an appeal restores the joke, releases the media, and regenerates the share card',
+    'GIVEN a pending takedown appeal, WHEN staff run the AppealAdmin "Reverse selected appeals" '
+    'action, THEN the quarantined MediaAsset is moved back to media-assets/<uuid>/ with '
+    'quarantined_at cleared, the joke flips is_removed=False / removed_at=NULL and serves again '
+    '(API 200 + share page 200), a fresh share card PNG is written, the appeal becomes '
+    '"reversed" with a resolver, and the creator gets an appeal_resolved notification.',
+    'SENSIBLE', ok,
+    f'{rev} || GET detail={r_detail2.status_code} | share page={r_share2.status_code}')
+db(f"from jokes.models import Joke; Joke.all_objects.filter(pk={LAPSED}).update(is_removed=False, removed_at=None); print('lapsed joke restored')")
+
+# ---------------------------------------------------------------- T3-S06
+def uid(email):
+    return int(db("from django.contrib.auth import get_user_model\n"
+                  "print(get_user_model().objects.get(email=%r).pk)" % email))
+
+CREATOR_ID = uid('t3.creator@e2e.dev')
+VIEWER_ID = uid('t3.viewer@e2e.dev')
+f_follow = viewer.post(f"{API}/follows/{CREATOR_ID}/", json={}, timeout=30)
+prof_before = viewer.get(f"{API}/creators/{CREATOR_ID}/profile/", timeout=30)
+feed_before = viewer.get(f"{API}/jokes/?q={TOKEN}", timeout=30)
+r_block = viewer.post(f"{API}/users/{CREATOR_ID}/block/", json={}, timeout=30)
+feed_after = viewer.get(f"{API}/jokes/?q={TOKEN}", timeout=30)
+prof_after = viewer.get(f"{API}/creators/{CREATOR_ID}/profile/", timeout=30)
+follow_rows = db(f"from follows.models import Follow; "
+                 f"print('follow rows=', Follow.objects.filter(creator_id={CREATOR_ID}, follower__email='t3.viewer@e2e.dev').count())")
+blocks = viewer.get(f"{API}/users/me/blocks/", timeout=30)
+# symmetric: the blocked creator also loses sight of the blocker's profile
+rev_prof = creator.get(f"{API}/creators/{VIEWER_ID}/profile/", timeout=30)
+r_unblock = viewer.delete(f"{API}/users/{CREATOR_ID}/block/", timeout=30)
+feed_restored = viewer.get(f"{API}/jokes/?q={TOKEN}", timeout=30)
+prof_restored = viewer.get(f"{API}/creators/{CREATOR_ID}/profile/", timeout=30)
+ok = (jget(feed_before).get('count', 0) >= 1 and prof_before.status_code == 200
+      and r_block.status_code == 201
+      and jget(feed_after).get('count') == 0 and prof_after.status_code == 404
+      and 'follow rows= 0' in follow_rows
+      and r_unblock.status_code == 204
+      and jget(feed_restored).get('count', 0) >= 1 and prof_restored.status_code == 200)
+rec('T3-S06',
+    'blocking a creator hides their jokes, severs follows both ways and 404s their profile; '
+    'unblocking restores all three',
+    'GIVEN viewer V following creator C, WHEN V POSTs /users/{C}/block/, THEN C\'s jokes '
+    'disappear from V\'s joke list/search (jokes.moderation.visible_jokes), the Follow rows are '
+    'deleted in both directions, GET /creators/{C}/profile/ returns 404 for V (and symmetrically '
+    'for C looking at V), C appears in GET /users/me/blocks/, and DELETE /users/{C}/block/ '
+    'restores the jokes and the profile.',
+    'SENSIBLE', ok,
+    f'follow={f_follow.status_code} | before: feed={jget(feed_before).get("count")} '
+    f'profile={prof_before.status_code} || block={dump(r_block,80)} | after: '
+    f'feed={jget(feed_after).get("count")} profile={prof_after.status_code} {follow_rows} '
+    f'| my-blocks={len(jget(blocks).get("results", []))} | symmetric reverse-profile='
+    f'{rev_prof.status_code} || unblock={r_unblock.status_code} | restored: '
+    f'feed={jget(feed_restored).get("count")} profile={prof_restored.status_code}')
+
+# ---------------------------------------------------------------- T3-S07
+gdpr, _ = login('t3.gdpr@e2e.dev')
+gdpr.post(f"{API}/favorites/", json={"joke": MEDIA_JOKE}, timeout=30)
+gdpr.post(f"{API}/reports/", json={"joke": MEDIA_JOKE, "reason": "other",
+                                   "description": "T3-S07 export probe"}, timeout=30)
+r_exp = gdpr.get(f"{API}/users/me/data-export/", timeout=60)
+shape, sample = None, None
+if r_exp.status_code == 200 and r_exp.headers.get('content-type') == 'application/zip':
+    zf = zipfile.ZipFile(io.BytesIO(r_exp.content))
+    names = zf.namelist()
+    payload = json.loads(zf.read(names[0]))
+    shape = {'zip_entries': names, 'top_level_keys': sorted(payload.keys()),
+             'account': payload.get('account'),
+             'reports_filed': payload.get('reports_filed'),
+             'favorites_n': len(payload.get('favorites') or [])}
+    sample = json.dumps(shape)[:900]
+ok_exp = (r_exp.status_code == 200 and shape is not None
+          and shape['account'].get('email') == 't3.gdpr@e2e.dev'
+          and len(shape['reports_filed']) == 1)
+rec('T3-S07a',
+    'GET /users/me/data-export/ returns the caller\'s own data as a downloadable ZIP of JSON',
+    'GIVEN an authenticated user with favorites and a filed report, WHEN they GET '
+    '/api/v1/users/me/data-export/, THEN 200 application/zip with '
+    'Content-Disposition attachment containing jokes-for-data-export.json — a single JSON '
+    'document with account/profile/preferences/collections/saved_jokes/favorites/ratings/'
+    'reactions/views/streak/submissions/media_assets/reports_filed/blocks/... sections scoped '
+    'to that user only.',
+    'SENSIBLE', ok_exp,
+    f'HTTP {r_exp.status_code} ct={r_exp.headers.get("content-type")} '
+    f'cd={r_exp.headers.get("content-disposition")} bytes={len(r_exp.content)} | {sample}')
+
+del_no_pw = gdpr.delete(f"{API}/users/me/", json={}, timeout=30)
+del_bad = gdpr.delete(f"{API}/users/me/", json={"password": "wrong"}, timeout=30)
+alive = gdpr.get(f"{API}/users/me/profile/", timeout=30)
+rec('T3-S07b',
+    'DELETE /users/me/ refuses to act without a correct password (re-authentication gate)',
+    'GIVEN an authenticated user with a usable password, WHEN they DELETE /api/v1/users/me/ '
+    'with no password or the wrong one, THEN 400 with a field error and NOTHING is mutated — '
+    'the account is still usable afterwards.',
+    'SENSIBLE',
+    del_no_pw.status_code == 400 and del_bad.status_code == 400 and alive.status_code == 200,
+    f'no-password={dump(del_no_pw,140)} | wrong-password={dump(del_bad,140)} | '
+    f'account still usable: GET profile={alive.status_code}')
+
+# give the account a media asset so we can see what a FAILED delete destroys
+b2 = io.BytesIO(); Image.new('RGB', (120, 90), (7, 7, 200)).save(b2, format='PNG'); b2.seek(0)
+g_asset = gdpr.post(f"{API}/media/uploads/", files={'file': ('g.png', b2, 'image/png')},
+                    data={'kind': 'image'}, timeout=120).json()
+pre_del = db(f"""
+import os
+from django.conf import settings
+from jokes.models import MediaAsset
+from audit.models import AuditLog
+a = MediaAsset.objects.get(pk={g_asset['id']!r})
+print('asset file=', a.file.name, '| on disk=', os.path.exists(os.path.join(settings.MEDIA_ROOT, a.file.name)))
+print('audit rows for this user=', AuditLog.objects.filter(actor__email='t3.gdpr@e2e.dev').count(),
+      list(AuditLog.objects.filter(actor__email='t3.gdpr@e2e.dev').values_list('action', flat=True)))
+""")
+r_del = gdpr.delete(f"{API}/users/me/", json={"password": PW_T3}, timeout=60)
+after = gdpr.get(f"{API}/users/me/profile/", timeout=30)
+post_del = db(f"""
+import os
+from django.conf import settings
+from django.contrib.auth import get_user_model
+from jokes.models import MediaAsset, Favorite, ContentReport
+U = get_user_model()
+print('user row still present=', U.objects.filter(email='t3.gdpr@e2e.dev').exists())
+a = MediaAsset.objects.filter(pk={g_asset['id']!r}).first()
+print('media row survived=', a is not None,
+      '| FILE still on disk=', os.path.exists(os.path.join(settings.MEDIA_ROOT, a.file.name)) if a else 'n/a')
+print('favorites left=', Favorite.objects.filter(user__email='t3.gdpr@e2e.dev').count(),
+      '| reports left=', ContentReport.objects.filter(reporter__email='t3.gdpr@e2e.dev').count())
+""")
+
+# controlled causation experiment: the ONLY difference is one AuditLog row
+causation = db("""
+from django.contrib.auth import get_user_model
+from rest_framework.test import APIRequestFactory, force_authenticate
+from jokes.views import UserAccountDeleteView
+from audit.models import AuditLog
+U = get_user_model()
+PW = 'E2ePassw0rd!2026'
+
+def try_delete(username, with_audit):
+    u = U.objects.create(username=username, email=username + '@e2e.dev', is_active=True)
+    u.set_password(PW); u.save()
+    if with_audit:
+        AuditLog.objects.create(actor=u, action='login', outcome='success')
+    req = APIRequestFactory().delete('/api/v1/users/me/', {'password': PW}, format='json')
+    force_authenticate(req, user=u)
+    try:
+        resp = UserAccountDeleteView.as_view()(req)
+        return 'HTTP %s' % resp.status_code
+    except Exception as exc:
+        return type(exc).__name__ + ': ' + str(exc).strip().splitlines()[0]
+
+import uuid
+sfx = uuid.uuid4().hex[:6]
+print('no audit row  ->', try_delete('t3del_clean_' + sfx, False))
+print('one audit row ->', try_delete('t3del_audited_' + sfx, True))
+print('audited probe user still exists =', U.objects.filter(username='t3del_audited_' + sfx).exists())
+""")
+rec('T3-S07c',
+    'DELETE /users/me/ 500s for any user who has ever logged in — GDPR erasure is unreachable',
+    'GIVEN GDPR Art.17 erasure, WHEN a user DELETEs /api/v1/users/me/ with the correct password, '
+    'THEN the account should cascade away (204). It does NOT: user.delete() has to SET_NULL '
+    'AuditLog.actor, and audit.models.AuditLog carries a pgtrigger.Protect(Update|Delete) '
+    '"append_only" trigger, so Postgres raises "pgtrigger: Cannot update or delete rows from '
+    'audit_auditlog table" and the request 500s. Every user acquires an AuditLog row on their '
+    'first successful login (audit/signals.on_user_logged_in), so erasure is impossible for '
+    'every real account. The transaction rolls the DB back, but the storage deletes in step 2 '
+    'happen outside it — the user\'s uploaded media files are destroyed while their account and '
+    'DB rows survive.',
+    'DEFECT-EXPECTED',
+    r_del.status_code == 500 and 'user row still present= True' in post_del
+    and 'no audit row  -> HTTP 204' in causation and 'audit_auditlog' in causation,
+    f'before: {pre_del} || DELETE (correct password) -> {r_del.status_code} | session still '
+    f'alive afterwards: GET profile={after.status_code} || after: {post_del} || '
+    f'controlled experiment: {causation}',
+    note='Backend traceback: jokes/views.py:2485 user.delete() -> django/db/models/deletion.py '
+         'field_updates -> UPDATE audit_auditlog SET actor_id=NULL -> InternalError '
+         '"pgtrigger: Cannot update or delete rows from audit_auditlog table". The AuditLog.actor '
+         'docstring literally says "NULL after account deletion (SET_NULL)" — the append-only '
+         'trigger contradicts it.')
+
+print('T3S_MEDIA_JOKE=', MEDIA_JOKE, 'ASSET=', media_asset_id, 'CREATOR_ID=', CREATOR_ID)
+emit('t3_s')

@@ -1,0 +1,125 @@
+"""T3-B — billing & tips (Stripe keys blank => dormant)."""
+import json, os, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from common import *   # noqa
+
+u, _ = login('t3.viewer@e2e.dev')
+anon = sess(); csrf(anon)
+
+CREATOR_ID = int(db("from django.contrib.auth import get_user_model\n"
+                    "print(get_user_model().objects.get(email='t3.creator@e2e.dev').pk)"))
+
+# ---------------------------------------------------------------- T3-B01
+r_checkout = u.post(f"{API}/billing/checkout-session", json={"plan_slug": "supporter"}, timeout=30)
+r_portal = u.post(f"{API}/billing/portal-session", json={}, timeout=30)
+r_tip = u.post(f"{API}/tips/checkout/", json={"amount_cents": 500, "creator_id": CREATOR_ID}, timeout=30)
+DORMANT = {'detail': 'Billing is not configured.', 'code': 'billing_unavailable'}
+ok = all(r.status_code == 503 and jget(r) == DORMANT for r in (r_checkout, r_portal, r_tip))
+rec('T3-B01',
+    'every money-moving endpoint is dormant (503 billing_unavailable) with blank Stripe keys',
+    'GIVEN STRIPE_SECRET_KEY is unset so billing.stripe_gateway.is_enabled() is False, WHEN an '
+    'authenticated user POSTs /billing/checkout-session, /billing/portal-session or '
+    '/tips/checkout/, THEN each returns 503 with exactly '
+    '{"detail":"Billing is not configured.","code":"billing_unavailable"} and no Stripe call is '
+    'attempted — the dormant check runs before any argument validation.',
+    'SENSIBLE', ok,
+    f'checkout={dump(r_checkout,160)} | portal={dump(r_portal,160)} | tip={dump(r_tip,160)}')
+
+# ---------------------------------------------------------------- T3-B02 (free-user reads)
+r_plans_anon = anon.get(f"{API}/billing/plans", timeout=30)
+r_plans = u.get(f"{API}/billing/plans", timeout=30)
+r_ent = u.get(f"{API}/billing/entitlements", timeout=30)
+r_sub = u.get(f"{API}/billing/my-subscription", timeout=30)
+r_ent_anon = anon.get(f"{API}/billing/entitlements", timeout=30)
+ent = jget(r_ent)
+sub = jget(r_sub)
+ok = (r_plans_anon.status_code == 200 and isinstance(jget(r_plans_anon), list)
+      and r_ent.status_code == 200 and ent.get('plan') == 'free'
+      and ent.get('limits', {}).get('free_joke_reads_per_day') == 10
+      and ent.get('features', {}).get('creator_analytics') is True
+      and ent.get('features', {}).get('daily_joke_preview') is False
+      and r_sub.status_code == 200 and sub.get('status') == 'free'
+      and r_ent_anon.status_code == 401)
+rec('T3-B02',
+    'a FREE user sees the free plan, the 10-reads/day limit and a synthetic "free" subscription',
+    'GIVEN a user with no Subscription row, WHEN they GET /billing/plans (public), '
+    '/billing/entitlements and /billing/my-subscription, THEN plans lists the active public '
+    'plans unauthenticated; entitlements resolves plan="free" with '
+    'limits.free_joke_reads_per_day=10 (the paywall cap), features.creator_analytics=true and '
+    'the paid-only features false; my-subscription synthesizes {plan_slug:"free", '
+    'status:"free", current_period_end:null}; and entitlements requires auth (401 for anon).',
+    'SENSIBLE', ok,
+    f'plans(anon)={r_plans_anon.status_code} {json.dumps(jget(r_plans_anon))[:300]} | '
+    f'entitlements={r_ent.status_code} {json.dumps(ent)[:400]} | '
+    f'my-subscription={r_sub.status_code} {json.dumps(sub)[:250]} | '
+    f'entitlements(anon)={r_ent_anon.status_code}')
+
+# ---------------------------------------------------------------- T3-B04
+w_none = anon.post(f"{API}/billing/webhook", data=b'{"id":"evt_t3","type":"ping"}',
+                   headers={'Content-Type': 'application/json'}, timeout=30)
+w_bad = anon.post(f"{API}/billing/webhook", data=b'{"id":"evt_t3","type":"ping"}',
+                  headers={'Content-Type': 'application/json',
+                           'Stripe-Signature': 't=1,v1=deadbeefdeadbeefdeadbeef'}, timeout=30)
+processed = db("from billing.models import ProcessedStripeEvent; "
+               "print('processed events=', ProcessedStripeEvent.objects.count())")
+ok = (w_none.status_code == 200 and jget(w_none) == {'detail': 'billing_dormant'}
+      and w_bad.status_code == 200 and jget(w_bad) == {'detail': 'billing_dormant'}
+      and 'processed events= 0' in processed)
+rec('T3-B04a',
+    'while dormant the webhook 200-noops on ANY body/signature and processes nothing',
+    'GIVEN blank Stripe keys, WHEN an unauthenticated caller POSTs /billing/webhook with a '
+    'missing or garbage Stripe-Signature, THEN the view short-circuits BEFORE signature '
+    'verification and returns 200 {"detail":"billing_dormant"} (deliberate: Stripe must stop '
+    'retrying a dormant endpoint) — no event is parsed, no handler runs, no '
+    'ProcessedStripeEvent row is written.',
+    'SENSIBLE', ok,
+    f'no-signature={dump(w_none,160)} | garbage-signature={dump(w_bad,160)} | DB {processed}')
+
+# With billing ENABLED, prove the signature check actually rejects. No forging:
+# we hand Stripe's own construct_event a bogus signature and assert the 400.
+sig = db("""
+from django.test import override_settings
+from rest_framework.test import APIRequestFactory
+from billing.views import StripeWebhookView
+body = b'{"id":"evt_t3_fake","type":"checkout.session.completed"}'
+rf = APIRequestFactory()
+with override_settings(STRIPE_SECRET_KEY='sk_test_dummy_not_real', STRIPE_WEBHOOK_SECRET='whsec_dummy'):
+    for label, hdr in (('missing', ''), ('garbage', 't=1,v1=deadbeef')):
+        req = rf.post('/api/v1/billing/webhook', body, content_type='application/json',
+                      HTTP_STRIPE_SIGNATURE=hdr)
+        resp = StripeWebhookView.as_view()(req)
+        resp.render()
+        print(label, '->', resp.status_code, resp.content[:120])
+from billing.models import ProcessedStripeEvent
+print('processed events after=', ProcessedStripeEvent.objects.count())
+""")
+ok = sig.count('-> 400') == 2 and 'Invalid signature' in sig and 'processed events after= 0' in sig
+rec('T3-B04b',
+    'with billing enabled, an unsigned/garbage-signed webhook is rejected 400 before any handler',
+    'GIVEN STRIPE_SECRET_KEY/STRIPE_WEBHOOK_SECRET are configured, WHEN a webhook arrives with a '
+    'missing or forged Stripe-Signature header, THEN construct_event raises '
+    'SignatureVerificationError and the view returns 400 {"detail":"Invalid signature."} — '
+    'billing.webhooks.handle_event is never reached and no ProcessedStripeEvent is written. '
+    '(Proved with dummy keys via override_settings; no signature was forged.)',
+    'SENSIBLE', ok, sig)
+
+# ---------------------------------------------------------------- T3-B05 (tip guards)
+guards = {
+    'bad-amount': u.post(f"{API}/tips/checkout/", json={"amount_cents": 777, "creator_id": CREATOR_ID}, timeout=30),
+    'self-tip': u.post(f"{API}/tips/checkout/", json={"amount_cents": 500,
+                                                     "creator_id": int(db("from django.contrib.auth import get_user_model\nprint(get_user_model().objects.get(email='t3.viewer@e2e.dev').pk)"))}, timeout=30),
+}
+tips_created = db("from billing.models import Tip; print('tip rows=', Tip.objects.count())")
+rec('T3-B05',
+    'the dormant guard short-circuits BEFORE tip amount/creator validation',
+    'GIVEN billing is dormant, WHEN a user POSTs /tips/checkout/ with an off-tier amount or with '
+    'themselves as the creator, THEN the response is still 503 billing_unavailable — is_enabled() '
+    'is checked first, so the amount-tier and self-tip guards (which would return 400 '
+    'invalid_amount / self_tip once Stripe is live) are unreachable and cannot be exercised here.',
+    'SENSIBLE',
+    all(r.status_code == 503 for r in guards.values()) and 'tip rows= 0' in tips_created,
+    ' | '.join(f'{k}={dump(v,140)}' for k, v in guards.items()) + ' | DB ' + tips_created,
+    note='Not a defect — just the ordering. Amount-tier / self-tip / not-a-creator guards were '
+         'read in billing/views.py TipCheckoutView and are only reachable with live keys.')
+
+emit('t3_b')

@@ -1,0 +1,69 @@
+"""Shared login/util helpers for the T3 scripts (built on harness.py)."""
+import sys
+sys.path.insert(0, '/private/tmp/claude-501/-Users-narekmeloyan-PycharmProjects-JokesForProject/2b1dc348-b702-49ec-ad6c-5222c7ee10fc/scratchpad/t3')
+from harness import *          # noqa: F401,F403
+from harness import sess, csrf, jget, API, BASE, RESULTS, rec   # noqa: F401
+
+PW_T3 = "E2ePassw0rd!2026"
+
+def login(email, password=PW_T3):
+    s = sess()
+    csrf(s)
+    r = s.post(f"{API}/auth/login/", json={"email": email, "password": password}, timeout=30)
+    if r.status_code != 200:
+        raise RuntimeError(f"login failed for {email}: {r.status_code} {r.text[:400]}")
+    csrf(s)   # refresh token value after login (cookie may rotate)
+    body = r.json() if r.headers.get('content-type','').startswith('application/json') else {}
+    tok = body.get('access') or body.get('access_token')
+    return s, body
+
+def dump(r, limit=600):
+    return f"{r.status_code} {str(jget(r))[:limit]}"
+
+
+# --- Django shell bridge -----------------------------------------------------
+import os as _os, subprocess as _sp, tempfile as _tf
+
+REPO = '/Users/narekmeloyan/PycharmProjects/JokesForProject'
+_DB_ENV = {
+    'DATABASE_URL': '', 'DB_NAME': 'jokesfor', 'DB_USER': 'postgres',
+    'DB_PASSWORD': '6969', 'DB_HOST': 'localhost', 'DB_PORT': '5432',
+    'DEBUG': 'True', 'DYLD_FALLBACK_LIBRARY_PATH': '/opt/homebrew/lib',
+    'FRONTEND_URL': 'http://localhost:5273',
+    'STRIPE_SECRET_KEY': '', 'STRIPE_PUBLISHABLE_KEY': '', 'STRIPE_WEBHOOK_SECRET': '',
+}
+
+def db(code):
+    """Run `code` inside a manage.py shell against the local Postgres; return stdout."""
+    env = dict(_os.environ)
+    env.update(_DB_ENV)
+    with _tf.NamedTemporaryFile('w', suffix='.py', delete=False) as fh:
+        fh.write(code)
+        path = fh.name
+    out = _sp.run(
+        [f'{REPO}/.venv/bin/python', 'manage.py', 'shell', '-c',
+         f"exec(open({path!r}).read())"],
+        cwd=REPO, env=env, capture_output=True, text=True, timeout=300,
+    )
+    if out.returncode != 0:
+        raise RuntimeError(f'db() failed: {out.stdout[-2000:]}\n{out.stderr[-3000:]}')
+    txt = out.stdout
+    # strip the shell banner and Django/PIL log noise (DEBUG/INFO lines the
+    # console logger emits inside the shell when DEBUG=True)
+    def _noise(ln):
+        if 'objects imported automatically' in ln:
+            return True
+        head = ln[:9]
+        if len(head) == 9 and head[2] == ':' and head[5] == ':' and head[:2].isdigit():
+            return True
+        return False
+    lines = [ln for ln in txt.splitlines() if not _noise(ln)]
+    return '\n'.join(lines).strip()
+
+def emit(name=None):
+    import json as _json, sys as _sys, os as _os2
+    name = name or _os2.path.splitext(_os2.path.basename(_sys.argv[0]))[0]
+    out = _os2.path.join(_os2.path.dirname(_os2.path.abspath(__file__)), 'results', name + '.json')
+    with open(out, 'w') as fh:
+        _json.dump(RESULTS, fh, indent=1)
+    print('@@RESULTS@@' + _json.dumps(RESULTS))
