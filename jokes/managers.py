@@ -58,7 +58,15 @@ class JokeManager(models.Manager):
         # Apply filters
         if filters:
             if filters.get('format'):
-                qs = qs.filter(format__slug=filters['format'])
+                # Accept one slug or a comma-separated list, matching the
+                # tone/context/culture axes below. Explore lets a reader stack
+                # formats; an exact match here turned any multi-select into an
+                # empty feed instead of a union.
+                fmt = filters['format']
+                fmt_slugs = fmt if isinstance(fmt, (list, tuple, set)) else [
+                    s.strip() for s in str(fmt).split(',') if s.strip()
+                ]
+                qs = qs.filter(format__slug__in=fmt_slugs)
             if filters.get('age_rating'):
                 qs = qs.filter(age_rating__slug=filters['age_rating'])
             if filters.get('tones'):
