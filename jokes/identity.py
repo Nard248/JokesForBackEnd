@@ -28,7 +28,25 @@ def public_display_name(user):
 
 
 def public_handle(user):
-    """Public @handle: chosen handle → opaque @user<pk>. Never email."""
+    """Public @handle: chosen handle → opaque @user<pk>. Never email.
+
+    Deliberately does NOT fall back to ``auth_user.username``. That looks
+    tempting — the SPA used to write a user's chosen handle there — but it is
+    wrong on three counts:
+
+    * ``username`` is not a handle. Registration sets it to the full email
+      address (``JokesForProject/serializers.py``), and allauth's social signup
+      sets it to the email's LOCAL PART, which passes ``is_valid_handle``. So
+      publishing it would derive a public identifier from an email — exactly
+      what this module exists to prevent.
+    * It is not unique in the handle namespace. The taken-check when setting a
+      handle only queries ``UserProfile.handle``, so a username-derived handle
+      is invisible to it and two accounts can render the same ``@handle``.
+    * It was never moderated or validated as a public name.
+
+    A handle the user picks belongs in ``UserProfile.handle``, set through
+    ``PATCH /users/me/profile/``, which normalizes it and enforces uniqueness.
+    """
     profile = _profile(user)
     if profile and profile.handle:
         return f'@{profile.handle}'
