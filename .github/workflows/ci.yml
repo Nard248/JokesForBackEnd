@@ -89,6 +89,12 @@ jobs:
       - name: Django system check
         run: python manage.py check
 
+      # Model code and migration files must agree. cloudbuild.yaml runs
+      # `migrate` before the new revision is rolled out, so undetected drift
+      # would deploy code against a schema that never got the matching column.
+      - name: Migration drift check
+        run: python manage.py makemigrations --check --dry-run
+
       # manage.py test creates/destroys its own test_jokesfor database per
       # run, so an explicit `migrate` isn't required first.
       - name: Run test suite
