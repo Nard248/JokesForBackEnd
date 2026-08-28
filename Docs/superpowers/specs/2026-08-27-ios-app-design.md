@@ -473,6 +473,62 @@ device-only verification: notification delivery under Focus, widget rendering, a
 
 ---
 
+## 7g. Phase A complete to the device boundary (2026-08-28)
+
+iOS `1399a40`. **114 tests (unit + UI), no warnings.** Everything buildable without a physical
+device is done.
+
+| Milestone | State |
+|---|---|
+| A0 backend · A1 foundation · A2 design system | done |
+| A3 read path + Library | done |
+| A4 accounts + compliance surfaces | done |
+| A5 ritual + widget | done |
+| A6 media playback | done |
+| A7 privacy manifest + guards | done |
+| A8 StoreKit | deliberately not started (ND6) |
+
+**Widget (A5.2).** Target added with the `xcodeproj` gem. Two things cost time and are worth
+recording: the gem exposes `file_system_synchronized_groups` read-only, so the widget uses ordinary
+file references; and **an extension must carry its host's version or installation fails with
+"Invalid placeholder attributes"** — the new target did not inherit `MARKETING_VERSION`, so the
+generated Info.plist had no `CFBundleVersion` at all. `SharedSnapshot.swift` compiles into both
+targets rather than being duplicated. Confirmed registered with `chronod`.
+
+**The payoff cannot reach the widget.** `TodaySnapshot` has no field a punchline could occupy — a
+teaser, a format slug, a locked flag, a streak and a count, and that is the whole type. A widget
+renders where anyone glancing at the phone can read it, so the guarantee is structural rather than
+remembered.
+
+### A test that proved nothing
+
+The first tap-target guard inferred "is this a control?" from a nearby `Button`. It **passed against
+a deliberately introduced 40pt control**, because the frame sat in a helper while the button was at
+the call site. A test that proves nothing is worse than no test: it also buys false confidence.
+
+The rule is mechanical now — heights in 20..<44 must clear 44 or carry `// decorative` — and was
+verified by reintroducing the violation, watching it fail, then reverting and watching it pass.
+**Every guard should be checked this way.**
+
+---
+
+## 7h. What genuinely requires the device
+
+Nothing below is a gap in the code; all of it is unobservable in the Simulator.
+
+| Needs hardware | Why |
+|---|---|
+| **Haptics** | No Taptic Engine. The reveal's `sensoryFeedback` is the largest native win in the design and is 100% invisible here. |
+| **Notification delivery** | Focus modes, Scheduled Summary, delivery while locked, and DST/time-zone re-scheduling are device-only. |
+| **Widget rendering** | Real Home/Lock Screen placement, accented and tinted modes, the 40–70/day reload budget. |
+| **Performance** | 120 Hz ProMotion scroll, thermal behaviour, launch time. |
+| **Camera / HEIC** | No camera. Upload is out of v1 anyway. |
+| **ATS to a LAN IP** | Add the `192.168.0.0/16` exception and `NSLocalNetworkUsageDescription` *before* the first install rather than debugging a `-1022` on the phone. |
+
+Before installing: enable Developer Mode (Settings → Privacy & Security, needs a restart).
+
+---
+
 ## 8. Phase A — everything buildable for $0
 
 | # | Milestone | Exit criterion | Eff. |
