@@ -175,3 +175,56 @@ class NativeTokenRefreshView(TokenViewBase):
             # failure (401), not a validation error (400).
             raise InvalidToken(exc.args[0]) from exc
         return Response(serializer.validated_data, status=status.HTTP_200_OK)
+
+class NativeVerifyEmailRequestSerializer(serializers.Serializer):
+    """Uniquely named on purpose.
+
+    dj-rest-auth registers a different serializer under the component name
+    "VerifyEmail", and two identically-named components produce a silently
+    wrong schema — which is why the web view declares its request inline. A
+    distinct name avoids the collision without giving up a typed schema.
+    """
+
+    email = serializers.EmailField()
+    code = serializers.RegexField(r'^\d{6}$')
+
+
+class NativeVerifyEmailView(APIView):
+    """``POST /api/v1/auth/native/verify-email/`` — finish signup with a session.
+
+    The web view ends verification by setting httpOnly cookies, which is right
+    for a browser and useless to an app: a native client reads
+    ``{"user": {...}}``, has no credentials, and must POST the password again to
+    log in. That is a second round trip, a password held longer than necessary,
+    and a window in which a user who verified successfully is nonetheless
+    signed out because the follow-up call failed.
+
+    Validation is delegated to :func:`notifications.views.verify_email_request`,
+    the same chain the web view uses — anti-enumeration, the already-verified
+    case, the attempt lockout, and activating ``is_active``. Only the response
+    differs: tokens in the body, no cookies.
+    """
+
+    permission_classes = [AllowAny]
+    authentication_classes = ()
+    throttle_classes = [ScopedRateThrottle]
+    throttle_scope = 'native_login'
+    serializer_class = NativeVerifyEmailRequestSerializer
+
+    @extend_schema(
+        request=NativeVerifyEmailRequestSerializer,
+        responses={200: NativeTokenPairSerializer},
+        summary='Native verify email (tokens in body, no cookies)',
+    )
+    def post(self, request):
+        from notifications.views import verify_email_request
+
+        user, failure = verify_email_request(request)
+        if failure is not None:
+            return failure
+
+        payload = issue_native_tokens(user)
+        payload['user'] = rest_auth_settings.USER_DETAILS_SERIALIZER(
+            user, context={'request': request},
+        ).data
+        return Response(payload, status=status.HTTP_200_OK)

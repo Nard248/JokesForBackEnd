@@ -37,6 +37,51 @@ _VERIFY_ERRORS = {
 }
 
 
+def verify_email_request(request):
+    """Validate a {email, code} pair and activate the account.
+
+    Returns ``(user, None)`` on success, or ``(None, Response)`` carrying the
+    error to send back.
+
+    Shared by the cookie (web) and body-token (native) views so the guards
+    cannot drift between them: anti-enumeration on unknown emails, the
+    already-verified case, the attempt lockout, and the fact that ``is_active``
+    *is* the verification gate. A second implementation of this chain is how an
+    auth bypass gets written.
+    """
+    serializer = VerifyEmailSerializer(data=request.data)
+    serializer.is_valid(raise_exception=True)
+    email = serializer.validated_data['email']
+    code = serializer.validated_data['code']
+
+    # Uniform 400 on unknown email (anti-enumeration: same shape as wrong code).
+    user = User.objects.filter(email__iexact=email).first()
+    if user is None:
+        return None, Response({'code': ['Incorrect code.']},
+                              status=status.HTTP_400_BAD_REQUEST)
+
+    if user.is_active:
+        return None, Response(
+            {'detail': 'This email is already verified. Please log in.'},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
+
+    ok, err = verification.verify_code(user, code)
+    if not ok:
+        if err == 'too_many_attempts':
+            return None, Response(
+                {'detail': 'Too many attempts. Request a new code.'},
+                status=status.HTTP_429_TOO_MANY_REQUESTS,
+            )
+        field, msg = _VERIFY_ERRORS[err]
+        return None, Response({field: [msg]}, status=status.HTTP_400_BAD_REQUEST)
+
+    # User was inactive (active users returned early above); activate now.
+    user.is_active = True
+    user.save(update_fields=['is_active'])
+    return user, None
+
+
 class VerifyEmailView(APIView):
     """POST /auth/verify-email/ {email, code} -> activate user + set JWT cookies."""
 
@@ -78,36 +123,9 @@ class VerifyEmailView(APIView):
         },
     )
     def post(self, request):
-        serializer = VerifyEmailSerializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        email = serializer.validated_data['email']
-        code = serializer.validated_data['code']
-
-        # Uniform 400 on unknown email (anti-enumeration: same shape as wrong code).
-        user = User.objects.filter(email__iexact=email).first()
-        if user is None:
-            return Response({'code': ['Incorrect code.']},
-                            status=status.HTTP_400_BAD_REQUEST)
-
-        if user.is_active:
-            return Response(
-                {'detail': 'This email is already verified. Please log in.'},
-                status=status.HTTP_400_BAD_REQUEST,
-            )
-
-        ok, err = verification.verify_code(user, code)
-        if not ok:
-            if err == 'too_many_attempts':
-                return Response(
-                    {'detail': 'Too many attempts. Request a new code.'},
-                    status=status.HTTP_429_TOO_MANY_REQUESTS,
-                )
-            field, msg = _VERIFY_ERRORS[err]
-            return Response({field: [msg]}, status=status.HTTP_400_BAD_REQUEST)
-
-        # User was inactive (active users returned early above); activate now.
-        user.is_active = True
-        user.save(update_fields=['is_active'])
+        user, failure = verify_email_request(request)
+        if failure is not None:
+            return failure
 
         refresh = RefreshToken.for_user(user)
         access = refresh.access_token

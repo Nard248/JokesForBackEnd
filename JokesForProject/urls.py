@@ -24,7 +24,11 @@ from drf_spectacular.views import (
     SpectacularSwaggerView,
 )
 
-from jokes.native_auth import NativeLoginView, NativeTokenRefreshView
+from jokes.native_auth import (
+    NativeLoginView,
+    NativeTokenRefreshView,
+    NativeVerifyEmailView,
+)
 from jokes.sitemap import sitemap_view
 from jokes.views import CookieRegisterView, GoogleLogin, csrf_token_view, joke_share_page
 from JokesForProject.health import healthz, readyz
@@ -82,6 +86,11 @@ urlpatterns = [
         'api/v1/auth/native/refresh/',
         NativeTokenRefreshView.as_view(),
         name='native-token-refresh',
+    ),
+    path(
+        'api/v1/auth/native/verify-email/',
+        NativeVerifyEmailView.as_view(),
+        name='native-verify-email',
     ),
     path('api/v1/auth/', include('dj_rest_auth.urls')),
     # Override registration root with cookie-setting variant; include still owns
