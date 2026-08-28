@@ -351,6 +351,78 @@ kept.
 
 ---
 
+## 7d. A2 — DONE (2026-08-28)
+
+Commit `22485a6`, pushed. **45 tests, no warnings.** Verified visually on a 26.5 simulator in both
+appearances.
+
+**Typefaces — the trap that would have shipped silently.** Google now publishes these families only
+as variable fonts, and their named instances are not addressable as the design assumed:
+
+| Family | Actual named-instance PostScript name |
+|---|---|
+| Epilogue | `EpilogueRoman-Black` — not `Epilogue-Black` |
+| JetBrains Mono | `JetBrainsMonoRoman-Medium`, and **no SemiBold exists** |
+| Plus Jakarta Sans | **null** — no PostScript name on any instance |
+
+`Font.custom` with an unresolvable name falls back to San Francisco with no error, so all three
+would have produced a quietly off-brand app. Fixed by instancing the variable fonts at the exact
+design weights with PostScript names set locally; `FontResolutionTests` asserts each resolves to its
+real family. **Info.plist must live in `Config/`** (sibling of the synchronized folder) and be scoped
+to the app target only.
+
+**Colour is code, not an asset catalog**, so the rules are executable — `ContrastTests` computes real
+WCAG ratios, including that lime on white is ~1.2:1 (invisible, not merely low) and that `limeInk` is
+its only legal partner. Dark mode is net-new: warm near-black, saturated pigments held fixed,
+purple-as-ink lifted to `#AC8EFF`.
+
+**The reveal is an 18pt blur, never glass** — glass samples what is *behind*; the reveal must obscure
+what is *in front*. A comment-aware source scan fails the build if `.glassEffect` appears outside
+`Chrome/`.
+
+`DesignGallery` renders the whole system and is the app root until A3.
+
+---
+
+## 7e. A3.1 — read path on real data (2026-08-28)
+
+iOS `22485a6..`, backend `9340070`. **69 iOS tests + 903 Django tests, no warnings.**
+Verified by running the app against a live local API, not only by fixtures.
+
+Shipped: the glass tab shell (`Chrome/RootTabs`, five destinations, `Tab(role: .search)`,
+minimize-on-scroll, ritual accessory), `JokeService`, `JokeCardView`, Today, Explore, Search.
+Library and You are honest placeholders.
+
+### Three bugs only running the app could find
+
+**1. A locked one-liner had nothing to display.** The F-021 fix withheld `text` correctly, but its
+docstring's assumption — *"`setup` is always kept, and the client composes the locked card from it"*
+— holds only for two-part formats. Measured against a real capped account: **10 of 10** locked jokes
+on the page rendered blank, and one-liners are ~40% of the catalogue. Fixed backend-side with an
+always-present `teaser`; guarded client-side by `testNoLockedJokeRendersAsABlankCard`.
+
+**2. Anonymous reads failed before leaving the device.** `AppModel` always constructs an
+`AuthSession`, so "authenticated" was true with no tokens and `accessToken()` *threw*. Every screen
+showed its error state. Reading works signed out by design, so the client now attaches credentials
+when it has them and proceeds anonymously when it does not.
+
+**3. `/daily-jokes/today/` is polymorphic.** Signed in it returns
+`{id, joke, date, delivered_at, created_at, issue_label}`; signed out, `{joke, date}` — there is no
+`DailyJoke` row to return. A non-optional `id` broke exactly one screen, the **first one a new
+reader sees**, while every other surface worked.
+
+### The A3 exit criterion
+
+`LeakProofingTests` drives a real locked fixture through every path a client can leak by: `text`,
+`payoff`, **Copy**, **Share**, media `url`, and the accessibility label — plus a synthetic case
+where the server sends a payoff on a joke flagged locked, which the presentation still refuses.
+`JokePresentation` is the single choke point, so the leak is structurally hard rather than a thing
+reviewers must remember.
+
+**Still open in A3:** joke detail with `?source=` attribution, Library, and the XCUITest tier.
+
+---
+
 ## 8. Phase A — everything buildable for $0
 
 | # | Milestone | Exit criterion | Eff. |
