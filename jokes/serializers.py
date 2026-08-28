@@ -10,6 +10,7 @@ from datetime import timedelta
 
 from django.db import IntegrityError, transaction
 from django.utils import timezone
+from drf_spectacular.utils import extend_schema_field
 from rest_framework import serializers
 from rest_framework.exceptions import NotFound
 
@@ -208,6 +209,9 @@ class JokeSerializer(serializers.ModelSerializer):
     # Media attachments (Wave 1). Locked jokes get dimensions only.
     media = serializers.SerializerMethodField()
 
+    # Always-present preview. See get_teaser.
+    teaser = serializers.SerializerMethodField()
+
     # The paywall nulls all three of these in `to_representation` whenever a
     # joke's payoff is withheld. Without these declarations the schema inherits
     # the model's non-nullable types and advertises a contract the API breaks on
@@ -226,6 +230,7 @@ class JokeSerializer(serializers.ModelSerializer):
             'setup',
             'punchline',
             'lines',        # P10: knock-knock dialogue (null for other formats)
+            'teaser',       # always-safe preview; never the payoff
             'media',
             'format',
             'age_rating',
@@ -308,6 +313,46 @@ class JokeSerializer(serializers.ModelSerializer):
             }
             for l in links
         ]
+
+    @extend_schema_field(serializers.CharField(allow_blank=True))
+    def get_teaser(self, obj):
+        """A preview that is always present and never the payoff.
+
+        Closing a hole left by the F-021 paywall fix. Withholding ``text`` was
+        correct — a published two-part joke carries a denormalized
+        "<setup> <punchline>", so anything less leaked the payoff. But the
+        assumption that ``setup`` survives as the teaser holds only for two-part
+        formats. A one-liner keeps its whole joke in ``text`` with an empty
+        ``setup``, so a locked one arrived with nothing displayable at all, and
+        one-liners are roughly 40% of the catalogue.
+
+        Rules:
+          - a real ``setup`` is already a teaser by construction — use it whole
+          - otherwise take an opening fragment of the body, never the ending
+
+        The fragment is a little over half the words, capped at eight and never
+        the final one, so the payoff cannot fall inside it. This is a *preview*,
+        not a redaction: it is meant to make the joke worth unlocking, which an
+        empty card conspicuously fails to do.
+        """
+        if obj.setup:
+            return obj.setup
+
+        body = obj.text or ''
+        if not body and obj.lines:
+            body = obj.lines[0] if obj.lines else ''
+        if not body:
+            return ''
+
+        words = body.split()
+        if len(words) <= 3:
+            # Too short to preview without giving it away. The format badge and
+            # the unlock CTA carry the card instead.
+            return ''
+
+        take = min(8, max(3, (len(words) * 55) // 100))
+        take = min(take, len(words) - 1)   # never the last word
+        return ' '.join(words[:take]) + '\u2026'
 
     def to_representation(self, obj):
         """Strip the payoff SERVER-SIDE when locked — the ONLY place fields are
