@@ -1,5 +1,7 @@
 # JokesFor for iOS — development plan
 
+> **⚠️ SUPERSEDED by `2026-08-27-ios-app-design.md`.** Several blockers listed here are now fixed (notably F-008: the OpenAPI schema emits 0 W002 and is codegen-ready), and the design analysis here predates the discovery that the live web design is the flat "Flow era", not the 48px legacy tokens. Kept for history.
+
 **Date:** 2026-08-25 · **Status:** design, awaiting approval · **Author:** planning pass
 **Companion:** `Docs/Testing/2026-08-25-e2e-verification/` (the verification pass this plan is grounded in)
 

@@ -14,6 +14,8 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
 from drf_spectacular.views import (
@@ -22,6 +24,7 @@ from drf_spectacular.views import (
     SpectacularSwaggerView,
 )
 
+from jokes.native_auth import NativeLoginView, NativeTokenRefreshView
 from jokes.sitemap import sitemap_view
 from jokes.views import CookieRegisterView, GoogleLogin, csrf_token_view, joke_share_page
 from JokesForProject.health import healthz, readyz
@@ -70,6 +73,16 @@ urlpatterns = [
     # token value before issuing any authenticated mutation. Declared before the
     # dj_rest_auth include (no conflict — dj_rest_auth defines no `csrf/` route).
     path('api/v1/auth/csrf/', csrf_token_view, name='csrf-token'),
+    # Native (iOS) token endpoints. Declared BEFORE the dj_rest_auth include so
+    # they win the match; dj_rest_auth defines no `native/` routes, so there is
+    # no conflict. These return the refresh token in the body and set no
+    # cookies — see jokes/native_auth.py for why the web path cannot be reused.
+    path('api/v1/auth/native/login/', NativeLoginView.as_view(), name='native-login'),
+    path(
+        'api/v1/auth/native/refresh/',
+        NativeTokenRefreshView.as_view(),
+        name='native-token-refresh',
+    ),
     path('api/v1/auth/', include('dj_rest_auth.urls')),
     # Override registration root with cookie-setting variant; include still owns
     # sub-paths (verify-email, resend-email, account-confirm-email).
@@ -90,3 +103,12 @@ urlpatterns = [
     path('api/docs/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
     path('api/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
 ]
+
+# Local development only. In production MEDIA_ROOT is Google Cloud Storage and
+# media URLs are absolute GCS/CDN links, so nothing is served from Django. Under
+# DEBUG the files live on disk and are otherwise unroutable — every media joke
+# and every share card 404s without this, which makes the whole media surface
+# invisible to a locally-developed client. `static()` returns [] when DEBUG is
+# False, so this cannot accidentally serve user uploads in production.
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
