@@ -298,6 +298,59 @@ export DATABASE_URL='' DEBUG=True DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib
 
 ---
 
+## 7c. A1 — DONE (2026-08-28)
+
+`/Users/narekmeloyan/XCodeProjects/JokesFor`, commit `44047ee`. **34 tests passing, zero warnings.**
+No git remote configured yet — the work is committed locally only.
+
+**Project.** Swift 6 strict concurrency; deployment target 26.0 (D9). Deleted ~3,000 LOC of
+mock-backed feature code; kept `FlowLayout`.
+
+> **D8 redrafted.** The folders are `PBXFileSystemSynchronizedRootGroup` (`objectVersion 77`) with
+> *zero* `.swift` references in the pbxproj — files on disk are automatically in the target. A new
+> target would have burned an App ID slot and orphaned `group.com.narekmeloyan.JokesFor` for no
+> benefit. Restructuring in place gives the same clean slate and keeps the bundle identifier (ND8).
+
+**Models are hand-written**, and the decision is now evidence rather than argument: the generator
+was run against the real schema and emits 40,275 lines that do not compile, typing `Joke.text`
+non-optional while the paywall nulls it.
+
+Two defences, each with tests: `OpenEnum` (unknown value → fallback, because the taxonomy is
+database rows) and a lossy `Page<T>` (one malformed row costs one card, not the screen).
+
+**Transport.** `APIClient` — Bearer, one 401 retry, no cookies. `AuthSession` — actor, Keychain at
+`AfterFirstUnlock`.
+
+> **Refresh needed more than single-flight.** Ten requests do not 401 at the same instant; their
+> failures arrive in sequence, each finding no refresh in flight and starting its own. Every
+> rotation blacklists its predecessor, so that is a race against the app's own tail requests. The
+> fix is to compare against *the token that actually failed* — first caller rotates, the rest are
+> handed the result. A test drives ten concurrent 401s and asserts exactly one refresh; it caught
+> this design gap, which is why it exists.
+
+**Live tier.** `LiveAPITests` run against a real server and **skip themselves when none is
+listening** — `xcodebuild` does not forward the shell environment into a host-app unit test
+process, so an env-var gate silently skips everything and reads as a pass.
+
+### Contract facts the client must respect
+
+| | |
+|---|---|
+| Format filter | **`joke_format`**, never `format` — DRF owns `format` for content negotiation and 404s for every value |
+| Unknown query params | **silently ignored** — a misspelled filter returns an *unfiltered* page, not an error. Assert on counts, not status |
+| Page size | pinned at **10**; `?page_size` is ignored |
+| Locked joke | `text`, `punchline`, `lines` all `null`; `media[].url` **key absent**, dimensions retained |
+| Timestamps | fractional-second ISO-8601 — `.iso8601` alone rejects them |
+| Trailing slashes | required (`APPEND_SLASH` 301s, and a redirected POST loses its body). `URL.path` strips them, so never assert on that accessor |
+
+### One correction worth remembering
+
+I briefly rewrote URL construction believing `appending(path:)` dropped the trailing slash. It does
+not — only the deprecated `URL.path` accessor does. The change was reverted; the regression test was
+kept.
+
+---
+
 ## 8. Phase A — everything buildable for $0
 
 | # | Milestone | Exit criterion | Eff. |
