@@ -208,6 +208,16 @@ class JokeSerializer(serializers.ModelSerializer):
     # Media attachments (Wave 1). Locked jokes get dimensions only.
     media = serializers.SerializerMethodField()
 
+    # The paywall nulls all three of these in `to_representation` whenever a
+    # joke's payoff is withheld. Without these declarations the schema inherits
+    # the model's non-nullable types and advertises a contract the API breaks on
+    # every locked joke — which for a typed client is not an inaccuracy but a
+    # decode crash that takes the whole page down with it. `JokeViewSet` is
+    # read-only and every nested use is `read_only=True`, so `allow_null` widens
+    # only the advertised schema, never runtime validation.
+    text = serializers.CharField(allow_null=True, allow_blank=True, required=False)
+    punchline = serializers.CharField(allow_null=True, allow_blank=True, required=False)
+
     class Meta:
         model = Joke
         fields = [

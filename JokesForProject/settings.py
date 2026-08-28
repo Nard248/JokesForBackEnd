@@ -319,6 +319,11 @@ REST_FRAMEWORK = {
         'appeals': os.getenv('THROTTLE_APPEALS', '10/day'),
         # Payments endpoint — a scoped rate keeps it off the 1000/hr global.
         'tips-checkout': os.getenv('THROTTLE_TIPS_CHECKOUT', '30/hour'),
+        # Native (iOS) token endpoints. Login is credential-guessing surface, so
+        # it is tighter than the anon default; refresh is called routinely by
+        # every app launch and must not be, which is why they are separate.
+        'native_login': os.getenv('THROTTLE_NATIVE_LOGIN', '20/hour'),
+        'native_refresh': os.getenv('THROTTLE_NATIVE_REFRESH', '120/hour'),
     },
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.URLPathVersioning',
