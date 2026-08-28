@@ -423,6 +423,56 @@ reviewers must remember.
 
 ---
 
+## 7f. A4 + A5.1 — accounts and the ritual (2026-08-28)
+
+iOS `f751680`, `81a6872`. Backend `7e5465c` deployed. **98 iOS + 910 Django tests.**
+
+**A4 — accounts.** Sign in, register, verify. Built against **production's** configuration:
+`EMAIL_VERIFICATION_REQUIRED` defaults to `false` locally and is `true` in production, so the local
+default would have produced an app that works on this machine and breaks on release.
+
+Added `POST /auth/native/verify-email/` (backend), closing the last gap the original spec named: the
+web endpoint sets cookies and returns only the user, so a native client finished verification with
+**no credentials** and had to replay the password. The guard chain — anti-enumeration,
+already-verified, attempt lockout, `is_active` — was extracted into one function both views call
+rather than duplicated; a second copy of that chain is how an auth bypass gets written.
+
+**A5.1 — the ritual.** Local notifications, no backend, works signed out.
+
+> **Deviation from the plan, deliberately.** The plan called for ~60 dated requests topped up per
+> foreground so each could carry a real teaser. But the daily joke is assigned per date by the
+> server, so tomorrow's is the furthest ahead the client can know — everything beyond carries
+> generic copy regardless. What the dated design *does* buy is a hard dependency on the app being
+> opened: stop for two months and the ritual silently stops. For a habit product that is backwards.
+>
+> One repeating trigger per chosen weekday: ≤7 pending requests, never near the 64 ceiling, no
+> rescheduling, and it keeps firing whether or not the app is opened again. `DateComponents` rather
+> than a date means "9pm wherever you are" survives a flight.
+
+`RitualCopy` **takes no joke as input**, so a punchline cannot reach a lock screen — where a body is
+also read by Notification Summaries and Apple Intelligence. Shipped `.active`, not
+`.timeSensitive` (paid-gated, and a joke is not an interruption anyone requested).
+
+Provisional authorization: **verified that launch shows no permission dialog**.
+
+### What the UI tier keeps catching
+
+Both A4 and A5 had tests that passed alone and failed in a group, and both times the cause was real
+state that *should* persist:
+
+| Persisted by design | Broke |
+|---|---|
+| Keychain session | a run that signed up left the next already signed in |
+| `ritual.plan` in UserDefaults + pending requests | one ritual test inherited another's schedule |
+
+`-resetSessionForTesting` now clears all three — and only ever clears, so it cannot grant access, and
+it is compiled out of release builds.
+
+**Still open in A5:** the widget extension (needs a new target and App Group — confirmed free), and
+device-only verification: notification delivery under Focus, widget rendering, and haptics.
+
+---
+
 ## 8. Phase A — everything buildable for $0
 
 | # | Milestone | Exit criterion | Eff. |
