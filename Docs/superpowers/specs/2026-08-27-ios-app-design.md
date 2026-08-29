@@ -512,6 +512,36 @@ verified by reintroducing the violation, watching it fail, then reverting and wa
 
 ---
 
+## 7g-bis. A7.2 — the exit criteria I had claimed but not checked (2026-08-29)
+
+iOS `0e51782`. **118 tests.** "Phase A complete" was true of the milestones; three specific exit
+criteria were not actually verified. Checking them found real defects — which is the argument for
+checking them rather than reasoning about them.
+
+| Criterion | What checking it found |
+|---|---|
+| *Report reachable from every joke* (Guideline 1.2) | `report()` existed with **no UI at all**. An endpoint nobody can reach is exactly the failure the guideline exists to prevent. |
+| *Leak proven by UI test* (A3) | Existed only as unit tests over fixtures. Now driven through the rendered app. |
+| *Every screen clean at `.accessibility2`* (A7) | **Two real bugs**, below. |
+
+### The blur did not scale — a paywall correctness bug
+
+A blur hides text only in proportion to the glyphs. Held at a fixed 18pt while Dynamic Type grows,
+the redaction weakens for precisely the readers most likely to be using accessibility sizes.
+Screenshotting at AX5 confirmed it: the fixed radius showed distinct word shapes, the scaled one is a
+smooth gradient. Now `@ScaledMetric(relativeTo: .title2)`.
+
+### The reveal affordance was unreachable at large type
+
+"Tap to reveal" sat underneath the tab bar accessory, which is **not part of the automatic safe
+area**. At accessibility sizes the primary interaction on the primary screen was simply absent. Every
+scrolling surface now pads past it.
+
+> Neither bug is visible at the default text size, and neither would have been caught by any test I
+> had written. They were found by setting `simctl ui <device> content_size` and looking.
+
+---
+
 ## 7h. What genuinely requires the device
 
 Nothing below is a gap in the code; all of it is unobservable in the Simulator.
