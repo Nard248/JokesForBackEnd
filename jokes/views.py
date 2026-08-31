@@ -21,8 +21,8 @@ from django.conf import settings
 from django.core.files.base import ContentFile
 from django.core.serializers.json import DjangoJSONEncoder
 from django.db import transaction
-from django.db.models import Count, IntegerField, Max, Min, OuterRef, Q, Subquery, Sum, Value
-from django.db.models.functions import Coalesce, ExtractHour
+from django.db.models import Count, Max, Min, Q, Sum
+from django.db.models.functions import ExtractHour
 from django.http import HttpResponse
 from django.middleware.csrf import get_token
 from django.shortcuts import get_object_or_404, render
@@ -2332,135 +2332,6 @@ class UserActivityView(APIView):
         # Sort and limit
         activities.sort(key=lambda x: x['created_at'], reverse=True)
         return Response({'results': activities[:limit]})
-
-
-class CreatorStatsView(APIView):
-    """GET /users/me/creator-stats/ — how the caller's own jokes are doing.
-
-    Creators could submit but never see what happened next. This is the
-    smallest thing that answers "did anyone read it": lifetime totals, and the
-    same five numbers per joke so a creator can tell which one landed.
-
-    Reads only published jokes for engagement — a submission still in review
-    has no audience yet — and reports the review pipeline separately as
-    counts by status.
-    """
-
-    permission_classes = [IsAuthenticated]
-
-    @extend_schema(
-        description=(
-            "Lifetime engagement for the caller's own published jokes, plus their "
-            'submission pipeline by status. Unpaginated: `limit` caps the per-joke '
-            'breakdown, which is ordered newest first.'
-        ),
-        parameters=[
-            OpenApiParameter(name='limit', type=int,
-                             description='Max jokes in the breakdown (default 50, max 200).'),
-        ],
-        responses={200: {'type': 'object', 'properties': {
-            'totals': {'type': 'object', 'properties': {
-                'published': {'type': 'integer'},
-                'pending': {'type': 'integer'},
-                'draft': {'type': 'integer'},
-                'rejected': {'type': 'integer'},
-                'views': {'type': 'integer'},
-                'likes': {'type': 'integer'},
-                'dislikes': {'type': 'integer'},
-                'saves': {'type': 'integer'},
-                'shares': {'type': 'integer'},
-            }},
-            'jokes': {'type': 'array', 'items': {'type': 'object', 'properties': {
-                'id': {'type': 'integer'},
-                'preview': {'type': 'string', 'description': 'Setup or opening text, trimmed.'},
-                'format': {'type': 'string'},
-                'created_at': {'type': 'string', 'format': 'date-time'},
-                'views': {'type': 'integer'},
-                'likes': {'type': 'integer'},
-                'dislikes': {'type': 'integer'},
-                'saves': {'type': 'integer'},
-                'shares': {'type': 'integer'},
-            }}},
-        }}},
-    )
-    def get(self, request):
-        user = request.user
-        try:
-            limit = min(int(request.query_params.get('limit', 50)), 200)
-        except (TypeError, ValueError):
-            limit = 50
-        limit = max(limit, 0)
-
-        def tally(model, **filters):
-            """One metric, counted in its own subquery.
-
-            Annotating five Counts onto a single queryset would fan the joins
-            out against each other and inflate every figure — a joke with 10
-            views and 3 saves would report 30 of each. Counting each table
-            separately is the only arrangement that stays correct as metrics
-            are added.
-            """
-            return Coalesce(
-                Subquery(
-                    model.objects.filter(joke=OuterRef('pk'), **filters)
-                    .order_by().values('joke')
-                    .annotate(n=Count('*')).values('n')[:1],
-                    output_field=IntegerField(),
-                ),
-                Value(0),
-            )
-
-        # `Joke.objects` already hides removed jokes, so a taken-down joke
-        # stops reporting rather than showing an audience the creator no
-        # longer has.
-        jokes = (
-            Joke.objects.filter(creator=user)
-            .select_related('format')
-            .annotate(
-                view_count=tally(JokeView),
-                like_count=tally(JokeRating, rating=JokeRating.LIKE),
-                dislike_count=tally(JokeRating, rating=JokeRating.DISLIKE),
-                save_count=tally(SavedJoke),
-                share_count=tally(ShareEvent),
-            )
-            .order_by('-created_at')
-        )
-
-        rows = []
-        published = 0
-        totals = {'views': 0, 'likes': 0, 'dislikes': 0, 'saves': 0, 'shares': 0}
-        for index, joke in enumerate(jokes.iterator(chunk_size=200)):
-            published += 1
-            totals['views'] += joke.view_count
-            totals['likes'] += joke.like_count
-            totals['dislikes'] += joke.dislike_count
-            totals['saves'] += joke.save_count
-            totals['shares'] += joke.share_count
-            # Totals cover everything; the breakdown is capped.
-            if index < limit:
-                rows.append({
-                    'id': joke.id,
-                    'preview': (joke.setup or joke.text or '')[:120],
-                    'format': joke.format.slug,
-                    'created_at': joke.created_at,
-                    'views': joke.view_count,
-                    'likes': joke.like_count,
-                    'dislikes': joke.dislike_count,
-                    'saves': joke.save_count,
-                    'shares': joke.share_count,
-                })
-
-        pipeline = {row['status']: row['n'] for row in (
-            JokeSubmission.objects.filter(user=user)
-            .values('status').annotate(n=Count('id'))
-        )}
-        # Counted during the walk above rather than with a second query: the
-        # totals must cover every joke even though the breakdown is capped.
-        totals['published'] = published
-        for state in ('pending', 'draft', 'rejected'):
-            totals[state] = pipeline.get(state, 0)
-
-        return Response({'totals': totals, 'jokes': rows})
 
 
 class UserAchievementsView(APIView):

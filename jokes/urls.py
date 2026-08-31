@@ -42,7 +42,6 @@ urlpatterns = [
     path('users/me/profile/', views.UserProfileView.as_view(), name='user-profile'),
     path('users/me/activity/', views.UserActivityView.as_view(), name='user-activity'),
     path('users/me/achievements/', views.UserAchievementsView.as_view(), name='user-achievements'),
-    path('users/me/creator-stats/', views.CreatorStatsView.as_view(), name='creator-stats'),
     path('users/me/preferences/', views.UserPreferencesView.as_view(), name='user-preferences'),
     # Vibes (P2 of Pivot Plan) — user's selected humor flavors
     path('users/me/vibes/', views.UserVibesView.as_view(), name='user-vibes'),
