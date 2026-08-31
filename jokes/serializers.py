@@ -938,6 +938,12 @@ class JokeSubmissionCreateSerializer(serializers.ModelSerializer):
             validated['tones'] = validated.pop('categories')
         if 'themes' in validated:
             validated['context_tags'] = validated.pop('themes')
+        # `language` is advertised as optional but the column is NOT NULL, so
+        # omitting it used to reach the database and 500. Supplying the default
+        # here makes `required=False` honest. English because every existing
+        # row is English; a client that knows better should say so explicitly.
+        if not validated.get('language'):
+            validated['language'] = Language.objects.filter(code='en').first()
         return validated
 
     def validate(self, data):
