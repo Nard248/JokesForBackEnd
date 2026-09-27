@@ -191,6 +191,9 @@ class ImpressionDwellDayBucketTests(APITestCase):
         cls.user = User.objects.create_user(
             username='imp@example.com', email='imp@example.com', password='pw',
         )
+        cls.user.profile.date_of_birth = date(1990, 1, 1)
+        cls.user.profile.share_analytics = True
+        cls.user.profile.save(update_fields=['date_of_birth', 'share_analytics'])
         cls.joke = _make_joke('impression joke')
 
     def setUp(self):

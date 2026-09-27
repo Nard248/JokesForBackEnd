@@ -23,6 +23,8 @@ class OverviewSerializer(serializers.Serializer):
     shares = serializers.IntegerField()
     peak_read_hour = serializers.IntegerField(allow_null=True)
     daily_reach_28d = serializers.ListField(child=serializers.IntegerField())
+    daily_views_28d = serializers.ListField(child=serializers.IntegerField())
+    dwell_samples = serializers.IntegerField()
     followers = serializers.IntegerField()
     follower_growth_28d = serializers.ListField(child=serializers.IntegerField())
 
@@ -60,9 +62,13 @@ class TopJokeSerializer(serializers.Serializer):
 class AudienceLabelCountSerializer(serializers.Serializer):
     label = serializers.CharField()
     count = serializers.IntegerField()
+    sample_size = serializers.IntegerField()
 
 
 class AudienceSerializer(serializers.Serializer):
+    sample_size = serializers.IntegerField()
+    minimum_sample_size = serializers.IntegerField()
+    suppressed = serializers.BooleanField()
     top_themes = AudienceLabelCountSerializer(many=True)
     top_categories = AudienceLabelCountSerializer(many=True)
     top_formats = AudienceLabelCountSerializer(many=True)
@@ -86,6 +92,8 @@ class CreatorInsightsSerializer(serializers.Serializer):
     top_jokes = TopJokeSerializer(many=True)
     audience = AudienceSerializer()
     suggestions = SuggestionSerializer(many=True)
+    sample_coverage = serializers.DictField(child=serializers.IntegerField())
+    measurement_notes = serializers.DictField(child=serializers.CharField())
 
 
 class CreatorProfileJokesPaginationSerializer(serializers.Serializer):

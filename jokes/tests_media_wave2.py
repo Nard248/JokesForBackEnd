@@ -997,14 +997,18 @@ class AdminSafesearchFlagsTests(TestCase):
 # count toward the 202 accepted total. Append-only — no dedupe.
 # =============================================================================
 
-from jokes.models import JokeWatch
+from jokes.models import JokeMedia, JokeWatch
 
 WATCH_INGEST_URL = '/api/v1/telemetry/events'
 
 
 def _make_watch_joke(fmt, age, lang, text='Watch joke'):
     with patch('jokes.models.Joke._generate_share_image'):
-        return Joke.objects.create(text=text, format=fmt, age_rating=age, language=lang)
+        joke = Joke.objects.create(text=text, format=fmt, age_rating=age, language=lang)
+    owner = Wave2User.objects.get(username='watchtele@test.com')
+    asset = MediaAsset.objects.create(owner=owner, kind='video', file='tests/watch.mp4')
+    JokeMedia.objects.create(joke=joke, asset=asset)
+    return joke
 
 
 class WatchTelemetryIngestTests(TestCase):
@@ -1017,6 +1021,10 @@ class WatchTelemetryIngestTests(TestCase):
         cls.user = Wave2User.objects.create_user(
             username='watchtele@test.com', email='watchtele@test.com', password='x',
         )
+        from datetime import date
+        cls.user.profile.date_of_birth = date(1990, 1, 1)
+        cls.user.profile.share_analytics = True
+        cls.user.profile.save(update_fields=['date_of_birth', 'share_analytics'])
         cls.joke = _make_watch_joke(cls.fmt, cls.age, cls.lang, text='W1')
 
     def setUp(self):

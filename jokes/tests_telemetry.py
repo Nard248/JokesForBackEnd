@@ -32,6 +32,16 @@ from jokes.models import (
 
 User = get_user_model()
 
+
+def _analytics_user(**kwargs):
+    """Metric fixtures explicitly represent adults who opted into analytics."""
+    from datetime import date
+    user = User.objects.create_user(**kwargs)
+    user.profile.date_of_birth = date(1990, 1, 1)
+    user.profile.share_analytics = True
+    user.profile.save(update_fields=['date_of_birth', 'share_analytics'])
+    return user
+
 INGEST_URL = '/api/v1/telemetry/events'
 
 
@@ -56,7 +66,7 @@ class TelemetryIngestTests(TestCase):
         cls.fmt = Format.objects.get(slug='oneliner')
         cls.age = AgeRating.objects.first()
         cls.lang = Language.objects.get(code='en')
-        cls.user = User.objects.create_user(
+        cls.user = _analytics_user(
             username='tele@test.com', email='tele@test.com', password='x'
         )
         cls.joke = _make_joke(cls.fmt, cls.age, cls.lang, text='J1')
@@ -260,13 +270,13 @@ class TelemetryInsightsIntegrationTests(TestCase):
         cls.fmt = Format.objects.get(slug='oneliner')
         cls.age = AgeRating.objects.first()
         cls.lang = Language.objects.get(code='en')
-        cls.creator = User.objects.create_user(
+        cls.creator = _analytics_user(
             username='tcreator@test.com', email='tcreator@test.com', password='x'
         )
-        cls.viewer1 = User.objects.create_user(
+        cls.viewer1 = _analytics_user(
             username='v1@test.com', email='v1@test.com', password='x'
         )
-        cls.viewer2 = User.objects.create_user(
+        cls.viewer2 = _analytics_user(
             username='v2@test.com', email='v2@test.com', password='x'
         )
         cls.joke = _make_published_submission(cls.creator, cls.fmt, cls.age, cls.lang)
@@ -289,7 +299,7 @@ class TelemetryInsightsIntegrationTests(TestCase):
 
     def test_open_rate_null_without_impressions(self):
         # A creator with views but no impressions -> open_rate None.
-        creator2 = User.objects.create_user(
+        creator2 = _analytics_user(
             username='c2@test.com', email='c2@test.com', password='x'
         )
         joke2 = _make_published_submission(creator2, self.fmt, self.age, self.lang, text='No imp')

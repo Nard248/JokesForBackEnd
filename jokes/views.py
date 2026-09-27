@@ -3893,9 +3893,10 @@ class TelemetryIngestView(APIView):
         {"joke": <id>, "type": "watch", "watch_ms": <ms>, "watch_pct": <0-100>, "source": "<str>"},
     ]}
 
-    Request-driven only (no Celery/cron). Cheap: caps the batch, dedups
-    impressions to one per (user, joke, day), appends dwell samples, and never
-    500s on partial bad data — bad/unknown events are skipped silently.
+    Only currently opted-in adults may contribute, and only for content they
+    may currently access. Request-driven only (no Celery/cron). Caps the batch,
+    dedups impressions to one per (user, joke, day), and appends dwell/playback
+    samples. Malformed/unknown events are skipped independently.
     Returns 202 + {"accepted": N}.
     """
     permission_classes = [IsAuthenticated]
@@ -3911,6 +3912,12 @@ class TelemetryIngestView(APIView):
     WATCH_MIN_MS = 500
 
     @extend_schema(
+        description=(
+            'Optional audience telemetry for consenting adults only. Ineligible '
+            'accounts receive accepted=0. Processes the first 50 events; malformed '
+            'or inaccessible content events are skipped. Watch requires audio/video. '
+            'Missing completion percentages remain unknown.'
+        ),
         request={
             'application/json': {
                 'type': 'object',
@@ -3926,7 +3933,9 @@ class TelemetryIngestView(APIView):
                                 'scroll_pct': {'type': 'integer', 'description': '0-100 read-through depth (optional, dwell events only)'},
                                 'watch_ms': {'type': 'integer', 'description': 'watch milliseconds (watch events only)'},
                                 'watch_pct': {'type': 'integer', 'description': '0-100 watch-through depth (optional, watch events only)'},
-                                'source': {'type': 'string'},
+                                'source': {'type': 'string', 'enum': sorted(
+                                    set(dict(JokeImpression.SOURCE_CHOICES)) | set(dict(JokeView.SOURCE_CHOICES))
+                                )},
                             },
                         },
                     },
@@ -3936,109 +3945,92 @@ class TelemetryIngestView(APIView):
         responses={202: {'type': 'object', 'properties': {'accepted': {'type': 'integer'}}}},
     )
     def post(self, request):
-        events = request.data.get('events') or []
+        from creator_insights.privacy import analytics_allowed
+        from jokes.models import JokeMedia
+
+        user = request.user
+        if not analytics_allowed(user):
+            return Response({'accepted': 0}, status=status.HTTP_202_ACCEPTED)
+
+        payload = request.data if isinstance(request.data, dict) else {}
+        events = payload.get('events') or []
         if not isinstance(events, list):
             events = []
         events = events[:self.MAX_BATCH]
+        sources = set(dict(JokeImpression.SOURCE_CHOICES)) | set(dict(JokeView.SOURCE_CHOICES))
+        valid = []
+        for event in events:
+            if not isinstance(event, dict):
+                continue
+            joke_id = event.get('joke')
+            source = event.get('source', 'other')
+            if (isinstance(joke_id, bool) or not isinstance(joke_id, int)
+                    or not 0 < joke_id <= 9223372036854775807
+                    or event.get('type') not in ('impression', 'reveal', 'dwell', 'watch')
+                    or not isinstance(source, str) or source not in sources):
+                continue
+            valid.append(event)
 
-        user = request.user
+        visible_ids = set(visible_jokes(
+            Joke.objects.filter(
+                pk__in={event['joke'] for event in valid},
+                content_tier__in=allowed_tiers(request),
+            ), request,
+        ).values_list('pk', flat=True))
+        media_ids = set(JokeMedia.objects.filter(
+            joke_id__in=visible_ids, asset__kind__in=('video', 'audio'),
+        ).values_list('joke_id', flat=True))
         today = timezone.now().date()
         accepted = 0
-
-        for event in events:
-            try:
-                if not isinstance(event, dict):
-                    continue
-                joke_id = event.get('joke')
-                etype = event.get('type')
-                source = event.get('source') or 'other'
-                if not isinstance(source, str):
-                    source = 'other'
-                source = source[:16]
-
-                if joke_id is None or etype not in ('impression', 'reveal', 'dwell', 'watch'):
-                    continue
-                if not Joke.objects.filter(pk=joke_id).exists():
-                    continue
-
-                if etype == 'watch':
-                    # Append-only watch sample. Clamp ms to [0, 10min];
-                    # drop sub-WATCH_MIN_MS blips as noise. Mirrors dwell exactly.
-                    raw = event.get('watch_ms')
-                    if not isinstance(raw, int) or isinstance(raw, bool):
-                        continue
-                    watch_ms = max(0, min(raw, self.WATCH_MAX_MS))
-                    if watch_ms < self.WATCH_MIN_MS:
-                        continue
-
-                    watch_pct = event.get('watch_pct')
-                    if isinstance(watch_pct, bool) or not isinstance(watch_pct, int):
-                        watch_pct = None
-                    else:
-                        watch_pct = max(0, min(watch_pct, 100))
-
-                    JokeWatch.objects.create(
-                        user=user,
-                        joke_id=joke_id,
-                        watch_ms=watch_ms,
-                        watch_pct=watch_pct,
-                        source=source,
-                    )
-                    accepted += 1
-                elif etype == 'dwell':
-                    # Append-only dwell sample. Clamp ms to [0, 10min];
-                    # drop sub-DWELL_MIN_MS blips as noise.
-                    raw = event.get('value')
-                    if not isinstance(raw, int) or isinstance(raw, bool):
-                        continue
-                    dwell_ms = max(0, min(raw, self.DWELL_MAX_MS))
-                    if dwell_ms < self.DWELL_MIN_MS:
-                        continue
-
-                    scroll_pct = event.get('scroll_pct')
-                    if isinstance(scroll_pct, bool) or not isinstance(scroll_pct, int):
-                        scroll_pct = None
-                    else:
-                        scroll_pct = max(0, min(scroll_pct, 100))
-
-                    JokeDwell.objects.create(
-                        user=user,
-                        joke_id=joke_id,
-                        dwell_ms=dwell_ms,
-                        scroll_pct=scroll_pct,
-                        source=source,
-                        created_date=today,
-                    )
-                    accepted += 1
-                elif etype == 'impression':
-                    # Dedup to one impression per (user, joke, day).
-                    JokeImpression.objects.get_or_create(
-                        user=user,
-                        joke_id=joke_id,
-                        created_date=today,
-                        defaults={'source': source},
-                    )
-                    accepted += 1
-                else:  # 'reveal'
-                    # (etype == 'reveal')
-                    view = (
-                        JokeView.objects.filter(user=user, joke_id=joke_id)
-                        .order_by('-viewed_at').first()
-                    )
-                    if view is not None:
-                        if not view.revealed_punchline:
-                            view.revealed_punchline = True
-                            view.save(update_fields=['revealed_punchline'])
-                    else:
-                        JokeView.objects.create(
-                            user=user,
-                            joke_id=joke_id,
-                            source=source,
-                            revealed_punchline=True,
-                        )
-                    accepted += 1
-            except Exception:
-                # Fire-and-forget: never fail the batch on one bad event.
+        for event in valid:
+            joke_id = event['joke']
+            if joke_id not in visible_ids:
                 continue
+            etype = event['type']
+            source = event.get('source', 'other')
+            if etype in ('watch', 'dwell'):
+                if etype == 'watch' and joke_id not in media_ids:
+                    continue
+                raw = event.get('watch_ms' if etype == 'watch' else 'value')
+                if not isinstance(raw, int) or isinstance(raw, bool):
+                    continue
+                duration = max(0, min(raw, self.WATCH_MAX_MS if etype == 'watch' else self.DWELL_MAX_MS))
+                if duration < (self.WATCH_MIN_MS if etype == 'watch' else self.DWELL_MIN_MS):
+                    continue
+                percentage = event.get('watch_pct' if etype == 'watch' else 'scroll_pct')
+                if not isinstance(percentage, int) or isinstance(percentage, bool):
+                    percentage = None
+                else:
+                    percentage = max(0, min(percentage, 100))
+                if etype == 'watch':
+                    JokeWatch.objects.create(
+                        user=user, joke_id=joke_id, source=source,
+                        watch_ms=duration, watch_pct=percentage,
+                    )
+                else:
+                    JokeDwell.objects.create(
+                        user=user, joke_id=joke_id, source=source,
+                        dwell_ms=duration, scroll_pct=percentage, created_date=today,
+                    )
+            elif etype == 'impression':
+                # Database uniqueness makes this safe across concurrent batches.
+                JokeImpression.objects.get_or_create(
+                    user=user, joke_id=joke_id, created_date=today,
+                    defaults={'source': source},
+                )
+            else:
+                # A reveal belongs to today's activity, never a prior day's row.
+                view = JokeView.objects.filter(
+                    user=user, joke_id=joke_id, viewed_date=today,
+                ).order_by('-viewed_at').first()
+                if view is None:
+                    JokeView.objects.create(
+                        user=user, joke_id=joke_id, source=source,
+                        viewed_date=today, revealed_punchline=True,
+                    )
+                elif not view.revealed_punchline:
+                    view.revealed_punchline = True
+                    view.save(update_fields=['revealed_punchline'])
+            accepted += 1
 
         return Response({'accepted': accepted}, status=status.HTTP_202_ACCEPTED)

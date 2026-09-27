@@ -1088,9 +1088,9 @@ class JokeView(models.Model):
 class JokeImpression(models.Model):
     """A user saw this joke's card in a list/feed surface (not a detail open).
 
-    Deduped to at most one row per (user, joke, created_date) at ingest time so
-    distinct-reach stays honest. This is the missing impression/reach signal:
-    JokeView is a detail-open, JokeImpression is a card-seen.
+    Database uniqueness keeps the earliest accepted exposure per
+    (user, joke, created_date), including concurrent ingestion. JokeView records
+    opens/reveals; JokeImpression is an optional client card-exposure sample.
     """
 
     SOURCE_FEED = 'feed'
@@ -1127,6 +1127,11 @@ class JokeImpression(models.Model):
     created_date = models.DateField(db_index=True)
 
     class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=['user', 'joke', 'created_date'], name='joke_impression_user_joke_day_uniq',
+            ),
+        ]
         indexes = [
             models.Index(fields=['joke', 'created_date']),
             models.Index(fields=['user', 'joke', 'created_date']),

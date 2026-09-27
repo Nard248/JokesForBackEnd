@@ -23,6 +23,16 @@ from jokes.models import (
 
 User = get_user_model()
 
+
+def _analytics_user(**kwargs):
+    """Metric fixtures explicitly represent adults who opted into analytics."""
+    from datetime import date
+    user = User.objects.create_user(**kwargs)
+    user.profile.date_of_birth = date(1990, 1, 1)
+    user.profile.share_analytics = True
+    user.profile.save(update_fields=['date_of_birth', 'share_analytics'])
+    return user
+
 INSIGHTS_URL = '/api/v1/creators/me/insights/'
 
 
@@ -59,12 +69,12 @@ class OwnerTierBypassTests(TestCase):
         cls.age = AgeRating.objects.first()
         cls.lang = Language.objects.get(code='en')
 
-        cls.creator = User.objects.create_user(
+        cls.creator = _analytics_user(
             username='tier2_comp@test.com',
             email='tier2_comp@test.com',
             password='x',
         )
-        cls.reader = User.objects.create_user(
+        cls.reader = _analytics_user(
             username='tier2_reader@test.com',
             email='tier2_reader@test.com',
             password='x',
@@ -119,13 +129,13 @@ class NoPIILeakTests(TestCase):
         cls.age = AgeRating.objects.first()
         cls.lang = Language.objects.get(code='en')
 
-        cls.creator = User.objects.create_user(
+        cls.creator = _analytics_user(
             username='pii_creator@test.com',
             email='pii_creator@test.com',
             password='x',
         )
         # This user's email must NOT leak into the response
-        cls.audience_user = User.objects.create_user(
+        cls.audience_user = _analytics_user(
             username='secret_audience@private.com',
             email='secret_audience@private.com',
             password='x',
@@ -183,13 +193,13 @@ class CreatorScopeIsolationTests(TestCase):
         cls.age = AgeRating.objects.first()
         cls.lang = Language.objects.get(code='en')
 
-        cls.creator_a = User.objects.create_user(
+        cls.creator_a = _analytics_user(
             username='scope_a@test.com', email='scope_a@test.com', password='x'
         )
-        cls.creator_b = User.objects.create_user(
+        cls.creator_b = _analytics_user(
             username='scope_b@test.com', email='scope_b@test.com', password='x'
         )
-        cls.reader = User.objects.create_user(
+        cls.reader = _analytics_user(
             username='scope_reader@test.com', email='scope_reader@test.com', password='x'
         )
 

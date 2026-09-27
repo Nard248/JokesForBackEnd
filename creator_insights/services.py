@@ -9,10 +9,11 @@ serving lock so a creator always sees all of their own content.
 """
 from datetime import timedelta
 
-from django.db.models import Avg, Count, IntegerField, OuterRef, Q, Subquery
+from django.db.models import Avg, Count, Exists, F, IntegerField, OuterRef, Q, Subquery
 from django.db.models.functions import Coalesce, ExtractHour
 from django.utils import timezone
 
+from creator_insights.privacy import eligible_analytics_users
 from follows.models import Follow
 from jokes.identity import public_display_name, public_handle
 from jokes.models import (
@@ -22,22 +23,34 @@ from jokes.models import (
     JokeImpression,
     JokeMedia,
     JokeReaction,
-    JokeSubmission,
     JokeView,
     JokeWatch,
     SavedJoke,
     ShareEvent,
 )
 
-# A dwell sample counts as a real "read" once it crosses this many milliseconds
-# (vs. a brief glance). Used for read_rate / per-joke read_rate.
+# A dwell sample meets the duration threshold at four seconds. This is an
+# observation threshold, not proof the viewer read or understood the content.
 READ_THRESHOLD_MS = 4000
-# A dwell sample with scroll_pct at/above this is treated as "completed"
-# (read all the way through — most meaningful for story-format jokes).
+# A supplied scroll percentage at/above this meets the depth threshold.
 COMPLETION_SCROLL_PCT = 90
-# A watch sample with watch_pct at/above this is treated as "completed"
-# (watched all the way through). Mirrors COMPLETION_SCROLL_PCT for dwell.
+# A supplied playback percentage at/above this meets the completion threshold.
 WATCH_COMPLETION_PCT = 90
+MIN_AUDIENCE_SIZE = 20
+
+
+def _eligible_events(model):
+    """Only currently consenting adults, excluding direct/legacy creator previews.
+
+    The eligible-user subquery is evaluated by PostgreSQL with the aggregate,
+    so withdrawal takes effect on the next request without a user-ID cache.
+    """
+    return model.objects.filter(user__in=eligible_analytics_users()).exclude(
+        joke__creator__isnull=False, user_id=F('joke__creator_id'),
+    ).exclude(
+        joke__creator__isnull=True, joke__submission__isnull=False,
+        joke__submission__status='published', user_id=F('joke__submission__user_id'),
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -45,19 +58,17 @@ WATCH_COMPLETION_PCT = 90
 # ---------------------------------------------------------------------------
 
 def resolve_creator_jokes(creator):
-    """Return the creator's published jokes via the submission attribution join.
+    """Return published jokes attributed by creator FK or legacy submission.
 
     Owner-scoped: the content-tier gate is intentionally bypassed so the creator
-    can see all of their own jokes (including tier_2). Any future public/aggregate
-    creator surface must restore allowed_tiers filtering.
+    can see tier_2 owner content. Tier_3 and removed content are never served.
+    Public creator surfaces must restore allowed_tiers filtering.
 
-    Isolating this in one function means swapping to a direct Joke.creator FK
-    (slice 2) is a one-line change here.
     """
     return Joke.objects.filter(
         Q(creator=creator) |
         Q(creator__isnull=True, submission__user=creator, submission__status='published')
-    ).distinct()
+    ).exclude(content_tier='tier_3').distinct()
 
 
 def window_since(period):
@@ -71,7 +82,7 @@ def window_since(period):
     elif period == 'all':
         return None
     else:
-        # 'month' and any unrecognised value default to 29-day window.
+        # Thirty inclusive UTC dates, including today.
         return today - timedelta(days=29)
 
 
@@ -85,7 +96,7 @@ def _overview(jokes, since):
     published_jokes = jokes.count()
 
     # Base view queryset scoped to creator's jokes
-    view_qs = JokeView.objects.filter(joke__in=jokes)
+    view_qs = _eligible_events(JokeView).filter(joke__in=jokes)
     if since:
         view_qs = view_qs.filter(viewed_date__gte=since)
 
@@ -95,16 +106,22 @@ def _overview(jokes, since):
     payoff_rate = (revealed_views / total_views) if total_views else None
 
     # Impression / reach signal (audience telemetry, Phase 1).
-    impression_qs = JokeImpression.objects.filter(joke__in=jokes)
+    impression_qs = _eligible_events(JokeImpression).filter(joke__in=jokes)
     if since:
         impression_qs = impression_qs.filter(created_date__gte=since)
     impressions = impression_qs.count()
     unique_reach = impression_qs.values('user').distinct().count()
-    # views ÷ impressions, null when no impressions, capped at 1.0.
-    open_rate = min(total_views / impressions, 1.0) if impressions else None
+    # Count each impression identity once if a same-user/joke/day view exists.
+    # This is an observed same-day match, not proof the impression caused a read.
+    matched_views = view_qs.filter(
+        user_id=OuterRef('user_id'), joke_id=OuterRef('joke_id'),
+        viewed_date=OuterRef('created_date'),
+    )
+    matched_impressions = impression_qs.filter(Exists(matched_views)).count()
+    open_rate = matched_impressions / impressions if impressions else None
 
     # Dwell / read-time signal (audience telemetry, Phase 2).
-    dwell_qs = JokeDwell.objects.filter(joke__in=jokes)
+    dwell_qs = _eligible_events(JokeDwell).filter(joke__in=jokes)
     if since:
         dwell_qs = dwell_qs.filter(created_date__gte=since)
     dwell_total = dwell_qs.count()
@@ -124,22 +141,22 @@ def _overview(jokes, since):
     else:
         completion_rate = None
 
-    reaction_qs = JokeReaction.objects.filter(joke__in=jokes)
+    reaction_qs = _eligible_events(JokeReaction).filter(joke__in=jokes)
     if since:
         reaction_qs = reaction_qs.filter(created_at__date__gte=since)
     reactions = reaction_qs.count()
 
-    fav_qs = Favorite.objects.filter(joke__in=jokes)
+    fav_qs = _eligible_events(Favorite).filter(joke__in=jokes)
     if since:
         fav_qs = fav_qs.filter(created_at__date__gte=since)
     favorites = fav_qs.count()
 
-    save_qs = SavedJoke.objects.filter(joke__in=jokes)
+    save_qs = _eligible_events(SavedJoke).filter(joke__in=jokes)
     if since:
         save_qs = save_qs.filter(created_at__date__gte=since)
     saves = save_qs.count()
 
-    share_qs = ShareEvent.objects.filter(joke__in=jokes)
+    share_qs = _eligible_events(ShareEvent).filter(joke__in=jokes)
     if since:
         share_qs = share_qs.filter(created_at__date__gte=since)
     shares = share_qs.count()
@@ -151,15 +168,17 @@ def _overview(jokes, since):
     )
     peak_read_hour = peak['h'] if peak else None
 
-    # 28-day daily view sparkline (same mapping as TasteProfileView.daily_reads_28d)
+    # Full 28-date series, independent of the selected headline period.
     today = timezone.now().date()
     start = today - timedelta(days=27)
     daily_counts = (
-        view_qs.filter(viewed_date__gte=start)
-        .values('viewed_date').annotate(c=Count('id'))
+        _eligible_events(JokeView).filter(
+            joke__in=jokes, viewed_date__gte=start, viewed_date__lte=today,
+        ).values('viewed_date').annotate(views=Count('id'), reach=Count('user_id', distinct=True))
     )
-    sparkline_map = {row['viewed_date']: row['c'] for row in daily_counts}
-    daily_reach_28d = [sparkline_map.get(start + timedelta(days=i), 0) for i in range(28)]
+    sparkline_map = {row['viewed_date']: row for row in daily_counts}
+    daily_reach_28d = [sparkline_map.get(start + timedelta(days=i), {}).get('reach', 0) for i in range(28)]
+    daily_views_28d = [sparkline_map.get(start + timedelta(days=i), {}).get('views', 0) for i in range(28)]
 
     return {
         'published_jokes': published_jokes,
@@ -178,16 +197,18 @@ def _overview(jokes, since):
         'shares': shares,
         'peak_read_hour': peak_read_hour,
         'daily_reach_28d': daily_reach_28d,
+        'daily_views_28d': daily_views_28d,
+        'dwell_samples': dwell_total,
     }
 
 
 def _breakdowns(jokes, since):
     """Compute reactions, shares, and source breakdowns."""
-    view_qs = JokeView.objects.filter(joke__in=jokes)
+    view_qs = _eligible_events(JokeView).filter(joke__in=jokes)
     if since:
         view_qs = view_qs.filter(viewed_date__gte=since)
 
-    reaction_qs = JokeReaction.objects.filter(joke__in=jokes)
+    reaction_qs = _eligible_events(JokeReaction).filter(joke__in=jokes)
     if since:
         reaction_qs = reaction_qs.filter(created_at__date__gte=since)
     reactions_breakdown = list(
@@ -196,7 +217,7 @@ def _breakdowns(jokes, since):
     # Rename key to match API shape
     reactions_breakdown = [{'reaction': r['reaction'], 'count': r['count']} for r in reactions_breakdown]
 
-    share_qs = ShareEvent.objects.filter(joke__in=jokes)
+    share_qs = _eligible_events(ShareEvent).filter(joke__in=jokes)
     if since:
         share_qs = share_qs.filter(created_at__date__gte=since)
     shares_breakdown = list(
@@ -227,7 +248,7 @@ def _joke_count_subquery(model, since_q=None, extra_q=None):
     relation join has one row per related object, so a plain COUNT of that
     relation equals the DISTINCT count. Coalesce keeps the empty case at 0.
     """
-    rows = model.objects.filter(joke=OuterRef('pk'))
+    rows = _eligible_events(model).filter(joke=OuterRef('pk'))
     if extra_q is not None:
         rows = rows.filter(extra_q)
     if since_q is not None:
@@ -276,7 +297,7 @@ def _top_jokes(jokes, since):
     # Per-joke dwell metrics computed in a separate, dwell-only aggregation so the
     # multi-JOIN annotate above doesn't fan out / distort the averages.
     top_ids = [j.id for j in annotated]
-    dwell_qs = JokeDwell.objects.filter(joke_id__in=top_ids)
+    dwell_qs = _eligible_events(JokeDwell).filter(joke_id__in=top_ids)
     if since:
         dwell_qs = dwell_qs.filter(created_date__gte=since)
     dwell_by_joke = {
@@ -297,7 +318,7 @@ def _top_jokes(jokes, since):
             joke_id__in=top_ids, asset__kind__in=('video', 'audio'),
         ).values_list('joke_id', flat=True).distinct()
     )
-    watch_qs = JokeWatch.objects.filter(joke_id__in=top_ids)
+    watch_qs = _eligible_events(JokeWatch).filter(joke_id__in=top_ids)
     if since:
         watch_qs = watch_qs.filter(watched_at__date__gte=since)
     watch_by_joke = {
@@ -350,163 +371,91 @@ def _top_jokes(jokes, since):
 
 
 def _audience(jokes, since):
-    """Compute audience taste composition from views of creator's jokes.
-
-    Mirrors TasteProfileView top_themes/categories/formats but scoped to the
-    creator's published jokes. Audience composition is aggregate/taste-based only —
-    no individual identities are returned.
-    """
-    view_qs = JokeView.objects.filter(joke__in=jokes)
+    """Viewed content composition; suppress each group under 20 distinct adults."""
+    views = _eligible_events(JokeView).filter(joke__in=jokes)
     if since:
-        view_qs = view_qs.filter(viewed_date__gte=since)
-
-    top_themes = list(
-        view_qs.values('joke__context_tags__name')
-        .exclude(joke__context_tags__name__isnull=True)
-        .annotate(c=Count('id')).order_by('-c')[:8]
-    )
-    top_categories = list(
-        view_qs.values('joke__tones__name')
-        .exclude(joke__tones__name__isnull=True)
-        .annotate(c=Count('id')).order_by('-c')[:8]
-    )
-    top_formats = list(
-        view_qs.values('joke__format__name')
-        .exclude(joke__format__name__isnull=True)
-        .annotate(c=Count('id')).order_by('-c')[:5]
-    )
-
-    return {
-        'top_themes': [{'label': r['joke__context_tags__name'], 'count': r['c']} for r in top_themes],
-        'top_categories': [{'label': r['joke__tones__name'], 'count': r['c']} for r in top_categories],
-        'top_formats': [{'label': r['joke__format__name'], 'count': r['c']} for r in top_formats],
+        views = views.filter(viewed_date__gte=since)
+    sample_size = views.values('user_id').distinct().count()
+    result = {
+        'top_themes': [], 'top_categories': [], 'top_formats': [],
+        'sample_size': sample_size, 'minimum_sample_size': MIN_AUDIENCE_SIZE,
+        'suppressed': sample_size < MIN_AUDIENCE_SIZE,
     }
+    if result['suppressed']:
+        return result
+    for key, relation, limit in (
+        ('top_themes', 'joke__context_tags__name', 8),
+        ('top_categories', 'joke__tones__name', 8),
+        ('top_formats', 'joke__format__name', 5),
+    ):
+        rows = (views.values(relation).exclude(**{relation + '__isnull': True})
+                .annotate(c=Count('id'), audience_size=Count('user_id', distinct=True))
+                .filter(audience_size__gte=MIN_AUDIENCE_SIZE).order_by('-c', relation)[:limit])
+        result[key] = [
+            {'label': row[relation], 'count': row['c'], 'sample_size': row['audience_size']}
+            for row in rows
+        ]
+    return result
 
 
 def _suggestions(creator, jokes, since):
-    """Compute the three growth suggestion cards.
-
-    1. peak_hour  — when creator's audience reads
-    2. what_resonates — best tone/theme by reactions-per-view
-    3. consistency — days since last published joke
-    """
-    view_qs = JokeView.objects.filter(joke__in=jokes)
+    """Descriptive observations with sample evidence, never growth guarantees."""
+    views = _eligible_events(JokeView).filter(joke__in=jokes)
+    reactions = _eligible_events(JokeReaction).filter(joke__in=jokes)
     if since:
-        view_qs = view_qs.filter(viewed_date__gte=since)
-
-    # --- peak_hour card ---
-    peak = (
-        view_qs.annotate(h=ExtractHour('viewed_at'))
-        .values('h').annotate(n=Count('id')).order_by('-n').first()
-    )
-    peak_hour = peak['h'] if peak else None
-
-    if peak_hour is not None:
-        peak_title = f'Publish around {peak_hour}:00'
-        peak_detail = (
-            f'Your readers are most active around {peak_hour}:00 — '
-            'that\'s your best window to share new jokes.'
-        )
-    else:
-        peak_title = 'Post regularly to discover your peak hour'
-        peak_detail = 'We\'ll show your audience\'s peak reading time once you have more views.'
-
-    suggestions = [
-        {
-            'kind': 'peak_hour',
-            'title': peak_title,
-            'detail': peak_detail,
-            'data': {'hour': peak_hour},
+        views = views.filter(viewed_date__gte=since)
+        reactions = reactions.filter(created_at__date__gte=since)
+    sample_size = views.values('user_id').distinct().count()
+    enough = sample_size >= MIN_AUDIENCE_SIZE
+    peak = (views.annotate(h=ExtractHour('viewed_at')).values('h')
+            .annotate(n=Count('id')).order_by('-n', 'h').first()) if enough else None
+    hour = peak['h'] if peak else None
+    suggestions = [{
+        'kind': 'peak_hour',
+        'title': f'Most recorded views were near {hour}:00 UTC' if peak else 'More readers needed for timing suggestions',
+        'detail': ('Try a post around this hour and compare future results; this describes past views, '
+                   'not a proven best publishing time.') if peak else
+                  'Timing observations need at least 20 distinct consenting adult readers.',
+        'data': {'hour': hour, 'sample_size': sample_size, 'minimum_sample_size': MIN_AUDIENCE_SIZE,
+                 'status': 'observed' if peak else 'insufficient_data'},
+    }]
+    tone_stats = []
+    if enough:
+        # Separate aggregates avoid materializing views × reactions per joke.
+        reactions_by_tone = {
+            row['joke__tones__name']: row['reactions']
+            for row in reactions.values('joke__tones__name').annotate(reactions=Count('id'))
         }
-    ]
-
-    # --- what_resonates card ---
-    # For each tone of creator's jokes, compute reactions-per-view
-    # Best tone by (reactions on jokes with that tone) / (views on jokes with that tone)
-    tone_stats = (
-        view_qs.values('joke__tones__name')
-        .exclude(joke__tones__name__isnull=True)
-        .annotate(
-            # distinct=True prevents fan-out when the reactions JOIN multiplies view rows
-            views=Count('id', distinct=True),
-            # period-filter reactions so numerator and denominator cover the same window
-            reactions=Count(
-                'joke__reactions_v2',
-                filter=(
-                    Q(
-                        joke__reactions_v2__isnull=False,
-                        joke__reactions_v2__created_at__date__gte=since,
-                    )
-                    if since
-                    else Q(joke__reactions_v2__isnull=False)
-                ),
-                distinct=True,
-            ),
-        )
-        .order_by('-views')
-    )
-
-    best_tone = None
-    best_rate = -1
-    for row in tone_stats:
-        if row['views'] > 0:
-            rate = row['reactions'] / row['views']
-            if rate > best_rate:
-                best_rate = rate
-                best_tone = row['joke__tones__name']
-
-    if best_tone:
-        resonates_title = f'Your {best_tone} jokes resonate most'
-        resonates_detail = (
-            f'Jokes tagged "{best_tone}" get the highest reaction rate — '
-            'consider creating more in this style.'
-        )
-        resonates_data = {'top_tone': best_tone, 'reactions_per_view': round(best_rate, 4)}
-    else:
-        resonates_title = 'Add reactions to discover what resonates'
-        resonates_detail = 'Once your audience reacts to your jokes, we\'ll surface your strongest style.'
-        resonates_data = {'top_tone': None, 'reactions_per_view': None}
-
+        for row in (views.values('joke__tones__name').exclude(joke__tones__name__isnull=True)
+                    .annotate(views=Count('id'), audience_size=Count('user_id', distinct=True))
+                    .filter(audience_size__gte=MIN_AUDIENCE_SIZE).order_by('joke__tones__name')):
+            row['reactions'] = reactions_by_tone.get(row['joke__tones__name'], 0)
+            if row['reactions']:
+                tone_stats.append(row)
+    best = max(tone_stats, key=lambda row: row['reactions'] / row['views'], default=None)
     suggestions.append({
         'kind': 'what_resonates',
-        'title': resonates_title,
-        'detail': resonates_detail,
-        'data': resonates_data,
+        'title': f"Your {best['joke__tones__name']} jokes have the strongest recorded reaction ratio" if best
+                 else 'More evidence needed to compare styles',
+        'detail': ('Consider another joke in this style. This compares retained reactions per recorded view; '
+                   'it is a descriptive hypothesis, not a conversion rate or growth forecast.') if best else
+                  'A style needs at least 20 distinct consenting adult readers and a reaction before comparison.',
+        'data': {'top_tone': best['joke__tones__name'] if best else None,
+                 'reactions_per_view': round(best['reactions'] / best['views'], 4) if best else None,
+                 'sample_size': best['audience_size'] if best else sample_size,
+                 'minimum_sample_size': MIN_AUDIENCE_SIZE,
+                 'views': best['views'] if best else None,
+                 'reactions': best['reactions'] if best else None,
+                 'status': 'observed' if best else 'insufficient_data'},
     })
-
-    # --- consistency card ---
-    last_sub = (
-        JokeSubmission.objects.filter(user=creator, status='published')
-        .order_by('-updated_at').first()
-    )
-    if last_sub:
-        days_since = (timezone.now().date() - last_sub.updated_at.date()).days
-    else:
-        days_since = None
-
-    if days_since is None:
-        consistency_title = 'Publish your first joke!'
-        consistency_detail = 'Creators who post 3–5× per week grow their audience fastest.'
-    elif days_since == 0:
-        consistency_title = 'Great — you published today!'
-        consistency_detail = 'Creators who post 3–5× per week grow their audience fastest.'
-    elif days_since <= 3:
-        consistency_title = f'Published {days_since} day{"s" if days_since != 1 else ""} ago — keep it up!'
-        consistency_detail = 'Creators who post 3–5× per week grow their audience fastest.'
-    else:
-        consistency_title = f'It\'s been {days_since} days since your last joke'
-        consistency_detail = (
-            f'You haven\'t published in {days_since} days. '
-            'Creators who post 3–5× per week grow their audience fastest.'
-        )
-
+    latest = jokes.order_by('-created_at', '-pk').values_list('created_at', flat=True).first()
+    days_since = (timezone.now().date() - latest.date()).days if latest else None
     suggestions.append({
         'kind': 'consistency',
-        'title': consistency_title,
-        'detail': consistency_detail,
-        'data': {'days_since': days_since},
+        'title': f'Latest published content was added {days_since} days ago' if latest else 'Publish your first joke',
+        'detail': 'Choose a posting schedule you can maintain. Publication timing alone does not establish audience growth.',
+        'data': {'days_since': days_since, 'status': 'observed' if latest else 'insufficient_data'},
     })
-
     return suggestions
 
 
@@ -532,9 +481,10 @@ def build_creator_insights(creator, period):
     # Follower stats (injected after _overview so the function signature stays stable)
     today = timezone.now().date()
     bf_start = today - timedelta(days=27)
-    overview['followers'] = Follow.objects.filter(creator=creator).count()
+    follows = Follow.objects.filter(creator=creator, follower__in=eligible_analytics_users().exclude(pk=creator.pk))
+    overview['followers'] = follows.count()
     follow_counts = (
-        Follow.objects.filter(creator=creator, created_at__date__gte=bf_start)
+        follows.filter(created_at__date__gte=bf_start, created_at__date__lte=today)
         .values('created_at__date').annotate(c=Count('id'))
     )
     follow_map = {row['created_at__date']: row['c'] for row in follow_counts}
@@ -552,6 +502,24 @@ def build_creator_insights(creator, period):
         'top_jokes': top_jokes,
         'audience': audience,
         'suggestions': suggestions,
+        'sample_coverage': {
+            'eligible_viewers': overview['reach'],
+            'impression_viewers': overview['unique_reach'],
+            'dwell_samples': overview['dwell_samples'],
+            'audience_minimum': MIN_AUDIENCE_SIZE,
+        },
+        'measurement_notes': {
+            'population': 'Currently consenting adults only; creator self-interactions excluded. This is not total audience.',
+            'views': 'Recorded opens/reveals, filtered by current consent; repeats may count after the debounce window.',
+            'open_rate': 'Fraction of daily user/joke impressions with a same-user/joke/day open or reveal, not an attributed causal conversion.',
+            'attention': 'Optional client dwell/playback samples, not proof of attention. Averages are per sample/segment, not per reader or session. Coverage varies by client; native completeness is not established. Missing playback/scroll completion is unknown, not zero.',
+            'anonymous': 'Anonymous readers and shares are excluded; no anonymous audience identifier is collected.',
+            'engagement': 'Reactions, favorites and saves are surviving edges created in the window; removals rewrite historical totals.',
+            'followers': 'Consenting adult follower snapshots. Growth series counts surviving follows by creation date, not gains or net growth.',
+            'shares': 'Recorded share initiations, not confirmed downstream consumption.',
+            'audience': 'Viewed content tags, not demographic or cross-creator preferences; groups below 20 readers are suppressed.',
+            'time_zone': 'UTC; week is 7 inclusive dates, month is 30, daily series always spans 28 dates.',
+        },
     }
 
 
