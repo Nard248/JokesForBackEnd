@@ -255,4 +255,4 @@ class PlansViewTests(APITestCase):
         slugs = [p['slug'] for p in resp.data]
         self.assertIn('free', slugs)
         self.assertIn('creator_pro', slugs)
-        self.assertIn('supporter', slugs)
+        self.assertNotIn('supporter', slugs)

@@ -46,7 +46,6 @@ from rest_framework.response import Response
 from rest_framework.throttling import ScopedRateThrottle
 from rest_framework.views import APIView
 
-from billing import entitlements
 from notifications.models import EmailMessageLog, EmailVerification
 
 from .achievements import evaluate_for as evaluate_achievements_for
@@ -101,7 +100,7 @@ from .models import (
     Vibe,
 )
 from .moderation import hidden_user_ids, visible_jokes
-from .paywall import paywall_state, record_anon_read
+from .paywall import paywall_state
 from .recommendations import get_personalized_joke, get_recently_shown_joke_ids
 from .serializers import (
     AgeRatingSerializer,
@@ -169,23 +168,17 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
         return visible_jokes(qs, self.request)
 
     def get_serializer_context(self):
-        """Inject the once-per-request paywall decision so JokeSerializer can
-        lock/strip the payoff uniformly for list + retrieve."""
+        """Preserve the legacy serializer contract with unlimited reader access."""
         ctx = super().get_serializer_context()
         ctx['paywall_state'] = paywall_state(self.request)
         return ctx
 
     def retrieve(self, request, *args, **kwargs):
-        """Return a joke and log a JokeView (P5) ONLY when it is delivered
-        UNLOCKED — a within-limit new open, or a re-open of an already-consumed
-        joke. A LOCKED delivery (free user over the cap, new joke) yields no
-        payoff, so it must NOT count against / into the ledger. 60s debounce
-        still applies to unlocked re-opens.
-        """
+        """Return free content and keep the debounced operational reading history."""
         response = super().retrieve(request, *args, **kwargs)
         if request.user.is_authenticated and response.status_code == 200:
-            # is_locked is computed by the serializer from paywall_state; a
-            # locked joke gave the user no payoff, so do not log consumption.
+            # Defensive for any future unavailable-content serializer: only
+            # record activity for a response that actually delivered content.
             if response.data.get('is_locked'):
                 return response
             from datetime import timedelta
@@ -205,10 +198,6 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
                     JokeView.objects.create(
                         user=request.user, joke_id=joke_id, source=source
                     )
-        elif response.status_code == 200 and not response.data.get('is_locked'):
-            joke_id = response.data.get('id')
-            if joke_id:
-                record_anon_read(response, request, joke_id)
         return response
 
     @extend_schema(
@@ -389,8 +378,8 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
 
     @extend_schema(
         description=(
-            'Free daily-read cap state for the freemium punchline paywall. '
-            'Paid/unlimited tiers return limit=null, remaining=null, over=false.'
+            'Legacy daily-read quota shape. Reading is free for everyone: '
+            'limit=null, remaining=null, over=false and used=0.'
         ),
         responses={200: {'type': 'object', 'properties': {
             'limit': {'type': 'integer', 'nullable': True},
@@ -405,10 +394,10 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
         permission_classes=[AllowAny], url_path='daily-reads',
     )
     def daily_reads(self, request):
-        """GET /api/v1/jokes/daily-reads/ — remaining free reads for the nudge."""
+        """Legacy quota contract: reading is unlimited for every viewer."""
         state = paywall_state(request)
         return Response({
-            'limit': state.limit,           # null == unlimited (paid)
+            'limit': state.limit,           # null == unlimited for everyone
             'used': state.used,
             'remaining': state.remaining,   # null == unlimited
             'over': state.over,
@@ -648,29 +637,22 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
 
 
 class JokeRevealView(APIView):
-    """POST /jokes/{id}/reveal/ — anonymous consumption ledger write.
-
-    Anonymous in-feed reveals can't ride telemetry (consent-gated), so the
-    frontend calls this when an unauthenticated reader taps reveal.
-    Authenticated readers 204 no-op: their ledger is JokeView (retrieve +
-    telemetry). Soft wall: response carries the updated counters.
-    """
+    """Compatibility endpoint for old clients; no anonymous quota is recorded."""
 
     permission_classes = [AllowAny]
 
     @extend_schema(
         description=(
-            'Records an anonymous punchline reveal against the cookie-backed paywall '
-            'ledger and returns the updated counters. Authenticated callers are a no-op '
-            '(204, no body) — their ledger is JokeView instead. Takes no request body.'
+            'Returns unlimited reading status for anonymous callers without setting a '
+            'cookie. Authenticated callers remain a no-op (204). Takes no request body.'
         ),
         request=None,
         responses={
             200: {'type': 'object', 'properties': {
-                'limit': {'type': 'integer', 'description': 'Free reveals allowed per day.'},
-                'used': {'type': 'integer', 'description': 'Distinct jokes revealed today.'},
-                'remaining': {'type': 'integer'},
-                'over': {'type': 'boolean', 'description': 'True once used >= limit.'},
+                'limit': {'type': 'integer', 'nullable': True, 'description': 'Null: unlimited.'},
+                'used': {'type': 'integer', 'description': 'Legacy quota field; always zero.'},
+                'remaining': {'type': 'integer', 'nullable': True},
+                'over': {'type': 'boolean', 'description': 'Always false.'},
                 'reset_at': {'type': 'string', 'format': 'date-time',
                              'description': 'Next midnight UTC, ISO 8601.'},
             }},
@@ -682,7 +664,7 @@ class JokeRevealView(APIView):
         if request.user.is_authenticated:
             return Response(status=status.HTTP_204_NO_CONTENT)
 
-        joke = get_object_or_404(
+        get_object_or_404(
             visible_jokes(
                 Joke.objects.filter(content_tier__in=allowed_tiers(request)),
                 request,
@@ -690,21 +672,13 @@ class JokeRevealView(APIView):
             pk=pk,
         )
         state = paywall_state(request)
-        consumed = set(state.consumed_ids)
-        will_consume = joke.pk not in consumed and not state.over
-        if will_consume:
-            consumed.add(joke.pk)
-        used = len(consumed)
-        response = Response({
+        return Response({
             'limit': state.limit,
-            'used': used,
-            'remaining': max(0, (state.limit or 0) - used),
-            'over': used >= (state.limit or 0),
+            'used': state.used,
+            'remaining': state.remaining,
+            'over': state.over,
             'reset_at': state.reset_at,
         })
-        if will_consume:
-            record_anon_read(response, request, joke.pk)
-        return response
 
 
 # =============================================================================
@@ -1363,22 +1337,14 @@ class DailyJokeViewSet(viewsets.GenericViewSet):
 
     @extend_schema(
         description=(
-            'Get the user\'s daily joke history as a rolling window. The window '
-            'length is the daily_joke_history_days entitlement (free 30 / '
-            'supporter 90 / creator_pro 365) and rolls with the clock.'
+            'Get the user\'s available daily joke history. Reading history has no '
+            'subscription-based window; content safety and removal rules still apply.'
         ),
         responses={200: DailyJokeSerializer(many=True)},
     )
     @action(detail=False, methods=['get'])
     def history(self, request):
-        """Get the user's daily joke history.
-
-        Rolling "last N days" DATE window (not a fixed row count): entries older
-        than ``today - daily_joke_history_days`` roll off as the clock advances,
-        and the window honors the per-plan entitlement.
-        """
-        from datetime import timedelta
-
+        """Get all available daily joke history, independent of paid plans."""
         queryset = self.get_queryset().filter(
             joke__is_removed=False,  # a taken-down joke drops out of history
         ).select_related(
@@ -1390,13 +1356,6 @@ class DailyJokeViewSet(viewsets.GenericViewSet):
             'joke__tones',
             'joke__context_tags'
         )
-
-        window_days = entitlements.get_limit(
-            request.user, 'daily_joke_history_days', 30
-        )
-        if window_days is not None:
-            cutoff = timezone.now().date() - timedelta(days=window_days)
-            queryset = queryset.filter(date__gte=cutoff)
 
         serializer = DailyJokeSerializer(queryset, many=True)
         return Response(serializer.data)
@@ -3385,7 +3344,7 @@ def _mystery_pool_for_user(user, allowed=frozenset({'tier_1'})):
 
 
 class MysteryBoxStatusView(APIView):
-    """GET /api/v1/mystery-box/status/ — current quota state for the user."""
+    """Daily activity count; rolls have no subscription purchase quota."""
     permission_classes = [IsAuthenticated]
 
     @extend_schema(responses={200: MysteryBoxStatusSerializer})
@@ -3394,19 +3353,18 @@ class MysteryBoxStatusView(APIView):
         used = MysteryBoxRoll.objects.filter(
             user=request.user, rolled_date=timezone.now().date()
         ).count()
-        max_per_day = entitlements.get_limit(request.user, 'mystery_box_rolls_per_day', default=MysteryBoxRoll.MAX_DAILY_ROLLS)
         return Response({
             'rolls_used_today': used,
-            'rolls_remaining_today': max(0, max_per_day - used),
-            'max_per_day': max_per_day,
+            'rolls_remaining_today': None,
+            'max_per_day': None,
         })
 
 
 class MysteryBoxRollView(APIView):
     """POST /api/v1/mystery-box/roll/ — pull one joke from the user's pool.
 
-    Returns 429 if daily cap reached, 404 if pool exhausted, 200 with the
-    joke + remaining quota otherwise.
+    Returns 404 if the eligible pool is exhausted, 200 with a joke otherwise.
+    Ordinary DRF abuse throttling remains in effect; there is no paid daily cap.
     """
     permission_classes = [IsAuthenticated]
 
@@ -3421,20 +3379,6 @@ class MysteryBoxRollView(APIView):
     def post(self, request):
         from django.utils import timezone
         today = timezone.now().date()
-
-        used = MysteryBoxRoll.objects.filter(
-            user=request.user, rolled_date=today
-        ).count()
-        if used >= entitlements.get_limit(request.user, 'mystery_box_rolls_per_day', default=MysteryBoxRoll.MAX_DAILY_ROLLS):
-            return Response(
-                {
-                    'detail': 'Daily Mystery Box limit reached. Resets at midnight UTC.',
-                    'rolls_used_today': used,
-                    'rolls_remaining_today': 0,
-                    'max_per_day': entitlements.get_limit(request.user, 'mystery_box_rolls_per_day', default=MysteryBoxRoll.MAX_DAILY_ROLLS),
-                },
-                status=status.HTTP_429_TOO_MANY_REQUESTS,
-            )
 
         pool, source_vibe = _mystery_pool_for_user(request.user, allowed=allowed_tiers(request))
         joke = pool.order_by('?').first()
@@ -3455,7 +3399,7 @@ class MysteryBoxRollView(APIView):
         ctx = {'request': request, 'paywall_state': paywall_state(request)}
         return Response({
             'joke': JokeSerializer(joke, context=ctx).data,
-            'rolls_remaining_today': entitlements.get_limit(request.user, 'mystery_box_rolls_per_day', default=MysteryBoxRoll.MAX_DAILY_ROLLS) - used - 1,
+            'rolls_remaining_today': None,
             'source_vibe': VibeSerializer(source_vibe).data if source_vibe else None,
         })
 
@@ -4098,5 +4042,3 @@ class TelemetryIngestView(APIView):
                 continue
 
         return Response({'accepted': accepted}, status=status.HTTP_202_ACCEPTED)
-
-

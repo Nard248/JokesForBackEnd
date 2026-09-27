@@ -1,15 +1,4 @@
-"""Tests for the freemium daily-read punchline paywall.
-
-Free tier = 10 DISTINCT joke reveals/day; past the cap the PUNCHLINE is withheld
-SERVER-SIDE (setup teaser stays). Paid tiers are unlimited. The daily editorial
-joke (/daily-jokes/today/) is exempt. Reset boundary = midnight UTC.
-
-Run:
-  DATABASE_URL= DB_NAME=jokesfor DB_USER=postgres DB_PASSWORD=6969 \
-    DB_HOST=localhost DB_PORT=5432 \
-    .venv/bin/python manage.py test jokes.test_paywall --keepdb
-"""
-import json
+"""Free reading preserves full content, operational history and legacy API shape."""
 from datetime import date
 from unittest.mock import patch
 
@@ -73,7 +62,7 @@ class _Base(APITestCase):
 
 
 class FreeUnderLimitTests(_Base):
-    def test_under_limit_unlocked_and_used_counts_distinct(self):
+    def test_free_reading_records_debounced_history_without_a_quota(self):
         joke_a = _setup_joke(1)
         joke_b = _setup_joke(2)
 
@@ -84,43 +73,44 @@ class FreeUnderLimitTests(_Base):
         self.assertEqual(r.status_code, 200)
         self.assertFalse(r.data['is_locked'])
         self.assertEqual(r.data['punchline'], joke_a.punchline)  # payoff present
-        self.assertEqual(self._status().data['used'], 1)
+        self.assertEqual(JokeView.objects.filter(user=self.user).count(), 1)
 
-        # Re-open SAME joke -> distinct used does not move.
+        # Re-opening the same joke within 60s does not duplicate activity.
         self._retrieve(joke_a)
-        self.assertEqual(self._status().data['used'], 1)
+        self.assertEqual(JokeView.objects.filter(user=self.user).count(), 1)
 
         # A different joke increments.
         self._retrieve(joke_b)
         s = self._status().data
-        self.assertEqual(s['used'], 2)
-        self.assertEqual(s['limit'], FREE_CAP)
-        self.assertEqual(s['remaining'], FREE_CAP - 2)
+        self.assertEqual(JokeView.objects.filter(user=self.user).count(), 2)
+        self.assertEqual(s['used'], 0)
+        self.assertIsNone(s['limit'])
+        self.assertIsNone(s['remaining'])
         self.assertFalse(s['over'])
 
 
 class FreeOverLimitTests(_Base):
-    def test_new_joke_locked_stripped_setup_kept(self):
+    def test_new_joke_keeps_full_content_after_legacy_cap(self):
         self._consume(FREE_CAP)
         locked = _setup_joke(99)
 
         r = self._retrieve(locked)
         self.assertEqual(r.status_code, 200)
-        self.assertTrue(r.data['is_locked'])
-        self.assertIsNone(r.data['punchline'])         # payoff withheld
+        self.assertFalse(r.data['is_locked'])
+        self.assertEqual(r.data['punchline'], locked.punchline)
         self.assertIsNone(r.data['lines'])
         self.assertEqual(r.data['setup'], locked.setup)  # teaser kept
 
-    def test_locked_retrieve_creates_no_jokeview(self):
+    def test_retrieve_after_legacy_cap_still_records_activity(self):
         self._consume(FREE_CAP)
         locked = _setup_joke(98)
         before = JokeView.objects.filter(user=self.user).count()
 
         r = self._retrieve(locked)
-        self.assertTrue(r.data['is_locked'])
+        self.assertFalse(r.data['is_locked'])
         after = JokeView.objects.filter(user=self.user).count()
-        self.assertEqual(after, before, 'A locked delivery must NOT log consumption')
-        self.assertFalse(
+        self.assertEqual(after, before + 1)
+        self.assertTrue(
             JokeView.objects.filter(user=self.user, joke=locked).exists()
         )
 
@@ -130,20 +120,13 @@ class FreeOverLimitTests(_Base):
         JokeView.objects.create(user=self.user, joke=already)  # consumed today
         # Now at the cap (10 distinct), but `already` is in consumed_ids.
 
-        self.assertTrue(self._status().data['over'])
+        self.assertFalse(self._status().data['over'])
         r = self._retrieve(already)
         self.assertFalse(r.data['is_locked'])
         self.assertEqual(r.data['punchline'], already.punchline)
 
-    def test_locked_joke_never_leaks_punchline_via_backfilled_text(self):
-        """A published two-part joke stores a denormalized ``text`` of
-        "<setup> <punchline>" (the submission pipeline backfills it). Locking
-        must withhold the payoff from EVERY field it appears in, not just
-        ``punchline`` -- otherwise the paywall is bypassed by reading ``text``.
-
-        The other tests in this class build jokes with ``text=''``, so they
-        cannot see this: production rows are not shaped like the fixtures.
-        """
+    def test_backfilled_text_is_available_after_legacy_cap(self):
+        """Published text includes both setup and punchline; both remain free."""
         self._consume(FREE_CAP)
         locked = _make_joke(
             'setup',
@@ -154,20 +137,16 @@ class FreeOverLimitTests(_Base):
 
         r = self._retrieve(locked)
 
-        self.assertTrue(r.data['is_locked'])
-        self.assertNotIn(
-            'It got mugged',
-            json.dumps(r.data, default=str),
-            'The punchline must not appear ANYWHERE in a locked payload',
-        )
+        self.assertFalse(r.data['is_locked'])
+        self.assertEqual(r.data['text'], locked.text)
 
-    def test_text_only_format_blurs_whole_card(self):
+    def test_text_only_format_remains_available_after_legacy_cap(self):
         self._consume(FREE_CAP)
         one = _make_joke('oneliner', text='I only tell dad jokes now.')
 
         r = self._retrieve(one)
-        self.assertTrue(r.data['is_locked'])
-        self.assertIsNone(r.data['text'])  # no teaser for text-only -> null text
+        self.assertFalse(r.data['is_locked'])
+        self.assertEqual(r.data['text'], one.text)
 
 
 class PaidUnlimitedTests(APITestCase):
@@ -215,13 +194,13 @@ class DailyEditorialExemptTests(_Base):
 
 
 class ResetAtMidnightTests(_Base):
-    def test_over_limit_day_n_resets_day_n1(self):
+    def test_reading_remains_unlimited_across_midnight(self):
         locked = _setup_joke(88)
         with freeze_time(DAY_N):
             self._consume(FREE_CAP)  # 10 distinct reads on 2026-07-14
-            self.assertTrue(self._status().data['over'])
+            self.assertFalse(self._status().data['over'])
             r = self._retrieve(locked)
-            self.assertTrue(r.data['is_locked'])
+            self.assertFalse(r.data['is_locked'])
 
         with freeze_time(DAY_N1):
             s = self._status().data
@@ -239,16 +218,15 @@ class StatusEndpointTests(_Base):
         self.assertEqual(
             set(s.keys()), {'limit', 'used', 'remaining', 'over', 'reset_at'},
         )
-        self.assertEqual(s['limit'], FREE_CAP)
-        self.assertEqual(s['used'], 3)
-        self.assertEqual(s['remaining'], FREE_CAP - 3)
+        self.assertIsNone(s['limit'])
+        self.assertEqual(s['used'], 0)
+        self.assertIsNone(s['remaining'])
         self.assertFalse(s['over'])
         self.assertTrue(s['reset_at'].startswith('2026-'))
 
 
 class HistoryEntitlementTests(APITestCase):
-    """History window honors the daily_joke_history_days entitlement: a 60-day-old
-    entry is out-of-window for free (30d) but in-window for supporter (90d)."""
+    """Old history is available equally to free and legacy subscribed accounts."""
 
     @classmethod
     def setUpTestData(cls):
@@ -261,14 +239,14 @@ class HistoryEntitlementTests(APITestCase):
         self.assertEqual(r.status_code, 200, r.content)
         return [row['date'] for row in r.data]
 
-    def test_free_excludes_but_supporter_includes_60_day_old(self):
+    def test_free_and_legacy_supporter_include_60_day_old(self):
         old = date(2026, 5, 15)  # 60 days before 2026-07-14
 
         free_user = User.objects.create_user(
             username='h-free@example.com', email='h-free@example.com', password='pw',
         )
         DailyJoke.objects.create(user=free_user, joke=self.joke, date=old)
-        self.assertNotIn('2026-05-15', self._history_dates(free_user))
+        self.assertIn('2026-05-15', self._history_dates(free_user))
 
         sup_user = User.objects.create_user(
             username='h-sup@example.com', email='h-sup@example.com', password='pw',

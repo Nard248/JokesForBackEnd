@@ -1283,14 +1283,14 @@ class UserVibesUpdateSerializer(serializers.Serializer):
 class MysteryBoxStatusSerializer(serializers.Serializer):
     """Quota state for the Mystery Box surface — purely computed."""
     rolls_used_today = serializers.IntegerField()
-    rolls_remaining_today = serializers.IntegerField()
-    max_per_day = serializers.IntegerField()
+    rolls_remaining_today = serializers.IntegerField(allow_null=True)
+    max_per_day = serializers.IntegerField(allow_null=True)
 
 
 class MysteryBoxRollResponseSerializer(serializers.Serializer):
     """Successful roll response — joke + remaining quota + which vibe sourced it."""
     joke = JokeSerializer()
-    rolls_remaining_today = serializers.IntegerField()
+    rolls_remaining_today = serializers.IntegerField(allow_null=True)
     source_vibe = VibeSerializer(allow_null=True)
 
 

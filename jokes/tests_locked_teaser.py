@@ -1,22 +1,4 @@
-"""A locked joke must still have something to show.
-
-The F-021 fix correctly stopped shipping the payoff in ``text`` — a published
-two-part joke carries a denormalized "<setup> <punchline>", so withholding
-``text`` was the only way to close the leak.
-
-But it left a hole its own docstring assumes away: *"``setup`` is always kept,
-and the client composes the locked card from it"* is true only for two-part
-formats. A one-liner carries its whole joke in ``text`` and has an **empty**
-``setup``, so a locked one-liner arrives with `text=None, setup='', lines=None`
-— nothing to display at all.
-
-One-liners are roughly 40% of the catalogue, so a reader past the daily cap
-scrolls a wall of blank cards. That is worse than a paywall: it looks broken,
-and it converts nobody, because you cannot want a joke you cannot see the start
-of.
-
-These tests pin a ``teaser`` field that is always present and never the payoff.
-"""
+"""Free joke responses keep their teaser previews alongside full content."""
 from django.contrib.auth import get_user_model
 from rest_framework.test import APITestCase
 
@@ -25,7 +7,7 @@ from jokes.models import AgeRating, Format, Joke, Language
 User = get_user_model()
 
 
-class LockedTeaserTests(APITestCase):
+class FreeTeaserTests(APITestCase):
     @classmethod
     def setUpTestData(cls):
         cls.age = AgeRating.objects.order_by('min_age').first()
@@ -39,7 +21,7 @@ class LockedTeaserTests(APITestCase):
         )
 
     def _exhaust_allowance(self, user):
-        """Burn the daily cap so everything else is locked for this reader."""
+        """Read enough content to exceed the retired daily allowance."""
         filler = [
             self._joke('oneliner', text=f'Filler number {i} for the cap.', setup='', punchline='')
             for i in range(10)
@@ -49,7 +31,7 @@ class LockedTeaserTests(APITestCase):
             self.client.get(f'/api/v1/jokes/{joke.id}/')
         return filler
 
-    def test_a_locked_oneliner_still_has_a_teaser(self):
+    def test_oneliner_keeps_full_content_and_teaser_after_legacy_cap(self):
         user = User.objects.create_user(username='t1@x.com', email='t1@x.com', password='pw')
         self._exhaust_allowance(user)
 
@@ -60,11 +42,11 @@ class LockedTeaserTests(APITestCase):
         )
         body = self.client.get(f'/api/v1/jokes/{target.id}/').json()
 
-        self.assertTrue(body['is_locked'], 'expected the cap to be spent')
-        self.assertIsNone(body['text'], 'the payoff must still be withheld')
+        self.assertFalse(body['is_locked'])
+        self.assertEqual(body['text'], target.text)
         self.assertTrue(
             body.get('teaser'),
-            'a locked one-liner has nothing to display without a teaser',
+            'one-liner preview remains useful alongside full content',
         )
 
     def test_the_teaser_is_not_the_punchline(self):
@@ -110,8 +92,8 @@ class LockedTeaserTests(APITestCase):
         self.assertFalse(body['is_locked'])
         self.assertTrue(body['teaser'])
 
-    def test_a_locked_knock_knock_has_a_teaser(self):
-        """Knock-knock carries everything in `lines`, which is also nulled."""
+    def test_knock_knock_keeps_dialogue_and_teaser_after_legacy_cap(self):
+        """Knock-knock dialogue stays readable after many prior reads."""
         user = User.objects.create_user(username='t5@x.com', email='t5@x.com', password='pw')
         self._exhaust_allowance(user)
 
@@ -122,12 +104,11 @@ class LockedTeaserTests(APITestCase):
         )
         body = self.client.get(f'/api/v1/jokes/{target.id}/').json()
 
-        self.assertIsNone(body['lines'])
-        self.assertTrue(body.get('teaser'), 'a locked knock-knock renders blank without this')
+        self.assertEqual(body['lines'], target.lines)
+        self.assertTrue(body.get('teaser'), 'knock-knock preview is present')
 
-    def test_no_locked_joke_in_a_page_is_blank(self):
-        """The state a free reader actually reaches: a whole page of locked
-        jokes, every one of which must be worth looking at."""
+    def test_list_after_legacy_cap_keeps_content_visible(self):
+        """No list entry becomes a purchase-locked blank card."""
         user = User.objects.create_user(username='t6@x.com', email='t6@x.com', password='pw')
         self._exhaust_allowance(user)
         for i in range(6):
@@ -135,9 +116,10 @@ class LockedTeaserTests(APITestCase):
                        setup='', punchline='')
 
         results = self.client.get('/api/v1/jokes/?page=1').json()['results']
-        locked = [j for j in results if j['is_locked']]
-        self.assertTrue(locked, 'expected locked jokes on the page')
-        for joke in locked:
+        self.assertTrue(results)
+        for joke in results:
+            self.assertFalse(joke['is_locked'])
+            self.assertIsNotNone(joke['text'])
             self.assertTrue(
                 joke.get('teaser'),
                 f"joke {joke['id']} ({joke['format']['slug']}) would render as an empty card",

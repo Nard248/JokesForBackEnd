@@ -117,8 +117,8 @@ class CheckQuotaByCountTests(TestCase):
 
     def test_under_limit_allowed(self):
         result = check_quota_by_count(
-            self.user, 'mystery_box_rolls_per_day',
-            count_callable=lambda: 2,
+            self.user, 'submissions_per_day',
+            count_callable=lambda: 4,
             period='day',
         )
         self.assertTrue(result.allowed)
@@ -126,8 +126,8 @@ class CheckQuotaByCountTests(TestCase):
 
     def test_at_limit_blocked(self):
         result = check_quota_by_count(
-            self.user, 'mystery_box_rolls_per_day',
-            count_callable=lambda: 3,
+            self.user, 'submissions_per_day',
+            count_callable=lambda: 5,
             period='day',
         )
         self.assertFalse(result.allowed)
@@ -135,7 +135,7 @@ class CheckQuotaByCountTests(TestCase):
 
     def test_no_usage_counter_written(self):
         check_quota_by_count(
-            self.user, 'mystery_box_rolls_per_day',
+            self.user, 'submissions_per_day',
             count_callable=lambda: 1,
             period='day',
         )

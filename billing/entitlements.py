@@ -19,19 +19,27 @@ KNOWN_FEATURES: dict[str, bool] = {
     # Creator analytics is free for all creators (matches the Free-plan card +
     # original design — don't lock existing creators out of their own insights).
     'creator_analytics': True,
+    'creator_content_explorer': False,
+    'creator_exports': False,
     'daily_joke_preview': False,
     'mature_content_addon': False,
 }
 
 KNOWN_LIMITS: dict[str, int | None] = {
-    'mystery_box_rolls_per_day': 3,
+    'mystery_box_rolls_per_day': None,
     'submissions_per_day': 5,
-    'daily_jokes_per_day': 1,
-    'daily_joke_history_days': 30,
-    # Freemium punchline paywall: DISTINCT joke reveals/day before the punchline
-    # is withheld server-side. Free=10; paid tiers set None (unlimited).
-    'free_joke_reads_per_day': 10,
+    'daily_jokes_per_day': None,
+    'daily_joke_history_days': None,
+    'free_joke_reads_per_day': None,
 }
+
+# Compatibility keys remain in /billing/entitlements for existing clients.
+# Reading is a product guarantee, not an editable plan benefit: old/custom plan
+# JSON and caller defaults must never restore a reader purchase quota.
+FREE_READER_LIMITS = frozenset({
+    'mystery_box_rolls_per_day', 'daily_jokes_per_day',
+    'daily_joke_history_days', 'free_joke_reads_per_day',
+})
 
 
 @dataclass
@@ -86,6 +94,8 @@ def get_limit(user, key: str, default: int | None = None) -> int | None:
     None means unlimited. ``default`` overrides the KNOWN_LIMITS registry
     value when provided (used so callers can pass model constants as fallback).
     """
+    if key in FREE_READER_LIMITS:
+        return None
     plan = effective_plan(user)
     registry_default = KNOWN_LIMITS.get(key, default)
     if plan is None:
