@@ -48,9 +48,11 @@ handling before rollout: retained records do not stop their recurring charges.
 No customers were contacted or subscriptions canceled. Address the separate
 dependency launch blocker recorded in the ledger.
 
-The toolkit is an initial foundation. Rich iOS telemetry, versioned events and
-publications, consent provenance, retention and account-export coverage, cohorts
-and controlled comparisons remain data work. AI enrichment, teams, external
+The continuation adds private notes, ordered series/set lists, reviewed metadata
+changes, versioned event identity, consent provenance, bounded analytics retention
+and complete export of the new records. iOS adds exposure/dwell/reveal telemetry
+and privacy controls. Native watch measurement, immutable publication versions,
+cohorts and controlled comparisons remain data work. AI enrichment, teams, external
 social integrations and creator payouts are not implemented. See the
 [measurement roadmap](2026-09-27-creator-measurement-roadmap.md).
 

@@ -28,31 +28,43 @@ production checkpoint remains a dated observation, not a fresh production audit.
 | Backend | `3e4fe28` | Durable checkout attempts, historical prices, current-state Stripe reconciliation and default-off sales/tips gates |
 | Backend | `bf0fdd3` | Owner content explorer, metadata checklist and bounded CSV export |
 | Backend | `4f246eb` | Isolated creator E2E fixture and seed-command regressions |
+| Backend | `d45c8da` | Reviewed continuation plan for creator library and measurement |
+| Backend | `0971e90` | Private library, reviewed taxonomy changes, versioned telemetry, consent provenance, retention and export |
 | Web | `067694a` | Free audience access and creator-only sales presentation |
 | Web | `7d1e7f9` | Consent/account-bound telemetry, preference races and lifecycle/watch fixes |
 | Web | `e5fd0ea` | Creator content workspace, honest metric labels and browser verification |
+| Web | `cabce62` | Creator working library, account-bound requests, v2 telemetry and durable privacy |
 | iOS | `08e389b` | Free reading, cached/widget compatibility and reader-copy changes |
+| iOS | `e9baec8` | Native audience exposure/dwell/reveal, privacy controls and identity race corrections |
 
 Pre-existing `.gitignore` edits, agent configuration, business documents and
 images were excluded from these commits. iOS pre-existing `.gitignore` and
-`.claude` work was also preserved.
+`.claude` work was also preserved. Another task committed Community Lab changes
+on the same backend/web branches during this continuation; those commits were
+preserved and are not attributed to this checkpoint.
 
 ## Verification
 
-- Backend full suite: **988 tests OK, one skipped**, 120.423 seconds. Six seed
-  command tests added after that discovery passed separately; 994 tests were
-  subsequently discovered, but a 994-test full-suite run is **not** claimed.
-- Backend migration dry run: no model changes missing migrations. Ruff passed
-  across changed Python files. Workbench coverage includes ownership, consent,
-  paid/canceled access, maturity, UTC windows, export bounds and formula safety.
-- Web: **825 tests across 114 files passed**; production build passed; lint had
-  **zero errors and 26 existing warnings**. The final UI copy check passed its
-  nine relevant tests.
-- Real local browser/API tests: **4/4 free-viewing tests passed** in 14.5 seconds
-  and **2/2 paid-workbench tests passed** in 8.2 seconds. Desktop/mobile screenshots
-  were inspected; the workspace was legible with no horizontal overflow.
-- iOS simulator: **150 passed, 20 skipped, zero failures**. No physical-device
-  pass or native audience-telemetry completeness is claimed.
+- Backend continuation full suite: **1,046 executed, 1,044 passed and two skipped**,
+  121.290 seconds. Focused creator-library concurrency/moderation regressions and
+  telemetry/consent/export regressions passed before the full run.
+- Backend migration dry run: no changes detected. Ruff passed across changed
+  Python files. Independent backend measurement review found no new defects.
+- Web final continuation suite: **872 tests across 120 files passed** in 10.01
+  seconds; production build passed; lint had **zero errors and 26 existing
+  warnings**. The existing large-bundle build warning remains. Account-switching,
+  stale refresh tokens, durable withdrawal and newly unavailable material have
+  dedicated regressions. A final independent library review found no serious
+  issues after the reported corrections.
+- Real local browser/API final continuation tests: **5/5 passed** in 26.7 seconds:
+  free creator upgrade state, paid workbench, notes/order/review, v2 receipt/retry/
+  withdrawal, and declined-consent silence. Desktop/mobile screenshots were
+  inspected after the shorter picker and mobile tab fitting refinements. No
+  horizontal overflow was observed at 390px.
+- iOS full simulator suite before review corrections: **165 passed, 20 skipped,
+  zero failures**. After two review corrections, all unit tests reran with
+  **158 passed, seven skipped, zero failures**. The full UI suite was not rerun
+  after those final corrections. No physical-device pass is claimed.
 
 Backend and browser verification used local PostgreSQL with production
 `DATABASE_URL` disabled. Stripe regression tests used mocked transport with real
@@ -69,7 +81,9 @@ needs to confirm that this is the intended account and complete onboarding.
 
 **$15/month Creator Pro is a price experiment, not approved launch pricing.**
 The existing seeded amount was retained. Publishing/basic analytics remain free;
-paid capabilities are the content explorer and CSV export. Annual billing,
+paid capabilities include the content explorer, CSV export, private-library writes
+and metadata-review requests. Previously saved private work remains readable
+and erasable after cancellation. Annual billing,
 Studio/team seats, AI usage charges, tips/payouts and social integrations remain
 separate proposals. They must not be advertised as delivered benefits.
 
@@ -87,13 +101,22 @@ snapshot must not be assumed current.
 
 ## Remaining work
 
-Native iOS rich audience telemetry is not implemented. Anonymous reading remains
-free without fingerprinted audience tracking. Current adult consent determines
-creator metric inclusion; raw history does not encode event-time consent
-provenance. Immutable publication versions, session/event IDs, retention policies,
-complete account export, follow/unfollow history, retention cohorts and controlled
-experiments require further work in the measurement roadmap. No claim of complete
-cross-platform audience coverage, statistical lift or creator earnings is made.
+The second checkpoint now implements v2 event/session IDs, server-receipt consent
+provenance, bounded optional analytics retention, retained-data export, and native
+impression/dwell/reveal collection. Existing opt-ins remain labeled legacy observed
+state; no past consent or client occurrence-time eligibility is invented. The new
+private library supports rehearsal notes, ordered series/set lists and reviewed
+taxonomy edits without republishing duplicate jokes.
+
+Still outstanding: immutable publication versions and reaction/follow transitions,
+returning-audience cohorts, retention reporting, evidence-backed behavioral
+recommendations, controlled experiments, richer creator workflows, native media
+watch/completion, and live payment onboarding/validation. Native system share-sheet
+occlusion is not explicitly observed; dwell means foreground viewport exposure.
+Generic legacy API retry ownership needs a separate audit; the new privacy and
+private-library requests bind their originating account and avoid shared retries.
+Anonymous reading remains free without fingerprinted audience tracking. No complete
+cross-platform audience coverage, statistical lift or creator earnings is claimed.
 
 A separate dependency audit found **47 advisory entries across 8 packages,
 covering 27 distinct advisory IDs**. This is an unresolved launch blocker; these
@@ -108,6 +131,21 @@ production snapshot is retained unchanged. Vault preservation used scoped local
 Markdown writes because the configured REST TLS connection failed verification;
 TLS verification was not disabled.
 
+## Second-checkpoint deployment notes
+
+Apply backend migrations `jokes.0038_versioned_audience_events` and
+`creator_insights.0001_initial` before releasing the new clients. Verify v2
+receipts and consent behavior in the target environment, and assign an operator
+for retention backlog cleanup. These local migration tests do not show that
+production migrations have run. Keep creator checkout and tips disabled until
+the existing launch runbook is satisfied.
+
+The web library is at `/create/library`, linked from the creator hub, workbench
+and insights. Private writes use captured account tokens without automatic replay;
+an expired token can require signing in again. The iOS privacy setting is under
+You → Audience privacy. The public privacy-policy draft was updated to describe
+the actual collection/retention model; its existing counsel-review status remains.
+
 ## Related
 
 - [Session record](2026-09-27-creator-pivot-session.md)
@@ -117,4 +155,6 @@ TLS verification was not disabled.
 - [Client audit](2026-09-27-client-creator-audit.md)
 - [Measurement roadmap](2026-09-27-creator-measurement-roadmap.md)
 - [Creator workbench API](../API/Creator_Content_Workbench.md)
+- [Creator library API](../API/Creator_Library.md)
+- [Versioned audience telemetry](../API/Versioned_Audience_Telemetry.md)
 - [Stripe launch runbook](../STRIPE_GOLIVE.md)

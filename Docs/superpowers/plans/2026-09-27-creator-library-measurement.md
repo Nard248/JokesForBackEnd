@@ -18,60 +18,60 @@ using their documented receipt-time and operational-history semantics.
 
 ## Checkpoint 1: event identity and consent provenance
 
-- [ ] Add a per-event version-2 envelope on the existing telemetry route:
+- [x] Add a per-event version-2 envelope on the existing telemetry route:
   `schema_version=2`, UUID `event_id` and `session_id`, `platform=web|ios`,
   timezone-aware `occurred_at`, plus existing joke/type/source/measurement fields.
-- [ ] Accept occurrence timestamps only from the last 24 hours through five
+- [x] Accept occurrence timestamps only from the last 24 hours through five
   minutes ahead. Reject malformed modern envelopes, including partial envelopes;
   never silently treat them as legacy events.
-- [ ] Atomically record a normalized event and project existing metrics. Enforce
+- [x] Atomically record a normalized event and project existing metrics. Enforce
   uniqueness on user/event ID. Matching retries do not count twice; conflicting
   retries are rejected. Actor and receipt timestamp are server-controlled.
-- [ ] Record real account-preference transitions under the same profile lock as
+- [x] Record real account-preference transitions under the same profile lock as
   ingestion. Label previously existing opt-ins as observed state, not historical
   consent evidence. Strictly validate privacy booleans.
-- [ ] Export retained telemetry and consent history through the existing account
+- [x] Export retained telemetry and consent history through the existing account
   export. Cover account-deletion cascades. Bound retention cleanup for analytics
   ledger, impressions, dwell and watch; retain operational reading history.
-- [ ] Keep old clients compatible. Document both the legacy and versioned paths.
-- [ ] Verify duplicate/concurrent delivery, malformed payloads, clock bounds,
+- [x] Keep old clients compatible. Document both the legacy and versioned paths.
+- [x] Verify duplicate/concurrent delivery, malformed payloads, clock bounds,
   consent changes, minors, removed/blocked content, retention and data export.
 
 ## Checkpoint 2: native and web collection
 
-- [ ] Web attaches event IDs at capture, session IDs within an eligible account
+- [x] Web attaches event IDs at capture, session IDs within an eligible account
   session, platform and capture time. Identity/consent changes clear queued data
   and rotate sessions. A token refresh alone does not change the session.
-- [ ] iOS exposes account audience-consent controls, reads adult DOB, and binds
+- [x] iOS exposes account audience-consent controls, reads adult DOB, and binds
   transport to the originating authentication session. A failed opt-out keeps
   local collection stopped until a successful explicit opt-in.
-- [ ] iOS records impressions only after at least 50% visibility for one second,
+- [x] iOS records impressions only after at least 50% visibility for one second,
   matching web; dwell measures visible foreground intervals and actual reveal
   actions are separate events. Background flushing is best-effort.
-- [ ] Keep queues bounded and memory-only. Native media-watch measurement remains
+- [x] Keep queues bounded and memory-only. Native media-watch measurement remains
   separate until the player lifecycle supports honest playback observation.
-- [ ] Test capture time/session rotation, consent/account switches, stale network
+- [x] Test capture time/session rotation, consent/account switches, stale network
   completions, foreground visibility, and the existing reader flows.
 
 ## Checkpoint 3: private creator library and reviewed metadata
 
-- [ ] Add owner-scoped private notes, series and ordered set lists. Notes are
+- [x] Add owner-scoped private notes, series and ordered set lists. Notes are
   limited to 5,000 characters; collections to 100 per creator and 100 jokes each.
   Name/description limits are 100/1,000 characters.
-- [ ] Read/delete private work remains available after subscription cancellation;
+- [x] Read/delete private work remains available after subscription cancellation;
   writes use the existing creator-content entitlement. User data export remains
   independent of payment. Private notes never enter public joke serializers.
-- [ ] Add a theme/category change request for 1–50 owned jokes. Omitted fields
+- [x] Add a theme/category change request for 1–50 owned jokes. Omitted fields
   remain unchanged; an empty array explicitly clears the field. Reject unknown
   fields, foreign IDs and inaccessible content atomically.
-- [ ] Review requests in Django admin. Approval locks records, verifies ownership
+- [x] Review requests in Django admin. Approval locks records, verifies ownership
   and current availability, and rejects stale taxonomy baselines. It changes
   taxonomy only and records an audit entry. It cannot publish a new joke, change
   safety labels, expose private notes, or bypass moderation.
-- [ ] Web adds a private-library page and per-joke note editor, collection ordering
+- [x] Web adds a private-library page and per-joke note editor, collection ordering
   and metadata-review form/history. Connect it to the existing creator navigation.
   Prevent accidental replacement of unavailable collection members.
-- [ ] Test ownership, paid/canceled boundaries, collection order/concurrency,
+- [x] Test ownership, paid/canceled boundaries, collection order/concurrency,
   private-data isolation, admin permissions, stale reviews, erasure and export.
 
 ## API contract
@@ -93,15 +93,29 @@ not implied by these endpoints.
 
 ## Integration and release evidence
 
-- [ ] Run focused regressions before broad suites; inspect actual failures.
-- [ ] Review code across ownership boundaries, especially privacy and admin paths.
-- [ ] Run full backend/web suites, migration consistency, changed-file lint and
+- [x] Run focused regressions before broad suites; inspect actual failures.
+- [x] Review code across ownership boundaries, especially privacy and admin paths.
+- [x] Run full backend/web suites, migration consistency, changed-file lint and
   production web build; run the native simulator suite.
-- [ ] Exercise notes, ordering and metadata review against the real local API.
-- [ ] Commit/push each verified checkpoint on `codex/creator-business-model`.
-- [ ] Update the checkpoint ledger and durable business/technical notes with
+- [x] Exercise notes, ordering and metadata review against the real local API.
+- [x] Commit/push each verified checkpoint on `codex/creator-business-model`.
+- [x] Update the checkpoint ledger and durable business/technical notes with
   implemented behavior, actual evidence and remaining coverage limits.
 
 Tests must explicitly clear `DATABASE_URL`, use isolated local PostgreSQL, and
 disable external services. No production migration or payment activation is part
 of this work.
+
+## Completion evidence
+
+Backend checkpoint `0971e90`, web `cabce62`, native `e9baec8`; all are on
+`codex/creator-business-model`. The full backend suite executed 1,046 tests with
+two skips and no failures. The final web suite passed 872 tests; five real local
+browser/API tests passed. Native full-suite and post-review unit evidence is
+qualified in the checkpoint ledger rather than presented as one final full run.
+
+Review also corrected delayed native authentication completions, native report
+sheet measurement, cross-account web preference/private-library transport,
+durable web withdrawal and stale editor visibility. No production deployment or
+Stripe activation occurred. See the [checkpoint ledger](../../Research/2026-09-27-creator-pivot-status.md)
+for exact verification, limits and next work.
