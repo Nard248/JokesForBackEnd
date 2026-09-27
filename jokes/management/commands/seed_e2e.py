@@ -1,10 +1,9 @@
-"""Deterministic content fixture for the end-to-end suite.
+"""Deterministic, local-only fixtures for the end-to-end suite.
 
-The E2E specs create their own *users* through the real registration API (so
-signup itself is exercised), but they need a predictable body of *content* to
-read: enough published tier_1 jokes to exhaust a 10/day paywall and still have
-locked ones left over, and at least one joke of every format so a
-format-specific regression cannot silently stop being covered.
+Registration specs create their users through the real API. Reader specs need
+enough tier_1 material to verify unrestricted reading across the former limit.
+Creator specs use a fixed, verified adult account with Creator Pro and 26 own
+published rows, so filtering, pagination and export can use the real API.
 
 That last part is the point. The paywall leak that reached production only
 affected two-part formats, and the fixtures in the unit suite build jokes with
@@ -12,15 +11,30 @@ affected two-part formats, and the fixtures in the unit suite build jokes with
 "<setup> <punchline>". Tests written against those fixtures could not see the
 bug. Everything created here is shaped the way the publish pipeline shapes it.
 
-Idempotent: safe to run before every suite.
+Idempotent on local development databases. Refuses non-debug mode, non-loopback
+PostgreSQL, alternate libpq routing, and nonlocal media storage before any write.
 """
-from django.core.management.base import BaseCommand
-from django.db import transaction
+import os
+from datetime import date, timedelta
 
-from jokes.models import AgeRating, Format, Joke, Language
+from django.conf import settings
+from django.contrib.auth import get_user_model
+from django.core.management.base import BaseCommand, CommandError
+from django.db import connections, transaction
+from django.utils import timezone
+
+from billing.models import Plan, Subscription
+from jokes.models import AgeRating, ContextTag, Format, Joke, JokeSubmission, Language, Tone
 
 #: Marker so the fixture can be found and refreshed without touching real rows.
 E2E_MARKER = '[e2e]'
+
+# Public test credentials, never a production account. The command has no
+# bypass flag for its DEBUG/local resource guard.
+E2E_CREATOR_EMAIL = 'creator-workbench@e2e.invalid'
+E2E_CREATOR_PASSWORD = 'E2E-local-only-2026!'
+E2E_CREATOR_TEXT = f'{E2E_MARKER} Creator workbench: timing is everything.'
+E2E_CREATOR_COUNT = 26
 
 #: One joke per format, each built the way the publish pipeline builds it.
 #: `text` is the denormalized field a published joke really carries.
@@ -28,7 +42,7 @@ _SPECS = [
     {
         'format': 'setup',
         'setup': f'{E2E_MARKER} Why did the two-part joke cross the road?',
-        'punchline': 'To prove the paywall strips every field.',
+        'punchline': 'To prove every reader can reach the punchline.',
     },
     {
         'format': 'anti',
@@ -59,12 +73,12 @@ _SPECS = [
     },
 ]
 
-#: Filler so a reader can burn a 10/day allowance and still meet locked jokes.
+#: Enough material to exercise repeated reads beyond the former reader limit.
 _FILLER_COUNT = 24
 
 
 class Command(BaseCommand):
-    help = 'Seed deterministic published content for the end-to-end suite (idempotent).'
+    help = 'Seed local-only E2E reader content and a verified Creator Pro test account.'
 
     def add_arguments(self, parser):
         parser.add_argument(
@@ -72,8 +86,27 @@ class Command(BaseCommand):
             help='Delete existing [e2e] jokes first instead of reusing them.',
         )
 
-    @transaction.atomic
     def handle(self, *args, **options):
+        # Inspect connection configuration without opening a connection. Guard
+        # before transaction.atomic: even --fresh must never reach a remote DB.
+        config = connections['default'].settings_dict
+        routing = config.get('OPTIONS') or {}
+        if (
+            not settings.DEBUG
+            or config.get('ENGINE') != 'django.db.backends.postgresql'
+            or str(config.get('HOST', '')).lower() not in {'localhost', '127.0.0.1', '::1'}
+            or any(routing.get(key) or os.environ.get('PG' + key.upper()) for key in ('hostaddr', 'service'))
+            or settings.STORAGES['default']['BACKEND'] != 'django.core.files.storage.FileSystemStorage'
+        ):
+            raise CommandError(
+                'seed_e2e is local-only: requires DEBUG=True, explicit loopback PostgreSQL, '
+                'no hostaddr/service overrides, and local filesystem storage. '
+                'Clear DATABASE_URL and GS_BUCKET_NAME for local E2E runs.'
+            )
+        self._seed(options)
+
+    @transaction.atomic
+    def _seed(self, options):
         if options['fresh']:
             removed, _ = Joke.all_objects.filter(text__startswith=E2E_MARKER).delete()
             Joke.all_objects.filter(setup__startswith=E2E_MARKER).delete()
@@ -116,11 +149,74 @@ class Command(BaseCommand):
         for i in range(_FILLER_COUNT):
             _publish(
                 format='oneliner',
-                text=f'{E2E_MARKER} Filler joke {i:02d}: the cap needs something to count.',
+                text=f'{E2E_MARKER} Filler joke {i:02d}: free readers can keep going.',
             )
 
+        self._seed_creator(age, lang)
         total = Joke.objects.filter(text__startswith=E2E_MARKER).count()
         total += Joke.objects.filter(setup__startswith=E2E_MARKER).count()
         self.stdout.write(self.style.SUCCESS(
             f'E2E content ready: {created} created, {total} [e2e] jokes live.'
+        ))
+
+    def _seed_creator(self, age, lang):
+        """Restore only the reserved local fixture identity and its own rows."""
+        creator, _ = get_user_model().objects.get_or_create(
+            username=E2E_CREATOR_EMAIL, defaults={'email': E2E_CREATOR_EMAIL},
+        )
+        if creator.email != E2E_CREATOR_EMAIL:
+            raise CommandError('Reserved E2E username belongs to a different local email; refusing to overwrite it.')
+        creator.is_active = True  # This app uses is_active as its verified-email flag.
+        creator.is_staff = False
+        creator.is_superuser = False
+        creator.set_password(E2E_CREATOR_PASSWORD)
+        creator.save(update_fields=['is_active', 'is_staff', 'is_superuser', 'password'])
+        creator.profile.date_of_birth = date(1990, 1, 1)
+        creator.profile.display_name = 'E2E Creator'
+        creator.profile.email_digest_opt_in = False
+        creator.profile.creator_milestone_opt_in = False
+        creator.profile.save(update_fields=[
+            'date_of_birth', 'display_name', 'email_digest_opt_in', 'creator_milestone_opt_in',
+        ])
+        creator.preference.onboarding_completed = True
+        creator.preference.notification_enabled = False
+        creator.preference.save(update_fields=['onboarding_completed', 'notification_enabled'])
+        Subscription.objects.update_or_create(user=creator, defaults={
+            'plan': Plan.objects.get(slug='creator_pro'), 'status': 'active',
+            'stripe_customer_id': '', 'stripe_subscription_id': '', 'stripe_price_id': '',
+            'current_period_start': timezone.now(),
+            'current_period_end': timezone.now() + timedelta(days=30),
+            'cancel_at_period_end': False,
+        })
+        theme, _ = ContextTag.objects.get_or_create(
+            slug='e2e-creator-theme', defaults={'name': 'E2E Creator Theme'},
+        )
+        category, _ = Tone.objects.get_or_create(
+            slug='e2e-creator-category', defaults={'name': 'E2E Creator Category'},
+        )
+        fmt = Format.objects.get(slug='oneliner')
+        primary = None
+        for index in range(E2E_CREATOR_COUNT):
+            text = E2E_CREATOR_TEXT if index == 0 else (
+                f'{E2E_MARKER} Creator workbench item {index:02d}: another page of possibilities.'
+            )
+            joke, _ = Joke.all_objects.update_or_create(creator=creator, text=text, defaults={
+                'format': fmt, 'age_rating': age, 'language': lang, 'content_tier': 'tier_1',
+                'setup': '', 'punchline': '', 'is_removed': False, 'removed_at': None,
+            })
+            if index == 0:
+                primary = joke
+                joke.context_tags.set([theme])
+                joke.tones.set([category])
+        submission, _ = JokeSubmission.objects.update_or_create(
+            user=creator, text=E2E_CREATOR_TEXT, defaults={
+                'format': fmt, 'age_rating': age, 'language': lang,
+                'status': 'published', 'published_joke': primary,
+            },
+        )
+        submission.context_tags.set([theme])
+        submission.tones.set([category])
+        self.stdout.write(self.style.SUCCESS(
+            f'LOCAL TEST creator ready: {E2E_CREATOR_EMAIL}; {E2E_CREATOR_COUNT} owned jokes. '
+            'The test-only password is E2E_CREATOR_PASSWORD in seed_e2e.py.'
         ))
