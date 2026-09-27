@@ -43,6 +43,7 @@ def make_creator(email):
     return user
 
 
+@override_settings(TIPS_ENABLED=True)
 class TipCheckoutValidationTests(APITestCase):
     """Amount-tier allowlist, self-tip, creator existence/creator-ness.
 
@@ -119,6 +120,7 @@ class TipCheckoutValidationTests(APITestCase):
         self.assertEqual(Tip.objects.count(), 0)
 
 
+@override_settings(TIPS_ENABLED=True)
 class TipCheckoutDormantTests(APITestCase):
     """With no STRIPE_SECRET_KEY, tip checkout returns 503 (mirrors subscription checkout)."""
 
@@ -133,6 +135,7 @@ class TipCheckoutDormantTests(APITestCase):
         self.assertEqual(Tip.objects.count(), 0)
 
 
+@override_settings(TIPS_ENABLED=True)
 class TipCheckoutHappyPathTests(APITestCase):
     """Mocked Stripe gateway — session URL + Tip(pending) row stamped with metadata."""
 
@@ -207,6 +210,7 @@ class TipCheckoutHappyPathTests(APITestCase):
         self.assertEqual(kwargs['metadata']['joke_id'], '')
 
 
+@override_settings(TIPS_ENABLED=True)
 class TipCheckoutRemovedOnlyJokeNotCreatorTests(APITestCase):
     """A user whose ONLY joke is is_removed=True is NOT a creator.
 

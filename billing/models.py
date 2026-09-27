@@ -1,5 +1,8 @@
+import uuid
+
 from django.conf import settings
 from django.db import models
+from django.utils import timezone
 
 
 class Plan(models.Model):
@@ -37,6 +40,17 @@ class Plan(models.Model):
         return f'${self.amount_cents / 100:.2f}/{self.interval}'
 
 
+class PlanPrice(models.Model):
+    """Preserve the entitlement mapping when a plan's sale price is replaced."""
+
+    plan = models.ForeignKey(Plan, on_delete=models.PROTECT, related_name='stripe_prices')
+    stripe_price_id = models.CharField(max_length=80, unique=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.stripe_price_id} / {self.plan.slug}'
+
+
 class Subscription(models.Model):
     ACTIVE_STATUSES = {'active', 'trialing'}
     # Statuses that represent a LIVE Stripe subscription that bills (or will bill).
@@ -45,7 +59,7 @@ class Subscription(models.Model):
     # subscription is still live in Stripe (payment retries in progress) — it is
     # NOT canceled, so a fresh checkout would create a parallel paying sub.
     # (Deliberately excludes free / canceled / incomplete_expired: no live sub.)
-    LIVE_PAID_STATUSES = {'active', 'trialing', 'past_due'}
+    LIVE_PAID_STATUSES = {'active', 'trialing', 'past_due', 'incomplete', 'unpaid', 'paused'}
 
     user = models.OneToOneField(
         settings.AUTH_USER_MODEL,
@@ -67,6 +81,19 @@ class Subscription(models.Model):
 
     def is_entitled(self):
         return self.status in self.ACTIVE_STATUSES
+
+
+class SubscriptionCheckout(models.Model):
+    """A durable request identity survives network errors and concurrent retries."""
+
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    request_key = models.UUIDField(default=uuid.uuid4, unique=True)
+    parameters = models.JSONField(default=dict)
+    stripe_session_id = models.CharField(max_length=80, blank=True)
+    created_at = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return f'Checkout for account {self.user_id}'
 
 
 class UsageCounter(models.Model):

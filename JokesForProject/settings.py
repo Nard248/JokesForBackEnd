@@ -319,6 +319,7 @@ REST_FRAMEWORK = {
         'appeals': os.getenv('THROTTLE_APPEALS', '10/day'),
         # Payments endpoint — a scoped rate keeps it off the 1000/hr global.
         'tips-checkout': os.getenv('THROTTLE_TIPS_CHECKOUT', '30/hour'),
+        'billing-checkout': os.getenv('THROTTLE_BILLING_CHECKOUT', '30/hour'),
         # Native (iOS) token endpoints. Login is credential-guessing surface, so
         # it is tighter than the anon default; refresh is called routinely by
         # every app launch and must not be, which is why they are separate.
@@ -526,6 +527,9 @@ STRIPE_PUBLISHABLE_KEY = os.getenv('STRIPE_PUBLISHABLE_KEY', '').strip()
 STRIPE_WEBHOOK_SECRET  = os.getenv('STRIPE_WEBHOOK_SECRET', '').strip()
 STRIPE_API_VERSION     = os.getenv('STRIPE_API_VERSION', '2026-05-27.dahlia')
 BILLING_ENABLED        = os.getenv('BILLING_ENABLED', 'false').lower() == 'true'
+CREATOR_CHECKOUT_ENABLED = os.getenv('CREATOR_CHECKOUT_ENABLED', 'false').lower() == 'true'
+# Creator subscriptions must not activate tips before a payout rail exists.
+TIPS_ENABLED           = os.getenv('TIPS_ENABLED', 'false').lower() == 'true'
 BILLING_SUCCESS_URL    = os.getenv('BILLING_SUCCESS_URL', 'http://localhost:5173/billing/success')
 BILLING_CANCEL_URL     = os.getenv('BILLING_CANCEL_URL', 'http://localhost:5173/billing/cancel')
 BILLING_PORTAL_RETURN_URL = os.getenv('BILLING_PORTAL_RETURN_URL', 'http://localhost:5173/account')
@@ -677,4 +681,3 @@ if SENTRY_DSN:
             AuthenticationFailed, Http404, ValidationError, EmailSendError,
         ],
     )
-
