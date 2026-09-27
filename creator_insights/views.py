@@ -22,9 +22,9 @@ class CreatorInsightsView(APIView):
     """GET /api/v1/creators/me/insights/?period=month|week|all
 
     Returns creator audience intelligence metrics for the authenticated creator.
-    Requires IsAuthenticated + IsCreator (at least one published joke submission).
-    Owner-scoped: the creator's own tier_2 jokes are visible here; this endpoint
-    does NOT expose any other user's personal data.
+    Requires an authenticated author with currently published content.
+    Owner metrics include tier_2 jokes, but their text follows the account's
+    current age and mature-content preference. No audience identities are exposed.
     """
     permission_classes = [IsAuthenticated, IsCreator, HasFeature('creator_analytics')]
     throttle_classes = [CreatorInsightsThrottle]
@@ -41,7 +41,9 @@ class CreatorInsightsView(APIView):
     )
     def get(self, request):
         period = request.query_params.get('period', 'month')
-        data = build_creator_insights(request.user, period)
+        data = build_creator_insights(
+            request.user, period, allowed_content_tiers=allowed_tiers(request),
+        )
         return Response(data)
 
 

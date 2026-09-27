@@ -28,6 +28,7 @@ from jokes.models import (
     SavedJoke,
     ShareEvent,
 )
+from jokes.serving import BASE_TIERS
 
 # A dwell sample meets the duration threshold at four seconds. This is an
 # observation threshold, not proof the viewer read or understood the content.
@@ -60,10 +61,10 @@ def _eligible_events(model):
 def resolve_creator_jokes(creator):
     """Return published jokes attributed by creator FK or legacy submission.
 
-    Owner-scoped: the content-tier gate is intentionally bypassed so the creator
-    can see tier_2 owner content. Tier_3 and removed content are never served.
-    Public creator surfaces must restore allowed_tiers filtering.
-
+    Owner metrics may include tier_2 material even when its text is unavailable
+    to the current account. Callers that serve content must separately apply
+    allowed_tiers or redact inaccessible text. Tier_3 and removed rows are
+    excluded even from this owner scope.
     """
     return Joke.objects.filter(
         Q(creator=creator) |
@@ -290,8 +291,10 @@ def _annotated_top_jokes_qs(jokes, since):
     ).order_by('-view_count')
 
 
-def _top_jokes(jokes, since):
-    """Return top 10 jokes ordered by view count descending with per-joke metrics."""
+def _top_jokes(jokes, since, *, allowed_content_tiers=None):
+    """Top 10 owner metrics, withholding text outside requester content access."""
+    if allowed_content_tiers is None:
+        allowed_content_tiers = BASE_TIERS
     annotated = list(_annotated_top_jokes_qs(jokes, since)[:10])
 
     # Per-joke dwell metrics computed in a separate, dwell-only aggregation so the
@@ -355,7 +358,8 @@ def _top_jokes(jokes, since):
 
         result.append({
             'id': j.id,
-            'text': j.text,
+            'text': j.text if j.content_tier in allowed_content_tiers else '',
+            'content_available': j.content_tier in allowed_content_tiers,
             'views': vc,
             'impressions': j.impression_count,
             'reactions': j.reaction_count,
@@ -463,10 +467,11 @@ def _suggestions(creator, jokes, since):
 # Public entry point
 # ---------------------------------------------------------------------------
 
-def build_creator_insights(creator, period):
+def build_creator_insights(creator, period, *, allowed_content_tiers=None):
     """Build the full creator insights dict for the given creator and period.
 
     Returns a plain dict (no DRF coupling); the view serialises it to Response.
+    Text defaults to the safe tier_1 scope unless requester tiers are supplied.
     """
     normalised_period = period if period in ('week', 'month', 'all') else 'month'
     since = window_since(normalised_period)
@@ -474,7 +479,7 @@ def build_creator_insights(creator, period):
 
     overview = _overview(jokes, since)
     reactions_breakdown, shares_breakdown, source_mix = _breakdowns(jokes, since)
-    top_jokes = _top_jokes(jokes, since)
+    top_jokes = _top_jokes(jokes, since, allowed_content_tiers=allowed_content_tiers)
     audience = _audience(jokes, since)
     suggestions = _suggestions(creator, jokes, since)
 

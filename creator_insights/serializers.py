@@ -46,7 +46,8 @@ class SourceMixSerializer(serializers.Serializer):
 
 class TopJokeSerializer(serializers.Serializer):
     id = serializers.IntegerField()
-    text = serializers.CharField()
+    text = serializers.CharField(allow_blank=True)
+    content_available = serializers.BooleanField()
     views = serializers.IntegerField()
     impressions = serializers.IntegerField()
     reactions = serializers.IntegerField()

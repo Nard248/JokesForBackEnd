@@ -119,6 +119,40 @@ class OwnerTierBypassTests(TestCase):
         data = response.json()
         self.assertGreaterEqual(data['overview']['published_jokes'], 1)
 
+    def test_tier2_text_obeys_current_age_and_mature_preference(self):
+        from datetime import date
+
+        client = APIClient()
+        client.force_authenticate(self.creator)
+        for born, show_mature, available in (
+            (None, True, False),
+            (date(2012, 1, 1), True, False),
+            (date(1990, 1, 1), False, False),
+            (date(1990, 1, 1), True, True),
+        ):
+            with self.subTest(born=born, show_mature=show_mature):
+                self.creator.profile.date_of_birth = born
+                self.creator.profile.save(update_fields=['date_of_birth'])
+                self.creator.preference.show_mature = show_mature
+                self.creator.preference.save(update_fields=['show_mature'])
+                response = client.get(INSIGHTS_URL + '?period=all')
+                self.assertEqual(response.status_code, 200)
+                self.assertEqual(response.data['overview']['published_jokes'], 1)
+                self.assertEqual(response.data['overview']['views'], 1)
+                row = response.data['top_jokes'][0]
+                self.assertEqual(row['id'], self.tier2_joke.pk)
+                self.assertEqual(row['text'], self.tier2_joke.text if available else '')
+                self.assertEqual(row['content_available'], available)
+                if not available:
+                    self.assertNotIn(self.tier2_joke.text, response.content.decode())
+
+    def test_service_defaults_to_safe_text_without_requester_tiers(self):
+        from creator_insights.services import build_creator_insights
+        data = build_creator_insights(self.creator, 'all')
+        self.assertEqual(data['overview']['views'], 1)
+        self.assertEqual(data['top_jokes'][0]['text'], '')
+        self.assertFalse(data['top_jokes'][0]['content_available'])
+
 
 class NoPIILeakTests(TestCase):
     """No engaging user's email or username should appear in the insights response."""

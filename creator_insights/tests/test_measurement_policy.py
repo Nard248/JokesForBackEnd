@@ -216,6 +216,8 @@ class MeasurementPolicyTests(TestCase):
         response = client.get('/api/v1/creators/me/insights/')
         self.assertEqual(response.status_code, 200)
         self.assertEqual([row['id'] for row in response.data['top_jokes']], [self.joke.pk])
+        self.assertTrue(response.data['top_jokes'][0]['content_available'])
+        self.assertEqual(response.data['top_jokes'][0]['text'], self.joke.text)
 
     def test_owner_scope_retains_tier2_but_never_serializes_tier3(self):
         Joke.objects.filter(pk=self.joke.pk).update(content_tier='tier_2')
