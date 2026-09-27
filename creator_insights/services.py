@@ -46,7 +46,17 @@ def _eligible_events(model):
     The eligible-user subquery is evaluated by PostgreSQL with the aggregate,
     so withdrawal takes effect on the next request without a user-ID cache.
     """
-    return model.objects.filter(user__in=eligible_analytics_users()).exclude(
+    events = model.objects.filter(user__in=eligible_analytics_users())
+    # The raw retention window applies immediately, including while bounded
+    # physical cleanup is catching up. Operational reading/action history has
+    # a separate purpose and is deliberately not aged out here.
+    timestamp = {
+        JokeImpression: 'created_at', JokeDwell: 'created_at', JokeWatch: 'watched_at',
+    }.get(model)
+    if timestamp:
+        from jokes.telemetry import RETENTION_DAYS
+        events = events.filter(**{f'{timestamp}__gte': timezone.now() - timedelta(days=RETENTION_DAYS)})
+    return events.exclude(
         joke__creator__isnull=False, user_id=F('joke__creator_id'),
     ).exclude(
         joke__creator__isnull=True, joke__submission__isnull=False,
@@ -518,6 +528,7 @@ def build_creator_insights(creator, period, *, allowed_content_tiers=None):
             'views': 'Recorded opens/reveals, filtered by current consent; repeats may count after the debounce window.',
             'open_rate': 'Fraction of daily user/joke impressions with a same-user/joke/day open or reveal, not an attributed causal conversion.',
             'attention': 'Optional client dwell/playback samples, not proof of attention. Averages are per sample/segment, not per reader or session. Coverage varies by client; native completeness is not established. Missing playback/scroll completion is unknown, not zero.',
+            'retention': 'Optional impressions, dwell and playback cover the most recent 90 days. Operational opens and surviving engagement edges have separate history; longer periods do not imply equal coverage.',
             'anonymous': 'Anonymous readers and shares are excluded; no anonymous audience identifier is collected.',
             'engagement': 'Reactions, favorites and saves are surviving edges created in the window; removals rewrite historical totals.',
             'followers': 'Consenting adult follower snapshots. Growth series counts surviving follows by creation date, not gains or net growth.',

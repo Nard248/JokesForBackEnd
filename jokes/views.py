@@ -75,7 +75,6 @@ from .models import (
     Favorite,
     Format,
     Joke,
-    JokeDwell,
     JokeImpression,
     JokePack,
     JokePackProgress,
@@ -83,7 +82,6 @@ from .models import (
     JokeReaction,
     JokeSubmission,
     JokeView,
-    JokeWatch,
     Language,
     MediaAsset,
     MysteryBoxRoll,
@@ -2175,6 +2173,12 @@ class UserProfileView(APIView):
         user = request.user
         profile = user.profile
 
+        if 'share_analytics' in request.data:
+            return Response(
+                {'share_analytics': ['Update analytics consent through preferences.']},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
         if 'first_name' in request.data:
             user.first_name = request.data['first_name']
         if 'last_name' in request.data:
@@ -2200,8 +2204,14 @@ class UserProfileView(APIView):
             else:
                 profile.handle = raw
 
-        user.save()
-        profile.save()
+        user_fields = [key for key in ('first_name', 'last_name') if key in request.data]
+        if user_fields:
+            user.save(update_fields=user_fields)
+        profile_fields = [key for key in ('bio', 'display_name', 'handle') if key in request.data]
+        if profile_fields:
+            # Do not write unrelated cached privacy fields: another device may
+            # have withdrawn analytics consent since this profile was loaded.
+            profile.save(update_fields=[*profile_fields, 'updated_at'])
 
         return self.get(request)
 
@@ -2409,9 +2419,13 @@ class UserPreferencesView(APIView):
     def patch(self, request):
         return self._update(request)
 
+    @transaction.atomic
     def _update(self, request):
         pref = request.user.preference
-        profile = request.user.profile
+        # Preference transitions and optional telemetry use the same row lock.
+        # Reading a cached reverse relation here can resurrect a stale consent.
+        profile = UserProfile.objects.select_for_update().get(user=request.user)
+        request.user.profile = profile
         data = request.data
 
         # Shape first: `set(data)` over a JSON array raises TypeError and turns a
@@ -2429,6 +2443,16 @@ class UserPreferencesView(APIView):
                 {k: ['Unrecognized preference field.'] for k in unknown},
                 status=status.HTTP_400_BAD_REQUEST,
             )
+
+        if 'privacy' in data:
+            privacy = data['privacy']
+            privacy_keys = {'public_profile', 'show_activity', 'share_analytics'}
+            if (not isinstance(privacy, dict) or set(privacy) - privacy_keys
+                    or any(type(value) is not bool for value in privacy.values())):
+                return Response(
+                    {'privacy': ['Expected boolean values for public_profile, show_activity, or share_analytics.']},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
 
         pref_dirty = False
 
@@ -2508,7 +2532,10 @@ class UserPreferencesView(APIView):
         # Update privacy
         if 'privacy' in data:
             priv = data['privacy']
-            for key in ('public_profile', 'show_activity', 'share_analytics'):
+            if 'share_analytics' in priv:
+                from jokes.telemetry import change_analytics_consent
+                change_analytics_consent(profile, priv['share_analytics'])
+            for key in ('public_profile', 'show_activity'):
                 if key in priv:
                     setattr(profile, key, priv[key])
             profile.save()
@@ -3052,7 +3079,9 @@ class DataExportView(APIView):
             'favorites, ratings, reactions, daily_jokes, views (capped at 5000), '
             'streak, streak_days, submissions, media_assets, reports_filed, blocks, '
             'achievements, vibes, pack_progress, mystery_rolls, share_events and '
-            'email_logs. Built synchronously in-request.'
+            'email_logs, audience_events, analytics_consent, impressions, dwell_samples, '
+            'watch_samples, analytics_retention and creator_library. Includes physically '
+            'retained telemetry awaiting cleanup. Built synchronously in-request.'
         ),
         responses={(200, 'application/zip'): OpenApiTypes.BINARY},
     )
@@ -3200,6 +3229,10 @@ class DataExportView(APIView):
                 ).values('to_email', 'template_name', 'subject', 'status', 'created_at', 'sent_at')
             ),
         }
+        from jokes.telemetry import export_analytics
+        data.update(export_analytics(u))
+        from creator_insights.library import export_creator_library
+        data['creator_library'] = export_creator_library(u)
         payload = json.dumps(data, cls=DjangoJSONEncoder, indent=2)
         buf = io.BytesIO()
         with zipfile.ZipFile(buf, 'w', zipfile.ZIP_DEFLATED) as zf:
@@ -3207,6 +3240,7 @@ class DataExportView(APIView):
         buf.seek(0)
         resp = HttpResponse(buf.getvalue(), content_type='application/zip')
         resp['Content-Disposition'] = 'attachment; filename="jokes-for-data-export.zip"'
+        resp['Cache-Control'] = 'private, no-store'
         from audit.services import record_audit
         record_audit(request, 'data_export', outcome='success', actor=u)
         return resp
@@ -3884,39 +3918,24 @@ class TasteProfileView(APIView):
 
 
 class TelemetryIngestView(APIView):
-    """Bulk, fire-and-forget audience-telemetry ingest.
+    """Bulk audience telemetry with versioned retries and legacy compatibility.
 
-    POST /api/v1/telemetry/events
-    Body: {"events": [
-        {"joke": <id>, "type": "impression"|"reveal", "source": "<str>"},
-        {"joke": <id>, "type": "dwell", "value": <ms>, "scroll_pct": <0-100>, "source": "<str>"},
-        {"joke": <id>, "type": "watch", "watch_ms": <ms>, "watch_pct": <0-100>, "source": "<str>"},
-    ]}
-
-    Only currently opted-in adults may contribute, and only for content they
-    may currently access. Request-driven only (no Celery/cron). Caps the batch,
-    dedups impressions to one per (user, joke, day), and appends dwell/playback
-    samples. Malformed/unknown events are skipped independently.
-    Returns 202 + {"accepted": N}.
+    Version 2 requires event/session UUIDs, web/ios platform and an aware
+    occurrence time. Consent is established at receipt, not inferred backward.
+    Only currently opted-in adults and currently accessible content contribute.
     """
     permission_classes = [IsAuthenticated]
-
-    MAX_BATCH = 50
-
-    # Dwell clamps (Phase 2): cap at 10 min, ignore sub-half-second blips as noise.
-    DWELL_MAX_MS = 600000
-    DWELL_MIN_MS = 500
-
-    # Watch clamps (Phase 3): mirrors dwell — cap at 10 min, ignore sub-half-second blips.
-    WATCH_MAX_MS = 600000
-    WATCH_MIN_MS = 500
 
     @extend_schema(
         description=(
             'Optional audience telemetry for consenting adults only. Ineligible '
             'accounts receive accepted=0. Processes the first 50 events; malformed '
             'or inaccessible content events are skipped. Watch requires audio/video. '
-            'Missing completion percentages remain unknown.'
+            'Missing completion percentages remain unknown. Version 2 requires '
+            'schema_version, event_id, session_id, platform and occurred_at. Occurrence '
+            'must be timezone-aware and within 24 hours before or 5 minutes after receipt. '
+            'Exact normalized retries count as duplicates; conflicting retries are rejected. '
+            'Partial versioned envelopes are rejected. Unversioned legacy events remain supported.'
         ),
         request={
             'application/json': {
@@ -3927,6 +3946,12 @@ class TelemetryIngestView(APIView):
                         'items': {
                             'type': 'object',
                             'properties': {
+                                'schema_version': {'type': 'integer', 'enum': [2]},
+                                'event_id': {'type': 'string', 'format': 'uuid'},
+                                'session_id': {'type': 'string', 'format': 'uuid'},
+                                'platform': {'type': 'string', 'enum': ['web', 'ios']},
+                                'occurred_at': {'type': 'string', 'format': 'date-time'},
+                                'content_version': {'type': 'integer', 'nullable': True, 'enum': [None], 'description': 'Must be absent or null; publication versions are not established yet.'},
                                 'joke': {'type': 'integer'},
                                 'type': {'type': 'string', 'enum': ['impression', 'reveal', 'dwell', 'watch']},
                                 'value': {'type': 'integer', 'description': 'dwell milliseconds (dwell events only)'},
@@ -3942,95 +3967,11 @@ class TelemetryIngestView(APIView):
                 },
             }
         },
-        responses={202: {'type': 'object', 'properties': {'accepted': {'type': 'integer'}}}},
+        responses={202: {'type': 'object', 'properties': {
+            'accepted': {'type': 'integer'}, 'duplicates': {'type': 'integer'},
+            'rejected': {'type': 'integer'},
+        }}},
     )
     def post(self, request):
-        from creator_insights.privacy import analytics_allowed
-        from jokes.models import JokeMedia
-
-        user = request.user
-        if not analytics_allowed(user):
-            return Response({'accepted': 0}, status=status.HTTP_202_ACCEPTED)
-
-        payload = request.data if isinstance(request.data, dict) else {}
-        events = payload.get('events') or []
-        if not isinstance(events, list):
-            events = []
-        events = events[:self.MAX_BATCH]
-        sources = set(dict(JokeImpression.SOURCE_CHOICES)) | set(dict(JokeView.SOURCE_CHOICES))
-        valid = []
-        for event in events:
-            if not isinstance(event, dict):
-                continue
-            joke_id = event.get('joke')
-            source = event.get('source', 'other')
-            if (isinstance(joke_id, bool) or not isinstance(joke_id, int)
-                    or not 0 < joke_id <= 9223372036854775807
-                    or event.get('type') not in ('impression', 'reveal', 'dwell', 'watch')
-                    or not isinstance(source, str) or source not in sources):
-                continue
-            valid.append(event)
-
-        visible_ids = set(visible_jokes(
-            Joke.objects.filter(
-                pk__in={event['joke'] for event in valid},
-                content_tier__in=allowed_tiers(request),
-            ), request,
-        ).values_list('pk', flat=True))
-        media_ids = set(JokeMedia.objects.filter(
-            joke_id__in=visible_ids, asset__kind__in=('video', 'audio'),
-        ).values_list('joke_id', flat=True))
-        today = timezone.now().date()
-        accepted = 0
-        for event in valid:
-            joke_id = event['joke']
-            if joke_id not in visible_ids:
-                continue
-            etype = event['type']
-            source = event.get('source', 'other')
-            if etype in ('watch', 'dwell'):
-                if etype == 'watch' and joke_id not in media_ids:
-                    continue
-                raw = event.get('watch_ms' if etype == 'watch' else 'value')
-                if not isinstance(raw, int) or isinstance(raw, bool):
-                    continue
-                duration = max(0, min(raw, self.WATCH_MAX_MS if etype == 'watch' else self.DWELL_MAX_MS))
-                if duration < (self.WATCH_MIN_MS if etype == 'watch' else self.DWELL_MIN_MS):
-                    continue
-                percentage = event.get('watch_pct' if etype == 'watch' else 'scroll_pct')
-                if not isinstance(percentage, int) or isinstance(percentage, bool):
-                    percentage = None
-                else:
-                    percentage = max(0, min(percentage, 100))
-                if etype == 'watch':
-                    JokeWatch.objects.create(
-                        user=user, joke_id=joke_id, source=source,
-                        watch_ms=duration, watch_pct=percentage,
-                    )
-                else:
-                    JokeDwell.objects.create(
-                        user=user, joke_id=joke_id, source=source,
-                        dwell_ms=duration, scroll_pct=percentage, created_date=today,
-                    )
-            elif etype == 'impression':
-                # Database uniqueness makes this safe across concurrent batches.
-                JokeImpression.objects.get_or_create(
-                    user=user, joke_id=joke_id, created_date=today,
-                    defaults={'source': source},
-                )
-            else:
-                # A reveal belongs to today's activity, never a prior day's row.
-                view = JokeView.objects.filter(
-                    user=user, joke_id=joke_id, viewed_date=today,
-                ).order_by('-viewed_at').first()
-                if view is None:
-                    JokeView.objects.create(
-                        user=user, joke_id=joke_id, source=source,
-                        viewed_date=today, revealed_punchline=True,
-                    )
-                elif not view.revealed_punchline:
-                    view.revealed_punchline = True
-                    view.save(update_fields=['revealed_punchline'])
-            accepted += 1
-
-        return Response({'accepted': accepted}, status=status.HTTP_202_ACCEPTED)
+        from jokes.telemetry import ingest_events
+        return Response(ingest_events(request), status=status.HTTP_202_ACCEPTED)

@@ -1085,6 +1085,70 @@ class JokeView(models.Model):
 # Ingested in bulk via POST /api/v1/telemetry/events (request-driven only).
 # =============================================================================
 
+class AnalyticsConsentRecord(models.Model):
+    """Observed analytics preference history; never inferred historical consent.
+
+    A legacy observation records what the server observed at that moment. A
+    preference record is an explicit transition through the preferences API.
+    Kept for the account lifetime so retained events retain their provenance.
+    """
+
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,
+                             related_name='analytics_consent_records')
+    enabled = models.BooleanField()
+    policy_version = models.CharField(max_length=48)
+    provenance = models.CharField(max_length=24, choices=[
+        ('legacy_observed', 'Previously existing preference observed'),
+        ('preference', 'Explicit preference transition'),
+    ])
+    recorded_at = models.DateTimeField(default=timezone.now)
+
+    class Meta:
+        indexes = [models.Index(fields=['user', 'recorded_at'])]
+
+
+class AudienceEvent(models.Model):
+    """Normalized optional telemetry and idempotency receipt, without arbitrary PII.
+
+    Eligibility is established at receipt time. Legacy clients have no reliable
+    occurrence time/session or retry ID; their receipt IDs are server generated.
+    Publication version stays unknown until a server version contract exists.
+    """
+
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,
+                             related_name='audience_events')
+    joke = models.ForeignKey(Joke, on_delete=models.CASCADE, related_name='audience_events')
+    consent = models.ForeignKey(AnalyticsConsentRecord, on_delete=models.CASCADE,
+                                related_name='events')
+    event_id = models.UUIDField(default=uuid.uuid4)
+    schema_version = models.PositiveSmallIntegerField()
+    session_id = models.UUIDField(null=True, blank=True)
+    platform = models.CharField(max_length=8, choices=[
+        ('web', 'Web'), ('ios', 'iOS'), ('legacy', 'Unknown legacy client'),
+    ])
+    event_type = models.CharField(max_length=12, choices=[
+        ('impression', 'Impression'), ('reveal', 'Reveal'),
+        ('dwell', 'Dwell'), ('watch', 'Watch'),
+    ])
+    source = models.CharField(max_length=16)
+    occurred_at = models.DateTimeField(null=True, blank=True)
+    received_at = models.DateTimeField(default=timezone.now, db_index=True)
+    content_version = models.PositiveIntegerField(null=True, blank=True)
+    duration_ms = models.PositiveIntegerField(null=True, blank=True)
+    percentage = models.PositiveSmallIntegerField(null=True, blank=True)
+    eligibility = models.CharField(max_length=32, default='adult_opt_in_at_receipt')
+    payload_fingerprint = models.CharField(max_length=64)
+
+    class Meta:
+        constraints = [models.UniqueConstraint(
+            fields=['user', 'event_id'], name='audience_event_user_event_uniq',
+        )]
+        indexes = [
+            models.Index(fields=['user', 'received_at']),
+            models.Index(fields=['joke', 'event_type', 'received_at']),
+        ]
+
+
 class JokeImpression(models.Model):
     """A user saw this joke's card in a list/feed surface (not a detail open).
 
@@ -1123,7 +1187,7 @@ class JokeImpression(models.Model):
         choices=SOURCE_CHOICES,
         default=SOURCE_OTHER,
     )
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True, db_index=True)
     created_date = models.DateField(db_index=True)
 
     class Meta:
@@ -1177,7 +1241,7 @@ class JokeDwell(models.Model):
     # 0–100, optional read-through depth (most meaningful for long/story jokes).
     scroll_pct = models.PositiveSmallIntegerField(null=True, blank=True)
     source = models.CharField(max_length=16, default='other')
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True, db_index=True)
     created_date = models.DateField(db_index=True)
 
     class Meta:
@@ -1226,7 +1290,7 @@ class JokeWatch(models.Model):
     # 0–100, percent of media duration watched.
     watch_pct = models.PositiveSmallIntegerField(null=True, blank=True)
     source = models.CharField(max_length=16, default='other')
-    watched_at = models.DateTimeField(auto_now_add=True)
+    watched_at = models.DateTimeField(auto_now_add=True, db_index=True)
 
     class Meta:
         indexes = [
