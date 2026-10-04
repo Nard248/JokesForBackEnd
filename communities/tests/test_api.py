@@ -98,6 +98,17 @@ class FormationTests(CommunityFixture):
         self.assertEqual(rows['office-life']['status'], 'forming')
         self.assertEqual(data['stats']['active_communities'], 1)
 
+    def test_forming_communities_never_show_a_size(self):
+        for i in range(4):
+            self.enjoy(self.person(f'fan{i}'), self.space_jokes[:2])
+        for i in range(3):
+            CommunityMembership.objects.create(user=self.person(f'j{i}'), community=self.space.community,
+                                               state='joined')
+        rows, _ = self.directory()
+        self.assertEqual(rows['space']['status'], 'forming')
+        self.assertIsNone(rows['space']['members'])
+        self.assertIsNone(rows['space']['engaged_members'])
+
     def test_small_counts_are_suppressed(self):
         for i in range(4):
             self.enjoy(self.person(f'fan{i}'), self.space_jokes[:2])
@@ -315,7 +326,7 @@ class ViewerTests(CommunityFixture):
                                                state='joined')
         rows, _ = self.directory()
         self.assertEqual(rows['space']['status'], 'forming')
-        self.assertEqual(rows['space']['members'], 5)  # 6 rounds to the nearest 5
+        self.assertIsNone(rows['space']['members'])  # forming communities never show a size
 
     def test_membership_requires_auth_and_valid_action(self):
         response = self.client.post('/api/v1/communities/space/membership/', {'action': 'join'}, format='json')
