@@ -41,6 +41,13 @@ once-a-day snapshot with day-stable noise (`Docs/API/Communities.md`, *Privacy*)
 so Space keeps the morning's figure — usually "fewer than 5" — until the next UTC
 day. Re-run `seed_showcase` to reset (it also drops the day's snapshot).
 
+The flip also writes `community_formed` inbox notifications (`GET
+/api/v1/notifications/`): Sam gets `role: "member"`, Maya and Priya (both have
+Space jokes) get `role: "creator"`, and so do the four other counted Space
+readers. They are written by the first communities request after the laugh;
+reloading never sends them twice. `seed_showcase` re-baselines formation
+tracking, so every reseed can replay the moment.
+
 Every showcase account is backdated 150 days and the scripted readers enjoy 3+
 distinct jokes, so they are *established* and count; a brand-new account you
 sign up yourself is not counted for a week (`viewer.counted: false`).

@@ -22,6 +22,7 @@ lets the database reduce it to per-(person, theme) totals inside the 90-day
 window, applies the unchanged engine rules to those totals, and is cached;
 engagement writes invalidate it (see ``signals.py``).
 """
+import logging
 import time
 import uuid
 from collections import Counter, defaultdict
@@ -49,7 +50,7 @@ from django.db.models import (
 from django.db.models.functions import Cast, Coalesce, TruncDate
 from django.utils import timezone
 
-from communities import engine, privacy
+from communities import engine, formation, privacy
 from communities.materialize import POSITIVE_REACTIONS, TREND_DAYS
 from communities.models import Community, CommunityMembership, CommunitySignal
 from creator_insights.privacy import analytics_allowed
@@ -64,6 +65,8 @@ VERSION_KEY = 'communities:aggregate:version'
 LOCK_KEY = 'communities:aggregate:lock'
 # Backstop: even if every invalidation were lost, nothing is served older than this.
 MAX_AGE_SECONDS = 3600
+
+logger = logging.getLogger(__name__)
 
 METHODOLOGY = {
     'half_life_days': engine.HALF_LIFE_DAYS,
@@ -282,6 +285,20 @@ def compute_aggregate(now=None):
     }
 
 
+def recompute(now=None):
+    """``compute_aggregate`` plus formation detection: every live recompute diffs
+    community statuses against the last persisted ones and notifies communities
+    that just formed (``formation.record_transitions``)."""
+    data = compute_aggregate(now)
+    statuses = {cid: _status(row['engaged'], row['previous']) for cid, row in data['rows'].items()}
+    members = {cid: row['members'] for cid, row in data['rows'].items()}
+    try:
+        formation.record_transitions(statuses, members, data['generated_at'])
+    except Exception:  # a notification failure must never take the directory down
+        logger.exception('community_formation_failed')
+    return data
+
+
 def _version():
     """Opaque, never-reused version. A culled key yields a fresh value, which
     forces a recompute instead of colliding with a cached entry."""
@@ -315,7 +332,7 @@ def aggregate():
     try:
         moment = timezone.now()
         day = moment.date().isoformat()
-        data = compute_aggregate(moment)
+        data = recompute(moment)
         data['released'] = release_public(daily_aggregate(day, live=data), day)
         if owns_lock:
             # No TTL: freshness comes from the version, the refresh floor and the day.
@@ -346,7 +363,7 @@ def daily_aggregate(day, live=None):
     key = DAILY_KEY.format(day=day)
     data = cache.get(key)
     if data is None:
-        fresh = live if live is not None else compute_aggregate()
+        fresh = live if live is not None else recompute()
         cache.add(key, fresh, 26 * 3600)
         data = cache.get(key) or fresh
     return data

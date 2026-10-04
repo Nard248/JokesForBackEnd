@@ -10,6 +10,7 @@ from billing.entitlements import has_feature
 from communities import privacy, services
 from communities.models import CommunitySignal
 from creator_insights.models import CreatorCollection, CreatorMetadataRequest
+from inbox.models import Notification
 from jokes.models import Joke, JokeReaction
 
 
@@ -34,6 +35,8 @@ class SeedShowcaseTests(TestCase):
 
         rows = {r['slug']: r for r in services.directory(sam)['communities']}
         self.assertEqual(rows['space']['status'], 'forming')
+        # The reseed re-baselined formation tracking: already-active communities announce nothing.
+        self.assertFalse(Notification.objects.filter(verb='community_formed').exists())
         self.assertEqual(rows['weather']['status'], 'cooling')
         self.assertEqual(rows['work']['status'], 'active')
         self.assertEqual(rows['space']['viewer']['content_count'], 1)
@@ -55,3 +58,19 @@ class SeedShowcaseTests(TestCase):
         self.assertEqual(rows['space']['status'], 'active')
         self.assertTrue(rows['space']['viewer']['inferred'])
         self.assertIn('Your laughs made you part of it.', rows['space']['explanation'])
+
+        # ...and the flip notifies Sam as a member and Maya and Priya as Space creators, once.
+        priya = User.objects.get(email='priya@showcase.invalid')
+        formed = Notification.objects.filter(verb='community_formed')
+        self.assertEqual(set(formed.values_list('data__community', flat=True)), {'space'})
+        self.assertEqual(formed.get(recipient=sam).data,
+                         {'community': 'space', 'name': 'Space', 'emoji': '🚀', 'role': 'member'})
+        self.assertEqual(formed.get(recipient=maya).data['role'], 'creator')
+        self.assertEqual(formed.get(recipient=priya).data['role'], 'creator')
+        self.assertFalse(formed.filter(recipient=theo).exists())
+        self.assertEqual(formed.filter(data__role='member').count(), 5)
+        total = formed.count()
+        services.directory(sam)
+        services.invalidate()
+        services.directory(maya)
+        self.assertEqual(formed.count(), total)

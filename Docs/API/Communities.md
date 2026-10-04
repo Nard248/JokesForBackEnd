@@ -277,6 +277,70 @@ read, so consent withdrawal or account deletion removes a reader immediately
 (numbers can fall within a day, never rise). Opportunities are rule-based
 descriptions of current evidence, never predictions.
 
+## Notifications: community formed
+
+When a community turns **active** the backend writes in-app notifications
+(`inbox.Notification`, never email) that the existing inbox API serves
+unchanged (`GET notifications/`, `unread-count/`, `mark-read/`). No communities
+response changed.
+
+```jsonc
+// one row of GET /api/v1/notifications/ → results[]
+{
+  "id": 812, "verb": "community_formed", "read": false,
+  "created_at": "2026-10-04T15:02:11Z", "actor": null, "joke": null,
+  "data": {"community": "space", "name": "Space", "emoji": "🚀", "role": "member" | "creator"}
+}
+```
+
+Client copy (web and iOS), linking to `/communities/<data.community>`:
+
+| `role` | Text |
+|---|---|
+| `member` | `{emoji} The {name} community just formed — you're one of its first members.` |
+| `creator` | `{emoji} A {name} community just formed. Your {name} jokes have a new audience.` |
+
+**Recipients** (`communities/formation.py`):
+
+* `member` — everyone counted as a member of that community in the aggregate
+  that saw it activate: established, consenting active adults, inferred or
+  explicitly joined (`left` excluded). Uncounted accounts (new, non-consenting,
+  minors) get nothing.
+* `creator` — active accounts with at least one published, non-removed `tier_1`
+  joke on the theme (creator FK, or a legacy published submission). A creator
+  who is also a member gets only the creator notice.
+* Deactivated accounts are excluded. The notice names no actor, so per-viewer
+  blocks have nothing to act on. The inbox has no per-verb opt-out (no existing
+  preference field governs in-app notices; the email and push preferences do not
+  apply), so none is applied.
+
+**Detection** is request-triggered. `CommunityState` (one row per listed
+community: `status`, `observed_at`, `active_since`, `inactive_since`,
+`notified_at`) holds the last status an aggregate observed. Every live recompute
+(`services.recompute`, used by `aggregate()` and by the daily snapshot) diffs its
+statuses against those rows under `SELECT … FOR UPDATE` and, for each
+`forming`/`cooling` → `active` transition, bulk-creates the notifications in the
+same transaction. Guarantees:
+
+* **Once per activation.** Concurrent recomputes serialize on the row locks; an
+  aggregate computed before the row's `observed_at` never overwrites it.
+* **No flapping.** Dropping below five and coming back within 14 days
+  (`formation.REFORM_AFTER`) re-activates silently; a community that stayed
+  inactive for 14 days or more announces itself again.
+* **Baseline, not backfill.** A community seen for the first time (first deploy,
+  newly listed theme) is recorded with its current status and does not notify,
+  so communities that were already active are never announced late.
+* **Fail-safe.** A failure while notifying is logged
+  (`community_formation_failed`) and rolled back with the state change, so the
+  directory still renders and the next recompute retries the transition.
+
+Timing follows the aggregate: notices are written by the first communities
+request (directory, detail, membership) after the cached
+aggregate goes stale, i.e. within `COMMUNITIES_MIN_REFRESH_SECONDS` of the laugh
+that tipped it. `seed_showcase` re-baselines `CommunityState`, so Sam's scripted
+laugh notifies Sam (`member`), Maya and Priya (`creator`) and the other counted
+Space readers on every reseed.
+
 ## Account data
 
 `GET users/me/data-export/` includes `community_memberships`

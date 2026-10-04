@@ -95,3 +95,28 @@ class CommunitySignal(models.Model):
 
     def __str__(self):
         return f'{self.user_id} {self.kind} {self.joke_id} @ {self.occurred_at:%Y-%m-%d}'
+
+
+class CommunityState(models.Model):
+    """The last status the aggregate observed for a community, for detecting formation.
+
+    Every recompute diffs its statuses against these rows
+    (``communities.formation.record_transitions``) and notifies once per
+    activation. A community seen for the first time is recorded as a baseline
+    without notifying, so a deploy or a reseed never announces communities that
+    were already active.
+    """
+
+    community = models.OneToOneField(Community, on_delete=models.CASCADE, related_name='state')
+    status = models.CharField(max_length=8, choices=[('forming', 'Forming'), ('active', 'Active'),
+                                                     ('cooling', 'Cooling')])
+    observed_at = models.DateTimeField(help_text='When the aggregate that set this status was computed.')
+    active_since = models.DateTimeField(null=True, blank=True,
+                                        help_text='Start of the current (or most recent) active period.')
+    inactive_since = models.DateTimeField(null=True, blank=True,
+                                          help_text='When it last stopped being active; null while active.')
+    notified_at = models.DateTimeField(null=True, blank=True,
+                                       help_text='When "community formed" notifications last went out.')
+
+    def __str__(self):
+        return f'{self.community_id}: {self.status}'

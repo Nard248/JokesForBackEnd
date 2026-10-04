@@ -8,7 +8,9 @@ What it builds (all identities use the reserved ``@showcase.invalid`` domain):
 * ``theo@showcase.invalid`` — Theo Lindqvist, a creator on the free plan, to
   show which Studio tools are included and which are Creator Pro.
 * ``sam@showcase.invalid`` — Sam Rivera, a reader one laugh away from becoming
-  the fifth member who activates the forming *Space* community. Every showcase
+  the fifth member who activates the forming *Space* community — which sends
+  "community formed" inbox notifications to Sam (member) and to Maya and Priya
+  (creators with Space jokes). Every showcase
   account is backdated months, so the scripted readers are *established*
   (old enough, 3+ distinct jokes enjoyed) and count toward communities.
 * ~260 synthetic audience members whose engagement forms overlapping active
@@ -35,7 +37,7 @@ from django.utils import timezone
 
 from billing.models import Plan, Subscription
 from communities import materialize, services
-from communities.models import Community, CommunityMembership
+from communities.models import Community, CommunityMembership, CommunityState
 from creator_insights import library
 from follows.models import Follow
 from jokes.models import (
@@ -168,6 +170,10 @@ class Command(BaseCommand):
         materialize.rebuild()  # signals were bulk-created and backdated
         services.forget_daily_aggregate()  # released counts must come from the reseeded data
         services.invalidate()
+        # Re-baseline formation tracking on the reseeded data (Space is recorded as
+        # forming), so Sam's next laugh announces it to him, Maya and Priya again.
+        CommunityState.objects.all().delete()
+        services.recompute()
         self._report()
 
     # ------------------------------------------------------------------ helpers
