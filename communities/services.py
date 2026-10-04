@@ -494,8 +494,11 @@ def community_row(community, data, viewer=None, viewer_ctx=None):
         'emoji': community.emoji,
         'color': community.color,
         'status': status,
-        'members': released['members'],
-        'engaged_members': released['engaged'],
+        # Only active communities show a size: a noisy count near the threshold
+        # would read as a contradiction ("5 members, forming") and is where
+        # differencing matters most.
+        'members': released['members'] if status == 'active' else None,
+        'engaged_members': released['engaged'] if status == 'active' else None,
         'growth': released['growth'] if status == 'active' else None,
         'score': row['score'] if visible_activity else None,
         'joke_count': row['joke_count'],
