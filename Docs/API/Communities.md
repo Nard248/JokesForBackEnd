@@ -328,18 +328,34 @@ same transaction. Guarantees:
   (`formation.REFORM_AFTER`) re-activates silently; a community that stayed
   inactive for 14 days or more announces itself again.
 * **Baseline, not backfill.** A community seen for the first time (first deploy,
-  newly listed theme) is recorded with its current status and does not notify,
-  so communities that were already active are never announced late.
+  newly listed theme, `seed_showcase`) is recorded with its current status and
+  does not notify, so communities that were already active are never announced
+  late. One first seen `cooling` (five or more members in the previous window,
+  i.e. active about a week ago) is recorded as having just gone inactive, so it
+  follows the no-flapping rule: back within 14 days is silent, later announces.
 * **Fail-safe.** A failure while notifying is logged
   (`community_formation_failed`) and rolled back with the state change, so the
   directory still renders and the next recompute retries the transition.
 
-Timing follows the aggregate: notices are written by the first communities
-request (directory, detail, membership) after the cached
-aggregate goes stale, i.e. within `COMMUNITIES_MIN_REFRESH_SECONDS` of the laugh
-that tipped it. `seed_showcase` re-baselines `CommunityState`, so Sam's scripted
-laugh notifies Sam (`member`), Maya and Priya (`creator`) and the other counted
-Space readers on every reseed.
+Timing depends on communities traffic, not on the laugh. An engagement write
+only updates the materialized signals and marks the cached aggregate stale;
+detection runs inside the next recompute, which only a communities request
+triggers (directory, detail, membership, or a creator-reach read through the
+daily snapshot) once the cached aggregate is at least
+`COMMUNITIES_MIN_REFRESH_SECONDS` old. So the notice is written on the first such
+request after the laugh that tipped the community; with nobody viewing
+communities it can arrive hours or days later (there is no worker or cron to
+run detection on its own). `seed_showcase` re-baselines `CommunityState`, so
+Sam's scripted laugh notifies Sam (`member`), Maya and Priya (`creator`) and the
+other counted Space readers on the next communities request after it, on every
+reseed.
+
+**Deploy order.** The verb reaches every inbox client as soon as the backend
+ships. Web renders it from `feat/communities-v2-web`
+(`src/features/notifications/copy.ts`, `NotificationsPanel` — copy table above,
+link to `/communities/<slug>`); a web build without that branch shows a generic,
+empty "Notification" row. Release the web branch together with, or before, this
+backend change.
 
 ## Account data
 

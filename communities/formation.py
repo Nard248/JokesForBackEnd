@@ -18,7 +18,8 @@ before the state's last observation never overwrites it. The same activation
 never notifies twice: a community that dips below five and comes back within
 ``REFORM_AFTER`` re-activates silently, and one that stayed inactive for at
 least that long announces itself again. A community seen for the first time is
-recorded as a baseline without notifying.
+recorded as a baseline without notifying; one first seen cooling (active last
+week) counts as having just gone inactive, so a quick rebound stays silent.
 
 There is no in-app notification preference in the codebase (the inbox has no
 opt-out for any verb; ``email_digest_opt_in`` / ``creator_milestone_opt_in`` /
@@ -39,6 +40,7 @@ from jokes.models import Joke
 VERB = 'community_formed'
 REFORM_AFTER = timedelta(days=14)
 ACTIVE = 'active'
+COOLING = 'cooling'
 
 
 def record_transitions(statuses, members, observed_at):
@@ -54,9 +56,7 @@ def record_transitions(statuses, members, observed_at):
         known = {state.community_id: state for state in
                  CommunityState.objects.select_for_update().filter(community_id__in=list(statuses))}
         CommunityState.objects.bulk_create(
-            [CommunityState(community_id=cid, status=status, observed_at=observed_at,
-                            active_since=observed_at if status == ACTIVE else None)
-             for cid, status in statuses.items() if cid not in known],
+            [_baseline(cid, status, observed_at) for cid, status in statuses.items() if cid not in known],
             ignore_conflicts=True,  # a concurrent first sight wrote the same baseline
         )
         observed = []
@@ -81,6 +81,21 @@ def record_transitions(statuses, members, observed_at):
         if formed:
             _notify(formed, members)
     return formed
+
+
+def _baseline(community_id, status, observed_at):
+    """First sight of a community: record it without announcing anything.
+
+    ``cooling`` means the previous window had five or more members, i.e. the
+    community was active about a week ago, so it is baselined as having just gone
+    inactive: a rebound within ``REFORM_AFTER`` is silent, a later one announces.
+    """
+    state = CommunityState(community_id=community_id, status=status, observed_at=observed_at)
+    if status in (ACTIVE, COOLING):
+        state.active_since = observed_at
+    if status == COOLING:
+        state.inactive_since = observed_at
+    return state
 
 
 def _creator_ids(tag_id):

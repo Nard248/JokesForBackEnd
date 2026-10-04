@@ -8,7 +8,7 @@ from communities import formation, services
 from communities.models import Community, CommunityMembership, CommunityState
 from communities.tests.test_api import CommunityFixture
 from inbox.models import Notification
-from jokes.models import Joke
+from jokes.models import Joke, JokeSubmission
 
 SPACE = {'community': 'space', 'name': 'Space', 'emoji': '🚀'}
 
@@ -73,6 +73,27 @@ class FormationNotificationTests(CommunityFixture):
         self.assertEqual((state.status, state.notified_at is not None), ('active', True))
         self.assertEqual(CommunityState.objects.get(community__tag=self.office).status, 'forming')
 
+    def legacy_joke(self, text, submitter, status):
+        joke = self.joke(text, self.space)
+        JokeSubmission.objects.create(user=submitter, text=text, format=self.fmt, age_rating=self.age,
+                                      language=self.lang, status=status, published_joke=joke)
+        return joke
+
+    def test_a_legacy_published_submission_counts_its_submitter_as_a_creator(self):
+        legacy = self.person('legacy')
+        self.legacy_joke('legacy on space', legacy, 'published')
+        rejected = self.person('rejected')
+        self.legacy_joke('rejected on space', rejected, 'rejected')
+        pending = self.person('pending')
+        self.legacy_joke('pending on space', pending, 'pending')
+        fans = self.activate_space()
+
+        self.directory()
+        expected = {fan.pk: 'member' for fan in fans}
+        expected[legacy.pk] = 'creator'
+        self.assertEqual(self.roles(), expected)
+        self.assertEqual(self.formed().get(recipient=legacy).data, {**SPACE, 'role': 'creator'})
+
     def test_a_creator_who_is_also_a_member_gets_one_creator_notice(self):
         both = self.person('both')
         self.joke('both on space', self.space, creator=both)
@@ -129,6 +150,34 @@ class FormationNotificationTests(CommunityFixture):
         self.assertEqual(state.status, 'active')
         self.assertIsNotNone(state.active_since)
         self.assertIsNone(state.notified_at)
+
+    def test_a_community_first_seen_cooling_rebounds_silently_within_fourteen_days(self):
+        CommunityState.objects.all().delete()
+        a = self.person('a')
+        cid = self.community.pk
+        start = timezone.now() + timedelta(minutes=1)
+
+        def observe(status, days):
+            return formation.record_transitions({cid: status}, {cid: [a.pk]}, start + timedelta(days=days))
+
+        self.assertEqual(observe('cooling', 0), [])  # baseline: active last week, inactive now
+        state = CommunityState.objects.get(community=self.community)
+        self.assertEqual((state.status, state.inactive_since), ('cooling', start))
+        self.assertEqual(observe('active', 13), [])  # same formation coming back
+        self.assertFalse(self.formed().exists())
+        self.assertEqual(observe('cooling', 14), [])
+        self.assertEqual(observe('active', 14 + 14), [cid])  # inactive 14+ days: a new formation
+        self.assertEqual(self.formed().filter(recipient=a).count(), 1)
+
+    def test_a_community_first_seen_cooling_announces_after_fourteen_days(self):
+        CommunityState.objects.all().delete()
+        a = self.person('a')
+        cid = self.community.pk
+        start = timezone.now() + timedelta(minutes=1)
+        formation.record_transitions({cid: 'cooling'}, {}, start)
+        self.assertEqual(formation.record_transitions({cid: 'active'}, {cid: [a.pk]}, start + timedelta(days=14)),
+                         [cid])
+        self.assertEqual(self.formed().filter(recipient=a).count(), 1)
 
     def test_a_notification_failure_never_breaks_the_directory_and_is_retried(self):
         self.activate_space()
