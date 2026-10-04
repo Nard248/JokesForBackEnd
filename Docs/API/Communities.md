@@ -43,9 +43,15 @@ by one lock holder while others serve the previous state, so engagement bursts
 cannot force recomputation. Scaling path: materialize per-(user, community)
 scores incrementally; engine inputs unchanged.
 
-**Residual risk (accepted, documented):** formation is Sybil-sensitive — five
-consenting accounts can activate a theme. Acceptable while communities grant no
-privileges; revisit before adding community feeds or conversations.
+**Residual risks (accepted 2026-10-04, documented):**
+- Formation is Sybil-sensitive — five consenting accounts can activate a theme.
+- Deterministic coarsening still leaks at rounding boundaries: an attacker with
+  sock accounts can sometimes detect one additional counted member. Layers in
+  place: 5-person threshold, rounding to 5, refresh floor, daily creator
+  snapshot, consent gating, no identities. Fully closing this needs calibrated
+  noise (differential privacy).
+Both are acceptable while communities grant no privileges and expose no member
+lists; revisit before community feeds, conversations or member directories.
 
 ## GET `communities/` — AllowAny
 

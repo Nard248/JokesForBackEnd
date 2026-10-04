@@ -46,6 +46,7 @@ from jokes.models import (
     JokeDwell,
     JokeImpression,
     JokeReaction,
+    JokeSubmission,
     JokeView,
     Language,
     SavedJoke,
@@ -266,8 +267,23 @@ class Command(BaseCommand):
         joke.context_tags.add(self.tags[theme])
         if tone in self.tones:
             joke.tones.add(self.tones[tone])
-        Joke.all_objects.filter(pk=joke.pk).update(created_at=self.now - timedelta(days=self.rng.uniform(3, 60)))
+        published = self.now - timedelta(days=self.rng.uniform(3, 60))
+        Joke.all_objects.filter(pk=joke.pk).update(created_at=published)
+        # The Studio overview lists submissions: mirror the publishing history.
+        submission = self._submission(creator, theme, tone, joke.format, setup, punchline, text,
+                                      status='published', published_joke=joke)
+        JokeSubmission.objects.filter(pk=submission.pk).update(created_at=published, updated_at=published)
         return joke
+
+    def _submission(self, creator, theme, tone, fmt, setup, punchline, text, **fields):
+        submission = JokeSubmission.objects.create(
+            user=creator, text=text, setup=setup, punchline=punchline, format=fmt,
+            age_rating=self.age, language=self.lang, **fields,
+        )
+        submission.context_tags.set([self.tags[theme]])
+        if tone in self.tones:
+            submission.tones.set([self.tones[tone]])
+        return submission
 
     def _audience(self):
         fans = []
@@ -407,6 +423,15 @@ class Command(BaseCommand):
 
     def _studio_library(self):
         maya = self.creators['maya']
+        oneliner, setup = self.fmt['oneliner'], self.fmt.get('setup', self.fmt['oneliner'])
+        self._submission(maya, 'work', 'office-proper', oneliner, '', '',
+                         'Our team retro had a retro. Nobody remembers what we decided about deciding.',
+                         status='draft')
+        self._submission(maya, 'puns', 'puns', oneliner, '', '',
+                         'I wanted to write a pun about Mondays, but it felt a little weak.', status='draft')
+        self._submission(maya, 'tech', 'nerd', setup, 'Why did the developer go broke?',
+                         'Because they used up all their cache.',
+                         'Why did the developer go broke? Because they used up all their cache.', status='pending')
         request = SimpleNamespace(user=maya)
         jokes = self.creator_jokes['maya']
         notes = {
