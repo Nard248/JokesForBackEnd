@@ -38,7 +38,7 @@ Request-triggered only. The aggregate is cached without TTL
 version key forces a recompute) and a 1-hour hard max age; engagement writes and
 profile saves replace the version
 **after commit** (`communities/signals.py`; anonymous shares are ignored). A stale
-entry is recomputed at most every `COMMUNITIES_MIN_REFRESH_SECONDS` (default 10)
+entry is recomputed at most every `COMMUNITIES_MIN_REFRESH_SECONDS` (default 5)
 by one lock holder while others serve the previous state, so engagement bursts
 cannot force recomputation. Scaling path: materialize per-(user, community)
 scores incrementally; engine inputs unchanged.

@@ -248,7 +248,7 @@ def aggregate():
     version = _version()
     entry = cache.get(CACHE_KEY)
     now = time.time()
-    min_refresh = getattr(settings, 'COMMUNITIES_MIN_REFRESH_SECONDS', 10)
+    min_refresh = getattr(settings, 'COMMUNITIES_MIN_REFRESH_SECONDS', 5)
     age = now - entry['computed'] if entry is not None else None
     if entry is not None and age < MAX_AGE_SECONDS and (entry['version'] == version or age < min_refresh):
         return entry['data']
