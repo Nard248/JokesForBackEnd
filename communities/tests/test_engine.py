@@ -1,7 +1,7 @@
 from datetime import UTC, datetime, timedelta
 from unittest import TestCase
 
-from community_lab.engine import affinities
+from communities.engine import affinities
 
 NOW = datetime(2026, 9, 27, tzinfo=UTC)
 

@@ -10,7 +10,7 @@ from django.contrib.auth import get_user_model
 from django.urls import reverse
 from rest_framework.test import APITestCase
 
-from jokes.models import AgeRating, Format, JokeSubmission, Language
+from jokes.models import AgeRating, JokeSubmission, Language
 
 User = get_user_model()
 

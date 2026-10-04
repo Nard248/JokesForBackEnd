@@ -3080,7 +3080,7 @@ class DataExportView(APIView):
             'streak, streak_days, submissions, media_assets, reports_filed, blocks, '
             'achievements, vibes, pack_progress, mystery_rolls, share_events and '
             'email_logs, audience_events, analytics_consent, impressions, dwell_samples, '
-            'watch_samples, analytics_retention and creator_library. Includes physically '
+            'watch_samples, analytics_retention, creator_library and community_memberships. Includes physically '
             'retained telemetry awaiting cleanup. Built synchronously in-request.'
         ),
         responses={(200, 'application/zip'): OpenApiTypes.BINARY},
@@ -3233,6 +3233,8 @@ class DataExportView(APIView):
         data.update(export_analytics(u))
         from creator_insights.library import export_creator_library
         data['creator_library'] = export_creator_library(u)
+        from communities.services import export_memberships
+        data['community_memberships'] = export_memberships(u)
         payload = json.dumps(data, cls=DjangoJSONEncoder, indent=2)
         buf = io.BytesIO()
         with zipfile.ZipFile(buf, 'w', zipfile.ZIP_DEFLATED) as zf:

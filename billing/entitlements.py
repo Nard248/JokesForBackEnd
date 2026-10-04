@@ -21,6 +21,8 @@ KNOWN_FEATURES: dict[str, bool] = {
     'creator_analytics': True,
     'creator_content_explorer': False,
     'creator_exports': False,
+    # Creator Pro: which self-forming communities a creator's audience belongs to.
+    'creator_community_insights': False,
     'daily_joke_preview': False,
     'mature_content_addon': False,
 }

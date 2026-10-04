@@ -72,6 +72,7 @@ INSTALLED_APPS = [
     'jokes',
     'notifications',
     'creator_insights',
+    'communities',
     'follows',
     'audit',
     'billing',
@@ -315,6 +316,7 @@ REST_FRAMEWORK = {
         'user': os.getenv('THROTTLE_USER', '1000/hour'),
         'verification_resend': os.getenv('THROTTLE_VERIFICATION_RESEND', '3/15min'),
         'creator_insights': os.getenv('THROTTLE_CREATOR_INSIGHTS', '120/hour'),
+        'community_membership': os.getenv('THROTTLE_COMMUNITY_MEMBERSHIP', '60/hour'),
         'media-upload': os.getenv('THROTTLE_MEDIA_UPLOAD', '30/hour'),
         'appeals': os.getenv('THROTTLE_APPEALS', '10/day'),
         # Payments endpoint — a scoped rate keeps it off the 1000/hr global.

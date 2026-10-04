@@ -1,4 +1,11 @@
-"""Pure, explainable scoring. No graph layout or database dependencies."""
+"""Pure, explainable community scoring. No database or presentation dependencies.
+
+Ported unchanged in behaviour from the Community Lab prototype; the only change
+is the signal vocabulary, which now names the real engagement tables:
+``like`` = a positive JokeReaction (lol/crying), ``favorite`` = Favorite,
+``save`` = SavedJoke, ``share`` = a signed-in ShareEvent. Views carry no weight:
+watching alone never establishes membership.
+"""
 from collections import defaultdict
 
 HALF_LIFE_DAYS = 7
@@ -6,7 +13,7 @@ MEMBERSHIP_THRESHOLD = 6
 MINIMUM_CONTENT = 2
 MINIMUM_MEMBERS = 5
 CONTENT_CAP = 4
-WEIGHTS = {"view": 0, "like": 3, "save": 4, "share": 2}
+WEIGHTS = {"view": 0, "like": 3, "favorite": 4, "save": 4, "share": 2}
 
 
 def decay(occurred_at, now):
