@@ -1,5 +1,6 @@
 import logging
 
+from django.conf import settings
 from django.db.models import Count, Sum
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
@@ -18,7 +19,12 @@ from billing.serializers import (
     PlanPublicSerializer,
     TipSerializer,
 )
-from billing.stripe_gateway import BillingUnavailable, is_enabled
+from billing.stripe_gateway import (
+    BillingUnavailable,
+    CheckoutConflict,
+    is_checkout_enabled,
+    is_enabled,
+)
 
 logger = logging.getLogger('jokesfor')
 
@@ -58,6 +64,8 @@ class PlansView(APIView):
 class CheckoutSessionView(APIView):
     """POST /api/v1/billing/checkout-session — create a Stripe Checkout Session."""
     permission_classes = [IsAuthenticated]
+    throttle_classes = [ScopedRateThrottle]
+    throttle_scope = 'billing-checkout'
 
     @extend_schema(
         description=(
@@ -88,16 +96,21 @@ class CheckoutSessionView(APIView):
     def post(self, request):
         if not is_enabled():
             return _billing_unavailable()
+        if not is_checkout_enabled():
+            return Response(
+                {'detail': 'Creator subscriptions are not available yet.', 'code': 'creator_checkout_unavailable'},
+                status=status.HTTP_503_SERVICE_UNAVAILABLE,
+            )
 
         from billing.stripe_gateway import create_checkout_session
 
         plan_slug = request.data.get('plan_slug', '')
         try:
-            plan = Plan.objects.get(slug=plan_slug, is_active=True)
+            plan = Plan.objects.get(slug=plan_slug, is_active=True, is_public=True)
         except Plan.DoesNotExist:
             return Response({'detail': 'Plan not found.'}, status=status.HTTP_404_NOT_FOUND)
 
-        if not plan.stripe_price_id:
+        if not plan.stripe_price_id or not plan.amount_cents or plan.is_default:
             return Response(
                 {'detail': 'This plan is not yet available for purchase.'},
                 status=status.HTTP_422_UNPROCESSABLE_ENTITY,
@@ -131,6 +144,11 @@ class CheckoutSessionView(APIView):
         try:
             session = create_checkout_session(request.user, plan)
             return Response({'url': session.url})
+        except CheckoutConflict as exc:
+            return Response(
+                {'detail': str(exc), 'code': 'active_subscription'},
+                status=status.HTTP_409_CONFLICT,
+            )
         except BillingUnavailable:
             return _billing_unavailable()
         except Exception as exc:
@@ -186,6 +204,11 @@ class TipCheckoutView(APIView):
         },
     )
     def post(self, request):
+        if not settings.TIPS_ENABLED:
+            return Response(
+                {'detail': 'Creator tips are not available.', 'code': 'tips_unavailable'},
+                status=status.HTTP_503_SERVICE_UNAVAILABLE,
+            )
         if not is_enabled():
             return _billing_unavailable()
 
@@ -384,6 +407,7 @@ class StripeWebhookView(APIView):
     """
     permission_classes = [AllowAny]
     authentication_classes = []  # No auth — public endpoint
+    throttle_classes = []  # Stripe deliveries must not share the anonymous reader quota.
 
     @extend_schema(
         description=(
@@ -412,6 +436,8 @@ class StripeWebhookView(APIView):
         if not is_enabled():
             # Dormant: return 200 so Stripe doesn't retry
             return Response({'detail': 'billing_dormant'})
+        if not settings.STRIPE_WEBHOOK_SECRET:
+            return _billing_unavailable()
 
         import stripe
 

@@ -1,6 +1,7 @@
 """Tests for Stripe webhook: signature verify, idempotency, UPSERT handlers."""
-from unittest.mock import MagicMock, patch
+from unittest.mock import patch
 
+import stripe
 from django.contrib.auth import get_user_model
 from django.test import TestCase, override_settings
 from rest_framework.test import APITestCase
@@ -10,18 +11,17 @@ from billing.models import Plan, ProcessedStripeEvent, Subscription, Tip
 User = get_user_model()
 
 
-def _make_stripe_event(event_type: str, obj_data: dict, event_id='evt_test_001') -> MagicMock:
-    """Build a minimal fake Stripe event object."""
-    event = MagicMock()
-    event.id = event_id
-    event.type = event_type
-    obj = MagicMock()
-    for k, v in obj_data.items():
-        setattr(obj, k, v)
-    obj.metadata = obj_data.get('metadata', {})
-    event.data = MagicMock()
-    event.data.object = obj
-    return event
+def _make_stripe_event(event_type: str, obj_data: dict, event_id='evt_test_001'):
+    return stripe.Event.construct_from({
+        'id': event_id, 'type': event_type, 'data': {'object': obj_data},
+    }, None)
+
+
+def _current_subscription(customer, subscription_id, status='active', price='price_test'):
+    return stripe.StripeObject.construct_from({
+        'id': subscription_id, 'customer': customer, 'status': status,
+        'items': {'data': [{'price': {'id': price}, 'current_period_end': 1702592000}]},
+    }, None)
 
 
 class WebhookSignatureTests(APITestCase):
@@ -83,6 +83,8 @@ class WebhookCheckoutCompletedTests(TestCase):
         self.user = User.objects.create_user(username='chk@example.com', email='chk@example.com', password='pw')
         self.free_plan = Plan.objects.get(is_default=True)
         self.pro_plan = Plan.objects.get(slug='creator_pro')
+        self.pro_plan.stripe_price_id = 'price_test'
+        self.pro_plan.save()
 
     def test_checkout_completed_creates_subscription(self):
         from billing.webhooks import handle_event
@@ -95,7 +97,8 @@ class WebhookCheckoutCompletedTests(TestCase):
             'client_reference_id': str(self.user.pk),
         })
 
-        handle_event(event)
+        with patch('billing.stripe_gateway.retrieve_subscription', return_value=_current_subscription('cus_webhook_001', 'sub_webhook_001')):
+            handle_event(event)
 
         sub = Subscription.objects.get(user=self.user)
         self.assertEqual(sub.status, 'active')
@@ -118,6 +121,8 @@ class WebhookSubscriptionEventTests(TestCase):
         self.user = User.objects.create_user(username='subevent@example.com', email='subevent@example.com', password='pw')
         self.free_plan = Plan.objects.get(is_default=True)
         self.pro_plan = Plan.objects.get(slug='creator_pro')
+        self.pro_plan.stripe_price_id = 'price_test'
+        self.pro_plan.save()
         # Pre-create a Subscription so customer_id lookup works
         Subscription.objects.create(
             user=self.user,
@@ -127,12 +132,7 @@ class WebhookSubscriptionEventTests(TestCase):
         )
 
     def _make_sub_obj(self, status, price_id='', event_id='evt_sub_001'):
-        items_mock = MagicMock()
-        price_mock = MagicMock()
-        price_mock.id = price_id
-        item_mock = MagicMock()
-        item_mock.price = price_mock
-        items_mock.data = [item_mock]
+        items_mock = {'data': [{'price': {'id': price_id}}]}
 
         return _make_stripe_event(
             'customer.subscription.created',
@@ -153,7 +153,8 @@ class WebhookSubscriptionEventTests(TestCase):
 
         pro_price_id = self.pro_plan.stripe_price_id or ''
         event = self._make_sub_obj('active', pro_price_id)
-        handle_event(event)
+        with patch('billing.stripe_gateway.retrieve_subscription', return_value=event.data.object):
+            handle_event(event)
 
         sub = Subscription.objects.get(user=self.user)
         self.assertEqual(sub.status, 'active')
@@ -166,7 +167,8 @@ class WebhookSubscriptionEventTests(TestCase):
             'customer': 'cus_sub_001',
             'status': 'canceled',
         }, event_id='evt_del_001')
-        handle_event(event)
+        with patch('billing.stripe_gateway.retrieve_subscription', return_value=event.data.object):
+            handle_event(event)
 
         sub = Subscription.objects.get(user=self.user)
         self.assertEqual(sub.status, 'canceled')
@@ -179,12 +181,7 @@ class WebhookSubscriptionEventTests(TestCase):
         self.pro_plan.stripe_price_id = 'price_pro_001'
         self.pro_plan.save()
 
-        items_mock = MagicMock()
-        price_mock = MagicMock()
-        price_mock.id = 'price_pro_001'
-        item_mock = MagicMock()
-        item_mock.price = price_mock
-        items_mock.data = [item_mock]
+        items_mock = {'data': [{'price': {'id': 'price_pro_001'}}]}
 
         event = _make_stripe_event('customer.subscription.updated', {
             'id': 'sub_stripe_001',
@@ -195,7 +192,8 @@ class WebhookSubscriptionEventTests(TestCase):
             'cancel_at_period_end': False,
             'items': items_mock,
         }, event_id='evt_upd_001')
-        handle_event(event)
+        with patch('billing.stripe_gateway.retrieve_subscription', return_value=event.data.object):
+            handle_event(event)
 
         sub = Subscription.objects.get(user=self.user)
         self.assertEqual(sub.plan.slug, 'creator_pro')
@@ -385,7 +383,11 @@ class WebhookTipCompletedTests(TestCase):
             'client_reference_id': str(self.sender.pk),
         }, event_id='evt_notip_001')
 
-        handle_event(event)
+        plan = Plan.objects.get(slug='creator_pro')
+        plan.stripe_price_id = 'price_test'
+        plan.save()
+        with patch('billing.stripe_gateway.retrieve_subscription', return_value=_current_subscription('cus_webhook_notip', 'sub_webhook_notip')):
+            handle_event(event)
 
         self.assertEqual(Tip.objects.count(), 0)
         sub = Subscription.objects.get(user=self.sender)
@@ -429,6 +431,8 @@ class WebhookInvoiceTests(TestCase):
     def setUp(self):
         self.user = User.objects.create_user(username='invoice@example.com', email='invoice@example.com', password='pw')
         self.pro_plan = Plan.objects.get(slug='creator_pro')
+        self.pro_plan.stripe_price_id = 'price_test'
+        self.pro_plan.save()
         Subscription.objects.create(
             user=self.user,
             plan=self.pro_plan,
@@ -441,9 +445,11 @@ class WebhookInvoiceTests(TestCase):
 
         event = _make_stripe_event('invoice.paid', {
             'customer': 'cus_inv_001',
+            'subscription': 'sub_inv_001',
             'period_end': 1702592000,
         }, event_id='evt_inv_paid_001')
-        handle_event(event)
+        with patch('billing.stripe_gateway.retrieve_subscription', return_value=_current_subscription('cus_inv_001', 'sub_inv_001')):
+            handle_event(event)
 
         sub = Subscription.objects.get(user=self.user)
         self.assertEqual(sub.status, 'active')
@@ -458,9 +464,13 @@ class WebhookInvoiceTests(TestCase):
 
         event = _make_stripe_event('invoice.payment_failed', {
             'customer': 'cus_inv_001',
+            'subscription': 'sub_inv_001',
         }, event_id='evt_inv_fail_001')
 
-        with patch('notifications.service.send_email', side_effect=Exception('email down')):
+        with (
+            patch('notifications.service.send_email', side_effect=Exception('email down')),
+            patch('billing.stripe_gateway.retrieve_subscription', return_value=_current_subscription('cus_inv_001', 'sub_inv_001', 'past_due')),
+        ):
             # Email failure should not prevent the status update
             handle_event(event)
 

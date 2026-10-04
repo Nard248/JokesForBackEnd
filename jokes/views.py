@@ -46,7 +46,6 @@ from rest_framework.response import Response
 from rest_framework.throttling import ScopedRateThrottle
 from rest_framework.views import APIView
 
-from billing import entitlements
 from notifications.models import EmailMessageLog, EmailVerification
 
 from .achievements import evaluate_for as evaluate_achievements_for
@@ -76,7 +75,6 @@ from .models import (
     Favorite,
     Format,
     Joke,
-    JokeDwell,
     JokeImpression,
     JokePack,
     JokePackProgress,
@@ -84,7 +82,6 @@ from .models import (
     JokeReaction,
     JokeSubmission,
     JokeView,
-    JokeWatch,
     Language,
     MediaAsset,
     MysteryBoxRoll,
@@ -101,7 +98,7 @@ from .models import (
     Vibe,
 )
 from .moderation import hidden_user_ids, visible_jokes
-from .paywall import paywall_state, record_anon_read
+from .paywall import paywall_state
 from .recommendations import get_personalized_joke, get_recently_shown_joke_ids
 from .serializers import (
     AgeRatingSerializer,
@@ -169,23 +166,17 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
         return visible_jokes(qs, self.request)
 
     def get_serializer_context(self):
-        """Inject the once-per-request paywall decision so JokeSerializer can
-        lock/strip the payoff uniformly for list + retrieve."""
+        """Preserve the legacy serializer contract with unlimited reader access."""
         ctx = super().get_serializer_context()
         ctx['paywall_state'] = paywall_state(self.request)
         return ctx
 
     def retrieve(self, request, *args, **kwargs):
-        """Return a joke and log a JokeView (P5) ONLY when it is delivered
-        UNLOCKED — a within-limit new open, or a re-open of an already-consumed
-        joke. A LOCKED delivery (free user over the cap, new joke) yields no
-        payoff, so it must NOT count against / into the ledger. 60s debounce
-        still applies to unlocked re-opens.
-        """
+        """Return free content and keep the debounced operational reading history."""
         response = super().retrieve(request, *args, **kwargs)
         if request.user.is_authenticated and response.status_code == 200:
-            # is_locked is computed by the serializer from paywall_state; a
-            # locked joke gave the user no payoff, so do not log consumption.
+            # Defensive for any future unavailable-content serializer: only
+            # record activity for a response that actually delivered content.
             if response.data.get('is_locked'):
                 return response
             from datetime import timedelta
@@ -205,10 +196,6 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
                     JokeView.objects.create(
                         user=request.user, joke_id=joke_id, source=source
                     )
-        elif response.status_code == 200 and not response.data.get('is_locked'):
-            joke_id = response.data.get('id')
-            if joke_id:
-                record_anon_read(response, request, joke_id)
         return response
 
     @extend_schema(
@@ -389,8 +376,8 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
 
     @extend_schema(
         description=(
-            'Free daily-read cap state for the freemium punchline paywall. '
-            'Paid/unlimited tiers return limit=null, remaining=null, over=false.'
+            'Legacy daily-read quota shape. Reading is free for everyone: '
+            'limit=null, remaining=null, over=false and used=0.'
         ),
         responses={200: {'type': 'object', 'properties': {
             'limit': {'type': 'integer', 'nullable': True},
@@ -405,10 +392,10 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
         permission_classes=[AllowAny], url_path='daily-reads',
     )
     def daily_reads(self, request):
-        """GET /api/v1/jokes/daily-reads/ — remaining free reads for the nudge."""
+        """Legacy quota contract: reading is unlimited for every viewer."""
         state = paywall_state(request)
         return Response({
-            'limit': state.limit,           # null == unlimited (paid)
+            'limit': state.limit,           # null == unlimited for everyone
             'used': state.used,
             'remaining': state.remaining,   # null == unlimited
             'over': state.over,
@@ -648,29 +635,22 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
 
 
 class JokeRevealView(APIView):
-    """POST /jokes/{id}/reveal/ — anonymous consumption ledger write.
-
-    Anonymous in-feed reveals can't ride telemetry (consent-gated), so the
-    frontend calls this when an unauthenticated reader taps reveal.
-    Authenticated readers 204 no-op: their ledger is JokeView (retrieve +
-    telemetry). Soft wall: response carries the updated counters.
-    """
+    """Compatibility endpoint for old clients; no anonymous quota is recorded."""
 
     permission_classes = [AllowAny]
 
     @extend_schema(
         description=(
-            'Records an anonymous punchline reveal against the cookie-backed paywall '
-            'ledger and returns the updated counters. Authenticated callers are a no-op '
-            '(204, no body) — their ledger is JokeView instead. Takes no request body.'
+            'Returns unlimited reading status for anonymous callers without setting a '
+            'cookie. Authenticated callers remain a no-op (204). Takes no request body.'
         ),
         request=None,
         responses={
             200: {'type': 'object', 'properties': {
-                'limit': {'type': 'integer', 'description': 'Free reveals allowed per day.'},
-                'used': {'type': 'integer', 'description': 'Distinct jokes revealed today.'},
-                'remaining': {'type': 'integer'},
-                'over': {'type': 'boolean', 'description': 'True once used >= limit.'},
+                'limit': {'type': 'integer', 'nullable': True, 'description': 'Null: unlimited.'},
+                'used': {'type': 'integer', 'description': 'Legacy quota field; always zero.'},
+                'remaining': {'type': 'integer', 'nullable': True},
+                'over': {'type': 'boolean', 'description': 'Always false.'},
                 'reset_at': {'type': 'string', 'format': 'date-time',
                              'description': 'Next midnight UTC, ISO 8601.'},
             }},
@@ -682,7 +662,7 @@ class JokeRevealView(APIView):
         if request.user.is_authenticated:
             return Response(status=status.HTTP_204_NO_CONTENT)
 
-        joke = get_object_or_404(
+        get_object_or_404(
             visible_jokes(
                 Joke.objects.filter(content_tier__in=allowed_tiers(request)),
                 request,
@@ -690,21 +670,13 @@ class JokeRevealView(APIView):
             pk=pk,
         )
         state = paywall_state(request)
-        consumed = set(state.consumed_ids)
-        will_consume = joke.pk not in consumed and not state.over
-        if will_consume:
-            consumed.add(joke.pk)
-        used = len(consumed)
-        response = Response({
+        return Response({
             'limit': state.limit,
-            'used': used,
-            'remaining': max(0, (state.limit or 0) - used),
-            'over': used >= (state.limit or 0),
+            'used': state.used,
+            'remaining': state.remaining,
+            'over': state.over,
             'reset_at': state.reset_at,
         })
-        if will_consume:
-            record_anon_read(response, request, joke.pk)
-        return response
 
 
 # =============================================================================
@@ -1363,22 +1335,14 @@ class DailyJokeViewSet(viewsets.GenericViewSet):
 
     @extend_schema(
         description=(
-            'Get the user\'s daily joke history as a rolling window. The window '
-            'length is the daily_joke_history_days entitlement (free 30 / '
-            'supporter 90 / creator_pro 365) and rolls with the clock.'
+            'Get the user\'s available daily joke history. Reading history has no '
+            'subscription-based window; content safety and removal rules still apply.'
         ),
         responses={200: DailyJokeSerializer(many=True)},
     )
     @action(detail=False, methods=['get'])
     def history(self, request):
-        """Get the user's daily joke history.
-
-        Rolling "last N days" DATE window (not a fixed row count): entries older
-        than ``today - daily_joke_history_days`` roll off as the clock advances,
-        and the window honors the per-plan entitlement.
-        """
-        from datetime import timedelta
-
+        """Get all available daily joke history, independent of paid plans."""
         queryset = self.get_queryset().filter(
             joke__is_removed=False,  # a taken-down joke drops out of history
         ).select_related(
@@ -1390,13 +1354,6 @@ class DailyJokeViewSet(viewsets.GenericViewSet):
             'joke__tones',
             'joke__context_tags'
         )
-
-        window_days = entitlements.get_limit(
-            request.user, 'daily_joke_history_days', 30
-        )
-        if window_days is not None:
-            cutoff = timezone.now().date() - timedelta(days=window_days)
-            queryset = queryset.filter(date__gte=cutoff)
 
         serializer = DailyJokeSerializer(queryset, many=True)
         return Response(serializer.data)
@@ -2216,6 +2173,12 @@ class UserProfileView(APIView):
         user = request.user
         profile = user.profile
 
+        if 'share_analytics' in request.data:
+            return Response(
+                {'share_analytics': ['Update analytics consent through preferences.']},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
         if 'first_name' in request.data:
             user.first_name = request.data['first_name']
         if 'last_name' in request.data:
@@ -2241,8 +2204,14 @@ class UserProfileView(APIView):
             else:
                 profile.handle = raw
 
-        user.save()
-        profile.save()
+        user_fields = [key for key in ('first_name', 'last_name') if key in request.data]
+        if user_fields:
+            user.save(update_fields=user_fields)
+        profile_fields = [key for key in ('bio', 'display_name', 'handle') if key in request.data]
+        if profile_fields:
+            # Do not write unrelated cached privacy fields: another device may
+            # have withdrawn analytics consent since this profile was loaded.
+            profile.save(update_fields=[*profile_fields, 'updated_at'])
 
         return self.get(request)
 
@@ -2450,9 +2419,13 @@ class UserPreferencesView(APIView):
     def patch(self, request):
         return self._update(request)
 
+    @transaction.atomic
     def _update(self, request):
         pref = request.user.preference
-        profile = request.user.profile
+        # Preference transitions and optional telemetry use the same row lock.
+        # Reading a cached reverse relation here can resurrect a stale consent.
+        profile = UserProfile.objects.select_for_update().get(user=request.user)
+        request.user.profile = profile
         data = request.data
 
         # Shape first: `set(data)` over a JSON array raises TypeError and turns a
@@ -2470,6 +2443,16 @@ class UserPreferencesView(APIView):
                 {k: ['Unrecognized preference field.'] for k in unknown},
                 status=status.HTTP_400_BAD_REQUEST,
             )
+
+        if 'privacy' in data:
+            privacy = data['privacy']
+            privacy_keys = {'public_profile', 'show_activity', 'share_analytics'}
+            if (not isinstance(privacy, dict) or set(privacy) - privacy_keys
+                    or any(type(value) is not bool for value in privacy.values())):
+                return Response(
+                    {'privacy': ['Expected boolean values for public_profile, show_activity, or share_analytics.']},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
 
         pref_dirty = False
 
@@ -2549,7 +2532,10 @@ class UserPreferencesView(APIView):
         # Update privacy
         if 'privacy' in data:
             priv = data['privacy']
-            for key in ('public_profile', 'show_activity', 'share_analytics'):
+            if 'share_analytics' in priv:
+                from jokes.telemetry import change_analytics_consent
+                change_analytics_consent(profile, priv['share_analytics'])
+            for key in ('public_profile', 'show_activity'):
                 if key in priv:
                     setattr(profile, key, priv[key])
             profile.save()
@@ -3093,7 +3079,9 @@ class DataExportView(APIView):
             'favorites, ratings, reactions, daily_jokes, views (capped at 5000), '
             'streak, streak_days, submissions, media_assets, reports_filed, blocks, '
             'achievements, vibes, pack_progress, mystery_rolls, share_events and '
-            'email_logs. Built synchronously in-request.'
+            'email_logs, audience_events, analytics_consent, impressions, dwell_samples, '
+            'watch_samples, analytics_retention, creator_library and community_memberships. Includes physically '
+            'retained telemetry awaiting cleanup. Built synchronously in-request.'
         ),
         responses={(200, 'application/zip'): OpenApiTypes.BINARY},
     )
@@ -3241,6 +3229,12 @@ class DataExportView(APIView):
                 ).values('to_email', 'template_name', 'subject', 'status', 'created_at', 'sent_at')
             ),
         }
+        from jokes.telemetry import export_analytics
+        data.update(export_analytics(u))
+        from creator_insights.library import export_creator_library
+        data['creator_library'] = export_creator_library(u)
+        from communities.services import export_memberships
+        data['community_memberships'] = export_memberships(u)
         payload = json.dumps(data, cls=DjangoJSONEncoder, indent=2)
         buf = io.BytesIO()
         with zipfile.ZipFile(buf, 'w', zipfile.ZIP_DEFLATED) as zf:
@@ -3248,6 +3242,7 @@ class DataExportView(APIView):
         buf.seek(0)
         resp = HttpResponse(buf.getvalue(), content_type='application/zip')
         resp['Content-Disposition'] = 'attachment; filename="jokes-for-data-export.zip"'
+        resp['Cache-Control'] = 'private, no-store'
         from audit.services import record_audit
         record_audit(request, 'data_export', outcome='success', actor=u)
         return resp
@@ -3385,7 +3380,7 @@ def _mystery_pool_for_user(user, allowed=frozenset({'tier_1'})):
 
 
 class MysteryBoxStatusView(APIView):
-    """GET /api/v1/mystery-box/status/ — current quota state for the user."""
+    """Daily activity count; rolls have no subscription purchase quota."""
     permission_classes = [IsAuthenticated]
 
     @extend_schema(responses={200: MysteryBoxStatusSerializer})
@@ -3394,19 +3389,18 @@ class MysteryBoxStatusView(APIView):
         used = MysteryBoxRoll.objects.filter(
             user=request.user, rolled_date=timezone.now().date()
         ).count()
-        max_per_day = entitlements.get_limit(request.user, 'mystery_box_rolls_per_day', default=MysteryBoxRoll.MAX_DAILY_ROLLS)
         return Response({
             'rolls_used_today': used,
-            'rolls_remaining_today': max(0, max_per_day - used),
-            'max_per_day': max_per_day,
+            'rolls_remaining_today': None,
+            'max_per_day': None,
         })
 
 
 class MysteryBoxRollView(APIView):
     """POST /api/v1/mystery-box/roll/ — pull one joke from the user's pool.
 
-    Returns 429 if daily cap reached, 404 if pool exhausted, 200 with the
-    joke + remaining quota otherwise.
+    Returns 404 if the eligible pool is exhausted, 200 with a joke otherwise.
+    Ordinary DRF abuse throttling remains in effect; there is no paid daily cap.
     """
     permission_classes = [IsAuthenticated]
 
@@ -3421,20 +3415,6 @@ class MysteryBoxRollView(APIView):
     def post(self, request):
         from django.utils import timezone
         today = timezone.now().date()
-
-        used = MysteryBoxRoll.objects.filter(
-            user=request.user, rolled_date=today
-        ).count()
-        if used >= entitlements.get_limit(request.user, 'mystery_box_rolls_per_day', default=MysteryBoxRoll.MAX_DAILY_ROLLS):
-            return Response(
-                {
-                    'detail': 'Daily Mystery Box limit reached. Resets at midnight UTC.',
-                    'rolls_used_today': used,
-                    'rolls_remaining_today': 0,
-                    'max_per_day': entitlements.get_limit(request.user, 'mystery_box_rolls_per_day', default=MysteryBoxRoll.MAX_DAILY_ROLLS),
-                },
-                status=status.HTTP_429_TOO_MANY_REQUESTS,
-            )
 
         pool, source_vibe = _mystery_pool_for_user(request.user, allowed=allowed_tiers(request))
         joke = pool.order_by('?').first()
@@ -3455,7 +3435,7 @@ class MysteryBoxRollView(APIView):
         ctx = {'request': request, 'paywall_state': paywall_state(request)}
         return Response({
             'joke': JokeSerializer(joke, context=ctx).data,
-            'rolls_remaining_today': entitlements.get_limit(request.user, 'mystery_box_rolls_per_day', default=MysteryBoxRoll.MAX_DAILY_ROLLS) - used - 1,
+            'rolls_remaining_today': None,
             'source_vibe': VibeSerializer(source_vibe).data if source_vibe else None,
         })
 
@@ -3940,33 +3920,25 @@ class TasteProfileView(APIView):
 
 
 class TelemetryIngestView(APIView):
-    """Bulk, fire-and-forget audience-telemetry ingest.
+    """Bulk audience telemetry with versioned retries and legacy compatibility.
 
-    POST /api/v1/telemetry/events
-    Body: {"events": [
-        {"joke": <id>, "type": "impression"|"reveal", "source": "<str>"},
-        {"joke": <id>, "type": "dwell", "value": <ms>, "scroll_pct": <0-100>, "source": "<str>"},
-        {"joke": <id>, "type": "watch", "watch_ms": <ms>, "watch_pct": <0-100>, "source": "<str>"},
-    ]}
-
-    Request-driven only (no Celery/cron). Cheap: caps the batch, dedups
-    impressions to one per (user, joke, day), appends dwell samples, and never
-    500s on partial bad data — bad/unknown events are skipped silently.
-    Returns 202 + {"accepted": N}.
+    Version 2 requires event/session UUIDs, web/ios platform and an aware
+    occurrence time. Consent is established at receipt, not inferred backward.
+    Only currently opted-in adults and currently accessible content contribute.
     """
     permission_classes = [IsAuthenticated]
 
-    MAX_BATCH = 50
-
-    # Dwell clamps (Phase 2): cap at 10 min, ignore sub-half-second blips as noise.
-    DWELL_MAX_MS = 600000
-    DWELL_MIN_MS = 500
-
-    # Watch clamps (Phase 3): mirrors dwell — cap at 10 min, ignore sub-half-second blips.
-    WATCH_MAX_MS = 600000
-    WATCH_MIN_MS = 500
-
     @extend_schema(
+        description=(
+            'Optional audience telemetry for consenting adults only. Ineligible '
+            'accounts receive accepted=0. Processes the first 50 events; malformed '
+            'or inaccessible content events are skipped. Watch requires audio/video. '
+            'Missing completion percentages remain unknown. Version 2 requires '
+            'schema_version, event_id, session_id, platform and occurred_at. Occurrence '
+            'must be timezone-aware and within 24 hours before or 5 minutes after receipt. '
+            'Exact normalized retries count as duplicates; conflicting retries are rejected. '
+            'Partial versioned envelopes are rejected. Unversioned legacy events remain supported.'
+        ),
         request={
             'application/json': {
                 'type': 'object',
@@ -3976,127 +3948,32 @@ class TelemetryIngestView(APIView):
                         'items': {
                             'type': 'object',
                             'properties': {
+                                'schema_version': {'type': 'integer', 'enum': [2]},
+                                'event_id': {'type': 'string', 'format': 'uuid'},
+                                'session_id': {'type': 'string', 'format': 'uuid'},
+                                'platform': {'type': 'string', 'enum': ['web', 'ios']},
+                                'occurred_at': {'type': 'string', 'format': 'date-time'},
+                                'content_version': {'type': 'integer', 'nullable': True, 'enum': [None], 'description': 'Must be absent or null; publication versions are not established yet.'},
                                 'joke': {'type': 'integer'},
                                 'type': {'type': 'string', 'enum': ['impression', 'reveal', 'dwell', 'watch']},
                                 'value': {'type': 'integer', 'description': 'dwell milliseconds (dwell events only)'},
                                 'scroll_pct': {'type': 'integer', 'description': '0-100 read-through depth (optional, dwell events only)'},
                                 'watch_ms': {'type': 'integer', 'description': 'watch milliseconds (watch events only)'},
                                 'watch_pct': {'type': 'integer', 'description': '0-100 watch-through depth (optional, watch events only)'},
-                                'source': {'type': 'string'},
+                                'source': {'type': 'string', 'enum': sorted(
+                                    set(dict(JokeImpression.SOURCE_CHOICES)) | set(dict(JokeView.SOURCE_CHOICES))
+                                )},
                             },
                         },
                     },
                 },
             }
         },
-        responses={202: {'type': 'object', 'properties': {'accepted': {'type': 'integer'}}}},
+        responses={202: {'type': 'object', 'properties': {
+            'accepted': {'type': 'integer'}, 'duplicates': {'type': 'integer'},
+            'rejected': {'type': 'integer'},
+        }}},
     )
     def post(self, request):
-        events = request.data.get('events') or []
-        if not isinstance(events, list):
-            events = []
-        events = events[:self.MAX_BATCH]
-
-        user = request.user
-        today = timezone.now().date()
-        accepted = 0
-
-        for event in events:
-            try:
-                if not isinstance(event, dict):
-                    continue
-                joke_id = event.get('joke')
-                etype = event.get('type')
-                source = event.get('source') or 'other'
-                if not isinstance(source, str):
-                    source = 'other'
-                source = source[:16]
-
-                if joke_id is None or etype not in ('impression', 'reveal', 'dwell', 'watch'):
-                    continue
-                if not Joke.objects.filter(pk=joke_id).exists():
-                    continue
-
-                if etype == 'watch':
-                    # Append-only watch sample. Clamp ms to [0, 10min];
-                    # drop sub-WATCH_MIN_MS blips as noise. Mirrors dwell exactly.
-                    raw = event.get('watch_ms')
-                    if not isinstance(raw, int) or isinstance(raw, bool):
-                        continue
-                    watch_ms = max(0, min(raw, self.WATCH_MAX_MS))
-                    if watch_ms < self.WATCH_MIN_MS:
-                        continue
-
-                    watch_pct = event.get('watch_pct')
-                    if isinstance(watch_pct, bool) or not isinstance(watch_pct, int):
-                        watch_pct = None
-                    else:
-                        watch_pct = max(0, min(watch_pct, 100))
-
-                    JokeWatch.objects.create(
-                        user=user,
-                        joke_id=joke_id,
-                        watch_ms=watch_ms,
-                        watch_pct=watch_pct,
-                        source=source,
-                    )
-                    accepted += 1
-                elif etype == 'dwell':
-                    # Append-only dwell sample. Clamp ms to [0, 10min];
-                    # drop sub-DWELL_MIN_MS blips as noise.
-                    raw = event.get('value')
-                    if not isinstance(raw, int) or isinstance(raw, bool):
-                        continue
-                    dwell_ms = max(0, min(raw, self.DWELL_MAX_MS))
-                    if dwell_ms < self.DWELL_MIN_MS:
-                        continue
-
-                    scroll_pct = event.get('scroll_pct')
-                    if isinstance(scroll_pct, bool) or not isinstance(scroll_pct, int):
-                        scroll_pct = None
-                    else:
-                        scroll_pct = max(0, min(scroll_pct, 100))
-
-                    JokeDwell.objects.create(
-                        user=user,
-                        joke_id=joke_id,
-                        dwell_ms=dwell_ms,
-                        scroll_pct=scroll_pct,
-                        source=source,
-                        created_date=today,
-                    )
-                    accepted += 1
-                elif etype == 'impression':
-                    # Dedup to one impression per (user, joke, day).
-                    JokeImpression.objects.get_or_create(
-                        user=user,
-                        joke_id=joke_id,
-                        created_date=today,
-                        defaults={'source': source},
-                    )
-                    accepted += 1
-                else:  # 'reveal'
-                    # (etype == 'reveal')
-                    view = (
-                        JokeView.objects.filter(user=user, joke_id=joke_id)
-                        .order_by('-viewed_at').first()
-                    )
-                    if view is not None:
-                        if not view.revealed_punchline:
-                            view.revealed_punchline = True
-                            view.save(update_fields=['revealed_punchline'])
-                    else:
-                        JokeView.objects.create(
-                            user=user,
-                            joke_id=joke_id,
-                            source=source,
-                            revealed_punchline=True,
-                        )
-                    accepted += 1
-            except Exception:
-                # Fire-and-forget: never fail the batch on one bad event.
-                continue
-
-        return Response({'accepted': accepted}, status=status.HTTP_202_ACCEPTED)
-
-
+        from jokes.telemetry import ingest_events
+        return Response(ingest_events(request), status=status.HTTP_202_ACCEPTED)

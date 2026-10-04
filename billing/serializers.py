@@ -1,16 +1,24 @@
 from rest_framework import serializers
 
 from billing.models import Plan, Subscription, Tip
+from billing.stripe_gateway import is_checkout_enabled
 
 
 class PlanPublicSerializer(serializers.ModelSerializer):
     amount_display = serializers.CharField(read_only=True)
+    purchase_available = serializers.SerializerMethodField()
+
+    def get_purchase_available(self, plan):
+        return bool(
+            is_checkout_enabled() and plan.is_active and plan.is_public
+            and not plan.is_default and plan.amount_cents and plan.stripe_price_id
+        )
 
     class Meta:
         model = Plan
         fields = [
             'slug', 'name', 'description', 'interval', 'amount_cents',
-            'currency', 'amount_display', 'features', 'limits', 'sort_order',
+            'currency', 'amount_display', 'features', 'limits', 'sort_order', 'purchase_available',
         ]
 
 

@@ -1,21 +1,28 @@
 """Stripe webhook handler — synchronous, idempotent, no worker required.
 
-Flow: verify signature -> dedupe on event.id -> dispatch -> one UPSERT -> 200.
-The whole handler is a few ms (no blocking I/O before the return), compliant
-with the no-worker, single-Cloud-Run-app architecture.
+Flow: verify signature -> claim event atomically -> retrieve current subscription
+under the account lock -> reconcile -> commit. Stripe HTTP calls use bounded
+timeouts; any failure rolls back the event claim so Stripe can retry.
 """
 import logging
+from collections.abc import Mapping
 from datetime import UTC
 
 from django.contrib.auth import get_user_model
+from django.core.exceptions import ObjectDoesNotExist
 from django.db import transaction
 from django.utils import timezone
 
-from billing.models import Plan, ProcessedStripeEvent, Subscription, Tip
+from billing.models import Plan, PlanPrice, ProcessedStripeEvent, Subscription, Tip
 
 logger = logging.getLogger('jokesfor')
 
 User = get_user_model()
+
+
+def _field(obj, name, default=None):
+    """StripeObject is a dict; attributes such as ``items`` collide with methods."""
+    return obj.get(name, default) if isinstance(obj, Mapping) else getattr(obj, name, default)
 
 
 def _free_plan():
@@ -27,6 +34,9 @@ def _plan_from_price_id(price_id: str):
     if not price_id:
         return _free_plan()
     plan = Plan.objects.filter(stripe_price_id=price_id).first()
+    if plan is None:
+        historical = PlanPrice.objects.select_related('plan').filter(stripe_price_id=price_id).first()
+        plan = historical.plan if historical else None
     return plan or _free_plan()
 
 
@@ -37,58 +47,86 @@ def _sync_is_premium(user, entitled: bool):
         if profile.is_premium != entitled:
             profile.is_premium = entitled
             profile.save(update_fields=['is_premium'])
-    except Exception:
-        pass
+    except ObjectDoesNotExist:
+        logger.warning('billing.webhook: subscription owner has no profile')
 
 
-@transaction.atomic
-def _upsert_subscription(user, *, plan, stripe_subscription_id='', stripe_customer_id='',
-                          stripe_price_id='', status, period_start=None, period_end=None,
-                          cancel_at_period_end=False):
-    sub, _ = Subscription.objects.select_for_update().get_or_create(
-        user=user,
-        defaults={'plan': plan, 'status': status},
-    )
-    sub.plan = plan
-    sub.status = status
-    if stripe_subscription_id:
-        sub.stripe_subscription_id = stripe_subscription_id
-    if stripe_customer_id:
-        sub.stripe_customer_id = stripe_customer_id
-    if stripe_price_id:
-        sub.stripe_price_id = stripe_price_id
-    if period_start is not None:
-        sub.current_period_start = timezone.datetime.fromtimestamp(period_start, tz=UTC)
-    if period_end is not None:
-        sub.current_period_end = timezone.datetime.fromtimestamp(period_end, tz=UTC)
-    sub.cancel_at_period_end = cancel_at_period_end
-    sub.save()
-    _sync_is_premium(user, sub.is_entitled())
-    return sub
+def _object_id(value):
+    return value if isinstance(value, str) else _field(value, 'id', '')
 
 
 def _user_from_event(event_obj):
-    """Resolve User from a Stripe object's metadata or client_reference_id."""
-    metadata = getattr(event_obj, 'metadata', {}) or {}
-    user_id = metadata.get('user_id')
-    if user_id:
-        try:
-            return User.objects.get(pk=user_id)
-        except User.DoesNotExist:
-            pass
-    client_ref = getattr(event_obj, 'client_reference_id', None)
-    if client_ref:
-        try:
-            return User.objects.get(pk=client_ref)
-        except User.DoesNotExist:
-            pass
-    # Fall back: look up by Stripe customer id
-    customer_id = getattr(event_obj, 'customer', None)
+    """Prefer our persisted customer ownership; metadata must agree below."""
+    customer_id = _object_id(_field(event_obj, 'customer'))
     if customer_id:
         sub = Subscription.objects.filter(stripe_customer_id=customer_id).first()
         if sub:
             return sub.user
+    user_id = (_field(event_obj, 'metadata', {}) or {}).get('user_id')
+    user_id = user_id or _field(event_obj, 'client_reference_id')
+    if user_id:
+        try:
+            return User.objects.filter(pk=user_id).first()
+        except (ValueError, TypeError):
+            return None
     return None
+
+
+def _reconcile_subscription(event_obj, subscription_id):
+    from billing.stripe_gateway import retrieve_subscription
+
+    user = _user_from_event(event_obj)
+    if not user or not subscription_id:
+        logger.warning('billing.webhook: subscription has no local owner')
+        return None
+    # All checkout and reconciliation paths lock User, including first creation.
+    # Retrieve AFTER locking so concurrently delivered snapshots cannot regress us.
+    user = User.objects.select_for_update().get(pk=user.pk)
+    current = retrieve_subscription(subscription_id)
+    customer_id = _object_id(_field(current, 'customer'))
+    metadata_user = (_field(current, 'metadata', {}) or {}).get('user_id')
+    event_user = (_field(event_obj, 'metadata', {}) or {}).get('user_id')
+    event_customer = _object_id(_field(event_obj, 'customer'))
+    sub = Subscription.objects.filter(user=user).first()
+    if (not customer_id or _field(current, 'id') != subscription_id
+            or (event_customer and event_customer != customer_id)
+            or (metadata_user and str(metadata_user) != str(user.pk))
+            or (event_user and str(event_user) != str(user.pk))
+            or (sub and sub.stripe_customer_id and sub.stripe_customer_id != customer_id)):
+        raise ValueError('Stripe subscription ownership mismatch')
+    terminal = {'canceled', 'incomplete_expired'}
+    state = _field(current, 'status')
+    if state not in Subscription.LIVE_PAID_STATUSES | terminal:
+        raise ValueError('Unknown Stripe subscription state')
+    if sub and sub.stripe_subscription_id and sub.stripe_subscription_id != subscription_id:
+        # A canceled OLD subscription or its invoice must never replace a new one.
+        if state in terminal:
+            return None
+        previous = retrieve_subscription(sub.stripe_subscription_id)
+        if (_field(previous, 'status') not in terminal
+                or _field(current, 'created', 0) < _field(previous, 'created', 0)):
+            logger.warning('billing.webhook: conflicting live subscriptions need reconciliation')
+            return None
+    items = _field(_field(current, 'items'), 'data', [])
+    # This catalog sells exactly one recurring item. Unknown multi-item products
+    # must not acquire paid entitlements accidentally.
+    item = items[0] if len(items) == 1 else None
+    price_id = _object_id(_field(item, 'price'))
+    plan = _free_plan() if state in terminal else _plan_from_price_id(price_id)
+    if sub is None:
+        sub = Subscription(user=user)
+    sub.plan = plan
+    sub.status = state
+    sub.stripe_subscription_id = subscription_id
+    sub.stripe_customer_id = customer_id
+    sub.stripe_price_id = price_id
+    for field in ('current_period_start', 'current_period_end'):
+        timestamp = _field(current, field) or _field(item, field)
+        setattr(sub, field, timezone.datetime.fromtimestamp(timestamp, tz=UTC) if timestamp else None)
+    sub.cancel_at_period_end = bool(_field(current, 'cancel_at_period_end', False))
+    sub.save()
+    _sync_is_premium(user, sub.is_entitled() and not plan.is_default)
+    return sub
 
 
 def _handle_tip_completed(session, metadata):
@@ -154,137 +192,45 @@ def _handle_checkout_completed(session):
         _handle_tip_completed(session, metadata)
         return
 
-    # A payment-mode session is NEVER a subscription, so the subscription
-    # upsert below must not run for one. This closes the hole the tips review
-    # flagged: a payment/tip session that lost its 'type' metadata would
-    # otherwise fall through here, and _user_from_event's customer-id fallback
-    # resolves the *sender* (tips reuse the sender's Stripe customer id) —
-    # _upsert_subscription would then downgrade that sender's real
-    # subscription to free/active. Unreachable with server-set metadata, but
-    # this is the guard that actually prevents it. An empty/missing mode
-    # (older fixtures, and belt-and-suspenders) is treated as "proceed": real
-    # Stripe subscription completions always carry mode='subscription'.
-    if mode and mode != 'subscription':
-        logger.warning(
-            'billing.webhook: ignoring checkout.session %s completed in '
-            'mode=%s — not a subscription and not a recognized tip',
-            getattr(session, 'id', ''), mode,
-        )
+    if mode != 'subscription':
         return
-
-    user = _user_from_event(session)
-    if not user:
-        logger.warning('billing.webhook: no user for checkout.session %s', session.id)
-        return
-
-    price_id = None
-    if hasattr(session, 'line_items'):
-        pass  # Not available in webhook payload; resolved via subscription event
-    subscription_id = getattr(session, 'subscription', '')
-    customer_id = getattr(session, 'customer', '')
-    plan_slug = metadata.get('plan_slug', '')
-    plan = Plan.objects.filter(slug=plan_slug).first() if plan_slug else None
-    if not plan:
-        plan = _free_plan()
-
-    _upsert_subscription(
-        user,
-        plan=plan,
-        stripe_subscription_id=subscription_id or '',
-        stripe_customer_id=customer_id or '',
-        status='active',
-    )
+    _reconcile_subscription(session, _object_id(_field(session, 'subscription')))
 
 
-def _handle_subscription_event(subscription, event_type: str):
-    customer_id = getattr(subscription, 'customer', '') or ''
-    sub_db = Subscription.objects.filter(stripe_customer_id=customer_id).first()
-    user = sub_db.user if sub_db else None
+def _handle_subscription_event(subscription, event_type):
+    _reconcile_subscription(subscription, _field(subscription, 'id'))
 
-    if not user:
-        # Try metadata
-        metadata = getattr(subscription, 'metadata', {}) or {}
-        user_id = metadata.get('user_id')
-        if user_id:
-            try:
-                user = User.objects.get(pk=user_id)
-            except User.DoesNotExist:
-                pass
 
-    if not user:
-        logger.warning('billing.webhook: no user for subscription %s', subscription.id)
-        return
-
-    if event_type == 'customer.subscription.deleted':
-        free = _free_plan()
-        _upsert_subscription(
-            user,
-            plan=free,
-            stripe_subscription_id=subscription.id,
-            stripe_customer_id=customer_id,
-            status='canceled',
-        )
-        return
-
-    price_id = ''
-    items = getattr(subscription, 'items', None)
-    if items and hasattr(items, 'data') and items.data:
-        price_id = items.data[0].price.id
-
-    plan = _plan_from_price_id(price_id)
-    status = getattr(subscription, 'status', 'active')
-    period_start = getattr(subscription, 'current_period_start', None)
-    period_end = getattr(subscription, 'current_period_end', None)
-    cancel_at = getattr(subscription, 'cancel_at_period_end', False)
-
-    _upsert_subscription(
-        user,
-        plan=plan,
-        stripe_subscription_id=subscription.id,
-        stripe_customer_id=customer_id,
-        stripe_price_id=price_id,
-        status=status,
-        period_start=period_start,
-        period_end=period_end,
-        cancel_at_period_end=cancel_at,
-    )
+def _invoice_subscription_id(invoice):
+    # Basil+ moved subscription references under parent.subscription_details.
+    parent = _field(invoice, 'parent')
+    details = _field(parent, 'subscription_details')
+    return _object_id(_field(invoice, 'subscription') or _field(details, 'subscription'))
 
 
 def _handle_invoice_paid(invoice):
-    customer_id = getattr(invoice, 'customer', '') or ''
-    sub_db = Subscription.objects.filter(stripe_customer_id=customer_id).first()
-    if not sub_db:
-        return
-    # Clear past_due, stamp period anchor
-    if sub_db.status == 'past_due':
-        sub_db.status = 'active'
-    period_end = getattr(invoice, 'period_end', None)
-    if period_end:
-        sub_db.current_period_end = timezone.datetime.fromtimestamp(period_end, tz=UTC)
-    sub_db.save(update_fields=['status', 'current_period_end'])
-    _sync_is_premium(sub_db.user, sub_db.is_entitled())
+    subscription_id = _invoice_subscription_id(invoice)
+    if subscription_id:
+        _reconcile_subscription(invoice, subscription_id)
 
 
 def _handle_payment_failed(invoice):
-    customer_id = getattr(invoice, 'customer', '') or ''
-    sub_db = Subscription.objects.filter(stripe_customer_id=customer_id).first()
-    if not sub_db:
+    # The invoice may concern an old or one-off payment. Its event name alone
+    # says nothing about the current subscription's entitlement.
+    subscription_id = _invoice_subscription_id(invoice)
+    if not subscription_id:
         return
-    sub_db.status = 'past_due'
-    sub_db.save(update_fields=['status'])
-    _sync_is_premium(sub_db.user, False)
-
-    # Send dunning email via notification engine (quick, non-blocking)
+    sub = _reconcile_subscription(invoice, subscription_id)
+    if sub is None or sub.status != 'past_due':
+        return
     try:
         from notifications.service import send_email
         send_email(
-            to_email=sub_db.user.email,
-            template_name='payment_failed',
-            context={'user': sub_db.user, 'plan': sub_db.plan},
-            user=sub_db.user,
+            to_email=sub.user.email, template_name='payment_failed',
+            context={'user': sub.user, 'plan': sub.plan}, user=sub.user,
         )
     except Exception:
-        pass  # Never risk the 200 on email failure
+        logger.warning('billing.webhook: payment notification could not be sent')
 
 
 @transaction.atomic
@@ -293,8 +239,12 @@ def handle_event(event):
     event_id = event.id
     event_type = event.type
 
-    # Idempotency check
-    if ProcessedStripeEvent.objects.filter(event_id=event_id).exists():
+    # Unique insertion serializes concurrent duplicate deliveries BEFORE effects.
+    # The encompassing transaction rolls this back if reconciliation fails.
+    _, created = ProcessedStripeEvent.objects.get_or_create(
+        event_id=event_id, defaults={'event_type': event_type},
+    )
+    if not created:
         return
 
     obj = event.data.object
@@ -309,5 +259,3 @@ def handle_event(event):
     elif event_type == 'invoice.payment_failed':
         _handle_payment_failed(obj)
     # Other event types are ignored — future handlers can be added here
-
-    ProcessedStripeEvent.objects.create(event_id=event_id, event_type=event_type)

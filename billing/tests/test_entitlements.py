@@ -116,23 +116,23 @@ class GetLimitTests(TestCase):
         self.user = User.objects.create_user(username='limit@example.com', email='limit@example.com', password='pw')
         self.pro_plan = Plan.objects.get(slug='creator_pro')
 
-    def test_free_mystery_box_limit_is_3(self):
-        self.assertEqual(entitlements.get_limit(self.user, 'mystery_box_rolls_per_day'), 3)
+    def test_free_mystery_box_is_unlimited(self):
+        self.assertIsNone(entitlements.get_limit(self.user, 'mystery_box_rolls_per_day'))
 
-    def test_pro_mystery_box_limit_is_20(self):
+    def test_pro_mystery_box_is_also_unlimited(self):
         Subscription.objects.create(user=self.user, plan=self.pro_plan, status='active')
-        self.assertEqual(entitlements.get_limit(self.user, 'mystery_box_rolls_per_day'), 20)
+        self.assertIsNone(entitlements.get_limit(self.user, 'mystery_box_rolls_per_day'))
 
     def test_unknown_limit_uses_default_param(self):
         result = entitlements.get_limit(self.user, 'unknown_key', default=99)
         self.assertEqual(result, 99)
 
     def test_plan_limit_overrides_registry(self):
-        # Bump the free plan's mystery_box limit in DB -> reflected immediately
+        # Creator limits remain editable independently of free reader access.
         free_plan = Plan.objects.get(is_default=True)
-        free_plan.limits['mystery_box_rolls_per_day'] = 10
+        free_plan.limits['submissions_per_day'] = 10
         free_plan.save()
-        self.assertEqual(entitlements.get_limit(self.user, 'mystery_box_rolls_per_day'), 10)
+        self.assertEqual(entitlements.get_limit(self.user, 'submissions_per_day'), 10)
         # Restore
-        free_plan.limits['mystery_box_rolls_per_day'] = 3
+        free_plan.limits['submissions_per_day'] = 5
         free_plan.save()

@@ -1,7 +1,4 @@
-"""Tests for demo gates: Mystery Box quota and creator analytics feature.
-
-Also verifies Wave 1 non-regression (existing behavior unchanged with seed defaults).
-"""
+"""Creator feature gates remain editable; reader access is permanently free."""
 from unittest.mock import patch
 
 from django.contrib.auth import get_user_model
@@ -31,15 +28,15 @@ class AdminEditabilityTests(TestCase):
         from billing import entitlements
 
         free_plan = Plan.objects.get(is_default=True)
-        self.assertEqual(entitlements.get_limit(self.user, 'mystery_box_rolls_per_day'), 3)
+        self.assertEqual(entitlements.get_limit(self.user, 'submissions_per_day'), 5)
 
-        free_plan.limits['mystery_box_rolls_per_day'] = 99
+        free_plan.limits['submissions_per_day'] = 99
         free_plan.save()
 
-        self.assertEqual(entitlements.get_limit(self.user, 'mystery_box_rolls_per_day'), 99)
+        self.assertEqual(entitlements.get_limit(self.user, 'submissions_per_day'), 99)
 
         # Restore
-        free_plan.limits['mystery_box_rolls_per_day'] = 3
+        free_plan.limits['submissions_per_day'] = 5
         free_plan.save()
 
     def test_feature_edit_reflected_immediately(self):
@@ -85,20 +82,19 @@ class AdminEditabilityTests(TestCase):
 
 
 class MysteryBoxGatingTests(APITestCase):
-    """Mystery Box quota gate: both status and roll views agree with plan limit."""
+    """Legacy plan quotas cannot restrict free discovery."""
 
     def setUp(self):
         self.user = User.objects.create_user(username='mb@example.com', email='mb@example.com', password='pw')
         self.client.force_authenticate(self.user)
 
-    def test_status_shows_plan_limit(self):
+    def test_status_shows_unlimited_rolls(self):
         resp = self.client.get('/api/v1/mystery-box/status/')
         self.assertEqual(resp.status_code, 200)
-        # Default free plan has max_per_day=3
-        self.assertEqual(resp.data['max_per_day'], 3)
+        self.assertIsNone(resp.data['max_per_day'])
 
-    def test_roll_blocked_at_plan_limit(self):
-        """After free plan's mystery_box_rolls_per_day rolls, next returns 429."""
+    def test_roll_remains_available_after_legacy_limit(self):
+        """Three prior rolls must not trigger a subscription purchase quota."""
         from django.utils import timezone
 
         from jokes.models import Joke, MysteryBoxRoll
@@ -122,17 +118,17 @@ class MysteryBoxGatingTests(APITestCase):
             )
 
         resp = self.client.post('/api/v1/mystery-box/roll/')
-        self.assertEqual(resp.status_code, 429)
-        self.assertEqual(resp.data['max_per_day'], 3)
+        self.assertEqual(resp.status_code, 200)
+        self.assertIsNone(resp.data['rolls_remaining_today'])
 
-    def test_bumping_plan_limit_allows_more_rolls(self):
-        """Raising free plan's limit in DB -> status shows new limit."""
+    def test_stale_plan_limit_does_not_change_free_roll_contract(self):
+        """Persisted caps are ignored even after editing the plan."""
         free_plan = Plan.objects.get(is_default=True)
         free_plan.limits['mystery_box_rolls_per_day'] = 10
         free_plan.save()
 
         resp = self.client.get('/api/v1/mystery-box/status/')
-        self.assertEqual(resp.data['max_per_day'], 10)
+        self.assertIsNone(resp.data['max_per_day'])
 
         # Restore
         free_plan.limits['mystery_box_rolls_per_day'] = 3

@@ -105,7 +105,7 @@ class DailyJokeRolloverTests(APITestCase):
 
 
 class MysteryBoxDailyResetTests(APITestCase):
-    """Behavior 3: the daily-cap count resets lazily on the new rolled_date."""
+    """Daily activity counts reset without restricting free discovery."""
 
     @classmethod
     def setUpTestData(cls):
@@ -117,18 +117,18 @@ class MysteryBoxDailyResetTests(APITestCase):
     def setUp(self):
         self.client.force_authenticate(user=self.user)
 
-    def test_cap_hits_on_day_n_then_resets_day_n1(self):
+    def test_rolls_remain_unlimited_and_usage_resets_day_n1(self):
         with freeze_time(DAY_N):
             for i in range(MysteryBoxRoll.MAX_DAILY_ROLLS):
                 r = self.client.post('/api/v1/mystery-box/roll/')
                 self.assertEqual(r.status_code, 200, f'roll {i} -> {r.content}')
-            # Over the cap on the same day.
+            # The next roll remains free on the same day.
             blocked = self.client.post('/api/v1/mystery-box/roll/')
-            self.assertEqual(blocked.status_code, 429)
+            self.assertEqual(blocked.status_code, 200)
             self.assertEqual(
                 MysteryBoxRoll.objects.filter(
                     user=self.user, rolled_date=date(2026, 7, 14)).count(),
-                MysteryBoxRoll.MAX_DAILY_ROLLS,
+                MysteryBoxRoll.MAX_DAILY_ROLLS + 1,
             )
 
         with freeze_time(DAY_N1):
@@ -138,7 +138,7 @@ class MysteryBoxDailyResetTests(APITestCase):
 
         self.assertEqual(
             MysteryBoxRoll.objects.filter(user=self.user, rolled_date=date(2026, 7, 14)).count(),
-            3,
+            4,
         )
         self.assertEqual(
             MysteryBoxRoll.objects.filter(user=self.user, rolled_date=date(2026, 7, 15)).count(),
@@ -191,6 +191,9 @@ class ImpressionDwellDayBucketTests(APITestCase):
         cls.user = User.objects.create_user(
             username='imp@example.com', email='imp@example.com', password='pw',
         )
+        cls.user.profile.date_of_birth = date(1990, 1, 1)
+        cls.user.profile.share_analytics = True
+        cls.user.profile.save(update_fields=['date_of_birth', 'share_analytics'])
         cls.joke = _make_joke('impression joke')
 
     def setUp(self):
@@ -258,12 +261,7 @@ class RecentlyShownWindowTests(APITestCase):
 
 
 class HistoryEndpointWindowTests(APITestCase):
-    """Behavior 5 (FIXED): DailyJokeViewSet.history is a rolling "last N days"
-    DATE window driven by the ``daily_joke_history_days`` entitlement (free 30 /
-    supporter 90 / creator_pro 365), NOT a fixed row count.
-
-    Was a documented bug (`[:30]` row cap, no date cutoff); now enforced.
-    """
+    """Available reading history does not expire behind a purchase gate."""
 
     @classmethod
     def setUpTestData(cls):
@@ -288,11 +286,9 @@ class HistoryEndpointWindowTests(APITestCase):
             dates = [row['date'] for row in r.data]
         self.assertIn('2026-07-01', dates)
 
-    def test_history_rolls_off_entries_older_than_window(self):
-        """A 2.5-year-old delivery is EVICTED once the clock is well past its
-        30-day window (free entitlement) — the fix that flipped the old
-        expectedFailure into enforced behavior."""
+    def test_history_keeps_entries_older_than_legacy_window(self):
+        """Old deliveries remain available without a subscription."""
         with freeze_time('2026-07-14T12:00:00Z'):  # cutoff = 2026-06-14
             r = self.client.get('/api/v1/daily-jokes/history/')
             dates = [row['date'] for row in r.data]
-        self.assertNotIn('2024-01-01', dates)
+        self.assertIn('2024-01-01', dates)

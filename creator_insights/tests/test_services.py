@@ -30,6 +30,16 @@ from jokes.models import (
 
 User = get_user_model()
 
+
+def _analytics_user(**kwargs):
+    """Metric fixtures explicitly represent adults who opted into analytics."""
+    from datetime import date
+    user = User.objects.create_user(**kwargs)
+    user.profile.date_of_birth = date(1990, 1, 1)
+    user.profile.share_analytics = True
+    user.profile.save(update_fields=['date_of_birth', 'share_analytics'])
+    return user
+
 TODAY = timezone.now().date()
 
 
@@ -74,10 +84,10 @@ class ResolveCreatorJokesTests(TestCase):
         cls.age = AgeRating.objects.first()
         cls.lang = Language.objects.get(code='en')
 
-        cls.creator = User.objects.create_user(
+        cls.creator = _analytics_user(
             username='creator@svc.com', email='creator@svc.com', password='x'
         )
-        cls.other_creator = User.objects.create_user(
+        cls.other_creator = _analytics_user(
             username='other@svc.com', email='other@svc.com', password='x'
         )
 
@@ -115,7 +125,7 @@ class ResolveCreatorJokesTests(TestCase):
 
     def test_zero_jokes_for_user_with_no_published_submissions(self):
         from creator_insights.services import resolve_creator_jokes
-        bare_user = User.objects.create_user(
+        bare_user = _analytics_user(
             username='bare@svc.com', email='bare@svc.com', password='x'
         )
         qs = resolve_creator_jokes(bare_user)
@@ -124,7 +134,7 @@ class ResolveCreatorJokesTests(TestCase):
     def test_tier2_joke_is_included(self):
         """Owner scope bypasses tier gate — tier_2 joke must appear in resolve."""
         from creator_insights.services import resolve_creator_jokes
-        tier2_user = User.objects.create_user(
+        tier2_user = _analytics_user(
             username='tier2creator@svc.com', email='tier2creator@svc.com', password='x'
         )
         _, tier2_joke = _make_published_submission(
@@ -142,13 +152,13 @@ class OverviewMetricsTests(TestCase):
         cls.age = AgeRating.objects.first()
         cls.lang = Language.objects.get(code='en')
 
-        cls.creator = User.objects.create_user(
+        cls.creator = _analytics_user(
             username='ov_creator@svc.com', email='ov_creator@svc.com', password='x'
         )
-        cls.reader1 = User.objects.create_user(
+        cls.reader1 = _analytics_user(
             username='reader1@svc.com', email='reader1@svc.com', password='x'
         )
-        cls.reader2 = User.objects.create_user(
+        cls.reader2 = _analytics_user(
             username='reader2@svc.com', email='reader2@svc.com', password='x'
         )
 
@@ -227,7 +237,7 @@ class OverviewMetricsTests(TestCase):
     def test_overview_zero_jokes_empty(self):
         """Creator with no published jokes returns zeros everywhere."""
         from creator_insights.services import build_creator_insights
-        bare = User.objects.create_user(
+        bare = _analytics_user(
             username='bare_ov@svc.com', email='bare_ov@svc.com', password='x'
         )
         data = build_creator_insights(bare, 'all')
@@ -246,10 +256,10 @@ class BreakdownsAndTopJokesTests(TestCase):
         cls.age = AgeRating.objects.first()
         cls.lang = Language.objects.get(code='en')
 
-        cls.creator = User.objects.create_user(
+        cls.creator = _analytics_user(
             username='top_creator@svc.com', email='top_creator@svc.com', password='x'
         )
-        cls.reader = User.objects.create_user(
+        cls.reader = _analytics_user(
             username='top_reader@svc.com', email='top_reader@svc.com', password='x'
         )
 
@@ -326,10 +336,10 @@ class AudienceAndSuggestionsTests(TestCase):
         cls.tone = Tone.objects.first()
         cls.theme = ContextTag.objects.first()
 
-        cls.creator = User.objects.create_user(
+        cls.creator = _analytics_user(
             username='aud_creator@svc.com', email='aud_creator@svc.com', password='x'
         )
-        cls.reader = User.objects.create_user(
+        cls.reader = _analytics_user(
             username='aud_reader@svc.com', email='aud_reader@svc.com', password='x'
         )
 
@@ -402,10 +412,10 @@ class PeriodBoundaryTests(TestCase):
         cls.age = AgeRating.objects.first()
         cls.lang = Language.objects.get(code='en')
 
-        cls.creator = User.objects.create_user(
+        cls.creator = _analytics_user(
             username='pb_creator@svc.com', email='pb_creator@svc.com', password='x'
         )
-        cls.reader = User.objects.create_user(
+        cls.reader = _analytics_user(
             username='pb_reader@svc.com', email='pb_reader@svc.com', password='x'
         )
 
@@ -475,13 +485,13 @@ class TopJokesViewCountFanoutTests(TestCase):
         cls.age = AgeRating.objects.first()
         cls.lang = Language.objects.get(code='en')
 
-        cls.creator = User.objects.create_user(
+        cls.creator = _analytics_user(
             username='fanout_creator@svc.com', email='fanout_creator@svc.com', password='x'
         )
-        cls.reader1 = User.objects.create_user(
+        cls.reader1 = _analytics_user(
             username='fanout_r1@svc.com', email='fanout_r1@svc.com', password='x'
         )
-        cls.reader2 = User.objects.create_user(
+        cls.reader2 = _analytics_user(
             username='fanout_r2@svc.com', email='fanout_r2@svc.com', password='x'
         )
 
@@ -545,10 +555,10 @@ class TopJokesPeriodConsistencyTests(TestCase):
         cls.age = AgeRating.objects.first()
         cls.lang = Language.objects.get(code='en')
 
-        cls.creator = User.objects.create_user(
+        cls.creator = _analytics_user(
             username='period_c_creator@svc.com', email='period_c_creator@svc.com', password='x'
         )
-        cls.reader = User.objects.create_user(
+        cls.reader = _analytics_user(
             username='period_c_reader@svc.com', email='period_c_reader@svc.com', password='x'
         )
 
@@ -560,7 +570,7 @@ class TopJokesPeriodConsistencyTests(TestCase):
         _view(cls.reader, cls.joke, days_ago=1)
         _view(cls.reader, cls.joke, days_ago=2)
 
-        cls.reader2 = User.objects.create_user(
+        cls.reader2 = _analytics_user(
             username='period_c_reader2@svc.com', email='period_c_reader2@svc.com', password='x'
         )
 
@@ -623,31 +633,11 @@ class TopJokesPeriodConsistencyTests(TestCase):
 
 
 class WhatResonatesFanoutTests(TestCase):
-    """BUG 2 & BUG 3 — tone_stats in _suggestions/_what_resonates.
+    """Eligible style comparisons must count view IDs once and period-filter reactions.
 
-    BUG 2: views=Count('id') (JokeView.id) is fanned out by the reactions JOIN
-    because distinct=True is missing → reactions_per_view is inflated/wrong.
-
-    BUG 3: reactions Count has no date filter → for period='week' the numerator
-    is all-time while the denominator is in-period → reactions_per_view is wrong.
-
-    Setup:
-      Tone A: 2 in-period views, 4 all-time reactions (2 in-period + 2 old).
-      Tone B: 1 in-period view, 1 in-period reaction.
-
-    Without bug fix for BUG 3 (period='week'):
-      Tone A reactions_per_view = 4/2 = 2.0  (WRONG — uses all-time reactions)
-      Tone B reactions_per_view = 1/1 = 1.0
-      → what_resonates picks Tone A (wrong winner!)
-
-    After fix:
-      Tone A reactions_per_view = 2/2 = 1.0  (only in-period reactions)
-      Tone B reactions_per_view = 1/1 = 1.0
-      → Tie or correct ranking (Tone B wins or ties — the key assertion is that
-         Tone A's rate is 1.0, not 2.0, proving in-period filtering works).
-
-    Without BUG 2 fix (with reactions LEFT JOIN), view count for Tone A would be
-    fanned out: 2 views × 4 reactions = 8 rows → views=8, reactions_per_view=0.5 (wrong).
+    Both tones have 20 distinct readers. Tone A has 21 views and four reactions
+    (two recent, two old); B has 20 views and one recent reaction. The extra
+    repeat view ensures the denominator is event count, not distinct readers.
     """
 
     @classmethod
@@ -656,10 +646,10 @@ class WhatResonatesFanoutTests(TestCase):
         cls.age = AgeRating.objects.first()
         cls.lang = Language.objects.get(code='en')
 
-        cls.creator = User.objects.create_user(
+        cls.creator = _analytics_user(
             username='resonates_creator@svc.com', email='resonates_creator@svc.com', password='x'
         )
-        cls.reader = User.objects.create_user(
+        cls.reader = _analytics_user(
             username='resonates_reader@svc.com', email='resonates_reader@svc.com', password='x'
         )
 
@@ -686,13 +676,13 @@ class WhatResonatesFanoutTests(TestCase):
         _view(cls.reader, cls.joke_a, days_ago=1)
         _view(cls.reader, cls.joke_a, days_ago=2)
 
-        cls.reader2 = User.objects.create_user(
+        cls.reader2 = _analytics_user(
             username='resonates_r2@svc.com', email='resonates_r2@svc.com', password='x'
         )
-        cls.reader3 = User.objects.create_user(
+        cls.reader3 = _analytics_user(
             username='resonates_r3@svc.com', email='resonates_r3@svc.com', password='x'
         )
-        cls.reader4 = User.objects.create_user(
+        cls.reader4 = _analytics_user(
             username='resonates_r4@svc.com', email='resonates_r4@svc.com', password='x'
         )
 
@@ -713,65 +703,30 @@ class WhatResonatesFanoutTests(TestCase):
         # 1 in-period reaction on Joke B (reader3 didn't react to B yet)
         JokeReaction.objects.create(user=cls.reader3, joke=cls.joke_b, reaction='lol')
 
-    def _get_tone_data(self, data, tone_name):
-        """Extract reactions_per_view for a specific tone from what_resonates suggestion."""
-        # We need to inspect tone_stats directly; the suggestion only exposes best_tone.
-        # Instead, call _suggestions indirectly and introspect the resonates_data.
-        what_resonates = next(
-            s for s in data['suggestions'] if s['kind'] == 'what_resonates'
-        )
-        return what_resonates['data']
+        # Both style cohorts meet the minimum without changing reaction math.
+        for index in range(19):
+            extra = _analytics_user(username=f'resonates-extra-{index}')
+            _view(extra, cls.joke_a, days_ago=1)
+            _view(extra, cls.joke_b, days_ago=1)
 
     def test_what_resonates_views_not_fanned_out_by_reactions(self):
-        """BUG 2: Tone A should have 2 views (distinct JokeView PKs), not a fanned-out multiple.
-
-        We use 'all' period so we're only testing the distinct=True fix (BUG 2),
-        not the date filter (BUG 3). With 4 reactions and 2 views on Tone A:
-          Without distinct: views fanned out → rate != 4/2 = 2.0
-          After fix: reactions_per_view = 4/2 = 2.0 for Tone A (best tone wins)
-
-        The definitive check: call _top_jokes directly via build_creator_insights
-        and also verify through the suggestions data. We check via _top_jokes that
-        view_count is 3 (done in TopJokesViewCountFanoutTests). Here we verify the
-        what_resonates rate is 2.0 (Tone A: 4 reactions / 2 distinct views).
-        """
-        from creator_insights.services import _suggestions, resolve_creator_jokes, window_since
-        jokes = resolve_creator_jokes(self.creator)
-        since = window_since('all')  # None
-        suggestions = _suggestions(self.creator, jokes, since)
-        what_resonates = next(s for s in suggestions if s['kind'] == 'what_resonates')
-        rate = what_resonates['data']['reactions_per_view']
-        self.assertIsNotNone(rate)
-        # After distinct fix: best rate = 4 reactions / 2 views = 2.0 for Tone A
-        # Without distinct: views fanned out (2 views × 4 reactions = 8 rows) → rate = 4/8 = 0.5
-        # or some other wrong value. The key is rate == 2.0 after fix.
-        self.assertAlmostEqual(
-            rate, 2.0, places=3,
-            msg=f"Expected reactions_per_view=2.0 (4 reactions / 2 distinct views) but got {rate} — likely BUG 2 fan-out",
-        )
+        from creator_insights.services import _suggestions, resolve_creator_jokes
+        suggestions = _suggestions(self.creator, resolve_creator_jokes(self.creator), None)
+        metrics = next(s['data'] for s in suggestions if s['kind'] == 'what_resonates')
+        self.assertEqual(metrics['top_tone'], self.tone_a.name)
+        self.assertEqual(metrics['sample_size'], 20)
+        self.assertEqual(metrics['views'], 21)
+        self.assertEqual(metrics['reactions'], 4)
+        self.assertEqual(metrics['reactions_per_view'], round(4 / 21, 4))
 
     def test_what_resonates_reactions_are_period_filtered(self):
-        """BUG 3: For period='week', only in-period reactions should count.
-
-        Tone A: 2 in-period views, 2 in-period reactions, 2 old reactions.
-        Without BUG 3 fix: rate for Tone A = 4/2 = 2.0 (uses all-time reactions).
-        After BUG 3 fix: rate for Tone A = 2/2 = 1.0.
-        Tone B: 1/1 = 1.0 regardless.
-        The best rate should be 1.0, not 2.0.
-        """
         from creator_insights.services import _suggestions, resolve_creator_jokes, window_since
-        jokes = resolve_creator_jokes(self.creator)
-        since = window_since('week')
-        suggestions = _suggestions(self.creator, jokes, since)
-        what_resonates = next(s for s in suggestions if s['kind'] == 'what_resonates')
-        rate = what_resonates['data']['reactions_per_view']
-        self.assertIsNotNone(rate)
-        # Without fix: 4 all-time reactions / 2 in-period views = 2.0
-        # After fix: 2 in-period reactions / 2 in-period views = 1.0
-        self.assertAlmostEqual(
-            rate, 1.0, places=3,
-            msg=f"Expected reactions_per_view=1.0 (in-period only) but got {rate} — likely BUG 3 (all-time reactions)",
-        )
+        suggestions = _suggestions(self.creator, resolve_creator_jokes(self.creator), window_since('week'))
+        metrics = next(s['data'] for s in suggestions if s['kind'] == 'what_resonates')
+        self.assertEqual(metrics['top_tone'], self.tone_a.name)
+        self.assertEqual(metrics['views'], 21)
+        self.assertEqual(metrics['reactions'], 2)
+        self.assertEqual(metrics['reactions_per_view'], round(2 / 21, 4))
 
 
 class TopJokesMultiRelationFanoutTests(TestCase):
@@ -791,12 +746,12 @@ class TopJokesMultiRelationFanoutTests(TestCase):
         cls.age = AgeRating.objects.first()
         cls.lang = Language.objects.get(code='en')
 
-        cls.creator = User.objects.create_user(
+        cls.creator = _analytics_user(
             username='mrfanout_creator@svc.com', email='mrfanout_creator@svc.com', password='x'
         )
-        cls.r1 = User.objects.create_user(username='mrf_r1@svc.com', email='mrf_r1@svc.com', password='x')
-        cls.r2 = User.objects.create_user(username='mrf_r2@svc.com', email='mrf_r2@svc.com', password='x')
-        cls.r3 = User.objects.create_user(username='mrf_r3@svc.com', email='mrf_r3@svc.com', password='x')
+        cls.r1 = _analytics_user(username='mrf_r1@svc.com', email='mrf_r1@svc.com', password='x')
+        cls.r2 = _analytics_user(username='mrf_r2@svc.com', email='mrf_r2@svc.com', password='x')
+        cls.r3 = _analytics_user(username='mrf_r3@svc.com', email='mrf_r3@svc.com', password='x')
 
         _, cls.joke = _make_published_submission(
             cls.creator, cls.fmt, cls.age, cls.lang, text='Multi-relation fan-out joke'
@@ -819,7 +774,7 @@ class TopJokesMultiRelationFanoutTests(TestCase):
         ShareEvent.objects.create(joke=cls.joke, user=cls.r1, platform='whatsapp')
         ShareEvent.objects.create(joke=cls.joke, user=cls.r2, platform='twitter')
 
-        # 3 impressions (no unique constraint)
+        # 3 distinct daily impression identities
         JokeImpression.objects.create(user=cls.r1, joke=cls.joke, source='feed')
         JokeImpression.objects.create(user=cls.r2, joke=cls.joke, source='explore')
         JokeImpression.objects.create(user=cls.r3, joke=cls.joke, source='feed')
@@ -900,10 +855,10 @@ class WatchMetricsTests(TestCase):
         cls.age = AgeRating.objects.first()
         cls.lang = Language.objects.get(code='en')
 
-        cls.creator = User.objects.create_user(
+        cls.creator = _analytics_user(
             username='watch_creator@svc.com', email='watch_creator@svc.com', password='x'
         )
-        cls.reader = User.objects.create_user(
+        cls.reader = _analytics_user(
             username='watch_reader@svc.com', email='watch_reader@svc.com', password='x'
         )
 

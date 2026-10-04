@@ -1,6 +1,7 @@
 """Tests for checkout/portal endpoints and dormant mode."""
 from unittest.mock import MagicMock, patch
 
+import stripe
 from django.contrib.auth import get_user_model
 from django.test import override_settings
 from rest_framework.test import APITestCase
@@ -36,6 +37,7 @@ class DormantBillingTests(APITestCase):
         self.assertEqual(resp.status_code, 200)
 
 
+@override_settings(CREATOR_CHECKOUT_ENABLED=True, STRIPE_WEBHOOK_SECRET='whsec_test')
 class CheckoutTests(APITestCase):
     """Checkout session with mocked Stripe."""
 
@@ -54,9 +56,9 @@ class CheckoutTests(APITestCase):
 
         mstripe.api_key = ''
         mstripe.api_version = ''
-        mock_session = MagicMock()
-        mock_session.url = 'https://stripe.test/cs_test_123'
+        mock_session = stripe.StripeObject.construct_from({'id': 'cs_test_123', 'url': 'https://stripe.test/cs_test_123'}, None)
         mstripe.checkout.Session.create.return_value = mock_session
+        mstripe.Subscription.list.return_value = stripe.StripeObject.construct_from({'data': [], 'has_more': False}, None)
         mock_customer = MagicMock()
         mock_customer.id = 'cus_test_123'
         mstripe.Customer.create.return_value = mock_customer
@@ -140,9 +142,9 @@ class CheckoutTests(APITestCase):
         )
         mstripe.api_key = ''
         mstripe.api_version = ''
-        mock_session = MagicMock()
-        mock_session.url = 'https://stripe.test/cs_test_resub'
+        mock_session = stripe.StripeObject.construct_from({'id': 'cs_test_resub', 'url': 'https://stripe.test/cs_test_resub'}, None)
         mstripe.checkout.Session.create.return_value = mock_session
+        mstripe.Subscription.list.return_value = stripe.StripeObject.construct_from({'data': [], 'has_more': False}, None)
 
         resp = self.client.post('/api/v1/billing/checkout-session', {'plan_slug': 'creator_pro'})
         self.assertEqual(resp.status_code, 200)
@@ -161,9 +163,9 @@ class CheckoutTests(APITestCase):
         )
         mstripe.api_key = ''
         mstripe.api_version = ''
-        mock_session = MagicMock()
-        mock_session.url = 'https://stripe.test/cs_test_free'
+        mock_session = stripe.StripeObject.construct_from({'id': 'cs_test_free', 'url': 'https://stripe.test/cs_test_free'}, None)
         mstripe.checkout.Session.create.return_value = mock_session
+        mstripe.Subscription.list.return_value = stripe.StripeObject.construct_from({'data': [], 'has_more': False}, None)
 
         resp = self.client.post('/api/v1/billing/checkout-session', {'plan_slug': 'creator_pro'})
         self.assertEqual(resp.status_code, 200)
@@ -255,4 +257,4 @@ class PlansViewTests(APITestCase):
         slugs = [p['slug'] for p in resp.data]
         self.assertIn('free', slugs)
         self.assertIn('creator_pro', slugs)
-        self.assertIn('supporter', slugs)
+        self.assertNotIn('supporter', slugs)
