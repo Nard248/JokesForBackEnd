@@ -22,19 +22,23 @@ laughs stop.
 | Explicit choice | `joined` counts as a member but never toward activation; `left` overrides inference until rejoined |
 
 **Population (privacy line):** every aggregate — including explicit joins — uses
-only active adults with `share_analytics` (`creator_insights.privacy.eligible_analytics_users`),
-and only signals recorded **after** that person's latest opt-in
-(`AnalyticsConsentRecord`; consent is never applied backwards). Signals only from
-`tier_1`, non-removed jokes. Public person-counts (members, engaged members,
-bridges, stats, growth) are rounded to the nearest 5 and are `null` under 5;
-`activity` and `score`
-are `null` while fewer than 5 people contributed in the last 7 days. No response
-contains user ids, names or samples. A person's own affinity is computed from
-their own activity and returned only to them. Explicit joins by people who do not
-share analytics change only their own view.
+only **established** active adults with `share_analytics`
+(`communities.privacy.established_users`, built on
+`creator_insights.privacy.eligible_analytics_users`; see **Privacy: established
+accounts and stable noise** below), and only signals recorded **after** that
+person's latest opt-in (`AnalyticsConsentRecord`; consent is never applied
+backwards). Signals only from `tier_1`, non-removed jokes. Public person-counts
+(members, engaged members, bridges, stats, growth) are released from a daily
+snapshot with keyed, day-stable noise, then rounded to the nearest 5 and `null`
+when the noisy value is under 5; `activity` and `score` are `null` while fewer
+than 5 people contributed in the last 7 days. Status (`active`/`cooling`/`forming`)
+stays live. No response contains user ids, names or samples. A person's own
+affinity is computed from their own activity and returned only to them. Explicit
+joins by people who do not share analytics, or by accounts that are not yet
+established, change only their own view.
 
 Request-triggered only. The aggregate is cached without TTL
-(`communities:aggregate:v2`) behind an opaque, never-reused version (a culled
+(`communities:aggregate:v3`) behind an opaque, never-reused version (a culled
 version key forces a recompute) and a 1-hour hard max age; engagement writes and
 profile saves replace the version
 **after commit** (`communities/signals.py`; anonymous shares are ignored). A stale
@@ -43,15 +47,87 @@ by one lock holder while others serve the previous state, so engagement bursts
 cannot force recomputation. Recomputation reads the materialized signal table,
 not the engagement ledgers — see **Scale: incremental materialization** below.
 
-**Residual risks (accepted 2026-10-04, documented):**
-- Formation is Sybil-sensitive — five consenting accounts can activate a theme.
-- Deterministic coarsening still leaks at rounding boundaries: an attacker with
-  sock accounts can sometimes detect one additional counted member. Layers in
-  place: 5-person threshold, rounding to 5, refresh floor, daily creator
-  snapshot, consent gating, no identities. Fully closing this needs calibrated
-  noise (differential privacy).
-Both are acceptable while communities grant no privileges and expose no member
-lists; revisit before community feeds, conversations or member directories.
+## Privacy: established accounts and stable noise
+
+`communities/privacy.py`. These replace the two residual risks accepted on
+2026-10-04 (five fresh accounts could activate a theme; deterministic rounding
+let sock accounts detect one extra counted member at a rounding boundary).
+
+**Established accounts (Sybil resistance).** A consenting adult counts toward any
+aggregate — activation, member counts, bridges, growth, stats, creator reach —
+only when the account is at least `COMMUNITIES_ESTABLISHED_ACCOUNT_DAYS` old
+(default **7**) and has a positive signal (`CommunitySignal`: like, favorite,
+save, signed-in share) on at least `COMMUNITIES_ESTABLISHED_MIN_JOKES` distinct
+jokes (default **3**). "Active" already implies a verified email whenever
+`EMAIL_VERIFICATION_REQUIRED` is on (unverified sign-ups stay `is_active=False`),
+and Google sign-ups are verified by Google. Why these values:
+- 7 days: a sock farm has to be prepared a week ahead and cannot react to a
+  same-day event (a new creator, a new joke, a target joining); a real reader
+  who signs up and enjoys jokes waits one week, which costs nothing for a
+  descriptive number.
+- 3 distinct jokes: one more than the 2-joke membership minimum, so an account
+  cannot become a counted member from exactly the two jokes that put it in a
+  community; each sock needs engagement beyond the target theme. Signals on any
+  joke count (this gates authenticity, it releases nothing).
+- Both stack with the per-request throttles and the email gate; together they
+  raise the cost of activating a community from "five sign-ups" to "five
+  verified accounts, a week old, each with spread-out engagement".
+A non-established account still sees its own affinity, progress and explicit
+join/leave; `viewer.counted` is `false` and its explanation says when it will
+count. Thresholds are read at query time (no stored flag), so an account starts
+counting at the first recompute after it qualifies.
+
+**Stable calibrated noise (differencing).** Every released person-count gets
+two-sided geometric (discrete Laplace) noise, `P(k) ∝ exp(−ε·|k|)`, the standard
+mechanism for a sensitivity-1 count, at `COMMUNITIES_NOISE_EPSILON` (default
+**1.0**). The noise is a deterministic function of an HMAC
+(`salted_hmac`, SHA-256, keyed from `SECRET_KEY`) over
+`(statistic, subject ids, UTC day)`: asking again on the same day returns the
+same draw, so repeated queries cannot be averaged, and nobody without the key
+can predict or subtract it. The noisy value is then rounded to the nearest 5 and
+suppressed when under 5 (rounding/suppression are post-processing: free).
+Engaged ≤ members and multi-community ≤ total are enforced after noise (also
+post-processing). Every community pair gets a bridge draw, including pairs with
+zero overlap, so a released bridge never proves a real overlap exists.
+
+Released counts come from a **once-a-day snapshot** (`services.daily_aggregate`,
+cache key `communities:daily:v2:{day}`, frozen by the first recompute of the UTC
+day). Without the freeze, an attacker could add or remove socks one at a time to
+locate the day's noise and a rounding boundary, then watch for a real reader
+crossing it; with it, nothing can rise within the day. The snapshot's id sets are
+re-intersected with who counts *now*, so consent withdrawal or account deletion
+still lowers today's numbers (they can only fall within a day).
+
+| Statistic id | Subject | Where |
+|---|---|---|
+| `members`, `engaged` | community | directory, detail, creator `members` (same draw) |
+| `growth` | community | directory (`release_delta`: noised, rounded, never suppressed) |
+| `bridge` | community pair | directory, detail bridges |
+| `member-total`, `multi-community` | — | directory `stats` |
+| `creator-audience` | creator | `creators/me/communities/` `audience.size` |
+| `creator-reached` | creator, community | `creators/me/communities/` `reached_members` |
+
+**Privacy budget.** Each statistic has sensitivity 1 (one person changes it by at
+most 1) and costs ε per day. One person in *k* communities touches about
+`2k` (members, engaged) + `k` (growth) + `C(k,2)` (bridges) + 2 (stats) + their
+creators' reach statistics, so the per-day budget is that many ε — e.g. ≈ 9ε for a
+reader in two communities. Across days the draws are fresh, so an attacker who
+watches a constant count for *n* days composes to *n*·that. This is therefore a
+deterrent calibrated to the threat that was actually accepted — detecting one
+extra person at a rounding boundary — not a lifetime differential-privacy
+guarantee: at ε = 1 the noise has standard deviation ≈ 1.4 people, so whether
+one person moved a count across a rounding boundary is masked by a draw the
+attacker cannot see, cannot repeat within the day, and cannot hold steady across
+days (the true count, the noise and the rounding boundary all move). Raise
+protection by lowering ε (e.g. 0.5 doubles the noise); 0 disables noise and is
+for tests only (exact-count tests run with `COMMUNITIES_NOISE_EPSILON=0`).
+
+**Remaining, much narrower residuals (documented):** within one day, established
+socks that are in the snapshot can withdraw consent one at a time to learn where
+a count sits relative to a rounding boundary, and could then see that *someone*
+in the set withdrew or deleted their account that day (never who, never a join).
+Revisit the budget before community feeds, conversations or member directories,
+which would add statistics per person.
 
 ## Scale: incremental materialization
 
@@ -126,7 +202,8 @@ week-ago comparison.
   "generated_at": "2026-10-04T11:43:50Z",
   "stats": {"active_communities": 12, "forming_communities": 1, "members": 150,
             "multi_community_members": 57, "signals_7d": 1867},
-  "viewer": null | {"counted": true, "communities": ["puns", "space"]},
+  "counts_date": "2026-10-04",   // UTC day of the snapshot the person-counts come from
+  "viewer": null | {"counted": true, "shares_analytics": true, "communities": ["puns", "space"]},
   "communities": [{
     "slug": "work", "name": "Work", "description": "…", "emoji": "💼", "color": "#6A1CF6",
     "status": "active", "members": 44, "engaged_members": 40, "growth": 3, "score": 182.4,
@@ -138,13 +215,18 @@ week-ago comparison.
   "bridges": [{"source": "puns", "target": "tech", "members": 10}],  // ≥5 only, slugs sorted
   "methodology": {"half_life_days": 7, "membership_threshold": 6, "minimum_content": 2,
                   "minimum_members": 5, "content_cap": 4, "weights": {...}, "window_days": 90,
-                  "minimum_display": 5, "description": "…"}
+                  "minimum_display": 5, "description": "…", "established_account_days": 7,
+                  "established_min_jokes": 3, "noise_epsilon": 1.0}
 }
 ```
 
 `members`, `engaged_members`, `stats.members`, `stats.multi_community_members`,
-`bridges[].members`: nearest 5, `null` under 5. `growth`: nearest 5, only for
-active communities with ≥5 engaged a week ago.
+`bridges[].members`: day-stable noise, then nearest 5, `null` when the noisy value
+is under 5 (so a `null` or a `5` no longer reveals the exact count). `growth`:
+noised change in engaged members since a week ago, nearest 5, only for active
+communities whose engaged count is shown. `viewer.counted` is `true` only for an
+established, consenting account; `shares_analytics` tells a non-counted viewer
+whether the missing piece is consent or account age/activity.
 
 ## GET `communities/<slug>/` — AllowAny
 
@@ -158,7 +240,7 @@ unlisted slugs.
 ## POST `communities/<slug>/membership/` — IsAuthenticated
 
 Body `{"action": "join" | "leave"}` → the updated community row (with `viewer`;
-aggregate counts may lag by up to the refresh floor).
+status may lag by up to the refresh floor; person-counts come from the day's snapshot).
 400 invalid action, 404 unknown slug. Throttle scope `community_membership`
 (`THROTTLE_COMMUNITY_MEMBERSHIP`, default 60/hour).
 
@@ -182,13 +264,15 @@ Permissions: `IsAuthenticated` + `IsCreator` (≥1 published joke) +
 }
 ```
 
-Audience = eligible adults (excluding the creator) with a positive signal on the
-creator's tier_1 jokes in the window. `members` excludes the creator. To stop a
-creator from matching a single new reader (e.g. with sock accounts plus a "new
-follower" notification) the payload is a **daily snapshot** (`snapshot_date`, UTC)
-and counts are coarsened: `reached_members` and `audience.size` floor to multiples
-of 5, `members` rounds to the nearest 5, `reach_rate` floors to 5 % steps; under 5
-is `null`. Snapshot sets are intersected with **current** eligibility on every
+Audience = established, consenting adults (excluding the creator) with a
+positive signal on the creator's tier_1 jokes in the window. `members` excludes
+the creator. To stop a creator from matching a single new reader (e.g. with sock
+accounts plus a "new follower" notification) the payload is a **daily snapshot**
+(`snapshot_date`, UTC) and every count is released like a public count:
+day-stable keyed noise (`creator-audience`, `creator-reached`; `members` reuses
+the public `members` draw so extra creator accounts get no fresh samples of it),
+nearest 5, `null` when the noisy value is under 5; `reached_members` ≤ `members`;
+`reach_rate` is computed from the released numbers and floors to 5 % steps. Snapshot sets are intersected with **current** eligibility on every
 read, so consent withdrawal or account deletion removes a reader immediately
 (numbers can fall within a day, never rise). Opportunities are rule-based
 descriptions of current evidence, never predictions.

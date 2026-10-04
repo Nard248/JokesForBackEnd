@@ -35,8 +35,15 @@ Open http://localhost:5180. Password for every account: `Showcase-2026!`
 
 As Sam open `/communities/space`: *Forming · You've enjoyed 1 so far*. Laugh (😂)
 at "Why did the star get detention?" in *Trending in Space* → Space turns
-**Active · 5 members**, Sam gets the YOU badge, and the button becomes *Leave
-community*. Re-run `seed_showcase` to reset.
+**Active** (status is live), Sam gets the YOU badge, and the button becomes *Leave
+community*. The member count does not jump with it: person-counts come from a
+once-a-day snapshot with day-stable noise (`Docs/API/Communities.md`, *Privacy*),
+so Space keeps the morning's figure — usually "fewer than 5" — until the next UTC
+day. Re-run `seed_showcase` to reset (it also drops the day's snapshot).
+
+Every showcase account is backdated 150 days and the scripted readers enjoy 3+
+distinct jokes, so they are *established* and count; a brand-new account you
+sign up yourself is not counted for a week (`viewer.counted: false`).
 
 Other states: Weather is **cooling** (its fans' signals are two weeks old);
 School/Science/Dating are small but active; 15% of the audience does not share

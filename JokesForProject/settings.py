@@ -523,6 +523,18 @@ DIGEST_MILESTONE_THRESHOLD = int(os.getenv('DIGEST_MILESTONE_THRESHOLD', '10'))
 # below).
 DIGEST_CRON_TOKEN = os.getenv('DIGEST_CRON_TOKEN', '').strip()
 
+# Self-forming communities (communities/privacy.py, Docs/API/Communities.md).
+# Only "established" accounts count toward community numbers: at least this
+# many days old and with a positive signal on at least this many distinct jokes
+# (Sybil resistance). Released person-counts get keyed, day-stable discrete
+# Laplace noise at this epsilon per count before rounding to 5; 0 disables the
+# noise and is meant for tests only. Stale aggregates refresh at most every
+# COMMUNITIES_MIN_REFRESH_SECONDS.
+COMMUNITIES_ESTABLISHED_ACCOUNT_DAYS = int(os.getenv('COMMUNITIES_ESTABLISHED_ACCOUNT_DAYS', '7'))
+COMMUNITIES_ESTABLISHED_MIN_JOKES = int(os.getenv('COMMUNITIES_ESTABLISHED_MIN_JOKES', '3'))
+COMMUNITIES_NOISE_EPSILON = float(os.getenv('COMMUNITIES_NOISE_EPSILON', '1.0'))
+COMMUNITIES_MIN_REFRESH_SECONDS = int(os.getenv('COMMUNITIES_MIN_REFRESH_SECONDS', '5'))
+
 # Stripe / billing — env-gated (dormant when STRIPE_SECRET_KEY is unset)
 STRIPE_SECRET_KEY      = os.getenv('STRIPE_SECRET_KEY', '').strip()
 STRIPE_PUBLISHABLE_KEY = os.getenv('STRIPE_PUBLISHABLE_KEY', '').strip()

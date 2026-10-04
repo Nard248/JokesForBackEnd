@@ -68,7 +68,16 @@ class Catalog:
         return user
 
 
-@override_settings(COMMUNITIES_MIN_REFRESH_SECONDS=0)
+# The frozen ledger scan predates the established-account rule and noise; both
+# are population/release rules covered by test_api and test_privacy, so they are
+# switched off where the materialized read path itself is under test.
+WITHOUT_POPULATION_RULES = {
+    'COMMUNITIES_MIN_REFRESH_SECONDS': 0, 'COMMUNITIES_ESTABLISHED_ACCOUNT_DAYS': 0,
+    'COMMUNITIES_ESTABLISHED_MIN_JOKES': 0, 'COMMUNITIES_NOISE_EPSILON': 0,
+}
+
+
+@override_settings(**WITHOUT_POPULATION_RULES)
 class EquivalenceTests(Catalog, TestCase):
     """Randomized scenarios: every derived number must match the ledger scan."""
 
@@ -272,7 +281,7 @@ class EquivalenceTests(Catalog, TestCase):
         self.check_scenario(4)
 
 
-@override_settings(COMMUNITIES_MIN_REFRESH_SECONDS=0)
+@override_settings(**WITHOUT_POPULATION_RULES)
 class MaintenanceTests(Catalog, TestCase):
     """Each write path keeps the mirror (and therefore the numbers) right."""
 
