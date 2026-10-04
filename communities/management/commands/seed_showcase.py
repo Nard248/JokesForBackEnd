@@ -159,6 +159,7 @@ class Command(BaseCommand):
             )
         self.rng = random.Random(RANDOM_SEED)
         self.now = timezone.now()
+        self.opted_in = self.now - timedelta(days=120)  # consent predates every seeded signal
         self._seed()
         services.invalidate()
         self._report()
@@ -202,7 +203,7 @@ class Command(BaseCommand):
         user.preference.notification_enabled = False
         user.preference.save(update_fields=['onboarding_completed', 'notification_enabled'])
         AnalyticsConsentRecord.objects.create(user=user, enabled=consent, policy_version=POLICY_VERSION,
-                                              provenance='preference')
+                                              provenance='preference', recorded_at=self.opted_in)
         return user
 
     # --------------------------------------------------------------------- seed
@@ -284,7 +285,8 @@ class Command(BaseCommand):
             profile.share_analytics = self.rng.random() >= NON_CONSENTING_SHARE
             profile.email_digest_opt_in = False
             consent_rows.append(AnalyticsConsentRecord(user_id=profile.user_id, enabled=profile.share_analytics,
-                                                       policy_version=POLICY_VERSION, provenance='preference'))
+                                                       policy_version=POLICY_VERSION, provenance='preference',
+                                                       recorded_at=self.opted_in))
         UserProfile.objects.bulk_update(profiles, ['display_name', 'date_of_birth', 'share_analytics',
                                                    'email_digest_opt_in'])
         AnalyticsConsentRecord.objects.bulk_create(consent_rows)

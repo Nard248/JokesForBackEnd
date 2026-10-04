@@ -21,16 +21,27 @@ laughs stop.
 | Status | `active` ≥5 engaged · `cooling` <5 now but ≥5 seven days ago · `forming` otherwise |
 | Explicit choice | `joined` counts as a member but never toward activation; `left` overrides inference until rejoined |
 
-**Population (privacy line):** aggregates use only adults with `share_analytics`
-(`creator_insights.privacy.eligible_analytics_users`), plus adults who explicitly
-joined. Signals only from `tier_1`, non-removed jokes. Counts under 5 are
-returned as `null`. No response contains user ids, names or samples. A person's
-own affinity is computed from their own activity and returned only to them.
+**Population (privacy line):** every aggregate — including explicit joins — uses
+only active adults with `share_analytics` (`creator_insights.privacy.eligible_analytics_users`),
+and only signals recorded **after** that person's latest opt-in
+(`AnalyticsConsentRecord`; consent is never applied backwards). Signals only from
+`tier_1`, non-removed jokes. Counts under 5 are `null`; `activity` and `score`
+are `null` while fewer than 5 people contributed in the last 7 days. No response
+contains user ids, names or samples. A person's own affinity is computed from
+their own activity and returned only to them. Explicit joins by people who do not
+share analytics change only their own view.
 
-Request-triggered only: the aggregate is computed over the bounded window and
-cached (`communities:aggregate:v1`, 300 s). Reactions, favorites, saves, shares
-and profile saves invalidate it (`communities/signals.py`). Scaling path:
-materialize per-(user, community) scores incrementally; engine inputs unchanged.
+Request-triggered only. The aggregate is cached without TTL
+(`communities:aggregate:v2`); engagement writes and profile saves bump a version
+**after commit** (`communities/signals.py`; anonymous shares are ignored). A stale
+entry is recomputed at most every `COMMUNITIES_MIN_REFRESH_SECONDS` (default 10)
+by one lock holder while others serve the previous state, so engagement bursts
+cannot force recomputation. Scaling path: materialize per-(user, community)
+scores incrementally; engine inputs unchanged.
+
+**Residual risk (accepted, documented):** formation is Sybil-sensitive — five
+consenting accounts can activate a theme. Acceptable while communities grant no
+privileges; revisit before adding community feeds or conversations.
 
 ## GET `communities/` — AllowAny
 
@@ -62,13 +73,15 @@ materialize per-(user, community) scores incrementally; engine inputs unchanged.
 
 `{community, trending[6], newest[4], creators[≤6], bridges[]}`. Jokes are full
 `JokeSerializer` payloads filtered by `allowed_tiers(request)` + `visible_jokes`
-(removed / blocked hidden), trending ranked by 30-day positive engagement.
-`creators` lists only accounts with `public_profile=True`. 404 for unknown or
+(removed / blocked hidden), trending ranked by 30-day positive engagement using
+per-signal correlated subqueries (no join fan-out; anonymous shares excluded).
+`creators` lists only active accounts with `public_profile=True`. 404 for unknown or
 unlisted slugs.
 
 ## POST `communities/<slug>/membership/` — IsAuthenticated
 
-Body `{"action": "join" | "leave"}` → the updated community row (with `viewer`).
+Body `{"action": "join" | "leave"}` → the updated community row (with `viewer`;
+aggregate counts may lag by up to the refresh floor).
 400 invalid action, 404 unknown slug. Throttle scope `community_membership`
 (`THROTTLE_COMMUNITY_MEMBERSHIP`, default 60/hour).
 
@@ -93,9 +106,13 @@ Permissions: `IsAuthenticated` + `IsCreator` (≥1 published joke) +
 ```
 
 Audience = eligible adults (excluding the creator) with a positive signal on the
-creator's tier_1 jokes in the window. `members` excludes the creator. Reach and
-audience under 5 are `null`. Opportunities are rule-based descriptions of
-current evidence, never predictions.
+creator's tier_1 jokes in the window. `members` excludes the creator. To stop a
+creator from matching a single new reader (e.g. with sock accounts plus a "new
+follower" notification) the payload is a **daily snapshot** (`snapshot_date`, UTC)
+and counts are coarsened: `reached_members` and `audience.size` floor to multiples
+of 5, `members` rounds to the nearest 5, `reach_rate` floors to 5 % steps; under 5
+is `null`. Opportunities are rule-based descriptions of current evidence, never
+predictions.
 
 ## Account data
 

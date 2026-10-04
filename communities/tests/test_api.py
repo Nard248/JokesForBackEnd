@@ -2,7 +2,7 @@ from datetime import date, timedelta
 
 from django.contrib.auth import get_user_model
 from django.core.cache import cache
-from django.test import TestCase
+from django.test import TestCase, override_settings
 from django.utils import timezone
 from rest_framework.test import APIClient
 
@@ -11,6 +11,7 @@ from communities import services
 from communities.models import Community, CommunityMembership
 from jokes.models import (
     AgeRating,
+    AnalyticsConsentRecord,
     ContextTag,
     Favorite,
     Format,
@@ -22,8 +23,10 @@ from jokes.models import (
 )
 
 User = get_user_model()
+OPTED_IN = timezone.now() - timedelta(days=365)
 
 
+@override_settings(COMMUNITIES_MIN_REFRESH_SECONDS=0)
 class CommunityFixture(TestCase):
     def setUp(self):
         cache.clear()
@@ -48,12 +51,16 @@ class CommunityFixture(TestCase):
         user.profile.date_of_birth = date(1990, 1, 1) if adult else date.today() - timedelta(days=365 * 15)
         user.profile.share_analytics = consent
         user.profile.save()
+        if consent:
+            AnalyticsConsentRecord.objects.create(user=user, enabled=True, policy_version='test',
+                                                  provenance='preference', recorded_at=OPTED_IN)
         return user
 
     def enjoy(self, user, jokes):
-        for joke in jokes:
-            JokeReaction.objects.create(user=user, joke=joke, reaction='lol')
-            Favorite.objects.create(user=user, joke=joke)
+        with self.captureOnCommitCallbacks(execute=True):
+            for joke in jokes:
+                JokeReaction.objects.create(user=user, joke=joke, reaction='lol')
+                Favorite.objects.create(user=user, joke=joke)
 
     def directory(self, user=None):
         self.client.force_authenticate(user)
@@ -156,6 +163,62 @@ class FormationTests(CommunityFixture):
         self.enjoy(fans[4], self.space_jokes[:2])
         rows, _ = self.directory()
         self.assertEqual(rows['space']['status'], 'active')
+
+    @override_settings(COMMUNITIES_MIN_REFRESH_SECONDS=60)
+    def test_engagement_bursts_cannot_force_recomputation(self):
+        for i in range(4):
+            self.enjoy(self.person(f'fan{i}'), self.space_jokes[:2])
+        self.directory()
+        self.enjoy(self.person('fan4'), self.space_jokes[:2])
+        rows, _ = self.directory()
+        self.assertEqual(rows['space']['status'], 'forming')  # stale within the refresh floor
+
+    def test_small_communities_hide_activity_and_score(self):
+        self.enjoy(self.person('lonely'), self.space_jokes[:2])
+        rows, _ = self.directory()
+        self.assertIsNone(rows['space']['activity'])
+        self.assertIsNone(rows['space']['score'])
+
+    def test_explicit_joins_by_non_sharing_adults_are_not_counted(self):
+        for i in range(5):
+            self.enjoy(self.person(f'fan{i}'), self.space_jokes[:2])
+        for i in range(3):
+            CommunityMembership.objects.create(user=self.person(f'quiet{i}', consent=False),
+                                               community=self.space.community, state='joined')
+        rows, _ = self.directory()
+        self.assertEqual(rows['space']['members'], 5)
+
+    def test_reactions_before_opting_in_do_not_count(self):
+        for i in range(5):
+            fan = self.person(f'fan{i}')
+            self.enjoy(fan, self.space_jokes[:2])
+            AnalyticsConsentRecord.objects.filter(user=fan).update(recorded_at=timezone.now() + timedelta(minutes=1))
+        services.invalidate()
+        rows, _ = self.directory()
+        self.assertEqual(rows['space']['status'], 'forming')
+
+    def test_consent_withdrawal_invalidates_after_commit(self):
+        fans = [self.person(f'fan{i}') for i in range(5)]
+        for fan in fans:
+            self.enjoy(fan, self.space_jokes[:2])
+        rows, _ = self.directory()
+        self.assertEqual(rows['space']['status'], 'active')
+        with self.captureOnCommitCallbacks(execute=False) as callbacks:
+            fans[0].profile.share_analytics = False
+            fans[0].profile.save()
+        self.assertTrue(callbacks)  # invalidation is deferred to commit
+        for callback in callbacks:
+            callback()
+        rows, _ = self.directory()
+        self.assertEqual(rows['space']['status'], 'forming')
+
+    def test_anonymous_shares_do_not_affect_trending(self):
+        fan = self.person('fan')
+        self.enjoy(fan, self.space_jokes[2:3])
+        for _ in range(10):
+            ShareEvent.objects.create(user=None, joke=self.space_jokes[0], platform='copy')
+        response = self.client.get('/api/v1/communities/space/')
+        self.assertEqual(response.data['trending'][0]['id'], self.space_jokes[2].pk)
 
     def test_payload_never_contains_user_identities(self):
         fans = [self.person(f'fan{i}') for i in range(6)]
@@ -293,13 +356,25 @@ class CreatorReachTests(CommunityFixture):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response['Cache-Control'], 'no-store')
         rows = {r['slug']: r for r in response.data['communities']}
-        self.assertEqual(rows['space']['reached_members'], 6)
-        self.assertEqual(rows['space']['reach_rate'], 100.0)
+        self.assertEqual(rows['space']['reached_members'], 5)  # coarsened to multiples of 5
+        self.assertEqual(rows['space']['members'], 5)
+        self.assertEqual(rows['space']['reach_rate'], 100)
         self.assertEqual(rows['space']['your_jokes'], 2)
-        self.assertEqual(response.data['audience']['size'], 6)
+        self.assertEqual(response.data['audience']['size'], 5)
         kinds = {o['kind']: o for o in response.data['opportunities']}
         self.assertEqual(kinds['stronghold']['slug'], 'space')
         self.assertEqual(kinds['untapped']['slug'], 'office-life')
+
+    def test_reach_is_a_daily_snapshot(self):
+        self.pro()
+        fans = [self.person(f'fan{i}') for i in range(6)]
+        for fan in fans[:5]:
+            self.enjoy(fan, self.mine)
+        self.client.force_authenticate(self.creator)
+        first = self.client.get('/api/v1/creators/me/communities/').data
+        self.enjoy(fans[5], self.mine)  # one more reader the same day
+        second = self.client.get('/api/v1/creators/me/communities/').data
+        self.assertEqual(first, second)
 
     def test_small_reach_is_suppressed(self):
         self.pro()

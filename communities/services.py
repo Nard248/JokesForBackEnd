@@ -18,25 +18,30 @@ computed from a bounded 90-day signal window and cached; engagement writes
 invalidate it (see ``signals.py``). At scale this becomes an incremental
 per-(user, community) materialization — the engine's inputs do not change.
 """
+import time
+import uuid
 from collections import Counter, defaultdict
 from datetime import timedelta
 from itertools import combinations
 
 from dateutil.relativedelta import relativedelta
+from django.conf import settings
 from django.core.cache import cache
-from django.db.models import Count, Q
+from django.db.models import Count, Max, OuterRef, Subquery, Value
+from django.db.models.functions import Coalesce
 from django.utils import timezone
 
 from communities import engine
 from communities.models import Community, CommunityMembership
 from creator_insights.privacy import eligible_analytics_users
 from jokes.identity import public_display_name, public_handle
-from jokes.models import Favorite, Joke, JokeReaction, SavedJoke, ShareEvent
+from jokes.models import AnalyticsConsentRecord, Favorite, Joke, JokeReaction, SavedJoke, ShareEvent
 
 WINDOW_DAYS = 90
 MIN_DISPLAY = engine.MINIMUM_MEMBERS
-CACHE_KEY = 'communities:aggregate:v1'
-CACHE_SECONDS = 300
+CACHE_KEY = 'communities:aggregate:v2'
+VERSION_KEY = 'communities:aggregate:version'
+LOCK_KEY = 'communities:aggregate:lock'
 POSITIVE_REACTIONS = (JokeReaction.REACTION_LOL, JokeReaction.REACTION_CRYING)
 
 METHODOLOGY = {
@@ -86,6 +91,31 @@ def collect_signals(since, users=None, jokes=None):
     return rows
 
 
+def consent_starts(users):
+    """When each currently-consenting person's latest opt-in was recorded.
+
+    Consent is not applied backwards: reactions from before someone turned on
+    audience analytics never feed a public or creator-visible number. People
+    with no recorded opt-in contribute nothing.
+    """
+    return dict(
+        AnalyticsConsentRecord.objects.filter(user__in=users, enabled=True)
+        .values_list('user_id').annotate(start=Max('recorded_at'))
+    )
+
+
+def eligible_signals(since, jokes=None, exclude_user=None):
+    """Positive signals from the eligible population, each inside its consent period."""
+    users = eligible_analytics_users()
+    if exclude_user is not None:
+        users = users.exclude(pk=exclude_user.pk)
+    starts = consent_starts(users.values('pk'))
+    return [
+        signal for signal in collect_signals(since, users=list(starts), jokes=jokes)
+        if signal[3] >= starts[signal[0]]
+    ]
+
+
 def _tags_by_joke(joke_ids, tag_to_community):
     through = Joke.context_tags.through
     mapping = defaultdict(list)
@@ -125,13 +155,15 @@ def compute_aggregate(now=None):
     now = now or timezone.now()
     communities = listed_communities()
     tag_to_community = {c.tag_id: c.pk for c in communities}
-    signals = collect_signals(now - timedelta(days=WINDOW_DAYS), users=eligible_analytics_users().values('pk'))
+    signals = eligible_signals(now - timedelta(days=WINDOW_DAYS))
     events = to_engine_events(signals, tag_to_community)
 
+    # Consent gates every aggregate: an explicit join by someone who does not
+    # share analytics changes only their own view, never a public number.
     memberships = list(
         CommunityMembership.objects.filter(
             community_id__in=list(tag_to_community.values()),
-            user__profile__date_of_birth__lte=_adult_cutoff(),
+            user__in=eligible_analytics_users().values('pk'),
         ).values('user_id', 'community_id', 'state', 'updated_at')
     )
     overrides = [{'actor_id': m['user_id'], 'subject_id': m['community_id'], 'state': m['state']}
@@ -156,10 +188,12 @@ def compute_aggregate(now=None):
             before[community].add(person)
 
     activity = defaultdict(lambda: [0] * 7)
+    contributors = defaultdict(set)
     for event in events:
         days_ago = (now.date() - event['occurred_at'].date()).days
         if 0 <= days_ago <= 6:
             activity[event['subject_id']][6 - days_ago] += 1
+            contributors[event['subject_id']].add(event['actor_id'])
 
     bridges = Counter()
     for person_topics in topics.values():
@@ -178,6 +212,7 @@ def compute_aggregate(now=None):
             'members': sorted(members[cid]),
             'engaged': len(inferred[cid]),
             'previous': len(before[cid]),
+            'contributors': len(contributors[cid]),
             'score': round(scores[cid], 2),
             'activity': activity[cid],
             'joke_count': joke_counts.get(community.tag_id, 0),
@@ -191,16 +226,47 @@ def compute_aggregate(now=None):
     }
 
 
+def _version():
+    version = cache.get(VERSION_KEY)
+    if version is None:
+        cache.add(VERSION_KEY, 1, None)
+        version = cache.get(VERSION_KEY, 1)
+    return version
+
+
 def aggregate():
-    data = cache.get(CACHE_KEY)
-    if data is None:
+    """Serve the cached aggregate; recompute when it is stale, at most every
+    ``COMMUNITIES_MIN_REFRESH_SECONDS``, and by one request at a time.
+
+    Engagement writes only bump a version, so a burst of reactions (or someone
+    toggling one in a loop) cannot force a recompute on every read.
+    """
+    version = _version()
+    entry = cache.get(CACHE_KEY)
+    now = time.time()
+    min_refresh = getattr(settings, 'COMMUNITIES_MIN_REFRESH_SECONDS', 10)
+    if entry is not None and (entry['version'] == version or now - entry['computed'] < min_refresh):
+        return entry['data']
+    token = uuid.uuid4().hex
+    owns_lock = cache.add(LOCK_KEY, token, 30)
+    if not owns_lock and entry is not None:
+        return entry['data']  # another request is recomputing; serve the previous state
+    try:
         data = compute_aggregate()
-        cache.set(CACHE_KEY, data, CACHE_SECONDS)
+        if owns_lock:
+            # No TTL: freshness comes from the version and the refresh floor.
+            cache.set(CACHE_KEY, {'data': data, 'version': version, 'computed': now}, None)
+    finally:
+        if owns_lock and cache.get(LOCK_KEY) == token:
+            cache.delete(LOCK_KEY)
     return data
 
 
 def invalidate():
-    cache.delete(CACHE_KEY)
+    try:
+        cache.incr(VERSION_KEY)
+    except ValueError:
+        cache.set(VERSION_KEY, 2, None)
 
 
 def _shown(count):
@@ -256,9 +322,12 @@ def _explanation(community, status, engaged, viewer, counted):
 
 def community_row(community, data, viewer=None, viewer_ctx=None):
     row = data['rows'].get(community.pk) or {
-        'members': [], 'engaged': 0, 'previous': 0, 'score': 0, 'activity': [0] * 7, 'joke_count': 0,
+        'members': [], 'engaged': 0, 'previous': 0, 'contributors': 0, 'score': 0, 'activity': [0] * 7,
+        'joke_count': 0,
     }
     status = _status(row['engaged'], row['previous'])
+    # Activity and score describe individuals when few people contribute.
+    visible_activity = row['contributors'] >= MIN_DISPLAY
     counted = bool(viewer_ctx and viewer_ctx['counted'])
     payload = {
         'slug': community.tag.slug,
@@ -270,9 +339,9 @@ def community_row(community, data, viewer=None, viewer_ctx=None):
         'members': _shown(len(row['members'])),
         'engaged_members': _shown(row['engaged']),
         'growth': row['engaged'] - row['previous'] if status == 'active' and row['previous'] >= MIN_DISPLAY else None,
-        'score': row['score'],
+        'score': row['score'] if visible_activity else None,
         'joke_count': row['joke_count'],
-        'activity': row['activity'],
+        'activity': row['activity'] if visible_activity else None,
         'explanation': _explanation(community, status, row['engaged'], viewer, counted),
         'viewer': None,
     }
@@ -295,7 +364,7 @@ def directory(user):
     ctx = viewer_context(user)
     states = viewer_states(user, communities) if ctx else {}
     rows = [community_row(c, data, states.get(c.pk), ctx) for c in communities]
-    rows.sort(key=lambda r: ({'active': 0, 'forming': 1, 'cooling': 2}[r['status']], -r['score'], r['name']))
+    rows.sort(key=lambda r: ({'active': 0, 'forming': 1, 'cooling': 2}[r['status']], -(r['score'] or 0), r['name']))
     slug_by_id = {c.pk: c.tag.slug for c in communities}
     bridges = sorted(
         ({'source': min(slug_by_id[a], slug_by_id[b]), 'target': max(slug_by_id[a], slug_by_id[b]), 'members': n}
@@ -309,7 +378,7 @@ def directory(user):
             'forming_communities': sum(r['status'] == 'forming' for r in rows),
             'members': _shown(data['member_total']),
             'multi_community_members': _shown(data['multi_community']),
-            'signals_7d': sum(sum(r['activity']) for r in rows),
+            'signals_7d': sum(sum(r['activity']) for r in rows if r['activity']),
         },
         'viewer': ctx and {**ctx, 'communities': [r['slug'] for r in rows if r['viewer'] and r['viewer']['member']]},
         'communities': rows,
@@ -318,14 +387,22 @@ def directory(user):
     }
 
 
+def _windowed_count(model, stamp, since, **filters):
+    """Correlated per-joke count inside the window (no cross-table join fan-out)."""
+    counted = (model.objects.filter(joke=OuterRef('pk'), **{f'{stamp}__gte': since}, **filters)
+               .order_by().values('joke').annotate(n=Count('pk')).values('n'))
+    return Coalesce(Subquery(counted), Value(0))
+
+
 def _scored_jokes(queryset, since):
+    """Rank by recent positive engagement. Anonymous shares are excluded: they
+    are unauthenticated, undeduplicated and never count toward communities."""
     return queryset.annotate(
         community_score=(
-            Count('reactions_v2', filter=Q(reactions_v2__reaction__in=POSITIVE_REACTIONS,
-                                           reactions_v2__updated_at__gte=since), distinct=True)
-            + Count('favorited_by', filter=Q(favorited_by__created_at__gte=since), distinct=True)
-            + Count('saved_by', filter=Q(saved_by__created_at__gte=since), distinct=True)
-            + 2 * Count('share_events', filter=Q(share_events__created_at__gte=since), distinct=True)
+            _windowed_count(JokeReaction, 'updated_at', since, reaction__in=POSITIVE_REACTIONS)
+            + _windowed_count(Favorite, 'created_at', since)
+            + _windowed_count(SavedJoke, 'created_at', since)
+            + 2 * _windowed_count(ShareEvent, 'created_at', since, user__isnull=False)
         )
     )
 
@@ -341,7 +418,7 @@ def community_jokes(community, base_queryset, limit=6):
 
 def community_creators(community, base_queryset, limit=6):
     """Public creators publishing on this theme. Creators are public by design."""
-    counts = (base_queryset.filter(context_tags=community.tag, creator__isnull=False,
+    counts = (base_queryset.filter(context_tags=community.tag, creator__isnull=False, creator__is_active=True,
                                    creator__profile__public_profile=True)
               .values('creator').annotate(n=Count('id', distinct=True)).order_by('-n', 'creator')[:limit])
     from django.contrib.auth import get_user_model
@@ -393,14 +470,17 @@ def creator_reach(user):
     from creator_insights.services import resolve_creator_jokes
 
     now = timezone.now()
+    day = now.date().isoformat()
+    key = f'communities:creator-reach:{user.pk}:{day}'
+    cached = cache.get(key)
+    if cached is not None:
+        return cached
     communities = listed_communities()
-    data = aggregate()
+    data = daily_aggregate(day)
     creator_jokes = resolve_creator_jokes(user).filter(content_tier='tier_1')
     audience = {
-        person for person, _, _, _ in collect_signals(
-            now - timedelta(days=WINDOW_DAYS),
-            users=eligible_analytics_users().exclude(pk=user.pk).values('pk'),
-            jokes=creator_jokes.values('pk'),
+        person for person, _, _, _ in eligible_signals(
+            now - timedelta(days=WINDOW_DAYS), jokes=creator_jokes.values('pk'), exclude_user=user,
         )
     }
     your_jokes = dict(
@@ -414,28 +494,53 @@ def creator_reach(user):
         # A creator is also a reader; their own membership never inflates their reach.
         members = set(data['rows'].get(community.pk, {}).get('members', ())) - {user.pk}
         reached = len(members & audience)
-        shown_reached = _shown(reached)
+        shown_reached = _coarse_floor(reached)
         rows.append({
             **{k: base[k] for k in ('slug', 'name', 'emoji', 'color', 'status', 'joke_count')},
-            'members': _shown(len(members)),
+            'members': _coarse_round(len(members)),
             'reached_members': shown_reached,
-            'reach_rate': round(100 * reached / len(members), 1) if shown_reached is not None else None,
+            'reach_rate': int(100 * reached / len(members)) // 5 * 5 if shown_reached is not None else None,
             'your_jokes': your_jokes.get(community.tag_id, 0),
         })
     rows.sort(key=lambda r: (-(r['reached_members'] or 0), -(r['your_jokes']), r['name']))
-    return {
+    result = {
         'window_days': WINDOW_DAYS,
-        'audience': {'size': _shown(len(audience)), 'minimum': MIN_DISPLAY},
+        'snapshot_date': day,
+        'audience': {'size': _coarse_floor(len(audience)), 'minimum': MIN_DISPLAY},
         'communities': rows,
         'opportunities': _opportunities(rows, data, communities),
         'measurement_notes': [
             f'Audience = adults sharing analytics who laughed at, favorited, saved or shared one of your '
             f'jokes in the last {WINDOW_DAYS} days. Your own activity is excluded.',
-            f'Counts under {MIN_DISPLAY} are hidden to protect individual readers.',
-            'Communities form from reader behaviour across all creators, not only yours.',
+            f'Counts are approximate (rounded to multiples of {MIN_DISPLAY}) and counts under {MIN_DISPLAY} '
+            'are hidden, so no individual reader can be singled out.',
+            'Refreshed once a day (UTC). Communities form from reader behaviour across all creators.',
             'Opportunities describe current evidence; they do not predict or guarantee reach.',
         ],
     }
+    cache.set(key, result, 26 * 3600)
+    return result
+
+
+def daily_aggregate(day):
+    """One aggregate per UTC day for creator-facing numbers, so a single new
+    reader can't be matched to a same-day change in a creator's reach."""
+    key = f'communities:daily:{day}'
+    data = cache.get(key)
+    if data is None:
+        data = compute_aggregate()
+        cache.set(key, data, 26 * 3600)
+    return data
+
+
+def _coarse_floor(count):
+    return count // MIN_DISPLAY * MIN_DISPLAY if count >= MIN_DISPLAY else None
+
+
+def _coarse_round(count):
+    if count < MIN_DISPLAY:
+        return None
+    return max(MIN_DISPLAY, int(count / MIN_DISPLAY + 0.5) * MIN_DISPLAY)
 
 
 def _opportunities(rows, data, communities, limit=4):
@@ -445,7 +550,7 @@ def _opportunities(rows, data, communities, limit=4):
     if strongest:
         picks.append({
             'kind': 'stronghold', 'slug': strongest['slug'], 'name': strongest['name'], 'emoji': strongest['emoji'],
-            'evidence': (f'{strongest["reached_members"]} of {strongest["members"]} {strongest["name"]} members '
+            'evidence': (f'About {strongest["reached_members"]} of {strongest["members"]} {strongest["name"]} members '
                          f'({strongest["reach_rate"]}%) engaged with your jokes.'),
             'action': f'Group your {strongest["name"]} material into a series or set list and keep it coming.',
         })
@@ -453,11 +558,11 @@ def _opportunities(rows, data, communities, limit=4):
     gaps = [r for r in rows if r['status'] == 'active' and r['your_jokes'] == 0]
     gaps.sort(key=lambda r: (-(r['reached_members'] or 0), -(r['members'] or 0)))
     for row in gaps[:2]:
-        warm = (f' {row["reached_members"]} of them already enjoy your jokes,'
+        warm = (f' About {row["reached_members"]} of them already enjoy your jokes,'
                 if row['reached_members'] else '')
         picks.append({
             'kind': 'untapped', 'slug': row['slug'], 'name': row['name'], 'emoji': row['emoji'],
-            'evidence': (f'{row["members"] or "Several"} readers form an active {row["name"]} community.'
+            'evidence': (f'About {row["members"] or "several"} readers form an active {row["name"]} community.'
                          f'{warm} but you have not published for this theme yet.').replace('. but', ', but'),
             'action': f'Try one {row["name"]} joke and tag it with the theme so this audience can find it.',
         })

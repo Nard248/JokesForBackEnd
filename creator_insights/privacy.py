@@ -6,6 +6,7 @@ from django.utils import timezone
 
 def eligible_analytics_users():
     return get_user_model().objects.filter(
+        is_active=True,
         profile__share_analytics=True,
         profile__date_of_birth__lte=timezone.now().date() - relativedelta(years=18),
     )
