@@ -76,10 +76,13 @@ jobs:
       - name: ruff check (lint gate)
         run: ruff check .
 
-      # Security/dependency scans report but don't fail the build yet — see
-      # pyproject.toml for the current bandit triage and the PR description
-      # for the pip-audit findings. Flip these to blocking once the backlog
-      # they'd surface is under control.
+      # Security/dependency scans report but don't fail the build — see
+      # pyproject.toml for the current bandit triage. The pip-audit backlog
+      # was cleared on 2026-10-04 (0 advisories in requirements.txt; the
+      # runtime image's pip/setuptools are handled in the Dockerfile). It
+      # stays non-blocking on purpose so a newly published upstream advisory
+      # doesn't turn unrelated PRs red: read this step's output on every
+      # dependency change and treat any finding as a regression to fix.
       - name: bandit (security scan, non-blocking)
         run: bandit -c pyproject.toml -r JokesForProject jokes notifications creator_insights communities follows audit billing inbox || true
 

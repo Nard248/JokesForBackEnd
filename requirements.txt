@@ -9,6 +9,12 @@ defusedxml==0.7.1
 dj-rest-auth==7.0.2
 Django==5.2.17
 django-anymail[resend]==15.0
+# oauthlib is deliberately absent (PYSEC-2026-4114 in 3.3.1). allauth needs it
+# only for its "socialaccount" OAuth1 providers (twitter, openstreetmap, ...),
+# the "idp-oidc" identity provider and dj_rest_auth.social_serializers; none
+# are used (Google is OAuth2). If any is ever enabled, add oauthlib>=4 and
+# bump django-allauth to >=65.19.6 (first release that accepts oauthlib 4).
+# jokes/tests_dependencies.py fails if the app starts needing it.
 django-allauth==65.14.3
 django-cors-headers==4.9.0
 django-pgtrigger==4.17.0
