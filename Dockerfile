@@ -44,6 +44,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 COPY --from=builder /install/deps /usr/local
 
+# The base image's own pip/setuptools/wheel sit outside requirements.txt, so
+# CI's `pip-audit -r requirements.txt` never sees them. python:3.11-slim
+# shipped pip 24.0 (7 advisories, fixed in 26.2) and setuptools 79.0.1
+# (PYSEC-2026-3447, fixed in 83.0.0) when this was written. Nothing imports
+# setuptools/pkg_resources or wheel at runtime and nothing builds in this
+# stage, so drop them and pin pip to a release with no known advisories.
+RUN pip install --no-cache-dir --disable-pip-version-check pip==26.2.1 \
+    && pip uninstall -y setuptools wheel
+
 WORKDIR /app
 COPY --chown=app:app . .
 

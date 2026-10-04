@@ -4,17 +4,23 @@ attrs==25.4.0
 certifi==2026.1.4
 cffi==2.0.0
 charset-normalizer==3.4.4
-cryptography==46.0.7
+cryptography==50.0.2
 defusedxml==0.7.1
 dj-rest-auth==7.0.2
 Django==5.2.17
 django-anymail[resend]==15.0
+# oauthlib is deliberately absent (PYSEC-2026-4114 in 3.3.1). allauth needs it
+# only for its "socialaccount" OAuth1 providers (twitter, openstreetmap, ...),
+# the "idp-oidc" identity provider and dj_rest_auth.social_serializers; none
+# are used (Google is OAuth2). If any is ever enabled, add oauthlib>=4 and
+# bump django-allauth to >=65.19.6 (first release that accepts oauthlib 4).
+# jokes/tests_dependencies.py fails if the app starts needing it.
 django-allauth==65.14.3
 django-cors-headers==4.9.0
 django-pgtrigger==4.17.0
 django-storages[google]==1.14.6
 django-timezone-field==7.2.1
-djangorestframework==3.16.1
+djangorestframework==3.17.2
 djangorestframework_simplejwt==5.5.1
 drf-spectacular==0.29.0
 freezegun==1.5.5
@@ -26,11 +32,10 @@ idna==3.18
 inflection==0.5.1
 jsonschema==4.26.0
 jsonschema-specifications==2025.9.1
-oauthlib==3.3.1
 packaging==25.0
 psycopg2-binary==2.9.11
 pycparser==2.23
-PyJWT==2.13.0
+PyJWT==2.15.1
 python-dateutil==2.9.0.post0
 python-dotenv==1.2.2
 PyYAML==6.0.3
@@ -40,9 +45,9 @@ rpds-py==0.30.0
 sentry-sdk[django]==2.20.0
 stripe==12.2.0
 six==1.17.0
-sqlparse==0.5.5
+sqlparse==0.6.0
 typing_extensions==4.15.0
 tzdata==2025.3
 uritemplate==4.2.0
-urllib3==2.7.0
+urllib3==2.8.0
 whitenoise==6.8.2
