@@ -22,6 +22,7 @@ from .models import (
     Collection,
     ContentReport,
     ContextTag,
+    Country,
     CultureTag,
     DailyJoke,
     Favorite,
@@ -118,7 +119,13 @@ class LanguageSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Language
-        fields = ['id', 'code', 'name']
+        fields = ['id', 'code', 'name', 'native_name']
+
+
+class CountrySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Country
+        fields = ['id', 'code', 'name', 'native_name']
 
 
 class CultureTagSerializer(serializers.ModelSerializer):
@@ -126,7 +133,43 @@ class CultureTagSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = CultureTag
-        fields = ['id', 'name', 'slug', 'description']
+        fields = ['id', 'name', 'slug', 'description', 'native_name']
+
+
+# Schema-only shapes for GET /discovery-locales/ (built by discovery.locale_catalog).
+class DiscoveryLanguageSerializer(serializers.Serializer):
+    code = serializers.CharField()
+    name = serializers.CharField()
+    native_name = serializers.CharField(allow_blank=True)
+
+
+class DiscoveryCountrySerializer(DiscoveryLanguageSerializer):
+    language_codes = serializers.ListField(child=serializers.CharField())
+
+
+class DiscoveryCultureSerializer(serializers.Serializer):
+    slug = serializers.CharField()
+    name = serializers.CharField()
+    native_name = serializers.CharField(allow_blank=True)
+    description = serializers.CharField(allow_blank=True)
+    language_codes = serializers.ListField(child=serializers.CharField())
+    country_codes = serializers.ListField(child=serializers.CharField())
+
+
+class DiscoveryCollectionSerializer(serializers.Serializer):
+    locale = serializers.CharField(help_text='language-COUNTRY, e.g. es-ES')
+    language = serializers.CharField()
+    country = serializers.CharField()
+    culture = serializers.CharField()
+    label = serializers.CharField()
+    joke_count = serializers.IntegerField(help_text='Jokes visible to this viewer in the exact triple.')
+
+
+class DiscoveryLocalesResponseSerializer(serializers.Serializer):
+    languages = DiscoveryLanguageSerializer(many=True)
+    countries = DiscoveryCountrySerializer(many=True)
+    cultures = DiscoveryCultureSerializer(many=True)
+    collections = DiscoveryCollectionSerializer(many=True)
 
 
 class SourceSerializer(serializers.ModelSerializer):
@@ -192,6 +235,7 @@ class JokeSerializer(serializers.ModelSerializer):
     tones = ToneSerializer(many=True, read_only=True)
     context_tags = ContextTagSerializer(many=True, read_only=True)
     culture_tags = CultureTagSerializer(many=True, read_only=True)
+    countries = CountrySerializer(many=True, read_only=True)
 
     # New design vocabulary aliases (P1 of Pivot Plan).
     # `themes` mirrors `context_tags`; `categories` mirrors `tones`. Both old and
@@ -221,6 +265,7 @@ class JokeSerializer(serializers.ModelSerializer):
     # only the advertised schema, never runtime validation.
     text = serializers.CharField(allow_null=True, allow_blank=True, required=False)
     punchline = serializers.CharField(allow_null=True, allow_blank=True, required=False)
+    cultural_note = serializers.CharField(allow_null=True, allow_blank=True, required=False)
 
     class Meta:
         model = Joke
@@ -240,7 +285,7 @@ class JokeSerializer(serializers.ModelSerializer):
             'context_tags',
             'themes',       # alias of context_tags
             'categories',   # alias of tones
-            'culture_tags',
+            'culture_tags', 'countries', 'cultural_note', 'editorial_status',
             'share_image_url',
             'is_locked',
             'created_at',
@@ -371,6 +416,7 @@ class JokeSerializer(serializers.ModelSerializer):
             data['punchline'] = None
             data['lines'] = None
             data['text'] = None
+            data['cultural_note'] = None
         return data
 
 
@@ -828,6 +874,8 @@ class JokeSubmissionListSerializer(serializers.ModelSerializer):
     tones = serializers.SerializerMethodField()
     context_tags = serializers.SerializerMethodField()
     culture_tags = serializers.SerializerMethodField()
+    countries = serializers.SlugRelatedField(slug_field='code', many=True, read_only=True)
+    language = serializers.SlugRelatedField(slug_field='code', read_only=True)
     # New design vocabulary aliases (P1 of Pivot Plan)
     categories = serializers.SerializerMethodField()
     themes = serializers.SerializerMethodField()
@@ -840,7 +888,7 @@ class JokeSubmissionListSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'text', 'setup', 'punchline', 'lines',
             'format', 'status',
-            'tones', 'age_rating', 'context_tags', 'culture_tags',
+            'tones', 'age_rating', 'context_tags', 'culture_tags', 'countries', 'language',
             'categories',  # alias of tones
             'themes',      # alias of context_tags
             'last_edited_at',
@@ -917,6 +965,9 @@ class JokeSubmissionCreateSerializer(serializers.ModelSerializer):
     culture_tags = serializers.SlugRelatedField(
         slug_field='slug', queryset=CultureTag.objects.all(), many=True, required=False,
     )
+    countries = serializers.SlugRelatedField(
+        slug_field='code', queryset=Country.objects.all(), many=True, required=False,
+    )
     lines = serializers.JSONField(required=False, allow_null=True)
     media_asset_ids = serializers.ListField(
         child=serializers.UUIDField(), required=False, write_only=True,
@@ -928,7 +979,7 @@ class JokeSubmissionCreateSerializer(serializers.ModelSerializer):
             'format', 'setup', 'punchline', 'text', 'lines',
             'tones', 'categories', 'themes',
             'age_rating', 'context_tags', 'culture_tags',
-            'source', 'language', 'media_asset_ids',
+            'source', 'language', 'countries', 'media_asset_ids',
         ]
 
     def to_internal_value(self, data):
@@ -939,10 +990,9 @@ class JokeSubmissionCreateSerializer(serializers.ModelSerializer):
         if 'themes' in validated:
             validated['context_tags'] = validated.pop('themes')
         # `language` is advertised as optional but the column is NOT NULL, so
-        # omitting it used to reach the database and 500. Supplying the default
-        # here makes `required=False` honest. English because every existing
-        # row is English; a client that knows better should say so explicitly.
-        if not validated.get('language'):
+        # omitting it used to reach the database and 500. Preserve the legacy
+        # English default on creation; partial edits keep the existing language.
+        if not validated.get('language') and self.instance is None:
             validated['language'] = Language.objects.filter(code='en').first()
         return validated
 
@@ -1391,6 +1441,10 @@ class JokePackListSerializer(serializers.ModelSerializer):
         ]
 
     def get_joke_count(self, obj) -> int:
+        from .discovery import discovery_pool, discovery_selectors
+        request = self.context.get('request')
+        if request and any(discovery_selectors(request.query_params).values()):
+            return obj.entries.filter(joke_id__in=discovery_pool(request).values('pk')).count()
         return obj.entries.count()
 
     def get_user_progress(self, obj) -> dict | None:
@@ -1423,9 +1477,15 @@ class JokePackDetailSerializer(JokePackListSerializer):
         # filter as the tier gate on this exact queryset).
         entries = obj.entries.select_related(
             'joke', 'joke__format', 'joke__age_rating', 'joke__language'
-        ).prefetch_related('joke__tones', 'joke__context_tags').filter(
+        ).prefetch_related(
+            'joke__tones', 'joke__context_tags', 'joke__culture_tags', 'joke__countries',
+            'joke__media__asset',
+        ).filter(
             joke__content_tier__in=tiers, joke__is_removed=False,
         ).order_by('order')
+        if request is not None:
+            from .discovery import discovery_pool
+            entries = entries.filter(joke_id__in=discovery_pool(request).values('pk'))
         return [
             {
                 'order': e.order,

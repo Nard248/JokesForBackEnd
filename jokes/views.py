@@ -49,6 +49,13 @@ from rest_framework.views import APIView
 from notifications.models import EmailMessageLog, EmailVerification
 
 from .achievements import evaluate_for as evaluate_achievements_for
+from .discovery import (
+    DISCOVERY_PARAMETERS,
+    discovery_pool,
+    discovery_selectors,
+    filter_discovery,
+    locale_catalog,
+)
 from .identity import (
     is_valid_handle,
     normalize_handle,
@@ -70,6 +77,7 @@ from .models import (
     Collection,
     ContentReport,
     ContextTag,
+    Country,
     CultureTag,
     DailyJoke,
     Favorite,
@@ -100,6 +108,7 @@ from .models import (
 from .moderation import hidden_user_ids, visible_jokes
 from .paywall import paywall_state
 from .recommendations import get_personalized_joke, get_recently_shown_joke_ids
+from .search import normalize_search_query
 from .serializers import (
     AgeRatingSerializer,
     AppealCreateSerializer,
@@ -108,8 +117,10 @@ from .serializers import (
     CollectionSerializer,
     ContentReportSerializer,
     ContextTagSerializer,
+    CountrySerializer,
     CultureTagSerializer,
     DailyJokeSerializer,
+    DiscoveryLocalesResponseSerializer,
     FavoriteCreateSerializer,
     FavoriteSerializer,
     FormatSerializer,
@@ -161,7 +172,7 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
             content_tier__in=allowed_tiers(self.request)
         ).select_related(
             'format', 'age_rating', 'language', 'source'
-        ).prefetch_related('tones', 'context_tags', 'culture_tags', 'media__asset')
+        ).prefetch_related('tones', 'context_tags', 'culture_tags', 'countries', 'media__asset')
         # Moderation: hide removed jokes (global) + blocked users' jokes (per-viewer).
         return visible_jokes(qs, self.request)
 
@@ -203,7 +214,11 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
             OpenApiParameter(
                 name='q',
                 type=str,
-                description='Full-text search query (searches text, setup, punchline)',
+                description=(
+                    'Search joke text, setup, punchline, dialogue, categories, themes, '
+                    'and public metadata. Supports quoted phrases, OR, and -exclusions. '
+                    'Maximum 200 characters and 32 terms; relevance is the default order.'
+                ),
                 required=False,
             ),
             OpenApiParameter(
@@ -231,6 +246,16 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
                 required=False,
             ),
             OpenApiParameter(
+                name='categories', type=str,
+                description='Category slugs, comma-separated. Preferred alias for tones; takes precedence when present.',
+                required=False,
+            ),
+            OpenApiParameter(
+                name='themes', type=str,
+                description='Theme slugs, comma-separated. Preferred alias for context_tags; takes precedence when present.',
+                required=False,
+            ),
+            OpenApiParameter(
                 name='culture_tags',
                 type=str,
                 description='Filter by culture tag slugs, comma-separated (e.g., american,universal)',
@@ -240,6 +265,11 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
                 name='language',
                 type=str,
                 description='Filter by language code (e.g., en)',
+                required=False,
+            ),
+            OpenApiParameter(
+                name='country', type=str,
+                description='ISO alpha-2 country setting, independent of language.',
                 required=False,
             ),
             OpenApiParameter(
@@ -277,11 +307,15 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
         - /api/v1/jokes/?q=why&age_rating=kid-safe
         """
         # Extract query parameters
-        query_text = request.query_params.get('q', '').strip()
+        query_text = normalize_search_query(request.query_params.get('q', ''))
         format_slug = request.query_params.get('joke_format', '').strip()  # named joke_format to avoid DRF conflict
         age_rating_slug = request.query_params.get('age_rating', '').strip()
-        tones_param = request.query_params.get('tones', '').strip()
-        context_tags_param = request.query_params.get('context_tags', '').strip()
+        tones_param = request.query_params.get(
+            'categories', request.query_params.get('tones', ''),
+        ).strip()
+        context_tags_param = request.query_params.get(
+            'themes', request.query_params.get('context_tags', ''),
+        ).strip()
         culture_tags_param = request.query_params.get('culture_tags', '').strip()
         language_code = request.query_params.get('language', '').strip()
         ordering = request.query_params.get('ordering', '').strip()
@@ -299,7 +333,10 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
         if culture_tags_param:
             filters['culture_tags'] = [t.strip() for t in culture_tags_param.split(',') if t.strip()]
         if language_code:
-            filters['language'] = language_code
+            filters['language'] = language_code.lower()
+        country_code = request.query_params.get('country', '').strip().upper()
+        if country_code:
+            filters['country'] = country_code
 
         # Use JokeManager.search() for combined search and filtering
         queryset = Joke.objects.search(
@@ -335,7 +372,7 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
         # M2M) each re-hit the DB once per joke on the page.
         queryset = queryset.select_related(
             'format', 'age_rating', 'language', 'source'
-        ).prefetch_related('tones', 'context_tags', 'culture_tags', 'media__asset')
+        ).prefetch_related('tones', 'context_tags', 'culture_tags', 'countries', 'media__asset')
 
         # Paginate results
         page = self.paginate_queryset(queryset)
@@ -347,7 +384,8 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
         return Response(serializer.data)
 
     @extend_schema(
-        description='Return a random joke with full details.',
+        description='Return a random joke within the selected language, country and culture.',
+        parameters=DISCOVERY_PARAMETERS,
         responses={200: JokeSerializer, 404: None},
     )
     @action(detail=False, methods=['get'])
@@ -358,10 +396,7 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
         Useful for "Joke of the Day" or random joke button features.
         Returns 404 if no jokes exist in the database.
         """
-        qs = Joke.objects.filter(content_tier__in=allowed_tiers(request))
-        hidden = hidden_user_ids(request.user)
-        if hidden:
-            qs = qs.exclude(creator_id__in=hidden)
+        qs = discovery_pool(request)
         joke = qs.order_by('?').first()
         if joke is None:
             return Response(
@@ -535,6 +570,7 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
 
     @extend_schema(
         parameters=[
+            *DISCOVERY_PARAMETERS,
             OpenApiParameter(name='period', type=str, description='Time window: today, week (default), month'),
         ],
         description='Get jokes ranked by recent popularity.',
@@ -553,7 +589,7 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
             content_tier__in=allowed_tiers(request)
         ).select_related(
             'format', 'age_rating', 'language', 'source'
-        ).prefetch_related('tones', 'context_tags', 'culture_tags').annotate(
+        ).prefetch_related('tones', 'context_tags', 'culture_tags', 'countries').annotate(
             recent_likes=Count('ratings', filter=Q(ratings__rating=1, ratings__created_at__gte=since)),
             recent_shares=Count('share_events', filter=Q(share_events__created_at__gte=since)),
             recent_saves=Count('saved_by', filter=Q(saved_by__created_at__gte=since)),
@@ -564,6 +600,7 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
             Q(recent_likes__gt=0) | Q(recent_shares__gt=0) | Q(recent_saves__gt=0)
         ).order_by('-score')
 
+        jokes = filter_discovery(visible_jokes(jokes, request), discovery_selectors(request.query_params))
         page = self.paginate_queryset(jokes)
         results = []
         pw_state = paywall_state(request)  # compute once for the whole page
@@ -736,6 +773,25 @@ class LanguageViewSet(viewsets.ReadOnlyModelViewSet):
     # page_size_query_param) silently truncated the catalogue and made the
     # remaining rows unreachable in the UI. Matches VibeViewSet.
     pagination_class = None
+
+
+class CountryViewSet(viewsets.ReadOnlyModelViewSet):
+    """Countries describe a joke's setting, independently from its language."""
+    queryset = Country.objects.all()
+    serializer_class = CountrySerializer
+    permission_classes = [AllowAny]
+    pagination_class = None
+
+
+class DiscoveryLocalesView(APIView):
+    permission_classes = [AllowAny]
+
+    @extend_schema(
+        description='Available languages, geographic settings and cultural collections, with visible joke counts.',
+        responses={200: DiscoveryLocalesResponseSerializer},
+    )
+    def get(self, request):
+        return Response(locale_catalog(request))
 
 
 class CultureTagViewSet(viewsets.ReadOnlyModelViewSet):
@@ -1096,7 +1152,7 @@ class SavedJokeViewSet(
             'joke', 'joke__format', 'joke__age_rating', 'joke__language', 'joke__source',
             'collection'
         ).prefetch_related(
-            'joke__tones', 'joke__context_tags', 'joke__culture_tags', 'joke__media__asset'
+            'joke__tones', 'joke__context_tags', 'joke__culture_tags', 'joke__countries', 'joke__media__asset'
         )
 
         ordering = self.request.query_params.get('ordering', '-saved_at')
@@ -1131,17 +1187,17 @@ class SavedJokeViewSet(
             OpenApiParameter(
                 name='q',
                 type=str,
-                description='Search query for joke text',
+                description='Search saved jokes by content and public metadata; maximum 200 characters and 32 terms.',
                 required=False,
             ),
         ],
-        description='Search within user\'s saved jokes by joke text.',
+        description='Search visible jokes saved by the current user using content and public metadata.',
         responses={200: SavedJokeSerializer(many=True)},
     )
     @action(detail=False, methods=['get'])
     def search(self, request):
-        """Search within saved jokes by joke text."""
-        query = request.query_params.get('q', '').strip()
+        """Search only the caller's saved, currently visible jokes."""
+        query = normalize_search_query(request.query_params.get('q', ''))
 
         if not query:
             return Response(
@@ -1151,8 +1207,8 @@ class SavedJokeViewSet(
 
         # Get joke IDs matching the search (within allowed tiers)
         tiers = allowed_tiers(request)
-        matching_joke_ids = Joke.objects.search(
-            query_text=query, allowed_tiers=tiers
+        matching_joke_ids = visible_jokes(
+            Joke.objects.search(query_text=query, allowed_tiers=tiers), request,
         ).values_list('id', flat=True)
 
         # Filter saved jokes to those matching (also filter by tier for belt-and-suspenders)
@@ -1195,11 +1251,14 @@ class DailyJokeViewSet(viewsets.GenericViewSet):
     def get_queryset(self):
         """Return daily jokes for the current user."""
         if self.request.user.is_authenticated:
-            return DailyJoke.objects.filter(user=self.request.user)
+            return DailyJoke.objects.filter(
+                user=self.request.user, joke_id__in=discovery_pool(self.request).values('pk'),
+            )
         return DailyJoke.objects.none()
 
     @extend_schema(
         description='Get today\'s joke. Personalized for authenticated users, editorial pick for anonymous.',
+        parameters=DISCOVERY_PARAMETERS,
         responses={200: DailyJokeSerializer, 404: None},
     )
     @action(detail=False, methods=['get'])
@@ -1220,12 +1279,10 @@ class DailyJokeViewSet(viewsets.GenericViewSet):
         # per-day pick via DailyJoke; this gives anonymous readers the same
         # promise without needing a row per visitor.
         if not request.user.is_authenticated:
-            pool = Joke.objects.filter(
-                content_tier__in=allowed_tiers(request)
-            ).select_related(
+            pool = discovery_pool(request).select_related(
                 'format', 'age_rating', 'language', 'source'
             ).prefetch_related(
-                'tones', 'context_tags', 'culture_tags'
+                'tones', 'context_tags', 'culture_tags', 'countries'
             ).order_by('id')
 
             total = pool.count()
@@ -1249,6 +1306,7 @@ class DailyJokeViewSet(viewsets.GenericViewSet):
             user=request.user,
             date=today_date,
             joke__is_removed=False,
+            joke_id__in=discovery_pool(request).values('pk'),
         ).select_related(
             'joke',
             'joke__format',
@@ -1256,7 +1314,7 @@ class DailyJokeViewSet(viewsets.GenericViewSet):
             'joke__language'
         ).prefetch_related(
             'joke__tones',
-            'joke__context_tags'
+            'joke__context_tags', 'joke__culture_tags', 'joke__countries'
         ).first()
 
         if not daily:
@@ -1266,6 +1324,7 @@ class DailyJokeViewSet(viewsets.GenericViewSet):
                 request.user,
                 exclude_joke_ids=exclude_ids,
                 allowed_tiers=allowed_tiers(request),
+                selectors=discovery_selectors(request.query_params),
             )
 
             if joke:
@@ -1295,6 +1354,7 @@ class DailyJokeViewSet(viewsets.GenericViewSet):
 
     @extend_schema(
         description="Tomorrow's daily joke (lazy-generated), truncated to 12 words for the blurred teaser. P9 of Pivot Plan.",
+        parameters=DISCOVERY_PARAMETERS,
         responses={200: {'type': 'object'}, 404: None},
     )
     @action(detail=False, methods=['get'], permission_classes=[IsAuthenticated])
@@ -1303,7 +1363,8 @@ class DailyJokeViewSet(viewsets.GenericViewSet):
         from datetime import timedelta
         tomorrow_date = timezone.now().date() + timedelta(days=1)
         daily = DailyJoke.objects.filter(
-            user=request.user, date=tomorrow_date
+            user=request.user, date=tomorrow_date,
+            joke_id__in=discovery_pool(request).values('pk'),
         ).select_related('joke', 'joke__format').first()
 
         if not daily:
@@ -1313,14 +1374,16 @@ class DailyJokeViewSet(viewsets.GenericViewSet):
                 request.user,
                 exclude_joke_ids=exclude_ids,
                 allowed_tiers=allowed_tiers(request),
+                selectors=discovery_selectors(request.query_params),
             )
             if joke is None:
                 return Response(
                     {'detail': 'No jokes available for tomorrow yet.'},
                     status=status.HTTP_404_NOT_FOUND,
                 )
-            daily = DailyJoke.objects.create(
-                user=request.user, joke=joke, date=tomorrow_date
+            daily, _ = DailyJoke.objects.update_or_create(
+                user=request.user, date=tomorrow_date,
+                defaults={'joke': joke, 'delivered_at': None},
             )
 
         full_text = daily.joke.text or daily.joke.setup or ''
@@ -1339,6 +1402,7 @@ class DailyJokeViewSet(viewsets.GenericViewSet):
             'subscription-based window; content safety and removal rules still apply.'
         ),
         responses={200: DailyJokeSerializer(many=True)},
+        parameters=DISCOVERY_PARAMETERS,
     )
     @action(detail=False, methods=['get'])
     def history(self, request):
@@ -1352,7 +1416,7 @@ class DailyJokeViewSet(viewsets.GenericViewSet):
             'joke__language'
         ).prefetch_related(
             'joke__tones',
-            'joke__context_tags'
+            'joke__context_tags', 'joke__culture_tags', 'joke__countries'
         )
 
         serializer = DailyJokeSerializer(queryset, many=True)
@@ -1726,8 +1790,8 @@ class JokeDraftListView(generics.ListCreateAPIView):
     def get_queryset(self):
         return JokeSubmission.objects.filter(
             user=self.request.user
-        ).select_related('format', 'age_rating', 'published_joke').prefetch_related(
-            'tones', 'context_tags', 'culture_tags', 'media__asset',
+        ).select_related('format', 'age_rating', 'language', 'published_joke').prefetch_related(
+            'tones', 'context_tags', 'culture_tags', 'countries', 'media__asset',
         )
 
     def create(self, request, *args, **kwargs):
@@ -1933,7 +1997,7 @@ class FavoriteViewSet(
         ).select_related(
             'joke', 'joke__format', 'joke__age_rating', 'joke__language', 'joke__source'
         ).prefetch_related(
-            'joke__tones', 'joke__context_tags', 'joke__culture_tags', 'joke__media__asset'
+            'joke__tones', 'joke__context_tags', 'joke__culture_tags', 'joke__countries', 'joke__media__asset'
         )
 
         # Filter by tones
@@ -3327,7 +3391,7 @@ class UserVibesView(APIView):
 # Mystery Box (P3 of Pivot Plan) — variable-reward pull from user's vibe pool
 # =============================================================================
 
-def _mystery_pool_for_user(user, allowed=frozenset({'tier_1'})):
+def _mystery_pool_for_user(user, allowed=frozenset({'tier_1'}), selectors=None):
     """Build the joke pool a user can be served from the Mystery Box.
 
     Strategy:
@@ -3352,7 +3416,7 @@ def _mystery_pool_for_user(user, allowed=frozenset({'tier_1'})):
     if user_vibes:
         joke_ids = set()
         for v in user_vibes:
-            joke_ids.update(v.filter_jokes().values_list('id', flat=True))
+            joke_ids.update(filter_discovery(v.filter_jokes(), selectors).values_list('id', flat=True))
         if joke_ids:
             pool = Joke.objects.filter(id__in=joke_ids)
             used_vibe = user_vibes[0]
@@ -3361,7 +3425,7 @@ def _mystery_pool_for_user(user, allowed=frozenset({'tier_1'})):
         used_vibe = None
 
     # Apply content-tier serving lock
-    pool = pool.filter(content_tier__in=allowed)
+    pool = filter_discovery(pool.filter(content_tier__in=allowed), selectors)
 
     # Moderation: exclude blocked users' jokes (removed already excluded by manager).
     hidden = hidden_user_ids(user)
@@ -3406,6 +3470,7 @@ class MysteryBoxRollView(APIView):
 
     @extend_schema(
         request=None,
+        parameters=DISCOVERY_PARAMETERS,
         responses={
             200: MysteryBoxRollResponseSerializer,
             404: None,
@@ -3416,7 +3481,10 @@ class MysteryBoxRollView(APIView):
         from django.utils import timezone
         today = timezone.now().date()
 
-        pool, source_vibe = _mystery_pool_for_user(request.user, allowed=allowed_tiers(request))
+        pool, source_vibe = _mystery_pool_for_user(
+            request.user, allowed=allowed_tiers(request),
+            selectors=discovery_selectors(request.query_params),
+        )
         joke = pool.order_by('?').first()
         if joke is None:
             return Response(
@@ -3621,6 +3689,8 @@ class JokePackViewSet(viewsets.ReadOnlyModelViewSet):
         ).filter(
             Q(expires_at__isnull=True) | Q(expires_at__gt=now)
         )
+        if any(discovery_selectors(self.request.query_params).values()):
+            qs = qs.filter(entries__joke_id__in=discovery_pool(self.request).values('pk')).distinct()
         return qs.prefetch_related('entries')
 
     def get_serializer_class(self):
@@ -3636,6 +3706,7 @@ class JokePackViewSet(viewsets.ReadOnlyModelViewSet):
 
     @extend_schema(
         description='The currently featured pack (the Today screen Weekly Special).',
+        parameters=DISCOVERY_PARAMETERS,
         responses={200: JokePackDetailSerializer, 404: None},
     )
     @action(detail=False, methods=['get'])
@@ -3710,7 +3781,9 @@ class JokePackInProgressView(APIView):
     """GET /api/v1/users/me/packs/in-progress/ — packs the user has started but not finished."""
     permission_classes = [IsAuthenticated]
 
-    @extend_schema(responses={200: JokePackListSerializer(many=True)})
+    @extend_schema(
+        responses={200: JokePackListSerializer(many=True)}, parameters=DISCOVERY_PARAMETERS,
+    )
     def get(self, request):
         progress_qs = (
             JokePackProgress.objects
@@ -3718,6 +3791,10 @@ class JokePackInProgressView(APIView):
             .select_related('pack')
             .order_by('-updated_at')
         )
+        if any(discovery_selectors(request.query_params).values()):
+            progress_qs = progress_qs.filter(
+                pack__entries__joke_id__in=discovery_pool(request).values('pk'),
+            ).distinct()
         packs = [p.pack for p in progress_qs if p.pack.is_published]
         return Response(
             JokePackListSerializer(packs, many=True, context={'request': request}).data
