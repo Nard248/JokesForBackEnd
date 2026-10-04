@@ -1,0 +1,2224 @@
+[
+  {
+    "id": "intl-v2-hy-nerd-001",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Հայերեն որոնումը վերջապես ճիշտ աշխատեց։ Առաջին հարցումը «ինչո՞ւ է սխալ» էր. օգտվողների լավատեսությունն անփոփոխ էր մնացել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian search implementation; improved software retains skeptical users."
+  },
+  {
+    "id": "intl-v2-hy-nerd-002",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Բյուրականում հեռավոր աստղի լույսի մասին լսեցի ու հանգստացա։ Իմ ուշացած նամակը դեռ տիեզերական չափանիշներով բավական արագ է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Astronomical light travel; cosmic scale excuses ordinary communication delay."
+  },
+  {
+    "id": "intl-v2-hy-nerd-003",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Գորգի նախշը ծրագրով կրկնեցի։ Վարպետը մի հայացքով գտավ սխալը, որի համար իմ համակարգչին ամբողջ թեստային հավաքածու էր պետք։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Digitized weaving pattern; practiced visual expertise outpaces code tests."
+  },
+  {
+    "id": "intl-v2-hy-nerd-004",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Դուդուկի ձայնի գրաֆիկը այնքան գեղեցիկ էր, որ ծրագրավորողը համերգի կեսը էկրանին նայեց։ Երաժիշտը չէր իմացել, որ նաև գծանկար է տալիս։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Duduk waveform display; sound analysis becomes an unintended visual performance."
+  },
+  {
+    "id": "intl-v2-hy-nerd-005",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Երևանի մետրոյի երթուղու համար ալգորիթմ գրեցի։ Մայրս նայեց քարտեզին ու լուծեց խնդիրը, մինչև ես ֆայլի անունն ընտրեցի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Transit routing; a small practical problem defeats unnecessary setup."
+  },
+  {
+    "id": "intl-v2-hy-nerd-006",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Մատենադարանի ձեռագրի թվային պատկերը ճանաչող ծրագիրը զարդատառը ծաղիկ համարեց։ Առաջին սխալն էր, որի հետ գեղարվեստորեն համաձայն էի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Manuscript OCR; visual ornament produces an understandable classification error."
+  },
+  {
+    "id": "intl-v2-hy-nerd-007",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Կասկադի աստիճանները հաշվեցի երկու եղանակով։ Արդյունքները տարբեր էին, բայց երկու դեպքում էլ ոտքերս նույն կարծիքին էին։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Stair counting; measurement disagreement does not change fatigue."
+  },
+  {
+    "id": "intl-v2-hy-nerd-008",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Հայերեն գաղտնաբառ դրեցի։ Հիմա համակարգը պաշտպանված է նաև ինձնից, երբ ստեղնաշարի լեզուն չեմ նկատում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian keyboard layout; authentication trouble comes from input mode."
+  },
+  {
+    "id": "intl-v2-hy-nerd-009",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Սևանի ալիքների պարբերականությունը չափում էի։ Քամին փոխվեց ու ցույց տվեց, թե ով է փորձի իրական ղեկավարը։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "weather"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Lake-wave observation; changing conditions overrule a neat measurement plan."
+  },
+  {
+    "id": "intl-v2-hy-nerd-010",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Գյումրիի դարբնի աշխատանքը արագացնելու ծրագիր առաջարկեցի։ Նա մուրճը մեկնեց՝ պարզելու, թե ծրագիրն ում ձեռքով է աշխատելու։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Metalworking efficiency proposal; software plans meet physical labor."
+  },
+  {
+    "id": "intl-v2-hy-nerd-011",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Հայերեն տառատեսակի բեռնումը ուշանում էր։ Մեր կայքը մի պահ ավելի լուռ էր խոսում, քան սպասարկման բաժինը։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian webfont loading; missing visible text becomes silence."
+  },
+  {
+    "id": "intl-v2-hy-nerd-012",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Դիլիջանի անտառում կապը կորցրի ու ծառերի անունները սկսեցի գուշակել։ Իմ առաջին անցանց դասակարգիչը շատ վստահ էր ու հազվադեպ ճիշտ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Forest identification; a disconnected visitor compares guessing with an unreliable classifier."
+  },
+  {
+    "id": "intl-v2-hy-nerd-013",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Քոչարիի քայլերը որպես վիճակների մեքենա նկարագրեցի։ Պարի կեսին հասա մի վիճակի, որի անունը միայն ուսուցչի դեմքից հասկացա։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dance sequence modeling; real coordination enters an unplanned state."
+  },
+  {
+    "id": "intl-v2-hy-nerd-014",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Վերնիսաժի ձեռագործ բաժակները նույն չափի խմբերի բաժանող ծրագիրը չավարտվեց։ Ամեն բաժակ պահանջում էր իր առանձին անձնական տարածքը։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Handmade pottery data; natural variation frustrates uniform grouping."
+  },
+  {
+    "id": "intl-v2-hy-nerd-015",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Բյուրականի այցից հետո իմ լուսանկարներն անվանեցի «տիեզերք»։ Պահեստը լցվեց. թվային տարածությունը շատ ավելի համեստ հավակնություններ ուներ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Astronomy photo storage; the cosmic subject exceeds an ordinary device's capacity."
+  },
+  {
+    "id": "intl-v2-hy-nerd-016",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Հայերեն տեքստի տառերը հաշվեցի, հետո բառերը, հետո սխալները։ Միայն վերջում հասկացա՝ կարդալը դեռ առանձին գործ է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Text processing; quantitative operations do not supply comprehension."
+  },
+  {
+    "id": "intl-v2-hy-nerd-017",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Գորգի նախշին հայելային արտացոլում կիրառեցի։ Վարպետը ասաց՝ հիմա գեղեցիկ է երկու կողմից, բայց գլխավորը դեռ ո՞ր կողմն է կախվելու։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Weaving design symmetry; mathematical correctness leaves a practical decision unresolved."
+  },
+  {
+    "id": "intl-v2-hy-nerd-018",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Դուդուկի մեղեդին սեղմեցի փոքր ֆայլի մեջ։ Պապիկը լսեց ու ասաց՝ լավ է, բայց երաժշտին այդքան փոքր սենյակում մի պահիր։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Duduk audio compression; reduced sound quality becomes cramped accommodation."
+  },
+  {
+    "id": "intl-v2-hy-nerd-019",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Երևանի մետրոյի քարտեզը գրաֆի վերածեցի։ Ընկերս հարցրեց՝ դրանով տուն ավելի շո՞ւտ կհասնենք, թե՞ միայն հանգույց կհասկանանք։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Graph representation of transit; modeling is separated from practical travel."
+  },
+  {
+    "id": "intl-v2-hy-nerd-020",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Մատենադարանի թվայնացման մասին կարդալուց հետո բոլոր տետրերս սկանավորեցի։ Հիմա անհասկանալի ձեռագրիս երեք պահուստային պատճեն ունեմ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Manuscript digitization inspires personal scanning; redundancy preserves illegibility."
+  },
+  {
+    "id": "intl-v2-hy-nerd-021",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Կասկադի ճանապարհը ամենակարճ դարձնելու ծրագիրը ինձ աստիճանների միջով ուղարկեց։ Երկրաչափությունը ոտքերի մասին դեռ տվյալ չէր ստացել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Route optimization; an abstract shortest path ignores traversability."
+  },
+  {
+    "id": "intl-v2-hy-nerd-022",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Հայերեն անունների դասավորումը շտկեցի։ Վերջապես մարդիկ այբբենական կարգով էին բողոքում, որ իրենց անունը առաջինը չէ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian collation; correct sorting cannot satisfy personal preference."
+  },
+  {
+    "id": "intl-v2-hy-nerd-023",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Սևանի ջրի նկարների գույները համեմատում էի։ Պարզվեց՝ իմ տվյալների հավաքածուն հիմնականում եղանակի ու հեռախոսի վեճն է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Lake photography; lighting and camera processing complicate color comparison."
+  },
+  {
+    "id": "intl-v2-hy-nerd-024",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Գյումրիի երկաթե նախշը եռաչափ մոդելավորեցի։ Էկրանին այն շատ թեթև էր, մինչև գնացի իսկականը վերցնելու։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Decorative metalwork modeling; digital handling hides physical weight."
+  },
+  {
+    "id": "intl-v2-hy-nerd-025",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Դիլիջանի ծառերի տակ ջերմաչափ պահեցի։ Ընկերս առանց թվի ստվեր մտավ՝ առաջին մարդը, որ արդյունքը փորձից շուտ կիրառեց։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "weather"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Forest shade measurement; everyday knowledge precedes formal data collection."
+  },
+  {
+    "id": "intl-v2-hy-nerd-026",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Քոչարիի տեսանյութի արագությունը նվազեցրի, որ սովորեմ։ Հետո երաժշտությունը միացրի ու պարզվեց՝ իրականությունն իմ կարգավորումները չի պահել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dance-learning playback; practice speed does not alter a live performance."
+  },
+  {
+    "id": "intl-v2-hy-nerd-027",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Վերնիսաժի ապրանքներին QR կոդ ավելացրի։ Վարպետը հարցրեց՝ այդ նախշը որ դպրոցի գործ է։ Ծրագիրն առաջին անգամ արվեստի քննություն էր տալիս։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft-market QR labels; machine-readable geometry is assessed as decorative work."
+  },
+  {
+    "id": "intl-v2-hy-nerd-028",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Բյուրականում աստղերի հեռավորության թիվը գրեցի առանց բացատների։ Հետո ինքս էլ չգիտեի՝ գիտություն եմ գրանցել, թե՞ նոր գաղտնաբառ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Astronomical magnitude; long numeric notation loses legibility."
+  },
+  {
+    "id": "intl-v2-hy-nerd-029",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Հայերեն ձայնային ճանաչումը իմ «հիմա» բառը «հիմք» դարձրեց։ Ծրագիրը շտապողականությունս վերածեց հիմնավոր պահանջի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian speech recognition; a small error changes urgency into substance."
+  },
+  {
+    "id": "intl-v2-hy-nerd-030",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Գորգագործության ընթացքում երկու նույն նախշ ստանալու հավանականությունն էի հաշվում։ Վարպետը իմ առաջին հանգույցը տեսավ ու ասաց՝ քո դեպքում շատ փոքր է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Weaving novice; irregular execution defeats an abstract symmetry calculation."
+  },
+  {
+    "id": "intl-v2-hy-nerd-031",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Դուդուկի ձայնի բարձրությունը չափելու համար սարք բերեցի։ Երաժիշտը հարցրեց՝ այսօր նվագո՞ւմ ենք, թե՞ թվերին ենք լսեցնում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Performance measurement; analysis competes with listening."
+  },
+  {
+    "id": "intl-v2-hy-nerd-032",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Երևանի մետրոյի կանգառները տվյալների բազա մտցրի։ Մայրս զանգեց՝ ո՞ւր ես։ Իմ ամբողջ աշխատանքը չփրկեց «մի կանգառ անցել եմ» պատասխանից։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Transit database; stored knowledge does not prevent inattention."
+  },
+  {
+    "id": "intl-v2-hy-nerd-033",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Մատենադարանի զարդատառերի ճանաչման ծրագրին պարզ «Ա» ցույց տվեցի։ Այն կասկածեց. սովորական տառը իր ուսումնական հավաքածուում շատ համեստ էր։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Decorative-letter classifier; training on elaborate forms makes simplicity unfamiliar."
+  },
+  {
+    "id": "intl-v2-hy-nerd-034",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Կասկադում քայլաչափս ու հեռախոսս տարբեր թվեր ցույց տվեցին։ Ինձ հաջողվեց երկու սարքով միաժամանակ տարբեր չափով հոգնել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fitness measurement; disagreeing devices assign different numerical effort to one climb."
+  },
+  {
+    "id": "intl-v2-hy-nerd-035",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Հայերեն կայքի կոճակը մեծացրի, որ բառը տեղավորվի։ Հիմա բառը տեղավորվում է, բայց կողքի կոճակը տեղափոխության դիմում է գրել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian UI localization; fixing one layout constraint creates another."
+  },
+  {
+    "id": "intl-v2-hy-nerd-036",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Սևանի քամու տվյալները աղյուսակում դասավորեցի։ Նախագիծը կայուն էր մինչև պատուհանը բացելը։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "weather"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Wind data; tidy representation contrasts with a gust affecting physical papers."
+  },
+  {
+    "id": "intl-v2-hy-nerd-037",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Գյումրիի դարբինը բացատրեց ջերմության դերը։ Ես հասկացա՝ նրա «տաք թողարկումը» մեր ծրագրային թողարկումից շատ ավելի ուղիղ իմաստ ունի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "science"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Forging heat; software-release jargon gains a literal counterpart."
+  },
+  {
+    "id": "intl-v2-hy-nerd-038",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Դիլիջանի անտառում տեղորոշումն ուշ էր թարմացվում։ Քարտեզի վրա դեռ հետ էի մնում ինձնից, և դա առաջին անգամ հարմար արդարացում էր դանդաղ քայլելու համար։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Navigation update lag; a hiker waits for their digital representation."
+  },
+  {
+    "id": "intl-v2-hy-nerd-039",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Քոչարիի խմբի շարժումը համակարգչով վերլուծեցի։ Իմ ոտքերը առանձնացան որպես արտասովոր տվյալներ. ծրագիրը շատ քաղաքավարի բառ էր ընտրել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Motion analysis; statistical outliers provide a tactful label for bad dancing."
+  },
+  {
+    "id": "intl-v2-hy-nerd-040",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Վերնիսաժի նույն բաժակը երկու անկյունից նկարեցի։ Պատկերների որոնումը դրանք տարբեր գտավ. բաժակն առաջինը երկակի ինքնություն ստացավ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft-product image search; viewpoint changes confuse matching."
+  },
+  {
+    "id": "intl-v2-hy-nerd-041",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Բյուրականի այցից հետո աստղային քարտեզը հեռախոսում բացեցի։ Երկինքը նույնն էր, միայն հավելվածն էր խնդրում նոր տարբերակի անցնել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Astronomy app; software maintenance intrudes on a stable observing goal."
+  },
+  {
+    "id": "intl-v2-hy-nerd-042",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Հայերեն բառի բոլոր հոլովաձևերը փնտրելու համար ծրագիր գրեցի։ Բառը ավելի շատ հասցե ուներ, քան ես՝ տեղափոխություններից հետո։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "puns"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian inflection; multiple forms are imagined as a word's addresses."
+  },
+  {
+    "id": "intl-v2-hy-nerd-043",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Գորգի համաչափությունը ստուգեցի հայելիով։ Վարպետը ժպտաց՝ հիմա երկու հոգով եք իմ գործին նայում, բայց վճարողը դեռ մեկն է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Pattern symmetry test; a reflected observer becomes a second visitor."
+  },
+  {
+    "id": "intl-v2-hy-nerd-044",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Դուդուկի ձայնագրության աղմուկը մաքրեցի։ Վերջում երաժշտի շունչը վերադարձրի՝ շատ կատարյալ լռությունը կենդանի կատարումը տուն էր ուղարկել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Audio restoration; over-processing removes evidence of real performance."
+  },
+  {
+    "id": "intl-v2-hy-nerd-045",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Երևանի մետրոյի ժամանակը միջինացրի հինգ ուղևորությունից։ Վեցերորդը իմ ամբողջ վիճակագրությունը հանգիստ ժխտեց, հենց կարևոր հանդիպման օրը։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Commuting statistics; a limited sample cannot guarantee the next trip."
+  },
+  {
+    "id": "intl-v2-hy-nerd-046",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Մատենադարանի ձեռագրի լուսանցքը ծրագիրն ավելորդ համարեց ու կտրեց։ Պատմաբանը բացատրեց, որ երբեմն գլխավոր միտքը հենց ծրագրից դուրս է մնում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Manuscript image cropping; automatic cleanup removes meaningful margins."
+  },
+  {
+    "id": "intl-v2-hy-nerd-047",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Կասկադի աստիճանների նկարը սեղմեցի։ Ֆայլը թեթևացավ, իսկ հիշողության մեջ բարձրանալը՝ ոչ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Photo compression; digital size does not reduce remembered exertion."
+  },
+  {
+    "id": "intl-v2-hy-nerd-048",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Հայերեն տառերը ճիշտ կոդավորմամբ պահեցի։ Ծրագիրը վերջապես հասկացավ լեզուս, բովանդակության մասով դեռ բանակցում ենք։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Character encoding; readable text does not guarantee understanding."
+  },
+  {
+    "id": "intl-v2-hy-nerd-049",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Սևանի ալիքների նկարում հորիզոնը ուղղեցի։ Ընկերս ասաց՝ լավ է, հիմա ջուրն էկրանից չի թափվի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "science"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Lake photo editing; a level horizon receives a literal practical benefit."
+  },
+  {
+    "id": "intl-v2-hy-nerd-050",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Գյումրիի դարպասի նախշին կրկնվող տարր գտա։ Վարպետն ասաց՝ դա իմ ստորագրությունն է, պատճենված կոդ մի համարիր։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Decorative ironwork; artistic recurrence resists a programmer's copying analogy."
+  },
+  {
+    "id": "intl-v2-hy-nerd-051",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Դիլիջանի փայտե սեղանի խազերը քարտեզագրեցի։ Պարզվեց՝ ընտանիքիս ճաշերի պատմությունը շատ ավելի մանրամասն է, քան իմ օրագիրը։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Woodcraft furniture wear; surface marks become a rich informal dataset."
+  },
+  {
+    "id": "intl-v2-hy-nerd-052",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Քոչարիի քայլերը համարակալեցի զրոյից։ Ուսուցիչը հասկացավ, որ ծրագրավորող եմ, այն պահին, երբ բոլորը սկսեցին, իսկ ես դեռ պատրաստ էի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Zero-based counting; a programming convention misaligns a dance start."
+  },
+  {
+    "id": "intl-v2-hy-nerd-053",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Վերնիսաժի կավե ամանի ծավալը հաշվարկեցի։ Վարպետը ջուր լցրեց ու տվեց պատասխանը՝ առանց իմ բանաձևի սխալին սպասելու։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Pottery measurement; direct experiment bypasses an overcomplicated calculation."
+  },
+  {
+    "id": "intl-v2-hy-nerd-054",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Բյուրականում լույսի տարիների մասին բացատրությունից հետո տղաս հարցրեց՝ ուրեմն իմ տնայինը լուսավոր արագությամբ ուղարկենք, ուշացումը տարիներով կհաշվե՞ն։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Astronomical distance terminology; a child deliberately conflates it with assignment timing."
+  },
+  {
+    "id": "intl-v2-hy-nerd-055",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Հայերեն տեքստի դասավորությունը տարբեր էկրաններով ստուգեցի։ Ամենահին հեռախոսը դարձավ մեր թիմի ամենախիստ խմբագիրը։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Localization testing; a small device exposes layout weaknesses."
+  },
+  {
+    "id": "intl-v2-hy-nerd-056",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Գորգի նախշը վեկտորային ֆայլ դարձրի։ Կարող եմ անվերջ մեծացնել, բայց տատիկս ճիշտ նշեց՝ հատակս այդ հատկությունը չունի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Vectorized weaving design; infinite digital scaling meets a finite room."
+  },
+  {
+    "id": "intl-v2-hy-nerd-057",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Դուդուկի մեղեդին թվերով գրանցեցի։ Պապիկը խնդրեց նվագել, ոչ թե գաղտնագրությունը բարձրաձայն կարդալ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Music data representation; notation is mistaken for the experience itself."
+  },
+  {
+    "id": "intl-v2-hy-nerd-058",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Երևանի մետրոյի երթուղու ամենակարճ տարբերակը գտա։ Ընկերս ընտրեց ուրիշը՝ այնտեղ իր սիրելի սրճարանն էր։ Նպատակային ֆունկցիան սուրճ էր պահանջում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Route optimization; human preference changes what counts as best."
+  },
+  {
+    "id": "intl-v2-hy-nerd-059",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Մատենադարանի սկանավորման որակը բարձրացրի այնքան, որ թղթի ամեն մանրուք երևաց։ Հիմա համակարգիչս մեկ էջը ավելի երկար է բացում, քան ես՝ հին տետրիս կապը։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. High-resolution manuscript imagery; detail increases digital handling time."
+  },
+  {
+    "id": "intl-v2-hy-nerd-060",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Սևանի լուսանկարի կապույտը համարով պահեցի։ Հաջորդ օրը լիճը փոխել էր գույնը՝ առանց տարբերակների պատմություն թողնելու։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "weather"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Lake color sampling; changing light ignores a programmer's versioning expectations."
+  },
+  {
+    "id": "intl-v2-hy-nerd-061",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Հայերեն հարցականը բառի ներսում տեսնող ծրագիրը հայտարարեց՝ նախադասությունը դեռ հարց չէ։ Քերականությունը առաջին անգամ տեխնիկական աջակցություն էր ուզում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "puns"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian question-mark placement; a naive sentence-end rule fails."
+  },
+  {
+    "id": "intl-v2-hy-nerd-062",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Բյուրականի աստղային տվյալները բացեցի աղյուսակում։ Սյունակը թիվը չտեղավորեց. տիեզերքը առաջին անգամ վեց վանդակով սահմանափակվեց։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Astronomical data formatting; a spreadsheet display constrains huge scale."
+  },
+  {
+    "id": "intl-v2-hy-nerd-063",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Գյումրիի դարբնի պատվերի համար եռաչափ տպված նմուշ բերեցի։ Նա ժպտաց՝ լավ սկիզբ է, հիմա նույնը ծանր տարբերակով անենք։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Metalwork prototyping; lightweight digital fabrication precedes physical forging."
+  },
+  {
+    "id": "intl-v2-hy-nerd-064",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Դիլիջանի անտառային ձայները դասակարգող մոդելը իմ շնչառությունը կենդանի համարեց։ Տեխնիկապես ճիշտ էր, բայց ինքնասիրությունս ավելի մանրամասն պատասխան էր ուզում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "animals"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Forest audio classifier; a broad biological category gives an awkwardly correct result."
+  },
+  {
+    "id": "intl-v2-hy-nerd-065",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Քոչարիի տեսանյութից կադրեր հանեցի։ Միակ ճիշտ դիրքս երկու սխալների արանքում էր. վիճակագրությունն ինձ հնարավորություն տվեց։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dance-frame analysis; selective sampling finds a flattering instant."
+  },
+  {
+    "id": "intl-v2-hy-nerd-066",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Վերնիսաժի փայտե շախմատով համակարգչին հաղթելու փորձ արեցի։ Պարզվեց՝ սարքը միայն որպես ծանրություն օգտագործելիս եմ վստահ հաղթում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft chess set; physical handling creates an absurd advantage over software."
+  },
+  {
+    "id": "intl-v2-hy-nerd-067",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Մատենադարանի ֆայլերի անուններում դարերը գրեցի հռոմեական թվերով։ Դասավորումն այնքան խառնվեց, որ պատմությունը ստիպված նորից սովորեցի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Manuscript file organization; text sorting disrupts chronological intent."
+  },
+  {
+    "id": "intl-v2-hy-nerd-068",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Գորգի նախշի կրկնությունը գտնող ծրագիրս իմ սխալ հանգույցն առանձնացրեց։ Առաջին անգամ սխալը դարձավ ամենահեշտ ճանաչվող ստորագրությունը։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Weaving pattern recognition; an error becomes a unique identifying feature."
+  },
+  {
+    "id": "intl-v2-hy-nerd-069",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Դուդուկի ձայնը տեսապատկերի վերածեցի։ Ընկերոջս ուղարկեցի, ասաց՝ շատ լավ է հնչում, բայց դեռ ձայնը չէր միացրել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Audio visualization; attractive graphics bias a listener before playback."
+  },
+  {
+    "id": "intl-v2-hy-nerd-070",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Երևանի մետրոյի քարտեզից հանգույցներ հանեցի ու մոռացա ելքերը։ Մոդելը հրաշալի էր նրանց համար, ովքեր երբեք տուն չեն ուզում գնալ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Transit graph model; omitted exits expose a practical modeling failure."
+  },
+  {
+    "id": "intl-v2-hy-nerd-071",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Հայերեն բառարանից պատահական բառ ընտրող ծրագիրը տվեց «պատահական»։ Այդ օրվանից ամեն արդյունքից մի քիչ բացատրություն եմ սպասում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "puns"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian random-word tool; an accidental self-description feels suspiciously intentional."
+  },
+  {
+    "id": "intl-v2-hy-nerd-072",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Սևանի եղանակի գրաֆիկը գեղեցիկ հարթեցրի։ Դրսում քամին նույնքան կոպիտ էր մնացել՝ տվյալների մշակումը չէր ընդունել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "weather"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Weather-data smoothing; visual simplification does not affect actual conditions."
+  },
+  {
+    "id": "intl-v2-hy-nerd-073",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Կասկադի աստիճանների թիվը հաշվարկող նկարային մոդելը մեր ընտանիքն էլ հաշվեց։ Վերջապես հասկացանք՝ ինչու ենք նկարում միշտ ճանապարհին կանգնած։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Image counting; people obstruct a stair-recognition task."
+  },
+  {
+    "id": "intl-v2-hy-nerd-074",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Գյումրիի երկաթե վանդակի համաչափությունը նկարագրեցի հավասարումով։ Վարպետը հարցրեց՝ կարելի՞ է դրանով պատուհանը չափել, թե՞ միայն հիանալ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Ironwork symmetry; an abstract explanation is tested for practical use."
+  },
+  {
+    "id": "intl-v2-hy-nerd-075",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Դիլիջանի քայլարշավի տվյալները ամպում պահեցի։ Անձրևից հետո ընկերոջս բացատրում էի, որ դրանք նույն ամպերը չեն, բայց կասկածը տրամաբանական էր։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "weather"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Cloud storage on a forest trip; weather creates a literal misunderstanding."
+  },
+  {
+    "id": "intl-v2-hy-nerd-076",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Քոչարիի շարժումների ցուցակին «կրկնել» հրահանգ ավելացրի ու ելքը մոռացա։ Պարի ուսուցիչը միակ մարդն էր, որ իմ անվերջ ցիկլը օգտակար համարեց։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dance practice loop; repeated drilling makes a programming bug temporarily useful."
+  },
+  {
+    "id": "intl-v2-hy-nerd-077",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Վերնիսաժի խեցեղենի լուսանկարներում ֆոնը հեռացրի։ Մնաց բաժակն ու իմ ձեռքը. համակարգը ճիշտ էր հասկացել՝ բաց թողնել չեմ ուզում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Product-photo segmentation; a hand becomes part of a desired object."
+  },
+  {
+    "id": "intl-v2-hy-nerd-078",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Բյուրականի այցի համար հեռախոսիս գիշերային ռեժիմը միացրի։ Հիմա միայն հեռախոսն էր պատրաստ, ես դեռ ցերեկային քնկոտություն ունեի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Astronomy outing; device mode changes faster than the observer's state."
+  },
+  {
+    "id": "intl-v2-hy-nerd-079",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Հայերեն անունը լատինատառ դարձրի, հետո հետ փոխեցի։ Անունը վերադարձավ ճանապարհորդությունից նոր բնավորությամբ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "puns"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian transliteration; round-trip conversion can lose distinctions."
+  },
+  {
+    "id": "intl-v2-hy-nerd-080",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Գորգի գույների համար առանձին հաստատուններ սահմանեցի։ Վարպետը նոր թել բերեց, և «հաստատունը» դարձավ մեր ամենափոփոխական մասը։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Weaving color software; physical material availability changes declared constants."
+  },
+  {
+    "id": "intl-v2-hy-nerd-081",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Դուդուկի երկու ձայնագրությունը համեմատող ծրագիրը տարբերություն գտավ։ Երաժիշտը ասաց՝ այո, երկրորդ օրը ես ավելի լավ տրամադրություն ունեի, դա էլ գրանցեք։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Performance analysis; musical variation includes a human explanation outside numerical features."
+  },
+  {
+    "id": "intl-v2-hy-nerd-082",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Երևանի մետրոյի ճանապարհի ժամանակաչափը կանգնեցրի հենց դուրս գալիս։ Պարզվեց՝ իմ ամենամեծ հետաձգումը հաշվարկը պահելու կոճակը փնտրելն էր։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Commute tracking; measuring adds its own delay."
+  },
+  {
+    "id": "intl-v2-hy-nerd-083",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Մատենադարանի մանրանկարի թվային գույներն այնքան երկար կարգավորեցի, որ էկրանը քնեց։ Բնօրինակը դարեր էր դիմացել, իմ դիտակը՝ տասը րոպե։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Manuscript image study; display sleep is contrasted with artifact longevity."
+  },
+  {
+    "id": "intl-v2-hy-nerd-084",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Հայերեն տեքստի բոլոր բացատները հեռացրի՝ տեղ խնայելու համար։ Հիմա պահեստս թեթև է, ընթերցողը՝ ծանրաբեռնված։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian text compression; byte savings destroy readability."
+  },
+  {
+    "id": "intl-v2-hy-nerd-085",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Սևանի ափը քարտեզագրելիս ամեն մանր կորություն ներառեցի։ Ֆայլը այնքան մեծացավ, որ լիճը կարծես նոր ափ էր ձեռք բերել՝ իմ կոշտ սկավառակի եզրին։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "science"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Detailed shoreline mapping; geographic detail expands storage needs."
+  },
+  {
+    "id": "intl-v2-hy-nerd-086",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Կասկադի լուսանկարի հեռանկարը ուղղեցի։ Հայրս դժգոհեց՝ առաջին անգամ բարձր էր երևացել, գիտությունը խանգարեց։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Perspective correction; photographic accuracy removes a flattering illusion."
+  },
+  {
+    "id": "intl-v2-hy-nerd-087",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Գյումրիի դարբնոցում նյութի դիմադրության մասին հարցրի։ Վարպետը ցույց տվեց իմ չկարդացած չափագրությունը՝ ասաց, որ ամենադժվար դիմադրությունն այստեղ է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Metalwork planning; unclear instructions resist progress more than the material."
+  },
+  {
+    "id": "intl-v2-hy-nerd-088",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Դիլիջանի անտառի լուսանկարը որպես էկրանի ֆոն դրեցի։ Համակարգիչն այնքան հանգստացած տեսք ուներ, որ գործը ինձ վրա մնաց։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Forest desktop wallpaper; a calm image personifies an unhelpfully relaxed computer."
+  },
+  {
+    "id": "intl-v2-hy-nerd-089",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Քոչարիի քայլերին մեկնաբանություններ գրեցի կոդի պես։ Պարելիս հասկացա՝ իմ ոտքերը փաստաթղթավորում չեն կարդում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dance learning; written explanations do not replace embodied practice."
+  },
+  {
+    "id": "intl-v2-hy-nerd-090",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Վերնիսաժի բաժակի գինը թվայնացնելիս տասնորդական բաժանիչը խառնեցի։ Բաժակը մի պահ դարձավ ցուցահանդեսի ամենաթանկ արվեստի գործը։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "money"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft inventory locale formatting; a numeric separator error exaggerates a price."
+  },
+  {
+    "id": "intl-v2-hy-nerd-091",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Բյուրականում երկնքի լայնությունը տեսա ու որոշեցի էկրանս մեծացնել։ Ընկերս ասաց՝ նախ պատուհանը բացիր, անվճար փորձնական տարբերակ է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Astronomy-inspired hardware desire; direct viewing offers a simple alternative."
+  },
+  {
+    "id": "intl-v2-hy-nerd-092",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Հայերեն բառի արմատը գտնող ծրագիրս «անտառ» բառից հետո կանգնեց։ Ես սխալն ուղղում էի, իսկ ընտանիքս վստահ էր՝ արմատները շատ են։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "puns"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian morphology; linguistic roots invite a botanical misunderstanding."
+  },
+  {
+    "id": "intl-v2-hy-nerd-093",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Գորգի ամենափոքր կրկնվող տարրը գտա ու հպարտ ցույց տվեցի։ Տատիկը ասաց՝ հիմա գտիր այն տեղը, որտեղ գուլպաս է ընկել, կիրառական խնդիր է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Pattern analysis; a domestic search tests practical usefulness."
+  },
+  {
+    "id": "intl-v2-hy-nerd-094",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Դուդուկի ձայնի գրաֆիկի գագաթները հաշվեցի։ Երաժիշտն ասաց՝ լավ է, գոնե մեկը իմ երգի լեռներով քայլել է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Waveform peaks; analysis becomes a metaphorical hike."
+  },
+  {
+    "id": "intl-v2-hy-nerd-095",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Երևանի մետրոյի ուղևորությունը որպես սիմուլյացիա գրեցի։ Ամեն ինչ աշխատում էր, մինչև ավելացրի այն ուղևորին, որը դռան մոտ երկար հրաժեշտ է տալիս։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Transit simulation; social behavior complicates an ideal model."
+  },
+  {
+    "id": "intl-v2-hy-nerd-096",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Մատենադարանի գրքի սկանավորված պատկերը պտտեցի, որ կարդամ։ Ավտոպտույտը հետ դարձրեց. հեռախոսս ավելի խիստ արխիվապահ էր, քան պետք էր։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Manuscript image viewing; device orientation competes with the reader."
+  },
+  {
+    "id": "intl-v2-hy-nerd-097",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Հայերեն դասավորության մեջ «փ» տառը չէր տեղավորվում։ Դիզայները այն փոքրացրեց, և բառի ամենամեղավոր տառը դարձավ ամենահամեստը։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian typography; a local size fix visibly singles out one character."
+  },
+  {
+    "id": "intl-v2-hy-nerd-098",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Սևանի ալիքների տեսանյութը օղակով միացրի։ Հայրս հարցրեց՝ լիճն ինչո՞ւ է նույն կատակն այսքան վստահ կրկնում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Looped lake footage; mechanical repetition resembles persistent storytelling."
+  },
+  {
+    "id": "intl-v2-hy-nerd-099",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Գյումրիի դարպասի կշիռը մոդելում զրո էր մնացել։ Տեղադրելու օրը պարզվեց՝ մեր ամենամեծ սխալը ֆիզիկապես էլ մեծ էր։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "science"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Metalwork model; a missing mass parameter has tangible consequences."
+  },
+  {
+    "id": "intl-v2-hy-nerd-100",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Դիլիջանի անտառային քայլքը ժամում կիլոմետրերով գնահատեցի։ Ընկերս հավաքած նկարներով էր չափում. իր միավորներով ես շատ դանդաղ էի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Hiking metrics; different goals produce opposite performance judgments."
+  },
+  {
+    "id": "intl-v2-hy-nerd-101",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Քոչարիի խմբի ռիթմը չափող ծրագիրը ինձ անջատել առաջարկեց։ Իմ առաջին ծրագրային խորհուրդն էր, որը չափազանց անձնական հնչեց։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dance timing analysis; data cleaning becomes an awkward suggestion about the author."
+  },
+  {
+    "id": "intl-v2-hy-nerd-102",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Վերնիսաժի իրերը կատեգորիաներով դասավորեցի։ Մի գդալ, որ նաև պատի զարդ էր, ամբողջ տվյալների բազային սովորեցրեց՝ կյանքը մեկ սյունակ չէ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Multifunction craft object; real use requires more than one category."
+  },
+  {
+    "id": "intl-v2-hy-nerd-103",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Բյուրականի լուսանկարներին աստղային անուններ ավելացրի։ Ընկերս միայն իր դեմքն էր փնտրում. տվյալների առաջնահերթությունները տարբեր էին։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Astronomy trip tagging; personal interest outranks astronomical metadata."
+  },
+  {
+    "id": "intl-v2-hy-nerd-104",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Հայերեն խոսքը ավտոմատ ենթագրեցի։ Ծրագիրը իմ երկար դադարները կետերի վերածեց, և առաջին անգամ մտածող մարդ երևացի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian speech transcription; hesitant pauses acquire confident punctuation."
+  },
+  {
+    "id": "intl-v2-hy-nerd-105",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Գորգի նախշը պատահական գեներատորով փոխեցի։ Վարպետը հարցրեց՝ հիմա ո՞վ է որոշելու, թե որ պատահականությունն է գեղեցիկ։ Համակարգիչը այդ պահին լուռ էր։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Algorithmic weaving design; randomness still requires aesthetic judgment."
+  },
+  {
+    "id": "intl-v2-hy-nerd-106",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Դուդուկի ձայնագրման մեջ իմ հազը նշեցի որպես անցանկալի իրադարձություն։ Ընկերներս խնդրեցին նույն գործառույթը կենդանի հանդիպումներին էլ միացնել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Audio event marking; friends request an impossible real-time version of editing."
+  },
+  {
+    "id": "intl-v2-hy-nerd-107",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Երևանի մետրոյի քարտեզի գծերը ուղիղ դարձրի։ Գեղեցիկ ստացվեց, բայց քաղաքը չհամաձայնեց վերադասավորվել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Schematic transit design; visual clarity does not reshape geography."
+  },
+  {
+    "id": "intl-v2-hy-nerd-108",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Մատենադարանի թվային գրքի էջերը արագ շրջեցի։ Համակարգիչը դիմացավ, իմ ըմբռնումը դեռ առաջին էջը բեռնելու փուլում էր։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fast digital access; human comprehension remains the bottleneck."
+  },
+  {
+    "id": "intl-v2-hy-nerd-109",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Հայերեն որոնման հուշումները իմ բառից առաջ պատասխանը գրեցին։ Հիմա համակարգիչս ավելի լավ գիտի՝ ինչ եմ հարցնելու, քան ես՝ ինչ եմ ուզում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian autocomplete; prediction outpaces a user's intent."
+  },
+  {
+    "id": "intl-v2-hy-nerd-110",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Սևանի լույսի արտացոլանքը ֆիզիկայով բացատրեցի։ Փոքր քույրս ասաց՝ լավ է, բայց լուսանկարում ինձ մի քիչ կողք տեղավորիր, փորձը ծածկում եմ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Lake optics explanation; a child requests practical composition."
+  },
+  {
+    "id": "intl-v2-hy-nerd-111",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Կասկադի բարձրանալու էներգիան հաշվարկեցի։ Արդյունքը շատ գեղեցիկ էր, մինչև մայրիկը հարցրեց՝ այդքան հաշվարկելու փոխարեն քանի աստիճան կհասցնեինք։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Energy calculation; analysis consumes the time reserved for the activity."
+  },
+  {
+    "id": "intl-v2-hy-nerd-112",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Գյումրիի դարբնի նախշը վեկտորային գծերով նկարեցի։ Իմ բոլոր անկյունները կատարյալ էին, միայն պատվերի չափերը՝ սխալ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Digital ironwork design; mathematical neatness misses the basic brief."
+  },
+  {
+    "id": "intl-v2-hy-nerd-113",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Դիլիջանի թռչունների ձայնը ճանաչող հավելվածը իմ հեռախոսի ծանուցումն էլ թռչուն համարեց։ Վերջապես մի սարք կար, որ աշխատանքային նամակին բնության մաս էր համարում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "animals"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Forest audio app; a notification is mistaken for wildlife."
+  },
+  {
+    "id": "intl-v2-hy-nerd-114",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Քոչարիի ուսուցչին ասացի՝ սխալս կրկնելի է։ Նա ուրախացավ՝ ուրեմն գիտենք՝ ինչն ենք փոխելու։ Ծրագրավորողին այսքան բարի վրիպազերծում դեռ չէին առաջարկել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dance instruction; reproducible error receives constructive human debugging."
+  },
+  {
+    "id": "intl-v2-hy-nerd-115",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Վերնիսաժի փայտե գդալը եռաչափ սկանավորեցի։ Ֆայլը բացելիս տատիկը հարցրեց՝ ապուրն էլ պիտի սկանավորե՞նք, որ օգտագործվի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft digitization; a virtual utensil lacks its everyday function."
+  },
+  {
+    "id": "intl-v2-hy-nerd-116",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Բյուրականից հետո աստղերի մասին բացատրությունս այնքան երկար էր, որ ընկերոջս ուշադրությունը հեռացավ լույսից արագ։ Ֆիզիկան գոնե դա չգրանցեց։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Astronomy enthusiasm; a knowingly figurative speed exaggerates a listener's lost attention."
+  },
+  {
+    "id": "intl-v2-hy-nerd-117",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Հայերեն մուտքագրման սխալներն ավտոմատ ուղղեցի։ Հետո անունները ստուգեցի ու հասկացա՝ ծրագիրս շատ ծանոթներիս նոր կյանք էր տվել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian autocorrect; proper names suffer overconfident correction."
+  },
+  {
+    "id": "intl-v2-hy-nerd-118",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Գորգի նախշի ֆայլում շերտերը խառնեցի։ Վարպետը նայեց ու ասաց՝ լավ է, որ իմ գորգի թելերը կոճակով չեն թաքնվում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Digital weaving design; layer controls create a problem absent from the finished textile."
+  },
+  {
+    "id": "intl-v2-hy-nerd-119",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Դուդուկի ձայնի արձագանքը չափելու համար դատարկ սենյակ գտա։ Իմ բացատրությունն ավելի երկար արձագանք ունեցավ, քան փորձը։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Acoustic measurement; over-explaining outlasts the intended sound test."
+  },
+  {
+    "id": "intl-v2-hy-nerd-120",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Երևանի մետրոյի քարտեզը քեշում պահեցի։ Մայրս ասաց՝ շատ լավ, հիմա դու էլ մտքում պահիր՝ որտեղ ենք իջնում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Offline transit data; device memory does not replace passenger attention."
+  },
+  {
+    "id": "intl-v2-hy-nerd-121",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Հայերեն բառերի հաճախականությունը հաշվեցի ընտանեկան խմբում։ «Որտե՞ղ ես» արտահայտությունը դարձավ մեր տան գլխավոր գիտական հետաքրքրությունը։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian family-chat analysis; ordinary concern dominates the statistics."
+  },
+  {
+    "id": "intl-v2-hy-nerd-122",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Մատենադարանի հին էջի վերականգնված պատկերը ցույց տվեցի ծրագրին։ Այն հարցրեց՝ ջնջե՞լ բծերը։ Պատմությունն այդքան վստահ մաքրման առաջարկ չէր սպասում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Manuscript image processing; automatic cleanup risks erasing meaningful traces."
+  },
+  {
+    "id": "intl-v2-hy-nerd-123",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Բյուրականի մասին ներկայացման մեջ շատ զրոներ գրեցի։ Տնօրենը ասաց՝ բյուջե՞ է։ Առաջին անգամ աստղագիտությունը հանգստացնող պատասխան դարձավ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Astronomical numbers; a manager mistakes magnitude for cost."
+  },
+  {
+    "id": "intl-v2-hy-nerd-124",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Գյումրիի դարպասը չափելու լազերային սարքս մոռացել էի։ Վարպետը մետրը տվեց՝ խնդիրը լուծվեց առանց ներբեռնման։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Metalwork measurement; a basic tool bypasses missing technology."
+  },
+  {
+    "id": "intl-v2-hy-nerd-125",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Դիլիջանի քայլարշավի բարձրության գրաֆիկը շատ կտրուկ էր։ Ընկերս խնդրեց մասշտաբը փոխել՝ ոտքերին հետո ցույց տալու համար։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Elevation chart; cosmetic rescaling is offered as comfort to tired legs."
+  },
+  {
+    "id": "intl-v2-hy-nerd-126",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Քոչարիի խմբի համար ժամանակի համաժամեցման հավելված գրեցի։ Ուսուցիչը մի անգամ ծափ տվեց ու թարմացման կարիք չզգաց։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dance timing; a simple shared cue replaces elaborate synchronization software."
+  },
+  {
+    "id": "intl-v2-hy-nerd-127",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Վերնիսաժի կավե բաժակին չիպ կպցնելու գաղափարը մերժվեց։ Տատիկը ասաց՝ ես այն լվանում եմ, ոչ թե վերագործարկում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Smart craft proposal; household use challenges unnecessary electronics."
+  },
+  {
+    "id": "intl-v2-hy-nerd-128",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Գորգի նախշը բիթերով նկարագրեցի։ Վարպետն ասաց՝ հրաշալի է, հիմա ասա՝ քանի կծիկ թել բերեմ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Weaving data representation; digital detail omits the maker's useful unit."
+  },
+  {
+    "id": "intl-v2-hy-nerd-129",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Դուդուկի մեղեդին ավտոմատ ճանաչող ծրագիրը լռության հատվածում էլ անուն առաջարկեց։ Այդ երգը ամենալավը ես էի նվագում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Music recognition false positive; silence grants the novice effortless mastery."
+  },
+  {
+    "id": "intl-v2-hy-nerd-130",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Սևանի քամու համար հավանականության մոդել կազմեցի։ Գլխարկս թռավ հենց այն ժամանակ, երբ ցածր հավանականություն էի բացատրում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "weather"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Weather probabilities; an unlikely event interrupts confident explanation."
+  },
+  {
+    "id": "intl-v2-hy-nerd-131",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Երևանի մետրոյի գծապատկերը երեխան ավելի արագ հասկացավ, քան իմ ալգորիթմի նկարագրությունը։ Պարզվեց՝ նույն գծերին տարբեր քանակի խոսք եմ ավելացրել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Transit graph explanation; excessive abstraction obscures a clear map."
+  },
+  {
+    "id": "intl-v2-hy-nerd-132",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Հայերեն «ոչ» պատասխանը ծրագիրս երեք վայրկյան էր մշակում։ Համակարգը, ի տարբերություն ընտանիքիս, գոնե մտածում էր նախքան մերժելը։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian chatbot delay; slow negative output feels unusually considerate."
+  },
+  {
+    "id": "intl-v2-hy-nerd-133",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Մատենադարանի պատկերի թույլատրությունը բարձրացրի։ Ընկերս խնդրեց նույնը անել իմ ձեռագրի ընթեռնելիության հետ. այդ կարգավորումը սարքում չկար։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Image resolution; digitization cannot repair the author's penmanship."
+  },
+  {
+    "id": "intl-v2-hy-nerd-134",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Կասկադի աստիճաններին արագությանս գրաֆիկը նվազում էր։ Ես դա անվանեցի տվյալների գեղեցիկ միտում, ոտքերս՝ տուն գնալու առաջարկ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Climb performance chart; analysis and bodily experience label the same decline differently."
+  },
+  {
+    "id": "intl-v2-hy-nerd-135",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Գյումրիի դարբնի գործիքը նկարից ճանաչող մոդելը բոլորին մուրճ անվանեց։ Վարպետը ասաց՝ սա նոր աշակերտի առաջին օրվա նման է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Tool-image classification; a simplistic model resembles a novice craft learner."
+  },
+  {
+    "id": "intl-v2-hy-nerd-136",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Դիլիջանի անտառի ձայները հանեցի աշխատանքային ձայնագրությունից։ Մնաց իմ «ինչ գեղեցիկ է» կրկնությունը՝ առանց ապացույցների։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Audio separation; removing ambience leaves enthusiastic commentary unsupported."
+  },
+  {
+    "id": "intl-v2-hy-nerd-137",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Քոչարիի պարապմունքին սխալներս գրանցող հավելվածը հիշեցրեց՝ պահեստը լցվում է։ Առաջին անգամ ծրագիրը ինձ ընդմիջում առաջարկեց առանց բժշկական կրթության։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dance practice logging; frequent mistakes exhaust storage."
+  },
+  {
+    "id": "intl-v2-hy-nerd-138",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Վերնիսաժի ապրանքի համար եզակի համար ստեղծեցի։ Արհեստավորը ասաց՝ ինքը արդեն եզակի է, համարը ինչո՞ւ է այդքան մեծ ինքնավստահությամբ գալիս։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Handcrafted inventory; uniqueness of identifiers competes with uniqueness of objects."
+  },
+  {
+    "id": "intl-v2-hy-nerd-139",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Բյուրականում աստղերի սպեկտրը տեսա ու հասկացա՝ լույսն էլ իր կենսագրությունը գույներով է ուղարկում։ Իմ ինքնակենսագրությունը դեռ սևով է հազիվ համոզում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Stellar spectroscopy; informative light spectra become a career-document comparison."
+  },
+  {
+    "id": "intl-v2-hy-nerd-140",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Հայերեն էջի բեռնման ժամանակը կրճատեցի, բայց ընթերցողները չմնացին։ Հիմա արագ կարողանում են համոզվել, որ վերնագիրը չափազանց խոստումնալից էր։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Web performance; faster access exposes weak content sooner."
+  },
+  {
+    "id": "intl-v2-hy-nerd-141",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Գորգի նախշի պտտման անկյունը սխալ գրեցի։ Ծրագիրն առանց բողոքի աշխատեց, միայն գորգն էր կարծես իր տունը կորցրել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "science"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Pattern rotation; flawless execution of a wrong parameter yields a disoriented design."
+  },
+  {
+    "id": "intl-v2-hy-nerd-142",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Դուդուկի ձայնի համար ականջակալ ընտրելիս այնքան չափանիշ կարդացի, որ համերգի տևողությունը ծախսեցի լռության մեջ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Audio equipment research; preparation displaces listening."
+  },
+  {
+    "id": "intl-v2-hy-nerd-143",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Երևանի մետրոյի տվյալների բազայում «կայարան» դաշտը պարտադիր էր։ Ընկերս ասաց՝ մեր ուղևորության համար էլ նույն կանոնը կիրառիր, ամեն անգամ վերջին պահին ենք որոշում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Transit schema; a database constraint suggests better personal planning."
+  },
+  {
+    "id": "intl-v2-hy-nerd-144",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Սևանի ջերմաստիճանը չափեցի երեք սարքով։ Ստացա երեք թիվ ու մեկ ընտանեկան որոշում՝ բաճկոն հագնել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "weather"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Lake outing; measurement disagreement still permits a practical consensus."
+  },
+  {
+    "id": "intl-v2-hy-nerd-145",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Մատենադարանի ձեռագրի թվային պատճենը անվանեցի «սկզբնական»։ Պատմաբանը հարցրեց՝ ֆա՞յլն է, թե՞ աղբյուրը։ Իմ պանակների փիլիսոփայությունը սկսվեց։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Manuscript digitization; version terminology collides with historical originals."
+  },
+  {
+    "id": "intl-v2-hy-nerd-146",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Հայերեն նամակի բառերը կրճատող ծրագիրը հանեց «խնդրում եմ»-ը։ Ֆայլը թեթևացավ, հարաբերությունները՝ ծանրացան։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Text shortening; byte savings remove useful courtesy."
+  },
+  {
+    "id": "intl-v2-hy-nerd-147",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Գյումրիի նախշավոր պատուհանը նկարելիս ուղղանկյուն ցանց ավելացրի։ Դարբինը ժպտաց՝ դու էլ քո վանդակն ունես, ուղղակի հեռախոսի մեջ է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Photo grid and decorative ironwork; two different grids mirror each other."
+  },
+  {
+    "id": "intl-v2-hy-nerd-148",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Դիլիջանի արահետի գծագրում բոլոր ոլորանները պահեցի։ Ընկերս տպեց ու հարցրեց՝ սա ճանապարհն է, թե՞ ականջակալներս են քարտեզի վրա ընկել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Trail mapping; a winding route resembles a familiar tangle."
+  },
+  {
+    "id": "intl-v2-hy-nerd-149",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Քոչարիի քայլերն անիմացիա դարձրի։ Էկրանի մարդը կատարյալ պարեց, ես՝ ոչ։ Առաջին անգամ իմ թվային պատճենը ինձնից ավելի լավ էր պատրաստվել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dance animation; a model exceeds its creator's embodied skill."
+  },
+  {
+    "id": "intl-v2-hy-nerd-150",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Վերնիսաժի փայտե խաղալիքի նկարագրության մեջ «անլար» գրեցի։ Վաճառողը ասաց՝ տեխնիկապես ճիշտ է, բայց երեխաները հիմնականում ձի են փնտրում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft product copy; gadget terminology misses ordinary user intent."
+  },
+  {
+    "id": "intl-v2-hy-nerd-151",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Բյուրականի աստղադիտակի նկարը շատ մեծ ֆայլ էր։ Սեղմելուց հետո աստղերը նույնքան հեռու մնացին, գոնե փոստարկղը մոտեցավ հանգստին։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Astronomy image compression; cosmic distance remains while email size shrinks."
+  },
+  {
+    "id": "intl-v2-hy-nerd-152",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Գորգի նախշի սխալը գտնելու համար մեծացրի պատկերը։ Տատիկը խնդրեց նույնը գորգի վրա անել՝ հյուսելուց տեսողությանը կօգնի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Digital magnification; a useful screen feature cannot directly enlarge physical craft work."
+  },
+  {
+    "id": "intl-v2-hy-nerd-153",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Դուդուկի ձայնագրությունը ըստ լռությունների բաժանեցի։ Ստացվեց, որ շնչառությունը մեր նախագծի ամենահուսալի բաժանարարն է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Audio segmentation; human breath supplies useful boundaries."
+  },
+  {
+    "id": "intl-v2-hy-nerd-154",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Երևանի մետրոյում քարտեզս ինքն իրեն շրջվում էր։ Վերջապես հեռախոսը անշարժ պահեցի. երբեմն համակարգի կայունությունը դաստակիդ մեջ է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Navigation orientation; physical handling resolves a software-looking problem."
+  },
+  {
+    "id": "intl-v2-hy-nerd-155",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Հայերեն ուղղագրության ստուգիչին հատուկ սխալ տվեցի։ Այն ուղղեց ճիշտ, իսկ ես վիրավորվեցի՝ իմ նախորդ ճիշտ բառերին այդքան չէր վստահել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Spellcheck testing; inconsistency makes successful correction feel personal."
+  },
+  {
+    "id": "intl-v2-hy-nerd-156",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Մատենադարանի զարդանախշերը դասակարգելիս «այլ» բաժինը լցվեց։ Պատմական արվեստը կրկին հաղթեց իմ հինգ հարմար վանդակներին։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Manuscript ornament taxonomy; rich examples overwhelm a simplistic classification."
+  },
+  {
+    "id": "intl-v2-hy-nerd-157",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Սևանի լճափի լուսանկարների վրա աշխարհագրական նշումներ ավելացրի։ Ընկերներս վերջապես գիտեին՝ որտեղ եմ եղել, ես դեռ փնտրում էի՝ որ պանակում եմ պահել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Photo geotagging; location metadata cannot fix file organization."
+  },
+  {
+    "id": "intl-v2-hy-nerd-158",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Կասկադի բարձրության փոփոխությունը հեռախոսս գրանցեց, իսկ տրամադրությունս՝ ոչ։ Սարքը դեռ չէր տարբերում արվեստ դիտելն ու շունչ քաշելը։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Activity tracking; numerical elevation omits the purpose of pauses."
+  },
+  {
+    "id": "intl-v2-hy-nerd-159",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Գյումրիի երկաթե ծաղկի մոդելում նյութը «փայտ» էր մնացել։ Հաշվարկը հրաշալի էր, իրականությունը՝ այլ մասնագիտությամբ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft simulation; a wrong material property invalidates polished calculations."
+  },
+  {
+    "id": "intl-v2-hy-nerd-160",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Դիլիջանի ծառի տարիքը լուսանկարից գուշակող հավելվածին հարց տվեցի։ Այն այնքան վստահ թիվ ասաց, որ ես էլ իմ ծննդյան վկայականը ստուգեցի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Overconfident nature app; unwarranted precision undermines the user's own certainty."
+  },
+  {
+    "id": "intl-v2-hy-nerd-161",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Քոչարիի ուսուցման ծրագրում հետադարձ կապ ավելացրի։ Հեռախոսը թրթռում էր ամեն սխալիս։ Դասի վերջում ինքը ավելի շատ էր պարել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dance feedback app; frequent vibration outperforms the novice's motion."
+  },
+  {
+    "id": "intl-v2-hy-nerd-162",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Վերնիսաժի ձեռագործ տոպրակի ծանրաբեռնվածությունը հաշվարկեցի։ Մայրս պարզապես մեջը գնված բոլոր իրերը դրեց՝ գործնական թեստերը շատ արագ են սկսվում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft bag capacity; real-world use arrives before elaborate analysis."
+  },
+  {
+    "id": "intl-v2-hy-nerd-163",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Բյուրականի աստղերի մասին տվյալները ընկերոջս ուղարկեցի CSV-ով։ Նա հարցրեց՝ գիշերային երկինքը հիմա ստորակետո՞վ է բաժանվում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Astronomy data format; tabular representation contrasts with the visible sky."
+  },
+  {
+    "id": "intl-v2-hy-nerd-164",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Հայերեն բառի սխալ գրությունը որոնման մեջ էլ ճիշտ արդյունք տվեց։ Հիմա ուսանողս ինձ հարցնում է՝ ինչո՞ւ դպրոցը նույն գործառույթը չունի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Typo-tolerant Armenian search; a learner wants the same tolerance in grading."
+  },
+  {
+    "id": "intl-v2-hy-nerd-165",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Գորգի նախշի գունային աղյուսակը տպեցի սև-սպիտակ։ Առաջին անգամ իմ բոլոր տարբերակները ժողովում միաձայն էին։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Weaving color chart; monochrome printing erases the choices under debate."
+  },
+  {
+    "id": "intl-v2-hy-nerd-166",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Դուդուկի ձայնը չափելիս սենյակի արձագանքը մոռացել էի։ Թվերը շատ վստահ էին, մինչև հասկացա՝ պատերն էլ են իմ նմուշում նվագում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Acoustic measurement; the room contributes to recorded sound."
+  },
+  {
+    "id": "intl-v2-hy-nerd-167",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Երևանի մետրոյի ուղևորության ժամանակը վայրկյաններով պահեցի։ Տանը հարցրին՝ ուշացա՞ր։ Ամբողջ ճշգրտությունը տեղավորվեց մեկ «այո»-ի մեջ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fine-grained transit tracking; a binary practical question collapses all detail."
+  },
+  {
+    "id": "intl-v2-hy-nerd-168",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Հայերեն տառերի բարձրությունը չափեցի էկրանին։ Տպելիս ամեն ինչ փոխվեց. թուղթը մեր առցանց ժողովին չէր մասնակցել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian typography across media; screen measurements fail in print."
+  },
+  {
+    "id": "intl-v2-hy-nerd-169",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Մատենադարանի թվային արխիվի մասին կարդալուց հետո ֆայլերս ամսաթվով դասավորեցի։ Ամենահինը «վաղը_ավարտել» անունն ուներ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Archival organization; a postponed task becomes the oldest record."
+  },
+  {
+    "id": "intl-v2-hy-nerd-170",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Սևանի ջրի գույնը ճանաչող մոդելը ամպամած նկարում շփոթվեց։ Լիճը նույն տեղում էր, բայց ծրագիրը հագուստով էր ճանաչում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "weather"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Image recognition under changing light; surface appearance substitutes for identity."
+  },
+  {
+    "id": "intl-v2-hy-nerd-171",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Գյումրիի դարպասի բացվելու անկյունը հաշվարկեցի։ Տեղում ծաղկամանը խանգարեց. մոդելիս մեջ տնային բուսաբանություն չկար։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Gate geometry; an omitted household object invalidates clearance calculations."
+  },
+  {
+    "id": "intl-v2-hy-nerd-172",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Դիլիջանի արահետի բարձրության տվյալները սխալ միավորով կարդացի։ Մի պահ կարծեցի՝ մեր զբոսանքը լեռնագնացության նոր ռեկորդ է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Hiking units; a conversion mistake exaggerates an ordinary achievement."
+  },
+  {
+    "id": "intl-v2-hy-nerd-173",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Քոչարիի կրկնվող քայլերը կոդում ֆունկցիայի վերածեցի։ Հայրս խնդրեց նաև մի կոճակ, որ իրական ոտքերն իրենք կատարեն այն։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dance code abstraction; a parent wants automation of the physical task."
+  },
+  {
+    "id": "intl-v2-hy-nerd-174",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Վերնիսաժի կավե ամանի լուսանկարը արհեստական բանականությանը ցույց տվեցի։ Այն բռնակը երկու կողմում առաջարկեց, իսկ վարպետը՝ նախ հասկանալ, թե ինչ ենք լցնելու։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Pottery design assistance; practical purpose should precede added features."
+  },
+  {
+    "id": "intl-v2-hy-nerd-175",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Բյուրականում գիշերային երկինքը նայելուց հետո պայծառ էկրանս իջեցրի։ Առաջին անգամ համակարգչից քիչ լույս պահանջեցի՝ ավելի շատ բան տեսնելու համար։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Astronomy viewing; reducing screen glare supports observation."
+  },
+  {
+    "id": "intl-v2-hy-nerd-176",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Հայերեն խոսքի արագությունը չափող ծրագիրը տատիկիս լսեց ու միջին հաշվարկեց։ Ընտանիքը պահանջեց առանձին չափել պատմությունը և «կարճ ասեմ»-ը։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Speech analysis; a familiar introductory phrase has a misleading time promise."
+  },
+  {
+    "id": "intl-v2-hy-nerd-177",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Գորգագործի մի պարզ հանգույցը նկարագրեցի տասներկու քայլով։ Նա նույն ընթացքում երեքը կապեց. փաստաթղթավորումը արտադրությունից հետ էր մնում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft documentation; verbose procedural description lags behind practiced action."
+  },
+  {
+    "id": "intl-v2-hy-nerd-178",
+    "collection": "hy-am-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Դուդուկի ձայնը հեռախոսի փոքր բարձրախոսով լսեց հայրս։ Ասաց՝ երաժիշտը լավն է, ուղղակի նրան ավելի մեծ պատուհան բացեք։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Audio playback; limited speaker quality is described as a narrow opening for music."
+  }
+]

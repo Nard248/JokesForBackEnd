@@ -1,0 +1,2126 @@
+[
+  {
+    "id": "intl-v2-it-wholesome-001",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Nonna mi insegna le orecchiette. Le mie vengono così grandi che possono ascoltare tutta la famiglia.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-wholesome-002",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il pizzaiolo ha fatto una pizza piccola per mio figlio. Lui ha chiesto se doveva ancora crescere nel forno.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-wholesome-003",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La Befana ha trovato due calze uguali. Mio nipote sta sperimentando la consegna simmetrica.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-wholesome-004",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il nonno pesta il basilico e il nipotino dirige. Il pesto è venuto in quattro quarti.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-wholesome-005",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Sotto i portici, mia figlia chiude l'ombrello con soddisfazione: « Bologna me ne presta uno più grande. »",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-wholesome-006",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mia nipote ha tolto il tuppo alla brioche. Dice che la colazione si è finalmente pettinata.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-wholesome-007",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La nonna ha imparato a fare il cuoricino nel cappuccino. Il nonno ne chiede due: uno anche per il biscotto.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-wholesome-008",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il gondoliere saluta il bambino. Lui saluta anche il remo, per non escludere chi lavora.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-wholesome-009",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Davanti ai trulli, mio figlio ha chiesto dove comprano i cappelli per le case.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-wholesome-010",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "Alla sagra, nonna ritrova tutti. Io reggo il piatto: finalmente un ruolo chiaro nella genealogia.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-wholesome-011",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mio nipote applaude il puparo anche quando sistema i fili. Apprezza il lavoro dietro le quinte prima delle quinte.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-wholesome-012",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La lasagna di nonna ha tanti strati. Mio fratello cerca il suo appartamento preferito.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-wholesome-013",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "A Cremona, il liutaio mostra il violino. Mia figlia vuole sapere quando gli crescono le canzoni.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento italiano a liuteria, musica o teatro come contesto di una scena inventata; nessuna imitazione di un autore."
+  },
+  {
+    "id": "intl-v2-it-wholesome-014",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Sul vaporetto, il piccolo chiede se il mare conosce tutte le fermate. Il nonno dice che le ripassa ogni giorno.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena ambientata in un luogo o servizio italiano nominato; incidenti immaginari, senza affermazioni su servizi attuali."
+  },
+  {
+    "id": "intl-v2-it-wholesome-015",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Per la recita di Pinocchio, mio figlio interpreta un albero. È l'unico che non teme di dimenticare le battute.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-wholesome-016",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "Al Giro d'Italia, la nonna riconosce la maglia rosa prima di me. Ha allenato l'occhio su cinquant'anni di bucato.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-wholesome-017",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La pizza a portafoglio piace a mio nipote. Finalmente ha qualcosa da tenere chiuso che contiene un tesoro.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-wholesome-018",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Nonna allinea i taralli. Il piccolo li conta sulle dita e poi reclama la mano mancante.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-wholesome-019",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La focaccia lascia olio sul sacchetto. Mia figlia sostiene che Genova ci ha mandato un disegno.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-wholesome-020",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il cannolo di papà trabocca. Il bambino gli presta il cucchiaino « per aiutare il trasloco ».",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-wholesome-021",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Per Ferragosto abbiamo apparecchiato anche per l'orsetto. È il solo invitato che non discute il posto all'ombra.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-wholesome-022",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il nonno conta le arcate del portico di San Luca. Mia nipote gli propone di ripartire dal gelato.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-wholesome-023",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La maschera veneziana nasconde il viso di mamma. Mio figlio la riconosce dal modo in cui cerca i fazzoletti.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-wholesome-024",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "A Trieste, il nonno ordina un capo in b. Il piccolo vuole sapere chi comanda negli altri bicchieri.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-wholesome-025",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "A Matera, la nonna si ferma a ogni scaletta. Dice che il paesaggio merita intervalli di merenda.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-wholesome-026",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mio nipote chiude i tortellini storti con grande cura. Nessuno deve prendere freddo nel brodo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-wholesome-027",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il pupo cavaliere perde l'elmo. Mio figlio suggerisce al puparo il suo cappellino da sole.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-wholesome-028",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La tombola di famiglia procede lenta. La nonna racconta un ricordo per ogni numero e noi vinciamo soprattutto storie.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-wholesome-029",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il nonno compra un mortaio piccolo. Vuole iniziare il nipote alla ginnastica del basilico.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-wholesome-030",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Le orecchiette della bambina sono tutte diverse. La nonna le chiama « una classe molto attenta ».",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-wholesome-031",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il pizzaiolo allarga l'impasto. Mio figlio chiede se può allargare anche il tavolo per gli amici.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-wholesome-032",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La frutta martorana inganna il nonno. Il nipote gli spiega con orgoglio che finalmente esistono verdure da pasticceria.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-wholesome-033",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mia figlia conta i ponti di Venezia. Al quinto decide che la città ama fare piccoli abbracci all'acqua.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-wholesome-034",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "Nel presepe della scuola, il bambino mette una pizzeria. Dice che i pastori arriveranno affamati.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-wholesome-035",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "A Pisa, il nonno posa storto per la foto. La torre sembra improvvisamente quella educata.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-wholesome-036",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Nonna fa gli gnocchi con il nipote. Lui firma i suoi con la forchetta: vuole essere citato nei ringraziamenti.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-wholesome-037",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La calza della Befana ha un buco. Mio figlio lo chiama uscita di emergenza per caramelle impazienti.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-wholesome-038",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Sotto i portici abbiamo incontrato la pioggia solo due volte. Mia nipote le ha detto « scusa, stiamo passando ».",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-wholesome-039",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il nonno fischietta Puccini mentre stende. Le mollette entrano sempre al momento giusto.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento italiano a liuteria, musica o teatro come contesto di una scena inventata; nessuna imitazione di un autore."
+  },
+  {
+    "id": "intl-v2-it-wholesome-040",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il barista disegna un coniglio nel latte. Mio figlio aspetta che finisca di bere prima di dargli un nome.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-wholesome-041",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "Al circolo delle bocce, nonno presta le scarpe al nipote. Le bocce sono l'unica cosa che gli sta già bene.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-wholesome-042",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La burrata si apre e il bambino applaude. Non si aspettava una sorpresa dentro il formaggio.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-wholesome-043",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mamma piega la pizza a portafoglio. Mio fratello controlla che il basilico non perda la paghetta.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-wholesome-044",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Camminando nei caruggi, il nonno si perde. Dice che sta facendo conoscere le strade al nostro ombrello.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-wholesome-045",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La granita si scioglie piano. Mia nipote accelera per non lasciarla sola nel bicchiere.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-wholesome-046",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La sagra ha finito le sedie. Nonna trova posto lo stesso: qualcuno la conosce sempre da un'altra pentola.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-wholesome-047",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il bambino offre una caramella alla maschera di Arlecchino. « Hai già tanti colori, ma te ne manca uno al limone. »",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-wholesome-048",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "A Burano, mia figlia sceglie la casa preferita. Cambia idea a ogni angolo: sta facendo amicizia con i colori.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-wholesome-049",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il risotto di papà è troppo abbondante. Nonna lo promuove subito a cuoco di famiglia.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-wholesome-050",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mio nipote legge Pinocchio al suo orsacchiotto. Si ferma a spiegargli che il naso resta di stoffa.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-wholesome-051",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Sul Frecciarossa, la nonna apre un contenitore di polpette. La nostra carrozza ottiene una seconda destinazione.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena ambientata in un luogo o servizio italiano nominato; incidenti immaginari, senza affermazioni su servizi attuali."
+  },
+  {
+    "id": "intl-v2-it-wholesome-052",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La sfoglina lascia provare il mattarello al piccolo. Lui chiede se la pasta preferisce un massaggio lento.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-wholesome-053",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "Alla fine dell'Opera dei Pupi, mio figlio saluta ogni cavaliere. Il puparo inventa un inchino per ciascuno.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-wholesome-054",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La Befana trova un biscotto e una scopa giocattolo. Mio nipote ha pensato all'assistenza stradale.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-wholesome-055",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il basilico sul balcone cresce bene. Il nonno gli racconta ogni giorno la ricetta, per motivarlo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-wholesome-056",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "A Bari, una signora mostra come chiudere le orecchiette. Mio figlio chiede se ascoltano meglio prima o dopo il sugo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-wholesome-057",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il tuppo della brioche sparisce per primo. Nonna sostiene che anche a colazione bisogna salutare togliendosi il cappello.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-wholesome-058",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "A Lucca, facciamo il giro delle mura in bicicletta. Il piccolo dice che la città ci ha costruito una pista per stare insieme.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-wholesome-059",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "Al bar, il nonno allunga il caffè con la conversazione. La tazzina dura molto più del previsto.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-wholesome-060",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mia nipote disegna una gondola con ruote. Vuole accompagnare il gondoliere anche quando fa la spesa.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-wholesome-061",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "I ravioli fatti dai bambini hanno forme nuove. Nonna li cucina tutti: sostiene il turismo della pasta.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-wholesome-062",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "A Ferragosto la nonna porta una tovaglia in più. « Per gli amici che non sappiamo ancora di avere. »",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-wholesome-063",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La pizza della bambina ha un cuore di pomodoro. Il pizzaiolo promette di non cuocerlo troppo seriamente.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-wholesome-064",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il grembiule scolastico del piccolo ha una tasca segreta. Dentro c'è un biglietto di nonna: merenda morale.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-wholesome-065",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Guardando il Giro, mio nipote offre il triciclo al corridore stanco. È sicuro delle rotelle.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-wholesome-066",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il nonno sa impastare i tortellini e raccontare storie insieme. Io so soprattutto rallentare il vassoio.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-wholesome-067",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La focaccia barese ha pomodori dappertutto. Il piccolo li chiama finestre con vista sul pranzo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-wholesome-068",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il pesto del nipote è un po' grossolano. Nonno dice che il basilico ha mantenuto il suo carattere.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-wholesome-069",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La nonna taglia la cassata in fette piccole. Il nonno ne prende due per non contraddirla.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-wholesome-070",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "Al Museo del Violino di Cremona, mia figlia sussurra. Non vuole consumare le note prima del concerto.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-wholesome-071",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il bambino mette una calza anche per il cane alla Befana. Ha scritto « niente carbone, starnutisce ».",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-wholesome-072",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il vaporetto ondeggia. Mio figlio trova gentile che Venezia dondoli i passeggeri come una culla.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-wholesome-073",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Nonna mi insegna a mantecare il risotto. La parte più difficile è impedirle di aggiungere un altro ospite.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-wholesome-074",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "A Trieste, il nonno ordina il suo caffè e quello di un amico assente. Poi lo chiama: « Si sta raffreddando la conversazione. »",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-wholesome-075",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il pizzaiolo ricorda il nome di mio figlio. Lui pensa che sia scritto sul bordo della sua margherita.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-wholesome-076",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La salita a San Luca è lunga. Nonna la divide in « ancora un po' » e « adesso ti do un biscotto ».",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-wholesome-077",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "Alla tombola, la bambina copre anche i numeri sbagliati. Non vuole che nessuno rimanga scoperto al freddo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-wholesome-078",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mio nipote trova il cavaliere di legno coraggioso. Io ammiro il puparo che risponde a tutte le sue domande.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-wholesome-079",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "I taralli di nonna riempiono un barattolo. Il nonno lo apre spesso per controllare se stanno stretti.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-wholesome-080",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La focaccia arriva ancora tiepida. La nonna la divide con la precisione di chi conosce ogni fame.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-wholesome-081",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il gelato nella brioche piace al bambino: « Finalmente il pane ha una giornata di vacanza. »",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-wholesome-082",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "A Torino, mio figlio guarda la Mole. Chiede se la città ha dimenticato di rientrare l'antenna.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-wholesome-083",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Per la recita di Rodari, mio nipote porta un ombrello. Si prepara a qualsiasi fantasia prevista dal programma.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-wholesome-084",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Papà fa la piadina troppo grande. La piccola ci vede una coperta per il prosciutto.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-wholesome-085",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il presepe di famiglia ha una pecora di plastilina. Nessuno la sposta: è l'unica con gli occhiali del nonno.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-wholesome-086",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Nonna compra un ventaglio a Venezia. Il nipote vuole sapere se ha portato anche una piccola estate da aprire.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-wholesome-087",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La sfogliatella lascia briciole ovunque. Mio figlio sostiene che sta distribuendo inviti per tornare.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-wholesome-088",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "Al Giro, la bimba urla « bravo » anche ai meccanici. Le piace chi aggiusta le giornate.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-wholesome-089",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Le tagliatelle di papà hanno misure diverse. Nonna propone di chiamarle un pranzo panoramico.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-wholesome-090",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Ad Alberobello, il piccolo disegna il nostro appartamento con il tetto a cono. Ha deciso che anche noi meritiamo un cappello.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-wholesome-091",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La nonna conserva il mortaio della sua mamma. Il pesto contiene sempre una piccola eredità verde.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-wholesome-092",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il cannolo rompe il silenzio con un crac. Mio nipote gli dice « salute ».",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-wholesome-093",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "Alla sagra, il nonno saluta il cuoco e il cuoco aggiunge una porzione. Un social network che conosco bene.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-wholesome-094",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Sul traghetto per l'Elba, mia figlia cerca il posto del capitano. Vuole ringraziarlo per aver portato anche il panorama.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-wholesome-095",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il nonno appoggia la tazzina della moka sul piattino con cura. Il nipote gli imita il gesto usando un tappo di latte.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-wholesome-096",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Nonna fa le olive ascolane e il piccolo le conta. L'inventario cala sempre durante le verifiche.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-wholesome-097",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La maestra legge una filastrocca di Rodari. Mio figlio domanda se i personaggi vengono anche alla mensa.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-wholesome-098",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il bambino regala un disegno al gondoliere. Ha aggiunto un ombrellone « per le giornate di tanto sole ».",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-wholesome-099",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mia figlia guarda il cornicione della pizza e chiede se può sedersi il formaggio rimasto fuori.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-wholesome-100",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La Befana ha trovato un biglietto: « Puoi fermarti, nonna ha fatto troppi biscotti. »",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-wholesome-101",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il nonno arriva con tortellini fatti a mano. Il vassoio pesa meno delle istruzioni per scaldarli bene.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-wholesome-102",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Nonna fa le orecchiette tutte uguali; il nipote le mescola apposta. Vuole che il suo esemplare storto trovi subito degli amici.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-wholesome-103",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il piccolo vuole pestare il basilico con due mani. La nonna assume subito un direttore dei lavori di cinque anni.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-wholesome-104",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La brioche col tuppo è rimasta senza ciuffo. Il nonno le presta scherzosamente il suo cappello.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-wholesome-105",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "A Merano, il nonno assaggia uno strudel. Il nipote riconosce le mele: « Hanno messo la giacca. »",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-wholesome-106",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "Alla tombola, nonna presta i fagioli per coprire i numeri. Il pranzo di domani sta facendo esperienza sociale.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-wholesome-107",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La brioche della piccola ha lasciato un tuppo nel piatto. Il nonno lo conserva per il suo ritorno: una colazione con appuntamento.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-wholesome-108",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il maritozzo si apre a metà. Mia figlia distribuisce la panna con la serietà di un lavoro pubblico.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-wholesome-109",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "Alla bocciofila, nonno insegna al nipote ad aspettare. Io scopro finalmente dove ha imparato la pazienza con noi.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-wholesome-110",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La maschera veneziana ha un naso lungo. Mia nipote consiglia di dire una verità, per sicurezza.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-wholesome-111",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il pizzaiolo solleva l'impasto. Il piccolo trattiene il respiro: vuole aiutare senza fare vento.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-wholesome-112",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "A Ferragosto, il tavolo pieghevole traballa. Il nonno lo stabilizza con il romanzo che non voleva leggere.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-wholesome-113",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Sotto i portici, nonna cammina piano. Conosce troppi saluti per arrivare in orario.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-wholesome-114",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "A Bari, il bambino vede asciugare le orecchiette davanti alla porta. Le saluta una per una; nonna aspetta pazientemente che finisca il suo elenco telefonico.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-wholesome-115",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La focaccia finisce prima del mare. Il nonno dice che abbiamo fatto una sosta gastronomica in movimento.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-wholesome-116",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La frutta martorana è perfetta. Il bambino cerca l'etichetta « annaffiare con moderazione ».",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-wholesome-117",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "A Firenze, mia figlia ammira il David. Poi gli offre il fazzoletto per non prendere freddo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-wholesome-118",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il barista prepara il decaffeinato della nonna prima che ordini. Lei lo chiama il suo segretario personale.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-wholesome-119",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La calza della Befana pende storta. Il piccolo ha messo tutti i desideri dallo stesso lato.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-wholesome-120",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "Nel diario, dopo i compiti su Rodari, mio figlio scrive « chiamare nonna ». Dice che anche lei sa inventare finali migliori.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-wholesome-121",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Sui ponti di Venezia, il nonno dà la mano al nipote. Arrivano dall'altra parte con lo stesso passo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-wholesome-122",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La polenta si allarga sul tagliere. Mia figlia le augura di sentirsi a casa.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-wholesome-123",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Nonna insegna a fare i taralli. Il bambino chiude bene il cerchio: « Così il profumo non scappa. »",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-wholesome-124",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La pizza è arrivata già tagliata per i piccoli. Mio nipote ringrazia il pizzaiolo per aver disegnato le strade.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-wholesome-125",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "I tortellini del nonno sono minuscoli. Dice che i buoni abbracci non devono occupare molto spazio.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-wholesome-126",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mia figlia annusa il basilico e chiama la nonna. Ha riconosciuto il suo pranzo prima della pentola.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-wholesome-127",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La granita al limone fa chiudere gli occhi al piccolo. Poi sorride: « Il sole mi ha fatto il solletico. »",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-wholesome-128",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "Alla sagra, la nonna porta i contenitori vuoti. La sua fiducia nel futuro ha i coperchi.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-wholesome-129",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "Al lago di Garda, nonno insegna a saltare i sassi. Il bambino preferisce farli entrare con calma.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-wholesome-130",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il nipote tenta un’aria di Puccini al violino. Nonna riconosce la voglia di suonare e applaude quella, nell’attesa della melodia.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento italiano a liuteria, musica o teatro come contesto di una scena inventata; nessuna imitazione di un autore."
+  },
+  {
+    "id": "intl-v2-it-wholesome-131",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il piccolo disegna un semaforo per le gondole. Vuole regalare a Venezia un po' di ordine colorato.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-wholesome-132",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Nonna riempie i cappelletti. Mio figlio chiede se d'inverno possono indossare anche una sciarpa.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-wholesome-133",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La Befana riceve un succo di frutta al posto del caffè. « È per il viaggio lungo », spiega il piccolo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-wholesome-134",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mio nipote recita La vispa Teresa a memoria. La nonna muove le labbra: la farfalla ha improvvisamente due narratori.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-wholesome-135",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il nipote conta le orecchiette per gli ospiti. Nonna ne aggiunge una manciata « per chi conta male come me ».",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-wholesome-136",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La margherita della bambina ha il basilico al centro. Lei lo presenta come il giardino della pizza.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-wholesome-137",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il nonno misura le tagliatelle a occhio. Il nipote gli propone gli occhiali « per quelle più lunghe ».",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-wholesome-138",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "Nel caruggio, il bambino conta le finestre accese. La nonna conta le persone da salutare.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-wholesome-139",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il cannolo di nonno è più piccolo. Il nipote gli offre il proprio: « Il tuo ha bisogno di compagnia. »",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-wholesome-140",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "A Ravenna, mia figlia guarda i mosaici. Vuole regalare alla città i pezzetti avanzati del suo lavoretto.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-wholesome-141",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La tombola dura tutta la sera. Il piccolo vince il diritto di leggere i numeri, finalmente grandi quanto lui.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-wholesome-142",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "A Trieste, nonna tiene il bicchierino del caffè con due dita. Il nipote ammira la sua cerimonia in miniatura.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-wholesome-143",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il vento porta via il cappello sul vaporetto. Nonno lo saluta: « Almeno uno di noi sa nuotare leggero. »",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-wholesome-144",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La crostata della zia ha una griglia storta. Il bambino la chiama « il disegno delle strade per arrivare alla marmellata ».",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-wholesome-145",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "A Carnevale, nonna cuce il costume di Arlecchino. Ogni toppa ha una vecchia storia da raccontare.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-wholesome-146",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Nonno divide la focaccia barese lasciando un pomodoro a tutti. La pace familiare a volte richiede solo un buon coltello.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-wholesome-147",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mio figlio ordina la pizza con poche olive. Ne vuole abbastanza per dare un nome a ciascuna.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-wholesome-148",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il portico ci protegge dalla pioggia. Il piccolo insiste per ringraziare l'ultima colonna.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-wholesome-149",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il pesto del nonno profuma in tutta la casa. Nessuno riesce più a fingere di non sapere che è pronto.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-wholesome-150",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La brioche ha perso il tuppo. La bambina le fa una coda immaginaria con il cucchiaino.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-wholesome-151",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La bambina divide il cioccolato di Modica con il nonno. I granelli fanno cric sotto i denti e loro provano a rispondersi a ritmo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-wholesome-152",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La calza della Befana contiene un mandarino. Mio nipote dice che anche i dolci hanno invitato un amico sano.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-wholesome-153",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "Alla recita di Pinocchio, nonno batte le mani prima che inizi. Riconoscere il nipote gli basta come trama.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-wholesome-154",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il gondoliere indica la strada sull'acqua. Mia figlia domanda se si cancella quando piove.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-wholesome-155",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Nonna prepara gli arancini per il viaggio. Il treno porta noi; lei si occupa del carburante.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-wholesome-156",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Per Ferragosto, papà costruisce un castello di sabbia. Nonna propone subito dove mettere la cucina.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-wholesome-157",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "I taralli fanno crac. Il bambino pensa che stiano applaudendo il pranzo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-wholesome-158",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il pizzaiolo scrive il nome del piccolo sul cartone. Lui lo conserva come diploma di assaggiatore.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-wholesome-159",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La sfoglia è così sottile che si vede la tovaglia. Nonna sorride: il nipote ha costruito una finestra buona.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-wholesome-160",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Il mortaio passa dalla nonna al nipote. Il basilico scopre un nuovo ritmo di famiglia.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-wholesome-161",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La granita è fredda e la brioche calda. Mio figlio le avvicina: « Fate amicizia, vi aiutate. »",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-wholesome-162",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "A Burano, il nonno fotografa la casa gialla. La nipote gli ricorda che manca il sorriso della porta.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-wholesome-163",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La tombola finisce e il nonno raccoglie i fagioli. La famiglia ha giocato con il pranzo senza litigare.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-wholesome-164",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "In Sardegna, mio nipote sente scricchiolare il pane carasau. Lo dichiara il tamburo ufficiale della merenda.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-wholesome-165",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "A Roma, il piccolo beve da un nasone e gli pulisce il bordo. La fontanella ha ricevuto la sua prima educazione al fazzoletto.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-wholesome-166",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Durante Sanremo, la nonna assegna punti anche ai vestiti. Il nipote tiene una classifica separata per i brillantini.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-wholesome-167",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "A Siena, il bambino cerca un fazzoletto della contrada per il cane. Vuole che abbia qualcuno da tifare alle passeggiate.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-wholesome-168",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Gli arrosticini sono allineati sulla griglia. Mio fratello li chiama l'orchestra abruzzese, e dirige con il pane.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-wholesome-169",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La nonna apre una bottiglia di bergamotto e il nipote annusa felice. Dice che la Calabria ha telefonato.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-wholesome-170",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La fontina fila dal cucchiaio. Il bambino applaude il formaggio che non vuole smettere di salutare.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-wholesome-171",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "Alla sagra delle castagne, nonno soffia sulla prima caldarrosta per la nipote. Lei gli restituisce la seconda già sbucciata.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-wholesome-172",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "A Ferrara, dividiamo la tenerina. Il piccolo sceglie la fetta rotta: « È quella che ha più bisogno di un piatto. »",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-wholesome-173",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "In funivia sulle Dolomiti, la nonna stringe la mano al nipote. Lui le promette che le montagne non si muoveranno.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena ambientata in un luogo o servizio italiano nominato; incidenti immaginari, senza affermazioni su servizi attuali."
+  },
+  {
+    "id": "intl-v2-it-wholesome-174",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mia figlia porta al puparo un cavaliere disegnato. Ha aggiunto una tasca « per tenere i biscotti durante l'avventura ».",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-wholesome-175",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "La banda del paese prova per il 2 giugno. Il piccolo marcia dietro il tamburo con un fazzoletto tricolore più grande di lui.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento italiano a liuteria, musica o teatro come contesto di una scena inventata; nessuna imitazione di un autore."
+  },
+  {
+    "id": "intl-v2-it-wholesome-176",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "observ",
+    "text": "A Mantova, nonna rompe la sbrisolona. Il nipote apprezza una torta che sa già condividersi da sola.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-wholesome-177",
+    "collection": "it-it-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La Befana ha ricevuto un disegno della nostra casa con frecce enormi. Mio figlio non vuole che sprechi la notte a cercare parcheggio.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  }
+]

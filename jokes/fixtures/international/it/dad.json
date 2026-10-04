@@ -1,0 +1,2138 @@
+[
+  {
+    "id": "intl-v2-it-dad-001",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà ordina un espresso e chiede se la risposta arriverà più velocemente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-dad-002",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "« Le orecchiette ascoltano? » Papà risponde che soprattutto sentono il sugo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-dad-003",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà chiama il vaporetto un autobus che ha preso troppo sul serio il lavaggio.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-dad-004",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "A Caltagirone, papà conta i gradini della scalinata. Dice che ogni piastrella gli presenta un nuovo motivo per fermarsi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dad-005",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà lascia alla Befana una paletta. Gli piace proporre accessori utili.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-dad-006",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Sotto i portici papà apre l'ombrello: vuole fare il tetto di riserva.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-dad-007",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà pesta il basilico dicendo che il pranzo richiede argomenti convincenti.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-dad-008",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il tuppo della brioche sparisce. Papà sostiene di aver eseguito una manutenzione del tetto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-dad-009",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà considera il codice fiscale la password che lo Stato gli ha scelto senza chiedere i suoi gusti.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-dad-010",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "A Pisa, papà promette una foto dritta. La torre non conferma la collaborazione.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dad-011",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "« Oggi gnocchi », annuncia papà. Non è giovedì, ma lui dice di avere un calendario elastico.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-dad-012",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà segue il Giro per sapere quando la salita finisce. Per gli altri.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-dad-013",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il cavaliere dell'Opera dei Pupi perde una mano. Papà suggerisce un applauso di incoraggiamento, da parte nostra.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-dad-014",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "« Non fare il salame », gli diciamo. Papà si mette sul tagliere del discorso e chiede almeno una buona affettatura.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-dad-015",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "A Cremona, papà domanda se i violini nuovi vengono consegnati già pieni di note.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento italiano a liuteria, musica o teatro come contesto di una scena inventata; nessuna imitazione di un autore."
+  },
+  {
+    "id": "intl-v2-it-dad-016",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La tombola piace a papà: può dire tutti i numeri che vuole e finalmente qualcuno controlla.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-dad-017",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà sale sul Frecciarossa con una cravatta rossa. Dice che bisogna coordinarsi col mezzo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena ambientata in un luogo o servizio italiano nominato; incidenti immaginari, senza affermazioni su servizi attuali."
+  },
+  {
+    "id": "intl-v2-it-dad-018",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il tarallo di papà è rotto. Lo presenta come una rotonda con uscita facilitata.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-dad-019",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà guarda il cornicione della pizza e domanda se il condominio ha approvato i lavori.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-dad-020",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Sul ponte di Rialto, papà dichiara di aver portato il pranzo a un livello superiore.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-dad-021",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La focaccia è unta. Papà si rallegra: almeno le trattative col tovagliolo scorreranno bene.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-dad-022",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "A Trieste ordina un capo in b. Poi chiede se esiste il vice in tazzina.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-dad-023",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà guarda i trulli e domanda se, per appendere un quadro, serva il consenso di tutte le pietre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dad-024",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La granita è troppo fredda. Papà le raccomanda di sciogliersi un po' con gli ospiti.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-dad-025",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il risotto è all'onda. Papà cerca di mangiarlo senza fare il bagno.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-dad-026",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà prepara la calza della Befana con il righello: vuole una dolcezza misurabile.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-dad-027",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le Due Torri convincono papà che anche gli edifici apprezzano la compagnia.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-dad-028",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Lo SPID di papà richiede un codice. Lui domanda se può rispondere con una battuta di riconoscimento.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-dad-029",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La maglia rosa del Giro piace a papà. Ha finalmente una scusa sportiva per il bucato sbagliato.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-dad-030",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà dice di avere il pane per i suoi denti. Il dentista preferirebbe conoscerne la crosta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-dad-031",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "All'Opera dei Pupi, papà ammira i guerrieri: mantengono il filo anche nelle discussioni più accese.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-dad-032",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "A Matera, papà appoggia la mano al muro: vuole salutare la casa nella sua lingua, quella dei sassi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dad-033",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La burrata si apre. Papà si dice favorevole alle riunioni con un contenuto così morbido.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-dad-034",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il pizzaiolo usa la pala. Papà chiede se il forno è un giardino ad alta temperatura.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-dad-035",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà compra il pesto e annuncia un pranzo che non passerà inosservato al basilico.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-dad-036",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La gondola non ha il volante. Papà trova finalmente un'auto che non può parcheggiare male.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-dad-037",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "Alla sagra papà legge « porzione abbondante ». Decide di fidarsi della comunicazione istituzionale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-dad-038",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà chiede un ristretto. Dice che il suo tempo è poco, ma ben concentrato.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-dad-039",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "« Cannolo singolo o doppio? » Papà risponde che non vuole separare eventuali fratelli.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-dad-040",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La sfoglia è sottile. Papà sospetta che qualcuno abbia messo il mattarello a dieta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-dad-041",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il cacio e pepe fa starnutire papà. Lui parla di un applauso del naso alla cucina romana.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-dad-042",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "Alla Mole Antonelliana, papà dice che Torino ha preso molto sul serio l'idea di farsi notare.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dad-043",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà apre la PEC con aria solenne. Anche il gatto assume una posizione ufficiale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-dad-044",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà vuole salvare capra e cavoli. La capra preferirebbe restare senza supervisione cinque minuti.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-dad-045",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "Al Giro, papà tifa per chi porta le borracce. Sa chi sostiene davvero una giornata fuori casa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-dad-046",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La Befana vola sulla scopa. Papà approva un mezzo che pulisce la strada mentre viaggia.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-dad-047",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le orecchiette sono grandi. Papà abbassa la voce per educazione.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-dad-048",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La pizza è pronta. Papà annuncia che il pomodoro ha trovato una sistemazione stabile.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-dad-049",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà guarda i gondolieri e decide che il remo è un volante con molta estensione.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-dad-050",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "Nel mortaio, papà gira il pestello: « Finalmente posso insistere senza ricevere obiezioni. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-dad-051",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "L'espresso è amaro. Papà gli consiglia una battuta per addolcire l'atmosfera.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-dad-052",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La cassata arriva colorata. Papà chiede se il pasticciere ha fatto anche il collaudo delle luci.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-dad-053",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Sotto il portico, papà dice che la pioggia è finita. La strada accanto presenta ricorso.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-dad-054",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "A Burano, papà non ritrova la casa fotografata. Per una volta, dire « quella colorata » non aiuta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dad-055",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La piadina si piega. Papà la promuove a cibo diplomatico.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-dad-056",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà conta le caramelle nella calza della Befana. La chiama verifica zuccherometrica.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-dad-057",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il codice fiscale ha sedici caratteri. Papà sostiene che il suo ne abbia almeno diciassette.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-dad-058",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "« Sei sempre tra le nuvole », gli diciamo. Papà chiede se almeno il panorama è incluso.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-dad-059",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "Alla bocciofila, papà punta piano. Vuole dare alla fortuna il tempo di arrivare.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-dad-060",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà assiste all'Opera dei Pupi e dice che quello è l'unico cast dove tutti conoscono chi tira i fili.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-dad-061",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il cornicione è gonfio. Papà lo definisce l'area relax della pizza.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-dad-062",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il caciocavallo pende. Papà aspetta che scelga da che parte andare.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-dad-063",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La focaccia ha tanti buchi. Papà la chiama il pane con spazio per le idee.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-dad-064",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il vaporetto fa una fermata. Papà approfitta per verificare che il mare abbia messo il freno.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-dad-065",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "« Un macchiato. » Papà controlla la camicia: vuole assicurarsi che l'ordine riguardi solo il caffè.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-dad-066",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La tombola non gli dà numeri buoni. Papà annuncia che sta giocando in modalità risparmio fagioli.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-dad-067",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La frutta martorana piace a papà: è l'unico frutteto che si può visitare tutto dal bancone.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-dad-068",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà osserva la Garisenda e dice che a Bologna anche le torri si affacciano per ascoltare.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-dad-069",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Al nasone romano, papà beve con la mano sul foro. Dice di aver appena scoperto un telecomando idraulico senza batterie.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dad-070",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il tiramisù arriva. Papà gli spiega che oggi il lavoro da fare è parecchio.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-dad-071",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà firma l'autocertificazione. Dice che la famiglia gli concede poche altre occasioni per avere l'ultima parola su di sé.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-dad-072",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà ha messo il carro davanti ai buoi. Ora aspetta che qualcuno inventi il parcheggio al contrario.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-dad-073",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La corsa rosa attraversa il paese. Papà esce con una maglietta rosa per non sembrare fuori programma.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-dad-074",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il pupo ha un'armatura lucida. Papà si domanda se il cavaliere abbia mai perso contro un'impronta digitale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-dad-075",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "Alla sagra papà fa la fila due volte. Vuole verificare la ripetibilità del risultato.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-dad-076",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il tarallo gira nel piatto. Papà dice che il pranzo ha avviato una consultazione circolare.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-dad-077",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà ordina una margherita. Precisa che quella con le radici preferisce lasciarla al giardiniere.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-dad-078",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà usa il mortaio con orgoglio: il suo pesto non dipende dalla batteria.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-dad-079",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il Canal Grande gli sembra ben nominato. Papà apprezza la pubblicità che mantiene le dimensioni promesse.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-dad-080",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il caffè è lungo. Papà domanda se occorra portare il segnalibro.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-dad-081",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il tuppo della brioche è caduto. Papà chiama il barbiere del forno.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-dad-082",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "I tortellini sono piccoli. Papà li considera ravioli con il bagaglio a mano.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-dad-083",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "A Siena, papà osserva Piazza del Campo: « Una piazza che sa raccogliere bene le persone e la pioggia. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dad-084",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La polenta è pronta. Papà la dichiara un piano di appoggio molto convincente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-dad-085",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà porta un ombrellone a Ferragosto. Finalmente ha un progetto con copertura assicurata.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-dad-086",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "L'app IO saluta papà. Lui risponde « sempre io », per evitare equivoci di famiglia.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-dad-087",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà dice che il discorso non fa una piega. Noi proponiamo di stirare almeno la camicia.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-dad-088",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "Al Giro, papà capisce subito il significato di tappa pianeggiante: si può finire il panino senza agitarsi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-dad-089",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il pupo cavaliere cambia scena. Papà commenta che anche i guerrieri sanno quando è ora di spostare il discorso.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-dad-090",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà definisce il forno della pizzeria un abbraccio molto impegnativo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-dad-091",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La burrata conserva il meglio dentro. Papà si sente finalmente rappresentato da un formaggio.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-dad-092",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le trofie si avvolgono nel pesto. Papà le chiama pasta in tenuta mimetica ligure.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-dad-093",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà compra una maschera veneziana. Vuole finalmente ascoltare una sua battuta senza mostrare soddisfazione.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-dad-094",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il capo in b arriva sul vassoio. Papà propone un brindisi alla piccola gerarchia della colazione.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-dad-095",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La granita al limone lo fa rabbrividire. Papà dice che la colazione ha una bella personalità fresca.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-dad-096",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il portico finisce. Papà dichiara di essere uscito dalla zona di comfort meteorologico.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-dad-097",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "A Firenze, papà fotografa Ponte Vecchio: il suo modo preferito di tenere in ordine i gioielli è guardarli da lontano.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dad-098",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Lo strudel ha tante mele. Papà lo presenta come un frutteto che sa stare al chiuso.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-dad-099",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "Alla tombola, papà usa ceci anziché fagioli. Dice che sta diversificando i segnaposto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-dad-100",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà ha la marca da bollo in mano. Per una volta, il documento costa più da finire che da iniziare.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-dad-101",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "« Acqua in bocca », gli diciamo. Papà prende la borraccia e pretende di avere eseguito perfettamente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-dad-102",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La maglia a pois non è del Giro, lo correggiamo. Papà risponde che il suo bucato pratica sport internazionali.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-dad-103",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "L'armatura del pupo tintinna. Papà dice che il cavaliere porta con sé tutta la colonna sonora.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-dad-104",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà pesa il carbone dolce della Befana. Sostiene che anche i rimproveri vadano quantificati prima di accettarli.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-dad-105",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le cime di rapa sono nel piatto. Papà domanda se per arrivarci serviva una piccola scalata.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-dad-106",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà taglia la pizza in otto. In sei non riesce: ci siamo già seduti troppo affamati.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-dad-107",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il pesto è pronto. Papà dice che ha saputo far ragionare persino l'aglio.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-dad-108",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il ponte dei Sospiri piace a papà: finalmente un monumento che capisce i conti del viaggio.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-dad-109",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il barista dice « ristretto ». Papà controlla di avere ancora spazio sulla sedia.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-dad-110",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il cioccolato di Modica scricchiola. Papà lo chiama un dessert che argomenta a voce alta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-dad-111",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà visita l'Archiginnasio. È contento di trovare un ginnasio dove non deve correre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-dad-112",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "A Ravenna, papà ammira i mosaici: un buon risultato nonostante nessuno avesse una piastrella intera.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dad-113",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il supplì fila. Papà dichiara che Roma offre ottimi collegamenti anche a tavola.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-dad-114",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "A Ferragosto papà prepara il ventilatore. Lo presenta come il responsabile delle relazioni con l'aria.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-dad-115",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il CAF ordina i documenti di papà. Lui chiede se fanno anche le ricevute emotive.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-dad-116",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà è al settimo cielo. Vorrebbe sapere se il piano ha l'ascensore.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-dad-117",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "Alla bocciofila papà studia il terreno. Dice che la geografia è decisiva nei rapporti di vicinanza.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-dad-118",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il pupo affronta il drago. Papà si sente solidale: anche lui deve montare un mobile senza istruzioni.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-dad-119",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La sfogliatella si sbriciola. Papà insiste che è un dolce pensato per chi ama condividere involontariamente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-dad-120",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "I taralli hanno lo stesso diametro. Papà riconosce un progetto che ha chiuso bene tutte le questioni.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-dad-121",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Nei caruggi, papà prende una scorciatoia. Noi lo ritroviamo grazie al sacchetto di focaccia.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-dad-122",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il gondoliere canta. Papà cerca il pulsante per richiedere il bis sul corrimano.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-dad-123",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà chiede il caffè al vetro. Gli piace vedere fino in fondo con chi sta parlando.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-dad-124",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La cassata è ricca. Papà propone di farle dichiarare il patrimonio di ricotta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-dad-125",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Sulla salita di San Luca, papà dice di aver raggiunto un accordo coi polpacci: soste frequenti.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-dad-126",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il Duomo di Milano ha tante guglie. Papà lo definisce un edificio con molte idee appuntite.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dad-127",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La sbrisolona si rompe con le mani. Papà si gode una torta che non gli fa cercare il coltello.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-dad-128",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà appende una calza enorme alla Befana. La chiama un piano industriale per gennaio.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-dad-129",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Lo SPID scade durante l'accesso. Papà dice che la sua identità è appena andata a prendere un caffè.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-dad-130",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "« Hai la testa tra le nuvole », gli diciamo. Papà domanda se almeno oggi sopra sia previsto bel tempo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-dad-131",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "Al Giro, papà individua subito il traguardo: è dove smette di dover spiegare la corsa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-dad-132",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il cavaliere dell'Opera dei Pupi si inchina. Papà vuole sapere se accetta complimenti a filo diretto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-dad-133",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il pizzaiolo gira la pizza. Papà apprezza chi sa cambiare punto di cottura.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-dad-134",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "L'orecchietta è caduta. Papà la raccoglie e chiede se ha sentito male la direzione del piatto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-dad-135",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La focaccia genovese ha sale in superficie. Papà dice che non nasconde il proprio carattere.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-dad-136",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà ammira il Palazzo Ducale e chiede se il doge avesse almeno un buon posto per le chiavi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-dad-137",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "L'espresso è finito. Papà annuncia che l'incontro con l'energia si è concluso positivamente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-dad-138",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Un cannolo si rompe. Papà propone di considerarlo un dessert con accesso facilitato alla ricotta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-dad-139",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "I tortellini galleggiano. Papà è contento che il pranzo abbia imparato a nuotare prima di lui.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-dad-140",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il trenino del Bernina sale piano. Papà dice che sta leggendo il panorama con attenzione.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dad-141",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il panettone è alto. Papà domanda se l'uvetta abbia prenotato ai piani superiori.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-dad-142",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "Alla sagra delle castagne, papà si scotta un dito. Dice che il prodotto ha un'accoglienza calorosa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-dad-143",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà controlla l'F24. Non riconosce la propria auto tra tutti quei numeri, ma chiede lo stesso se il pieno sia incluso.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-dad-144",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà ha messo la pulce nell'orecchio. Il veterinario gli consiglia di parlare con più semplicità.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-dad-145",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà osserva il modello F24 e dice che il fisco ha inventato una battaglia navale in cui affonda soltanto il conto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-dad-146",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il pupo ha una spada enorme. Papà chiede se il teatro abbia valutato una soluzione più portatile.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-dad-147",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La pizza a portafoglio perde un'oliva. Papà parla di una piccola fuga di capitali.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-dad-148",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La burrata si apre col coltello. Papà trova la confezione interna decisamente più interessante di quella esterna.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-dad-149",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà mette pesto sulle trenette. « Ho dato il verde alla pasta », annuncia.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-dad-150",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "A Venezia, papà compra stivali. Li considera un aggiornamento del proprio sistema di navigazione.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-dad-151",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il cappuccino ha una schiuma alta. Papà domanda se il caffè abbia preso un attico.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-dad-152",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il tuppo resta per ultimo. Papà dice che sta conservando un punto esclamativo per la colazione.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-dad-153",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "L'ombrello è rimasto chiuso sotto i portici. Papà gli suggerisce di cercare lavoro in un'altra città.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-dad-154",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "A Napoli, Castel dell'Ovo fa sorridere papà. Si aspetta almeno un fossato strapazzato.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dad-155",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La mozzarella fila troppo. Papà chiede di tagliare i rapporti con delicatezza.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-dad-156",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La tombola gli dà un ambo. Papà ringrazia entrambi i numeri separatamente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-dad-157",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà trova il codice fiscale sul tesserino. È felice che qualcuno abbia riassunto tutta la sua biografia.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-dad-158",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà vuole chiudere un occhio. Gli chiediamo almeno di tenere aperto quello che legge la ricetta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-dad-159",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il Giro passa davanti alla gelateria. Papà considera la deviazione un errore tattico.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-dad-160",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "A Viareggio, papà vede un carro di cartapesta. È la prima volta che la sua pila di giornali gli sembra un investimento.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dad-161",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "« Facciamo la scarpetta? » Papà controlla se il sugo preveda una misura per adulti.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-dad-162",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "A Bolzano, papà ammira Ötzi. Gli sembra straordinario incontrare qualcuno che conserva i vestiti più a lungo di lui.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dad-163",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La Befana viaggia di notte. Papà approva: trova sempre il parcheggio davanti al camino.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-dad-164",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La pasta alla Norma convince papà. Finalmente un pranzo che si presenta già in regola.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-dad-165",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "A Tivoli, papà visita le fontane. Poi raccomanda a tutti di controllare bene il rubinetto dell'albergo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dad-166",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "A Lecce, papà guarda i riccioli del barocco. Gli pare che la pietra sia passata dal parrucchiere prima di diventare facciata.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-dad-167",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il pallone del calcio storico fiorentino resta lontano. Papà dice che segue la partita mantenendo buoni rapporti di sicurezza.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-dad-168",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il ponte coperto di Pavia piace a papà. Apprezza un fiume che permette di attraversare senza bagnare i pensieri.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dad-169",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà compra gianduiotti e li mette in fila. Sta organizzando una piccola flotta piemontese da merenda.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-dad-170",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "« Non menare il can per l'aia », diciamo. Papà controlla il cane: « Ma lui aveva chiesto una passeggiata. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-dad-171",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "A Sanremo, papà capisce subito la canzone vincente. Ce lo rivela soltanto dopo la premiazione, per prudenza artistica.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-dad-172",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Davanti alla Reggia di Caserta, papà ammette che qualche finestra in più cambia l'impressione generale di una casa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dad-173",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La moka borbotta. Papà si rallegra: almeno in cucina qualcuno risponde ai suoi commenti.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-dad-174",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Gli spaghetti sono al dente. Papà chiede se il piatto abbia già fissato il controllo annuale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-dad-175",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "A Murano, papà guarda soffiare il vetro. È contento che la sua abitudine di sospirare possa avere uno sbocco artigianale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dad-176",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papà si traveste da semaforo al Carnevale di Viareggio. Le sue battute ricevono finalmente uno stop visibile.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-dad-177",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Il pandoro perde zucchero sul tavolo. Papà annuncia nevicate localizzate nel reparto colazione.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-dad-178",
+    "collection": "it-it-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "A Gubbio, papà vede i Ceri e dice che, per le candeline del suo compleanno, possiamo restare su dimensioni più modeste.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  }
+]

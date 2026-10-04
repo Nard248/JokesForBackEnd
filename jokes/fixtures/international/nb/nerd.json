@@ -1,0 +1,2882 @@
+[
+  {
+    "id": "intl-v2-nb-nerd-001",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg satte opp et mesh-nett på hytta. Bestefar spurte om det også kunne fange mygg.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "Computing concepts collide with Norwegian cabin trips; original Bokmål wordplay and technical analogies.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-002",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Hytte-Wi-Fi-et mitt er svært energieffektivt. Det sender bare forventninger.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "Computing concepts collide with Norwegian cabin trips; original Bokmål wordplay and technical analogies.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-003",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg la vedovnen i smarthusappen. Nå står det «buffering» på hele november.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "Computing concepts collide with Norwegian cabin trips; original Bokmål wordplay and technical analogies.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-004",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "På hytta tok jeg sikkerhetskopi av kartet. Bestefar brettet bare papiret en gang til.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "Computing concepts collide with Norwegian cabin trips; original Bokmål wordplay and technical analogies.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-005",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg prøvde å containerisere vedlageret. Hyttenaboen kalte det fortsatt en kasse.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "Computing concepts collide with Norwegian cabin trips; original Bokmål wordplay and technical analogies.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-006",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Hyttedøra har tofaktorautentisering: nøkkel og et bestemt spark nederst.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "Computing concepts collide with Norwegian cabin trips; original Bokmål wordplay and technical analogies.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-007",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg laget API for hytta. Dokumentasjonen består av «ikke trykk på den bryteren».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "Computing concepts collide with Norwegian cabin trips; original Bokmål wordplay and technical analogies.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-008",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Hytta mi kjører uten skytjenester. De eneste skyene som får tilgang, kommer gjennom taket.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "Computing concepts collide with Norwegian cabin trips; original Bokmål wordplay and technical analogies.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-009",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg automatiserte fyringen på hytta. Nå bruker jeg helgene på manuell feilsøking med votter.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "Computing concepts collide with Norwegian cabin trips; original Bokmål wordplay and technical analogies.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-010",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Vi har distribuert lagring av hyttenøkler. Ingen node vet hvor den andre befinner seg.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "Computing concepts collide with Norwegian cabin trips; original Bokmål wordplay and technical analogies.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-011",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Hytteboka er familiens blokkjede. Ingen klarer å endre på hvem som glemte å tømme bøtta i 2009.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "Computing concepts collide with Norwegian cabin trips; original Bokmål wordplay and technical analogies.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-012",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg optimaliserte hyttas energiforbruk. Nå åpner jeg kjøleskapet for å varme rommet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "Computing concepts collide with Norwegian cabin trips; original Bokmål wordplay and technical analogies.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-013",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Bestefar ga hytta ny firmware. Han tettet trekken med en nyere avis.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "Computing concepts collide with Norwegian cabin trips; original Bokmål wordplay and technical analogies.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-014",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Hytta støtter offline-modus. Det er den eneste lisensen vi har råd til å fornye.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "Computing concepts collide with Norwegian cabin trips; original Bokmål wordplay and technical analogies.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-015",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg la tursekken i versjonskontroll. Nå kan jeg dokumentere nøyaktig når sjokoladen forsvant.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "Computing concepts collide with Norwegian cabin trips; original Bokmål wordplay and technical analogies.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-016",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Vi har smartlås på uthuset. Den er smart nok til å holde batteriet skjult for oss.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "Computing concepts collide with Norwegian cabin trips; original Bokmål wordplay and technical analogies.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-017",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Hyttas brukergrensesnitt er enkelt: Trekk i det som ikke skal trykkes på.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "Computing concepts collide with Norwegian cabin trips; original Bokmål wordplay and technical analogies.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-018",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg gikk tom for minne på fjellturen. Heldigvis hadde mamma allerede fortalt historien to ganger.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "Computing concepts collide with Norwegian cabin trips; original Bokmål wordplay and technical analogies.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-019",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "På hytta bygger vi redundans: to stearinlys, tre fyrstikkesker og én person som husker hvor de ligger.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "Computing concepts collide with Norwegian cabin trips; original Bokmål wordplay and technical analogies.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-020",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg feilsøkte vinduet som trakk. Det viste seg å være en svært gammel åpen port.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "Computing concepts collide with Norwegian cabin trips; original Bokmål wordplay and technical analogies.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-021",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Fysikeren på tur kalte tåka en aerosol. Jeg kalte den en dyr utsikt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "weather"
+    ],
+    "cultural_note": "Weather, light and measurement in Norwegian settings; fictional nerd humour, not forecasts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-022",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg brukte statistikk på værmeldingen for Bergen. Konfidensintervallet trengte regnfrakk.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "weather"
+    ],
+    "cultural_note": "Weather, light and measurement in Norwegian settings; fictional nerd humour, not forecasts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-023",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Termometeret mitt i Tromsø viser kulde presist. Huden min foretrekker en mindre detaljert rapport.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "weather"
+    ],
+    "cultural_note": "Weather, light and measurement in Norwegian settings; fictional nerd humour, not forecasts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-024",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg målte soltimene med stoppeklokke. Bergen ba om at jeg også registrerte mellomtidene.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "weather"
+    ],
+    "cultural_note": "Weather, light and measurement in Norwegian settings; fictional nerd humour, not forecasts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-025",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Nysnøen ga høy albedo. Jakka mi bidro med kaffe og ødela forskningsdesignet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "weather"
+    ],
+    "cultural_note": "Weather, light and measurement in Norwegian settings; fictional nerd humour, not forecasts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-026",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg forklarte nordlyset med ladde partikler. Reisefølget mitt var mest opptatt av ladde telefoner.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "weather"
+    ],
+    "cultural_note": "Weather, light and measurement in Norwegian settings; fictional nerd humour, not forecasts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-027",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "I mørketida prøver jeg å normalisere døgnrytmen. Døgnet nekter å møte til datarensing.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "weather"
+    ],
+    "cultural_note": "Weather, light and measurement in Norwegian settings; fictional nerd humour, not forecasts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-028",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg beregnet varmetapet fra termosen. Resultatet var at jeg hadde drukket forsøket.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "weather"
+    ],
+    "cultural_note": "Weather, light and measurement in Norwegian settings; fictional nerd humour, not forecasts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-029",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Meteorologen kalte regnet lokalt. Det kjentes mistenkelig personlig under jakka.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "weather"
+    ],
+    "cultural_note": "Weather, light and measurement in Norwegian settings; fictional nerd humour, not forecasts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-030",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Vi studerte faseoverganger på skituren. Fra optimisme til slaps på under hundre meter.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "weather"
+    ],
+    "cultural_note": "Weather, light and measurement in Norwegian settings; fictional nerd humour, not forecasts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-031",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg målte vindavkjølingen på fjellet. Etterpå måtte måleren måle hvor fingrene mine hadde blitt av.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "weather"
+    ],
+    "cultural_note": "Weather, light and measurement in Norwegian settings; fictional nerd humour, not forecasts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-032",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Nordlysfotoet mitt hadde så lang eksponering at kaffepausen rakk å bli et tidsintervall.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "weather"
+    ],
+    "cultural_note": "Weather, light and measurement in Norwegian settings; fictional nerd humour, not forecasts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-033",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg modellerte været med ti tusen simuleringer. Regnet valgte den ene jeg ikke hadde lagret.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "weather"
+    ],
+    "cultural_note": "Weather, light and measurement in Norwegian settings; fictional nerd humour, not forecasts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-034",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Vi diskuterte entropi i vått telt. Ingen kunne foreslå en spontan vei tilbake til tørre sokker.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "weather"
+    ],
+    "cultural_note": "Weather, light and measurement in Norwegian settings; fictional nerd humour, not forecasts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-035",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg ville kalibrere regnmåleren i Bergen. Den ba først om en arbeidskontrakt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "weather"
+    ],
+    "cultural_note": "Weather, light and measurement in Norwegian settings; fictional nerd humour, not forecasts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-036",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Fysikeren sa at snø isolerer. Derfor føltes det urettferdig at den samlet seg inne i støvlene.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "weather"
+    ],
+    "cultural_note": "Weather, light and measurement in Norwegian settings; fictional nerd humour, not forecasts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-037",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Midnattssola ødela skjermens automatiske nattmodus. Den var den siste av oss som nektet å legge seg.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "weather"
+    ],
+    "cultural_note": "Weather, light and measurement in Norwegian settings; fictional nerd humour, not forecasts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-038",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg fulgte polarnatta med et kakediagram. Det ble et veldig lett diagram å fargelegge.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "weather"
+    ],
+    "cultural_note": "Weather, light and measurement in Norwegian settings; fictional nerd humour, not forecasts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-039",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Solkremen i nordlyssesongen er ikke bortkastet. Den fungerer utmerket som papirvekt for reiseplanen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "weather"
+    ],
+    "cultural_note": "Weather, light and measurement in Norwegian settings; fictional nerd humour, not forecasts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-040",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg ville måle den norske sommeren objektivt. Instrumentet spurte hvilken torsdag jeg mente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "weather"
+    ],
+    "cultural_note": "Weather, light and measurement in Norwegian settings; fictional nerd humour, not forecasts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-041",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Matpakka mi er et godt API: enkelt grensesnitt, overraskende mye gammelt pålegg bak.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Matpakke, brunost, waffles and coding; jokes depend on real computing concepts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-042",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg lagret brunosten som flyttall. Den mistet presisjon for hver skive.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Matpakke, brunost, waffles and coding; jokes depend on real computing concepts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-043",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Vaffeljernet vårt kjører parallelle prosesser. Køen utenfor er fortsatt sekvensiell.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Matpakke, brunost, waffles and coding; jokes depend on real computing concepts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-044",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg organiserte nistepakken som en database. Agurken brøt plutselig all referanseintegritet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Matpakke, brunost, waffles and coding; jokes depend on real computing concepts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-045",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg skrev en algoritme for å dele siste vaffel. Familien forkastet den på demokratisk grunnlag.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Matpakke, brunost, waffles and coding; jokes depend on real computing concepts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-046",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Brødskivene mine bruker mellomleggspapir. Det er den eneste brannmuren jeg faktisk kan spise meg gjennom.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Matpakke, brunost, waffles and coding; jokes depend on real computing concepts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-047",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Kantina tilbyr skylagring av matpakker. Du setter den øverst i skapet og håper den fortsatt finnes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Matpakke, brunost, waffles and coding; jokes depend on real computing concepts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-048",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg komprimerte nista. Nå har jeg tapsfri fil, men tapsfull banan.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Matpakke, brunost, waffles and coding; jokes depend on real computing concepts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-049",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Ostehøvelen er en enkel iterator. Problemet oppstår når brunosten returnerer null.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Matpakke, brunost, waffles and coding; jokes depend on real computing concepts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-050",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg implementerte caching ved kaffemaskinen. En kopp ble stående; ingen kalte det en ytelsesforbedring.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Matpakke, brunost, waffles and coding; jokes depend on real computing concepts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-051",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Kaffekanna har en klassisk race condition: to utviklere, én siste kopp, ingen lås.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Matpakke, brunost, waffles and coding; jokes depend on real computing concepts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-052",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg kalte vaffelrøra åpen kildekode. Oppskriften ble straks forket av fire tanter.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Matpakke, brunost, waffles and coding; jokes depend on real computing concepts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-053",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Nisteboksen min har dårlig latens. Fra åpning til skuffelse tar det nesten ingen tid.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Matpakke, brunost, waffles and coding; jokes depend on real computing concepts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-054",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Pålegget ligger i riktige lag. Det er bananen som stadig forsøker å bli middleware.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Matpakke, brunost, waffles and coding; jokes depend on real computing concepts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-055",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg tok backup av lunsjen i skuffen. Knekkebrødet har nå lengre levetid enn lagringsstandarden.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Matpakke, brunost, waffles and coding; jokes depend on real computing concepts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-056",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Vi laget en digital tvilling av brunosten. Den virkelige forsvant mens modellen fortsatt rendret.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Matpakke, brunost, waffles and coding; jokes depend on real computing concepts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-057",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Kokken ba meg smake underveis. Endelig en enhetstest med umiddelbar verdi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Matpakke, brunost, waffles and coding; jokes depend on real computing concepts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-058",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg fikk en minnelekkasje ved vaffeljernet. Jeg husker ikke lenger hvor mange jeg har spist.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Matpakke, brunost, waffles and coding; jokes depend on real computing concepts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-059",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Matpakka er familiens daglige build. Feil i pålegget oppdages først i produksjon.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Matpakke, brunost, waffles and coding; jokes depend on real computing concepts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-060",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Kaffemaskinens feilkode er 418. Jeg beundrer ambisjonen, men vi kjøpte faktisk en kaffemaskin.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Matpakke, brunost, waffles and coding; jokes depend on real computing concepts.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-061",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg valgte korteste vei til hytta med luftlinje. Fjorden ba om et møte om forutsetningene.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "travel"
+    ],
+    "cultural_note": "Maps, terrain, navigation and Norwegian outdoor recreation through a mathematical lens.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-062",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Kompasset mitt er konsekvent. Jeg er den ustabile variabelen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "travel"
+    ],
+    "cultural_note": "Maps, terrain, navigation and Norwegian outdoor recreation through a mathematical lens.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-063",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Vi normaliserte høydekurvene på kartet. Det hjalp overraskende lite på beina.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "travel"
+    ],
+    "cultural_note": "Maps, terrain, navigation and Norwegian outdoor recreation through a mathematical lens.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-064",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg fant globalt minimum på fjellturen. Det var motivasjonen min ved den tredje motbakken.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "travel"
+    ],
+    "cultural_note": "Maps, terrain, navigation and Norwegian outdoor recreation through a mathematical lens.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-065",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Turlederen bruker rekursjon: «Bare én liten topp til.» Vi har ennå ikke nådd basissteget.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "travel"
+    ],
+    "cultural_note": "Maps, terrain, navigation and Norwegian outdoor recreation through a mathematical lens.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-066",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "GPS-en min vet nøyaktig hvor jeg er. Den synes å være lite engasjert i hvorfor jeg havnet der.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "travel"
+    ],
+    "cultural_note": "Maps, terrain, navigation and Norwegian outdoor recreation through a mathematical lens.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-067",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg planla skituren som en graf. Sjokoladestoppene fikk uvanlig høy sentralitet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "travel"
+    ],
+    "cultural_note": "Maps, terrain, navigation and Norwegian outdoor recreation through a mathematical lens.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-068",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Turen var lineær på kartet. I virkeligheten vokste klagingen eksponentielt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "travel"
+    ],
+    "cultural_note": "Maps, terrain, navigation and Norwegian outdoor recreation through a mathematical lens.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-069",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg brukte gradientmetoden for å finne hytta. Den tok meg rett ned i en bekk.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "travel"
+    ],
+    "cultural_note": "Maps, terrain, navigation and Norwegian outdoor recreation through a mathematical lens.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-070",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Kartets målestokk var 1:50 000. Pappas beskrivelse av turen var omtrent like komprimert.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "travel"
+    ],
+    "cultural_note": "Maps, terrain, navigation and Norwegian outdoor recreation through a mathematical lens.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-071",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Vi fant en optimal rasteplass. Dessverre hadde alle andre løst det samme problemet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "travel"
+    ],
+    "cultural_note": "Maps, terrain, navigation and Norwegian outdoor recreation through a mathematical lens.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-072",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg beregnet stigningsprosenten. Lårene leverte en uavhengig fagfellevurdering.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "travel"
+    ],
+    "cultural_note": "Maps, terrain, navigation and Norwegian outdoor recreation through a mathematical lens.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-073",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Fjellet var en fin øvelse i topologi. Uansett vei opp endte vi med å diskutere samme termos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "travel"
+    ],
+    "cultural_note": "Maps, terrain, navigation and Norwegian outdoor recreation through a mathematical lens.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-074",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg tok med satellittkommunikasjon på tur. Familien brukte den til å spørre hvor jeg hadde lagt bilnøkkelen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "travel"
+    ],
+    "cultural_note": "Maps, terrain, navigation and Norwegian outdoor recreation through a mathematical lens.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-075",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Den korteste køen til ferga viste seg å være en lokal optimumsløsning med feil destinasjon.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "travel"
+    ],
+    "cultural_note": "Maps, terrain, navigation and Norwegian outdoor recreation through a mathematical lens.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-076",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg prøvde å gjøre skismøringen deterministisk. Snøen la inn en tilfeldig variabel.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "travel"
+    ],
+    "cultural_note": "Maps, terrain, navigation and Norwegian outdoor recreation through a mathematical lens.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-077",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Vi estimerte hjemturen med normalfordeling. Bestefars «snart framme» hadde altfor lang hale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "travel"
+    ],
+    "cultural_note": "Maps, terrain, navigation and Norwegian outdoor recreation through a mathematical lens.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-078",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Tursekkens masse var bevart. Sjokoladen gikk bare over til en annen del av systemet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "travel"
+    ],
+    "cultural_note": "Maps, terrain, navigation and Norwegian outdoor recreation through a mathematical lens.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-079",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg kalte oppoverbakken konveks. Fjellet svarte ikke, men aksepterte mer av pusten min.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "travel"
+    ],
+    "cultural_note": "Maps, terrain, navigation and Norwegian outdoor recreation through a mathematical lens.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-080",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Orienteringen gikk fint fram til jeg forvekslet «du er her» med et forslag.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "travel"
+    ],
+    "cultural_note": "Maps, terrain, navigation and Norwegian outdoor recreation through a mathematical lens.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-081",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Borettslagets dugnad fungerer som åpen kildekode: mange forslag, tre personer med rake.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Dugnad and Norwegian shared organisations interpreted through software engineering.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-082",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Vi brukte smidig metode på gjerdet. Hver sprint sluttet med maling på et nytt sett klær.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Dugnad and Norwegian shared organisations interpreted through software engineering.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-083",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Dugnadslista hadde en sirkulær avhengighet: Ingen satte fram kaffe før noen hadde båret bordet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Dugnad and Norwegian shared organisations interpreted through software engineering.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-084",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg opprettet en issue for løvet. Høsten lukket den og åpnet fire tusen nye.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Dugnad and Norwegian shared organisations interpreted through software engineering.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-085",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Styret ville ha én sannhetskilde. Nå krangler alle om hvilken hylle protokollen står i.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Dugnad and Norwegian shared organisations interpreted through software engineering.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-086",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Borettslaget har distribuert konsensus. Alle er enige om at naboen burde gjøre det.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Dugnad and Norwegian shared organisations interpreted through software engineering.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-087",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Vi innførte kodegjennomgang på dugnaden. Nå kommenterer fire personer hvordan én holder kosten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Dugnad and Norwegian shared organisations interpreted through software engineering.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-088",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Dugnaden fikk et kanbanbrett. Vaflene flyttet seg gjennom systemet klart raskest.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Dugnad and Norwegian shared organisations interpreted through software engineering.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-089",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg foreslo automatisering av snømåkingen. Robotstøvsugeren registrerte innsigelse allerede i entreen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Dugnad and Norwegian shared organisations interpreted through software engineering.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-090",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Fellesvaskeriet har god tilgangskontroll. Du trenger nøkkel, tidsluke og en forståelse av håndskriften på lista.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Dugnad and Norwegian shared organisations interpreted through software engineering.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-091",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Vi hadde deadlock i boden: Kosten sperret for spaden som sperret for døra.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Dugnad and Norwegian shared organisations interpreted through software engineering.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-092",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Styret bestilte sanntidsoversikt over dugnaden. Barnet ved vaffeljernet var allerede i produksjon.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Dugnad and Norwegian shared organisations interpreted through software engineering.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-093",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Vi migrerte redskapene til ny bod. Etterpå manglet bare dokumentasjonen på hvor bodnøkkelen var.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Dugnad and Norwegian shared organisations interpreted through software engineering.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-094",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Dugnaden har dårlig testdekning. Ingen undersøkte om malingen tålte regn før Bergen gjorde det.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Dugnad and Norwegian shared organisations interpreted through software engineering.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-095",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg foreslo rollback av den skjeve benken. Naboen tok bare fram brekkjernet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Dugnad and Norwegian shared organisations interpreted through software engineering.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-096",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Vi laget en backlog for uteområdet. Nå har ugresset ansiennitet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Dugnad and Norwegian shared organisations interpreted through software engineering.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-097",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Dugnaden ble skalerbar da vi fikk flere vaffeljern. Flaskhalsen flyttet seg til skjøteledningen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Dugnad and Norwegian shared organisations interpreted through software engineering.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-098",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Borettslagets chat har ubegrenset historikk. Det har også naboen som husker hvem som plantet hekken.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Dugnad and Norwegian shared organisations interpreted through software engineering.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-099",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Vi brukte parprogrammering på rakejobben. Den ene raket; den andre mente at håndtaket kunne navngis bedre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Dugnad and Norwegian shared organisations interpreted through software engineering.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-100",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Styret kaller dugnaden en release. Etterpå blir alle feil rapportert fra balkongene.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Dugnad and Norwegian shared organisations interpreted through software engineering.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-101",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg bruker BankID så ofte at telefonen snart kjenner meg bedre enn speilet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Norwegian everyday digital systems; fictional failures, not claims about named services.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-102",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Den norske værappen min ber om posisjon. Regnet finner meg uten å spørre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Norwegian everyday digital systems; fictional failures, not claims about named services.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-103",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg lagde app for fergekøen. Den eneste knappen heter «se båten forsvinne».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Norwegian everyday digital systems; fictional failures, not claims about named services.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-104",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Hjemmeladeren min har egen app. Bilen er den eneste i familien som får strukturert oppfølging.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Norwegian everyday digital systems; fictional failures, not claims about named services.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-105",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg automatiserte strømsparingen. Nå står jeg opp om natta for å beundre hvor automatisk det er.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Norwegian everyday digital systems; fictional failures, not claims about named services.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-106",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Panteautomaten avviste flaska. Jeg tilbød den bedre treningsdata i form av resten av posen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Norwegian everyday digital systems; fictional failures, not claims about named services.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-107",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg bygde smart postkasse. Den sender pushvarsel hver gang den mottar noe jeg ville unngått digitalt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Norwegian everyday digital systems; fictional failures, not claims about named services.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-108",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Elbilen min regner rekkevidden presist. Jeg regner optimistisk; vi er et dårlig team i motvind.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Norwegian everyday digital systems; fictional failures, not claims about named services.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-109",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Billettappen er rask. Det er tommelen i vintervotten som har teknisk gjeld.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Norwegian everyday digital systems; fictional failures, not claims about named services.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-110",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg trente en modell til å gjenkjenne norske skyer. Den lærte å svare «ta med jakke» og sluttet å forbedre seg.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Norwegian everyday digital systems; fictional failures, not claims about named services.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-111",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Husets digitale assistent forstår bokmål. Bestefars dialekt får den til å foreslå fabrikkinnstillinger.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Norwegian everyday digital systems; fictional failures, not claims about named services.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-112",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Strømappen viser forbruket minutt for minutt. Endelig kan jeg se middagen spise opp feriebudsjettet live.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Norwegian everyday digital systems; fictional failures, not claims about named services.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-113",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg lagde et nevralt nett for å finne votter. Det begynte med å kjøpe en sofa med færre sprekker.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Norwegian everyday digital systems; fictional failures, not claims about named services.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-114",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Den smarte ringeklokka fanget opp en elg. Nå foreslår algoritmen skog som nærmeste pårørende.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Norwegian everyday digital systems; fictional failures, not claims about named services.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-115",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg bruker mørk modus i november. Skjermen er bare opptatt av å passe inn.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Norwegian everyday digital systems; fictional failures, not claims about named services.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-116",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Vi satte sensor på vedlageret. Nå får vi digital beskjed om at vi må gjøre noe fysisk.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Norwegian everyday digital systems; fictional failures, not claims about named services.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-117",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Bilens navigasjon foreslo en snarvei. Den hadde ikke installert ferge som avhengighet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Norwegian everyday digital systems; fictional failures, not claims about named services.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-118",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg lagde språkmodell for hyttas gjestebok. Den genererer «nydelig vær» selv når regnmåleren protesterer.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Norwegian everyday digital systems; fictional failures, not claims about named services.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-119",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Panteautomaten min bruker maskinlæring. Den har lært når jeg har dårlig tid.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Norwegian everyday digital systems; fictional failures, not claims about named services.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-120",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg skrev et skript som finner billigste ladetid. Nå trenger jeg et til som finner ut når jeg får sove.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "Norwegian everyday digital systems; fictional failures, not claims about named services.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-121",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg forklarte tidevann til fisken. Den virket mest bekymret for datafangsten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "animals"
+    ],
+    "cultural_note": "Fjords, coastal life and scientific nerd humour in Norwegian settings.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-122",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Fjorden er en utmerket database. Den lagrer alt dypt og gjør gjenfinning dyrt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "animals"
+    ],
+    "cultural_note": "Fjords, coastal life and scientific nerd humour in Norwegian settings.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-123",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Geologen sa at fjellet var gammelt. Bestefar spurte om det da kunne få honnørrabatt på ferga.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "animals"
+    ],
+    "cultural_note": "Fjords, coastal life and scientific nerd humour in Norwegian settings.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-124",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg regnet ut båtens oppdrift. Passasjerene ba meg regne ferdig på land.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "animals"
+    ],
+    "cultural_note": "Fjords, coastal life and scientific nerd humour in Norwegian settings.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-125",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Vi så på fjordens økosystem. Måken mente matpakka mi var den mest interessante energikilden.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "animals"
+    ],
+    "cultural_note": "Fjords, coastal life and scientific nerd humour in Norwegian settings.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-126",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Fisken min har god hydrodynamikk. Det er fiskerens støvler som gjør laboratoriet vått.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "animals"
+    ],
+    "cultural_note": "Fjords, coastal life and scientific nerd humour in Norwegian settings.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-127",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Geologen snakket om langsomme prosesser. Jeg viste henne familierådet om valg av hyttefarge.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "animals"
+    ],
+    "cultural_note": "Fjords, coastal life and scientific nerd humour in Norwegian settings.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-128",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg tok med mikroskop til fjorden. Nå vet jeg hvorfor vannprøven aldri blir invitert til middag.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "animals"
+    ],
+    "cultural_note": "Fjords, coastal life and scientific nerd humour in Norwegian settings.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-129",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Fiskestanga mi illustrerer sannsynlighet: svært mange forsøk, svært personlige forklaringer.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "animals"
+    ],
+    "cultural_note": "Fjords, coastal life and scientific nerd humour in Norwegian settings.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-130",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg studerte fraktaler i norsk kystlinje. Reisebudsjettet ba meg slutte å zoome inn.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "animals"
+    ],
+    "cultural_note": "Fjords, coastal life and scientific nerd humour in Norwegian settings.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-131",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Vi målte saltholdigheten. Måken leverte brød som et fullstendig uønsket kontrollforsøk.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "animals"
+    ],
+    "cultural_note": "Fjords, coastal life and scientific nerd humour in Norwegian settings.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-132",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg analyserte båtkøen statistisk. Den eneste sikre sammenhengen var mellom sol og dårlig humør ved rampen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "animals"
+    ],
+    "cultural_note": "Fjords, coastal life and scientific nerd humour in Norwegian settings.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-133",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Biologen sa at tang er produktivt. Jeg ba den ta et møte med potteplanten hjemme.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "animals"
+    ],
+    "cultural_note": "Fjords, coastal life and scientific nerd humour in Norwegian settings.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-134",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Fjellprøven min er flere millioner år gammel. Den blir likevel sendt tilbake fordi skjemaet mangler dato.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "animals"
+    ],
+    "cultural_note": "Fjords, coastal life and scientific nerd humour in Norwegian settings.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-135",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg ville fotografere en lundefugl vitenskapelig. Den presenterte rumpa som eneste tilgjengelige datasett.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "animals"
+    ],
+    "cultural_note": "Fjords, coastal life and scientific nerd humour in Norwegian settings.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-136",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Vi testet ekkoet i fjorden. Etter tredje rop leverte naturen bare den samme koden tilbake.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "animals"
+    ],
+    "cultural_note": "Fjords, coastal life and scientific nerd humour in Norwegian settings.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-137",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Fisken fulgte ikke hypotesen min. Forskningsgruppen kalte det en interessant middag uten fisk.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "animals"
+    ],
+    "cultural_note": "Fjords, coastal life and scientific nerd humour in Norwegian settings.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-138",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg studerte erosjon. Hyttetrappa tilbød et veldig nært samarbeid.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "animals"
+    ],
+    "cultural_note": "Fjords, coastal life and scientific nerd humour in Norwegian settings.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-139",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Kystkartet mitt har høy oppløsning. Sjøsprøyten foretrekker analog oppdatering.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "animals"
+    ],
+    "cultural_note": "Fjords, coastal life and scientific nerd humour in Norwegian settings.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-140",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg forklarte platetektonikk på hytta. Bestemor ba meg først forklare sprekkene i hennes middagstallerken.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "animals"
+    ],
+    "cultural_note": "Fjords, coastal life and scientific nerd humour in Norwegian settings.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-141",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Den svenske utvikleren la fika i event-løkken. Nå reagerer systemet bare etter kanelbolle.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Norwegian–Swedish encounters through computing and fika; Sweden is a secondary context.",
+    "related_countries": [
+      "SE"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-142",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Vi sammenlignet norsk og svensk kildekode. Kommentarene ble forstått; navnene på kaffepausen krevde dokumentasjon.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Norwegian–Swedish encounters through computing and fika; Sweden is a secondary context.",
+    "related_countries": [
+      "SE"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-143",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg tok med brunost til hackathon i Sverige. Den fikk flere stjerner enn repoet mitt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Norwegian–Swedish encounters through computing and fika; Sweden is a secondary context.",
+    "related_countries": [
+      "SE"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-144",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Det norsk-svenske teamet har en robust protokoll: Bekreft mottak av kaffe før diskusjon.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Norwegian–Swedish encounters through computing and fika; Sweden is a secondary context.",
+    "related_countries": [
+      "SE"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-145",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Svenskene ville refaktorere pausen. Vi nordmenn ville først sikre bakoverkompatibilitet med termosen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Norwegian–Swedish encounters through computing and fika; Sweden is a secondary context.",
+    "related_countries": [
+      "SE"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-146",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Den svenske kollegaen komprimerte møtet. Fikaen ble bevart tapsfritt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Norwegian–Swedish encounters through computing and fika; Sweden is a secondary context.",
+    "related_countries": [
+      "SE"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-147",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Vi lanserte en nordisk chatbot. Etter svensk trening nekter den å svare før alle har satt seg med kaffe.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Norwegian–Swedish encounters through computing and fika; Sweden is a secondary context.",
+    "related_countries": [
+      "SE"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-148",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg forklarte binære trær på svensk-norsk seminar. Vertskapet spurte hvor på treet bollene vokste.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Norwegian–Swedish encounters through computing and fika; Sweden is a secondary context.",
+    "related_countries": [
+      "SE"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-149",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Den svenske utvikleren fant min race condition. Vi strakte oss etter siste kanelbolle samtidig.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Norwegian–Swedish encounters through computing and fika; Sweden is a secondary context.",
+    "related_countries": [
+      "SE"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-150",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Vi la norske og svenske matvaner i samme datasett. Modellen foreslo brunost på alt og søkte deretter om ferie.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Norwegian–Swedish encounters through computing and fika; Sweden is a secondary context.",
+    "related_countries": [
+      "SE"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-151",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "På hackathon i Stockholm tok jeg med turkart. Jeg hadde misforstått hva de mente med en teknisk retning.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Norwegian–Swedish encounters through computing and fika; Sweden is a secondary context.",
+    "related_countries": [
+      "SE"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-152",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Den svenske kollegaen kaller kaffe en avhengighet. Jeg svarte at den i det minste er godt vedlikeholdt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Norwegian–Swedish encounters through computing and fika; Sweden is a secondary context.",
+    "related_countries": [
+      "SE"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-153",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Norsk matpakke og svensk fika deler lagringsplass. Konflikten oppstår når bollen ikke støtter stabling.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Norwegian–Swedish encounters through computing and fika; Sweden is a secondary context.",
+    "related_countries": [
+      "SE"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-154",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Vi sammenlignet skidata med Sverige. Begge lag foreslo å filtrere bort sine dårligste observasjoner.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Norwegian–Swedish encounters through computing and fika; Sweden is a secondary context.",
+    "related_countries": [
+      "SE"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-155",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Den svenske designeren ga appen luft. Den norske turlederen krevde ull rundt den.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Norwegian–Swedish encounters through computing and fika; Sweden is a secondary context.",
+    "related_countries": [
+      "SE"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-156",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Vi oversatte «rolig» i en norsk-svensk app. Testerne hadde plutselig helt ulike forventninger til underholdningen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Norwegian–Swedish encounters through computing and fika; Sweden is a secondary context.",
+    "related_countries": [
+      "SE"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-157",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg opprettet en svensk-norsk ordliste i Git. Hver pull request kom med en historie om kaffe.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Norwegian–Swedish encounters through computing and fika; Sweden is a secondary context.",
+    "related_countries": [
+      "SE"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-158",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Det svenske teamet tilbød en elegant løsning. Det norske lurte på om den også fungerte med votter.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Norwegian–Swedish encounters through computing and fika; Sweden is a secondary context.",
+    "related_countries": [
+      "SE"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-159",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Vi trente en modell på nordisk samarbeid. Den lærte å velge møtested etter kvaliteten på bakverket.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Norwegian–Swedish encounters through computing and fika; Sweden is a secondary context.",
+    "related_countries": [
+      "SE"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-160",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "På seminar i Sverige lovet jeg null forsinkelser. Kaffekøen innførte umiddelbart en køteoretisk korreksjon.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "Norwegian–Swedish encounters through computing and fika; Sweden is a secondary context.",
+    "related_countries": [
+      "SE"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-161",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg tok den bærbare med på badstueseminar i Finland. Den termiske designen leverte oppsigelse i døra.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "science"
+    ],
+    "cultural_note": "Norwegian–Finnish fictional encounters, sauna and engineering; Finland is a secondary context.",
+    "related_countries": [
+      "FI"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-162",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Den finske ingeniøren forklarte varmeledning. Jeg demonstrerte den med et altfor varmt dørhåndtak.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "science"
+    ],
+    "cultural_note": "Norwegian–Finnish fictional encounters, sauna and engineering; Finland is a secondary context.",
+    "related_countries": [
+      "FI"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-163",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Vi hadde norsk-finsk diskusjon om skylagring. Badstua produserte den mest synlige prototypen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "science"
+    ],
+    "cultural_note": "Norwegian–Finnish fictional encounters, sauna and engineering; Finland is a secondary context.",
+    "related_countries": [
+      "FI"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-164",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg spurte om saunaen hadde et API. Den finske verten pekte på øsa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "science"
+    ],
+    "cultural_note": "Norwegian–Finnish fictional encounters, sauna and engineering; Finland is a secondary context.",
+    "related_countries": [
+      "FI"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-165",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Teamet i Helsinki ba om mindre støy i dataene. Jeg tok av meg den knitrende norske skalljakka.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "science"
+    ],
+    "cultural_note": "Norwegian–Finnish fictional encounters, sauna and engineering; Finland is a secondary context.",
+    "related_countries": [
+      "FI"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-166",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Vi skulle teste systemets tåleevne i Finland. Verten mente at datamaskinen kunne vente utenfor badstua.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "science"
+    ],
+    "cultural_note": "Norwegian–Finnish fictional encounters, sauna and engineering; Finland is a secondary context.",
+    "related_countries": [
+      "FI"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-167",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg målte damp i den finske badstua. Brillene leverte visualiseringen uten et eneste bibliotek.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "science"
+    ],
+    "cultural_note": "Norwegian–Finnish fictional encounters, sauna and engineering; Finland is a secondary context.",
+    "related_countries": [
+      "FI"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-168",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Den finske kollegaen foreslo å kjøle problemet ned. Min norske termos nektet å samarbeide.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "science"
+    ],
+    "cultural_note": "Norwegian–Finnish fictional encounters, sauna and engineering; Finland is a secondary context.",
+    "related_countries": [
+      "FI"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-169",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "På seminar i Finland møtte vi en ekte flaskehals: én vannflaske og tolv varme deltakere.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "science"
+    ],
+    "cultural_note": "Norwegian–Finnish fictional encounters, sauna and engineering; Finland is a secondary context.",
+    "related_countries": [
+      "FI"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-170",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg ville logge badstueøkta. Den finske verten viste meg vedkurven og sa at loggene allerede var på plass.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "science"
+    ],
+    "cultural_note": "Norwegian–Finnish fictional encounters, sauna and engineering; Finland is a secondary context.",
+    "related_countries": [
+      "FI"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-171",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Vi bygde en norsk-finsk sensor. Den varsler når hytta er kald nok for nordmannen og varm nok for ingen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "science"
+    ],
+    "cultural_note": "Norwegian–Finnish fictional encounters, sauna and engineering; Finland is a secondary context.",
+    "related_countries": [
+      "FI"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-172",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Det finske teamet spurte etter stabil temperatur. Jeg hadde bare tatt med værdata fra Bergen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "science"
+    ],
+    "cultural_note": "Norwegian–Finnish fictional encounters, sauna and engineering; Finland is a secondary context.",
+    "related_countries": [
+      "FI"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-173",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg programmerte en timer til saunaen i Finland. Den første testen endte med at vi tok pause fra timeren.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "science"
+    ],
+    "cultural_note": "Norwegian–Finnish fictional encounters, sauna and engineering; Finland is a secondary context.",
+    "related_countries": [
+      "FI"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-174",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Vi diskuterte kvantefysikk etter badstua. Håndkleet mitt befant seg visst i to garderober fram til observasjon.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "science"
+    ],
+    "cultural_note": "Norwegian–Finnish fictional encounters, sauna and engineering; Finland is a secondary context.",
+    "related_countries": [
+      "FI"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-175",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Den finske verten sa at løsningen var enkel. Jeg hadde nettopp bestilt et helt rammeverk fra Norge.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "science"
+    ],
+    "cultural_note": "Norwegian–Finnish fictional encounters, sauna and engineering; Finland is a secondary context.",
+    "related_countries": [
+      "FI"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-176",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "På hackathon i Helsinki vant vi ikke. Men min norske termos hadde lengst oppetid.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "science"
+    ],
+    "cultural_note": "Norwegian–Finnish fictional encounters, sauna and engineering; Finland is a secondary context.",
+    "related_countries": [
+      "FI"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-177",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Vi brukte badstua som analog databehandling. Alle resultatene kom med stor fordampningsusikkerhet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "science"
+    ],
+    "cultural_note": "Norwegian–Finnish fictional encounters, sauna and engineering; Finland is a secondary context.",
+    "related_countries": [
+      "FI"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-178",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg sendte finnene en temperaturgraf fra hytta. De svarte at oppvarmingen tydeligvis ikke hadde begynt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "science"
+    ],
+    "cultural_note": "Norwegian–Finnish fictional encounters, sauna and engineering; Finland is a secondary context.",
+    "related_countries": [
+      "FI"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-179",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Den finske fysikeren sa at varme ikke er det samme som temperatur. Jeg ba om begge deler til hytta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "science"
+    ],
+    "cultural_note": "Norwegian–Finnish fictional encounters, sauna and engineering; Finland is a secondary context.",
+    "related_countries": [
+      "FI"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-180",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Norsk-finsk samarbeid ble enklere da vi sluttet å sammenligne nettverk og begynte å dele skjøteledning.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "science"
+    ],
+    "cultural_note": "Norwegian–Finnish fictional encounters, sauna and engineering; Finland is a secondary context.",
+    "related_countries": [
+      "FI"
+    ]
+  },
+  {
+    "id": "intl-v2-nb-nerd-181",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Stavekontrollen min tror «skismøring» er en feil. Den har åpenbart samme erfaring som meg.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "school"
+    ],
+    "cultural_note": "Bokmål, coding, maths and Norwegian everyday learning; original language-aware jokes.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-182",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg prøvde å sortere norske stedsnavn alfabetisk. Æ, ø og å ba om plass på bakerste rad.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "school"
+    ],
+    "cultural_note": "Bokmål, coding, maths and Norwegian everyday learning; original language-aware jokes.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-183",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Programmet mitt krasjet på «blåbær». Det hadde planlagt en norsk sommer i ren ASCII.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "school"
+    ],
+    "cultural_note": "Bokmål, coding, maths and Norwegian everyday learning; original language-aware jokes.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-184",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg tok med regex på sopptur. Nå finner jeg alt som ligner, og spiser ingenting.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "school"
+    ],
+    "cultural_note": "Bokmål, coding, maths and Norwegian everyday learning; original language-aware jokes.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-185",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Matematikklæreren la oppgaven til en fjord. Plutselig trengte vi fergetid i tillegg til fart og strekning.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "school"
+    ],
+    "cultural_note": "Bokmål, coding, maths and Norwegian everyday learning; original language-aware jokes.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-186",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Vi lærte mengdelære med votter. Snart hadde alle forstått tom mengde.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "school"
+    ],
+    "cultural_note": "Bokmål, coding, maths and Norwegian everyday learning; original language-aware jokes.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-187",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg brukte binærtall til å telle vaffelhjerter. Familien mente jeg hadde tatt 100 for mange.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "school"
+    ],
+    "cultural_note": "Bokmål, coding, maths and Norwegian everyday learning; original language-aware jokes.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-188",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg skrev et program som regner skreddermål til bunad. Det krasjet på variabelen «bare én kake til».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "school"
+    ],
+    "cultural_note": "Bokmål, coding, maths and Norwegian everyday learning; original language-aware jokes.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-189",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Læreren ba oss finne en konstant. Jeg foreslo bestefars mening om skismøring.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "school"
+    ],
+    "cultural_note": "Bokmål, coding, maths and Norwegian everyday learning; original language-aware jokes.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-190",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg laget en ordsky av norske værprater. Hele dokumentet ble et regnvær.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "school"
+    ],
+    "cultural_note": "Bokmål, coding, maths and Norwegian everyday learning; original language-aware jokes.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-191",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Programmet mitt håndterer Unicode korrekt. Familien forventer nå at det også forstår onkels håndskrift.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "school"
+    ],
+    "cultural_note": "Bokmål, coding, maths and Norwegian everyday learning; original language-aware jokes.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-192",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Vi lærte sannsynlighet med ferga. Oppgaven var å beregne sjansen for å rekke den etter å ha kjøpt vaffel.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "school"
+    ],
+    "cultural_note": "Bokmål, coding, maths and Norwegian everyday learning; original language-aware jokes.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-193",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg brukte nullbasert indeksering på søsknene mine. Mamma gjenopprettet enbasert orden svært raskt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "school"
+    ],
+    "cultural_note": "Bokmål, coding, maths and Norwegian everyday learning; original language-aware jokes.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-194",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg lærte datteren min rekursjon med matbokser. Hun spurte hvilken boks som faktisk inneholdt mat.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "school"
+    ],
+    "cultural_note": "Bokmål, coding, maths and Norwegian everyday learning; original language-aware jokes.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-195",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Skolens robot lærte å si «ut på tur». Ingen klarte å lære den å ta på votter.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "school"
+    ],
+    "cultural_note": "Bokmål, coding, maths and Norwegian everyday learning; original language-aware jokes.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-196",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg prøvde maskinoversettelse på hyttas instruksjoner. Nå skal vi visst mate ovnen og lufte bestemoren.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "school"
+    ],
+    "cultural_note": "Bokmål, coding, maths and Norwegian everyday learning; original language-aware jokes.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-197",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Læreren spurte etter et eksempel på uendelighet. Vi viste familien som skulle velge et fjellbilde til veggen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "school"
+    ],
+    "cultural_note": "Bokmål, coding, maths and Norwegian everyday learning; original language-aware jokes.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-198",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg modellerte køen ved skiheisen. Barna foreslo å slutte å modellere og stille meg i den.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "school"
+    ],
+    "cultural_note": "Bokmål, coding, maths and Norwegian everyday learning; original language-aware jokes.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-199",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Jeg lærte barna kryptering. Nå trenger jeg passord for å finne sjokoladen i tursekken.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "school"
+    ],
+    "cultural_note": "Bokmål, coding, maths and Norwegian everyday learning; original language-aware jokes.",
+    "related_countries": []
+  },
+  {
+    "id": "intl-v2-nb-nerd-200",
+    "collection": "nb-no-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Vi testet avrunding med osteskiver. Pappa rundet konsekvent opp til enda en brødskive.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "school"
+    ],
+    "cultural_note": "Bokmål, coding, maths and Norwegian everyday learning; original language-aware jokes.",
+    "related_countries": []
+  }
+]

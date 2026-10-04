@@ -1,0 +1,2278 @@
+[
+  {
+    "id": "intl-v2-it-puns-001",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ho preso lucciole per lanterne. La bolletta è scesa, ma l'illuminazione esce quando vuole.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-002",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il risotto scoppia a ridere. Il cuoco precisa che aveva ordinato soltanto un riso tranquillo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-puns-003",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "L’orecchietta ha l’orecchio assoluto. Riconosce il momento in cui il parmigiano tocca la nota giusta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-puns-004",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "observ",
+    "text": "A Venezia ho perso il filo. Il merletto di Burano mi ha chiesto di descriverlo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-puns-005",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "A Trieste il capo in b ha perso la testa. Il barista precisa che, per un caffè, si chiama semplicemente schiuma.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-puns-006",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La pizza a portafoglio non ha spiccioli. Conserva il capitale in mozzarella.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-puns-007",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La Befana ha la scopa elettrica. Si è modernizzata, ma le manca sempre la prolunga fino al tetto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-puns-008",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ho fischiato ai fiaschi. Le lucciole, poco lontano, temono un altro equivoco.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-009",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il tortellino vuole stringere i rapporti. Per questo chiude bene tutti gli incontri.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-puns-010",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il pesto si è risentito: lo chiamano sempre pestato, mai compreso.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-puns-011",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il cannolo ha un buon ripieno. Il suo discorso non è mai vuoto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-puns-012",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La marca da bollo vuole farsi un nome. Purtroppo il documento continua a parlare di me.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-puns-013",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Sono al verde. Il basilico mi offre un posto nel vaso, ma pretende l'affitto in acqua.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-014",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il tiramisù ha ricevuto un incarico motivazionale. Il cucchiaio controlla l'avanzamento dal basso.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-puns-015",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La torre di Pisa prende posizione. Nessuno la accusa di stare troppo dritta sulle proprie idee.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-puns-016",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il pupo ha perso il filo. Il puparo lo invita a riprendere il discorso dall'alto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-puns-017",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ho fatto una frittata con la decisione. Il cuoco si lamenta soltanto della scarsa presenza di uova.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-018",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il tarallo chiude il cerchio. Il buco continua a sentirsi escluso dalla riunione.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-puns-019",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il gondoliere rema contro. Gli altri spiegano che, stavolta, era un semplice parere.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-puns-020",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il caffè corretto mi ha segnato due errori sul tovagliolo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-puns-021",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La margherita non sboccia. Il pizzaiolo sostiene di averle dato già abbastanza calore umano.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-puns-022",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La tombola ha perso i numeri. La famiglia li dà comunque con grande entusiasmo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-puns-023",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ho un diavolo per capello. Il parrucchiere propone un taglio molto diplomatico.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-024",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "I portici danno una copertura alla mia passeggiata. La pioggia sospetta un accordo sottobanco.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-puns-025",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il pesto ha alzato il gomito. Il mortaio ricorda che a lavorare è il pestello.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-puns-026",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La granita prende tempo. Il cucchiaino le fa notare che lo sta sciogliendo tutto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-puns-027",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La PEC prende atto. Poi mi manda anche una ricevuta dell'atto preso.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-puns-028",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ho mangiato la foglia. Il basilico mi domanda almeno di conoscere la salsa finale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-029",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La pasta ha un buon carattere. Il sugo dice che è proprio una persona di un'altra pasta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-puns-030",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "observ",
+    "text": "A Murano ho ricevuto un complimento trasparente. Il vetraio sostiene che fosse visibile anche da dietro.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-puns-031",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il cavaliere dei pupi tiene testa al drago. Il puparo tiene tutto il resto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-puns-032",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Mi sono montato la testa. Mancavano due viti e adesso l'orgoglio traballa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-033",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le cime di rapa hanno grandi aspirazioni. L'orecchietta le ascolta senza guardarle dall'alto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-puns-034",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il vaporetto non perde la calma. Dice che le acque agitate fanno già parte dell'orario.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-puns-035",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "L'espresso parla chiaro: preferisce essere espresso prima di raffreddarsi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-puns-036",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il cornicione della pizza ha una certa altezza. Il pomodoro lo invita a scendere dal piedistallo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-puns-037",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La Befana mette tutto nel sacco. La polizia delle caramelle vorrebbe una formulazione meno sospetta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-puns-038",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ho l'acqua alla gola. Il bagnino mi consiglia di separare le metafore dalle lezioni di nuoto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-039",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La sfoglina tira la pasta. Io tiro le somme: il mattarello ha prodotto risultati migliori.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-puns-040",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La focaccia si prende una cotta. Il forno le spiega che non sarà una relazione tiepida.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-puns-041",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il cioccolato di Modica ha una voce granulosa. Il pasticciere la considera una caratteristica, non un raffreddore.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-puns-042",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il bollo pesa sul documento. Eppure è la cosa più sottile che ci ho messo sopra.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-puns-043",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ho preso un granchio. Il mercato del pesce mi ha chiesto se l'errore fosse da asporto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-044",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il riso abbonda sulla bocca di mio zio. Il risotto era servito in una porzione davvero generosa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-puns-045",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "observ",
+    "text": "A Ravenna ho messo insieme i pezzi. Il mosaicista apprezza, ma vorrebbe almeno seguire il disegno.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-puns-046",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il pupo vuole tagliare corto. Il puparo gli raccomanda di non cominciare dai fili.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-puns-047",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ho una gatta da pelare. La gatta propone di discutere prima i termini del contratto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-048",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La burrata ha il cuore tenero. Il pane promette di non approfittarne senza pomodoro.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-puns-049",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La gondola porta avanti il discorso. Il remo cura la parte più concreta dell'argomentazione.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-puns-050",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il caffè lungo non arriva al punto. Gli consiglio una tazzina più sintetica.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-puns-051",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La pizza è una questione di principio e di fine cottura.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-puns-052",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La calza della Befana ha preso piede. Ora vuole uscire anche dopo gennaio.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-puns-053",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Sono rimasto di sasso. A Matera mi hanno offerto un ruolo nell'arredamento.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-054",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il tortellino si apre agli altri. Il brodo preferisce che mantenga un po' di riservatezza.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-puns-055",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il pesto ha messo radici in casa mia. Il basilico rivendica la proprietà del balcone.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-puns-056",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il cannolo si fa riempire di complimenti. La ricotta chiede di mantenere la precedenza.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-puns-057",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il codice fiscale ha carattere. Anzi, ne ha parecchi e non accetta quelli inventati.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-puns-058",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ho gettato la spugna. Il pugile e il lavapiatti discutono su chi debba raccoglierla.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-059",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il supplì ha un filo logico. Si può seguirlo dal primo morso fino all'ultima mozzarella.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-puns-060",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La torre di Pisa è una questione pendente. Il turista vuole risolverla con la mano nella foto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-puns-061",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il puparo ha le mani in pasta. Il cavaliere aspetta che finiscano prima i ravioli.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-puns-062",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ho preso la palla al balzo. Il pallone mi ha chiesto se poteva finire il rimbalzo prima del colloquio.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-063",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "L'orecchietta tende l'orecchio. La pasta accanto non capisce come faccia a diventare ancora più attenta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-puns-064",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "observ",
+    "text": "A Venezia il campo non si ara. Il turista con il rastrello ha scoperto il lessico locale nel modo più pratico.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-puns-065",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il cappuccino porta un cappuccio di schiuma. Non lo toglie neppure quando entra in casa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-puns-066",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il forno della pizza ha fatto terra bruciata. Per fortuna riguardava solo il bordo di una prova.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-puns-067",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La Befana ha dato un colpo di scopa al passato. Ha ritrovato sotto tre caramelle dell'anno prima.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-puns-068",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ho messo troppa carne al fuoco. Il vegetariano del gruppo chiede di rivedere almeno la metafora.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-069",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La sfoglia si tira indietro. Il mattarello sostiene che sia semplice elasticità, non paura.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-puns-070",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La focaccia ha lasciato il segno. Il sarto lo chiama ancora macchia d'olio.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-puns-071",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La granita mantiene il sangue freddo. Il limone le dà qualche motivo per essere aspra.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-puns-072",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La PEC non lascia spazio ai dubbi. Gli allegati occupano già quasi tutta la casella.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-puns-073",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Mi hanno dato carta bianca. Ho disegnato un pomeriggio libero prima che cambiassero idea.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-074",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il panettone ha fatto il pieno. L'uvetta chiede comunque se resta un posto vicino alla crosta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-puns-075",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il ponte di Rialto unisce le parti. Gli avvocati vorrebbero studiarne la semplicità strutturale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-puns-076",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il cavaliere dei pupi regge il confronto. Il filo principale regge soprattutto lui.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-puns-077",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ho perso la bussola. Il navigatore mi dice che è normale attraversare una fase di ricalcolo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-078",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il tarallo ha trovato la quadratura del cerchio. Il fornaio gli consiglia di non cambiare forma adesso.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-puns-079",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La gondola si lascia portare. Il gondoliere rifiuta questa descrizione del proprio sforzo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-puns-080",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il caffè macchiato ha un passato limpido. Il latte preferisce non commentare.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-puns-081",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La pizza a portafoglio apre credito. Io prometto di saldare tutto prima del prossimo morso.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-puns-082",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La tombola è fuori numero. La nonna scopre che mio fratello ha aggiunto una cartella di bingo inglese.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-puns-083",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ho grilli per la testa. Pinocchio propone un incontro tra coscienze rumorose.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-084",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il portico ha messo al riparo la discussione. Restano soltanto gli argomenti che fanno acqua.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-puns-085",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il pesto trova pane per i suoi denti. La focaccia chiede perché debba essere sempre lei a mediare.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-puns-086",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il cannolo perde la pazienza. Il pasticciere gli ricorda che la ricotta va inserita con calma.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-puns-087",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il bollo è stato apposto. Finalmente un punto del dossier che non è fuori posto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-puns-088",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ho una marcia in più. Il meccanico dice che devo prima imparare a usare quelle previste.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-089",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La lasagna vuole arrivare al sodo. Le uova le suggeriscono di distinguere gli obiettivi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-puns-090",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La Lanterna di Genova fa luce sulla questione. Le barche chiedono solo di non cambiare argomento all'improvviso.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-puns-091",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il pupo ha un debole per il drago. Il falegname controlla subito la giuntura del ginocchio.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-puns-092",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ho messo il dito nella piaga. Il medico propone, per il futuro, un semplice commento meno letterale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-093",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le orecchiette stanno all'erta. Il sugo annuncia notizie piccanti.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-puns-094",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il vaporetto segue la corrente. Il sindacato dei remi lo considera un vantaggio non contrattuale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-puns-095",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il ristretto ha pochi argomenti. Li presenta però con grande intensità.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-puns-096",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La margherita si fa bella. Il basilico le mette un accessorio verde all'ultimo momento.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-puns-097",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La Befana ha il vento in poppa. La scopa ricorda che non è una barca, ma accetta l'aiuto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-puns-098",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ho preso un abbaglio. L'elettricista dice che il mio ottimismo richiede lampadine meno forti.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-099",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il tortellino è di poche parole. Il ripieno preferisce parlare quando arriva il momento giusto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-puns-100",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il pesto è sulla bocca di tutti. Il piatto vuoto conferma la popolarità.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-puns-101",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il cioccolato di Modica non liscia il pelo a nessuno. Tiene ai propri granelli di personalità.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-puns-102",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La marca da bollo ha trovato applicazione pratica. È la prima collega del progetto a riuscirci subito.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-puns-103",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ho fatto orecchie da mercante. A Bari le orecchiette mi hanno accusato di concorrenza.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-104",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il risotto non trova le parole. Gli consiglio almeno di conservare il riso.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-puns-105",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La torre di Pisa si sbilancia. I giornalisti attendono una dichiarazione, gli ingegneri preferiscono di no.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-puns-106",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il cavaliere dei pupi fa il duro. Dentro resta legno abbastanza sensibile.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-puns-107",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ho messo le mani avanti. Il maestro di nuoto è l'unico che abbia approvato la strategia.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-108",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La burrata si è sciolta in un sorriso. Il tovagliolo deve occuparsi delle conseguenze.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-puns-109",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il gondoliere sa il fatto suo. Il turista vorrebbe sapere anche il prezzo prima del fatto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-puns-110",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "L'espresso non manda a dire niente. Si esprime direttamente in tazzina.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-puns-111",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La pizza prende una brutta piega. Il venditore chiarisce che è soltanto a portafoglio.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-puns-112",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La tombola ha fatto novanta. Tutti applaudono finché scoprono che era solo l'ultimo numero.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-puns-113",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ho messo il naso negli affari altrui. Pinocchio mi suggerisce di lasciare un po' di spazio per uscire.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-114",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La sfoglina ha steso il collega. Lui voleva soltanto imparare come si usa il mattarello.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-puns-115",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La focaccia ha un certo peso nella discussione. Il sacchetto rende la misura molto concreta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-puns-116",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La granita si è data una regolata. Ora si scioglie solo entro il bordo del bicchiere.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-puns-117",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La PEC ha valore legale. Il mio « scusa, non l'avevo vista » spera in una valutazione più affettuosa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-puns-118",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ho fatto il passo più lungo della gamba. Il calzolaio propone di accorciare almeno le aspettative.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-119",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La ribollita torna sulla questione. Il pane toscano si rassegna: quel discorso verrà scaldato ancora.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-puns-120",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "observ",
+    "text": "A Murano, il vetraio soffia sul problema. Di solito cresce, ma diventa anche più bello.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-puns-121",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il pupo lascia correre. Il cavallo ringrazia per questa nuova apertura del personaggio.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-puns-122",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ho preso due piccioni con una fava. Il veterinario dice che dovrei migliorare il catering.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-123",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il tarallo si morde la coda. Il fornaio suggerisce di lasciare il compito al cliente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-puns-124",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "observ",
+    "text": "A Venezia, il ponte mi dà un passaggio. Il gondoliere trova l'offerta un po' troppo conveniente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-puns-125",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ho il dente avvelenato. Il dentista preferirebbe trattare il rancore prima di scegliere il dentifricio.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-126",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il cornicione ha alzato il livello. La mozzarella chiede di non trasformare il pranzo in un confronto sociale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-puns-127",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La Befana cambia aria. Le basta girare leggermente il manico della scopa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-puns-128",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ho un pensiero fisso. Il ferramenta propone tasselli, io speravo in una vacanza.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-129",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il portico ha preso sotto la propria ala tutti i passanti. Gli uccelli contestano la definizione architettonica.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-puns-130",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il pesto è un tipo tosto. È stato necessario un mortaio per convincerlo a collaborare.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-puns-131",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il cannolo non fa una piega. Per questo il vassoio deve essere abbastanza lungo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-puns-132",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il codice fiscale parla chiaro solo a chi conosce la grammatica delle caselle.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-puns-133",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ho cambiato registro. L'organista e la segretaria hanno chiesto contemporaneamente quale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-134",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La pasta alla Norma segue le regole. Le melanzane pretendono comunque una certa libertà di frittura.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-puns-135",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La fontana di Trevi raccoglie un mare di desideri. L'idraulico insiste che si tratti di acqua dolce.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-puns-136",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il pupo è appeso a un filo. Il critico teatrale consiglia una recensione meno drammatica.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-puns-137",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ho fatto tabula rasa. Il falegname vorrebbe prima sapere chi paga il tavolo nuovo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-138",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le cime di rapa salgono sul podio. L'orecchietta non aveva capito che « cime » fosse anche un'ambizione.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-puns-139",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La gondola ha girato pagina. Il canale propone una lettura più liquida della città.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-puns-140",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il caffè ha perso il conto. Il barista gli ricorda che quella parte riguarda il cliente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-puns-141",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La pizza a portafoglio non ha segreti. Basta aprirla troppo perché tutti vedano il saldo di pomodoro.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-puns-142",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "observ",
+    "text": "Alla tombola mi è uscito il cinque. Il bambino risponde battendo la mano sul tavolo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-puns-143",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ho preso la situazione di petto. Il sarto consiglia di allargare un poco la giacca.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-144",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La sfoglia ha una visione sottile delle cose. Il mattarello ha curato la sua formazione.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-puns-145",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il mortaio batte tutti. Il basilico chiede che si specifichi: sul piano della preparazione del pesto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-puns-146",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La brioche col tuppo ha perso la testa. La colazione prosegue ugualmente con una buona presenza di spirito.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-puns-147",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La PEC lascia una traccia. Il segugio preferirebbe che fosse profumata.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-puns-148",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ho pagato lo scotto. Il cuoco dice che la pasta non era nel conto della lezione di vita.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-149",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Lo strudel ha un cuore di mela. Il medico consiglia comunque di non usarlo come diagnosi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-puns-150",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il Duomo di Milano ha molte punte. La discussione resta però sorprendentemente senza spigoli moderni.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-puns-151",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il pupo prende posizione. Il puparo si prende una pausa per il polso.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-puns-152",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ho messo in moto il progetto. Il meccanico chiede perché faccia rumore senza andare da nessuna parte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-153",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "L'orecchietta è tutta orecchi. Non è una grande promessa, ma almeno la mantiene.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-puns-154",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il vaporetto dà il via libera. Il verde, sul canale, preferisce restare un riflesso.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-puns-155",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il cappuccino ha un'aria soffice. Il barista mi invita a non soffiarla via durante il discorso.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-puns-156",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il pizzaiolo tira le somme. Vengono rotonde e hanno molto pomodoro.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-puns-157",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La Befana è di passaggio. La calza spera comunque in una relazione piena.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-puns-158",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "observ",
+    "text": "Alla Scala ho chiesto un piano. Mi hanno offerto uno strumento, un posto in galleria e un consiglio di parlare più piano.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Riferimento italiano a liuteria, musica o teatro come contesto di una scena inventata; nessuna imitazione di un autore."
+  },
+  {
+    "id": "intl-v2-it-puns-159",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il tasso d'interesse è salito. Il veterinario propone di riportarlo nel bosco con maggiore calma.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-160",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il pecorino vuole fare il pastore. Il gregge gli fa notare un problema di distanza dalle proprie origini.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-puns-161",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "observ",
+    "text": "A Murano la discussione è stata soffiata da un collega. Ne è uscito un vaso con ottimi argomenti.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-puns-162",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ho fatto una rima baciata. La poesia mi ha chiesto se potesse almeno scegliere il secondo verso.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-163",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La maglia rosa del Giro non ha spine. Il corridore sostiene che siano tutte nelle gambe.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-puns-164",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La partita IVA non finisce al novantesimo. Il commercialista mi guarda e dice che devo cambiare sport mentale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-puns-165",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ho preso una cantonata. Il muratore vuole sapere quale angolo devo restituire.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-166",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il pane carasau è musica per i denti. Il direttore d'orchestra cerca di impedire che mangino tutti sul primo tempo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-puns-167",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La viola di Cremona è gelosa dei fiori. Loro ricevono applausi anche senza esercitarsi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Riferimento italiano a liuteria, musica o teatro come contesto di una scena inventata; nessuna imitazione di un autore."
+  },
+  {
+    "id": "intl-v2-it-puns-168",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "observ",
+    "text": "A Siena il campo non è neutro. Ogni contrada ha già scelto da che parte guardarlo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-puns-169",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ho tirato fuori un asso dalla manica. Il sarto propone una tasca per evitare future sorprese al polsino.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-170",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le olive ascolane si sono date un tono. Il ripieno continua a parlare con la voce di sempre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-puns-171",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La Befana lavora in quota. Il commercialista vorrebbe sapere se intende altezza o partecipazione.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-puns-172",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il poeta è rimasto a corto di fiato. Le rime lunghe hanno chiesto un intervallo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-173",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il gianduiotto ha preso una piega elegante. Torino considera la forma parte del curriculum.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-puns-174",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Sul Ponte Vecchio ho fatto una proposta d'oro. Il gioielliere l'ha pesata prima di rispondere.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-puns-175",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ho fatto il punto della situazione. Il tipografo mi ha chiesto se dovesse mettere anche il resto della frase.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-puns-176",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il bollettino è un piccolo bollo molto loquace. Ha trovato il modo di spiegarmi dove mandare i soldi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-puns-177",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Il mandolino ha toccato una corda sensibile. Il liutaio propone di accordarla prima di parlarne ancora.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Riferimento italiano a liuteria, musica o teatro come contesto di una scena inventata; nessuna imitazione di un autore."
+  },
+  {
+    "id": "intl-v2-it-puns-178",
+    "collection": "it-it-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La sbrisolona ha fatto a pezzi la concorrenza. Il pasticciere precisa che lei aveva iniziato da se stessa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  }
+]

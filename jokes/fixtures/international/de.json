@@ -1,0 +1,2424 @@
+[
+  {
+    "id": "intl-v1-de-0001",
+    "collection": "de-de-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Oma hat ihren ersten Gruppenchat eröffnet. Zur Begrüßung fragt sie jeden einzeln, ob er schon gegessen hat.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "An affectionate everyday scene uses a small reversal or exaggeration. The country marks this editorial collection, not a claim about national character."
+  },
+  {
+    "id": "intl-v1-de-0002",
+    "collection": "de-de-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Unser Hund bringt jedem Besucher einen Schuh. Er ist sich noch nicht sicher, was Gastgeschenke sind, aber er meint es ernst.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "animals"
+    ],
+    "cultural_note": "An affectionate everyday scene uses a small reversal or exaggeration. The country marks this editorial collection, not a claim about national character."
+  },
+  {
+    "id": "intl-v1-de-0003",
+    "collection": "de-de-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mein Sohn hat mir ein Brot geschmiert. Die Marmelade reicht bis zum Tellerrand. Großzügigkeit lässt sich offenbar nicht in Scheiben schneiden.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "An affectionate everyday scene uses a small reversal or exaggeration. The country marks this editorial collection, not a claim about national character."
+  },
+  {
+    "id": "intl-v1-de-0004",
+    "collection": "de-de-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Opa repariert meine alte Spielzeugeisenbahn. Er sagt, die Verbindung zwischen uns müsse schließlich pünktlich bleiben.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "An affectionate everyday scene uses a small reversal or exaggeration. The country marks this editorial collection, not a claim about national character."
+  },
+  {
+    "id": "intl-v1-de-0005",
+    "collection": "de-de-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Meine Tochter hat mir einen Stern für gutes Zuhören gemalt. Ich habe extra nicht gefragt, warum er nur drei Zacken hat.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "An affectionate everyday scene uses a small reversal or exaggeration. The country marks this editorial collection, not a claim about national character."
+  },
+  {
+    "id": "intl-v1-de-0006",
+    "collection": "de-de-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Die Katze schläft auf dem Familienfoto. Endlich ist sie auf einem Bild freiwillig in der Mitte.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "animals"
+    ],
+    "cultural_note": "An affectionate everyday scene uses a small reversal or exaggeration. The country marks this editorial collection, not a claim about national character."
+  },
+  {
+    "id": "intl-v1-de-0007",
+    "collection": "de-de-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Unser Nachbar stellt bei Regen einen Stuhl unters Vordach. Er nennt das seinen Logenplatz für die Gartenbewässerung.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "weather"
+    ],
+    "cultural_note": "An affectionate everyday scene uses a small reversal or exaggeration. The country marks this editorial collection, not a claim about national character."
+  },
+  {
+    "id": "intl-v1-de-0008",
+    "collection": "de-de-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Meine Nichte hat meine Einkaufsliste verbessert. Unter Gemüse steht jetzt: „Und etwas, worauf man sich freuen kann.“",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "An affectionate everyday scene uses a small reversal or exaggeration. The country marks this editorial collection, not a claim about national character."
+  },
+  {
+    "id": "intl-v1-de-0009",
+    "collection": "de-de-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Beim Plätzchenbacken übernimmt mein Vater die Qualitätskontrolle. Seine Abteilung wächst jedes Jahr ungefähr um einen Gürtelpunkt.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "An affectionate everyday scene uses a small reversal or exaggeration. The country marks this editorial collection, not a claim about national character."
+  },
+  {
+    "id": "intl-v1-de-0010",
+    "collection": "de-de-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Wir haben im Zug ein Bilderrätsel gespielt. Der schönste Fehler war „Urlaub“ als Antwort auf ein leeres Kalenderblatt.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "An affectionate everyday scene uses a small reversal or exaggeration. The country marks this editorial collection, not a claim about national character."
+  },
+  {
+    "id": "intl-v1-de-0011",
+    "collection": "de-de-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Meine Mutter hat mir einen Schal gestrickt. Laut Pflegeetikett darf er nur zusammen mit einem guten Rat getragen werden.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "An affectionate everyday scene uses a small reversal or exaggeration. The country marks this editorial collection, not a claim about national character."
+  },
+  {
+    "id": "intl-v1-de-0012",
+    "collection": "de-de-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Unser Kaninchen hat einen Tunnel bekommen. Es sitzt daneben und genießt offenbar den Immobilienbesitz.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "animals"
+    ],
+    "cultural_note": "An affectionate everyday scene uses a small reversal or exaggeration. The country marks this editorial collection, not a claim about national character."
+  },
+  {
+    "id": "intl-v1-de-0013",
+    "collection": "de-de-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Der Klassenhamster hat eine Geburtstagskarte bekommen. Die Unterschriften hat er angeknabbert; die Wünsche scheinen angekommen zu sein.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "An affectionate everyday scene uses a small reversal or exaggeration. The country marks this editorial collection, not a claim about national character."
+  },
+  {
+    "id": "intl-v1-de-0014",
+    "collection": "de-de-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mein Bruder bewahrt alle meine Postkarten auf. Meine mittelmäßigen Wetterberichte haben endlich ein treues Publikum.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "An affectionate everyday scene uses a small reversal or exaggeration. The country marks this editorial collection, not a claim about national character."
+  },
+  {
+    "id": "intl-v1-de-0015",
+    "collection": "de-de-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Ich habe für die Nachbarn Suppe gekocht. Sie brachten den Topf mit Kuchen zurück. Dieses Pfandsystem unterstütze ich.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "An affectionate everyday scene uses a small reversal or exaggeration. The country marks this editorial collection, not a claim about national character."
+  },
+  {
+    "id": "intl-v1-de-0016",
+    "collection": "de-de-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mein Enkel hat dem Schneemann Ohren gebaut. Jetzt kann er hören, wenn wir ihn schön finden.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "weather"
+    ],
+    "cultural_note": "An affectionate everyday scene uses a small reversal or exaggeration. The country marks this editorial collection, not a claim about national character."
+  },
+  {
+    "id": "intl-v1-de-0017",
+    "collection": "de-de-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Bei uns darf jeder das Abendessen loben. Verbesserungsvorschläge nimmt die Spülmaschine entgegen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "An affectionate everyday scene uses a small reversal or exaggeration. The country marks this editorial collection, not a claim about national character."
+  },
+  {
+    "id": "intl-v1-de-0018",
+    "collection": "de-de-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Der Hund bewacht meine Hausschuhe. Ich fühle mich sicher, auch wenn die Schuhe selbst kaum Bewegungsfreiheit haben.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "animals"
+    ],
+    "cultural_note": "An affectionate everyday scene uses a small reversal or exaggeration. The country marks this editorial collection, not a claim about national character."
+  },
+  {
+    "id": "intl-v1-de-0019",
+    "collection": "de-de-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Meine Tochter übt Lesen mit der Zimmerpflanze. Die hat endlich jemanden, der jeden Tag nach ihren Blättern schaut.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "An affectionate everyday scene uses a small reversal or exaggeration. The country marks this editorial collection, not a claim about national character."
+  },
+  {
+    "id": "intl-v1-de-0020",
+    "collection": "de-de-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Oma druckt meine Urlaubsfotos aus. Mein Leben hat bei ihr eine bessere Archivierung als auf meinem Handy.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "An affectionate everyday scene uses a small reversal or exaggeration. The country marks this editorial collection, not a claim about national character."
+  },
+  {
+    "id": "intl-v1-de-0021",
+    "collection": "de-de-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Das Kind hat die krumme Gurke ausgesucht. „Die kann schon lächeln“, sagte es. Da wollte ich nicht mehr über Formen sprechen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "An affectionate everyday scene uses a small reversal or exaggeration. The country marks this editorial collection, not a claim about national character."
+  },
+  {
+    "id": "intl-v1-de-0022",
+    "collection": "de-de-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Wir haben uns beim Spaziergang verlaufen. Mein Vater nennt die neue Lieblingsbäckerei seitdem ein Forschungsergebnis.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "An affectionate everyday scene uses a small reversal or exaggeration. The country marks this editorial collection, not a claim about national character."
+  },
+  {
+    "id": "intl-v1-de-0023",
+    "collection": "de-de-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Meine Schwester schenkt mir selbst gemachte Gutscheine. Der für „einmal ohne Ratschlag zuhören“ hängt besonders gut gesichert am Kühlschrank.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "An affectionate everyday scene uses a small reversal or exaggeration. The country marks this editorial collection, not a claim about national character."
+  },
+  {
+    "id": "intl-v1-de-0024",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unser Meeting hat jetzt einen Moderator. Jemand musste schließlich den Überblick behalten, wer gerade den Überblick verliert.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Workplace incongruity contrasts the stated purpose of an ordinary task with its comic outcome; suitable for a professional setting."
+  },
+  {
+    "id": "intl-v1-de-0025",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Aufgabenliste ist endlich digital. Jetzt kann sie auf mehreren Geräten gleichzeitig länger werden.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Workplace incongruity contrasts the stated purpose of an ordinary task with its comic outcome; suitable for a professional setting."
+  },
+  {
+    "id": "intl-v1-de-0026",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Ich sollte eine klare Linie in den Bericht bringen. Die habe ich unter „weitere Fragen“ gezogen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Workplace incongruity contrasts the stated purpose of an ordinary task with its comic outcome; suitable for a professional setting."
+  },
+  {
+    "id": "intl-v1-de-0027",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Im Büro gibt es einen Ruheraum. Man muss ihn nur rechtzeitig vor dem Workshop zur Nutzung des Ruheraums buchen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Workplace incongruity contrasts the stated purpose of an ordinary task with its comic outcome; suitable for a professional setting."
+  },
+  {
+    "id": "intl-v1-de-0028",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unsere Präsentation ist schlanker geworden. Wir haben die kleinen Probleme in die Fußnoten gestellt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Workplace incongruity contrasts the stated purpose of an ordinary task with its comic outcome; suitable for a professional setting."
+  },
+  {
+    "id": "intl-v1-de-0029",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Der Drucker hat Papierstau. Ich verstehe ihn: Bei diesen Unterlagen würde ich auch eine Pause einlegen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Workplace incongruity contrasts the stated purpose of an ordinary task with its comic outcome; suitable for a professional setting."
+  },
+  {
+    "id": "intl-v1-de-0030",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Wir arbeiten jetzt ergebnisoffen. Besonders offen ist noch, wann es ein Ergebnis gibt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Workplace incongruity contrasts the stated purpose of an ordinary task with its comic outcome; suitable for a professional setting."
+  },
+  {
+    "id": "intl-v1-de-0031",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Meine Kollegin hat die perfekte Ablage: Sie weiß sogar, wo die Erklärung zur Ablage liegt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Workplace incongruity contrasts the stated purpose of an ordinary task with its comic outcome; suitable for a professional setting."
+  },
+  {
+    "id": "intl-v1-de-0032",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Einladung zum kurzen Austausch hat eine Tagesordnung mit Inhaltsverzeichnis. Das ist ein mutiger Gebrauch des Wortes „kurz“.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Workplace incongruity contrasts the stated purpose of an ordinary task with its comic outcome; suitable for a professional setting."
+  },
+  {
+    "id": "intl-v1-de-0033",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Ich habe den Status auf „beschäftigt“ gestellt. Seitdem fragen alle, womit.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Workplace incongruity contrasts the stated purpose of an ordinary task with its comic outcome; suitable for a professional setting."
+  },
+  {
+    "id": "intl-v1-de-0034",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Wir sollten Zuständigkeiten klären. Zum Glück hat sich niemand vorschnell zuständig gefühlt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Workplace incongruity contrasts the stated purpose of an ordinary task with its comic outcome; suitable for a professional setting."
+  },
+  {
+    "id": "intl-v1-de-0035",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mein Kalender hat zwischen zwei Terminen eine Lücke. Ich habe sie vorsichtshalber gegen weitere Termine verteidigt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Workplace incongruity contrasts the stated purpose of an ordinary task with its comic outcome; suitable for a professional setting."
+  },
+  {
+    "id": "intl-v1-de-0036",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Der neue Bürostuhl unterstützt meine Haltung. Beim Projekt muss ich das weiterhin selbst übernehmen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Workplace incongruity contrasts the stated purpose of an ordinary task with its comic outcome; suitable for a professional setting."
+  },
+  {
+    "id": "intl-v1-de-0037",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unser Team hat eine gemeinsame Vision. Sie liegt im Ordner, auf den gerade niemand Zugriff hat.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Workplace incongruity contrasts the stated purpose of an ordinary task with its comic outcome; suitable for a professional setting."
+  },
+  {
+    "id": "intl-v1-de-0038",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Besprechung war produktiv: Aus einer offenen Frage wurden fünf gut dokumentierte offene Fragen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Workplace incongruity contrasts the stated purpose of an ordinary task with its comic outcome; suitable for a professional setting."
+  },
+  {
+    "id": "intl-v1-de-0039",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Ich sollte den Bericht verständlicher machen. Jetzt steht auch unter der Grafik, dass sie kompliziert ist.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Workplace incongruity contrasts the stated purpose of an ordinary task with its comic outcome; suitable for a professional setting."
+  },
+  {
+    "id": "intl-v1-de-0040",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Der Pausenraum bekommt neue Regeln. Offenbar haben wir uns bisher nicht strukturiert genug erholt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Workplace incongruity contrasts the stated purpose of an ordinary task with its comic outcome; suitable for a professional setting."
+  },
+  {
+    "id": "intl-v1-de-0041",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Rückmeldung lautete „passt im Prinzip“. Ich suche noch das Gebäude, in dem dieses Prinzip wohnt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Workplace incongruity contrasts the stated purpose of an ordinary task with its comic outcome; suitable for a professional setting."
+  },
+  {
+    "id": "intl-v1-de-0042",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Wir haben die Prozesse verschlankt. Die Erklärung dafür passt jetzt auf einen etwas schmaleren Bildschirm.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Workplace incongruity contrasts the stated purpose of an ordinary task with its comic outcome; suitable for a professional setting."
+  },
+  {
+    "id": "intl-v1-de-0043",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mein Chef schätzt kurze Wege. Deshalb kommen die Aufgaben ohne Umweg über eine Priorisierung zu mir.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Workplace incongruity contrasts the stated purpose of an ordinary task with its comic outcome; suitable for a professional setting."
+  },
+  {
+    "id": "intl-v1-de-0044",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Kaffeemaschine zeigt „Reinigung erforderlich“. Endlich ein eindeutiger Arbeitsauftrag ohne Rückfragen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Workplace incongruity contrasts the stated purpose of an ordinary task with its comic outcome; suitable for a professional setting."
+  },
+  {
+    "id": "intl-v1-de-0045",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Im Videomeeting war ich kurz eingefroren. Mein konzentrierter Gesichtsausdruck hat trotzdem viel Zustimmung bekommen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Workplace incongruity contrasts the stated purpose of an ordinary task with its comic outcome; suitable for a professional setting."
+  },
+  {
+    "id": "intl-v1-de-0046",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unser Wissensmanagement funktioniert: Jeder weiß, wer vielleicht wissen könnte, wo etwas steht.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Workplace incongruity contrasts the stated purpose of an ordinary task with its comic outcome; suitable for a professional setting."
+  },
+  {
+    "id": "intl-v1-de-0047",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Ich habe eine Wasserwaage gekauft. Sie liegt vollkommen entspannt da, während ich an meinem Regal zweifle.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "A deliberately literal interpretation or gentle absurd observation creates the groan-worthy punchline; no cultural stereotype is intended."
+  },
+  {
+    "id": "intl-v1-de-0048",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Mein Vater liest beim Kochen die Packung. Das Essen schmeckt deshalb häufig nach „Serviervorschlag ähnlich“.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "A deliberately literal interpretation or gentle absurd observation creates the groan-worthy punchline; no cultural stereotype is intended."
+  },
+  {
+    "id": "intl-v1-de-0049",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Die Wetter-App sagt, ich soll eine Jacke mitnehmen. Schön, dass Mutters Arbeit inzwischen skaliert.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "weather"
+    ],
+    "cultural_note": "A deliberately literal interpretation or gentle absurd observation creates the groan-worthy punchline; no cultural stereotype is intended."
+  },
+  {
+    "id": "intl-v1-de-0050",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Mein Koffer hat ein Zahlenschloss. Ich habe daraus unbeabsichtigt ein Gedächtnistraining gemacht.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A deliberately literal interpretation or gentle absurd observation creates the groan-worthy punchline; no cultural stereotype is intended."
+  },
+  {
+    "id": "intl-v1-de-0051",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Der Hund versteht „Sitz“ und „Platz“. Beim Zusammenbauen von Möbeln ist er mir damit sprachlich überlegen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "animals"
+    ],
+    "cultural_note": "A deliberately literal interpretation or gentle absurd observation creates the groan-worthy punchline; no cultural stereotype is intended."
+  },
+  {
+    "id": "intl-v1-de-0052",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Ich habe die Fernbedienung ordentlich weggelegt. Seitdem steuern wir das Wohnzimmer mit Hoffnung.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "A deliberately literal interpretation or gentle absurd observation creates the groan-worthy punchline; no cultural stereotype is intended."
+  },
+  {
+    "id": "intl-v1-de-0053",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Der Salat ist frisch vom Balkon. Man schmeckt die dreimalige Erinnerung meiner Nachbarin ans Gießen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "A deliberately literal interpretation or gentle absurd observation creates the groan-worthy punchline; no cultural stereotype is intended."
+  },
+  {
+    "id": "intl-v1-de-0054",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Die neue Lampe ist dimmbar. Endlich kann ich meine unerledigten Aufgaben in einem günstigeren Licht sehen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "science"
+    ],
+    "cultural_note": "A deliberately literal interpretation or gentle absurd observation creates the groan-worthy punchline; no cultural stereotype is intended."
+  },
+  {
+    "id": "intl-v1-de-0055",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Ich wollte nur einen kleinen Spaziergang machen. Meine Schuhe betrachten Kilometerangaben offenbar als Vorschläge.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A deliberately literal interpretation or gentle absurd observation creates the groan-worthy punchline; no cultural stereotype is intended."
+  },
+  {
+    "id": "intl-v1-de-0056",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa kann jede Schublade reparieren. Danach weiß man immerhin genau, welche Dinge künftig draußen liegen müssen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "A deliberately literal interpretation or gentle absurd observation creates the groan-worthy punchline; no cultural stereotype is intended."
+  },
+  {
+    "id": "intl-v1-de-0057",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Mein Brot ist selbst gebacken. Das Messer hat aus Höflichkeit noch keine Bewertung abgegeben.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "A deliberately literal interpretation or gentle absurd observation creates the groan-worthy punchline; no cultural stereotype is intended."
+  },
+  {
+    "id": "intl-v1-de-0058",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Der Gartenschlauch ist knickfest. Er demonstriert das gern an einer Stelle, die laut Werbung nicht existiert.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "weather"
+    ],
+    "cultural_note": "A deliberately literal interpretation or gentle absurd observation creates the groan-worthy punchline; no cultural stereotype is intended."
+  },
+  {
+    "id": "intl-v1-de-0059",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Ich habe dem Wellensittich „Guten Morgen“ beigebracht. Jetzt arbeitet er in einer Branche ohne Wochenenden.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "animals"
+    ],
+    "cultural_note": "A deliberately literal interpretation or gentle absurd observation creates the groan-worthy punchline; no cultural stereotype is intended."
+  },
+  {
+    "id": "intl-v1-de-0060",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Mein Sessel ist ergonomisch. Er passt sich besonders gut an meinen Entschluss an, nicht aufzustehen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "A deliberately literal interpretation or gentle absurd observation creates the groan-worthy punchline; no cultural stereotype is intended."
+  },
+  {
+    "id": "intl-v1-de-0061",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Das Navi sucht die schnellste Strecke. Ich suche die mit dem Bäcker. Wir führen eine konstruktive Diskussion.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A deliberately literal interpretation or gentle absurd observation creates the groan-worthy punchline; no cultural stereotype is intended."
+  },
+  {
+    "id": "intl-v1-de-0062",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Ich kaufe nur noch kleine Kekspackungen. So trainiere ich häufiger den Weg zum Vorratsschrank.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "A deliberately literal interpretation or gentle absurd observation creates the groan-worthy punchline; no cultural stereotype is intended."
+  },
+  {
+    "id": "intl-v1-de-0063",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Meine Solarleuchte hat heute frei. Sie beruft sich auf betriebsbedingte Bewölkung.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "science"
+    ],
+    "cultural_note": "A deliberately literal interpretation or gentle absurd observation creates the groan-worthy punchline; no cultural stereotype is intended."
+  },
+  {
+    "id": "intl-v1-de-0064",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Ich habe die Schrauben sortiert. Das Regal steht zwar noch nicht, aber die Schrauben fühlen sich gut betreut.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "A deliberately literal interpretation or gentle absurd observation creates the groan-worthy punchline; no cultural stereotype is intended."
+  },
+  {
+    "id": "intl-v1-de-0065",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa sagt, die Soße braucht Ruhe. Merkwürdig, wie viele Gerichte genau seine Bedürfnisse haben.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "A deliberately literal interpretation or gentle absurd observation creates the groan-worthy punchline; no cultural stereotype is intended."
+  },
+  {
+    "id": "intl-v1-de-0066",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Meine Regenjacke ist atmungsaktiv. Ich freue mich, dass wenigstens einer von uns den Berg entspannt hochkommt.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "weather"
+    ],
+    "cultural_note": "A deliberately literal interpretation or gentle absurd observation creates the groan-worthy punchline; no cultural stereotype is intended."
+  },
+  {
+    "id": "intl-v1-de-0067",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Ich besitze einen Reiseführer für Zuhause. Er heißt Bedienungsanleitung für die Heizung.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A deliberately literal interpretation or gentle absurd observation creates the groan-worthy punchline; no cultural stereotype is intended."
+  },
+  {
+    "id": "intl-v1-de-0068",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Der Goldfisch hat keine Termine. Trotzdem sieht er jedes Mal sehr beschäftigt aus, wenn ich sauber machen will.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "animals"
+    ],
+    "cultural_note": "A deliberately literal interpretation or gentle absurd observation creates the groan-worthy punchline; no cultural stereotype is intended."
+  },
+  {
+    "id": "intl-v1-de-0069",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Der Radiergummi hat ein Tagebuch angefangen. Leider verbessert er jeden Abend so gründlich, dass nichts übrig bleibt.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "An imaginative school, animal, or household scene supplies a simple incongruity without an adult premise."
+  },
+  {
+    "id": "intl-v1-de-0070",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Die Schnecke bekam Rollschuhe. Jetzt muss sie ihr Haus jedes Mal neu einparken.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "animals"
+    ],
+    "cultural_note": "An imaginative school, animal, or household scene supplies a simple incongruity without an adult premise."
+  },
+  {
+    "id": "intl-v1-de-0071",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Die Erdbeere hat sich einen grünen Hut gekauft. Ihre Freunde meinen, der steht ihr schon immer gut.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "An imaginative school, animal, or household scene supplies a simple incongruity without an adult premise."
+  },
+  {
+    "id": "intl-v1-de-0072",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Der kleine Regenbogen darf noch nicht allein raus. Er muss erst lernen, alle Farben zusammenzuhalten.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "weather"
+    ],
+    "cultural_note": "An imaginative school, animal, or household scene supplies a simple incongruity without an adult premise."
+  },
+  {
+    "id": "intl-v1-de-0073",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mein Buntstift will Urlaub am Meer. Er sagt, für die Berge sei ihm das ganze Braun zu anstrengend.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "An imaginative school, animal, or household scene supplies a simple incongruity without an adult premise."
+  },
+  {
+    "id": "intl-v1-de-0074",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Der Elefant hat Verstecken gespielt. Gewonnen hat der Vorhang, weil alle so tun mussten, als wäre er groß genug.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "animals"
+    ],
+    "cultural_note": "An imaginative school, animal, or household scene supplies a simple incongruity without an adult premise."
+  },
+  {
+    "id": "intl-v1-de-0075",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mein Kuscheltier hat eine Brille bekommen. Jetzt sieht es endlich, wer nachts die Decke klaut.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "An imaginative school, animal, or household scene supplies a simple incongruity without an adult premise."
+  },
+  {
+    "id": "intl-v1-de-0076",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Der Mond hat einen Nachtisch bestellt. Die Sterne meinten, er solle erst seine Wolken aufessen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "science"
+    ],
+    "cultural_note": "An imaginative school, animal, or household scene supplies a simple incongruity without an adult premise."
+  },
+  {
+    "id": "intl-v1-de-0077",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Die Nudel wollte gerader sitzen. Die Tomatensoße sagte, sie sei genauso willkommen, wie sie gekringelt ist.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "An imaginative school, animal, or household scene supplies a simple incongruity without an adult premise."
+  },
+  {
+    "id": "intl-v1-de-0078",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Der Schulranzen hätte gern einen Wandertag. Er will wissen, ob Bücher draußen leichter werden.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "An imaginative school, animal, or household scene supplies a simple incongruity without an adult premise."
+  },
+  {
+    "id": "intl-v1-de-0079",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Die Ente hat eine Pfütze reserviert. Bei Regen freut sie sich über das kostenlose Upgrade.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "animals"
+    ],
+    "cultural_note": "An imaginative school, animal, or household scene supplies a simple incongruity without an adult premise."
+  },
+  {
+    "id": "intl-v1-de-0080",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Die Wolke hat Hausaufgaben: drei Berge zeichnen. Sie sagt, wir sollen schnell gucken, bevor der Wind korrigiert.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "weather"
+    ],
+    "cultural_note": "An imaginative school, animal, or household scene supplies a simple incongruity without an adult premise."
+  },
+  {
+    "id": "intl-v1-de-0081",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Ich habe meinem Bauklotzturm eine Tür gebaut. Jetzt beschweren sich die Autos über die Treppen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "An imaginative school, animal, or household scene supplies a simple incongruity without an adult premise."
+  },
+  {
+    "id": "intl-v1-de-0082",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Der Apfel hat sich im Obstkorb versteckt. Man hat ihn daran erkannt, dass er besonders unauffällig glänzte.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "An imaginative school, animal, or household scene supplies a simple incongruity without an adult premise."
+  },
+  {
+    "id": "intl-v1-de-0083",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Die Schere möchte Schiedsrichterin werden. Bei knappen Entscheidungen kennt sie sich aus.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "An imaginative school, animal, or household scene supplies a simple incongruity without an adult premise."
+  },
+  {
+    "id": "intl-v1-de-0084",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Der Pinguin hat einen Sonnenhut. Er trägt ihn beim Blick in den Kühlschrank, damit sich das nach Sommer anfühlt.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "animals"
+    ],
+    "cultural_note": "An imaginative school, animal, or household scene supplies a simple incongruity without an adult premise."
+  },
+  {
+    "id": "intl-v1-de-0085",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Der kleine Stern wollte eine Taschenlampe. Seine Eltern sagten: „Erst lernst du, das selbst zu machen.“",
+    "age_rating": "kid-safe",
+    "themes": [
+      "science"
+    ],
+    "cultural_note": "An imaginative school, animal, or household scene supplies a simple incongruity without an adult premise."
+  },
+  {
+    "id": "intl-v1-de-0086",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Meine Spielzeugburg hat jetzt eine Klingel. Der Drache steht seit einer Stunde davor und wartet auf Besuchererlaubnis.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "An imaginative school, animal, or household scene supplies a simple incongruity without an adult premise."
+  },
+  {
+    "id": "intl-v1-de-0087",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Das Brötchen wollte ins Theater. Es hat sich extra besonders knusprig gemacht, damit man seinen Applaus hört.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "An imaginative school, animal, or household scene supplies a simple incongruity without an adult premise."
+  },
+  {
+    "id": "intl-v1-de-0088",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Das Lineal hat ein Wettrennen verloren. Nach dreißig Zentimetern war für es einfach Schluss.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "An imaginative school, animal, or household scene supplies a simple incongruity without an adult premise."
+  },
+  {
+    "id": "intl-v1-de-0089",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Der Frosch hat einen Regenschirm geschenkt bekommen. Er benutzt ihn als trockenen Parkplatz für seine Fliege aus Papier.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "animals"
+    ],
+    "cultural_note": "An imaginative school, animal, or household scene supplies a simple incongruity without an adult premise."
+  },
+  {
+    "id": "intl-v1-de-0090",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mein Spielzeugbus fährt heute nur bis zum Sofa. Dahinter ist Baustelle, weil der Staubsauger kommt.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "An imaginative school, animal, or household scene supplies a simple incongruity without an adult premise."
+  },
+  {
+    "id": "intl-v1-de-0091",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Ich habe meinen Kühlschrank vernetzt. Jetzt weiß ein Server vor mir, dass ich wieder keine Milch gekauft habe.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "A technical, mathematical, or scientific idea is applied incongruously to ordinary life; familiarity with the named concept helps."
+  },
+  {
+    "id": "intl-v1-de-0092",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Meine To-do-Liste gehorcht der Massenerhaltung. Was ich streiche, taucht irgendwo als Rückfrage wieder auf.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science"
+    ],
+    "cultural_note": "A technical, mathematical, or scientific idea is applied incongruously to ordinary life; familiarity with the named concept helps."
+  },
+  {
+    "id": "intl-v1-de-0093",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Der Fehler tritt nur bei Kunden auf. Im Labor waren wir offenbar zu optimistisch beim Modell des Menschen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "A technical, mathematical, or scientific idea is applied incongruously to ordinary life; familiarity with the named concept helps."
+  },
+  {
+    "id": "intl-v1-de-0094",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Ich wollte Ordnung als Experiment betrachten. Leider fehlte mir eine unaufgeräumte Kontrollgruppe: Beide Zimmer waren Versuchsgruppen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science"
+    ],
+    "cultural_note": "A technical, mathematical, or scientific idea is applied incongruously to ordinary life; familiarity with the named concept helps."
+  },
+  {
+    "id": "intl-v1-de-0095",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mein Backup ist verschlüsselt. Den Schlüssel habe ich so sicher gespeichert, dass wir jetzt beide auf Rettung warten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "A technical, mathematical, or scientific idea is applied incongruously to ordinary life; familiarity with the named concept helps."
+  },
+  {
+    "id": "intl-v1-de-0096",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Beim Würfelspiel erklärte ich den Erwartungswert. Meine Familie erwartet seitdem, dass ich einfach würfle.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science"
+    ],
+    "cultural_note": "A technical, mathematical, or scientific idea is applied incongruously to ordinary life; familiarity with the named concept helps."
+  },
+  {
+    "id": "intl-v1-de-0097",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Der Code ist selbsterklärend. Er erklärt vor allem, warum ich damals Urlaub gebraucht hätte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "A technical, mathematical, or scientific idea is applied incongruously to ordinary life; familiarity with the named concept helps."
+  },
+  {
+    "id": "intl-v1-de-0098",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mein Thermometer zeigt zuverlässig die Temperatur. Nur die gefühlte Ungerechtigkeit kalter Küchen bildet es unzureichend ab.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science"
+    ],
+    "cultural_note": "A technical, mathematical, or scientific idea is applied incongruously to ordinary life; familiarity with the named concept helps."
+  },
+  {
+    "id": "intl-v1-de-0099",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Ich habe Benachrichtigungen deaktiviert. Die Anwendung hat mir dazu eine Bestätigung geschickt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "A technical, mathematical, or scientific idea is applied incongruously to ordinary life; familiarity with the named concept helps."
+  },
+  {
+    "id": "intl-v1-de-0100",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Katze hat die Schachtel verlassen. Trotzdem steht sie in meiner Versuchsdokumentation noch unter „unbekannt, vermutlich beleidigt“.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science"
+    ],
+    "cultural_note": "A technical, mathematical, or scientific idea is applied incongruously to ordinary life; familiarity with the named concept helps."
+  },
+  {
+    "id": "intl-v1-de-0101",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Der Ladebalken steht bei neunundneunzig Prozent. Ein eindrucksvoller Beitrag zur Philosophie der Annäherung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "A technical, mathematical, or scientific idea is applied incongruously to ordinary life; familiarity with the named concept helps."
+  },
+  {
+    "id": "intl-v1-de-0102",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mein Papierflieger hat hervorragende Flugeigenschaften. Sie enden nur ausgesprochen pünktlich an der Zimmerpflanze.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science"
+    ],
+    "cultural_note": "A technical, mathematical, or scientific idea is applied incongruously to ordinary life; familiarity with the named concept helps."
+  },
+  {
+    "id": "intl-v1-de-0103",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Ich habe ein Skript zum Aufräumen geschrieben. Es findet jetzt schneller heraus, wie viel ich aufräumen müsste.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "A technical, mathematical, or scientific idea is applied incongruously to ordinary life; familiarity with the named concept helps."
+  },
+  {
+    "id": "intl-v1-de-0104",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Astronomin bestellt starken Kaffee. Für die Beobachtung dunkler Materie im Becher braucht sie heute keine Förderung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science"
+    ],
+    "cultural_note": "A technical, mathematical, or scientific idea is applied incongruously to ordinary life; familiarity with the named concept helps."
+  },
+  {
+    "id": "intl-v1-de-0105",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Der Browser stellt alle Tabs wieder her. Leider auch die Person, die glaubte, alles davon heute lesen zu können.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "A technical, mathematical, or scientific idea is applied incongruously to ordinary life; familiarity with the named concept helps."
+  },
+  {
+    "id": "intl-v1-de-0106",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mein Garten ist ein komplexes System. Die Schnecken haben es offenbar vor mir verstanden.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science"
+    ],
+    "cultural_note": "A technical, mathematical, or scientific idea is applied incongruously to ordinary life; familiarity with the named concept helps."
+  },
+  {
+    "id": "intl-v1-de-0107",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Wir verwenden sprechende Variablennamen. Einer heißt „warumIstDasJetztLeer“ und hat sehr viel zu erzählen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "A technical, mathematical, or scientific idea is applied incongruously to ordinary life; familiarity with the named concept helps."
+  },
+  {
+    "id": "intl-v1-de-0108",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Ich wollte den besten Sitzplatz mathematisch bestimmen. Währenddessen setzte sich mein Hund auf das Sofa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science"
+    ],
+    "cultural_note": "A technical, mathematical, or scientific idea is applied incongruously to ordinary life; familiarity with the named concept helps."
+  },
+  {
+    "id": "intl-v1-de-0109",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Das Update behebt seltene Fehler. Meine häufigen Fehler fühlen sich nicht ausreichend repräsentiert.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "A technical, mathematical, or scientific idea is applied incongruously to ordinary life; familiarity with the named concept helps."
+  },
+  {
+    "id": "intl-v1-de-0110",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Der Versuch soll unter normalen Bedingungen stattfinden. Im Büro scheitert es schon an dieser Definition.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science"
+    ],
+    "cultural_note": "A technical, mathematical, or scientific idea is applied incongruously to ordinary life; familiarity with the named concept helps."
+  },
+  {
+    "id": "intl-v1-de-0111",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mein Passwortmanager kennt mich besser als ich selbst. Er schweigt nur manchmal aus Sicherheitsgründen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "A technical, mathematical, or scientific idea is applied incongruously to ordinary life; familiarity with the named concept helps."
+  },
+  {
+    "id": "intl-v1-de-0112",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Statistik zeigt, dass meine Pflanzen im Sommer besser wachsen. Sie haben inzwischen einen eigenen Antrag auf dauerhaften Sommer eingereicht.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science"
+    ],
+    "cultural_note": "A technical, mathematical, or scientific idea is applied incongruously to ordinary life; familiarity with the named concept helps."
+  },
+  {
+    "id": "intl-v1-de-0113",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mein Flur hat heute Heimweh. Ich habe ihm ein Foto von der Haustür gezeigt, aber das war ihm zu touristisch.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "An impossible event is treated as an everyday practical problem; the absurdity is the mechanism rather than a claim about a place."
+  },
+  {
+    "id": "intl-v1-de-0114",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Nebel wollte ein Passfoto. Das Amt hat ausnahmsweise auf erkennbare Ohren verzichtet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "weather"
+    ],
+    "cultural_note": "An impossible event is treated as an everyday practical problem; the absurdity is the mechanism rather than a claim about a place."
+  },
+  {
+    "id": "intl-v1-de-0115",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mein Toast hat eine Landkarte auf der Kruste. Ich wollte die Marmelade verstreichen, jetzt nennt sie es eine Grenzverschiebung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "An impossible event is treated as an everyday practical problem; the absurdity is the mechanism rather than a claim about a place."
+  },
+  {
+    "id": "intl-v1-de-0116",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Straßenbahn hat sich Wanderschuhe gekauft. Sie möchte endlich selbst entscheiden, wo es langgeht.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "An impossible event is treated as an everyday practical problem; the absurdity is the mechanism rather than a claim about a place."
+  },
+  {
+    "id": "intl-v1-de-0117",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Eine Taube hat mich nach dem WLAN gefragt. Sie wolle prüfen, ob Menschen wirklich so viele Fotos von Brot teilen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "animals"
+    ],
+    "cultural_note": "An impossible event is treated as an everyday practical problem; the absurdity is the mechanism rather than a claim about a place."
+  },
+  {
+    "id": "intl-v1-de-0118",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Schwerkraft hat eine Kundenhotline. Seit ich dort anrufe, falle ich wenigstens mit musikalischer Begleitung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science"
+    ],
+    "cultural_note": "An impossible event is treated as an everyday practical problem; the absurdity is the mechanism rather than a claim about a place."
+  },
+  {
+    "id": "intl-v1-de-0119",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mein Schrank hat beschlossen, offen über seine Probleme zu sprechen. Jetzt liegt alles im Schlafzimmer.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "An impossible event is treated as an everyday practical problem; the absurdity is the mechanism rather than a claim about a place."
+  },
+  {
+    "id": "intl-v1-de-0120",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Dienstag hat eine Vertretung geschickt. Sie sieht aus wie Montag, behauptet aber, neue Impulse mitzubringen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An impossible event is treated as an everyday practical problem; the absurdity is the mechanism rather than a claim about a place."
+  },
+  {
+    "id": "intl-v1-de-0121",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Wasserkocher schreibt Gedichte. Sie beginnen leise und werden gegen Ende ziemlich dramatisch.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "An impossible event is treated as an everyday practical problem; the absurdity is the mechanism rather than a claim about a place."
+  },
+  {
+    "id": "intl-v1-de-0122",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Wind hat seinen Hut verloren. Seitdem sucht er in jeder Straße unter jedem Blatt nach.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "weather"
+    ],
+    "cultural_note": "An impossible event is treated as an everyday practical problem; the absurdity is the mechanism rather than a claim about a place."
+  },
+  {
+    "id": "intl-v1-de-0123",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Brücke möchte umziehen. Wir haben ihr angeboten, erst einmal das andere Ufer zu besichtigen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "An impossible event is treated as an everyday practical problem; the absurdity is the mechanism rather than a claim about a place."
+  },
+  {
+    "id": "intl-v1-de-0124",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mein Teppich hat ein Haustier: einen Staubball. Er sagt, ich müsse endlich seine Entscheidungen respektieren.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "An impossible event is treated as an everyday practical problem; the absurdity is the mechanism rather than a claim about a place."
+  },
+  {
+    "id": "intl-v1-de-0125",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Zeit stand kurz still. Die Parkuhr hat trotzdem weitergerechnet und wollte das nicht diskutieren.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science"
+    ],
+    "cultural_note": "An impossible event is treated as an everyday practical problem; the absurdity is the mechanism rather than a claim about a place."
+  },
+  {
+    "id": "intl-v1-de-0126",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Eine Motte hat eine Modeberatung eröffnet. Ihr Schwerpunkt liegt auf sehr luftigen Winterpullovern.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "animals"
+    ],
+    "cultural_note": "An impossible event is treated as an everyday practical problem; the absurdity is the mechanism rather than a claim about a place."
+  },
+  {
+    "id": "intl-v1-de-0127",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Absatz hat den Text verlassen. Er wollte nicht länger zwischen denselben zwei Argumenten wohnen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An impossible event is treated as an everyday practical problem; the absurdity is the mechanism rather than a claim about a place."
+  },
+  {
+    "id": "intl-v1-de-0128",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Gurke hat einen Reisepass beantragt. Im Fotoautomaten musste sie versprechen, nicht bei jedem Blitz knackiger zu wirken.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "An impossible event is treated as an everyday practical problem; the absurdity is the mechanism rather than a claim about a place."
+  },
+  {
+    "id": "intl-v1-de-0129",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Schnee hat eine Beschwerde eingereicht. Seine sorgfältig geschlossene Fläche werde ständig von Schuhabdrücken kommentiert.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "weather"
+    ],
+    "cultural_note": "An impossible event is treated as an everyday practical problem; the absurdity is the mechanism rather than a claim about a place."
+  },
+  {
+    "id": "intl-v1-de-0130",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mein Spiegel bietet jetzt Untertitel. Heute stand dort nur: „Braucht vermutlich Kaffee.“",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "An impossible event is treated as an everyday practical problem; the absurdity is the mechanism rather than a claim about a place."
+  },
+  {
+    "id": "intl-v1-de-0131",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Fahrstuhl hat Höhenangst. Wir loben ihn inzwischen für jedes Stockwerk wie bei einer sehr langsamen Bergtour.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "An impossible event is treated as an everyday practical problem; the absurdity is the mechanism rather than a claim about a place."
+  },
+  {
+    "id": "intl-v1-de-0132",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Ein schwarzes Loch hat sich zum Essen eingeladen. Ich habe vorsichtshalber keine Servierplatten mit Erinnerungswert herausgestellt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science"
+    ],
+    "cultural_note": "An impossible event is treated as an everyday practical problem; the absurdity is the mechanism rather than a claim about a place."
+  },
+  {
+    "id": "intl-v1-de-0133",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mein Löffel möchte einen eigenen Teller. Er hat genug davon, immer nur die Vermittlung zu übernehmen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "An impossible event is treated as an everyday practical problem; the absurdity is the mechanism rather than a claim about a place."
+  },
+  {
+    "id": "intl-v1-de-0134",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Gartenzwerg hat einen Vogel adoptiert. Jetzt verhandeln beide, wer künftig die Mütze als Dach benutzen darf.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "animals"
+    ],
+    "cultural_note": "An impossible event is treated as an everyday practical problem; the absurdity is the mechanism rather than a claim about a place."
+  },
+  {
+    "id": "intl-v1-de-0135",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mein alter Wecker steht still. Er ist der Einzige, der seine Frühschicht wirklich hinter sich gelassen hat.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Mild existential humor gives ordinary objects, time, or abandoned plans an unexpectedly gloomy perspective; no violence is depicted."
+  },
+  {
+    "id": "intl-v1-de-0136",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die Liste meiner langfristigen Ziele ist vergilbt. Immerhin hat etwas daran eine Entwicklung genommen.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Mild existential humor gives ordinary objects, time, or abandoned plans an unexpectedly gloomy perspective; no violence is depicted."
+  },
+  {
+    "id": "intl-v1-de-0137",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Das Marmeladenglas enthält noch genau einen hoffnungsvollen Kratzer fürs Messer. So sieht mein Montag manchmal von innen aus.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Mild existential humor gives ordinary objects, time, or abandoned plans an unexpectedly gloomy perspective; no violence is depicted."
+  },
+  {
+    "id": "intl-v1-de-0138",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Meine Festplatte hat mehr unvollendete Projekte als freien Speicher. Selbst das Vergessen braucht inzwischen Platz.",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Mild existential humor gives ordinary objects, time, or abandoned plans an unexpectedly gloomy perspective; no violence is depicted."
+  },
+  {
+    "id": "intl-v1-de-0139",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der vertrocknete Blumenstrauß hält erstaunlich lange. Manche Enttäuschungen sind pflegeleichter als ihre Vorgeschichte.",
+    "age_rating": "teen",
+    "themes": [
+      "weather"
+    ],
+    "cultural_note": "Mild existential humor gives ordinary objects, time, or abandoned plans an unexpectedly gloomy perspective; no violence is depicted."
+  },
+  {
+    "id": "intl-v1-de-0140",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Ich habe mein altes Tagebuch gelesen. Schön, dass wenigstens einer von uns damals einen Plan hatte.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Mild existential humor gives ordinary objects, time, or abandoned plans an unexpectedly gloomy perspective; no violence is depicted."
+  },
+  {
+    "id": "intl-v1-de-0141",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der Reisegutschein läuft bald ab. Er hat mehr Druck aufgebaut als der Urlaub je hätte abbauen können.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Mild existential humor gives ordinary objects, time, or abandoned plans an unexpectedly gloomy perspective; no violence is depicted."
+  },
+  {
+    "id": "intl-v1-de-0142",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der leere Besprechungsraum wirkt so friedlich. Man sieht ihm kaum an, was morgen wieder darin geplant wird.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Mild existential humor gives ordinary objects, time, or abandoned plans an unexpectedly gloomy perspective; no violence is depicted."
+  },
+  {
+    "id": "intl-v1-de-0143",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die letzte Scheibe Brot ist hart geworden. Auch sie musste lernen, dass „gleich“ keine feste Zeitangabe ist.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Mild existential humor gives ordinary objects, time, or abandoned plans an unexpectedly gloomy perspective; no violence is depicted."
+  },
+  {
+    "id": "intl-v1-de-0144",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Das Universum dehnt sich aus. Mein Platz im Kalender wird trotzdem nicht größer.",
+    "age_rating": "teen",
+    "themes": [
+      "science"
+    ],
+    "cultural_note": "Mild existential humor gives ordinary objects, time, or abandoned plans an unexpectedly gloomy perspective; no violence is depicted."
+  },
+  {
+    "id": "intl-v1-de-0145",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mein Sparschwein ist leer und lächelt. Ich finde diese professionelle Haltung bemerkenswert.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Mild existential humor gives ordinary objects, time, or abandoned plans an unexpectedly gloomy perspective; no violence is depicted."
+  },
+  {
+    "id": "intl-v1-de-0146",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der alte Bildschirm zeigt nur noch mein Spiegelbild. Für einen Defekt liefert er erstaunlich ehrliche Rückmeldungen.",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Mild existential humor gives ordinary objects, time, or abandoned plans an unexpectedly gloomy perspective; no violence is depicted."
+  },
+  {
+    "id": "intl-v1-de-0147",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die Gartenliege steht unter einer Plane. Ein Denkmal für die Annahme, ich würde diesen Sommer zur Ruhe kommen.",
+    "age_rating": "teen",
+    "themes": [
+      "weather"
+    ],
+    "cultural_note": "Mild existential humor gives ordinary objects, time, or abandoned plans an unexpectedly gloomy perspective; no violence is depicted."
+  },
+  {
+    "id": "intl-v1-de-0148",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mein Entwurf trägt das Datum von vor drei Jahren. Inzwischen wäre ein Vorwort zur Entstehungsgeschichte angebracht.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Mild existential humor gives ordinary objects, time, or abandoned plans an unexpectedly gloomy perspective; no violence is depicted."
+  },
+  {
+    "id": "intl-v1-de-0149",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die Tiefkühlpizza hat ein Haltbarkeitsdatum. Mein Plan, heute richtig zu kochen, hat schon keines mehr nötig.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Mild existential humor gives ordinary objects, time, or abandoned plans an unexpectedly gloomy perspective; no violence is depicted."
+  },
+  {
+    "id": "intl-v1-de-0150",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Ich habe die Schublade mit alten Schlüsseln aufgeräumt. Es ist seltsam, wie viele Möglichkeiten nicht mehr wissen, wo ihre Tür steht.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Mild existential humor gives ordinary objects, time, or abandoned plans an unexpectedly gloomy perspective; no violence is depicted."
+  },
+  {
+    "id": "intl-v1-de-0151",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der Stadtplan zeigt ein Café, das längst geschlossen ist. Wenigstens auf Papier kann man dort noch sitzen bleiben.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Mild existential humor gives ordinary objects, time, or abandoned plans an unexpectedly gloomy perspective; no violence is depicted."
+  },
+  {
+    "id": "intl-v1-de-0152",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mein Handy erinnert mich an glückliche Tage. Es nennt das Service und schaltet danach wieder auf Akkusparen.",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Mild existential humor gives ordinary objects, time, or abandoned plans an unexpectedly gloomy perspective; no violence is depicted."
+  },
+  {
+    "id": "intl-v1-de-0153",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die Pflanze im leeren Büro wächst zum Fenster. Jemand hier arbeitet noch an einer Ausstiegsstrategie.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Mild existential humor gives ordinary objects, time, or abandoned plans an unexpectedly gloomy perspective; no violence is depicted."
+  },
+  {
+    "id": "intl-v1-de-0154",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der Herbst räumt gründlich auf. Im Gegensatz zu mir hat er keine Angst, Dinge loszulassen, die einmal gut aussahen.",
+    "age_rating": "teen",
+    "themes": [
+      "weather"
+    ],
+    "cultural_note": "Mild existential humor gives ordinary objects, time, or abandoned plans an unexpectedly gloomy perspective; no violence is depicted."
+  },
+  {
+    "id": "intl-v1-de-0155",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Meine Vorsätze haben jetzt eine eigene Mappe. Endlich besitzen sie einen Ort, an dem sie ungestört älter werden können.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Mild existential humor gives ordinary objects, time, or abandoned plans an unexpectedly gloomy perspective; no violence is depicted."
+  },
+  {
+    "id": "intl-v1-de-0156",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der angebrochene Senf wartet seit Monaten auf seinen großen Auftritt. Ich bewundere Künstler mit so viel Geduld.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Mild existential humor gives ordinary objects, time, or abandoned plans an unexpectedly gloomy perspective; no violence is depicted."
+  },
+  {
+    "id": "intl-v1-de-0157",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Datenschutzseite speichert, dass ich nicht gespeichert werden möchte. Unsere Beziehung beginnt mit einer bemerkenswerten Ausnahme.",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Gentle satire targets bureaucracy, consumer technology, or commercial language rather than an identity group."
+  },
+  {
+    "id": "intl-v1-de-0158",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Der Sonderpreis gilt nur heute. Zum Glück hat der Händler sehr viele verschiedene Heutes im Kalender.",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "Gentle satire targets bureaucracy, consumer technology, or commercial language rather than an identity group."
+  },
+  {
+    "id": "intl-v1-de-0159",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Für den digitalen Antrag brauche ich einen Ausdruck. Das Papier soll vermutlich bezeugen, dass es nicht mehr gebraucht wird.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Gentle satire targets bureaucracy, consumer technology, or commercial language rather than an identity group."
+  },
+  {
+    "id": "intl-v1-de-0160",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Fitness-App lobt meine Fortschritte. Ich habe hauptsächlich gelernt, ihre Erinnerungen im Gehen wegzuwischen.",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Gentle satire targets bureaucracy, consumer technology, or commercial language rather than an identity group."
+  },
+  {
+    "id": "intl-v1-de-0161",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Meine Bank bietet finanzielle Freiheit. Die Gebühren sind jedenfalls vollkommen unabhängig von meiner Begeisterung.",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "Gentle satire targets bureaucracy, consumer technology, or commercial language rather than an identity group."
+  },
+  {
+    "id": "intl-v1-de-0162",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Das Unternehmen sucht Menschen, die anders denken. Im Bewerbungsformular sind dafür zwei vorgegebene Antworten vorgesehen.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Gentle satire targets bureaucracy, consumer technology, or commercial language rather than an identity group."
+  },
+  {
+    "id": "intl-v1-de-0163",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die smarte Zahnbürste bewertet meine Putztechnik. Ich hätte nicht gedacht, dass mein Badezimmer einmal ein Beurteilungsgespräch anbietet.",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Gentle satire targets bureaucracy, consumer technology, or commercial language rather than an identity group."
+  },
+  {
+    "id": "intl-v1-de-0164",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Versandkosten entfallen ab einem Mindestwert. Mein unnötiger Einkauf hat jetzt wenigstens ein klares wirtschaftliches Ziel.",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "Gentle satire targets bureaucracy, consumer technology, or commercial language rather than an identity group."
+  },
+  {
+    "id": "intl-v1-de-0165",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Hotline sagt, alle Mitarbeitenden seien im Gespräch. Ich gönne ihnen ihre sozialen Kontakte, hätte aber auch gern einen.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Gentle satire targets bureaucracy, consumer technology, or commercial language rather than an identity group."
+  },
+  {
+    "id": "intl-v1-de-0166",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Meine App für weniger Bildschirmzeit funktioniert nur mit geöffnetem Bildschirm. Selbsterkenntnis ist offenbar kein geplantes Update.",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Gentle satire targets bureaucracy, consumer technology, or commercial language rather than an identity group."
+  },
+  {
+    "id": "intl-v1-de-0167",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Das Hotel bewirbt Ruhe und Abgeschiedenheit. Nach dem dritten verpassten Bus finde ich die Beschreibung sehr präzise.",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "Gentle satire targets bureaucracy, consumer technology, or commercial language rather than an identity group."
+  },
+  {
+    "id": "intl-v1-de-0168",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Wir dürfen frei entscheiden, wann wir erreichbar sind. Hauptsache, es ist genau dann, wenn jemand etwas möchte.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Gentle satire targets bureaucracy, consumer technology, or commercial language rather than an identity group."
+  },
+  {
+    "id": "intl-v1-de-0169",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Kamera erkennt mein Gesicht. Vor dem ersten Kaffee ist sie damit zu Recht vorsichtig.",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Gentle satire targets bureaucracy, consumer technology, or commercial language rather than an identity group."
+  },
+  {
+    "id": "intl-v1-de-0170",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Das Bonusprogramm belohnt mich fürs Kaufen. Fürs Nichtkaufen muss ich mich weiterhin selbst loben.",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "Gentle satire targets bureaucracy, consumer technology, or commercial language rather than an identity group."
+  },
+  {
+    "id": "intl-v1-de-0171",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Das Formular kennt meine Straße nicht. Es ist schön, wenn eine Behörde noch an überraschende Lebenswege glaubt.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Gentle satire targets bureaucracy, consumer technology, or commercial language rather than an identity group."
+  },
+  {
+    "id": "intl-v1-de-0172",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Der Fernseher hat Nutzungsbedingungen für die Fernbedienung. Ich wollte nur leiser stellen, keine diplomatischen Beziehungen aufnehmen.",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Gentle satire targets bureaucracy, consumer technology, or commercial language rather than an identity group."
+  },
+  {
+    "id": "intl-v1-de-0173",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Rechnung enthält eine Bearbeitungsgebühr. Das erklärt, warum sie so liebevoll an meiner Geduld arbeitet.",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "Gentle satire targets bureaucracy, consumer technology, or commercial language rather than an identity group."
+  },
+  {
+    "id": "intl-v1-de-0174",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Unser Workshop zu klarer Kommunikation begann mit einer langen Diskussion darüber, was damit gemeint sein könnte.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Gentle satire targets bureaucracy, consumer technology, or commercial language rather than an identity group."
+  },
+  {
+    "id": "intl-v1-de-0175",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Der Kühlschrank meldet ein offenes Türfach. Ich melde einen offenen Wunsch nach einem Gerät, das einfach kühlt.",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Gentle satire targets bureaucracy, consumer technology, or commercial language rather than an identity group."
+  },
+  {
+    "id": "intl-v1-de-0176",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Das Abo lässt sich jederzeit kündigen. „Jederzeit“ ist offenbar ein bestimmter Dienstag in einem gut versteckten Menü.",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "Gentle satire targets bureaucracy, consumer technology, or commercial language rather than an identity group."
+  },
+  {
+    "id": "intl-v1-de-0177",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Richtlinie fördert Vertrauen. Wir müssen den Erhalt unterschreiben, nachweisen und zur Bestätigung erneut einsenden.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Gentle satire targets bureaucracy, consumer technology, or commercial language rather than an identity group."
+  },
+  {
+    "id": "intl-v1-de-0178",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Der Onlineshop empfiehlt mir meinen eigenen Warenkorb. Endlich ein Algorithmus, der sich auf bewährte Inspiration beschränkt.",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Gentle satire targets bureaucracy, consumer technology, or commercial language rather than an identity group."
+  },
+  {
+    "id": "intl-v1-de-0179",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Der Schreiner hat im Meeting das Wort ergriffen. Danach wollte er wissen, ob es dafür auch eine vernünftige Halterung gibt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "work"
+    ],
+    "cultural_note": "German das Wort ergreifen means take the floor; the carpenter treats the word as something physically grasped."
+  },
+  {
+    "id": "intl-v1-de-0180",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Der Bäcker macht keine halben Sachen. Deshalb verkauft er halbe Brote nur paarweise.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "food"
+    ],
+    "cultural_note": "German keine halben Sachen machen means be thorough; half loaves literalize the phrase."
+  },
+  {
+    "id": "intl-v1-de-0181",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Das Lineal bleibt bei Streitigkeiten sachlich. Es möchte nicht, dass jemand seinen Standpunkt unnötig in die Länge zieht.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "school"
+    ],
+    "cultural_note": "German in die Länge ziehen means prolong; measuring length is the ruler's literal role."
+  },
+  {
+    "id": "intl-v1-de-0182",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Der Maulwurf wollte sich beruflich verändern. Ihm fehlte einfach der Überblick.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "animals"
+    ],
+    "cultural_note": "German Überblick means an overview or strategic perspective; an underground animal lacks the literal view above ground."
+  },
+  {
+    "id": "intl-v1-de-0183",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Die Elektrikerin hat einen spannenden Lebenslauf. Bei jedem Jobwechsel fragt jemand nach der richtigen Absicherung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "work"
+    ],
+    "cultural_note": "German Spannung means voltage or suspense; Absicherung means electrical protection or securing oneself professionally."
+  },
+  {
+    "id": "intl-v1-de-0184",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Der Käse weigert sich, über seine Probleme zu reden. Er sagt, manches müsse eben erst reifen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "food"
+    ],
+    "cultural_note": "German reifen means mature figuratively or ripen as cheese; an emotional delay takes the literal food process."
+  },
+  {
+    "id": "intl-v1-de-0185",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Die Botanikerin wollte wieder Wurzeln schlagen. Der Vermieter bat um einen ausreichend großen Untersetzer.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "science"
+    ],
+    "cultural_note": "German Wurzeln schlagen means settle down and literally grow roots; the landlord requests plant protection."
+  },
+  {
+    "id": "intl-v1-de-0186",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Die Tastatur hat Grenzen gesetzt. Seitdem ist die Leertaste nur noch für persönliche Freiräume zuständig.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "tech"
+    ],
+    "cultural_note": "German Freiraum means autonomy and literal free space; the keyboard space bar claims the latter."
+  },
+  {
+    "id": "intl-v1-de-0187",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Der Schneider lässt sich nicht unter Druck setzen. Er unterscheidet sehr genau zwischen Terminen und Bügeleisen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "German unter Druck setzen means pressure someone; an iron supplies actual pressing in a tailor's work."
+  },
+  {
+    "id": "intl-v1-de-0188",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Der Zugführer wollte eine andere Richtung einschlagen. Zum Glück hat er vorher den Fahrplan geändert.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "German eine andere Richtung einschlagen means change course figuratively and literally choose a travel direction."
+  },
+  {
+    "id": "intl-v1-de-0189",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Die Köchin will endlich ihr eigenes Süppchen kochen. Das Team bittet sie, trotzdem vier Portionen zu machen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "food"
+    ],
+    "cultural_note": "German sein eigenes Süppchen kochen means pursue a separate agenda; coworkers take it as literally cooking only one serving."
+  },
+  {
+    "id": "intl-v1-de-0190",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Der Fotograf wollte die Sache entwickeln lassen. Nach drei Tagen hatte er immerhin ein Bild vom Problem.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "work"
+    ],
+    "cultural_note": "German entwickeln means develop a situation or photographic film; sich ein Bild machen means understand a matter."
+  },
+  {
+    "id": "intl-v1-de-0191",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Die Wolke möchte sich aussprechen. Wir haben vorsichtshalber die Wäsche hereingeholt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "weather"
+    ],
+    "cultural_note": "German sich aussprechen means talk things out; emotional release is reimagined as a cloud releasing rain."
+  },
+  {
+    "id": "intl-v1-de-0192",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Der Atlas hat große Pläne. Sie nehmen inzwischen fast jede Seite ein.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "school"
+    ],
+    "cultural_note": "German Plan can mean an intention or map; an atlas makes the cartographic reading explicit."
+  },
+  {
+    "id": "intl-v1-de-0193",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Die Spinne gründet ein Netzwerk. Bei ihr werden Kontakte nicht nur geknüpft, sondern gelegentlich festgeklebt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "animals"
+    ],
+    "cultural_note": "German Netzwerk means a social or technical network and evokes a literal web; Kontakte knüpfen supplies the thread metaphor."
+  },
+  {
+    "id": "intl-v1-de-0194",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Der Metzger hat die Nase voll von Extrawürsten. Er möchte endlich wieder nach einer einzigen Bestellung arbeiten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "food"
+    ],
+    "cultural_note": "German Extrawurst means a special favor or a literal extra sausage; the butcher interprets the request literally."
+  },
+  {
+    "id": "intl-v1-de-0195",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Die Gärtnerin hat ein blühendes Geschäft. Nur die Buchhaltung soll bitte nicht weiter wuchern.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "work"
+    ],
+    "cultural_note": "German blühendes Geschäft means thriving business; garden growth literalizes both flourishing and uncontrolled growth."
+  },
+  {
+    "id": "intl-v1-de-0196",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Der Spiegel hat eine glänzende Zukunft. Er muss nur aufhören, jeden Morgen dieselben Zweifel zu reflektieren.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "German glänzend means excellent and shiny; reflektieren means reflect visually or consider mentally."
+  },
+  {
+    "id": "intl-v1-de-0197",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Der Geologe bleibt auf dem Boden der Tatsachen. Manchmal nimmt er davon eine Probe mit nach Hause.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "science"
+    ],
+    "cultural_note": "German Boden der Tatsachen is figurative solid reality; a geologist samples actual ground."
+  },
+  {
+    "id": "intl-v1-de-0198",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Der Teebeutel wollte Abstand gewinnen. Die Tasse fand, eine Minute weniger Nähe täte ihnen beiden gut.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "food"
+    ],
+    "cultural_note": "German Abstand gewinnen means gain emotional distance; steeping tea turns duration and physical proximity into the relationship problem."
+  },
+  {
+    "id": "intl-v1-de-0199",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Die Uhrmacherin nimmt sich Zeit. Die Kunden möchten nur wissen, wann sie sie wiederbekommen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "work"
+    ],
+    "cultural_note": "German sich Zeit nehmen means take one's time; a clockmaker physically holds customers' timepieces."
+  },
+  {
+    "id": "intl-v1-de-0200",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Der Bleistift wurde für seine spitzen Bemerkungen gelobt. Seitdem diskutiert er nur noch frisch gespitzt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "school"
+    ],
+    "cultural_note": "German spitze Bemerkungen means sharp remarks; a sharpened pencil reads sharpness as its physical tip."
+  }
+]

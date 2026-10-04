@@ -1,0 +1,2138 @@
+[
+  {
+    "id": "intl-v2-fr-dad-001",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "« Pourquoi une tradition ? » Papa répond qu’il faut respecter ses anciens, surtout quand ils sont encore chauds.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-dad-002",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "Dans un bouchon lyonnais, papa demande si le dessert circule.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-dad-003",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa commande une complète : il déteste les galettes en stage.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-dad-004",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le kougelhopf arrive. « Il manque le milieu », constate papa. Le pâtissier lui propose le centre de réclamations.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-dad-005",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa partage sa socca : « Il faut savoir s'émietter pour les autres. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-dad-006",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa prend le TER : il préfère les voyages qui ne manquent pas d'arrêts.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-dad-007",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Nous retrouvons papa sous la douche avec sa couronne de galette. Il prétend entretenir son règne.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-dad-008",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa corrige mon cahier Seyès. Il prétend connaître toutes les lignes du dossier.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-dad-009",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa cherche le cochonnet : « Il a encore pris la tangente porcine. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-dad-010",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Devant les prix du sel à Guérande, papa murmure : « Ils savent vraiment assaisonner l’addition. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-dad-011",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa rate ses cannelés. Il appelle Bordeaux pour signaler une déformation locale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-dad-012",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "À Montmartre, papa monte les marches « pour voir si le Sacré-Cœur tient le rythme ».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-dad-013",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "« Tu as mangé le quignon ? » — « Je commence toujours par les extrémités du problème », répond papa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-dad-014",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa remplit son CERFA au crayon : « Une administration doit garder une gomme de manœuvre. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-dad-015",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "Au musée d'Orsay, papa regarde l'heure. Il affirme soutenir le patrimoine ferroviaire.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Lieu culturel, patrimoine ou pratique de lecture en France comme cadre d’une fiction humoristique originale."
+  },
+  {
+    "id": "intl-v2-fr-dad-016",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Sa RTT validée, papa annonce la création d’une République Très Tranquille. Le canapé en sera la capitale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-dad-017",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "À la Chandeleur, papa annonce une tournée. Nous sommes tous assis autour de la poêle.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-dad-018",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa goûte le kouign-amann : « Le beurre a bien fait de prendre un gâteau avec lui. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-dad-019",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Une traboule plus tard, nous avons perdu papa. Il nous téléphone : « Je travaille mes issues. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-dad-020",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Sur la dune du Pilat, papa déclare avoir un grain d'avance.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-dad-021",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa cuisine l'aligot. Son ambition prend enfin de la longueur.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-dad-022",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le billet TGV reste dans son portefeuille. Papa aime conserver la preuve qu’il a fait du chemin.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-dad-023",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Sur la Promenade des Anglais, papa dit bonjour avec son meilleur français.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-dad-024",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa admire les colombages : « Ces maisons ont de l'ossature dans les idées. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-dad-025",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Troisième défaite à la pétanque. Papa rassure l’équipe : il prépare encore le terrain.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-dad-026",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa relit ma dictée : « Ici, même les fautes ont l'accent français. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-dad-027",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa choisit une baguette pas trop cuite : il veut limiter les coups de soleil du déjeuner.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-dad-028",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Au découpage de la galette, papa réclame une part proportionnelle à sa majesté. Nous lui donnons la couronne.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-dad-029",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa serre le camembert dans sa boîte : « Chacun doit connaître ses limites. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scène autour des usages de table et de spécialités présentes en France ; le personnage ne représente pas une population."
+  },
+  {
+    "id": "intl-v2-fr-dad-030",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "À Carcassonne, papa félicite les remparts pour leur excellent travail de clôture.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-dad-031",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Devant le Louvre, papa sort son sandwich. Il voulait apporter sa contribution aux natures mortes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Lieu culturel, patrimoine ou pratique de lecture en France comme cadre d’une fiction humoristique originale."
+  },
+  {
+    "id": "intl-v2-fr-dad-032",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "Au fest-noz, papa annonce qu'il va faire danser ses erreurs.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-dad-033",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa valide son Navigo avec un salut : « Les bonnes manières passent les portes. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-dad-034",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Au confluent, papa présente le Rhône et la Saône : « Un couple qui ne manque pas de courant. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-dad-035",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa commande la socca « bien élevée ». Le serveur propose surtout bien chaude.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-dad-036",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa offre des bredele : « Des étoiles qui ont réussi leur cuisson. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-dad-037",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "« Pourquoi une crêpe carrée ? » Papa explique qu’il cherche un dessert qui ne tourne pas autour du sujet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-dad-038",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa signe son CERFA lentement : il veut laisser une impression durable.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-dad-039",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa parle au levain : « Toi aussi, tu as besoin qu'on te laisse tranquille pour grandir. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-dad-040",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le plateau de financiers arrive. Papa annonce qu’il investit dans la pistache. Aucun retour sur investissement n’est prévu.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-dad-041",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa pointe à la pétanque : « Je garde les fonctions de direction. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-dad-042",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "À Étretat, papa demande si l'arche est ouverte le dimanche.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-dad-043",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "« Il est beau, ce cahier Seyès », dit papa. « Quelqu’un a déjà fait la moitié du travail : toutes les lignes. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-dad-044",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "Au pont Neuf, papa vérifie les pierres. Il se méfie des noms commerciaux.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-dad-045",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa utilise ses titres-restaurant : « Aujourd'hui, je mange sur mes titres. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-dad-046",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa ne retrouve pas la fève. Il se déclare néanmoins roi, sous réserve de pièce justificative.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-dad-047",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa trouve sa galette-saucisse trop longue : « Elle fait du hors-crêpe. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-dad-048",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "Dans le funiculaire, papa refuse de courir après sa carrière ascendante.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-dad-049",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Au TGV, papa choisit le wagon-bar. « L’orientation, c’est important », nous explique-t-il très sérieusement.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-dad-050",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa découpe le millefeuille et déclare avoir terminé son travail administratif.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-dad-051",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "À Honfleur, papa photographie le port : « Une belle prise sans filet. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-dad-052",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Au marché de Noël alsacien, papa nous annonce qu’il mène une étude en milieu épicé. Il réclame un second échantillon.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-dad-053",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa s'assied sur une chaise bleue : « La Méditerranée a réservé ma couleur. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-dad-054",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa suit le Tour de France : « Je révise ma géographie en braquet court. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-dad-055",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Nous balayons les miettes de tradition. Papa proteste : on ne traite pas le petit patrimoine comme ça.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-dad-056",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa achète un Bescherelle « pour conjuguer nos efforts ». Personne ne rit au présent.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-dad-057",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa retourne une crêpe et annonce une révolution bien beurrée.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-dad-058",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Sur un ancien CERFA, papa retrouve la mention célibataire. Il sourit : « Avant la création de la direction générale. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-dad-059",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa étudie la carte des crêpes : « Je prépare mon orientation gourmande. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-dad-060",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa sert un soufflé : « Attention, il ne supporte pas les critiques à froid. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-dad-061",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La quenelle arrive. Papa approuve : enfin une décision de restaurant qui a du volume.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-dad-062",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "À Rocamadour, papa commande le fromage avant de voir la falaise. Il prépare la montée.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-dad-063",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa demande une place côté fenêtre dans le TER : « J'aime les réunions avec paysage. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-dad-064",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le munster sort de sa boîte. Papa dit qu’on peut sauter le tour de présentation.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-dad-065",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa admire les bouquinistes : « Enfin des quais où l'on peut prendre une histoire. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-dad-066",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa conserve sa couronne de galette. Il parle d'une retraite royale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-dad-067",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le sac à baguette manque. Papa crie depuis l’entrée : « Qui a pris mon porte-longueur ? »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-dad-068",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa rate le cochonnet et annonce une stratégie de voisinage.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-dad-069",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa signe le carnet de liaison : « Ma première critique littéraire de la semaine. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-dad-070",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Au Cours Saleya, papa cherche un bouquet qui explique son retard. Le fleuriste lui propose surtout un grand modèle.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-dad-071",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa fait une tarte Tatin : « Le dessert s'est remis sur ses pieds. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-dad-072",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa tente le fest-noz. Ses chaussures demandent une séparation à l'amiable.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-dad-073",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Chambord et ses cheminées inquiètent papa. Il pense qu’on devrait envoyer un plan au Père Noël.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-dad-074",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa salue le TGV : « Bonne continuation, c'est littéralement ton travail. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-dad-075",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa remplit « lieu de naissance » sur le CERFA : « J'étais trop petit pour vérifier. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-dad-076",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La Croix-Rousse grimpe encore. Papa affirme que ses bonnes résolutions prennent enfin une direction verticale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-dad-077",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa observe un moule à kougelhopf : « Même le gâteau a une cage d'escalier. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-dad-078",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa allume un lampion du 14 Juillet : « Une idée lumineuse avec un fil. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-dad-079",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Avec une nonnette de Dijon dans la main, papa constate que le petit gâteau n’a pas fait vœu de légèreté.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-dad-080",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa achète du pain de campagne et lui souhaite une agréable installation en ville.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-dad-081",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa explique la pétanque : « On rapproche des boules pour éloigner l'heure du déjeuner. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-dad-082",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Devant son solde de RTT, papa parle de son petit compte à dormir debout. Il envisage un retrait vendredi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-dad-083",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "À Sète, papa regarde les joutes : « Le débat public manque parfois de serviettes. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-dad-084",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa commande une pissaladière sans discours. Les oignons feront pleurer la salle.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-dad-085",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La galette tourne sur le billig. Papa félicite le crêpier pour son affaire qui roule à plat.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-dad-086",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa regarde la colonne Vendôme : « Une histoire qui a pris beaucoup de hauteur. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-dad-087",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa cherche son Navigo : « Je suis bloqué dans une question de passage. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-dad-088",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa mesure la marge de mon cahier Seyès. Il veut garder une distance réglementaire avec mes problèmes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-dad-089",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa sort du bouchon satisfait : « Finalement, j'aime la circulation dense dans l'assiette. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-dad-090",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa goûte trois galettes : « Il faut vérifier la stabilité du royaume. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-dad-091",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Les mannele attendent le goûter. Papa leur accorde une pause : « Ils travaillent debout depuis la cuisson. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-dad-092",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa commande une flûte à la boulangerie. Son concert commence avec du beurre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-dad-093",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa déborde en servant le cassoulet : « Toulouse prend de l'expansion. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-dad-094",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "À la pointe du Raz, papa conclut son explication. « Je suis au bout de mon argumentation », dit-il face à l’océan.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-dad-095",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa choisit des boules brillantes : « Autant perdre avec éclat. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-dad-096",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "À l’abbaye du Mont-Saint-Michel, papa demande si le silence se visite avec audioguide.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène originale avec un repère français concret, racontée avec un humour parental volontairement appuyé ; aucune identité nationale n’est attribuée au personnage."
+  },
+  {
+    "id": "intl-v2-fr-dad-097",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "L’agrafe traverse le CERFA. Papa sourit : il vient d’apporter un peu de cohésion au service public.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-dad-098",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa descend du TER : « Le voyage est terminé, mes jambes reprennent leur indépendance. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-dad-099",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa admire les Machines de l’île à Nantes. Il veut savoir si l’éléphant accepte les tickets de bus ou seulement les cacahuètes mécaniques.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène originale avec un repère français concret, racontée avec un humour parental volontairement appuyé ; aucune identité nationale n’est attribuée au personnage."
+  },
+  {
+    "id": "intl-v2-fr-dad-100",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Mon bac de français intéresse papa. Il appelle les révisions une réunion d’anciens textes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-dad-101",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa étire l'aligot et demande combien coûte le supplément de distance.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-dad-102",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Sur le viaduc de Millau, papa refuse de parler du prix du trajet : « Gardons le débat au-dessus de ça. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène originale avec un repère français concret, racontée avec un humour parental volontairement appuyé ; aucune identité nationale n’est attribuée au personnage."
+  },
+  {
+    "id": "intl-v2-fr-dad-103",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La crêpe atteint la hotte. Papa annonce l’ouverture d’une nouvelle ligne aérienne depuis la cuisine.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-dad-104",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa parle à sa socca : « Tu as du pois dans la conversation. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-dad-105",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "À Limoges, papa achète une tasse en porcelaine. Il promet de traiter désormais son café avec distinction.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène originale avec un repère français concret, racontée avec un humour parental volontairement appuyé ; aucune identité nationale n’est attribuée au personnage."
+  },
+  {
+    "id": "intl-v2-fr-dad-106",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En Camargue, papa admire les flamants. Il trouve encourageant de voir des voisins assumer aussi bien leur rose.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-dad-107",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa goûte un berlingot de Carpentras. « Enfin un bonbon qui a des angles de réflexion », dit-il en hésitant par quel côté commencer.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène originale avec un repère français concret, racontée avec un humour parental volontairement appuyé ; aucune identité nationale n’est attribuée au personnage."
+  },
+  {
+    "id": "intl-v2-fr-dad-108",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa goûte la tarte flambée : « Cette pizza a changé de passeport et de caractère. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-dad-109",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La baguette arrive entière. « Pour une fois, aucune demi-mesure », commente papa, avant de réclamer la moitié.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-dad-110",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le train à crémaillère du puy de Dôme amuse papa. Il demande où déposer son cadeau de pendaison.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène originale avec un repère français concret, racontée avec un humour parental volontairement appuyé ; aucune identité nationale n’est attribuée au personnage."
+  },
+  {
+    "id": "intl-v2-fr-dad-111",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa scanne son CERFA : « Voilà, je suis entré dans une nouvelle dimension : PDF. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-dad-112",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Dans la galerie des Glaces, papa se retrouve partout. Il félicite Versailles pour la qualité de son accueil personnalisé.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-dad-113",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Devant le Lion de Belfort, papa chuchote. Même sculpté, un aussi gros chat mérite qu’on négocie le passage.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène originale avec un repère français concret, racontée avec un humour parental volontairement appuyé ; aucune identité nationale n’est attribuée au personnage."
+  },
+  {
+    "id": "intl-v2-fr-dad-114",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa gagne la fève : « Enfin une promotion fondée sur mes capacités de mastication. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-dad-115",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le billet Intercités rentre dans sa poche. Papa le présente comme son petit plan de sortie.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-dad-116",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "À la dune du Pilat, papa annonce un château ambitieux. Il a déjà le terrain.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-dad-117",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa étudie la dentelle du Puy. Il trouve remarquable qu’on vende autant de travail pour laisser autant de trous.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène originale avec un repère français concret, racontée avec un humour parental volontairement appuyé ; aucune identité nationale n’est attribuée au personnage."
+  },
+  {
+    "id": "intl-v2-fr-dad-118",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa cherche la sortie du Louvre. Il appelle ça travailler sa propre perspective de fuite.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-dad-119",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa commande un cervelas : « Je réfléchis mieux après avoir consulté la carte. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-dad-120",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "À Rouen, papa photographie le Gros-Horloge. Il affirme avoir enfin trouvé une montre à la taille de ses retards.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène originale avec un repère français concret, racontée avec un humour parental volontairement appuyé ; aucune identité nationale n’est attribuée au personnage."
+  },
+  {
+    "id": "intl-v2-fr-dad-121",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La baguette la plus droite gagne son choix. Papa tient à ce que le déjeuner reste dans sa ligne.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-dad-122",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa goûte le pain d'épices : « Mon pain a enfin un curriculum aromatique. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-dad-123",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Au marché de Menton, papa choisit un citron. Il veut rapporter un souvenir qui ait un peu de répondant.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène originale avec un repère français concret, racontée avec un humour parental volontairement appuyé ; aucune identité nationale n’est attribuée au personnage."
+  },
+  {
+    "id": "intl-v2-fr-dad-124",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Après la pétanque, papa félicite les adversaires. Il affirme avoir beaucoup investi dans leur potentiel.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-dad-125",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa met du beurre salé sur sa galette : « Une précision géographique. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-dad-126",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa regarde les huîtres de Marennes fermées : « Elles ont un excellent service de sécurité, mais un mauvais accueil. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène originale avec un repère français concret, racontée avec un humour parental volontairement appuyé ; aucune identité nationale n’est attribuée au personnage."
+  },
+  {
+    "id": "intl-v2-fr-dad-127",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le plateau arrive avec la tarte Tatin. « Un retournement de cuisson réussi », juge papa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-dad-128",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa range les lampions du 14 Juillet : « La République passe en mode veille. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-dad-129",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "À la Cité de l’espace, papa s’assied dans un simulateur. Il appelle ça prendre ses distances avec la liste des courses.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène originale avec un repère français concret, racontée avec un humour parental volontairement appuyé ; aucune identité nationale n’est attribuée au personnage."
+  },
+  {
+    "id": "intl-v2-fr-dad-130",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Les briques d’Albi plaisent à papa. Il apprécie une ville qui a choisi sa couleur avant de commencer.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-dad-131",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa cherche sa tradition dans le sac : « Mes valeurs sont au fond. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-dad-132",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa commande une ficelle picarde. Il a beaucoup apprécié qu’un restaurant l’aide enfin à tirer sur la bonne ficelle.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène originale avec un repère français concret, racontée avec un humour parental volontairement appuyé ; aucune identité nationale n’est attribuée au personnage."
+  },
+  {
+    "id": "intl-v2-fr-dad-133",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "À l’entrée de la traboule, papa interrompt son histoire : il va prendre un raccourci dans la conversation.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-dad-134",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa casse un bretzel : « J'ai enfin dénoué la situation. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-dad-135",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Au musée Soulages, papa contemple le noir. Il se réjouit de trouver une exposition assortie à son café.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène originale avec un repère français concret, racontée avec un humour parental volontairement appuyé ; aucune identité nationale n’est attribuée au personnage."
+  },
+  {
+    "id": "intl-v2-fr-dad-136",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La Promenade des Anglais inspire papa. Il raconte qu’il vient de faire une marche internationale sans passeport.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-dad-137",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa commande une île flottante : « Un petit territoire sans taxe foncière. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-dad-138",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "À Arcachon, papa compare les cabanes tchanquées à son pantalon retroussé : lui aussi sait prévoir la marée.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène originale avec un repère français concret, racontée avec un humour parental volontairement appuyé ; aucune identité nationale n’est attribuée au personnage."
+  },
+  {
+    "id": "intl-v2-fr-dad-139",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Son tir de pétanque termine très loin. Papa demande qu’on respecte les recherches en trajectoire exploratoire.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-dad-140",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa souffle sur sa crêpe : « Je négocie une baisse de température. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-dad-141",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa achète une gaufre de Lille. Elle est fourrée à la vanille, mais il exige quand même de lire les petites lignes du dessert.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène originale avec un repère français concret, racontée avec un humour parental volontairement appuyé ; aucune identité nationale n’est attribuée au personnage."
+  },
+  {
+    "id": "intl-v2-fr-dad-142",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le CERFA porte son nom. Papa considère qu’il vient de personnaliser l’administration.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-dad-143",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "observ",
+    "text": "À Grasse, papa sent les parfums : « Une réunion dont je retiendrai quelque chose. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-dad-144",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Devant le miroir d’eau de Bordeaux, papa ajuste sa coiffure. Il prétend soutenir les équipements publics.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène originale avec un repère français concret, racontée avec un humour parental volontairement appuyé ; aucune identité nationale n’est attribuée au personnage."
+  },
+  {
+    "id": "intl-v2-fr-dad-145",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Devant Lascaux IV, papa constate que les murs d’expression ont bien commencé leur carrière.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-dad-146",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa monte à la Croix-Rousse : « Mes mollets découvrent l'histoire sociale. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-dad-147",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa regarde les bateaux du canal du Midi. Il applaudit leur méthode pour changer d’étage sans prendre l’escalier.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène originale avec un repère français concret, racontée avec un humour parental volontairement appuyé ; aucune identité nationale n’est attribuée au personnage."
+  },
+  {
+    "id": "intl-v2-fr-dad-148",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le kougelhopf est découpé. Papa nous avertit qu’il prend seulement sa part du cercle.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-dad-149",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa apporte du roquefort : « Un fromage avec du bleu de travail. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-dad-150",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "À la Cité du train de Mulhouse, papa annonce qu’il a trouvé une visite qui ne manque pas de traction.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène originale avec un repère français concret, racontée avec un humour parental volontairement appuyé ; aucune identité nationale n’est attribuée au personnage."
+  },
+  {
+    "id": "intl-v2-fr-dad-151",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La tourte aux blettes surprend papa : il ignorait que les légumes pouvaient obtenir un diplôme de dessert.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-dad-152",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa choisit son cochonnet : « Il faut un petit objectif dans la vie. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-dad-153",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa goûte le piment d’Espelette, puis reste silencieux. Il a enfin rencontré un argument qui lui coupe la parole.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène originale avec un repère français concret, racontée avec un humour parental volontairement appuyé ; aucune identité nationale n’est attribuée au personnage."
+  },
+  {
+    "id": "intl-v2-fr-dad-154",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Pour découper la galette, papa apporte une règle. Le royaume entre en géométrie absolue.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-dad-155",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa s'installe dans le TER : « Je laisse enfin quelqu'un d'autre conduire mes projets. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-dad-156",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "À Provins, papa regarde les remparts. Il demande si la ville a déjà pensé à désactiver son contrôle parental.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène originale avec un repère français concret, racontée avec un humour parental volontairement appuyé ; aucune identité nationale n’est attribuée au personnage."
+  },
+  {
+    "id": "intl-v2-fr-dad-157",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa visite les Invalides à petits pas : « Une grande adresse pour une longue sieste historique. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-dad-158",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa consulte FranceConnect : « Je vérifie si je suis toujours disponible. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-dad-159",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa rapporte des dragées de Verdun. Il explique qu’il investit dans des amandes à couverture solide.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène originale avec un repère français concret, racontée avec un humour parental volontairement appuyé ; aucune identité nationale n’est attribuée au personnage."
+  },
+  {
+    "id": "intl-v2-fr-dad-160",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "L’éclair au café arrive. Papa demande qu’on lui annonce désormais la météo uniquement de cette façon.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-dad-161",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa accroche un bredele au sapin : « Un investissement à court terme. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-dad-162",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "À Dieppe, le cerf-volant de papa tombe. Il accuse un désaccord de fond avec le ciel.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène originale avec un repère français concret, racontée avec un humour parental volontairement appuyé ; aucune identité nationale n’est attribuée au personnage."
+  },
+  {
+    "id": "intl-v2-fr-dad-163",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Après sa crêpe trop haute, papa réclame un budget spatial pour février. Maman propose plutôt une serpillière.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-dad-164",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa ouvre un cahier Seyès neuf : « Beaucoup de lignes, aucune circulation. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-dad-165",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Au carrousel du jardin des Tuileries, papa réclame un billet simple. Le cheval de bois refuse de quitter Paris.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène originale avec un repère français concret, racontée avec un humour parental volontairement appuyé ; aucune identité nationale n’est attribuée au personnage."
+  },
+  {
+    "id": "intl-v2-fr-dad-166",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Au Puy-en-Velay, papa achète des lentilles. Il assure qu’on verra mieux le dîner.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-dad-167",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa oublie son livre dans le TGV : « Il poursuit son intrigue sans moi. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-dad-168",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "À Strasbourg, papa monte sur un bateau de l’Ill. Il annonce une petite maladie du voyage parfaitement agréable.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène originale avec un repère français concret, racontée avec un humour parental volontairement appuyé ; aucune identité nationale n’est attribuée au personnage."
+  },
+  {
+    "id": "intl-v2-fr-dad-169",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "À la tour Eiffel, papa monte encore. Il prétend que le sujet exige beaucoup de hauteur.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-dad-170",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa choisit une chaise bleue face à la mer : « Mon bureau de marée. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-dad-171",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa commande un jambon-beurre. Il précise qu’il a choisi la coopération franco-tartine plutôt qu’un conflit de garnitures.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène originale avec un repère français concret, racontée avec un humour parental volontairement appuyé ; aucune identité nationale n’est attribuée au personnage."
+  },
+  {
+    "id": "intl-v2-fr-dad-172",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La baguette se coupe. Papa annonce gravement : « Nous entrons dans le vif de la mie. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-dad-173",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa réserve une crêperie : « Notre soirée sera bien tournée. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-dad-174",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa prépare son déguisement de carnaval de Nice : « Pour une fois, mes couleurs ne feront pas débat. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-dad-175",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "« Au musée d'Orsay, prends ton temps », dit papa. Il m'installe devant la grande horloge.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Lieu culturel, patrimoine ou pratique de lecture en France comme cadre d’une fiction humoristique originale."
+  },
+  {
+    "id": "intl-v2-fr-dad-176",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa veut du beurre d'Isigny pour son GPS. Il espère des trajets plus doux.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-dad-177",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "« J'ai passé le bac », annonce papa en traversant la Seine. Son diplôme porte des voitures.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-dad-178",
+    "collection": "fr-fr-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papa rate ses œufs à la neige. Il annonce un redoux sur toute l'assiette.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  }
+]

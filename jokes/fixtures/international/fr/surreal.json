@@ -1,0 +1,2138 @@
+[
+  {
+    "id": "intl-v2-fr-surreal-001",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La mairie m'a délivré un permis de rêver. Les cauchemars restent soumis à déclaration préalable.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-surreal-002",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le TGV est arrivé dans mon salon. Il cherchait une prise et un endroit calme.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-surreal-003",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Ma baguette a déposé une plainte pour détournement de quignon.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-surreal-004",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Une traboule a quitté Lyon. Elle en avait assez qu'on la traverse sans rester.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-surreal-005",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le fest-noz tourne si bien que la salle demande à descendre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-surreal-006",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mon kougelhopf loue son trou à une petite agence immobilière.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-surreal-007",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La socca a éclipsé le soleil. Nice négocie un retour à la recette habituelle.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-surreal-008",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La tour Eiffel s'est couchée. Paris doit désormais contourner une très longue sieste.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-surreal-009",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le cassoulet a élu domicile dans mon agenda. Il occupe tous les créneaux après déjeuner.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-surreal-010",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La fève a aboli la monarchie. La couronne cherche un poste dans l'emballage.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-surreal-011",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mon cahier Seyès a déménagé ses lignes. Il préférait un quartier moins scolaire.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-surreal-012",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le cochonnet a grossi. Les boules demandent maintenant qu'on mesure leur distance avec respect.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-surreal-013",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le Mont-Saint-Michel a commandé des bottes. Le devis attend toujours une pointure définitive.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-surreal-014",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La Joconde a pris une photo des visiteurs. Son téléphone manque de place depuis 1519.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Lieu culturel, patrimoine ou pratique de lecture en France comme cadre d’une fiction humoristique originale."
+  },
+  {
+    "id": "intl-v2-fr-surreal-015",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le CERFA est revenu me demander un justificatif d'existence. Je lui ai présenté son propre courrier.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-surreal-016",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le boulanger a cuit un silence. La file d'attente l'a immédiatement épuisé.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-surreal-017",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mon Navigo a validé la lune. Elle refuse depuis de descendre au terminus.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-surreal-018",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le Rhône et la Saône ont échangé leurs noms. Les poissons trouvent l'opération surtout administrative.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-surreal-019",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le kouign-amann a installé une salle de sport dans son feuilletage. Personne ne trouve l'entrée.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-surreal-020",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Une maison à colombages a défait ses lacets. Strasbourg a demandé un urbaniste.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-surreal-021",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La Promenade des Anglais a commencé à marcher. Les bancs suivent à contrecœur.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-surreal-022",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Ma crêpe est revenue de l'espace avec du sucre glace sur les deux faces.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-surreal-023",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le Bescherelle conjugue mon chat au futur. Il dormira : aucune surprise.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-surreal-024",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La caravane du Tour distribue des souvenirs d'enfance. J'ai attrapé un mercredi sans devoirs.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-surreal-025",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le métro a pris l'escalier. Il voulait savoir pourquoi nous arrivions essoufflés.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-surreal-026",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Une tarte Tatin a inversé ma journée. Le petit déjeuner est devenu une excellente conclusion.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-surreal-027",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Les menhirs de Carnac jouent aux chaises musicales. La Bretagne attend depuis mardi qu'un morceau s'arrête.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-surreal-028",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "FranceConnect m'a connecté à mon moi de huit ans. Il exige un goûter avant toute démarche.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-surreal-029",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Ma baguette parle en morse. Elle manque surtout de points moelleux.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-surreal-030",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le TER s'est perdu dans une carte postale. Le contrôleur apprécie les couleurs.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-surreal-031",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le funiculaire de Fourvière a demandé une promotion horizontale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-surreal-032",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Une galette complète a épousé un formulaire incomplet. Leur vie reste en attente de garniture.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-surreal-033",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le bretzel a dénoué l'espace-temps. Nous déjeunons désormais avant d'avoir faim.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-surreal-034",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La socca a ouvert un observatoire. Elle étudie les soleils qui cuisent moins bien qu'elle.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-surreal-035",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La couronne de galette commande un portrait officiel. Elle insiste pour qu'on retire l'enfant dessous.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-surreal-036",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La dictée s'est corrigée seule. Elle nous a mis tous « à revoir ».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-surreal-037",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Les boules de pétanque ont demandé une pelouse plus ronde.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-surreal-038",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La Seine a laissé un message d'absence. Les ponts maintiennent la permanence.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-surreal-039",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le millefeuille s'est inscrit à la bibliothèque. On lui demande de choisir un rayon.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-surreal-040",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le pont du Gard transporte du café. Les villages en aval ne dorment plus.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-surreal-041",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La mairie a installé un guichet pour les fantômes. Il faut apporter un drap de moins de trois mois.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-surreal-042",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le pain de campagne a gagné les élections municipales de ma corbeille.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-surreal-043",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le TGV traverse mon rêve. Même mon inconscient n'a pas réservé côté fenêtre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-surreal-044",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La place Bellecour s'est pliée pour entrer dans une traboule. Les cartes touristiques refusent de suivre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-surreal-045",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "observ",
+    "text": "Au fest-noz des horloges, toutes les aiguilles dansent à contretemps.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-surreal-046",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le kougelhopf a demandé un étage supplémentaire. Les raisins votent contre l'ascenseur.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-surreal-047",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Les chaises bleues de Nice ont pris la mer. Les touristes restent debout sur la plage.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-surreal-048",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La fève a demandé un ADN de galette. Elle soupçonne une origine briochée.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-surreal-049",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le cahier Seyès a passé le bac à ma place. Il a été recalé pour lignes préexistantes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-surreal-050",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le maillot jaune s'est envolé. Le peloton poursuit désormais une lessive ambitieuse.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-surreal-051",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La tour Eiffel a sonné chez moi pour emprunter une échelle. Je n'ai pas posé de questions.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-surreal-052",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "L'aligot relie maintenant deux départements. Les conducteurs ralentissent à l'heure du dîner.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-surreal-053",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La dune du Pilat s'est achetée un aspirateur. Elle l'utilise pour faire peur aux touristes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-surreal-054",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le CERFA a épousé sa notice. Le dossier de mariage fait quatorze annexes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-surreal-055",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Ma tradition exige de revenir au bon vieux temps où elle n'était que farine.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-surreal-056",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le Navigo a ouvert ma mémoire. J'ai retrouvé une correspondance de 2007, toujours longue.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-surreal-057",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Les lumières de Lyon refusent l'aube. Elles demandent un second service.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-surreal-058",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La galette-saucisse s'est inscrite au marathon. Elle ne court qu'en ligne droite et avec serviette.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-surreal-059",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le pain d'épices a convoqué décembre en plein août. Le soleil doit fournir un justificatif.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-surreal-060",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Une olive de Nice s'est mise à tourner autour de sa salade. Elle attend la reconnaissance astronomique.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-surreal-061",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La crêpe flotte au plafond. Mon appartement vient d'obtenir une deuxième Chandeleur.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-surreal-062",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mon stylo plume a rejoint une migration de dictées vers le sud.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-surreal-063",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le cochonnet a engagé un garde du corps. Les boules négocient désormais leur approche.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-surreal-064",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le Louvre a emprunté mon frigo pour exposer une nature morte vraiment fraîche.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-surreal-065",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le camembert possède sa propre météo. Demain, brumes intenses dans le bac à légumes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-surreal-066",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Les flamants de Camargue ont recoloré les couchers de soleil. Ils facturent les droits d'auteur.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-surreal-067",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "FranceConnect a identifié mon reflet. Il fait depuis toutes les démarches en miroir.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-surreal-068",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La baguette a publié ses mémoires. Le dernier chapitre finit un peu sec.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-surreal-069",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le TER s'arrête dans les silences de ma conversation. Il dessert particulièrement bien les repas gênants.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-surreal-070",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Une quenelle a traversé la Saône à la nage. Elle affirme que la sauce était meilleure avant le pont.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-surreal-071",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le beurre salé s'est dessalé pour voyager incognito. La Bretagne lui a reconnu l'accent.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-surreal-072",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Les colombages jouent aux mikados. Il est interdit d'éternuer dans la rue.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-surreal-073",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La socca est devenue monnaie locale. Le taux de change diminue pendant le trajet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-surreal-074",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La couronne de l'Épiphanie a embauché une tête. Elle se plaignait du vide à la direction.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-surreal-075",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le Bescherelle a inventé un temps pour les devoirs déjà oubliés demain.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-surreal-076",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le Tour de France fait une étape dans mon couloir. La montée vers la salle de bains est classée.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-surreal-077",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Un bouquiniste a vendu une porte vers hier. Les retours sont impossibles : le magasin n'existait pas encore.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-surreal-078",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Ma gougère s'est gonflée d'orgueil. Nous attendons qu'elle soit assez modeste pour tenir dans le plat.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-surreal-079",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le phare de Cordouan a fermé un œil. La mer lui raconte des histoires pour le réveiller.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-surreal-080",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La mairie a perdu le dossier de la gravité. Depuis, les usagers patientent près du plafond.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-surreal-081",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mon levain a inventé une civilisation. Il réclame une ambassade dans le four.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-surreal-082",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le TGV a rajeuni en roulant. Nous sommes arrivés avec des billets de train miniature.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-surreal-083",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La traboule raccourcit aussi les phrases. « Bonjour, je voudrais… » — « Déjà fait. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-surreal-084",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "observ",
+    "text": "Au fest-noz, la lune a rejoint la ronde. Le planning des marées attend une explication.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-surreal-085",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le kougelhopf s'est pris pour une montagne. Les alpinistes plantent leur drapeau dans le sucre glace.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-surreal-086",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La Promenade des Anglais a pris un RTT. La mer se promène seule aujourd'hui.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-surreal-087",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La fève a demandé la nationalité de chaque miette. Notre galette s'est beaucoup compliquée.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-surreal-088",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le cahier Seyès a déposé ses lignes à la gare. Il devient cahier de transport.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-surreal-089",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mes boules de pétanque ont appris à rebondir. Elles invoquent leur droit à changer de carrière.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-surreal-090",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La fontaine Wallace distribue des conseils. Ils restent potables, mais un peu froids.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-surreal-091",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le roquefort veut devenir ciel étoilé. Les bleus demandent une meilleure répartition.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-surreal-092",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "observ",
+    "text": "À Étretat, l'arche s'est fermée. La mer cherche sa clé dans toutes les poches de la plage.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-surreal-093",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le CERFA a coché ma case. Je suis désormais sa personne à charge.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-surreal-094",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La flûte de pain joue de la musique. Le beurre lui sert d'orchestre de chambre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-surreal-095",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le funiculaire rêve d’un métier horizontal. Son conseiller lui propose une reconversion dans les traits d’union.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-surreal-096",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le funiculaire rêve de devenir horizontale. Son psy lui conseille de prendre du recul.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-surreal-097",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Une crêpe s'est changée en carte marine. Le caramel indique des récifs dangereux.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-surreal-098",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le marché de Noël a hiverné dans mon placard. Mes pulls sentent tous la cannelle diplomatique.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-surreal-099",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La chaise bleue m'a demandé de m'asseoir ailleurs. Elle attendait son reflet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-surreal-100",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La galette a choisi son roi par entretien. Le poste exigeait une forte résistance aux miettes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-surreal-101",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Ma dictée voyage dans le temps. Les fautes arrivent trois phrases avant moi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-surreal-102",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le cochonnet a pris de l'altitude. La pétanque demande désormais une autorisation de vol.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-surreal-103",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Les gargouilles de Notre-Dame ont acheté des mouchoirs. Paris attend une pluie très polie.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-surreal-104",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le cassoulet écrit un roman. Chaque haricot veut son point de vue.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-surreal-105",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le Mont-Saint-Michel a envoyé la marée chercher du pain. Elle revient toujours les mains vides.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-surreal-106",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mon justificatif de domicile a déménagé. Il refuse de me donner sa nouvelle adresse sans preuve.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-surreal-107",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La baguette se souvient du moulin. Elle fait du vent quand je la coupe.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-surreal-108",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le TER dessert maintenant les années impaires. Mon billet retour ne comprend plus le calendrier.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-surreal-109",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le Rhône demande à la Saône de parler moins vite. Le confluent devient un débat liquide.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-surreal-110",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La bombarde du fest-noz a réveillé mon rêve. Il est parti danser sans moi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-surreal-111",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Un bretzel a noué la rue entière. Les passants doivent faire un vœu pour traverser.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-surreal-112",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La socca a demandé sa propre plage. Les galets craignent la concurrence croustillante.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-surreal-113",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La crêpe a envoyé son ombre dans la poêle. Le dessert manque un peu de consistance.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-surreal-114",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le Bescherelle conjugue les nuages. Cet après-midi, il pleuvra au conditionnel.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-surreal-115",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La voiture-balai du Tour a balayé une montagne. L'étape reine est devenue une formalité.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-surreal-116",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La pyramide du Louvre s'est retournée pour boire. Les visiteurs attendent le séchage du musée.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-surreal-117",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La madeleine reconnaît mes souvenirs. Elle refuse de goûter celui du contrôle de maths.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-surreal-118",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Les menhirs de Carnac se sont couchés. Le guide propose une visite à voix basse.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-surreal-119",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "FranceConnect m'a relié à tous mes ancêtres. Aucun ne retrouve son mot de passe.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-surreal-120",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le pain de campagne demande un jardin. La salade de mon sandwich a proposé une sous-location.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-surreal-121",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le TGV a avalé une carte de France. Il connaît maintenant tous les petits chemins interdits.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-surreal-122",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La Croix-Rousse a perdu une pente. On la cherche au fond des mollets.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-surreal-123",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le kouign-amann flotte au-dessus de la table. Le beurre refuse de commenter cette contre-performance gravitationnelle.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-surreal-124",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La maison à colombages porte des bretelles. Elle craint de perdre son rez-de-chaussée.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-surreal-125",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le Cours Saleya a fleuri sur mon balcon. Mon bail prévoit mal les marchés spontanés.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-surreal-126",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La couronne royale réclame une galette pour son anniversaire. Le boulanger trouve la hiérarchie suspecte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-surreal-127",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Les lignes de mon cahier Seyès deviennent une portée. Ma dictée se chante très faux.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-surreal-128",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La boule de pétanque s'est creusé un tunnel. Elle veut rejoindre le cochonnet discrètement.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-surreal-129",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La Seine s'est mise sur pause. Les péniches en profitent pour refaire leurs lacets.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-surreal-130",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mon éclair au café prédit la météo. Il annonce une perturbation sur la nappe.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-surreal-131",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le pont du Gard a demandé des vacances au bord de l'eau. Le responsable n'a pas osé répondre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-surreal-132",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La mairie propose une file d'attente pour les rêves en retard. La mienne commence hier.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-surreal-133",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La baguette s'est assise au piano. Elle ne joue que les touches bien beurrées.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-surreal-134",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le Navigo du poisson fonctionne. La station Aquarium reste introuvable.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-surreal-135",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Guignol manipule enfin son marionnettiste. Le spectacle porte sur les douleurs au poignet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-surreal-136",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La galette complète compte ses ingrédients. Elle exige qu'on appelle son avocat œuf-au-plat.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-surreal-137",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le kougelhopf souffle dans son trou. Il espère devenir orgue de pâtisserie.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-surreal-138",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Les galets de Nice se sont aplatis pour entrer dans les cartes postales.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-surreal-139",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La fève est sortie de la galette en annonçant qu'elle préférait la république des tartes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-surreal-140",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mon cahier de poésie a perdu sa couverture. Les rimes prennent le vent en alexandrins.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-surreal-141",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le maillot à pois a semé ses points. Une forêt de cyclistes pousse dans mon jardin.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-surreal-142",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La tour Montparnasse voudrait une photo avec la tour Eiffel. Personne ne trouve un bras assez long.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-surreal-143",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La quenelle négocie avec ma cuillère. Elle demande un passage par la bouche diplomatique.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-surreal-144",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le téléphérique de Grenoble a emporté mon doute au sommet. Il redescend beaucoup plus sûr de lui.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-surreal-145",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mon dossier CERFA s'est mis en grève contre les agrafes. Il réclame la liberté de feuilletage.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-surreal-146",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le levain rêve d'être horloge. Il mesure surtout le temps qu'on oublie de lui consacrer.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-surreal-147",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le TER transporte des ombres. Les voyageurs restent au soleil pour économiser leur billet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-surreal-148",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La Saône refuse de traverser Lyon sans réservation. Les ponts improvisent une liste d'invités.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-surreal-149",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "observ",
+    "text": "Au fest-noz, les chaussures ont dansé après notre départ. Elles avaient encore quelques erreurs à corriger.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-surreal-150",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le bretzel a embauché un nœud papillon comme garde du corps.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-surreal-151",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La socca a reçu un message du soleil : « Tu pourrais baisser un peu ? »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-surreal-152",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mon lampion du 14 Juillet s'est inscrit comme étoile. On lui demande une attestation de constellation.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-surreal-153",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le Bescherelle a mis mon lundi au passé. Je lui ai offert une étagère entière.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-surreal-154",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le cochonnet mesure maintenant les humains. Il nous trouve tous beaucoup trop loin du sol.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-surreal-155",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "L'Arc de triomphe a raté son bus. Il attend sur le rond-point depuis deux siècles.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-surreal-156",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le brie de Meaux a fondé un pays. La frontière se déplace avec la température.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-surreal-157",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La dune du Pilat est entrée dans ma chaussure. Elle demande à visiter l'autre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-surreal-158",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le CERFA a inventé une case « peut-être ». L'administration traverse une crise poétique.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-surreal-159",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La baguette a son propre écho. Je dis « pain », elle répond « encore ».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-surreal-160",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le TGV roule dans mes marges. Mon cahier dispose enfin d'un réseau à grande vitesse.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-surreal-161",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Une traboule a débouché dans mon enfance. J'y ai retrouvé ma mère demandant de rentrer.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-surreal-162",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le far breton a avalé la marée. Ses pruneaux portent maintenant des gilets de sauvetage.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-surreal-163",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Les bredele ont dessiné une constellation sur la table. Le chien l'étudie à très courte distance.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-surreal-164",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le cahier Seyès a transformé ses marges en frontières. Mes fautes demandent un visa pour quitter la page.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-surreal-165",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La crêpe s'est retournée contre la gravité. Nous attendons toujours le jugement.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-surreal-166",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le cahier Seyès a dressé des barrières sur ses lignes. Mon stylo doit sauter chaque devoir comme au concours hippique.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-surreal-167",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La boule de pétanque a demandé des angles. Elle veut compliquer sa personnalité.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-surreal-168",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le métro transporte une forêt. Les branches demandent de ne pas se pencher aux fenêtres.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-surreal-169",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le cannelé tourne sur lui-même. Il polit son image jusqu'à l'heure du goûter.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-surreal-170",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "observ",
+    "text": "À Guérande, le sel est devenu sucre. La mer a ouvert une enquête gustative.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-surreal-171",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La BnF m'a prêté un livre qui me lit. Il trouve le chapitre du lundi inutilement long.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Lieu culturel, patrimoine ou pratique de lecture en France comme cadre d’une fiction humoristique originale."
+  },
+  {
+    "id": "intl-v2-fr-surreal-172",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Les arènes de Nîmes réclament un toit. Elles veulent enfin écouter la pluie de l’intérieur.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-surreal-173",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le carnaval de Nice a déguisé février en juillet. La mer s'inquiète pour ses horaires.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-surreal-174",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La pointe du Raz s'est mise à écrire. La carte de Bretagne est devenue une longue lettre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-surreal-175",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le CERFA a choisi sa propre signature. Il ne veut plus dépendre de mon humeur calligraphique.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-surreal-176",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mon TER passe par une parenthèse. Les voyageurs en profitent pour parler d'autre chose.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-surreal-177",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Une quenelle a refusé de sortir de sa sauce sans passeport aquatique.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-surreal-178",
+    "collection": "fr-fr-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le boulanger vend des baguettes invisibles. Pour les trouver, il suffit de suivre les miettes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  }
+]

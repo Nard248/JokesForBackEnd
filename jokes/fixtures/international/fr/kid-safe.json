@@ -1,0 +1,2138 @@
+[
+  {
+    "id": "intl-v2-fr-kid-safe-001",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mon cahier Seyès a tant de lignes que mon escargot veut y organiser un marathon.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-002",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La baguette a refusé mon cartable : elle dépasse déjà du programme.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-003",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La fève veut être reine. Elle en a assez de travailler sous couverture feuilletée.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-004",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Ma galette-saucisse porte une écharpe en crêpe. Elle dit que Rennes est bien équipée.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-005",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Guignol a emprunté ma gomme. Il voulait effacer les ennuis avant le spectacle.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-006",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Une part de socca s'est émiettée : elle avait trop de choses à raconter.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-007",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mon bonhomme en pain d'épices demande des chaussures. Il a peur de finir les pieds dans le lait.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-008",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "J'ai dessiné un TGV à roulettes. Il roule vite, mais ne quitte jamais le frigo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-009",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le cochonnet refuse de courir : « C'est vous qui vouliez jouer près de moi. »",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-010",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La dune du Pilat demande une pelle. Elle veut agrandir sa chambre.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-011",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mon éclair au chocolat a peur du tonnerre. Heureusement, le goûter arrive avant l'orage.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-012",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La tour Eiffel voudrait jouer à cache-cache. Les arbres ont voté non.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-013",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Ma règle suit les lignes du cahier Seyès. Elle croit prendre le train.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-014",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le roi de la galette demande un trône. On lui apporte son rehausseur.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-015",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "J'ai mis un bonnet sur ma baguette. Maman avait dit de couvrir le pain.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-016",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le kouign-amann reste collé à l'assiette. Il n'aime pas changer de maison.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-017",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La marionnette de Guignol a trouvé une chaussette. Elle recrute un collègue.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-018",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Notre bretzel a fait un nœud. Il voulait gagner le concours de lacets.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-019",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mon doudou voyage en TER. Il garde la place fenêtre pour ses deux boutons.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-020",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Une chaise bleue de Nice rêve de se baigner. Ses pieds hésitent encore.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-021",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "observ",
+    "text": "À Lascaux IV, j'ai cherché les crayons. Les artistes rangent vraiment bien leur matériel.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Lieu culturel, patrimoine ou pratique de lecture en France comme cadre d’une fiction humoristique originale."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-022",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le maillot à pois du Tour me plaît : on voit tout de suite où ajouter les gommettes.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-023",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La dictée a rencontré mon goûter. Le mot « tartine » s'écrit maintenant avec du beurre.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-024",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Ma crêpe a raté la poêle. Elle voulait absolument découvrir le carrelage.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-025",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La baguette est venue au pique-nique en chaussette de papier.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-026",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le Mont-Saint-Michel a les pieds dans l'eau. Personne ne lui dit de remonter son pantalon.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-027",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le chou de la profiterole voulait devenir géant. Il a seulement grandi de l'intérieur.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-028",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "observ",
+    "text": "Au fest-noz, j'ai suivi les grands. Mes pieds ont choisi un itinéraire touristique.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-029",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Une traboule a deux portes. Elle sait toujours faire une entrée remarquée.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-030",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le kougelhopf réclame un toit. On lui explique que le trou est dans le plan.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-031",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le TGV passe si vite que mes vaches dessinées n'ont pas eu le temps de dire meuh.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-032",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "observ",
+    "text": "Au Luxembourg, mon voilier a fait demi-tour. Il avait oublié de me dire au revoir.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-033",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le cahier de poésie a peur du cartable : tous les jours, il finit entre deux maths.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-034",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "J'ai trouvé la fève avant de manger. Les services secrets de la galette cherchent encore leur fuite.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-035",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le quignon veut devenir poignée de porte. Il a déjà la bonne place au bout.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-036",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Les flamants de Camargue jouent aux statues. Celui qui pose deux pieds doit compter.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-037",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La poésie de La Fontaine a peur de mon cartable. Tous les jours, ses animaux finissent entre deux maths.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-038",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le cochonnet organise une fête. Les boules arrivent toujours en roulant.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-039",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La socca se croit soleil. Elle vérifie si tout le monde a les doigts chauds.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-040",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La galette de blé noir met du fromage : elle prépare sa couverture d'hiver.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-041",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Notre pain d'épices sent Noël. Même en avril, il refuse de rendre son costume.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-042",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mon train miniature SNCF dessert le salon. La gare du canapé a beaucoup de miettes.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-043",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "observ",
+    "text": "Dans mon cahier Seyès, le point final a réservé une petite place tranquille.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-044",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "observ",
+    "text": "À la Chandeleur, ma crêpe fait un saut. Je lui donne dix sur dix pour l'enthousiasme.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-045",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Guignol me demande de crier. Enfin un adulte qui comprend la cour de récréation.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-046",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La tour Eiffel voulait un pyjama. La couturière a demandé une très longue récréation.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-047",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La baguette se cache sous le torchon. On reconnaît quand même ses chaussures de croûte.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-048",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le phare de Cordouan ne cligne jamais des yeux. Il prend son rôle de surveillant au sérieux.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-049",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mon macaron porte deux chapeaux. Il ne sait pas quel temps il fera au goûter.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-050",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le Tour de France traverse mon village. J'ai proposé un raccourci par ma chambre.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-051",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Ma galette-saucisse ressemble à une fusée. Elle décolle surtout quand mon frère approche.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-052",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Les maisons à colombages jouent au morpion. Elles ont gardé tous les traits.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-053",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Sur la Promenade des Anglais, mon vélo demande une pause. Il veut compter les vagues.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-054",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le cartable emporte un Bescherelle. Même ses fermetures apprennent à se conjuguer.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-055",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La couronne de galette est trop grande. Je gouverne depuis l'intérieur.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-056",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le TER passe devant les moutons. Ils regardent la télévision sans écran.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-057",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La baguette veut participer au relais. Elle préfère qu'on ne parle pas de témoin comestible.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-058",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Une quenelle a gagné la course dans mon assiette. La sauce l'avait poussée.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-059",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "observ",
+    "text": "À Guérande, j'ai vu des montagnes de sel. Les frites ont demandé des vacances.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-060",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La tarte Tatin est tombée sur son histoire. Elle raconte désormais la fin d'abord.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-061",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La marge du cahier Seyès garde la place du professeur. Mon dessin y est arrivé avant lui.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-062",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mon lampion du 14 Juillet veut une veilleuse. Il a travaillé toute la soirée.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-063",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le beurre salé s'est caché dans le kouign-amann. Toute l'équipe l'a retrouvé au premier doigt.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-064",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La boule de pétanque refuse le toboggan. Elle connaît déjà la fin du trajet.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-065",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le mannele sourit sans bouche. C'est très pratique quand on a des miettes partout.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-066",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "observ",
+    "text": "Au Cours Saleya, les fleurs portent toutes leurs plus belles couleurs. Le lundi n'était pas invité.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-067",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La gargouille de Notre-Dame demande un parapluie. Elle veut enfin rester propre en travaillant.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-068",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mon doudou a pris le TGV sans billet. Il prétend être le coussin officiel.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-069",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le financier a gagné une amande. Il l'appelle son trésor de poche.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-070",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mon sandwich en baguette dit qu'il est complet. J'ai quand même ajouté une histoire.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-071",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le point-virgule a perdu sa place dans ma dictée. Il cherche un petit siège entre deux phrases.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-072",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La crêpe s'est pliée en quatre. Elle veut rentrer dans ma boîte à trésors.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-073",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "observ",
+    "text": "Au château de Chambord, j'ai compté les cheminées. Le Père Noël devrait apporter une calculatrice.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-074",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "observ",
+    "text": "Au fest-noz, mon lacet s'est mis à danser seul. Il connaît déjà le mouvement libre.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-075",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le funiculaire de Fourvière monte sans souffler. Je lui propose de porter mon cartable.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-076",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le maillot jaune du Tour a rencontré mon ciré. Ils ont comparé leurs records de pluie.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-077",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mon bretzel a mis du sel sur son manteau. Il se prépare à une promenade de goûter.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-078",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La socca veut une assiette ronde. Elle tient à garder sa carte du soleil.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-079",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La madeleine cache sa bosse. Elle prépare une surprise dans son dos.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-080",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La boulangerie a une flûte sans trous. La musique commence quand la croûte craque.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-081",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le Bescherelle s'est endormi sur « dormir ». Pour une fois, il montre l'exemple.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-082",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La Seine a perdu son bouchon. Elle continue donc de couler sous tous les ponts.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-083",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "J'ai donné la couronne à mon ours. Notre royaume exige beaucoup de siestes.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-084",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le Navigo de papa ouvre la porte. Ma carte Pokémon attend toujours sa promotion.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-085",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "observ",
+    "text": "À Étretat, la falaise a un trou. Mon petit frère cherche la gomme géante.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-086",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La crêpe dit qu'elle peut faire une roue. Elle oublie toujours de revenir bien à plat.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-087",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Guignol a prêté sa voix à mon doudou. Depuis, il négocie l'heure du coucher.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-088",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le kougelhopf a un tunnel. Mes raisins secs organisent une traversée.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-089",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Les galets niçois jouent aux billes. Ils ont besoin d'une très grande cour.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-090",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le cochonnet est petit, mais toutes les boules viennent lui demander conseil.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-091",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mon pain de campagne voulait voir des vaches. Nous l'avons mis près du beurre.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-092",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le millefeuille a perdu une page. Il raconte encore très bien le goûter.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-093",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La craie de ma dictée rêve de vacances. Elle veut visiter le tableau de la mer.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-094",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La fève représente un chat. Il réclame déjà le coussin royal.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-095",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "observ",
+    "text": "Au Mont-Saint-Michel, les escaliers montent tous. Je cherche ceux qui ont une journée de repos.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-096",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le TGV a beaucoup de fenêtres. Il veut être certain de ne rien manquer du paysage.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-097",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Un bouquiniste a vendu un livre sur les poissons. La Seine essaie de lire par-dessus le quai.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-098",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La galette-saucisse met un manteau trop court. Personne n'arrive à lui cacher les pieds.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-099",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mon bredele étoile cherche la lune. Elle est dans la forme du biscuit voisin.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-100",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La traboule se vante de raccourcir la rue. Ma règle demande une démonstration.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-101",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le soufflé a grandi pendant le repas. Il a oublié de prévenir son assiette.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-102",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le boulanger a fait un pain en tortue. C'est celui qui arrive le dernier au goûter.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-103",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le cahier Seyès a invité ma gomme. Tous les mots ratés sont partis avant la fête.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-104",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Ma crêpe veut du sucre glace. Elle prépare son costume de bonhomme de neige.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-105",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le vélo du Tour a deux roues. Mon dessin en a quatre, pour ne pas perdre dans les virages.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-106",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La chaise bleue surveille la mer. C'est elle qui a le plus long temps de récréation.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-107",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "observ",
+    "text": "Dans les marais salants, mon seau de plage se sent très professionnel.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-108",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le TER fait une pause en gare. J'aimerais qu'il prévienne mon sandwich avant de repartir.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-109",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le pain d'épices possède une cheminée en sucre. Les fourmis ont demandé l'adresse.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-110",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le fest-noz forme une ronde. Même les timides trouvent quelqu'un à côté d'eux.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-111",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Une quenelle rêve de devenir nuage. Elle a déjà trouvé une mer de sauce.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-112",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le chou à la crème a oublié sa fermeture. Tout le monde connaît son secret.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-113",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Ma baguette a laissé des miettes. Elle dessine le chemin pour ses copines.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-114",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La tour Eiffel a quatre pieds et ne court jamais. Le chat trouve cela très étrange.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-115",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le stylo plume de la dictée croit être un oiseau. Il ne laisse pourtant que des pattes de mouche.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-116",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La galette cache une fève. Mon frère cache la galette : il complique le jeu.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-117",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "observ",
+    "text": "À Annecy, le cygne refuse ma petite barque. Il préfère son équipement personnel.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-118",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La boule de pétanque est fatiguée. Le cochonnet lui propose une place juste à côté.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-119",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Ma socca a la forme d'un éventail. Elle trouve pourtant qu'il fait déjà très chaud.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-120",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le contrôleur du TER voit mon doudou. Je lui explique qu'il voyage en classe câlin.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-121",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mon kouign-amann colle aux doigts. Il ne sait pas encore faire un câlin doucement.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-122",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Un bretzel entre dans mon cartable. Il espère devenir signe de ponctuation.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-123",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Guignol porte un bonnet. Mon doudou veut le même diplôme de marionnette.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-124",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le petit-beurre a des coins. Il adore jouer à la maison.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-125",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le boulanger explique « pain de campagne ». Mon frère demande si les tracteurs y laissent des traces.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-126",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mon cahier Seyès accueille une girafe dessinée. Elle doit occuper trois étages.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-127",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le lampion du 14 Juillet a un grand sourire. Il vient d'obtenir le rôle du petit soleil.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-128",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "observ",
+    "text": "À la dune du Pilat, ma chaussette a ramené un échantillon grandeur nature.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-129",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La voiture-balai du Tour passe sans balai. Mon frère soupçonne un oubli de ménage.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-130",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La fontaine Wallace donne à boire. Mon arrosoir veut faire le même métier.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-131",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Les fleurs du Cours Saleya se lèvent tôt. Elles veulent choisir les meilleures abeilles.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-132",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mon dessin de TGV a une cheminée. Il conserve une option barbecue.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-133",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Une galette de blé noir a rencontré une crêpe sucrée. Elles se sont pliées de rire.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-134",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le kougelhopf a fait une ronde sans bouger. Les raisins secs ont applaudi.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-135",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La chouquette perd son sucre. Elle distribue des confettis de goûter.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-136",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le pain de campagne trouve mon immeuble très haut. Il prend l'ascenseur dans mon sac.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-137",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "J'ai dessiné un dragon sur mon cahier de français. Les accents circonflexes servent de petites montagnes.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-138",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La fève a changé de part. Elle cherche un roi qui mâche lentement.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-139",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le pont du Gard n'a pas de robinets. Mon frère trouve le plombier très discret.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-140",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "observ",
+    "text": "Dans une traboule, mon écho a pris un raccourci. Il est arrivé avant mon courage.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-141",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le cochonnet veut une couronne. Il connaît déjà les rassemblements autour de sa personne.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-142",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le TER traverse un tunnel. Mon doudou en profite pour faire une micro-sieste officielle.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-143",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La socca se prend pour un frisbee. Heureusement, mon assiette est très sportive.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-144",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Un bonhomme en pain d'épices demande un lit. Nous lui avons préparé une boîte avec vue sur Noël.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-145",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mon far breton a des pruneaux. Mon frère y cherche les interrupteurs.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-146",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La religieuse au chocolat a deux étages. Mon petit doigt veut prendre l'escalier.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-147",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le boulanger dessine des épis sur son pain. Mon hamster demande si c'est une carte du restaurant.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-148",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La poésie du cahier a fait une rime avec « chocolat ». Toute la classe a trouvé l'inspiration.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-149",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La crêpe retombe sur elle-même. Elle essaie d'apprendre le pliage sans papier.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-150",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le bateau-mouche a invité une libellule. Elle veut vérifier la parenté.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-151",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "observ",
+    "text": "À Carnac, les menhirs jouent aux quilles. Il leur manque juste quelqu'un d'assez grand.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-152",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mon vélo porte un maillot jaune en papier. Il gagne surtout les courses jusqu'au portail.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-153",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Guignol a demandé le silence. Même sa main a arrêté de bouger.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-154",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Un galet de Nice veut devenir savon. Il pratique déjà la mousse avec les vagues.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-155",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mon petit train SNCF annonce « terminus ». Le chat a posé sa patte sur la gare.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-156",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La galette complète oublie son cartable. Elle n'était complète que pour le déjeuner.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-157",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mon bretzel a un trou pour chaque doigt. C'est un goûter qui veut dire bonjour.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-158",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La madeleine a pris son bain dans le chocolat. Elle réclame une serviette en serviette.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-159",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "J'ai mis une baguette sous mon bras. Mon cartable croit que j'apprends la magie.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-160",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le cahier Seyès a de petites lignes violettes. Ma fourmi y organise des courses en couloir.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-161",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le roi de la galette a perdu sa couronne. Elle se cachait derrière ses oreilles.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-162",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "observ",
+    "text": "À Marseille, la Bonne Mère est très haut. Mon frère pense qu'elle surveille tous les goûters.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-163",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La tour Eiffel a mis ses lumières. Mon doudou demande si Paris fête son anniversaire.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-164",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La boule de pétanque est ronde pour pouvoir changer d'avis sans se retourner.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-165",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le TGV de mon dessin s'arrête devant la boulangerie. Le conducteur travaille au croissant.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-166",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mon crêpier a fait une galette géante. J'ai demandé si elle avait une carte du monde.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-167",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Les bredele sont rangés par forme. Les étoiles réclament le dernier étage de la boîte.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-168",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le flan parisien tremble quand j'approche. Il connaît déjà la fin de l'histoire.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-169",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "observ",
+    "text": "Au musée d'Orsay, la grande horloge donne l'heure. Mon dessin de montre se sent tout petit.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Lieu culturel, patrimoine ou pratique de lecture en France comme cadre d’une fiction humoristique originale."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-170",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Pour la Fête des voisins, j'ai invité mon doudou. Il habite juste à côté de mon oreiller.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-171",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "observ",
+    "text": "À Chenonceau, le château traverse la rivière. Il devait vraiment vouloir garder les pieds au sec.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-172",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mon Bescherelle s'est ouvert sur « jouer ». Je prends ça pour une consigne.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-173",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La bombarde du fest-noz parle fort. Mon kazoo demande des cours particuliers.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-174",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le pain de campagne voit mes chaussons. Il se réjouit de retrouver des pommes.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-175",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "observ",
+    "text": "Au parc de la Tête d'Or, mon doudou cherche une couronne. Il ne veut pas repartir les mains vides.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-176",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Une olive de Nice roule dans mon assiette. Elle prétend faire le tour de la salade.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-177",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Ma gougère veut un coussin. Elle a déjà tout le moelleux nécessaire.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-kid-safe-178",
+    "collection": "fr-fr-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Sur mon circuit, le TGV attend le passage d'un escargot. Priorité au transport de maisons.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  }
+]

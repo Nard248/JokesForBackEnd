@@ -1,0 +1,2138 @@
+[
+  {
+    "id": "intl-v2-it-kid-safe-001",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "L'orecchietta ha sentito la campanella. È corsa nel sugo prima delle compagne.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-002",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La pizza margherita cerca un vaso. Il basilico le ha raccontato metà della storia.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-003",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La Befana ha perso una calza. La scopa sostiene di non averla mai indossata.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-004",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La gondola vuole un campanello. È stufa di dire « permesso » ai riflessi.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-005",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il cannolo ha un segreto di ricotta. Purtroppo lo racconta da tutte e due le estremità.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-006",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il mortaio ha mal di testa. Il basilico gli consiglia una pausa profumata.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-007",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il portico ha invitato l'ombrello a riposare. Gli ha riservato un posto asciutto.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-008",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La moka borbotta al mattino. Il cucchiaino le domanda se ha dormito male.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-009",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il tortellino si è chiuso bene. Non vuole perdere il pranzo mentre nuota.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-010",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il pupo cavaliere cerca un pettine per il pennacchio. Anche gli eroi hanno mattine difficili.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-011",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La torre di Pisa disegna le montagne tutte storte. Dice che dipende dal punto di vista.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-012",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Pinocchio fa un selfie. Gli serve il panorama.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-013",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La calza della Befana vuole due giorni di ferie. Ha lavorato tutta la notte da magazzino.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-014",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Un tarallo va in bicicletta. Ha già scelto quale parte fare.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-015",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La pizza a portafoglio nasconde una moneta di mozzarella. Non vale molto fuori dal forno.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-016",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il vaporetto si ferma a salutare un pesce. Lui domanda un biglietto sottoacqua.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-017",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La brioche col tuppo usa un pettine di zucchero. La granita aspetta in bagno.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-018",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La focaccia ha perso una briciola. Il tovagliolo organizza una squadra di ricerca.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-019",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il tortellino vuole un cappotto. Il brodo insiste che farà abbastanza caldo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-020",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La piadina si arrotola per fare la capriola. Il formaggio chiede la cintura.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-021",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il pupo ha sbadigliato. Il puparo aveva dimenticato la pausa merenda del cavaliere.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-022",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il trullo compra un cappellino. Lo usa per il camino.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-023",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Pinocchio racconta una bugia al metro. Finalmente qualcuno apprezza i risultati.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-024",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La Befana ha provato un monopattino. Le mancava il reparto per spazzare le nuvole.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-025",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le orecchiette giocano al telefono senza fili. Arriva sempre la parola « sugo ».",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-026",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il cornicione della pizza si è gonfiato. Vuole vedere cosa succede al centro.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-027",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La gondola ha un remo solo. L'altro è rimasto a imparare a nuotare.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-028",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La frutta martorana va nell'orto. Le carote chiedono perché profumi di pasticceria.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-029",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il basilico ha preso il sole. Il pesto teme che voglia diventare insalata.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-030",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il portico indossa tante colonne. Deve impiegare ore a mettersi le scarpe.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-031",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il risotto all'onda ha chiesto una tavola da surf. Il cucchiaio si è offerto.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-032",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il cavaliere dell'Opera dei Pupi vuole uno zaino. La spada occupa già tutta la mano.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-033",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Un trullo sogna un tetto piatto. Vuole poterci appoggiare i biscotti.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-034",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il gatto di Pinocchio ha letto la storia. Vorrebbe correggere la propria pagella.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-035",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La Befana riempie la calza sbagliata. Papà va al lavoro facendo cric con le caramelle.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-036",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il tarallo ha girato tutto il piatto. Sostiene di essere un grande viaggiatore.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-037",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La margherita ha invitato una farfalla. Il forno ha chiarito che non è un giardino.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-038",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il vaporetto vuole fare il bagno. Il meccanico gli suggerisce un hobby diverso.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-039",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il tuppo della brioche si è travestito da pianeta. La granita gli gira intorno col cucchiaino.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-040",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La focaccia si sente importante: tutti le lasciano un'impronta sul sacchetto.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-041",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il tortellino si guarda nel brodo. Gli piace quando il riflesso sorride con il vapore.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-042",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il supplì ha un telefono di mozzarella. La linea è sempre occupata dal pranzo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-043",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il cavaliere dei pupi ha perso lo scudo. Gli prestiamo un coperchio: il drago protesta per il troppo rumore.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-044",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La Mole Antonelliana ha perso il berretto. Nessuno ha una scala abbastanza gentile per aiutarla.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-045",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Pinocchio vuole giocare a nascondino. Gli amici gli chiedono prima di dire la verità.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-046",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il sacco della Befana è pieno. La scopa propone di fare due giri e una pausa biscotto.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-047",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La burrata ha una tasca segreta. Il coltello scopre sempre dove tiene la merenda.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-048",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La pizza tonda vede il cartone quadrato: « Finalmente una camera spaziosa. »",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-049",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Una maschera di Arlecchino non trova la maglietta giusta. Le piacciono tutti i colori contemporaneamente.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-050",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La granita vuole una coperta. La brioche le spiega perché sarebbe una pessima idea.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-051",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il pestello ha chiesto un appuntamento al basilico. Il mortaio prenota il tavolo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-052",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il portico protegge anche la pozzanghera. Lei teme di perdere clienti.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-053",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il panettone conta l'uvetta. Vuole sapere quanti amici verranno a Natale.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-054",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il cavaliere dei pupi ha una lunga storia. Il bambino gli offre una sedia per raccontarla.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-055",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il trullo gioca al cappellaio. Tutte le case del quartiere vogliono provarci.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-056",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Pinocchio porta il temperamatite a scuola. Dice che non si sa mai.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-057",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La calza della Befana prova a camminare. Le caramelle preferiscono viaggiare sedute.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-058",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "L'orecchietta ascolta la forchetta. Sente soltanto discorsi a più punte.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-059",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il pizzaiolo fa volare l'impasto. Una nuvola chiede come si diventa così tondi.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-060",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La gondola si guarda nel canale. È molto soddisfatta del suo secondo piano.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-061",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il cannolo si veste di zucchero. Vuole sembrare elegante anche in inverno.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-062",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La focaccia si stende al sole. L'olio le ricorda che ha già fatto il bagno.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-063",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il tortellino vuole imparare a scrivere. Il parmigiano gli presta una lavagna bianca grande come il piatto.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-064",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il maritozzo ha troppa panna. Si allena a sorridere senza farla cadere.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-065",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il pupo ha chiesto scarpe da ginnastica. Il castello ha troppe scene in salita.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-066",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La torre di Pisa si è messa in posa. Il fotografo continua a controllare il treppiede.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-067",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Pinocchio studia le piante. È molto interessato all'albero genealogico.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-068",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La Befana porta dolci ai bambini. Il suo spazzolone è geloso: lui trova solo polvere.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-069",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il tarallo ha invitato una ciambella. Le presenta subito il punto che hanno in comune.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-070",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La margherita vuole farsi un selfie. Il pomodoro chiede di stare dal lato più rosso.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-071",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il vaporetto ha suonato. I pesci controllano se è arrivata la ricreazione.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-072",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La brioche col tuppo gioca a fare il re. La corona le rimane sempre in bilico.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-073",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il basilico rifiuta il solletico. Poi vede arrivare il pestello e cambia argomento.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-074",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "I portici stanno vicini per proteggere una passeggiata. Il piccolo li ringrazia col cinque a ogni colonna.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-075",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il gelato alla stracciatella è pieno di puntini. Il cono gli dice che sono lentiggini da cioccolato.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-076",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il pupo cavaliere si allena con una spada di gommapiuma. Il drago prenota subito un duello tranquillo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-077",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "observ",
+    "text": "A Burano, una casa cambia colore nel mio disegno. I pastelli discutono su chi abiterà al piano terra.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-078",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Pinocchio sente parlare di radici quadrate. Vuole sapere in quale bosco crescono.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-079",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "observ",
+    "text": "Alla tombola, il numero otto fa ginnastica. Si piega sempre nello stesso punto.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-080",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La burrata gioca a fare la nuvola. Quando arriva il pane, comincia una pioggia buonissima.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-081",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il cornicione vuole un cuscino. Ha tenuto su tutta la pizza per una fotografia.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-082",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La gondola chiede un ombrello. Il canale la prende in giro: « Ti sei accorta adesso dell'acqua? »",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-083",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La frutta martorana aspetta l'autunno. Vuole scoprire se deve cadere dal bancone.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-084",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il pesto si è nascosto nelle trofie. Il basilico lo tradisce con il profumo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-085",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Un tortellino ha dimenticato il ripieno. Lo chef gli suggerisce una giornata da pasta libera.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-086",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La lasagna fa le scale. A ogni gradino incontra un piano di formaggio.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-087",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il pupo ha salutato il pubblico con entrambe le mani. La spada ha avuto un momento libero.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-088",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il Duomo di Milano conta le sue guglie. Si addormenta molto dopo gli altri edifici.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-089",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Pinocchio si è seduto vicino alla finestra. Gli piace ricevere un po' di luce da parente degli alberi.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-090",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La Befana ordina scarpe nuove. Chiede un modello che sappia atterrare sulle tegole.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-091",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le orecchiette non vogliono il cappello. Temono di non sentire quando è pronto il pranzo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-092",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il cartone della pizza si chiude. Il basilico accende una piccola torcia immaginaria.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-093",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La maschera veneziana ha sorriso per tutto il giorno. La faccia sotto chiede il cambio turno.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-094",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il cannolo rotola verso la granita. Vuole fare una vacanza al fresco.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-095",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La focaccia si sente leggera dopo il morso. Ha appena perso un pensiero molto croccante.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-096",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La sfoglia è diventata lunga. Il mattarello sostiene di aver raccontato una storia interessante.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-097",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Lo gnocco si tuffa nell'acqua. Appena torna su, domanda dove sia l'asciugamano al ragù.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-098",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il cavaliere dei pupi cerca il suo cavallo. Il puparo gli suggerisce di controllare la scatola dei trasporti.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-099",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "I trulli giocano a riconoscersi al buio. Usano il profilo del cappello.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-100",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Pinocchio ha perso una matita. Si sente responsabile verso un lontano cugino.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-101",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La Befana ha un navigatore. Ogni volta che dice « svolta », la scopa pulisce un angolo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-102",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il tarallo vorrebbe una tasca. Ha un buco, ma non è la stessa cosa.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-103",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La pizza a portafoglio ha una tessera della biblioteca. Vuole leggere ricette per sapere cosa le potrebbe capitare.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-104",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il vaporetto porta un palloncino. Vuole vedere se può provare anche la linea del cielo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-105",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La brioche col tuppo ha preso vento. La granita si offre di farle da parrucchiere con il cucchiaino.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-106",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il mortaio è diventato verde. Dice che oggi tifa per il basilico.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-107",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il portico ha perso una goccia. L'ombrello la raccoglie per non sentirsi inutile.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-108",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il pandoro prova un vestito bianco. Lo zucchero gli dice che gli dona da tutte le parti.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-109",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il pupo ha paura del buio dietro il sipario. Il drago gli presta la sua lanterna.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-110",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La torre di Pisa ha disegnato una riga. La maestra ha inclinato il foglio per capirla.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-111",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Pinocchio ha costruito una casetta per uccelli. Dice che in famiglia c'è spazio per tutti.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-112",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La calza della Befana vuole andare in palestra. Ha lavorato molto sulla capienza, poco sulle gambe.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-113",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La burrata si è addormentata sul pane. Ha scelto il cuscino più profumato di pomodoro.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-114",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il pizzaiolo ha preparato una pizza a stella. Mio fratello vuole spegnere la luce per controllarla.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-115",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Arlecchino ha perso un pezzetto del costume. Il pavimento sembra aver vinto una caramella di stoffa.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-116",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La granita al limone fa una faccia seria. Il cucchiaino insiste a raccontarle barzellette.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-117",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le trofie si avvitano nel pesto. Stanno aggiustando la fame.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-118",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il tortellino ha paura di aprirsi. Gli amici gli ricordano che il brodo sa tenere le confidenze.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-119",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La mozzarella fa un filo lunghissimo. Vuole telefonare al boccone precedente.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-120",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il pupo cavaliere si ferma davanti a una porta dipinta. Aspetta che qualcuno disegni la maniglia.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-121",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La Mole Antonelliana prova a toccare una nuvola. È molto paziente con il solletico del cielo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-122",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Pinocchio dice di essere bravo in legno. La maestra gli spiega che la materia si chiama tecnologia.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-123",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La Befana parcheggia la scopa. Il gatto di casa la usa come cavallo per cinque minuti.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-124",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "L'orecchietta è rimasta nel colapasta. Dice che stava ascoltando l'acqua raccontare il viaggio.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-125",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il pomodoro sulla pizza forma un lago. Il basilico si dichiara isola felice.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-126",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Una gondola sogna le rotelle. Vorrebbe visitare almeno una volta il negozio di remi.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-127",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La frutta martorana ha trovato un cestino. Finalmente qualcuno la tratta da frutta seria.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-128",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La focaccia ascolta il forno. Ogni consiglio arriva molto caldo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-129",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "I portici si danno il cambio lungo la strada. Nessuno vuole lasciare il bambino senza tetto per la merenda.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-130",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il maritozzo perde un po' di panna. Il piattino esulta: aspettava la sua porzione.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-131",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il pupo ha un mantello troppo lungo. Il drago lo aiuta a non inciampare prima della battaglia.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-132",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "observ",
+    "text": "A Murano, un cavallino di vetro vuole una stalla morbida. La carta velina si offre subito.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-133",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Pinocchio ha sentito « banco di prova ». Sperava in un compagno di scuola nuovo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-134",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il numero novanta della tombola si siede. È stanco di aspettare il suo turno.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-135",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il tarallo vuole diventare medaglia. Il cane si propone come campione di merenda.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-136",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La margherita vede una vera margherita. Le chiede quale forno usa per fare i petali.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-137",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il vaporetto porta un ombrello chiuso. Gli mostra quanta acqua si può attraversare senza aprirsi.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-138",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il tuppo della brioche si allena a restare in equilibrio. Sogna il circo della colazione.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-139",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il pestello gira nel mortaio. Il basilico domanda se la giostra prevede una seconda corsa.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-140",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il tortellino piccolo si perde nel brodo. La carota gli indica il cucchiaio più vicino.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-141",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il risotto vuole fare un disegno. Usa il parmigiano per le montagne innevate.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-142",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il pupo ha perso il nome della sua avventura. Il bambino propone « quello che va a fare merenda ».",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-143",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il Vesuvio nel mio disegno fuma. Ho aggiunto un cartello: « La pizza si cuoce da un'altra parte. »",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-144",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Pinocchio ha chiesto un grembiule antischeggia. La maestra gli assegna quello normale e un sorriso.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-145",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La Befana ha trovato una calza da neonato. L'ha riempita di dolci piccoli per non spaventare i grandi.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-146",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Le cime di rapa fanno le foto di classe con le orecchiette. Il tarallo mette la testa nel gruppo e sorride senza denti.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-147",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il cartone della pizza vuole un cuscino. Trasportare tutte quelle olive è stato impegnativo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-148",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La gondola saluta il ponte. È l'unico amico che deve sempre passarle sopra.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-149",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La granita alla mandorla si guarda allo specchio. Si chiede dove sia finito il guscio.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-150",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il basilico in vaso ha visto il mortaio. Da allora cresce con grande discrezione.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-151",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La sfoglia va al cinema. Preferisce i film senza troppi tagli.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-152",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La polenta nel piatto vuole diventare montagna. Il formaggio costruisce subito la neve.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-153",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il cavaliere dei pupi cambia voce. Il piccolo gli offre una caramella per la gola di legno.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-154",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Un trullo chiede una sciarpa. Il cappello ce l'ha da sempre.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-155",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Pinocchio impara a contare. Preferisce le dita: il naso cambia misura troppo spesso.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-156",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La scopa della Befana ha fatto amicizia con l'aspirapolvere. Lui le chiede com'è il pavimento delle stelle.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-157",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il Colosseo ha tanti archi. Il mio arco giocattolo si sente parte di una famiglia enorme.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-158",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il pane carasau fa crac. Mio fratello pensa che stia imparando l'applauso sardo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-159",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Arlecchino ha messo il costume in lavatrice. I calzini sperano di ricevere almeno un colore nuovo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-160",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Un limone di Amalfi vuole una borsa. È stanco di essere sempre il bagaglio degli altri.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-161",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il gianduiotto galleggia nella fantasia del bambino. Ha finalmente trovato il mare di cioccolata giusto.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-162",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La fontana di Trevi ha sentito tanti desideri. Chiede una moneta per comprarsi un quaderno.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-163",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il carro del Carnevale di Viareggio ha perso una ruota nel disegno. Il bambino gli aggiunge una gamba molto elegante.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-164",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La sbrisolona ha tentato di fare un puzzle. Tutti i pezzi finiscono nella bocca di papà.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-165",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il trenino delle Dolomiti saluta una mucca. Lei risponde solo quando il fischio somiglia a « mu ».",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-166",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Un violino di Cremona ha il solletico. Il liutaio gli spiega che l'archetto fa proprio così.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento italiano a liuteria, musica o teatro come contesto di una scena inventata; nessuna imitazione di un autore."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-167",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La Befana ha trovato una calza a righe. Dispone le caramelle una riga sì e una no, per leggere meglio.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-168",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il ponte di Rialto vede passare un pesce rosso. Si domanda se sia un piccolo vaporetto senza fermate.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-169",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Lo strudel invita una mela a entrare. Lei vuole prima sapere se c'è posto per la cannella.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-170",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Un mosaico di Ravenna ha perso una tessera. Il bambino offre quella del supermercato della mamma.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-171",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Pinocchio scrive « sono sincero » cento volte. Il naso chiede se siano esercizi o promesse.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-172",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La maglia rosa del Giro vuole una vacanza. Il triciclo le offre un percorso più corto.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-173",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La tombola ha perso il numero uno. Lo ritrovano davanti alla fila delle merende.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-174",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il trullo vuole andare al mare. Il muratore propone prima di imparare a muovere le fondamenta.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-175",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il pistacchio di Bronte si è vestito di verde. Il gelato lo riconosce comunque.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-176",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Il mandolino sente arrivare la chitarra. Le prepara una sedia un po' più grande.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento italiano a liuteria, musica o teatro come contesto di una scena inventata; nessuna imitazione di un autore."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-177",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La Lanterna di Genova ha fatto una foto col flash. Le barche chiedono se devono rispondere.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-kid-safe-178",
+    "collection": "it-it-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La Befana presta la scopa al pupazzo di neve. Lui promette di pulire solo le nuvole fredde.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  }
+]

@@ -1,0 +1,2126 @@
+[
+  {
+    "id": "intl-v2-es-office-proper-001",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En nuestra oficina de Madrid, la reunión breve empieza cuando alguien guarda el bocadillo de tortilla.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-002",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El equipo de Bilbao trabaja por objetivos. El más claro sigue siendo alcanzar el último pintxo del viernes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-003",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Preparé mi cita previa con tanta antelación que el calendario me pidió una referencia laboral.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-004",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En Valencia ajustamos el plan del proyecto a las Fallas. Los ninots tienen una fecha de entrega más convincente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-005",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mi presentación recorrió más líneas que mi viaje en metro de Barcelona. Al menos el metro tenía transbordos señalizados.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-006",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Nuestra comida de empresa en Zaragoza generó tres propuestas durante la sobremesa. Ninguna cabía ya en el acta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-007",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El certificado digital funciona. Lo difícil fue convencer al navegador de que también formaba parte del equipo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-008",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En la oficina sevillana pedimos ideas frescas. La propuesta ganadora fue cambiar la mesa que recibe todo el sol.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-009",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El presupuesto del desayuno madrileño está equilibrado: tantos churros como personas dispuestas a culpar a la reunión.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-010",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Nuestra editorial barcelonesa celebra Sant Jordi con libros. El calendario prefiere celebrarlo con bloques de trabajo en rojo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-011",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mi solicitud municipal está «en curso». Espero que al terminar le den un diploma.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-012",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Trabajé en el AVE a Valladolid. Mi informe avanzó bastante; yo, muchísimo más.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-013",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La comunidad de nuestro patio cordobés reparte tareas. Las flores reciben todos los elogios y no firman ninguna minuta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-014",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En el mercado de Logroño aprendí negociación: nadie presenta un descuento con la seguridad de quien ofrece probar una cereza.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-015",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En nuestra gestoría de Murcia, «lo vemos mañana» es una invitación recurrente con muy buen calendario.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-016",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La peña de mi pueblo aragonés creó una comisión de fiestas. La primera fiesta fue terminar la primera comisión.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-017",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El portal de trámites me pidió paciencia. He intentado adjuntarla, pero supera el tamaño permitido.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-018",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En el claustro de nuestro colegio de Málaga se habló de coordinación. Las sillas siguieron mirando en seis direcciones.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-019",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mi compañero de A Coruña redacta correos concisos. El saludo ocupa menos que el pronóstico necesario para salir a comer.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-020",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Nuestra pausa de café en Valencia tiene horchata. El debate sobre llamarla pausa ya duró más que la pausa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-021",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El ayuntamiento me asignó un número de expediente. Por fin mis preocupaciones tienen una forma cómoda de archivarse.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-022",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En la oficina bilbaína medimos los plazos en estaciones de metro. Este proyecto necesita una línea nueva.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-023",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El equipo de Córdoba pidió un menú ligero. El salmorejo llevó acompañantes sin consultar recursos humanos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-024",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En la comunidad de Madrid acordamos hablar por turnos. El turno de explicar qué es un turno sigue abierto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-025",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Preparar la caseta de feria en Sevilla enseñó a mi equipo logística: todo cabe, salvo la última silla.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-026",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En nuestra biblioteca de Salamanca clasificamos por temas. Los correos pendientes insisten en ser ciencia ficción.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-027",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La firma digital me representa perfectamente: también necesita varios intentos antes de decidirse.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-028",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El taller de cerámica de Talavera tiene control de calidad. Se llama mi compañera mirando en silencio la taza torcida.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-029",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Nuestra huerta cooperativa murciana no admite reuniones eternas. Las lechugas marchitas son un acta bastante explícita.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-030",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En la oficina de Pamplona compartimos pimientos rellenos. El reparto sí tuvo un responsable claramente identificado.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-031",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Actualicé mi padrón. Al menos una base de datos cree que ya estoy instalado en la vida.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-032",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En el tren a Sevilla planifiqué toda la semana. El primer correo al llegar solicitó una nueva versión del paisaje.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-033",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La asociación vecinal de Zaragoza tiene buzón de sugerencias. Ahora necesitamos sugerencias para abrirlo sin que caigan todas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-034",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La comisión de Fallas aprobó el boceto. El único que mantuvo la misma cara durante el debate fue el ninot.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-035",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Organizamos una lectura en la librería de Burgos. La pregunta más difícil fue dónde guardar las sillas después.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-036",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La sede electrónica me dijo «sesión caducada». Mi café reclamó el mismo reconocimiento oficial.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-037",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En la oficina de León practicamos escucha activa. El radiador participa en todas las reuniones con entusiasmo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-038",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El pincho de tortilla de media mañana tiene una ventaja: nunca necesita una segunda presentación de resultados.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-039",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El colegio de Cádiz creó una carpeta compartida. Cada profesor compartió su propia versión de la carpeta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-040",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mi gestor de Alicante pidió todos los papeles. Le llevé incluso el envoltorio que explicaba por qué llegaba tarde.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-041",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En nuestra empresa de Barcelona, Sant Jordi mejora el intercambio de conocimientos: todos preguntan qué libro tiene el otro.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-042",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El equipo del patio de Córdoba tuvo una reunión de riego. Las macetas votaron por unanimidad mirando muy secas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-043",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mi compañero de Madrid usa el mapa del metro para explicar el proyecto. El cliente ya entiende por qué necesita transbordo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-044",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El obrador de Santiago cumple objetivos diarios. Los que llevan azúcar suelen desaparecer antes del cierre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-045",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Nuestro formulario municipal tiene campo libre. Solo admite doce caracteres de libertad.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-046",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El certificado digital pidió renovación. Yo también, pero en recursos humanos solo tramitan vacaciones.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-047",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En el museo de Bilbao tenemos reuniones de montaje. Todos intentan no convertirse en la pieza que bloquea el pasillo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-048",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La junta de vecinos valenciana ha creado un grupo urgente. La primera urgencia fue elegir la foto del grupo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-049",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En nuestra oficina manchega, compartir queso mejoró la comunicación. El cuchillo necesitaba pasar por todos los departamentos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-050",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El taller de León inauguró su buzón de ideas. La primera pedía que el buzón no estuviera junto a la máquina ruidosa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-051",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Para la verbena del pueblo navarro hicimos un cronograma. La orquesta pidió verlo en compases.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-052",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El AVE me permitió responder correos hasta Málaga. Mi bandeja agradeció el viaje comprando billetes para otros veinte mensajes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-053",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En la gestoría de Valladolid todo tiene justificante. Mi entusiasmo sigue buscando dónde solicitar el suyo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-054",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Nuestra reunión de desayuno en Jaén tuvo aceite excelente. Las conclusiones salieron bastante resbaladizas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-055",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La página de cita previa me pidió confirmar que soy humano. Llegó justo después de la tercera reunión seguida.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-056",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La biblioteca escolar de Toledo organizó un inventario. Los cuentos de aventuras estaban, naturalmente, en otro sitio.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-057",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Nuestro hotel de Granada hace reuniones de cinco minutos. El ascensor dura más contando en qué planta está cada uno.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-058",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En la cooperativa de Almería hablaron de crecimiento sostenible. La calabaza escuchó solo la primera palabra.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-059",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mi editorial de Madrid pide textos con gancho. El encargado de la percha ha solicitado una delimitación de funciones.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-060",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En la asociación del barrio sevillano asignamos responsabilidades. La cafetera recibió las más realistas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-061",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El ayuntamiento anunció una ventanilla única. Mis preguntas llegaron con vocación de formar cola.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-062",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En nuestro bar de Santander las rabas generan consenso. La cantidad adecuada vuelve a abrir el debate.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-063",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El equipo fallero trabaja con fechas claras. La escultura ni siquiera contempla pedir una prórroga decorativa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-064",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Presenté el proyecto en el tranvía de Zaragoza. Mi compañera agradeció que al menos hubiera una próxima parada.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-065",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mi firma electrónica requiere contraseña. Mi firma a mano se protege sola: nadie consigue repetirla, ni yo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-066",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En la oficina de Barcelona quisimos reducir reuniones. El acuerdo necesita ratificación en la siguiente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-067",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La librería de Oviedo me nombró responsable de escaparate. Ahora todos mis problemas tienen portada.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-068",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La comunidad del patio gaditano discutió sobre las plantas. Terminamos regando las que no estaban en el orden del día.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-069",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Nuestro equipo valenciano celebra los hitos con arroz. El socarrat recibe siempre una evaluación especialmente detallada.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-070",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En la gestoría de Cáceres llaman «sencillo» a cualquier trámite que aún no hemos abierto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-071",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El colegio de Logroño organizó trabajo colaborativo. Los rotuladores tardaron poco en formar su propia comisión de búsqueda.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-072",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La asociación de fiestas de Burgos aprobó un presupuesto austero. Las guirnaldas pidieron conservar al menos la alegría.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-073",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mi informe para la oficina madrileña tiene tantos enlaces como Nuevos Ministerios. Le falta únicamente señalización más amable.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-074",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La sede electrónica guarda mis datos. Ojalá también recordara que ayer ya le expliqué todo esto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-075",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En la cooperativa olivarera de Jaén la cosecha ocupa el calendario. Las reuniones intentan no dar demasiado la lata.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-076",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El menú del día de nuestro equipo en Salamanca incluye primer plato, segundo y cinco decisiones aplazadas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-077",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La cita previa me permitió elegir hora. Mi impresora eligió después el momento de la crisis.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-078",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En el teatro de Mérida aprendimos a proyectar la voz. Ahora la reunión técnica se oye hasta en la cafetería.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-079",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La asociación vecinal de Bilbao abrió un canal de avisos. El gato perdido recuperado ya tiene más seguidores que nosotros.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-080",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En nuestro despacho de Murcia, el archivo histórico es cualquier carpeta que nadie se atreve a renombrar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-081",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La panadería de mi barrio madrileño divide bien el trabajo: uno hace pan, otro explica por qué ya no queda.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-082",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Nuestra reunión en el tren a Valencia terminó puntual. La estación de llegada impuso una moderación excelente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-083",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El taller de ninots repartió el proyecto por piezas. Mi brazo izquierdo depende de que otro termine la mano derecha.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-084",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La aplicación de cita previa tiene calendario. Mi calendario ya ha solicitado una aplicación para entenderla.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-085",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En la oficina sevillana instalamos una pizarra de ideas. El rotulador seco se convirtió en nuestra primera prioridad estratégica.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-086",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La caja de sobaos en la oficina cántabra desapareció sin reunión. Es el proceso más ágil que hemos documentado.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-087",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En la biblioteca de Cuenca pedimos silencio administrativo. La impresora se declaró órgano independiente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-088",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Nuestra comunidad en Granada mejoró la transparencia. Ahora todo el mundo sabe quién dejó abierta la puerta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-089",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El ayuntamiento digitalizó las solicitudes. Mis dudas agradecen poder viajar sin sobre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-090",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La asociación de patios de Córdoba sabe coordinar colores. Los turnos de riego requieren una paleta bastante más compleja.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-091",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En la peña riojana tenemos una lista de voluntarios. Se actualiza cada vez que alguien pregunta quién tuvo la idea.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-092",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Llegué a la oficina de Barcelona con dos transbordos y una idea. La idea pidió sentarse primero.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-093",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En el mercado de Murcia no necesitamos gráficos de ventas. La caja vacía de fresas explica el trimestre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-094",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mi certificado digital caduca antes que algunos asuntos pendientes. Admiro su capacidad para cerrar etapas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-095",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En nuestro despacho de Zaragoza, una tarea urgente es una tarea normal que ha aprendido a escribir en mayúsculas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-096",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Organizamos la excursión escolar a Segovia. El plan de riesgos se centró sorprendentemente en no olvidar los bocadillos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-097",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Nuestra exposición en Málaga tiene un recorrido lógico. La reunión de montaje sigue buscando la salida.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-098",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En la oficina de Galicia, la empanada del viernes hace visible el trabajo en equipo: todos dejan pruebas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-099",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El administrador de nuestra finca madrileña pidió brevedad. El acta recogió extensamente la petición.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-100",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mi taller de Valencia creó un sistema de turnos. El primero es para quien sabe dónde guardamos el sistema.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-101",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En Barcelona coordinamos los puestos de Sant Jordi. Los libros de aventuras no deben invadir la salida de emergencia.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-102",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El equipo de Bilbao llamó «funicular» a su plan de ascensos. Ahora todos preguntan quién lleva el freno.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-103",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En la gestoría de Córdoba usamos colores para clasificar expedientes. Mi caso tiene ya aspecto de fiesta mayor.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-104",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El desayuno de empresa en Tenerife incluye gofio. El informe nutricional ha solicitado una pausa para repetir.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-105",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La sede electrónica confirmó el envío. Nunca había recibido tanto ánimo de una frase en verde.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-106",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En la cooperativa de huertos de Valladolid, las ideas maduran. Algunas necesitan menos reunión y más sol.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-107",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Nuestro coro de Zaragoza hizo una reunión de coordinación. El acta se aprobó a varias voces y distinto tono.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-108",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En el barrio de León creamos un banco del tiempo. Mi vecino ingresó una hora y retiró tres anécdotas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-109",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La ventanilla municipal pidió fotocopia. Mi móvil, con todo su prestigio tecnológico, tuvo que ir a buscar una papelería.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-110",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En el equipo de Pamplona medimos el éxito de la comida por el silencio inicial frente a los pintxos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-111",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La comisión de la verbena gaditana tiene una tarea crítica: encontrar al dueño del alargador antes del primer acorde.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-112",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mi compañero presentó el calendario junto al plano de Cercanías. Era imposible negar que todo necesitaba conexión.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-113",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El lector del DNI me reconoció a la primera. Mis compañeros celebraron el acontecimiento como un ascenso compartido.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-114",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En la oficina de Soria hemos creado una zona de concentración. Todo el mundo se concentra en encontrarla libre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-115",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La librería de Alcalá organiza sus novedades. Mi mesa de trabajo sigue fiel al género de misterio.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-116",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En el vivero de Valencia llamamos «plan de desarrollo» a regar donde realmente hace falta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-117",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Nuestro colegio de Sevilla preparó una jornada abierta. Los cajones del material también decidieron participar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-118",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La reunión de la cooperativa manchega acabó con queso. Por primera vez, el cierre tuvo una consistencia indiscutible.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-119",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La asociación de vecinos de Málaga usa una lista compartida. Compartimos sobre todo la duda de cuál es la definitiva.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-120",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mi solicitud entró por registro. La mía es la única entrada de la que guardo resguardo y nervios.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-121",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En la oficina valenciana estudiamos las Fallas como gestión de proyectos. La parte más difícil fue presupuestar el entusiasmo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-122",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La ruta del reparto por Toledo exige planificación. La calle estrecha actúa como una consultora muy firme.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-123",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Nuestro restaurante de Cáceres escucha sugerencias. Las que incluyen pimentón pasan directamente a revisión de cocina.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-124",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Conseguí firmar el documento digital. El aplauso de mi compañera quedó pendiente de registrar electrónicamente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-125",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El archivo de nuestra oficina en Huesca está actualizado. Ya sabemos exactamente qué información sigue faltando.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-126",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En la biblioteca de A Coruña, una devolución puntual se celebra sin ruido pero con mucha satisfacción administrativa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-127",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La junta de nuestra comunidad zaragozana aprobó arreglar el portal. El portal llevaba meses asistiendo sin derecho a voto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-128",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El equipo del huerto escolar murciano reparte responsabilidades. La lluvia todavía no ha confirmado su disponibilidad.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-129",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En el colegio de Burgos planificamos las reuniones del curso. El calendario pidió vacaciones preventivas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-130",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Nuestra pausa de tortilla en Valladolid no necesita moderador. El último trozo ejerce una autoridad evidente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-131",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Para el carnaval de Cádiz, el equipo escribió un guion. Las risas consiguieron todas las modificaciones que pedían.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-132",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En el AVE preparé una presentación breve. El campo que pasaba fuera hizo una exposición mucho más convincente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-133",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mi ayuntamiento me mandó un aviso amistoso. La fecha límite hizo de compañero menos simpático.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-134",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La plataforma de facturas dice «guardado correctamente». Es el comentario más positivo que ha recibido hoy mi trabajo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-135",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El taller de azulejos de Manises aprobó mi diseño. Ahora falta convencer a los azulejos de parecerse entre sí.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-136",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La asociación del barrio de Granada comparte local. La mesa redonda exige un cuadrante sorprendentemente rectangular.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-137",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La cooperativa de Navarra creó un plan de rotación. Los cultivos lo entienden mejor que los responsables del calendario.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-138",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En nuestra oficina de Jaén, el aceite se reparte con cuidado. Los consejos sobre cómo echarlo vienen sin límite.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-139",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El proyecto del museo de Cuenca va por fases. La fase de buscar el metro ha ocupado una parte notable.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-140",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La escuela de música de León tiene reuniones afinadas. El debate solo sube de tono cuando falta una silla.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-141",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La comisión fallera acordó escuchar todas las propuestas. El ninot del presidente ha empezado a tener orejas desproporcionadas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-142",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En nuestro hotel de Santiago, coordinar mochilas requiere más espacio que coordinar agendas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-143",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El equipo de Barcelona reservó una mesa para el menú del día. El orden del día perdió por unanimidad.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-144",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El portal municipal pregunta si deseo continuar. Es una atención emocional que mi agenda podría aprender.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-145",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En la oficina de Toledo implantamos nombres claros para los archivos. «Claro_definitivo_ahora_sí» lidera el proyecto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-146",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El teatro de Valladolid tiene un plan de iluminación. Ojalá sirviera también para las dudas de producción.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-147",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Nuestra comunidad sevillana creó una comisión de ahorro. Lo primero que ahorró fue respuestas en el grupo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-148",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La cooperativa murciana etiqueta cada caja. Mi escritorio empieza a envidiar la trazabilidad de las berenjenas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-149",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En Bilbao, una bandeja de pintxos hizo que todos se acercaran a la reunión. La presentación tomó apuntes de marketing.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-150",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El colegio de Madrid pidió propuestas realistas. La fotocopiadora recomendó incluir siempre un plan alternativo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-151",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mi gestor en Albacete dice que falta un detalle. El detalle tiene su propio formulario y horario de atención.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-152",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Organizamos la feria del barrio malagueño con hojas de cálculo. Las guirnaldas siguen prefiriendo líneas curvas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-153",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mi informe atravesó más revisiones que estaciones el tren a Tarragona. Todavía no sabemos dónde bajarlo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-154",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La sede electrónica me dio un justificante. Lo guardé en tres carpetas distintas por pura confianza digital.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-155",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La biblioteca de Oviedo realizó una formación interna. Aprendimos dónde escondía cada cual las tijeras compartidas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-156",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En la asociación vecinal de Santander, «esto lo resolvemos rápido» es siempre el primer punto del debate.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-157",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El vivero de Córdoba tiene metas verdes. Mi lista de tareas, por contraste, insiste en quedarse roja.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-158",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La panadería de Sevilla planifica la producción al detalle. Los clientes planifican llegar justo cuando se acaba su favorito.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-159",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En nuestra oficina de Zaragoza, trabajar en horizontal significa mover papeles de un lado a otro de la mesa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-160",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El colegio de Valencia organizó una lluvia de ideas. Los paraguas del taller de plástica resultaron providenciales.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-161",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En el montaje de Sant Jordi, el equipo pidió más margen. Los libros ofrecieron el suyo sin perder una línea.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-162",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mi compañero de Madrid llegó con el plan completo. Se le había ocurrido durante un transbordo suficientemente largo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-163",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La pausa de café en Cádiz terminó con un acuerdo: la siguiente pausa debía celebrarse con las mismas condiciones.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-164",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Nuestra firma digital tiene validez. Nuestra carpeta «varios» todavía busca reconocimiento institucional.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-165",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El centro cultural de Burgos recibe muchas propuestas. La más popular sigue siendo poner enchufes cerca de las mesas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-166",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En el museo de Mérida preparamos cartelas claras. Las reuniones necesitarían también una breve explicación al lado.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-167",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Nuestra junta de vecinos de Alicante creó una encuesta. Las respuestas coinciden en que hacen falta menos encuestas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-168",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El huerto compartido de Pamplona enseña gestión: si nadie asume la lechuga, la lechuga toma su propia decisión.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-169",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En la escuela de música de Bilbao distribuimos las tareas por instrumentos. El triángulo reclamó un área más amplia.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-170",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El restaurante de Logroño revisó sus procesos. La tapa que desaparecía antes de la foto quedó fuera de la auditoría.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-171",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La cita previa me recordó la cita. Mi calendario, celoso, envió otros cuatro recordatorios.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-172",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La asociación de fiestas de Soria tiene un plan de contingencia. Se llama «preguntar dónde guarda las cosas el de siempre».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-173",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Trabajar camino de Málaga en el tren tiene ventajas: cuando el informe se atasca, el asiento sigue avanzando.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-174",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "El navegador aceptó mi certificado. Celebré que, por una vez, alguien diera por buenos mis antecedentes tecnológicos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-175",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Nuestro taller de cerámica de Talavera aplica mejoras continuas. Se ven especialmente en la segunda taza.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-176",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La asociación del barrio de Murcia compró una mesa más grande. El primer acuerdo fue ampliar también las reuniones.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-office-proper-177",
+    "collection": "es-es-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "En la comida de empresa de Salamanca, el postre cerró tres discusiones que ningún gráfico había logrado resolver.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Professional or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  }
+]

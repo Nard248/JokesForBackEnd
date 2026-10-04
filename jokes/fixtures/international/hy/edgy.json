@@ -1,0 +1,2213 @@
+[
+  {
+    "id": "intl-v2-hy-edgy-001",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Հայերեն ձևաթուղթը պահանջում էր անունս լատինատառ գրել։ «Մայրենի լեզվի ընտրություն» բաժինը դրանից հետո շատ խորհրդանշական էր։",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional Armenian form; nominal language choice conflicts with input constraints."
+  },
+  {
+    "id": "intl-v2-hy-edgy-002",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Վերնիսաժի մեր ձեռագործ բաժակին «ինքնատիպ» պիտակ ավելացրինք։ Գովազդային գործակալությունը նույն պիտակը ևս տասներկու հաճախորդի էր առաջարկել։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft branding; standardized uniqueness undermines its own claim."
+  },
+  {
+    "id": "intl-v2-hy-edgy-003",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Գյումրիի դարբնոցի համար «ճկուն լուծումներ» կարգախոս գրեցի։ Վարպետը խնդրեց հաճախորդներին բացատրել, որ պատրաստի դարպասը ձեռքով ծալել պետք չէ։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Ironwork marketing; abstract flexibility creates a bad literal expectation."
+  },
+  {
+    "id": "intl-v2-hy-edgy-004",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Դիլիջանի հանգստյան ուղևորությունը հավելվածով կազմակերպեցի։ Լռություն գնելուց առաջ տասնվեց ծանուցման համաձայնեցի։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Forest retreat booking; an interface imposes noise while selling quiet."
+  },
+  {
+    "id": "intl-v2-hy-edgy-005",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Կասկադի մոտ լուսանկարվելու համար «բնական պահ» էինք նկարում։ Բնականությունն այնքան հրահանգ ստացավ, որ վերջում պայմանագիր էր ուզում։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Staged Cascade photo; manufactured spontaneity becomes labor."
+  },
+  {
+    "id": "intl-v2-hy-edgy-006",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Մատենադարանի մասին մեր կայքի գովազդը ասում էր՝ գիտելիքը հասանելի է։ Բացվելուց առաջ երեք թռուցիկ պատուհան առաջարկեց ուրիշ բան իմանալ։",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional manuscript-education site; promotional overlays obstruct learning."
+  },
+  {
+    "id": "intl-v2-hy-edgy-007",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Քոչարիի թիմային դասից հետո ընկերությունը հայտարարեց՝ բոլորս մեկ ընտանիք ենք։ Հաջորդ օրը ձեռքերը բաց թողեցինք հենց ծախսերի հաստատման մոտ։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dance team event; symbolic unity does not automatically govern business decisions."
+  },
+  {
+    "id": "intl-v2-hy-edgy-008",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Սևանի տեսարանով սենյակ ամրագրելիս ամեն ինչ պարզ էր։ Լրացուցիչ վճարների շարքը կարծես լճի նոր քարտեզ էր՝ անծանոթ ափերով։",
+    "age_rating": "teen",
+    "themes": [
+      "money",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional lake booking; expanding fees make a simple choice difficult to navigate."
+  },
+  {
+    "id": "intl-v2-hy-edgy-009",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Երևանի համար իմ քարտեզային հավելվածը «արագ երթուղի» առաջարկեց։ Արագ էր միայն որոշումը, քայլելու պատասխանատվությունն ամբողջությամբ ինձ մնաց։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Urban route app; quick computation is confused with easy travel."
+  },
+  {
+    "id": "intl-v2-hy-edgy-010",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Գորգագործին խնդրեցինք պատմություն հորինել յուրաքանչյուր նախշի համար։ Նա ասաց՝ նախ աշխատավարձի պատմությունը ավարտենք, այն էլ հետաքրքիր զարգացում ունի։",
+    "age_rating": "teen",
+    "themes": [
+      "work",
+      "money"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft marketing; romantic storytelling is redirected toward concrete compensation."
+  },
+  {
+    "id": "intl-v2-hy-edgy-011",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Հայերեն «ընդունել» կոճակը մեծ էր, «կարգավորել»-ը՝ փոքր։ Կայքը մայրենի լեզվով շատ հստակ բացատրում էր, թե ինչ կարծիք է սպասում ինձնից։",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian consent interface; visual hierarchy pushes one choice."
+  },
+  {
+    "id": "intl-v2-hy-edgy-012",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Վերնիսաժի բաժակը առցանց «ձեռքով ընտրված» անվանեցինք։ Իրականում ես մկնիկով էի սեղմել, բայց մարմնի անդամը ճիշտ էր։",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft retail copy; a vague claim survives a comically literal reading."
+  },
+  {
+    "id": "intl-v2-hy-edgy-013",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Գյումրիի դարբնի աշխատանքի տեսանյութին արագ երաժշտություն դրեցինք։ Հաճախորդներն սկսեցին նույն արագությամբ դարպաս ուզել. գովազդն իրենից չափազանց գոհ էր։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Forging promotion; editing speed creates unrealistic production expectations."
+  },
+  {
+    "id": "intl-v2-hy-edgy-014",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Դիլիջանի անտառում «թվային հանգիստ» ծրագրին մասնակցելու համար նախ հավելված տեղադրեցի։ Հետո էլ հեռախոսս շնորհավորեց՝ իրենից ազատվելու առաջին քայլի համար։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Screen-free retreat marketed through an app; the device celebrates its own rejection."
+  },
+  {
+    "id": "intl-v2-hy-edgy-015",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Կասկադի քանդակի հետ նկարիս տակ «միայնակ մտքեր» գրեցի։ Կադրից դուրս վեց հոգի սպասում էին, որ ավարտեմ մենակությունս։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Social-media portrait; a crowded setup contradicts curated solitude."
+  },
+  {
+    "id": "intl-v2-hy-edgy-016",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Մատենադարանի ձեռագրի մասին տեքստը ծրագիրը ամփոփեց մեկ նախադասությամբ։ Հեղինակի տարիների աշխատանքը դարձավ «բավական հետաքրքիր գիրք»։",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Automated manuscript summary; excessive compression discards the useful content."
+  },
+  {
+    "id": "intl-v2-hy-edgy-017",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Քոչարիի դասից հետո ղեկավարը ասաց՝ թիմը համաչափ է շարժվում։ Միայն հավելավճարների աղյուսակն էր լրիվ ուրիշ պար սովորել։",
+    "age_rating": "teen",
+    "themes": [
+      "work",
+      "money"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Team-building dance; visual coordination contrasts with uneven organizational rewards."
+  },
+  {
+    "id": "intl-v2-hy-edgy-018",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Սևանի ճանապարհի ուղեցույցը «տեղացիի գաղտնիք» էր խոստանում։ Նույն գաղտնիքը տասը գովազդային ցուցանակից էր նայում։",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Tourism copy; widely advertised information is sold as secret knowledge."
+  },
+  {
+    "id": "intl-v2-hy-edgy-019",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Երևանի մետրոյի մասին հավելվածիս օգնության բաժնում օգնություն որոնեցի։ Այն ինձ խնդրեց գնահատել օգնության փորձը՝ մինչև օգնությունը գտնելը։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional transit app; feedback collection precedes a useful answer."
+  },
+  {
+    "id": "intl-v2-hy-edgy-020",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Գորգի նոր հավաքածուի անունը «Արմատներ» դրեցինք։ Շնորհանդեսում ամենաերկար խոսեց այն մարդը, որը թելն ու լարը դեռ շփոթում էր։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Heritage craft branding; promotional authority exceeds practical knowledge."
+  },
+  {
+    "id": "intl-v2-hy-edgy-021",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Հայերեն առցանց հարցման մեջ «այլ» տարբերակն ընտրեցի։ Համակարգը պահանջեց բացատրել, թե ինչու չեմ տեղավորվում իրենց երեք հարմար մտքերի մեջ։",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian survey design; limited categories place explanatory work on the user."
+  },
+  {
+    "id": "intl-v2-hy-edgy-022",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Վերնիսաժի մեր տաղավարի մասին գրեցին՝ թաքնված գանձ։ Մենք ամբողջ շաբաթ մեծ ցուցանակ էինք սարքում՝ այդ թաքնված լինելուց ազատվելու համար։",
+    "age_rating": "teen",
+    "themes": [
+      "work",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft-market publicity; romantic obscurity conflicts with sellers' need to be found."
+  },
+  {
+    "id": "intl-v2-hy-edgy-023",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Գյումրիի դարպասի պատվերի համար «առանց ավելորդի» դիզայն ուզեցինք։ Գործակալությունը դրա համար ավելացրեց ռազմավարության երեք հանդիպում։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Minimal ironwork brief; the process contradicts the promised simplicity."
+  },
+  {
+    "id": "intl-v2-hy-edgy-024",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Դիլիջանի հանգստի գովազդը իմ բոլոր սարքերով հետևում էր ինձ։ Բնությանը մոտենալու ցանկությունս ինձ շատ մոտ էր բերել գովազդային համակարգին։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Retreat advertising; nature-seeking leads to persistent tracking-like promotion."
+  },
+  {
+    "id": "intl-v2-hy-edgy-025",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Կասկադում նկարիս համար գունային զտիչ ընտրեցի։ Քաղաքը բավական գեղեցիկ էր, պարզապես իմ գովազդային պայմաններին չէր համապատասխանում։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Travel-image editing; branding overrides a real place's appearance."
+  },
+  {
+    "id": "intl-v2-hy-edgy-026",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Մատենադարանի մասին բուկլետում «հավերժ արժեքներ» գրեցինք։ Տպարանը հարցրեց՝ QR հղման ժամկետը գոնե մինչև մյուս ամիս պահելո՞ւ եք։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Cultural publication; durable claims depend on fragile digital links."
+  },
+  {
+    "id": "intl-v2-hy-edgy-027",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Քոչարիի դասի խմբային լուսանկարում բոլորը ժպտում էին։ Մասնակցության պարտադիր լինելու մասը կադրի տակ չէր տեղավորվել։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional workplace dance event; staged cheer omits an inconvenient condition."
+  },
+  {
+    "id": "intl-v2-hy-edgy-028",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Սևանի տեսարանի գովազդը առանց մարդկանց էր։ Երբ հասանք, պարզվեց՝ բոլորս եկել ենք նույն դատարկությունը զբաղեցնելու։",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Tourism photography; an empty scenic promise attracts the crowd that changes it."
+  },
+  {
+    "id": "intl-v2-hy-edgy-029",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Երևանի մետրոյի քարտեզիս վճարովի տարբերակում գույներն ավելի գեղեցիկ էին։ Ուղղությունը դեռ նույնն էր՝ դրամապանակից դուրս։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "money"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional app subscription; cosmetic upgrades dominate practical value."
+  },
+  {
+    "id": "intl-v2-hy-edgy-030",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Գորգագործ վարպետին ասացին՝ ձեր պատմությունը պետք է կարճ լինի։ Գինը բացատրելուց հետո նույն մարդիկ երկար պատմություն պահանջեցին։",
+    "age_rating": "teen",
+    "themes": [
+      "work",
+      "money"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft sales; buyers want brevity until skilled labor affects price."
+  },
+  {
+    "id": "intl-v2-hy-edgy-031",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Հայերեն կայքի «հեշտ մուտք» բաժինն ինձ հինգ քայլ ցույց տվեց։ Վեցերորդ քայլը խոստման իմաստը վերանայելն էր։",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian onboarding; a ease claim fails in use."
+  },
+  {
+    "id": "intl-v2-hy-edgy-032",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Վերնիսաժի բաժակների նոր անունները այնքան ստեղծագործական էին, որ գնորդը հարցրեց՝ ջուր խմելու համար սովորական տարբերակ ունե՞ք։",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft branding; elaborate names obscure a basic product function."
+  },
+  {
+    "id": "intl-v2-hy-edgy-033",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Գյումրիի դարբնոցի գովազդում գրեցինք՝ սահմաններ չենք ճանաչում։ Առաջին պատվիրատուն հիշեցրեց՝ հենց ցանկապատ է ուզում։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Ironwork slogan; boundary-free rhetoric conflicts with the product."
+  },
+  {
+    "id": "intl-v2-hy-edgy-034",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Դիլիջանում համացանցից կտրվելու դասընթացը ավարտեցինք առցանց հարցումով։ Հավաստագիրը փոստով եկավ՝ կապը վերականգնելու համար շնորհակալությամբ։",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Digital-detox program; certification reinstates the habit it interrupted."
+  },
+  {
+    "id": "intl-v2-hy-edgy-035",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Կասկադի մոտ հանդիպման հրավերն ասում էր՝ ազատ շփում։ Հետո ուղարկեցին ճիշտ թեմաների ցանկը, որ ազատությունը չշեղվի։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional networking event; prescribed topics constrain advertised openness."
+  },
+  {
+    "id": "intl-v2-hy-edgy-036",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Մատենադարանի ձեռագրերի մասին տեսանյութի վերնագիրը փոխեցինք ավելի աղմկոտի։ Այժմ ամենահանգիստ գրքերի մասին բոլորը բարձրաձայն էին համաձայնվում՝ առանց դիտելու։",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Cultural clickbait; loud packaging generates shallow engagement."
+  },
+  {
+    "id": "intl-v2-hy-edgy-037",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Քոչարիի դասից հետո ղեկավարությունը խոսեց «մարդկային կապերի» մասին։ Դասի վճարումը հիշեցնող նամակին պատասխանող մարդ դեռ չկար։",
+    "age_rating": "teen",
+    "themes": [
+      "work",
+      "money"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional team event; rhetorical connection fails a concrete follow-up."
+  },
+  {
+    "id": "intl-v2-hy-edgy-038",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Սևանի հանգստի հավելվածում «ոչինչ չանել» ընտրեցի։ Համակարգը առաջարկեց դրա համար վեց վճարովի զբաղմունք։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "money"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Leisure booking; an expressed desire for inactivity becomes more sales."
+  },
+  {
+    "id": "intl-v2-hy-edgy-039",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Երևանի մետրոյում մարդը քարտեզ էր հարցնում։ Հավելվածս նախ ուզում էր իմանալ նրա հետաքրքրությունները. հասնելու ցանկությունը բավարար չէր։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional route app; profiling interferes with a simple navigation task."
+  },
+  {
+    "id": "intl-v2-hy-edgy-040",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Գորգի ցուցահանդեսի բացմանը բոլորն ավանդույթի կարևորությունից խոսեցին։ Վարպետը միակ մարդն էր, որի խոսելու ժամանակը կրճատեցին։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional craft event; institutional speeches crowd out the practicing artisan."
+  },
+  {
+    "id": "intl-v2-hy-edgy-041",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Հայերեն «չեղարկել» կոճակը հարցրեց՝ վստա՞հ եք։ «Շարունակել»-ը երբեք չէր կասկածում ինձ. համակարգը ընտրովի վստահություն ուներ։",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian interface; asymmetric confirmation prompts reveal a preferred outcome."
+  },
+  {
+    "id": "intl-v2-hy-edgy-042",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Վերնիսաժի մեր ձեռագործ իրերի համար միանման ներկայացում ուզեցինք։ Դիզայները երկար բացատրեց, թե ինչու յուրահատկությունը պիտի հստակ ձևանմուշ ունենա։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft branding; standardized presentation creates tension with uniqueness."
+  },
+  {
+    "id": "intl-v2-hy-edgy-043",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Գյումրիի դարպասի նոր դիզայնը «մարդակենտրոն» կոչեցինք։ Վարպետը պարզապես բռնակը այն բարձրության վրա դրեց, որ ձեռքս հասնի։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Ironwork design; plain ergonomic usefulness undercuts grand terminology."
+  },
+  {
+    "id": "intl-v2-hy-edgy-044",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Դիլիջանի անտառի մասին գովազդում լռության ձայնը բարձրացրինք։ Վերջապես բնությունն էլ ստացավ վաճառքի համար հարմար աղմուկ։",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Nature promotion; editing manufactures the quiet being advertised."
+  },
+  {
+    "id": "intl-v2-hy-edgy-045",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Կասկադի լուսանկարիս տակ «առանց զտիչի» գրեցի։ Ճիշտ էր՝ զտիչը հանել էի, մարդկանց հեռացնելը առանձին գործիքով էր։",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Travel-photo claim; a technically true label hides extensive editing."
+  },
+  {
+    "id": "intl-v2-hy-edgy-046",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Մատենադարանի մասին նախագիծը անվանեցինք «ժառանգություն բոլորին»։ Նախորդ տարբերակի ֆայլը բացելու գաղտնաբառը միայն արձակուրդում գտնվող աշխատակիցը գիտեր։",
+    "age_rating": "teen",
+    "themes": [
+      "work",
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional cultural project; broad access rhetoric conflicts with internal information control."
+  },
+  {
+    "id": "intl-v2-hy-edgy-047",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Քոչարիի խմբում ղեկավարին ուղղություն ցույց տվեցի։ Աշխատանքային շաբաթվա միակ ուղղումն էր, որի համար գրավոր հիմնավորում չպահանջվեց։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dance setting; direct feedback is easier outside the office hierarchy."
+  },
+  {
+    "id": "intl-v2-hy-edgy-048",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Սևանի ճանապարհի իմ ուղեցույցում «իսկություն» բառը շատ էր։ Խմբագիրը խնդրեց գոնե մեկ պարբերությունում իրական հասցե ավելացնել։",
+    "age_rating": "teen",
+    "themes": [
+      "work",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Travel writing; authenticity language displaces useful specifics."
+  },
+  {
+    "id": "intl-v2-hy-edgy-049",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Երևանի մետրոյի հավելվածի նոր դիզայնը գովեցինք։ Հին կոճակները գտնելու համար թիմը նոր քարտեզ խնդրեց։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional transit-app redesign; visual novelty reduces navigation clarity."
+  },
+  {
+    "id": "intl-v2-hy-edgy-050",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Գորգագործին առաջարկեցինք «պասիվ եկամուտ»՝ իր նախշերի վաճառքից։ Նա հարցրեց՝ այդ դեպքում ակտիվ աշխատելու մնացած մասը ո՞ւմ է հասնելու։",
+    "age_rating": "teen",
+    "themes": [
+      "work",
+      "money"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft business pitch; a fashionable income label hides continuing labor."
+  },
+  {
+    "id": "intl-v2-hy-edgy-051",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Հայերեն համաձայնության տեքստը այնքան երկար էր, որ վերջում ես արդեն իմ առաջին համաձայնությունը չէի հիշում։ Համակարգին այդ մանրուքը չէր հետաքրքրում։",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian legal-style interface text; volume undermines meaningful comprehension."
+  },
+  {
+    "id": "intl-v2-hy-edgy-052",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Վերնիսաժի ձեռագործ բաժակը «սահմանափակ թողարկում» անվանեցինք։ Վարպետը զարմացավ՝ իր երկու ձեռքը միշտ նույն սահմանափակումն է ունեցել։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Handmade production; marketing rebrands an ordinary labor constraint."
+  },
+  {
+    "id": "intl-v2-hy-edgy-053",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Գյումրիի դարպասի ամրությունը ուզում էինք վայրկյանանոց հոլովակով ապացուցել։ Վարպետն ասաց՝ ամրության լավ փաստարկները տարիներով են նկարահանվում։",
+    "age_rating": "teen",
+    "themes": [
+      "work",
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Ironwork promotion; durability cannot be established by a tiny clip."
+  },
+  {
+    "id": "intl-v2-hy-edgy-054",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Դիլիջանի հանգստյան ծրագրում «ձեր ժամանակը ձեզ է պատկանում» էր գրված։ Ստորև ամեն կես ժամը արդեն նշանակված էր։",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Retreat schedule; promised autonomy conflicts with a tightly managed itinerary."
+  },
+  {
+    "id": "intl-v2-hy-edgy-055",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Կասկադի քանդակի հետ նկարս հարյուր հավանում ստացավ։ Քանդակն այդքան աշխատանքից հետո նույնիսկ չէր իմացել, թե ինչի համար է հայտնի դարձել։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Social-media tourism; the actual artwork has no role in its new popularity metric."
+  },
+  {
+    "id": "intl-v2-hy-edgy-056",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Մատենադարանի թեմայով բուկլետը «խորը ընթերցում» էր առաջարկում։ Բոլոր էջերը զբաղեցրել էին մեծ կարգախոսները, խորանալու տեղ չկար։",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Cultural publication; expansive slogans physically displace substantive reading."
+  },
+  {
+    "id": "intl-v2-hy-edgy-057",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Քոչարիի դասից հետո թիմի համախմբվածությունը գնահատեցինք։ Ամենաբարձր միավորը ստացավ նա, ով չէր եկել ու հետևաբար ոչ մեկի ոտքին չէր կանգնել։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Team exercise evaluation; absence scores well under a poorly chosen measure."
+  },
+  {
+    "id": "intl-v2-hy-edgy-058",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Սևանի տեսարանով գովազդային նկարը այնքան մշակեցինք, որ լիճը ինքը հազիվ կճանաչեր ամրագրած տեղը։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Over-edited destination imagery; the subject would fail to recognize the promise."
+  },
+  {
+    "id": "intl-v2-hy-edgy-059",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Երևանի մետրոյի իմ հավելվածը հարցրեց՝ գոհ ե՞ք ուղևորությունից։ Ես դեռ կանգառում էի. ծրագրին հույսս գնահատելն էլ էր բավարար։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Premature app survey; expectation is mistaken for experience."
+  },
+  {
+    "id": "intl-v2-hy-edgy-060",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Գորգի արտադրանքի պատմությունը գրելիս բոլորը «ժառանգություն» էին առաջարկում։ Վարպետը խնդրեց նաև իր անունը գրել՝ ժառանգությունն առայժմ ինքն էր աշխատում։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft storytelling; abstract heritage language should still credit the living maker."
+  },
+  {
+    "id": "intl-v2-hy-edgy-061",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Հայերեն անունս սխալ գրված դիմումը հետ ուղարկեցի։ Պատասխանեցին, որ ուղղելու համար նույն սխալով պետք է մուտք գործեմ. համակարգը իր սխալին հավատարիմ է։",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional Armenian account workflow; correction depends on the incorrect stored identity."
+  },
+  {
+    "id": "intl-v2-hy-edgy-062",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Վերնիսաժի մեր տաղավարի «պարզ գները» տեսնելու համար գնորդին QR կոդ տվեցինք։ Գնորդը խնդրեց պարզապես մի պարզ թիվ ասել։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "money"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft retail; an unnecessary digital step defeats a clarity claim."
+  },
+  {
+    "id": "intl-v2-hy-edgy-063",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Գյումրիի դարբնի համար «առանց միջնորդների» գովազդ պատվիրեցինք։ Գործակալությունը մեզ կապեց իր ենթակապալառուի համակարգողի հետ։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Direct craft-sale advertising; the campaign itself adds intermediaries."
+  },
+  {
+    "id": "intl-v2-hy-edgy-064",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Դիլիջանի հանգստի կայքը իմ տեղը «հարմար» ծրագիր ընտրեց։ Պարզվեց՝ հարմարն այն էր, որի համար գործընկերային վճար էր ստանում։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "money"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional booking recommendation; commercial incentives redefine suitability."
+  },
+  {
+    "id": "intl-v2-hy-edgy-065",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Կասկադի քայլարշավը գրանցող հավելվածը շտապեցրեց ինձ։ Քանդակին երկար նայելը նրա հաշվետվության մեջ վատ կատարողական էր։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Activity metrics; art appreciation is penalized as slow movement."
+  },
+  {
+    "id": "intl-v2-hy-edgy-066",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Մատենադարանի մասին գիտական տեքստը գովազդային թիմին տվեցի։ Վերադարձրին ավելի վստահ տարբերակ՝ բոլոր «գուցե»-ներն ու աղբյուրները հանած։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Cultural communication; marketing certainty removes scholarly nuance."
+  },
+  {
+    "id": "intl-v2-hy-edgy-067",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Քոչարիի դասը ղեկավարն անվանեց հարթ կառավարման փորձ։ Բայց շարքի վերջում կանգնելու առաջարկը երկար քննարկման ուղարկեց։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Workplace dance event; egalitarian language meets personal preference for position."
+  },
+  {
+    "id": "intl-v2-hy-edgy-068",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Սևանի տեսարանով մեր գովազդում «հեռու առօրյայից» գրեցինք։ Նկարի ներքևում աշխատանքային զանգի համար լավ կապ էինք խոստանում։",
+    "age_rating": "teen",
+    "themes": [
+      "work",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Retreat advertising; escape and constant availability are sold together."
+  },
+  {
+    "id": "intl-v2-hy-edgy-069",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Երևանի մետրոյի համար իմ կազմած հարցումը միայն գոհ լինելու տարբերակներ ուներ։ Արդյունքը այնքան հաջող էր, որ իրական ուղևորների հետ չհամեմատեցինք։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Biased fictional transit survey; forced positive answers manufacture success."
+  },
+  {
+    "id": "intl-v2-hy-edgy-070",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Գորգագործական դասի համար «յուրաքանչյուրը վարպետ է» գովազդ գրեցինք։ Ուսուցիչը խնդրեց դա գործիքներին չասել, դրանք դեռ տարբերությունը զգում են։",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft-workshop promotion; encouraging language overstates acquired skill."
+  },
+  {
+    "id": "intl-v2-hy-edgy-071",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Հայերեն ծանուցման մեջ «կարևոր» բառը բոլորը օգտագործեցին։ Հիմա հեռախոսս ամեն րոպե փոքրիկ պետական արարողություն է կազմակերպում։",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Notification copy; inflated urgency cheapens importance."
+  },
+  {
+    "id": "intl-v2-hy-edgy-072",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Վերնիսաժի լուսանկարում մեր տաղավարը դատարկ էր։ Խմբագրեցինք այնպես, որ «մինիմալիզմ» կոչվի, մինչև ապրանքը հասնի։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft-market launch; a stock delay is reframed as design."
+  },
+  {
+    "id": "intl-v2-hy-edgy-073",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Գյումրիի դարպասի քննարկման ժամանակ ասացին՝ մտածենք շրջանակից դուրս։ Վարպետը հիշեցրեց՝ դարպասը շրջանակ չունենա, չի տեղադրվի։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Ironwork planning; a management idiom conflicts with a structural requirement."
+  },
+  {
+    "id": "intl-v2-hy-edgy-074",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Դիլիջանի անտառի մոտ հանգստի ծրագիրը խոստանում էր «անհատական մոտեցում»։ Իմ անունը փոխել էին, մնացածը բոլորիս նույն նամակն էր։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional retreat personalization; a name token substitutes for individual consideration."
+  },
+  {
+    "id": "intl-v2-hy-edgy-075",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Կասկադում լուսանկարի համար արևին սպասեցի։ Հետո զտիչը փոխեցի, որ ամպամած թվա. առցանց տրամադրությունը եղանակին չի ենթարկվում։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Curated travel imagery; editorial mood contradicts the effort spent obtaining natural light."
+  },
+  {
+    "id": "intl-v2-hy-edgy-076",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Մատենադարանի մասին նոր ծրագրին «անվճար գիտելիք» անունն էինք տվել։ Օգտվողը գրանցվելու համար այնքան տվյալ տվեց, որ սկզբում մենք իմացանք նրա մասին։",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional educational platform; data collection precedes promised learning."
+  },
+  {
+    "id": "intl-v2-hy-edgy-077",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Քոչարիի թիմային օրվա մասին հաշվետվության մեջ բոլորին գովեցինք։ Վերջում հեղինակների ցանկից ուսուցչի անունը մոռացանք՝ թիմի սահմանը տարօրինակ տեղում ավարտվեց։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Event reporting; a collaboration claim omits the person who taught it."
+  },
+  {
+    "id": "intl-v2-hy-edgy-078",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Սևանի մեր ուղեցույցում «բոլորի համար» գրված էր մեծ տառերով։ Փոքր տառերով շարքը երկար բացատրում էր՝ ովքեր դեռ պետք է սպասեն։",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional tourism accessibility copy; qualifications narrow a sweeping inclusion claim."
+  },
+  {
+    "id": "intl-v2-hy-edgy-079",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Երևանի մետրոյի քարտեզը հավելվածում մեծացնելու համար երկու մատ էր պետք։ Հետադարձ կապ գրելու համար՝ ամբողջ երեկոն։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional transit app; simple viewing contrasts with a cumbersome complaint channel."
+  },
+  {
+    "id": "intl-v2-hy-edgy-080",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Գորգի ցուցադրության գլխավոր կարգախոսը «ձեռքի ուժն» էր։ Բեմի վրա աշխատող ձեռքերից միայն խոսափող պահողներն էին երևում։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft exhibition messaging; promotional staging sidelines the actual labor."
+  },
+  {
+    "id": "intl-v2-hy-edgy-081",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Հայերեն ձևաթղթում «ծանոթացել եմ» վանդակը նշեցի։ Ինձ ոչ ոք չհարցրեց՝ արդյոք մենք տեքստի հետ միմյանց հասկացել ենք։",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Consent wording; acknowledgement is weaker than comprehension."
+  },
+  {
+    "id": "intl-v2-hy-edgy-082",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Վերնիսաժի ապրանքների անունները անգլերեն դարձրինք, որ միջազգային լինի։ Տեղացի գնորդը խնդրեց թարգմանել՝ պարզվեց, իր քաղաքի հուշանվերը հյուր էր դարձել։",
+    "age_rating": "teen",
+    "themes": [
+      "work",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft-market naming; international branding can distance local buyers."
+  },
+  {
+    "id": "intl-v2-hy-edgy-083",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Գյումրիի դարբնին խորհուրդ տվեցինք ավելի շատ պատմել աշխատանքի մասին։ Նա հարցրեց՝ մուրճը խոսելու ընթացքում ո՞վ է բռնելու։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Artisan promotion; self-marketing competes with production time."
+  },
+  {
+    "id": "intl-v2-hy-edgy-084",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Դիլիջանի հանգստի հոլովակի վրա «դանդաղ ապրեք» գրեցինք։ Հարթակը զգուշացրեց՝ առաջին երեք վայրկյանը բավական արագ չի գրավում։",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Slow-travel promotion; platform attention demands conflict with the message."
+  },
+  {
+    "id": "intl-v2-hy-edgy-085",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Կասկադի մեր լուսանկարը «անկրկնելի» կոչեցինք։ Նույն տեղում հաջորդ խմբին նույն դիրքն էինք բացատրում։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Tourism photo service; standardized posing contradicts uniqueness."
+  },
+  {
+    "id": "intl-v2-hy-edgy-086",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Մատենադարանի մշակույթի մասին ներկայացումը կարճացրինք՝ ղեկավարները ժամանակ չունեին։ Մշակույթին նվիրված ժամանակի պակասը ամենահաստատված փաստն էր։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional cultural presentation; institutional attention reveals actual priorities."
+  },
+  {
+    "id": "intl-v2-hy-edgy-087",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Քոչարիի դասից հետո աշխատանքային թիմը միացյալ տեսանյութ հրապարակեց։ Մեկնաբանություններում միասնությունը պահելու համար բոլոր հարցերը փակեցին։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Team-promotion video; controlling discussion manufactures apparent harmony."
+  },
+  {
+    "id": "intl-v2-hy-edgy-088",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Սևանի ամառային գովազդում դատարկ սենյակը «վերջին հնարավորությունն» էր։ Նույն հնարավորությունը ամեն առավոտ նորից արթնանում էր։",
+    "age_rating": "teen",
+    "themes": [
+      "money",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional lodging advertisement; recurring scarcity language loses credibility."
+  },
+  {
+    "id": "intl-v2-hy-edgy-089",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Երևանի մետրոյի հավելվածը խնդրեց տեղորոշումը մշտապես միացնել։ Իմ հարցը մեկ կանգառի մասին էր, հետաքրքրությունը՝ ամբողջ կյանքի։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional transit app permissions; requested access exceeds the immediate task."
+  },
+  {
+    "id": "intl-v2-hy-edgy-090",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Գորգագործական մրցույթում ամենաշատ ձայները ստացավ լավագույն նկարը։ Իրական գորգը դեռ չէր չորացել, բայց հանրային կարծիքն արդեն պատրաստ էր։",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Online craft voting; photographic presentation outruns assessment of the finished object."
+  },
+  {
+    "id": "intl-v2-hy-edgy-091",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Հայերեն նամակում «ձեր կարծիքը կարևոր է» գրեցինք։ Պատասխանելու հասցեն չաշխատող էր՝ կարևորությունը միայն մեկ ուղղությամբ էր նախատեսված։",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional customer email; invitation conflicts with an unusable reply channel."
+  },
+  {
+    "id": "intl-v2-hy-edgy-092",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Վերնիսաժի վաճառքի ցուցակում «կայուն զարգացում» ավելացրինք։ Առաջին քայլով հին պիտակները թափեցինք ու նոր պլաստիկով տպեցինք։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft branding; sustainability language prompts contradictory material waste."
+  },
+  {
+    "id": "intl-v2-hy-edgy-093",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Գյումրիի դարպասի պատվերը «անձնական փորձառություն» անվանեցինք։ Հաճախորդը խնդրեց փորձառության փոխարեն առայժմ ճիշտ չափերը պահել։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Ironwork marketing; elevated language is less useful than basic accuracy."
+  },
+  {
+    "id": "intl-v2-hy-edgy-094",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Դիլիջանի անտառի հանգստյան հոլովակում թռչունների ձայն ավելացրինք ուրիշ ձայնագրությունից։ Բնության իսկությունը վերջապես հարմար գրաֆիկով էր աշխատում։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "animals"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Nature advertising; stock audio quietly manufactures authenticity."
+  },
+  {
+    "id": "intl-v2-hy-edgy-095",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Կասկադում իմ կարճ տեսանյութի համար երեք անգամ բարձրացա նույն աստիճանը։ Օրվա առաջընթացս հիմնականում կրկնություն էր՝ լավ լուսավորությամբ։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Social-media production; apparent progress is repeatedly staged."
+  },
+  {
+    "id": "intl-v2-hy-edgy-096",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Մատենադարանի մասին խմբագրին խնդրեցինք պարզ գրել։ Նա պարզ գրեց, հետո մենեջերը երեք մասնագիտական բառ ավելացրեց, որ աշխատանքը տեսանելի լինի։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Cultural copy editing; unnecessary jargon serves internal visibility."
+  },
+  {
+    "id": "intl-v2-hy-edgy-097",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Քոչարիի դասի համար «հավասար մասնակցություն» հայտարարեցինք։ Լուսանկարում կենտրոնի տեղը նախապես ամրագրված էր պաշտոնով։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional team event; promotional composition preserves hierarchy."
+  },
+  {
+    "id": "intl-v2-hy-edgy-098",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Սևանի հանգստի կայքում «հարցեր ունե՞ք» բաժինը բացեցի։ Բոլոր հարցերը համակարգն արդեն ինքն էր ընտրել, իմը ցանկում չէր մասնակցում։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional booking FAQ; curated questions fail the actual visitor."
+  },
+  {
+    "id": "intl-v2-hy-edgy-099",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Երևանի մետրոյի քարտեզի մեր նոր տարբերակը այնքան գեղեցիկ էր, որ կանգառների անունները գունային ներդաշնակության համար փոքրացրինք։ Ուղևորին մնում էր հիանալ։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Transit design satire; aesthetics displace readability."
+  },
+  {
+    "id": "intl-v2-hy-edgy-100",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Գորգագործին առաջարկեցինք ավելի ժամանակակից երևալ։ Նա նոր ակնոց դրեց ու շարունակեց այն գործը, որը մենք դեռ չէինք հասկացել։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Artisan branding; appearance changes more easily than outsiders' knowledge."
+  },
+  {
+    "id": "intl-v2-hy-edgy-101",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Հայերեն կոճակի վրա «պարզ է» գրեցինք։ Օգտվողը սեղմեց, և բացվեց հինգ էջանոց պարզաբանում։",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Interface copy; an affirmative label leads to excessive explanation."
+  },
+  {
+    "id": "intl-v2-hy-edgy-102",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Վերնիսաժի ձեռագործ սափորի համար «պատմություն յուրաքանչյուր կաթիլում» կարգախոս առաջարկեցի։ Վարպետը ասաց՝ ես միայն արտահոսք չունենալու համար եմ պատասխանատու։",
+    "age_rating": "teen",
+    "themes": [
+      "work",
+      "food"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Pottery promotion; poetic claims exceed the maker's practical guarantee."
+  },
+  {
+    "id": "intl-v2-hy-edgy-103",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Գյումրիի դարպասի ներկայացմանը բոլորն ամրությունից խոսեցին։ Ամենաթույլ մասը վերջում որոշման պատասխանատուի անունը գտնելն էր։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Ironwork project meeting; physical strength contrasts with unclear ownership."
+  },
+  {
+    "id": "intl-v2-hy-edgy-104",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Դիլիջանի անտառի ֆոնով առցանց ժողովին բոլորը նախանձեցին։ Ոչ ոք չհարցրեց՝ ինչու եմ այդտեղ էլ ժողովի մեջ։",
+    "age_rating": "teen",
+    "themes": [
+      "work",
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Remote-work scenery; an attractive background conceals the loss of leisure."
+  },
+  {
+    "id": "intl-v2-hy-edgy-105",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Կասկադի լուսանկարիս մեկնաբանությունը ծրագիրն առաջարկեց՝ «ապրում եմ պահով»։ Պահը երկուշաբթի էր, լուսանկարը՝ անցած ամառվանից։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Automated social caption; stock enthusiasm ignores chronology."
+  },
+  {
+    "id": "intl-v2-hy-edgy-106",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Մատենադարանի մասին մեր հոդվածի վերջում «ավելին» սեղմեցի։ Բացվեց նույն հոդվածը նոր գովազդով՝ գիտելիքը տեղում էր, եկամուտը շարժվում էր։",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional cultural website; navigation loops generate exposure rather than more content."
+  },
+  {
+    "id": "intl-v2-hy-edgy-107",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Քոչարիի դասից հետո թիմին ասացին՝ ամեն սխալից սովորում ենք։ Հաշվետվությունից սխալները հանեցին, որ սովորածն ավելի գեղեցիկ երևա։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Team-learning rhetoric; sanitized reporting hides its evidence."
+  },
+  {
+    "id": "intl-v2-hy-edgy-108",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Սևանի հանգստյան փաթեթում «ազատ ընտրություն» կար։ Ընտրելու էինք այն երեք տարբերակներից, որոնց համար արդեն նախապես վճարել էինք։",
+    "age_rating": "teen",
+    "themes": [
+      "money",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional travel package; constrained options are sold as autonomy."
+  },
+  {
+    "id": "intl-v2-hy-edgy-109",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Երևանի մետրոյի իմ հավելվածի նոր տարբերակն ավելի արագ էր։ Սխալ կանգառը հիմա առանց սպասելու էր ցույց տալիս։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Software optimization; speed improves the delivery of a wrong result."
+  },
+  {
+    "id": "intl-v2-hy-edgy-110",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Գորգի ցուցահանդեսում «համայնքի ձայն» խորագիր կար։ Խոսափողը այնքան հեռու էր վարպետներից, որ ձայնը հիմնականում վերնագիր էր մնում։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft event staging; inclusive branding lacks practical access."
+  },
+  {
+    "id": "intl-v2-hy-edgy-111",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Հայերեն հարցման «չգիտեմ» տարբերակը հանեցինք։ Վիճակագրությունը անմիջապես ավելի վստահ դարձավ՝ մարդկանց փոխարեն։",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Survey design; removing uncertainty manufactures false certainty."
+  },
+  {
+    "id": "intl-v2-hy-edgy-112",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Վերնիսաժի մեր բաժակներին «էկսկլյուզիվ» անուն տվեցինք։ Տատիկս խնդրեց նույնը հայերեն ասել՝ գուցե առանց այդ բառի գինը հասկանա։",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft retail jargon; untranslated prestige language obscures value."
+  },
+  {
+    "id": "intl-v2-hy-edgy-113",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Գյումրիի դարբինը հաշվարկը պարզ թղթով բերեց։ Մենք խնդրեցինք շնորհանդես. նույն թվերը թանկ տեսք ստացան՝ առանց երկաթ ավելացնելու։",
+    "age_rating": "teen",
+    "themes": [
+      "work",
+      "money"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Ironwork quotation; presentation changes perception without changing substance."
+  },
+  {
+    "id": "intl-v2-hy-edgy-114",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Դիլիջանի հանգստի գովազդը ինձ «եզակի ճանապարհորդ» անվանեց։ Հղման վերջում իմ եզակիությունը երկար հետևման համար էր։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Personalized travel marketing; individual address doubles as tracking metadata."
+  },
+  {
+    "id": "intl-v2-hy-edgy-115",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Կասկադի մոտ մեր միջոցառումը «բաց երկխոսություն» էր։ Հարցերը նախօրոք ստուգեցին, որ երկխոսությունը անակնկալ բաց չլինի։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional public-facing event; preselected questions limit the promised openness."
+  },
+  {
+    "id": "intl-v2-hy-edgy-116",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Մատենադարանի մասին նյութի աղբյուրները հեռացրինք, որ էջը մաքուր լինի։ Տեքստը հիմա վստահ կանգնած էր՝ առանց տեսանելի հենարանի։",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Cultural publishing; visual cleanliness removes evidential support."
+  },
+  {
+    "id": "intl-v2-hy-edgy-117",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Քոչարիի խմբային աշխատանքից հետո թիմը հարցրեց՝ ինչ սովորեցինք։ Առաջինը խոսեց ամենաշատ ուշացածը՝ ժամանակի կառավարման մասին։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Team debrief; confident advice conflicts with the speaker's demonstrated behavior."
+  },
+  {
+    "id": "intl-v2-hy-edgy-118",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Սևանի ուղևորության համար «գնի թափանցիկություն» էինք խոստացել։ Բոլոր հավելյալ վճարներն իսկապես երևացին՝ վճարման վերջին էջում։",
+    "age_rating": "teen",
+    "themes": [
+      "money",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional travel checkout; late disclosure satisfies only a narrow reading of transparency."
+  },
+  {
+    "id": "intl-v2-hy-edgy-119",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Երևանի մետրոյի հավելվածում բողոքելու ձևը մի անգամ փակվեց։ Երբ կրկնեցի, խնդրեց չկրկնվող կարծիք թողնել. համակարգը արդեն ձանձրացել էր իր խնդրից։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional feedback form; a failed submission is perversely treated as duplication."
+  },
+  {
+    "id": "intl-v2-hy-edgy-120",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Գորգագործի նկարում ձեռքերը ծածկեցինք մեծ կարգախոսով՝ «տեսեք վարպետի ձեռքը»։ Գովազդն իր ամենակարևոր հանձնարարականը ինքն էր խանգարում։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft advertising layout; a slogan obscures the very evidence it asks viewers to inspect."
+  },
+  {
+    "id": "intl-v2-hy-edgy-121",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Հայերեն ծառայության կանոններում «պարզ լեզու» պահանջ կար։ Բացատրության առաջին նախադասությունից հետո բառարանս էլ էր պարզաբանում ուզում։",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional Armenian policy text; proclaimed clarity produces jargon."
+  },
+  {
+    "id": "intl-v2-hy-edgy-122",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Վերնիսաժի մեր սափորի մասին հարցին ծրագիրը պատասխանեց՝ այն «կյանքի ձև է»։ Գնորդը դեռ ուզում էր իմանալ՝ քանի բաժակ ջուր է պահում։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "food"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Automated craft sales copy; lifestyle language ignores a practical specification."
+  },
+  {
+    "id": "intl-v2-hy-edgy-123",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Գյումրիի դարբնոցի նոր լոգոն հաստատեցինք վեց հանդիպմամբ։ Դարպասի իրական բացվածքը մեկ չափումով պարզվեց՝ երկաթը քննարկման սիրահար չէր։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft branding process; decorative decisions consume more coordination than physical measurement."
+  },
+  {
+    "id": "intl-v2-hy-edgy-124",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Դիլիջանի զբոսանքի ծրագիրը խնդրեց հետևել նշված արահետին։ Գովազդային հավելվածը նույն պահին առաջարկեց «ինքներդ կերտել ուղին»՝ գործընկեր սրճարանի միջով։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional travel guidance; sponsorship redirects a romantic independence claim."
+  },
+  {
+    "id": "intl-v2-hy-edgy-125",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Կասկադի լուսանկարների մրցույթում «անկեղծություն» անվանակարգը հաղթեց ամենաշատ մշակված նկարը։ Անկեղծորեն շատ աշխատանք էր արվել։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Travel photo contest; a word's literal flexibility excuses a contradictory result."
+  },
+  {
+    "id": "intl-v2-hy-edgy-126",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Մատենադարանի թեմայով մեր տեսանյութին ենթագրեր ավելացնելու գումար չգտանք։ Հասանելիության մասին բաժինը, սակայն, մեծ բյուջեով էր նկարահանված։",
+    "age_rating": "teen",
+    "themes": [
+      "work",
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional educational media; promotion of access is funded before an actual access feature."
+  },
+  {
+    "id": "intl-v2-hy-edgy-127",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Քոչարիի դասին բոլորին խնդրեցին նույն տեմպով շարժվել։ Գրասենյակում նույն արտահայտությունը նշանակում էր՝ արագը սպասում է, դանդաղը բացատրություն է գրում։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dance teamwork language takes a different form in office practice."
+  },
+  {
+    "id": "intl-v2-hy-edgy-128",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Սևանի հանգստի առաջարկի «հիմա ամրագրել» կոճակը ամեն էջում էր։ «Մտածել» տարբերակը միայն իմ գլխում էր մնացել։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional booking interface; sales urgency crowds out deliberation."
+  },
+  {
+    "id": "intl-v2-hy-edgy-129",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Երևանի մետրոյի հավելվածին երթուղիս չպահպանել խնդրեցի։ Այն պահեց նախընտրությունս՝ հիշելու համար, թե ինչ չպահպանի։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional privacy preference; a necessary remembered setting exposes a small conceptual paradox."
+  },
+  {
+    "id": "intl-v2-hy-edgy-130",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Գորգագործի պատմությունը փոխեցինք, որ ավելի հուզիչ լինի։ Նա կարդաց ու հարցրեց՝ այս հետաքրքիր մարդուն կարո՞ղ եմ ծանոթանալ։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Overwritten artisan biography; publicity loses contact with its subject."
+  },
+  {
+    "id": "intl-v2-hy-edgy-131",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Հայերեն անունով հաշիվս «միջազգային» համարելու համար ազգանունս կրճատեցին։ Աշխարհը մեծացավ, անունս՝ փոքրացավ։",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional global form; limited text space narrows personal identity."
+  },
+  {
+    "id": "intl-v2-hy-edgy-132",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Վերնիսաժի մեր տաղավարին «դանդաղ գնումներ» ցուցանակ դրեցինք։ Գնորդը երկար մտածեց, և վաճառքի բաժինը առաջինը կորցրեց համբերությունը։",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft retail; a promoted pace becomes inconvenient when practiced."
+  },
+  {
+    "id": "intl-v2-hy-edgy-133",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Գյումրիի դարբինը հարցրեց՝ ինչ չափի դարպաս է պետք։ Մենք բրենդի արժեքների ֆայլը ուղարկեցինք։ Երկրորդ նամակում նա էլ ավելի մեծ տառերով հարցրեց չափը։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Ironwork brief; conceptual branding fails to answer a concrete requirement."
+  },
+  {
+    "id": "intl-v2-hy-edgy-134",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Դիլիջանի հանգստյան ծրագիրը խոստացավ «հանդիպում ինքներդ ձեզ հետ»։ Ժամանակացույցում դրա համար քսան րոպե կար՝ այլ մասնակիցների հետ նույն սրահում։",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional retreat; personal introspection is sold as a standardized group slot."
+  },
+  {
+    "id": "intl-v2-hy-edgy-135",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Կասկադի մոտ մեր միջոցառման հրավերը բոլորին էր։ Գրանցման էջը հարցրեց՝ ո՞ւմ հրավերով եք գալիս. ներառումը ծանոթի անուն էր սպասում։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional event registration; open language conflicts with referral requirements."
+  },
+  {
+    "id": "intl-v2-hy-edgy-136",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Մատենադարանի մասին հոդվածում հղումները շատ էին։ Խմբագիրը դրանք հանեց՝ ընթերցողը ուրիշ տեղ չգնա։ Աղբյուրների հանդեպ հավատը դարձավ կայքում մնալու պայման։",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Publishing incentives; removing sources keeps traffic at the cost of verification."
+  },
+  {
+    "id": "intl-v2-hy-edgy-137",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Քոչարիի խմբային տեսանյութից չստացված պահերը կտրեցինք։ Հետո հրապարակեցինք՝ «մեզ մոտ սխալվելու ազատություն կա» գրությամբ։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Team-culture video; editing contradicts an advertised tolerance for mistakes."
+  },
+  {
+    "id": "intl-v2-hy-edgy-138",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Սևանի ուղևորության հավելվածը «առանց անակնկալների» տարբերակ էր առաջարկում։ Վճարման վերջում դրա համար անակնկալ հավելավճար հայտնվեց։",
+    "age_rating": "teen",
+    "themes": [
+      "money",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional booking add-on; avoiding surprises is itself a late cost."
+  },
+  {
+    "id": "intl-v2-hy-edgy-139",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Երևանի մետրոյի մեր քարտեզը «օգտվողակենտրոն» էր։ Օգտվողին հարցրինք միայն այն բանից հետո, երբ բոլոր փոփոխությունները փակեցինք։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional design process; user consultation arrives too late to shape decisions."
+  },
+  {
+    "id": "intl-v2-hy-edgy-140",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Գորգագործ վարպետից խնդրեցինք աշխատանքը արագացնել։ Նա հարցրեց՝ որ հանգույցները չանենք, որ ձեր խոստումն անփոփոխ մնա։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft scheduling; physical completeness exposes an unrealistic deadline."
+  },
+  {
+    "id": "intl-v2-hy-edgy-141",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Հայերեն օգնության հաղորդագրությունն ասում էր՝ «ամեն ինչ կարգին է»։ Նույն էջում կարմիր սխալը թարթում էր՝ հավանաբար այլ կարծիքով։",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian interface; reassuring copy conflicts with visible system state."
+  },
+  {
+    "id": "intl-v2-hy-edgy-142",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Վերնիսաժի մեր բաժակի նկարին չափը չնշեցինք՝ գեղեցկությունը չխանգարելու համար։ Հետո վերադարձները շատ մանրամասն պատմեցին բացակայող թիվը։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft product listing; omitted practical information creates avoidable mismatch."
+  },
+  {
+    "id": "intl-v2-hy-edgy-143",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Գյումրիի դարպասի պատվիրատուին երեք առաջարկ ուղարկեցինք։ Երեքն էլ նույն դարպասն էին՝ տարբեր փաթեթավորման անուններով։ Երկաթը մեր ընտրության ազատությանը չէր մասնակցում։",
+    "age_rating": "teen",
+    "themes": [
+      "work",
+      "money"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional pricing packages; labels manufacture options without product differences."
+  },
+  {
+    "id": "intl-v2-hy-edgy-144",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Դիլիջանի անտառի մասին տեսանյութի տակ «դանդաղեցրեք» գրեցի։ Հաջորդ օրը հարթակը խորհուրդ տվեց խոսքս ավելի արագ ասել, որ մարդիկ մնան։",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Slow-living content; engagement optimization contradicts the expressed value."
+  },
+  {
+    "id": "intl-v2-hy-edgy-145",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Կասկադի խմբային նկարի համար բոլորս ազատ դիրք ընդունեցինք։ Լուսանկարիչը յուրաքանչյուրիս ազատությունն առանձին ուղղեց։",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Staged group photo; spontaneity is carefully supervised."
+  },
+  {
+    "id": "intl-v2-hy-edgy-146",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Մատենադարանի ձեռագրերի մասին ներկայացման մեջ հեղինակների անունները փոքր էին։ Նախագծի հովանավորի անունը այդպիսի պատմական համեստություն չուներ։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional cultural presentation; funding recognition overtakes source attribution."
+  },
+  {
+    "id": "intl-v2-hy-edgy-147",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Քոչարիի դասից հետո թիմի նոր արժեքը «վստահությունն» էր։ Վճարի անդորրագիրը երեք անգամ ստուգեցին՝ արժեքների ներդրման սկզբնական փուլն էր։",
+    "age_rating": "teen",
+    "themes": [
+      "work",
+      "money"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Workplace trust rhetoric; routine suspicion remains unchanged."
+  },
+  {
+    "id": "intl-v2-hy-edgy-148",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Սևանի հանգստի կայքի հաճախորդների նկարներում ամպ չկար։ Մեր այցին ամպերը եկան առանց մարքեթինգի հաստատման։",
+    "age_rating": "teen",
+    "themes": [
+      "weather",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Tourism imagery; real weather does not obey a curated promise."
+  },
+  {
+    "id": "intl-v2-hy-edgy-149",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Երևանի մետրոյի հարցումների ծրագիրը հարցրեց՝ ի՞նչը կբարելավեիք։ Առաջարկեցի հարցումների քանակը։ Այդ պատասխանի համար նոր հարցում ուղարկեց։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional survey tool; feedback about excess feedback triggers more of it."
+  },
+  {
+    "id": "intl-v2-hy-edgy-150",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Գորգի ցուցադրության ուղեցույցը «բոլոր զգայարաններով փորձառություն» էր խոստանում։ Հետո մեծատառ գրեց՝ ոչնչի չդիպչել։ Ձեռքերս միայն տոմսը զգացին։",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional exhibition copy; a sweeping sensory promise meets ordinary handling restrictions."
+  },
+  {
+    "id": "intl-v2-hy-edgy-151",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Հայերեն հաշվի ստեղծման էջը պահանջեց «պարզ անուն»։ Պարզվեց՝ պարզն այն անունն է, որը տվյալների բազայի հեղինակը նախապես պատկերացրել է։",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Name-validation satire; software assumptions define who seems ordinary."
+  },
+  {
+    "id": "intl-v2-hy-edgy-152",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Վերնիսաժի փայտե ափսեն «բնական շքեղություն» կոչեցինք։ Տատիկս լցրեց լոբիով, և շքեղությունը վերջապես օգտակար զբաղմունք գտավ։",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft lifestyle branding; a practical meal gives the object its purpose."
+  },
+  {
+    "id": "intl-v2-hy-edgy-153",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Գյումրիի դարբնի գործը ներկայացնող հոլովակում նրա ձայնը փոխարինեցինք պատմողի ձայնով։ «Վարպետն անձամբ է խոսում» ենթագիրը մնաց՝ ժամանակ չկար փոխելու։",
+    "age_rating": "teen",
+    "themes": [
+      "work",
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional craft video production; rushed editing leaves a misleading authorship claim."
+  },
+  {
+    "id": "intl-v2-hy-edgy-154",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Դիլիջանի հանգստի դասընթացում «ոչ ասել» սովորեցինք։ Լրացուցիչ փաթեթը մերժելուց հետո կազմակերպիչը երկար համոզեց՝ երևի քննության գործնական մասն էր։",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional wellness program; sales pressure tests its own boundary-setting lesson."
+  },
+  {
+    "id": "intl-v2-hy-edgy-155",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Կասկադի մոտ զբոսանքը «առանց ծրագրի» էի նկարահանում։ Սցենարը երեք էջ էր, որ անպլանությունը պատահաբար չփչացնենք։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Travel video; carefully planned spontaneity exposes a production contradiction."
+  },
+  {
+    "id": "intl-v2-hy-edgy-156",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Մատենադարանի մասին մեր հոդվածը «մարդկային պատմություններ» խորագրով էր։ Խմբագրման ընթացքում բոլոր մարդկանց անունները հանեցինք, որ ավելի ընդհանուր հնչի։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Cultural storytelling; abstraction removes the humans promised by the title."
+  },
+  {
+    "id": "intl-v2-hy-edgy-157",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Քոչարիի խմբային դասից հետո ասացին՝ ղեկավարը թիմի մասն է։ Լուսանկարիչը հետո խնդրեց բոլորին մի քիչ հեռանալ, որ նա լավ երևա։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Team-building publicity; the image restores the hierarchy the speech softened."
+  },
+  {
+    "id": "intl-v2-hy-edgy-158",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Սևանի ուղևորության պայմանները գրեցինք շատ մանր տառերով։ «Մեծ տպավորություններ» խոստումը միակ մեծ տառն էր, որ մնացել էր։",
+    "age_rating": "teen",
+    "themes": [
+      "money",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional travel offer; typographic emphasis favors promise over conditions."
+  },
+  {
+    "id": "intl-v2-hy-edgy-159",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Երևանի մետրոյի մեր հավելվածը «մեկ հպումով» երթուղի էր խոստանում։ Առաջին հպումը պարզապես գովազդը փակելու համար էր։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional transit interface; a promotional overlay consumes the promised simplicity."
+  },
+  {
+    "id": "intl-v2-hy-edgy-160",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Գորգագործին խնդրեցինք ժպտալ աշխատանքի ժամանակ։ Նա հարցրեց՝ լուսանկարի՞, թե՞ ամբողջ պատվերի պայման է։ Մարքեթինգը առաջին անգամ չափելի պահանջ ուներ։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Artisan photo direction; a requested expression exposes its ambiguous labor scope."
+  },
+  {
+    "id": "intl-v2-hy-edgy-161",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Հայերեն կայքի «մեզ հետ կապվել» բաժնում միայն ինքնաշխատ օգնական կար։ «Մեզ»-ը շատ լավ էր ներկայացնում մի մարդու, որը դեռ չէր եկել աշխատանքի։",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional support interface; a collective human promise points only to automation."
+  },
+  {
+    "id": "intl-v2-hy-edgy-162",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Վերնիսաժի մեր բաժակը «առօրյայից փախուստ» անվանեցինք։ Տատիկը ամեն առավոտ նույն ժամին դրանով թեյ է խմում՝ շատ կարգապահ փախուստ է։",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft advertising; the promised escape becomes a comfortable routine."
+  },
+  {
+    "id": "intl-v2-hy-edgy-163",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Գյումրիի դարպասի համար պատվիրատուն «արտահայտիչ» դիզայն ուզեց։ Հետո խնդրեց բոլոր նախշերը հեռացնել, որ հարևանները ոչինչ չասեն։",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Decorative ironwork commission; expressive aspiration retreats before social visibility."
+  },
+  {
+    "id": "intl-v2-hy-edgy-164",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Դիլիջանի լռության մասին հոդվածիս տակ մեկնաբանություններ բացեցի։ Առաջին վեճը սկսվեց այն մասին, թե ով է լռությունն ավելի ճիշտ հասկանում։",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Nature writing; debate about quiet becomes noisier than its subject."
+  },
+  {
+    "id": "intl-v2-hy-edgy-165",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Կասկադի լուսանկարիս գովազդային գրությունը ասում էր՝ բարձրացրու կյանքիդ որակը։ Աստիճանները միայն բարձրությունը հաստատեցին, մնացածի համար պատասխանատու չգտանք։",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Motivational tourism copy; a physical climb supports only the literal part of the claim."
+  },
+  {
+    "id": "intl-v2-hy-edgy-166",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Մատենադարանի մասին դասընթացը «խորքային» կոչեցինք։ Մասնակիցներին տրված թեստը միայն սլայդի վերնագիրն էր հարցնում՝ խորքը կոճակներով չէր տեղավորվել։",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional educational product; assessment fails to measure promised depth."
+  },
+  {
+    "id": "intl-v2-hy-edgy-167",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Քոչարիի դասի կազմակերպիչը բոլորին անվանական շնորհակալություն ուղարկեց։ Ուսուցչի անունը բաց թողեց՝ երևի նրան դեռ որպես ծառայություն էր ճանաչում։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Event administration; personal recognition excludes essential paid expertise."
+  },
+  {
+    "id": "intl-v2-hy-edgy-168",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Սևանի գովազդում «ձեր անկյունը գտեք» էինք գրել։ Նույն անկյունի համար այնքան ամրագրում եկավ, որ վերջում այն հանրային հավաք դարձավ։",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Destination promotion; selling secluded space produces crowding."
+  },
+  {
+    "id": "intl-v2-hy-edgy-169",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Երևանի մետրոյի իմ հավելվածի նոր տարբերակը պարզեցրեց ամեն ինչ։ Այժմ սխալի պատճառը նույնիսկ մասնագետը չէր գտնում՝ այդ բաժինն էլ էինք թաքցրել։",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional software simplification; reduced interface complexity also removes diagnostics."
+  },
+  {
+    "id": "intl-v2-hy-edgy-170",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Գորգագործական աշխատարանի բացմանը խոսեցինք ստեղծագործական ազատությունից։ Մասնակիցներին անմիջապես նույն գույնի թելը բաժանեցինք, որ նկարներում միասնական լինեն։",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft workshop branding; visual consistency limits the advertised creative choice."
+  },
+  {
+    "id": "intl-v2-hy-edgy-171",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Հայերեն նամակի վերջում գրեցի՝ «հարցերի համար միշտ բաց ենք»։ Հետո ինքնաշխատ պատասխանը նշեց՝ միայն երեքշաբթի, տասից տասներկուսը։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Customer communication; a broad availability claim meets a narrow real schedule."
+  },
+  {
+    "id": "intl-v2-hy-edgy-172",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Վերնիսաժի ձեռագործ իրերը կայքում «առանց պատմելու կհասկանաք» խորագրով տեղադրեցինք։ Կողքին գնորդի համար ութ պարբերություն գրեցինք՝ ինչ զգալ։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft marketing; a promised intuitive experience comes with emotional instructions."
+  },
+  {
+    "id": "intl-v2-hy-edgy-173",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Գյումրիի դարպասի նախագիծը «համարձակ» անվանեցինք։ Հաստատման համար այն ուղարկեցինք բոլորին, ովքեր կարող էին համարձակ մասը հանել։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Design approval; a cautious process erases its own stated ambition."
+  },
+  {
+    "id": "intl-v2-hy-edgy-174",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Դիլիջանի անտառի ֆոնով աշխատելը ներկայացրինք որպես ազատություն։ Գործընկերս միայն հարցրեց՝ հանգստյան օրը արձակուրդ գրանցե՞լ ես, թե՞ էլի աշխատանքային ես երևալու։",
+    "age_rating": "teen",
+    "themes": [
+      "work",
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Remote-work promotion; scenic freedom blurs a real boundary between work and leave."
+  },
+  {
+    "id": "intl-v2-hy-edgy-175",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Կասկադի նկարների մեր հավաքածուն «իսկական Երևան» էր կոչվում։ Գեղեցիկ չստացված փողոցները կտրեցինք՝ իսկությունը մի քիչ խիստ ընտրություն էր անցնում։",
+    "age_rating": "teen",
+    "themes": [
+      "tech",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Travel-photo curation; a comprehensive authenticity claim rests on selective framing."
+  },
+  {
+    "id": "intl-v2-hy-edgy-176",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Մատենադարանի մասին նախագծում ուզում էինք պահպանել յուրաքանչյուր ձայն։ Բյուջեի աղյուսակում թարգմանիչն ու ենթագրողը դեռ «ըստ հնարավորության» էին։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional cultural project; inclusive intent lacks funding for practical access work."
+  },
+  {
+    "id": "intl-v2-hy-edgy-177",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Քոչարիի թիմային դասից հետո բոլորս նույն քայլն էինք անում։ Կազմակերպությունը դա մշակութային փոփոխություն կոչեց. երկուշաբթի նույն վեճերին վերադարձանք՝ ավելի լավ ռիթմով։",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Team-building outcome; a learned dance skill is mistaken for organizational reform."
+  },
+  {
+    "id": "intl-v2-hy-edgy-178",
+    "collection": "hy-am-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Սևանի հանգստի առաջարկը «կյանքի լավագույն պահը» խոստացավ։ Ամրագրելուց առաջ ուզեցի երաշխիքի պայմանները տեսնել, և կայքը հանկարծ շատ լուռ դարձավ։",
+    "age_rating": "teen",
+    "themes": [
+      "money",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Fictional travel hyperbole; a concrete guarantee request exposes an unverifiable promise."
+  }
+]

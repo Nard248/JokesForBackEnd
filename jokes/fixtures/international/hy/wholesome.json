@@ -1,0 +1,2214 @@
+[
+  {
+    "id": "intl-v2-hy-wholesome-001",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Քոչարիի առաջին փորձին անընդհատ սխալվում էի։ Խումբն այնքան բարի էր, որ վերջում իմ սխալն էլ միասին արեց։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Kochari group dance; a novice's mistake becomes collective kindness."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-002",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Վերնիսաժում պապիկը շախմատ գնեց թոռան համար։ Առաջին պարտությունից հետո պարզվեց՝ նվերը նաև համբերության դասընթաց էր։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Vernissage chessboards; giving a game unexpectedly teaches the giver."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-003",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Մատենադարանում աղջիկս հարցրեց՝ հին ձեռագրերն ով է կարդացել առաջինը։ Ասացի՝ հեղինակը։ «Լավ է, գոնե հերթ չի կանգնել»։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Matenadaran manuscripts; a child's practical reading priority."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-004",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Դիլիջանի անտառում փոքրիկը կաղին դրեց գրպանս։ Հիմա տուն ունեմ, աշխատատեղ ու մի ծառի առաջին հասցեն։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dilijan woodland; a pocket acorn becomes a future tree's address."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-005",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Գյումրիում դարբնի պատրաստած փոքրիկ ծաղիկ գնեցինք։ Մեր ընտանիքում սա առաջին ծաղիկն է, որ ջրելու մասին վեճում միշտ հաղթում է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Gyumri metal craft; an iron flower escapes household care disputes."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-006",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Կասկադի աստիճաններին տատիկս ամեն քանդակի մոտ կանգնում էր։ Մենք արվեստ էինք սովորում, նա՝ շունչը տեղը բերում։ Բոլորս կրթված վերադարձանք։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Cascade sculpture walk; rest stops double as generous art lessons."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-007",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Լավաշ փաթաթել սովորելիս ամեն ինչ թափեցի։ Տատիկն ասաց՝ դու սեղանին մատուցելու նոր ձև ես գտել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Lavash wrapping; an elder kindly renames a beginner's spill."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-008",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Բյուրականի աստղադիտարանում տղաս ուզեց լուսնին բարևել։ Ձեռքը բարձրացրեց ու հարցրեց՝ հեռադիտակի մյուս կողմից ինձ մեծ կտեսնի՞։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Byurakan astronomy visit; telescope magnification imagined reciprocally."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-009",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Սևանի ափին երեխան քարերը տեսակավորեց՝ սիրուն ու շատ սիրուն։ Առաջին բաժնում միայն իմ ընտրածն էր, որ չնեղանամ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Sevan shore stones; a child's considerate classification."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-010",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Հայկական զարդագիր նկարելիս անունս այնքան ծաղիկներով լցրեցի, որ ուսուցչուհին ստուգելուց առաջ ուզեց ջրել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian ornamental letters; decorative writing becomes a garden."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-011",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Գյումրիի պատշգամբը նկարեցի բացիկի վրա։ Ընկերս ասաց՝ շատ հյուրընկալ է ստացվել։ Պարզվեց՝ պատուհանը մոռացել էի, ամբողջ պատը դուռ էր։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Kumayri balconies and drawing; a missing wall feature becomes welcome."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-012",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Տիկնիկային ներկայացումից հետո աղջիկս ծափ տվեց նաև վարագույրին։ Ասաց՝ նա բոլորից շատ է ճանապարհ տալիս ուրիշներին։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian theatre visit; overlooked stage fabric receives thanks."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-013",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Դիլիջանի փայտագործի մոտ տղաս ընտրեց ամենափոքր գդալը։ Տուն գալով հայտարարեց՝ սրանով դեղն էլ քիչ կերևա։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dilijan woodcraft; a souvenir is repurposed optimistically."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-014",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Քոչարիի խմբում ինձ վստահեցին շարքի վերջը։ Մայրս ասաց՝ վերջապես ամբողջ ընտանիքը տեսնում է, թե ինչքան առաջ ես գնացել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Kochari line position; a parent's affectionate interpretation."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-015",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Վերնիսաժում ձեռագործ բաժակ ընտրելիս ամեն մեկին ձեռք էի տալիս։ Վաճառողն ասաց՝ կարծես բաժակ չէ, ձեռքսեղմման ընկեր ես փնտրում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Vernissage pottery; tactile choice treated as friendship."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-016",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Մատենադարանի գրքերում լուսանցքները ցույց տվեցի որդուս։ Նա ուրախացավ՝ նույնիսկ հին իմաստուններն են նկարելու տեղ թողել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Manuscript margins; a child recognizes space for creativity."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-017",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Սևանում տատիկը գլխարկս ամուր կապեց։ Հիմա լուսանկարներում ինձանից անկախ ճանապարհորդում է միայն սանրվածքս։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "weather",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Sevan wind; affectionate practical help leaves hair freedom."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-018",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Երևանի բակում պապիկը շախմատի նորեկին բացատրեց՝ ձին թռչում է։ Երեխան մնացած խաղաքարերին մոտեցրեց, որ տեսնեն ներկայացումը։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Courtyard chess; a child's literal audience for a knight move."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-019",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Դիլիջանում քայլելուց հետո տղաս ծառին հենվեց։ «Նստարան չի՞ եղել», հարցրի։ «Եղել է, բայց սա դեռ սովորում է»։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Forest walks and wooden benches; a living tree is a bench apprentice."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-020",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Լավաշի վերջին կտորը կիսեցինք։ Եղբայրս մեծ կեսը տվեց ինձ ու անմիջապես դարձավ մեր տան մաթեմատիկայի ամենասիրելի մասնագետը։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Shared lavash; generosity improves uneven arithmetic."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-021",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Կասկադի մոտ երեխան արձաններին ներկայացավ։ Ասաց՝ միևնույն է, ամեն անգամ գալիս եմ, իրենք արդեն ճանաչում են ինձ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Repeated Cascade sculpture visits; familiarity becomes mutual friendship."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-022",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Գյումրիից բերած կավե բաժակս մի քիչ ծուռ է։ Ամեն առավոտ հիշեցնում է՝ կատարյալ չլինելն աշխատանքից ազատվելու պատճառ չէ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Gyumri pottery; a useful imperfect cup offers gentle reassurance."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-023",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Հայոց այբուբենը սովորող թոռս իմ անվան տառերն առաջինը գտավ։ Աշխարհի ամենակարճ պատվոգիրն էր՝ ընդամենը չորս տառ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian alphabet learning; recognition becomes a grandparent's award."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-024",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Բյուրականում աղջիկս աստղերին անուններ էր տալիս։ Երբ ընտանիքի անունները վերջացան, ասաց՝ հիմա հարևաններին էլ հրավիրենք։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Astronomy visit; naming stars expands a child's imagined gathering."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-025",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Վերնիսաժից ձեռագործ տիկնիկ բերեցի։ Աղջիկս նրան բարձ տվեց, որովհետև ամբողջ օրը կանգնած աշխատել էր։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Handmade market doll; a child grants a souvenir rest."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-026",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Գյումրիի երկաթե դարպասի նախշը նկարելիս պապիկս օգնեց։ Իմ մասը հիմա փոքր դուռ ունի՝ սխալներս հանգիստ դուրս գալու համար։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Gyumri decorative ironwork; drawing mistakes get an affectionate exit."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-027",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Դիլիջանում խեցեգործություն փորձեցինք։ Իմ ամանը տատիկն ընտրեց բանալիների համար՝ ասաց, որ այդքան փոսից ոչ մեկը չի փախչի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dilijan pottery workshop; a misshapen bowl finds a useful job."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-028",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Սևանի պիկնիկին փոքրիկը անձեռոցիկով ծածկեց հացի զամբյուղը։ Ասաց՝ հացն էլ է լճին եկել հանգստանալու։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Sevan picnic; covered bread becomes another holiday guest."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-029",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Քոչարիի փորձից հետո քայլերս դեռ պարում էին։ Տուն հասնելիս մայրս ասաց՝ լավ է, գոնե կոշիկներդ ուրախ են վերադարձել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dance rehearsal aftereffects; tired shoes are cheerfully personified."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-030",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Մատենադարանում թոռս իմ ակնոցը խնդրեց։ Հին գրքին ուզում էր ցույց տալ, որ ինքն էլ ընթերցման սարքավորում ունի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Manuscript museum visit; a child dresses for an imagined meeting with a book."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-031",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Վերնիսաժի փայտե շախմատի ձին աղջիկս անվանեց։ Հիմա այն կորցնելուց չեմ վախենում. ամեն երեկո կանչով վերադառնում է տախտակին։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Handcrafted chess set; a named piece is treated as a pet."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-032",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Կասկադում ընտանեկան լուսանկար արեցինք։ Ամենաբարձր կանգնածը փոքրիկն էր, ու առաջին անգամ ոչ ոք չխնդրեց նրան մեծանալ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Cascade steps; elevation briefly solves family photo hierarchy."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-033",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Գյումրիի պատուհանի կռած ծաղիկները նկարեցի տատիկի համար։ Նա ասաց՝ սրանք վերջապես իմ բացակայության ժամանակ էլ ինձ կսպասեն։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Gyumri iron floral details; a drawing becomes undemanding company."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-034",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Հայերեն նոր բառ սովորեցի ու զանգեցի պապիկին օգտագործելու։ Նա բառը բացատրեց այնքան երկար, որ արդեն երկրորդ զանգի առիթ էլ ունեմ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Intergenerational Armenian vocabulary; learning creates more conversation."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-035",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Դիլիջանի թանգարանում տղաս ամենափոքր ցուցանմուշին երկար էր նայում։ Ասաց՝ մեծերն առանց ինձ էլ ուշադրություն են ստանում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dilijan museum; a child distributes attention fairly."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-036",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Լավաշի վրա կանաչի շարեցի ուղիղ գծով։ Պապիկն ասաց՝ ուտելիքդ նույնիսկ երթուղի ունի, հո չե՞ս մոլորվի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Lavash preparation; a neat filling line becomes a helpful route."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-037",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Բյուրականի այցից հետո երեխան սենյակում աստղեր կպցրեց։ Ամենախոշորը դռան վրա է՝ որ հայրիկն էլ գիշերը առանց բախվելու հայտնագործություն անի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Astronomy-inspired room decoration; stars guide a sleepy parent."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-038",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Երևանի բակի շախմատի խաղին երեխային ժամապահ նշանակեցինք։ Ամեն պարտվողին լրացուցիչ րոպե տվեց՝ տխրելու համար։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Courtyard chess; an improvised clock allows emotional recovery."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-039",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Սևանի ալիքներին փոքրիկս ծափ տվեց։ Հիմա ամեն վերադարձող ալիքին ասում է՝ տեսա՞ր, նորից ուզեցին։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Sevan shore; recurring waves interpreted as an encore."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-040",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Վերնիսաժի ասեղնագործ թռչունը գնեցինք պատին կախելու։ Մեր կատուն վերջապես հարևան ունի, որը չի վիճում պատուհանի տեղի համար։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "animals",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian embroidered bird motif; a harmless new household companion."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-041",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Գյումրիում դարբնի անունը խնդրեցի, որ նվերի հետ գրեմ։ Տատիկն ասաց՝ ճիշտ է, ծաղիկն էլ պիտի իմանա՝ ում մոտ է ծնվել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Gyumri iron craft; crediting the maker becomes a flower's family history."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-042",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Քոչարի սովորող ընկերուհիս ասաց՝ իմ ոտքերը դեռ տարբեր դասարաններում են։ Առաջարկեցի երկուսին էլ նույն դասից հետո պաղպաղակ տալ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Learning dance coordination; feet imagined as schoolchildren needing encouragement."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-043",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Մատենադարանում զարդագիրը տեսնելով՝ աղջիկս իր անունին պոչ ավելացրեց։ Հիմա անունը կարդալուց առաջ պետք է շոյել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian animal-shaped letter art; a written name becomes a pet."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-044",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Դիլիջանի փայտե փոքրիկ տնակը որդիս դրեց պատուհանին։ Ասում է՝ մեր տունն էլ պետք է իմանա, որ մենակ չէ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Woodcraft souvenir; homes are granted companionship."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-045",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Կասկադի վրա պապիկիս լուսանկարեցի ներքևից։ Նկարը տեսավ ու ասաց՝ լավ է, թոռս մեծացել է, ես՝ երկարել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Cascade photography angle; generations both appear to grow."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-046",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Լավաշ թխող վարպետին երեխան հարցրեց՝ ինչպես է այդքան բարակ ստացվում։ «Շատ փորձով»։ Հիմա իմ ամենահաստ նրբաբլիթը կոչվում է առաջին նախագիծ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Skilled lavash making; a novice's thick pancake gets a forgiving label."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-047",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Սևանի ափից փոստային բացիկ ուղարկեցինք տատիկին։ Նա մեզնից առաջ զանգեց՝ ասում էր, որ նկարով արդեն հասել է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Sevan postcard; a recipient imaginatively completes the trip first."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-048",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Հայերեն թելադրությունից հետո տղաս կետադրական նշաններն էլ հաշվեց։ Ասաց՝ նրանք էլ են աշխատել, ինչո՞ւ միայն բառերին հաշիվ տալ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian writing practice; punctuation receives work credit."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-049",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Գյումրիի պատշգամբներից այնքան նկար արեցինք, որ մեր սեփական պատշգամբը տուն վերադառնալիս կարգի բերեցինք՝ խանդից։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Kumayri architecture inspires affectionate care for one's own home."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-050",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Վերնիսաժում փոքրիկ զանգակ գնեցինք։ Երեխան այն հնչեցնում է, երբ տանը բոլորը զբաղված են, ու կոչում է ընտանիքի հավաքման կոճակ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft-market bell; a souvenir becomes an invitation to reconnect."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-051",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Դուդուկի առաջին դասից հետո եղբայրս ասաց՝ դեռ երգ չի ստացվում։ Փոքր քույրս պատասխանեց՝ ոչինչ, ես էլ սկզբում միայն լացում էի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Duduk learning; a child normalizes a beginner's first sounds."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-052",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Գորգագործության դասին մի հանգույց ծուռ կապեցի։ Ուսուցիչն ասաց՝ սա քո ստորագրությունն է։ Հիմա գորգիս վրա շատ հայտնի մարդ եմ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian carpet workshop; repeated novice errors become signatures."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-053",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Երևանի մետրոյում փոքրիկը տեղը զիջեց պապիկին ու ինքն էլ նստեց նրա ծնկներին։ Քաղաքավարությունն իր համար հարմարավետ լուծում էր գտել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Yerevan metro; courtesy and a child's comfort coincide."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-054",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Թոռս հայերեն նամակ գրեց ինձ։ «Սխալներս մի՛ ուղղիր, պապ, հետո կմտածեն՝ դու ես կարոտել քեզ»։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian writing; spelling errors preserve authorship of affection."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-055",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Տավուշում գորգի նախշ էի պատճենում։ Երեխան ասաց՝ քոնը ճանապարհ է դարձել, գորգը գոնե զբոսնելու տեղ կունենա։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Tavush weaving motifs; an imperfect copy becomes a useful path."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-056",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Դուդուկի նվագակցությունն այնքան հանգիստ էր, որ փոքրիկը հարցրեց՝ երգը վերմակ ունի՞։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Duduk's soft timbre; music imagined as warmly covered."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-057",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Երևանի մետրոյի գծապատկերում որդիս մեր կանգառի մոտ սիրտ նկարեց։ Քաղաքապետարանը դեռ տեղյակ չէ, բայց տունն արդեն նշված է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Metro wayfinding; a child's personal landmark improves the map."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-058",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Կավագործության դասին ընկերուհուս բաժակը իմից գեղեցիկ ստացվեց։ Փոխանակեցինք. հիմա երկուսս էլ ունենք այն բաժակը, որն ուզում էինք գովել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian craft workshop; reciprocal gifts remove rivalry."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-059",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Գյումրիի փողոցում մեր նկարն անող մարդուն ասացինք՝ լավ ենք ստացե՞լ։ «Դեռ չեմ նկարել, բայց արդեն լավ եք կանգնել իրար կողքի»։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Gyumri city walk; friendship precedes a successful photograph."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-060",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Հայերեն կարդալ սովորող աղջիկս ցուցանակը վանկերով կարդաց։ Խանութ մտանք այնքան հանդիսավոր, կարծես դուռը մեր ելույթից էր բացվել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian street-sign literacy; an ordinary entrance becomes a ceremony."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-061",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Սևանի պիկնիկին շունս ամենահամբերատար ձկնորսն էր։ Ոչ կարթ ուներ, ոչ էլ կասկած, որ վերջում իրեն բաժին կհասնի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "animals",
+      "food"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Sevan picnic; a dog relies on sharing instead of fishing equipment."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-062",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Վերնիսաժից տատիկիս համար արծաթե կախազարդ բերեցի։ Փաթեթը բացելիս այնքան էր ուրախանում, որ քարն արդեն ավելորդ փայլ էր։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Vernissage jewelry; the receiver outshines the ornament."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-063",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Քոչարիի ուսուցիչն ասաց՝ կողքիդ մարդու ձեռքը զգա։ Ընկերս շատ լուրջ ընդունեց ու ընդմիջմանը թեյն էլ իմ ձեռքը տվեց։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Kochari hand connection; attentiveness continues into a tea break."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-064",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Գորգի փոքրիկ նմուշ գործեցինք դպրոցում։ Հայրիկը դրեց մկնիկի տակ. մեր ընտանիքի առաջին գորգն է, որի վրա աշխատանքային օր է անցնում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school",
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. School weaving and home computing; a miniature rug gets a new function."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-065",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Մատենադարանի այցից հետո պապիկս իր հին տետրերը բերեց։ Ասաց՝ իմ ցուցադրությունը կարող ես ձեռք տալով ուսումնասիրել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Manuscript museum inspires an accessible family archive."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-066",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Դիլիջանի ծառերի տակ որդիս դանդաղեց քայլքը։ «Հոգնե՞լ ես»։ «Չէ, այսքան ստվեր են պատրաստել, ամոթ է արագ անցնել»։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dilijan forest shade; a child treats trees' shade as hospitality."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-067",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Դուդուկ սովորող հարևանիս տորթ տարանք առաջին հաջող մեղեդուց հետո։ Նա ասաց՝ հիմա պարզ է, թե ինչու էիք ամեն օր խնդրում շարունակել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. A novice musician; neighbors' encouragement gains a sweet motive."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-068",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Երևանում ընկերոջս հյուր գնալիս մոլորվեցի։ Նա եկավ դիմավորելու ու ասաց՝ տես, հաջողվեց միասին զբոսնել մինչև թեյը։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Yerevan neighborhood visit; getting lost becomes time together."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-069",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Սևանի քամին երեխայի թղթե նավակը կողքի տարավ։ Նա չնեղացավ՝ ասաց, որ նավակն ընկերների մոտ է գնացել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "weather",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Sevan shore play; a drifting paper boat is granted a social life."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-070",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Ասեղնագործության իմ առաջին ծաղիկը տատիկը շրջանակեց։ Այնքան հպարտ էր, որ ես էլ որոշեցի՝ երևի իսկապես ծաղիկ է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian embroidery practice; a grandparent's confidence confirms an unclear design."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-071",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Բյուրական գնալուց առաջ աղջիկս մազակալը աստղաձև ընտրեց։ Ուզում էր գիտնականներին ցույց տալ, որ թիմից է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Byurakan visit; a child's accessory becomes scientific affiliation."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-072",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Գյումրիի դարբնոցից փոքրիկ պայտ բերեցինք։ Մեր կատուն հոտոտեց ու հեռացավ. լավ է, հաջողության համար պահակ չի պահանջվում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "animals"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Gyumri metal souvenir; a cat refuses an imagined security job."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-073",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Լավաշի պատրաստման դասին հայրիկը խմորը շատ զգուշորեն բացեց։ Ասաց՝ առաջին անգամ է մի բան մեծացնում՝ առանց ձայնը բարձրացնելու։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Lavash dough rolling; a parent's gentle technique yields a playful observation."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-074",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Վերնիսաժի ձեռագործ տոպրակին իմ անունը գրեցին։ Այժմ գնումներից տուն գալիս գոնե մի բան արդեն իմ տեղը հիշում է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Personalized craft bag; the label provides affectionate certainty."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-075",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Հայերեն այբբենարանի «տուն» բառի կողքին աղջիկս մեզ նկարեց։ Տնակը չտեղավորվեց, բայց իմաստը մնաց։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian primer; family portraits replace the house without losing home."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-076",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Դիլիջանի թանգարանում փոքրիկը պատկերված անտառը ճանաչեց։ «Այստեղ արդեն եղել ենք, ուղղակի այն ժամանակ շրջանակ չկար»։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dilijan art and landscape; a frame distinguishes painting from a remembered walk."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-077",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Քոչարիի փորձին նոր տղան ամաչում էր։ Նրա կողքին կանգնեցի, ու մի րոպե անց արդեն ինքն էր ինձ ուղղում։ Լավ է, վստահությունը արագ հասավ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Kochari rehearsal; the encourager soon needs the novice's help."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-078",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Կասկադում երեխան հերթով բոլորիս ձեռքը բռնեց։ Ասաց՝ բարձրանալը խմբային աշխատանք է, միայն շնչելը՝ անհատական։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Cascade climb; a child makes a practical distinction about teamwork."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-079",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Գորգագործ վարպետը իմ խճճած թելերը բացեց ու ժպտաց։ Այդ օրը հասկացա՝ երբեմն օգնությունը պարզապես չի ասում՝ «տեսա՞ր»։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Weaving workshop; patient repair gently avoids a familiar scolding."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-080",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Երևանի մետրոյում պապիկս կանգառները թոռան հետ հաշվում էր։ Տուն հասնելիս տղան ասաց՝ այսօր թվաբանությունը մեզ տուն բերեց։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Metro ride counting; arithmetic gains a tangible destination."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-081",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Դուդուկի համերգից հետո փոքրիկն ուզում էր երաժշտությունը տուն տանել։ Ծրագրի թերթիկը ծալեցինք գրպանի չափով՝ առայժմ դրա համար էր տեղը։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Duduk performance; a program becomes a portable substitute for music."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-082",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Սևանից հետ գալով՝ երեխան ալիք էր նկարում։ Ամեն նոր գծից հետո ասում էր՝ այս մեկն էլ եկավ, սպասիր։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Sevan-inspired drawing; endless waves delay the finished picture."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-083",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Վերնիսաժում երկու տարբեր ականջօղ ընտրեցի։ Մայրս ասաց՝ գոնե ականջներդ հիմա իրար ասելու բան կունենան։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft-market jewelry; mismatched earrings become conversation partners."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-084",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Հայերեն ստեղնաշար միացրի տատիկի հեռախոսին։ Առաջին հաղորդագրությունն ամբողջությամբ իմ անունն էր. ասաց՝ փորձարկում եմ ամենակարևորը։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian mobile typing; a family name serves as the first test."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-085",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Գյումրիի սև ու վարդագույն քարերով տունը թոռս անվանեց շոկոլադե տորթ։ Նկարն ուղարկեցինք տատիկին՝ առանց բաղադրատոմս պահանջելու։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Gyumri tuff architecture; a child's visual comparison becomes a family joke."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-086",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Դիլիջանի արհեստանոցում գդալը շատ երկար տաշեցի։ Վարպետն ասաց՝ արդեն թեյի համար է։ Շարունակեցի ու հասա սուրճին։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Woodcraft novice; refinement humorously changes a spoon's serving size."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-087",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Շախմատի տախտակին պապիկս մի խաղաքար պակաս դրեց։ Թոռը գտավ ու հարցրեց՝ նա էլ է դպրոցից բացակայո՞ւմ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Family chess; a missing piece is treated like a classmate."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-088",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Լավաշը ծալելիս փոքրիկը մի անկյուն բաց թողեց։ Ասաց՝ լցոնը թող տեսնի՝ ուր ենք գնում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Lavash parcel; the filling receives a window."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-089",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Մատենադարանի գրքույկը կարդալիս տղաս մատով հետևում էր տողին։ Ասաց՝ երկար ճանապարհ է, բառերը մենակ չթողնեմ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Manuscript-museum booklet; reading guidance becomes companionship."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-090",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Հայկական զարդատառերով «բարի գալուստ» գրեցինք։ Դուռն այնքան սիրուն ստացվեց, որ հյուրերը ներս գալուց առաջ մեզ դուրս կանչեցին։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Decorative Armenian lettering; an invitation keeps guests admiring the door."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-091",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Քոչարիի ժամանակ ընկերս ոտքիս կանգնեց ու ներողություն խնդրեց։ Ասացի՝ լավ է, վերջապես նույն տեղում ենք։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dance synchronization; a minor misstep is generously reframed."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-092",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Տավուշի գորգագործի մոտ երեխան բոլոր թելերին անուն տվեց։ Նախշը դեռ չկար, բայց ընտանիքն արդեն մեծ էր։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Tavush weaving; named threads create an imagined community."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-093",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Կասկադից քաղաքը ցույց էի տալիս թոռնիկիս։ Նա մեր տունը չգտավ ու ասաց՝ ուրեմն ներսում է տաք մնացել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Cascade city view; an unseen home is imagined sheltering itself."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-094",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Դուդուկի վարպետին որդիս հարցրեց՝ ծիրանի ծառը գիտե՞ր, որ երաժիշտ է դառնալու։ Հիմա այգում ամեն ծառի ապագան է հետաքրքրում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Apricot wood used for duduk; a child wonders about trees' future careers."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-095",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Գյումրիի արհեստավորն ասաց՝ սա ձեռքի աշխատանք է։ Փոքրիկս իր ձեռքն էլ դրեց սեղանին՝ գուցե գործի ընդունեն։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Gyumri craft demonstration; a child interprets handwork as hiring hands."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-096",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Դիլիջանի արահետին կանգ առանք լռությունը լսելու։ Հայրիկը կես րոպե հետո շշնջաց՝ կարծես բոլորը լավ են պատրաստվել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Forest quiet; silence is treated as a successful group performance."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-097",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Վերնիսաժի փայտե տուփի մեջ թոռս ոչինչ չդրեց։ Ասաց՝ սա այն նվերների համար է, որ դու դեռ մտքիդ մեջ ես պահում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Crafted keepsake box; empty space becomes future generosity."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-098",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Սևանի նկարում երեխան արևը մեզ շատ մոտ էր նկարել։ Բացատրեց՝ նկարում գոնե թող չմրսենք։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "weather",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Sevan souvenir drawing; artistic scale corrects a chilly memory."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-099",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Հայերեն նոր սովորող ընկերս «շնորհակալություն» բառը դանդաղ ասաց։ Տատիկս պատասխանեց՝ այսքան երկար շնորհակալություն կյանքումս չէին ասել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian learner pronunciation; patience makes thanks feel especially substantial."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-100",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Երևանի մետրոյի շարժասանդուղքին փոքրիկը կոշիկներին շնորհակալություն հայտնեց։ Ասաց՝ այսօր վերջապես իրենց էլ են տանում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Yerevan metro escalator; shoes get a deserved ride."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-101",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Պարոնյանի թատրոնում որդիս հարցրեց՝ դերասանը որտեղի՞ց գիտի, որ հիմա իր հերթն է խոսելու։ Ասացի՝ փորձել են։ «Մեր տանն էլ մի օր փորձենք»։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Paronyan theatre visit; rehearsed turn-taking becomes a family suggestion."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-102",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Գորիսի կարմիր տանիքները նկարելիս մատիտս կարճացավ։ Աղջիկս ասաց՝ քաղաքը մեծացել է, դրա համար է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Goris red roofs; a depleted drawing pencil signals a growing city."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-103",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Դիլիջանում անձրև սկսվեց, ու բոլորս մի հովանոցով քայլեցինք։ Ընտանեկան քննարկման համար ավելի փոքր սենյակ դեռ չէինք ունեցել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "weather",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dilijan walk; an umbrella briefly becomes a compact family room."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-104",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Գորգագործության դասից տուն բերածս նմուշը կատուն հավանեց։ Առաջին ցուցահանդեսիս միակ այցելուն ամբողջ օրը չէր հեռանում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "animals"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian weaving class; a cat's nap becomes sustained artistic appreciation."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-105",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Լավաշով բրդուճը փոքրիկը երկու ձեռքով էր բռնել։ «Ծա՞նր է»։ «Չէ, համեղ բանին պետք է հարգանքով մոտենալ»։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Lavash snack; a child's grip becomes formal respect."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-106",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Բյուրականի այցից հետո պապիկս խնդրեց աստղադիտակի նկարն ուղարկել։ Ուզում էր հարևանին ապացուցել, որ ինքն էլ մեծ տեսախցիկ է տեսել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Byurakan telescope; a grandparent joins an equipment conversation."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-107",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Երևանում մեր բակի նստարանը ներկեցինք։ Տատիկները հեռվից վերահսկում էին. առաջին ժողովն էր, որ բոլորը համաձայն էին չնստել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Yerevan shared courtyard; fresh paint creates rare agreement about standing."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-108",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Գյումրիի դարբինը փոքրիկ սիրտ պատրաստեց։ Երեխան ասաց՝ սա վերջապես այն սիրտն է, որ պայուսակում ուրիշ բաները չեն ճզմի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Gyumri ironwork; an affectionate symbol gains practical durability."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-109",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Հայերեն բանաստեղծությունն անգիր արեցի տատիկի համար։ Նա սկզբից մինչև վերջ լսեց, հետո հուշեց միայն այն տողը, որն արդեն ճիշտ էի ասել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian recitation; eager help arrives after success."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-110",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Սևանի ափին ընտանիքով քարերի աշտարակ սարքեցինք։ Ամենափոքր քարը վերևում դրեցինք, ու տղաս վերջապես համաձայնվեց՝ փոքր լինելն առավելություն ունի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Sevan stone stacking; the smallest receives the highest position."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-111",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Վերնիսաժի ասեղնագործ թաշկինակը տատիկը պահեց հատուկ առիթների համար։ Առաջին առիթը թոռան հարցն էր՝ ե՞րբ ես օգտագործելու։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Embroidered keepsake; a child's impatience creates a special occasion."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-112",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Քոչարիից հետո բոլորս տարբեր կողմ գնացինք։ Երեխան անհանգստացավ՝ պարն առանց շարքի տուն կհասնի՞։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Kochari line disperses; a child worries about the dance itself."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-113",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Մատենադարանի հին գրքերի նկարները ցույց տվեցի ընկերոջս։ Ասաց՝ ես էլ իմ նոթատետրը չեմ հանձնի, դեռ երիտասարդ է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Manuscript longevity; a school notebook is protected by its youth."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-114",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Դուդուկի համերգին առաջին անգամ եկած տղաս լուռ էր։ Դուրս գալիս ասաց՝ տուն գնանք, էնտեղ շատ հարցեր ունեմ անելու։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Duduk performance; a child's impressive quiet has deferred rather than removed questions."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-115",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Դիլիջանում մոլորվել էինք փողոցներում, բայց տուն բերեցինք մի գեղեցիկ բաժակ։ Մայրս ասաց՝ ճանապարհը սխալ էր, արդյունքը՝ ճիշտ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dilijan crafts discovered on a detour; a souvenir justifies a wrong turn."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-116",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Գորիսի տեսարանը նկարելիս տատիկս ասաց՝ ինձ էլ ներառիր։ Լուսանկարում քաղաքից քիչ է երևում, բայց գլխավոր տեսարժան վայրը տեղում է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Goris landscape photo; a grandparent takes affectionate priority."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-117",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Հայերեն բառախաղերի մրցույթին ընկերոջս հետ մասնակցեցինք։ Չհաղթեցինք, բայց տուն հասանք այնքան ուշ, որ մեր բացատրությունն էլ բառախաղ դարձավ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian wordplay evening; cheerful distraction complicates the explanation for lateness."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-118",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Գորգի գույներն ընտրելիս երեխային հարցրինք՝ ո՞րն ես սիրում։ Բոլորը վերցրեց. առաջին բյուջեն էր, որ զգացմունքների պատճառով աճեց։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Weaving color choice; inclusive affection expands the material budget."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-119",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Երևանի մետրոյում որդիս հերթով կայարանների անուններն էր կարդում։ Տեղ հասանք, բայց նա դեռ մեկ բառի ճանապարհ ուներ անցնելու։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian station-name reading; literacy and transport finish at different speeds."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-120",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Կասկադի մոտ ընկերոջս նոր կոշիկը ցավեցրեց։ Քանդակներին այնքան մանրամասն ուսումնասիրեցինք, որ կոշիկն էլ մշակութային կրթություն ստացավ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Cascade sculpture stops; a sore shoe quietly dictates the art tour."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-121",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Գյումրիի փայտե դռան նկարը ուղարկեցի հայրիկիս։ Նա պատասխանեց՝ գեղեցիկ է, բայց քո տան դուռն էլ մի փակիր, գալու եմ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Gyumri architecture photo; admiration turns into an invitation home."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-122",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Լավաշով սենդվիչ պատրաստեցի փոքրիկի հետ։ Իմ բաժինը ինքը փաթաթեց, իր բաժինը՝ ես։ Ոչ մեկը քննադատելու իրավունք չունեցավ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Shared lavash preparation; exchanging tasks protects both novice cooks."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-123",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Բյուրականում աստղերի մասին դասախոսությունից հետո տղաս գրեց՝ այսօր երկինքը շատ բան ասաց, բայց դասատուն էր խոսում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school",
+      "science"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Byurakan educational visit; a child notices the sky's spokesperson."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-124",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Ասեղնագործ թռչնին աղջիկս մի ընկեր էլ ավելացրեց։ Հիմա կտորի հակառակ կողմում թելերն այնքան խառն են, երևում է՝ լավ են զրուցել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian embroidery; tangled backing records an imagined birds' conversation."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-125",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Քոչարիի փորձին ինձ խրախուսում էին ամեն ճիշտ քայլից հետո։ Հինգ րոպեում այնքան ծափ ստացա, որ ոտքերս հայտնի մարդու պես սկսեցին ուշանալ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dance lesson encouragement; confident feet become comically slow celebrities."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-126",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Սևանի քամուն չհանձնվելու համար գլխարկիս կապը կրկնակի կապեցի։ Փոքրիկս ասաց՝ գլխարկդ այսօր քո հետ շատ լուրջ հարաբերությունների մեջ է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "weather",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Sevan wind; securing a hat resembles commitment."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-127",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Մատենադարանում զարդատառի թռչունը տեսնելով՝ տղաս հարցրեց՝ եթե գիրքը փակենք, նա քնո՞ւմ է։ Հետո բոլոր գրքերը կամաց փակեց։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian manuscript illumination; imagined sleeping birds inspire care."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-128",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Դիլիջանի խեցեգործական դասից հետո ձեռքերս կավոտ էին։ Աղջիկս ասաց՝ նկարիր, առաջին անգամ է ձեռքիդ երևում՝ ինչ ես սովորել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Pottery lesson; messy hands become visible evidence of learning."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-129",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Երևանի մեր բակում երեխաները շախմատ էին խաղում, իսկ մեծերը խորհուրդ տալիս։ Ամենահանդարտը տախտակի արքան էր. գոնե իրեն ոչ ոք չէր ընդհատում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Courtyard chess; advice surrounds a silent king."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-130",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Գորգ գործել սովորող պապիկս ինձնից օգնություն խնդրեց։ Այնքան ուրախացա, որ հանգույցը բացելու փոխարեն գրկեցի իրեն. մի քիչ էլ խճճվեց։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Intergenerational craft learning; affection temporarily complicates the task."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-131",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Վերնիսաժի փոքրիկ կավե տունը դրեցինք գրադարակին։ Հիմա մեր գրքերից մեկը վերջապես սեփական անշարժ գույք ունի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft-market miniature house; a bookshelf gains an imaginary homeowner."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-132",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Դուդուկի վարպետը եղբորս ասաց՝ պետք է շունչդ ճիշտ բաշխես։ Նա հարցրեց՝ կարելի՞ է տնային գործերի համար մնացածը քիչ թողնել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Duduk breath control; a learner proposes a convenient household application."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-133",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Պարոնյանի թատրոնից հետո երեխան ասաց՝ դերասաններն այնքան լավ էին խաղում, որ վերջում նույնիսկ վարագույրը ծափահարության ժամանակ չդիմացավ ու բացվեց։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Theatre curtain call; the curtain is imagined unable to resist applause."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-134",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Գյումրիում քայլելիս տատիկս ամեն պատուհանի նախշն էր հիշում։ Տուն գալուց հետո միայն հարցրեց՝ մենք ո՞ր ավտոբուսով ենք եկել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Kumayri decorative details; selective attention favors beauty over logistics."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-135",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Հայերեն փոքրիկ հեքիաթ գրեցի քրոջս համար։ Վերջում ինքը ավելացրեց՝ «և վաղը նորից կգան»։ Պարզվեց՝ ընթերցողս շարունակության պայմանագիր էր կնքել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian story writing; a child quietly commissions a sequel."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-136",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Սևանում մեր ընտանեկան լուսանկարում բոլորը աչքերը կկոցել են։ Տատիկն ասում է՝ առաջին անգամ բոլորս նույն ուղղությամբ լուրջ մտածում ենք։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Bright Sevan group photo; squinting becomes coordinated contemplation."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-137",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Դիլիջանի ճանապարհին թոռս հաշվում էր ոլորանները։ Վերջում ասաց՝ շատ հաճելի ճանապարհ էր, անընդհատ միտքը փոխում էր։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Winding road to Dilijan; the road is given an agreeable indecisive character."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-138",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Վերնիսաժից ձեռագործ էջանիշ նվիրեցի ընկերոջս։ Ասաց՝ վերջապես մեկն է վստահում, որ երկրորդ էջից առաջ կգնամ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Crafted bookmark; a tiny gift becomes encouragement to read."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-139",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Քոչարիի նոր քայլը բացատրեցի մայրիկիս։ Նա միանգամից ճիշտ արեց ու ասաց՝ հիմա քեզ բացատրե՞մ, թե՞ դեռ դու ես ուսուցիչը։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dance learning; the novice teacher is gently overtaken."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-140",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Գորգի նախշը թոռս մատով էր հետևում։ Ասաց՝ ճանապարհը շատ երկար է, բայց լավ է՝ գուլպաներով կարելի է գնալ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian carpet patterns; a floor covering becomes an indoor walking route."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-141",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Բյուրականի աստղադիտակի նկարը դպրոց տարանք։ Որդիս ասաց՝ սարքը մեծ էր, բայց հարցերս բոլորը տեղավորվեցին։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Byurakan educational visit; a large instrument accommodates a child's curiosity."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-142",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Երևանի մետրոյում տատիկիս համար տեղ պահեցի։ Նա նստեց ու իմ պայուսակն էլ վերցրեց՝ ասաց, որ ընտանիքի օգնության շղթան դեռ չի ավարտվել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Metro seat giving; practical kindness is passed back."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-143",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Մատենադարանի նկարազարդ գրքից հետո աղջիկս իր տետրի առաջին տառը գունավորեց։ «Մնացածն ինչո՞ւ չես անում»։ «Ողջույն տվողն ինքը կլինի»։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Decorated manuscript initials; a single letter welcomes the reader."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-144",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Գյումրիում դարբնի աշակերտը մեզ իր առաջին աշխատանքը ցույց տվեց։ Այնքան հպարտ էր, որ փոքրիկս հարցրեց՝ սա ժպիտների մրցանակի՞ համար է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Gyumri craft apprenticeship; pride overtakes the metal object as the attraction."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-145",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Լավաշի փշրանքները սեղանից հավաքելու համար տղաս ամբողջ ափսեն մոտ բերեց։ Ասաց՝ մնացած հացն էլ պետք է ընտանիքին միանա։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Lavash table sharing; tidying becomes a family reunion for crumbs."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-146",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Դիլիջանի թանգարանի նկարների մասին վիճում էինք՝ որ մեկն է լավը։ Փոքրիկս ընտրեց նստարանը. ասաց՝ սա բոլոր նկարները տեսնելու հնարավորություն է տալիս։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Museum visit; practical furniture wins an art discussion."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-147",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Կասկադ բարձրանալուց հետո տատիկին ասացի՝ դու արագ ես։ Նա ասաց՝ ներքևում սպասողներն ինձ արդեն երկու անգամ երիտասարդացրել են, պիտի հասցնեմ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Cascade climb; admiring encouragement becomes time-sensitive rejuvenation."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-148",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Դուդուկի հանգիստ մեղեդու ժամանակ շունս պառկեց։ Եղբայրս վիրավորվեց, բայց ասացի՝ քո առաջին ունկնդիրը վերջապես վստահում է ծրագրիդ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "animals",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Duduk practice; a relaxed pet is reinterpreted as a loyal listener."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-149",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Գորիսից բերած քաղաքի նկարում կարմիր տանիքներից մեկը բաց թողեցի։ Երեխան ներկեց ու ասաց՝ հիմա բոլորը վերմակ ունեն։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Goris red-roof drawing; roofs become warm coverings."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-150",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Հայերեն բառարանով խաղում էինք՝ ով նոր բառ կգտնի։ Տատիկը հաղթեց իր մանկությունից հիշած բառով, որը գրքի մեջ էլ էր հյուր։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Intergenerational Armenian vocabulary game; a remembered word feels personally hosted by the dictionary."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-151",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Վերնիսաժի փայտե գդալը նվիրեցի այն ընկերոջս, որը միշտ թեյ է պատրաստում։ Նա ասաց՝ վերջապես մեր ընկերության մեջ խառնելու իրավունք ստացար։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Woodcraft gift; stirring tea gives a friendly double meaning to interference."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-152",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Գորգագործության դասին ամենադանդաղն էի։ Ուսուցիչն ասաց՝ քո գորգի վրա ոչ ոք շտապելով չի անցնելու, այդքան սպասել են։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Weaving workshop; slow making promises attentive use."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-153",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Քոչարիից հետո փոքրիկը բոլորի անուններն էր հիշում։ Հարցրի՝ ո՞նց։ «Աջ ու ձախ շփոթելիս հասցրեցի բոլորից օգնություն խնդրել»։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Kochari learning; directional mistakes help make acquaintances."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-154",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Սևանի պիկնիկին պապիկը թեյը լցրեց իմ բաժակի մեջ։ Ասաց՝ քոնը ավելի շատ է մրսել, ձեռքիցդ երևում է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "weather"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Sevan picnic; an elder kindly projects cold hands onto a cup."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-155",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Դիլիջանում կավե թռչուն սարքեցի։ Քույրս ասաց՝ անուն դիր։ «Թռչող»։ «Լավ է, գոնե երազանքը պատրաստ է»։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Pottery bird; an optimistic name supplies what the sculpture lacks."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-156",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Երևանի մետրոյում երեխաս քարտեզը շուռ էր պահել։ Պապիկն ասաց՝ ոչինչ, դու քաղաքը մյուս կողմից էլ կճանաչես։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Metro map reading; an upside-down map receives an encouraging interpretation."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-157",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Գյումրիի դարպասի ծաղիկը թոռս մագնիսով փորձեց։ Ուրախացավ՝ գտել էր ծաղիկ, որի վրա նկարն ինքն էր կպչում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Gyumri ironwork; a child discovers a practical use for a metal flower."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-158",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Մատենադարանի այցից հետո հին նամակներս դասավորեցի։ Մայրս ասաց՝ շատ լավ է, վերջապես իմ «կարգի բեր» գրությունն էլ տեղ գտավ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Manuscript archive inspires domestic sorting; an old reminder finally achieves its goal."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-159",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Հայկական զարդատառերով պապիկիս անունը գրեցի։ Նա խնդրեց պարզ տարբերակն էլ գրել՝ որ հասկանա, թե ինչքան է գեղեցկացել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Ornamental Armenian lettering; a plain comparison lets the recipient measure decoration."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-160",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Բյուրականից վերադառնալիս տղաս քնեց։ Պապիկը շշնջաց՝ մի արթնացրեք, գիտաժողովը երազում է շարունակվում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "science",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Astronomy outing; a child's nap becomes a continuation of learning."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-161",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Դուդուկի դասին ընկերոջս նվագը ձայնագրեցի։ Նա խնդրեց լավ հատվածը ուղարկել։ Ուղարկեցի վերջի ծափերը՝ այնտեղ երկուսս էլ հաջողել էինք։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Duduk lesson recording; shared applause is the strongest joint performance."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-162",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Գորգի նմուշը տատիկիս ցույց տվեցի՝ ասելով, որ շատ սխալներ կան։ Ասաց՝ տուր ինձ, ես առանց ակնոցի նայելու լավ փորձ ունեմ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Weaving gift; a grandparent humorously offers forgiving eyesight."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-163",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Պարոնյանի թատրոնում փոքրիկը չէր ուզում տուն գնալ։ Առաջարկեց դերասաններին հրավիրել մեզ մոտ՝ իր խաղալիքներով արդեն բեմը պատրաստ է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Theatre visit; a child's toy room becomes an improvised venue."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-164",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Կասկադի աստիճաններին ընկերոջս պատմությունը կիսատ մնաց։ Վերևում այնքան հետաքրքիր շարունակեց, որ ես առաջին անգամ հասկացա՝ շունչ առնելն էլ խմբագիր է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Cascade climb; breathlessness edits a rambling story."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-165",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Վերնիսաժից դատարկ լուսանկարի շրջանակ գնեցինք։ Երեխան ասաց՝ սա մեր վաղվա նկարի համար է, թող իմանա՝ սպասում ենք։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Craft-market frame; empty space welcomes a future memory."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-166",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Դիլիջանի փայտագործի մոտ երկու թեք մատիտակալ ընտրեցի։ Միասին դրած ուղիղ են թվում. ընկերությունը երբեմն լավ ճարտարապետ է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dilijan woodcraft; two imperfect objects support an affectionate visual joke."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-167",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Լավաշը կիսելիս փոքրիկն ասաց՝ իրեն մեծ կտոր պետք չէ։ Մտածեցի՝ ինչ բարի է։ Պարզվեց՝ ուզում է երկու փոքր կտորով երկու բրդուճ անել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Lavash sharing; apparent restraint hides a practical snack plan."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-168",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Երևանի բակում շախմատի նոր սեղան դրեցին։ Պապիկները նախ նստեցին զրուցելու. խաղին դեռ ծանոթանալու ժամանակ էին տալիս։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Courtyard chess table; conversation delays the object's intended work."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-169",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Սևանի ափին ընտանիքի բոլոր գլխարկները հավաքեցի։ Նկարում հիմա ես եմ գլխավոր ուղեբեռը, բայց գոնե ոչ ոք քամու հետ վազքի մրցում չի անում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "weather",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Sevan wind and family photos; collecting hats assigns a comic family role."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-170",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Գյումրիի ձեռագործ բաժակին փոքրիկ թերություն գտա։ Վարպետն ասաց՝ դու միակն ես նկատել։ Հիմա մեր բաժակն ընդհանուր գաղտնիք ունի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Gyumri pottery; a tiny flaw becomes a personal connection with its maker."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-171",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Հայերեն կարդալ սովորող հայրիկս օգնեց թոռանը դժվար բառի հարցում։ Երկուսն էլ հպարտ էին՝ մեկը ճիշտ կարդաց, մյուսը՝ որ դեռ պետք է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Shared Armenian reading practice; help rewards both generations."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-172",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Քոչարիի խմբից դուրս եկանք ձեռք ձեռքի տված։ Ընկերս ասաց՝ հիմա կարելի է բաց թողնել։ Բայց փողոցն անցնելու էինք, ու պարը ևս մի գործ արեց։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Kochari handholding; a dance formation briefly becomes useful on the walk home."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-173",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Մատենադարանի ցուցափեղկի առաջ երեխան շշնջաց։ Հարցրի՝ ինչո՞ւ։ «Գիրքը երկար է ապրել, թող իմ հարցերից չհոգնի»։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Manuscript museum; a child's courtesy extends to an old book."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-174",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Գորգագործության առաջին դասին թելի ծայրը կորցրի։ Ընկերս գտավ ու ասաց՝ արդեն միասին ենք գործել, անունս էլ չմոռանաս։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Weaving workshop; one small rescue earns coauthor credit."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-175",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Դուդուկ սովորող եղբայրս վերջապես մի ամբողջ մեղեդի նվագեց։ Մայրիկը խնդրեց կրկնել, իսկ նա առաջին անգամ ինքն ասաց՝ մի քիչ էլ պարապեմ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. A novice duduk player; successful encouragement reverses reluctance to practice."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-176",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Գորիսի փողոցներից բացիկ ուղարկեցի ընկերոջս։ Պատասխանեց՝ քաղաքի տանիքները տեսա, հիմա քո գլխարկով նկարն ուղարկիր, որ վստահ լինեմ՝ դու էլ ես հասել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Goris red roofs; a friend's personal concern outranks scenic proof."
+  },
+  {
+    "id": "intl-v2-hy-wholesome-177",
+    "collection": "hy-am-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Դիլիջանից վերադառնալիս աղջիկս գրպանը բացեց ու ասաց՝ անտառի հոտն եմ բերել։ Տատիկը մոտեցավ. ամենաթեթև նվերը ամենաշատ ուշադրությունը ստացավ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dilijan woodland memory; an intangible souvenir attracts the family."
+  }
+]

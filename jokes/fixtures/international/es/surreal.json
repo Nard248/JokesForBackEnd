@@ -1,0 +1,2138 @@
+[
+  {
+    "id": "intl-v2-es-surreal-001",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El metro de Madrid llegó convertido en acordeón. Todos agradecimos que por fin se estirara en hora punta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-002",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mi tortilla española empezó a dar consejos. Ahora la vuelta se la doy solo cuando cambia de tema.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-003",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El dragón de Sant Jordi abrió una librería. Su sección de cocina provoca una inquietud razonable.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-004",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Las macetas del patio cordobés eligieron presidente. El cactus exige que nadie se acerque a discutirle.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-005",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Un retrato del Prado salió a estirar las piernas. La cartela pidió que volviera antes del cierre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-006",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La plaza de mi pueblo castellano se dobló como un mantel. Los vecinos guardaron las conversaciones en las esquinas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-007",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La paella valenciana levantó una montaña de arroz. El socarrat se declaró patrimonio geológico del fondo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-008",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Un ninot de Valencia pidió vacaciones. Le aprobaron una semana dentro de una maqueta de playa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-009",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El tren de Sóller se convirtió en naranja. El revisor seguía pidiendo billetes entre los gajos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-010",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El olivo de Jaén empezó a escribir memorias. Las aceitunas solicitaron derecho de réplica.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-011",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La biblioteca de Salamanca perdió la gravedad. Los diccionarios quedaron arriba porque tenían demasiadas palabras elevadas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-012",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Nuestra sobremesa de Zaragoza cruzó una frontera horaria. El café pidió pasaporte para seguir acompañándonos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-013",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El pintxo de Bilbao me contrató de guardaespaldas. Su primer riesgo laboral resulté ser yo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-014",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Las campanas de Nochevieja se tomaron un descanso. Enero tuvo que esperar sentado sobre diciembre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-015",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El tranvía de Granada creció alas. Los pasajeros preguntaron si volar también requería validar al subir.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-016",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mi huerta murciana se hizo invisible. Los caracoles siguieron encontrando las lechugas por referencias personales.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-017",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El museo de Bilbao se quitó la fachada para lavarla. Las nubes reclamaron sus reflejos antes del centrifugado.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-018",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El banco de nuestra plaza de León salió a pasear. Volvió cansado y no encontraba dónde sentarse.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-019",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La empanada gallega abrió una universidad interior. La cebolla imparte capas avanzadas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-020",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mi rosa de Sant Jordi alquiló una bicicleta. Dice que polinizar andando resulta demasiado lento.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-021",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El AVE a Sevilla llegó nadando. El personal insistió en que aquello seguía siendo un servicio de tierra firme.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-022",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El chocolate con churros aprendió a hacer surf. Las cucharillas se reservaron la zona tranquila.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-023",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La falla de nuestro barrio abrió una asesoría. Sus clientes salían caricaturizados, pero con las cuentas claras.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-024",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Los geranios cordobeses montaron un teatro. El aplauso se riega al final de cada función.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-025",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Un libro de la biblioteca de Cádiz se hizo marinero. Solo vuelve para renovar su carné de cubierta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-026",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La sobremesa manchega se volvió un planeta. Mi tío lleva orbitando la misma anécdota desde el postre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-027",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Un queso manchego me pidió llevarlo al gimnasio. Quiere dejar de ser exclusivamente un peso de mesa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-028",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El dragón de Sant Jordi cambió su cueva por un piso. La comunidad le permite quemar tostadas solo los domingos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-029",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La muralla de Lugo empezó a caminar en círculos. Los turistas creen que han mejorado mucho su resistencia.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-030",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El limonero de mi patio sevillano produce signos de interrogación. La limonada plantea demasiadas dudas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-031",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "En el Prado, el horizonte de un cuadro se mudó al segundo piso. El paisaje ganó vistas y perdió coherencia.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-032",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La fuente de la plaza salmantina habla en verso. Los niños le piden rimas que salpiquen menos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-033",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La horchata valenciana se convirtió en nube. Los fartons consultan continuamente el pronóstico.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-034",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El belén de casa desarrolló tráfico. Los pastores culpan al camello que aparca siempre en doble fila.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-035",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El funicular de Bilbao subió a buscar una estrella. La estrella bajó encantada porque nunca había visto una panadería.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-036",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mis tomates de Almería se volvieron relojes. Solo dan la hora cuando están maduros.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-037",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La biblioteca de Oviedo contrató una niebla. Las novelas de misterio nunca habían tenido tan buena presentación.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-038",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mi sombra se quedó en la plaza de Segovia. Dice que bajo el acueducto tiene más posibilidades profesionales.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-039",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Las papas canarias montaron una orquesta. El mojo pidió una partitura menos picante.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-040",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Los libros de Sant Jordi celebraron una boda. El índice se encargó de colocar a todos los personajes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-041",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La línea circular de Madrid se desató y quedó recta. Los pasajeros tardaron horas en dejar de dar consejos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-042",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mi croqueta obtuvo permiso para conducir. Aparca muy mal porque nunca distingue sus dos extremos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-043",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Un ninot de Valencia aprendió a hacerse selfies. Ahora necesitamos un cartel que explique cuál es la caricatura.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-044",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "En el patio cordobés llovieron sillas. Los geranios agradecieron que las visitas ya vinieran con equipamiento.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-045",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Una estatua de Valladolid pidió zapatillas. El museo aceptó siempre que fueran del siglo correspondiente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-046",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La plaza de mi pueblo de Soria encogió. El ayuntamiento recomienda contar las historias en voz más baja.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-047",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El bocadillo de calamares madrileño zarpó del plato. La servilleta hizo un puerto bastante digno.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-048",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Nuestra peña riojana contrató un arcoíris para la verbena. Discutió toda la tarde dónde enchufar el violeta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-049",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El tren a Cuenca se convirtió en lápiz. Los túneles salían ahora dibujados y bastante más fáciles.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-050",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La huerta de Murcia intercambió cielo y suelo. Las zanahorias disfrutan mucho de sus nuevas vistas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-051",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El libro de recetas de mi abuela manchega empezó a cocinar. Las páginas pares se niegan a fregar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-052",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El reloj de nuestra sobremesa de Burgos tuvo hipo. Cada salto de hora necesitó otro café para recuperarse.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-053",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La ensaimada mallorquina se desenrolló hasta Valencia. El desayuno ha generado un pequeño problema de transporte marítimo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-054",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El dragón de Sant Jordi se hizo ventilador. Sus primeros clientes le pidieron que empezara por aire templado.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-055",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El tranvía de Tenerife recogió a una nube. Bajó contenta: por una vez alguien la llevó sin viento.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-056",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El olivo jiennense estrenó zapatos. Dice que después de tantos años en el mismo sitio quiere probar otra sombra.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-057",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El Prado prestó un atardecer a mi salón. Ahora el mando de la tele se pierde con iluminación excelente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-058",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Las baldosas de la plaza de León aprendieron ajedrez. Los peatones tienen que pensar mucho antes de avanzar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-059",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El salmorejo cordobés contrató un socorrista. El pan agradece que se tomen en serio sus inmersiones.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-060",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Las uvas de Nochevieja escribieron una carta al reloj. Solicitaban una celebración con más recreos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-061",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El AVE empezó a dar marcha atrás en el calendario. Llegué a Sevilla con un billete futuro y peinado antiguo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-062",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El pintxo bilbaíno se puso un abrigo. El camarero tuvo que explicarme cómo se come la temporada de invierno.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-063",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La falla de cartón floreció. La comisión discute si contratar primero a un artista o a un jardinero.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-064",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El patio de Córdoba se convirtió en un sombrero. La ciudad lo lleva puesto cuando quiere presumir de flores.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-065",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Los libros de la biblioteca de Zaragoza salieron a correr. Las enciclopedias exigieron un recorrido adaptado a muchos tomos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-066",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Nuestra sobremesa sevillana convocó elecciones. Ganó por mayoría absoluta la propuesta de no recoger todavía.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-067",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La tortilla empezó a nevar patatas. El huevo salió a la calle con un paraguas de aceite.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-068",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La rosa de Sant Jordi aprendió idiomas. Su primer intercambio fue pedir agua en siete acentos distintos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-069",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El ferry de Cádiz llevó al mar de excursión. La costa aprovechó para limpiar debajo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-070",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mi huerta navarra da linternas. Las lechugas celebran que ya pueden leer de noche.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-071",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La armadura del museo de Toledo se hizo pastelera. Sus magdalenas salen impecables y con ruido metálico.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-072",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El banco de la plaza de Cuenca me pidió consejo amoroso. Se ha enamorado de una farola que trabaja de noche.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-073",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La empanada gallega viajó al espacio. Los astronautas discuten si el borde cuenta como órbita.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-074",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El belén instaló un ascensor entre las montañas. Los pastores siguen quejándose de la música del trayecto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-075",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El metro de Barcelona se convirtió en un collar. La ciudad no sabe si ponérselo encima o debajo de la acera.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-076",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mis geranios de Cádiz aprendieron a tocar trompeta. Por fin el viento recibe una respuesta organizada.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-077",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El museo de Bilbao se volvió de papel. Las gaviotas proponen doblarlo como un barco.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-078",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "En la plaza de Teruel las palabras se volvieron globos. Mi abuelo tuvo que atar tres historias al banco.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-079",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Las aceitunas de Jaén pidieron una playa. Les servimos un plato y se quejaron de la falta de mareas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-080",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Los ninots de Valencia fundaron un periódico. Todos los editoriales salen con una ceja levantada.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-081",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El tren de Sóller llegó a la luna. El conductor explicó que alguien había confundido una curva con una órbita.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-082",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El churro del desayuno me pidió prestado el móvil. Quería comprobar si su curva salía bien en las fotos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-083",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El dragón de Sant Jordi se dedicó a planchar. Es excelente hasta que se emociona con una camisa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-084",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El patio cordobés tiene ahora techo de caramelos. La lluvia exige que le paguemos horas extra de limpieza.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-085",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Un cuadro del Prado cambió de marco cada mañana. Dice que llevar lo mismo cuatro siglos cansa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-086",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Nuestra sobremesa zaragozana abrió un túnel hacia el verano pasado. Mi tío aprovechó para corregir su anécdota.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-087",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El queso manchego se hizo astrónomo. Estudia por qué la luna parece una versión demasiado grande de sí mismo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-088",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La guirnalda de nuestra verbena se transformó en serpiente. Pidió bailar primero la canción que no tiene estribillo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-089",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El tranvía de Granada se encogió y entró en mi bolsillo. Sigue cobrando cada vez que cambio de pantalón.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-090",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Las zanahorias murcianas salieron con botas. Han decidido que nosotros probemos un rato a vivir bajo tierra.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-091",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La biblioteca de Salamanca alquila silencios. El de examen cuesta más porque debe aguantar muchas respiraciones nerviosas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-092",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La estatua de la plaza de Valladolid se hizo influencer. Solo publica fotos del mismo lado, pero con luz distinta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-093",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La paella valenciana se volvió un reloj solar. El arroz insiste en que siempre es la hora de comer.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-094",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Las campanas de Nochevieja salieron de vacaciones en agosto. El calendario pidió que no estropearan la sorpresa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-095",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El funicular de Bilbao bajó al centro de la Tierra. El billete seguía sin incluir bocadillo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-096",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mi limonero malagueño dio pequeñas lunas. La limonada ya solo se sirve cuando oscurece.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-097",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El coro de mi pueblo castellano perdió las voces. Las encontramos ensayando sin nosotros en una panadería.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-098",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La plaza de Salamanca se puso a girar. Los cafés de las terrazas inventaron una forma económica de hacerse espuma.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-099",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La horchata se convirtió en espejo. Mi fartón no sabía si mojarse o peinarse.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-100",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Los libros de Sant Jordi cambiaron sus finales durante la noche. El diccionario pidió mantener al menos el orden alfabético.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-101",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El metro de Madrid contrató una tortuga gigante. A cambio de mover el andén, exigía ensalada en cada estación.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-102",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El bocadillo de calamares comenzó a cantar ópera. El pan actuaba como un teatro de muy buena acústica.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-103",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Un ninot de nuestra falla se hizo psicólogo. Su cara exagerada vuelve complicadas las sesiones serias.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-104",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "En el patio de Córdoba las flores cobraron alquiler. El jazmín admite pagos en visitas perfumadas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-105",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El museo de Mérida despertó con todos sus mosaicos bailando. La entrada incluye ahora una advertencia sobre las baldosas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-106",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La sobremesa manchega creó su propia estación de tren. «Me voy» sale de ella cada veinte minutos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-107",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La ensaimada se transformó en escalera. Los ratones inauguraron un mirador de azúcar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-108",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El dragón de Sant Jordi pidió una tarjeta de biblioteca. La condición es devolver los libros sin olor a tostada.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-109",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El tren a Toledo se convirtió en castillo. Llegamos a destino por el puente levadizo de la segunda puerta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-110",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mi huerto de Valencia cultiva paraguas. Los días de lluvia la cosecha se abre sola.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-111",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El retrato de un noble del Prado pidió ropa cómoda. La pintura tardó una semana en aprender a dibujar chándales.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-112",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La fuente de nuestro pueblo navarro empezó a servir sopa. El ayuntamiento tuvo que regular los horarios de cuchara.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-113",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El salmorejo adquirió poderes telepáticos. Ahora el pan se acerca al plato sin que yo disimule.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-114",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mi rosa de Sant Jordi se volvió un faro. El libro de aventuras llegó solo a casa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-115",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El tranvía de Zaragoza se puso patines. En cada curva recordaba a los viajeros que él también estaba aprendiendo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-116",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El olivo de Jaén viajó por correo. Las raíces insistieron en usar envío certificado.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-117",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Los libros de la biblioteca de León mudaron de piel. La sección de misterio dejó todas las cubiertas sin nombre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-118",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "En la plaza de Soria empezó a llover música. Los paraguas abiertos sonaban en una tonalidad distinta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-119",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Las papas canarias se convirtieron en planetas. El mojo tardó en adaptarse a su nueva función de océano.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-120",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La banda de nuestra verbena se hizo invisible. Seguimos distinguiendo al del bombo por los saltos del suelo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-121",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La muralla de Lugo pidió un cinturón. Dice que cada paseo turístico le hace cosquillas por toda la cintura.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-122",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El pintxo bilbaíno construyó un ascensor interior. El queso ya estaba cansado de vivir siempre encima.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-123",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El ninot del relojero empezó a fabricar minutos. La comisión le pidió unos cuantos para terminar el montaje.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-124",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El patio cordobés intercambió las flores por estrellas. Los vecinos ahora riegan después de consultar astronomía.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-125",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "En la biblioteca de Cádiz los mapas aprendieron a nadar. Los atlas del desierto solicitaron un cursillo más lento.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-126",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Nuestra sobremesa alicantina acumuló tantas historias que el techo desarrolló una segunda planta narrativa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-127",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La tortilla ganó una carrera de atletismo. Nadie esperaba que supiera dar tantas vueltas sin caerse.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-128",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La rosa de Sant Jordi fundó un sindicato. Pide jarrones dignos y ninguna comparación con filtros de móvil.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-129",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El AVE se convirtió en caracola. Para saber la próxima parada solo había que acercarse el billete al oído.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-130",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Los tomates de Almería tienen pequeños teatros dentro. Cada ensalada interrumpe una función con todas las entradas vendidas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-131",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El museo de Bilbao se hizo globo. La ciudad lo sujeta con una cinta por si pasa viento crítico.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-132",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El banco de la plaza de Burgos creció patas de caballo. Mi abuelo ha aprendido a conversar al trote.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-133",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La empanada gallega se convirtió en isla. La corteza exige que la cartografíen antes de servirla.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-134",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El belén instaló una oficina postal. La primera carta dice: «Seguimos llegando, guardadnos sitio».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-135",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El metro barcelonés estrenó túneles de cristal. Los topos pusieron cortinas por privacidad.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-136",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mi huerto murciano da cucharas. El compost se queja de que ahora todo el mundo vuelve a pedir postre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-137",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Un cuadro del Prado se cambió de siglo. Su cartela lleva toda la mañana actualizando el currículum.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-138",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "En la sobremesa de León, el mantel empezó a contar historias. Las manchas funcionan como ilustraciones.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-139",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La horchata valenciana se hizo nube de bolsillo. El fartón viaja siempre con un pequeño impermeable.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-140",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Las campanadas de Nochevieja llegaron en cartas separadas. Correos está haciendo todo lo posible por entregar enero a tiempo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-141",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El tren de Sóller empezó a cultivar rieles. El paisaje ha solicitado que no le hagan más caminos sin avisar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-142",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El churro se convirtió en telescopio. Solo permite observar galaxias de chocolate.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-143",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El dragón de Sant Jordi abrió una tintorería. Recomienda la limpieza en seco con una convicción preocupante.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-144",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Las macetas de Córdoba hicieron un curso de baile. El patio amaneció lleno de tierra con mucho ritmo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-145",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La biblioteca de Salamanca se volvió bosque. Encontrar una novela histórica requiere seguir el sendero de las notas al pie.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-146",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La plaza de mi pueblo de Huesca empezó a flotar. El alcalde pidió a los vecinos que no saltaran todos juntos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-147",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El queso manchego alquiló sus agujeros como estudios. Los ratones preguntan si entra la corteza en los gastos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-148",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Un ninot valenciano cambió su cara por un paisaje. Ahora la sátira resulta más difícil, pero ofrece buenas vistas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-149",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El funicular de Bilbao se cruzó con mi sueño. Me cobró un billete porque yo todavía llevaba pijama de pasajero.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-150",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El olivar de Jaén amaneció con raíces de lana. La abuela empezó a tejer una cosecha muy abrigada.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-151",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El museo de cerámica de Talavera se llenó de platos voladores. Todos exigían regresar a la cocina después del aterrizaje.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-152",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "En la sobremesa sevillana el café se convirtió en director de orquesta. Nadie acepta todavía la señal del final.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-153",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El salmorejo de Córdoba desarrolló memoria. Recuerda perfectamente a cada trozo de pan que prometió volver.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-154",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mi libro de Sant Jordi salió a comprarme una rosa. Volvió indignado porque no tenía bolsillos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-155",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El tranvía de Tenerife se volvió cometa. Los viajeros solicitan que se anuncien también las corrientes de aire.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-156",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mi limonero de Málaga produce pequeños soles. El vecino ha pedido bajar la intensidad después de cenar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-157",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Las armaduras del museo de Toledo organizaron yoga. La relajación final sonó como una tienda de cacerolas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-158",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La fuente de Salamanca perdió la voz. Las palomas le llevan agua para que se recupere.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-159",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La ensaimada mallorquina salió a buscar su principio. La esperamos hasta la merienda siguiente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-160",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El dragón de nuestro cuento de Sant Jordi aprendió contabilidad. Ahora acumula facturas en vez de tesoros.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-161",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El metro de Madrid se durmió. Los sueños iban llegando puntuales a estaciones que no figuraban en el plano.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-162",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La paella valenciana se hizo jardín. Las cucharas reclaman permiso para pasear sin pisar los granos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-163",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La falla del barrio creció una ventana hacia mañana. Todos miran solo para saber si habrá sitio donde aparcar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-164",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El patio de Córdoba se encogió dentro de una taza. Su café es ahora el más florido del barrio.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-165",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "En el Prado, las nubes de un paisaje pidieron salir. La sala contigua recibió lluvia con perfecta perspectiva.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-166",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La sobremesa de mi familia manchega aprendió a conducir. Ahora nos acompaña hasta casa y vuelve a empezar en el portal.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-167",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El pintxo bilbaíno se convirtió en montaña. El palillo quedó inaugurado como refugio de alta cocina.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-168",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mi rosa de Sant Jordi cambió pétalos por páginas. Huele a final feliz incluso cuando se equivoca de libro.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-169",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El tren a Granada se transformó en guitarra. Los pasajeros solo pueden bajar al terminar el estribillo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-170",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Las zanahorias de Murcia empezaron a brillar. Los conejos están organizando visitas nocturnas con guía.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-171",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La biblioteca de Zaragoza abrió una sección de futuros. Todos los préstamos vencen antes de que sepas qué has leído.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-172",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El banco de nuestra plaza gaditana se hizo nube. Mi abuelo sigue llegando con su cojín de siempre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-173",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Las aceitunas de Jaén formaron un coro. El hueso grave sostiene muy bien las canciones del aperitivo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-174",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El belén se independizó de la estantería. La primera medida fue ampliar la distancia entre la oveja y el aspirador.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-175",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "El ferry de Cádiz se puso a caminar. El puerto le recomienda no alejarse sin llevar agua.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-176",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Los geranios cordobeses empezaron a escribir cartas. Los vecinos reciben noticias que necesitan florero.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-177",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mi libro de Sant Jordi entró en hibernación. Solo despierta cuando oye que he terminado todos los otros.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-surreal-178",
+    "collection": "es-es-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La plaza de Segovia se volvió un reloj. El acueducto protesta porque le han dado demasiadas tareas de aguja.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. An impossible event receives an everyday response. Original AI-authored draft; no native human review claimed."
+  }
+]

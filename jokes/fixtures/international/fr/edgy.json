@@ -1,0 +1,2138 @@
+[
+  {
+    "id": "intl-v2-fr-edgy-001",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Mon café parisien est tellement conceptuel qu'il a surtout le goût du loyer.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-edgy-002",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le CSE propose du yoga. Nous avions demandé moins de raisons de respirer profondément.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-edgy-003",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le CERFA simplifié simplifie surtout le choix de renoncer.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-edgy-004",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La baguette « authentique » a un logo, une histoire et presque assez de place pour le pain.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-edgy-005",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "À la galette du bureau, le chef trouve la fève. Même le hasard a lu l'organigramme.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-edgy-006",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le bouchon lyonnais « revisité » sert trois miettes. La tradition est passée, mais n'est pas restée.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-edgy-007",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Ma galette végétale est une feuille pliée. La Bretagne demande qu'on rende le mot galette.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-edgy-008",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La socca coûte le prix d'un souvenir. Le gras sur mes doigts est offert.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-edgy-009",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le marché de Noël vend du « fait main ». La main qui a collé l'étiquette travaille très vite.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-edgy-010",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le TGV promet de rapprocher les villes. Mon budget aimerait qu'on rapproche aussi le week-end de la paye.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-edgy-011",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le cahier de vacances entraîne les enfants à travailler même quand le mot vacances apparaît.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-edgy-012",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "À la pétanque, mon oncle mesure tout. Sauf la durée de ses explications.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-edgy-013",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le millefeuille déstructuré ressemble beaucoup à mon accident de service, mais avec une facture supérieure.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-edgy-014",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Au Mont-Saint-Michel, la marée revient gratuitement. Les parkings ont choisi un autre modèle.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-edgy-015",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "FranceConnect est pratique : un seul endroit pour oublier qui je suis numériquement.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-edgy-016",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le studio parisien possède un coin nuit. Le reste de la nuit se négocie dans le couloir.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-edgy-017",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le pain « de caractère » a cassé mon couteau. L'entretien de personnalité était réussi.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-edgy-018",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Mes RTT sont un avantage. Comme toute belle chose, on préfère me les montrer de loin.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-edgy-019",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La couronne de galette est recyclable. Le discours du roi aussi, depuis quinze ans.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-edgy-020",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "L'influenceur a filmé toute la traboule. Il cherchait une expérience intime à publier partout.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-edgy-021",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le kouign-amann « léger » coûte pareil. L'absence de beurre a donc pris de la valeur.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-edgy-022",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le brunch « niçois » oublie la socca, les blettes et la Nice. Il garde le supplément terrasse.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-edgy-023",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le pain d'épices artisanal porte un code promotionnel. Noël apprend le marketing de conversion.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-edgy-024",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Mon siège TGV a une prise. Mon portable est mieux accueilli que mes jambes.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-edgy-025",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le Bescherelle existe pour rappeler qu'on peut avoir tort de plusieurs façons correctes à l'oral.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-edgy-026",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le cycliste du dimanche porte une tenue professionnelle. Sa pause boulangerie bénéficie d'un contrat premium.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-edgy-027",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La tarte Tatin revisitée arrive à l'endroit. Parfois, l'innovation annule juste l'idée.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-edgy-028",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La dune du Pilat accueille mes grands projets sportifs. Ils s'arrêtent au premier lacet de chaussure.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-edgy-029",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La mairie a remplacé la file d'attente par un créneau indisponible. La modernité fait gagner le déplacement.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-edgy-030",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le café « confidentiel » de Paris possède trois attachés de presse pour protéger son secret.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-edgy-031",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le sandwich tradition est garni surtout d'un argument sur le terroir.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-edgy-032",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La boîte à idées du CSE est pleine. La boîte à décisions conserve son état neuf.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-edgy-033",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La Fête des voisins commence par du partage et finit par identifier le propriétaire de la perceuse.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-edgy-034",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Dans le bouchon, le menu est court. Le commentaire de mon ami gastronome compense largement.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-edgy-035",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Une crêperie annonce « retour aux sources » avec un paiement uniquement par QR code.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-edgy-036",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La chaise bleue est devenue spot photo. S'asseoir relève désormais du manque d'ambition.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-edgy-037",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le marché de Noël propose du charme local. Le terminal de paiement parle toutes les langues.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-edgy-038",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le TER longe les vignes. Mon voisin préfère regarder une publicité pour des vacances authentiques.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-edgy-039",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La dictée évalue mon orthographe. Le correcteur de mon téléphone conteste la reconnaissance de ses compétences.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-edgy-040",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "À Roland-Garros, je regarde surtout les tribunes. Mon budget m'a inscrit en sociologie.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-edgy-041",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le camembert « expérience immersive » coûte plus cher. J'ai toujours trouvé l'odeur assez immersive.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-edgy-042",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La visite de Chambord dure deux heures. Le groupe passe la première à prouver qu'il est là.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-edgy-043",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le CERFA veut une profession précise. « Faire semblant de maîtriser Excel » mériterait une case.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-edgy-044",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La vue sur la tour Eiffel est garantie, à condition de pencher la tête et d'y croire.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-edgy-045",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La baguette bio voyage dans trois couches d'emballage. La nature bénéficie d'une escorte rapprochée.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-edgy-046",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le pot de départ est chaleureux. L'entretien de rétention avait surtout été rapide.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-edgy-047",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La galette sans fève évite les disputes. Une façon coûteuse d'inventer une tarte.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-edgy-048",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Mon guide des traboules propose un « secret connu de tous ». Une confidentialité bien distribuée.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-edgy-049",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Au fest-noz, personne ne regarde mon niveau. Mon ego est déçu par cette gentillesse.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-edgy-050",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La socca dégustée en marchant devient « street food ». Son prix a très bien appris l'anglais.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-edgy-051",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Les bredele sont vendus en petit sachet de luxe. Les étoiles ont trouvé un agent.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-edgy-052",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le billet SNCF flexible s'adapte à mes projets. C'est surtout mon compte qui doit devenir souple.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-edgy-053",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le cahier Seyès trace des marges claires. Le monde du travail corrige ensuite cette mauvaise habitude.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-edgy-054",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Mon coach pétanque parle de mental. J'aimerais commencer par le gravier dans ma chaussure.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-edgy-055",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le gratin dauphinois détox retire les pommes de terre et la crème. Il reste le Dauphiné sur la carte.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-edgy-056",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "À Guérande, j'ai acheté du sel avec un certificat. Mes pâtes veulent maintenant consulter son parcours.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-edgy-057",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "FranceConnect m'offre un accès unique à plusieurs façons d'attendre.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-edgy-058",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "L'appartement parisien est « atypique ». La porte du frigo frappe directement le lit.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-edgy-059",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La baguette patrimoniale a droit à un discours. Le client derrière moi aurait préféré une pince.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-edgy-060",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le forfait jours a rendu mes heures invisibles. Une prouesse rarement saluée par les magiciens.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-edgy-061",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le roi de la galette n'a aucun pouvoir. Il fait donc un excellent président de réunion.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-edgy-062",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Un bouchon « contemporain » sert la quenelle sur une ardoise. Le tableau noir a quitté l'école pour facturer davantage.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-edgy-063",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La galette de blé noir est devenue tendance. Elle attendait tranquillement depuis plusieurs siècles.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-edgy-064",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "L'influenceur photographie sa socca froide. Il sacrifie son déjeuner à ceux qui mangent devant son écran.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-edgy-065",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La maison à colombages abrite une boutique de déco minimaliste. Les murs n'ont pas signé le manifeste.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-edgy-066",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le TGV propose une classe calme. J'attends la catégorie « voisin sans présentation commerciale ».",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-edgy-067",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La réunion parents-professeurs commence par « votre enfant a du potentiel ». Le vocabulaire prépare les virages.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-edgy-068",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Mon vélo du Tour imaginaire coûte cher. Mes mollets refusent toujours de participer au financement.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-edgy-069",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le financier à prix gastronomique a enfin un nom cohérent.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-edgy-070",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le Mont-Saint-Michel se mérite, dit la brochure. Elle parle des marches ; ma banque comprend autrement.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-edgy-071",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le portail administratif est intuitif. Il faut seulement partager l'intuition de celui qui l'a conçu.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-edgy-072",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le bistrot parisien « sans prétention » a écrit cette formule en lettres dorées.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-edgy-073",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La boulangerie sert le croissant au beurre comme une découverte. Les grands-parents apprécient cette jeune technologie.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-edgy-074",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le CSE offre une gourde pour mon bien-être. Je demandais surtout un robinet de temps libre.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-edgy-075",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La Fête des voisins nous rapproche. Désormais, je connais le prénom de celui qui bloque le local vélo.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-edgy-076",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le séminaire lyonnais promet de sortir du cadre. Nous sommes restés dans le même hôtel jusqu'au dessert.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-edgy-077",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le kouign-amann miniature permet de culpabiliser en plusieurs fois.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-edgy-078",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le panorama niçois est splendide. Mon téléphone en profite davantage que moi.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-edgy-079",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le vin chaud du marché a un mug consigné. Même mon souvenir possède une condition de retour.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-edgy-080",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le TER est écologique. Ma voiture reste très vexée de devoir m'amener jusqu'à la gare.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-edgy-081",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le Bescherelle corrige mes verbes. J'attends l'ouvrage qui corrige mes choix.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-edgy-082",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "À la pétanque, « c'était presque » devient une discipline à part entière après trois parties.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-edgy-083",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le millefeuille « signature » porte surtout les empreintes de ma tentative de découpe.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-edgy-084",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "À Étretat, les touristes cherchent l'angle original. La falaise voit passer le même depuis longtemps.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-edgy-085",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le CERFA demande d'écrire lisiblement. J'aimerais un principe de réciprocité pour les notices.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-edgy-086",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Mon café parisien accepte les ordinateurs. À ce prix, ils devraient pouvoir payer leur part.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-edgy-087",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La tradition en sachet noir a l'air prestigieuse. Les miettes conservent leurs habitudes populaires.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-edgy-088",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Mes titres-restaurant passent sur le téléphone. Déjeuner nécessite maintenant de bien charger ses couverts.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-edgy-089",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La galette du bureau sert le dialogue social. Le partage des parts reste un dossier sensible.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-edgy-090",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le bouchon authentique a ajouté « authentique » cinq fois sur sa devanture. Il semble vouloir se rassurer.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-edgy-091",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La crêpe « façon Bretagne » évite soigneusement d'expliquer où se trouve sa façon.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-edgy-092",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La Promenade des Anglais accueille des joggeurs très équipés. Le marchand de glaces apprécie leur effort d'approche.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-edgy-093",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le kougelhopf de luxe a un grand trou. La marge commerciale occupe l'espace.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-edgy-094",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le TGV offre des paysages magnifiques. La tablette de mon voisin réclame quand même un abonnement vidéo.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-edgy-095",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le cahier de vacances s'ouvre à la plage. Le sable proteste contre cette importation de lundi.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-edgy-096",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le Tour de France vend des rêves de montagne. Mon appartement fournit déjà un quatrième sans ascenseur.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-edgy-097",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le menu terroir décrit chaque producteur. J'aimerais aussi connaître celui qui a imaginé l'addition.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-edgy-098",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le château de Chenonceau traverse la rivière. Mon prêt immobilier traverse seulement mes décennies.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-edgy-099",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "FranceConnect m'a reconnu. Le site suivant demande de saisir mon nom à nouveau pour garder le contact humain.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-edgy-100",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le restaurant parisien n'a que six tables. Son compte Instagram possède une salle beaucoup plus grande.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-edgy-101",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le pain au levain a fermenté trente heures. Le vendeur m'en parle depuis une durée comparable.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-edgy-102",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le CSE organise un atelier gestion du stress. Le responsable du planning devrait être invité comme intervenant.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-edgy-103",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La galette artisanale a une fève publicitaire. Le roi vient d'être sponsorisé.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-edgy-104",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Les traboules ont des visiteurs discrets. On les reconnaît à leur vidéo « personne ne connaît cet endroit ».",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-edgy-105",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La galette-saucisse n'a pas besoin de récit de marque. Elle connaît déjà la sortie du stade.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-edgy-106",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La socca dans une assiette design a perdu sa chaleur, mais gagné une identité visuelle.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-edgy-107",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le marché de Noël a commencé tôt. La nostalgie aussi veut sa croissance annuelle.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-edgy-108",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le billet TGV « petit prix » se cache très bien. Je respecte son engagement pour la discrétion.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-edgy-109",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le diplôme français mentionne mes compétences. Mon premier stage m'a surtout demandé de savoir trouver le café.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-edgy-110",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le joueur de pétanque décrit le terrain comme un géologue. Puis il accuse le soleil.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-edgy-111",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le soufflé « minimaliste » n'est jamais monté. Le serveur possède un excellent vocabulaire de secours.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-edgy-112",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "À Carnac, les pierres gardent leur mystère. La boutique a trouvé beaucoup de réponses en résine.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-edgy-113",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le CERFA annonce une durée estimée. Il estime surtout notre optimisme.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-edgy-114",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le brunch parisien célèbre le fait maison. J'aurais pu rester chez moi avec cette somme.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-edgy-115",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le sandwich terroir contient une fine tranche de jambon et une épaisse narration.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-edgy-116",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Mon pot de départ commence par un discours sur la famille. J'avais pourtant envoyé une démission.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-edgy-117",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La Fête des voisins crée du lien. L'affiche « merci de laver vos assiettes » rétablit vite les limites.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-edgy-118",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le menu bouchon « allégé » retire les quantités. Les prix gardent une excellente santé.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-edgy-119",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le beurre salé artisanal a un emballage rustique imprimé avec beaucoup de précision industrielle.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-edgy-120",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La chaise bleue est occupée par un sac de luxe. Enfin quelqu'un qui profite vraiment de ses vacances.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-edgy-121",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Les bredele faits main ont un délai de livraison express. Les lutins ont rejoint la logistique.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-edgy-122",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "En TGV, mon voisin explique sa stratégie. Je découvre qu'un casque peut être une frontière nationale.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-edgy-123",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le bac de philosophie demande de penser par soi-même. Le corrigé possède néanmoins des attentes très précises.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-edgy-124",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le maillot cycliste annonce vingt sponsors. Ma sortie de six kilomètres a beaucoup de partenaires.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-edgy-125",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le flan parisien revisité coûte une part de mon budget. Je préfère quand seul le dessert tremble.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-edgy-126",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "À la dune du Pilat, le silence est magnifique entre deux notifications de géolocalisation.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-edgy-127",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le téléservice est disponible 24 heures sur 24. Mon problème aussi : nous avons enfin un point commun.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-edgy-128",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le café « à emporter » coûte moins cher. Paris me récompense quand je prends moins de place.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-edgy-129",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le pain ancestral se commande sur une borne. Les traditions savent choisir leurs héritiers.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-edgy-130",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La RTT sert à récupérer. Le téléphone du bureau propose une version sans récupération.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-edgy-131",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La fève artisanale est unique. Le catalogue en vend cinq cents exemplaires de son unicité.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-edgy-132",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le guide appelle la traboule un passage secret. Les vingt personnes derrière lui gardent très bien le secret.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-edgy-133",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La crêperie affiche « comme chez mamie ». Ma mamie connaissait moins de suppléments.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-edgy-134",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le soleil niçois est gratuit. Certains menus semblent vouloir facturer son entretien.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-edgy-135",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La boîte de bredele est plus lourde que les biscuits. Le cadeau consiste surtout à offrir du rangement.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-edgy-136",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le TGV me fait gagner deux heures. Je les dépense à choisir le tarif qui les économise.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-edgy-137",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le cahier Seyès impose de belles lettres. Le médecin écrit ensuite tout ce qu'il veut.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-edgy-138",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "À la pétanque, un silence précède chaque tir. Les excuses arrivent ensuite en stéréo.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-edgy-139",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le camembert premium porte un portrait de vache. Elle a dû négocier ses droits à l'image.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-edgy-140",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le souvenir du Mont-Saint-Michel est fabriqué loin. Il a davantage voyagé que mon week-end.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-edgy-141",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le CERFA a prévu toutes les situations, sauf la mienne. Je reconnais une ambition raisonnable.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-edgy-142",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "L'appartement parisien est « idéal investisseur ». L'habitant semble une utilisation secondaire.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-edgy-143",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le croissant géant est fait pour être photographié. Le manger exige surtout une équipe.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-edgy-144",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le CSE propose un concert après le travail. Mes oreilles auraient choisi un silence subventionné.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-edgy-145",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La couronne de galette s'ajuste à toutes les têtes. Une souplesse rare dans les fonctions dirigeantes.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-edgy-146",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Au bouchon, le chef refuse les modes. La réservation passe quand même par trois plateformes.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-edgy-147",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le kouign-amann se vend désormais en format dégustation. Les doigts restent en format beurre.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-edgy-148",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le Cours Saleya a des bouquets superbes. Mon excuse pour oublier l'anniversaire y coûte un peu plus cher.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-edgy-149",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le marché de Noël vend une bougie « forêt ». La forêt, à côté, n'a pas reçu de commission.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-edgy-150",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le Navigo ouvre les portes de Paris. Le prix du logement referme quelques perspectives.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-edgy-151",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le Bescherelle enseigne l'accord. Les adultes auraient pu lire aussi le titre.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-edgy-152",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Mon GPS sportif félicite ma montée de Montmartre. Il ignore soigneusement l'arrêt crêpe.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-edgy-153",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La quenelle gastronomique est posée au centre d'une grande assiette. Le vide a obtenu le reste du budget.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-edgy-154",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "Au pont du Gard, on admire l'ingénierie ancienne. Le parking moderne inspire surtout du calcul mental.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-edgy-155",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Mon dossier CERFA est dématérialisé. Il sait encore parfaitement peser sur ma journée.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-edgy-156",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La terrasse parisienne est chauffée. Mon salon aimerait connaître le financeur de cette politique climatique.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-edgy-157",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La baguette à fermentation lente est devenue mon repas rapide. Nous vivons à des vitesses différentes.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-edgy-158",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "L'accord télétravail vante la confiance. Le tableau de présence tient un autre discours.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-edgy-159",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La galette familiale est équitable. Le couteau commence pourtant toujours du côté des adultes.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-edgy-160",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le menu du bouchon a gardé ses spécialités. La traduction anglaise leur a offert une deuxième carrière.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-edgy-161",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La crêpe sans sucre, sans beurre et sans garniture est très pure. Mon enthousiasme aussi a disparu.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-edgy-162",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La photo de ma socca a reçu cent likes. Aucun n'a proposé de m'apporter une serviette.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-edgy-163",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le kougelhopf miniature tient dans la main. L'histoire de sa fabrication prend tout le comptoir.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-edgy-164",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le TGV traverse la France. Mon voisin traverse seulement les limites du haut-parleur acceptable.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-edgy-165",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le cahier de vacances a un programme ambitieux. L'enfant a un seau et un contre-projet.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-edgy-166",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "À la pétanque, on respecte la mesure. Sauf quand il s'agit de raconter sa propre victoire.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-edgy-167",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La tarte Tatin « déconstruite » me rappelle mon lave-vaisselle : beaucoup de morceaux, peu de joie.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-edgy-168",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "À Chambord, la visite audio me dit de prendre mon temps. Le groupe derrière fournit une autre consigne.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-edgy-169",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le service en ligne me souhaite une excellente journée. Il a terminé sa part du travail.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-edgy-170",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Au musée d’Orsay, l’audioguide promet une expérience immersive. La grande horloge conseille surtout de ne pas rater mon train.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Lieu culturel, patrimoine ou pratique de lecture en France comme cadre d’une fiction humoristique originale."
+  },
+  {
+    "id": "intl-v2-fr-edgy-171",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "« Bien cordialement » permet d'emballer une menace professionnelle dans du papier de soie.",
+    "age_rating": "teen",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-edgy-172",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "observ",
+    "text": "À Grasse, le parfum raconte une histoire. Mon compte bancaire en écrit la chute.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-edgy-173",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le carnaval de Nice distribue des fleurs. Une rare réunion où le lancer d'objets améliore l'ambiance.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-edgy-174",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le café littéraire interdit de rester trop longtemps. La culture doit savoir libérer sa table.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-edgy-175",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "L'attestation sur l'honneur veut une signature. L'honneur seul n'a pas la bonne extension de fichier.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-edgy-176",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "La correction du bac explique qu'il fallait nuancer. Le barème le fait avec des chiffres très nets.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-edgy-177",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le restaurant décrit sa gougère comme une émotion. À ce prix, j'en ai effectivement plusieurs.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-edgy-178",
+    "collection": "fr-fr-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Le CSE a offert un agenda bien-être. Même mon repos doit maintenant être rempli correctement.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  }
+]

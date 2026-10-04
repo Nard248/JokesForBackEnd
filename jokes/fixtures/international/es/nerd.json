@@ -1,0 +1,2138 @@
+[
+  {
+    "id": "intl-v2-es-nerd-001",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mi algoritmo para repartir tortilla española acabó en bucle: cada revisión reducía la muestra disponible.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-002",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El plano del metro de Madrid me enseñó teoría de grafos. Mis pies imparten el laboratorio.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-003",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "En Bilbao hice una base de datos de pintxos. La operación de borrado resultó peligrosamente intuitiva.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-004",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Versioné el ninot de nuestra falla con Git. La rama de la nariz ya no cabe en el taller.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-005",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Puse sensores al huerto murciano. Las lechugas no crecen más, pero ahora decepcionan con gráficos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-006",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "En la biblioteca de Salamanca hice búsqueda binaria. La bibliotecaria me ofreció algo revolucionario: preguntar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-007",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La paella valenciana tiene concurrencia real: cinco cucharas intentan modificar el mismo recurso.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-008",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Modelé nuestra sobremesa zaragozana. El sistema no converge mientras quede una anécdota sin procesar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-009",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Las campanadas de Nochevieja son un reloj global. Mi familia consigue desincronizarse con latencia humana.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-010",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El certificado digital valida mi identidad. Mi contraseña cuestiona mi capacidad de conservarla.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-011",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mi ruta por Santiago minimiza kilómetros. El algoritmo olvidó asignar peso a los escaparates de pastelerías.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-012",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Hice una tabla periódica de tapas. Las croquetas ocupan todos los elementos inestables cerca de mi mano.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-013",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El naranjo valenciano no responde al reinicio. Parece que regarlo era una dependencia documentada.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-014",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mi audioguía del Prado cargó sin conexión. La nube perdió su oportunidad de opinar sobre Velázquez.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-015",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La cita previa municipal es un problema de planificación. Mi impresora añade aleatoriedad para enriquecer el modelo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-016",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La ensaimada mallorquina parece una espiral matemática. Mi tenedor prefiere resolverla por sustracción.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-017",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Nuestra junta de vecinos madrileña funciona como sistema distribuido: todos tienen una versión distinta del mismo acuerdo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-018",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Organicé mis libros de Sant Jordi por hash. Encontrar novela ahora exige recordar un número de treinta y dos caracteres.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-019",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "En el patio de Córdoba instalé riego programado. El gato descubrió la prueba de integración antes que yo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-020",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "En mi cole de Valencia enseñé fracciones con naranjas. El error de redondeo acabó en zumo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-021",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mi aplicación para contar churros tiene fuga de memoria. Yo olvido cuantos llevo a partir del tercero.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-022",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El transbordo madrileño es recursivo: para llegar a la salida necesitas encontrar primero otra salida.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-023",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Optimicé el bocadillo de calamares como mochila matemática. El pan pidió reducir la complejidad espacial.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-024",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "En Fallas diseñé un dragón paramétrico. Ahora cambiar una ceja recalcula toda la calle.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-025",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mi huerto de Navarra tiene control de versiones. La versión anterior sigue llamándose compost.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-026",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Digitalicé las recetas de mi abuela manchega. «Lo que admita» no supera la validación del campo numérico.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-027",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El pintxo de Bilbao tiene arquitectura por capas. Mi mordisco pone a prueba todas sus interfaces simultáneamente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-028",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Nuestra sobremesa de León usa evaluación perezosa: nadie ejecuta «me voy» hasta que resulta imprescindible.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-029",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La rosa de Sant Jordi y el libro forman un paquete. Mi mochila no había instalado esas dependencias románticas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-030",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El portal municipal me devolvió un error desconocido. Me siento pionero de la administración experimental.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-031",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Programé un paseo por Toledo sin cuestas. El solucionador declaró el problema incompatible con la geografía.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-032",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La croqueta es una cápsula de información. El contenido solo se revela después de atravesar la capa crujiente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-033",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mi cactus de Almería consume poca agua. Por fin un dispositivo con modo de bajo consumo verificable.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-034",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "En el museo de Bilbao calculé reflejos. La fachada respondió añadiendo nubes al conjunto de datos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-035",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Nuestra gestoría madrileña hace copias de seguridad. La carpeta «por si acaso» tiene ya su propio «por si acaso».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-036",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "En Córdoba estudié la viscosidad del salmorejo. El pan se ofreció a realizar todos los ensayos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-037",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La comunidad barcelonesa tiene un chat asíncrono. La discusión más urgente siempre alcanza su máximo a medianoche.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-038",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Las luces navideñas de Vigo parecen un circuito. Mi factura prefiere describirlas como una variable externa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-039",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Medí la sombra del olivo de Jaén. El gato invalidó los datos ocupando exactamente el punto de medida.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-040",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "En un colegio de Zaragoza enseñé algoritmos con mochilas. Descubrimos que buscar el estuche tiene coste impredecible.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-041",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mi bot recomienda tapas en Granada. Se sobreajustó a mi historial: solo sabe decir «otra».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-042",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El AVE es un buen ejemplo de relatividad cotidiana: mi café parece enfriarse antes de abandonar la estación.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-043",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La tortilla con o sin cebolla es un parámetro. Mi familia lo trata como una incompatibilidad de sistema.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-044",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La impresora 3D hizo un ninot. Mi comisión fallera pidió que también imprimiera el presupuesto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-045",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mi tomatera murciana tiene soporte. Mi código también, pero solo la planta sabe sujetarse a él.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-046",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "En la biblioteca de Oviedo uso índices. El gato del patio prefiere búsquedas por cajas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-047",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mi modelo de consumo de turrón falló en Navidad. Había supuesto independencia entre «una vez más» y «la última».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-048",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La sobremesa manchega necesita compresión sin pérdidas. Mi tío rechaza eliminar incluso las pausas de sus historias.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-049",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Ordené las uvas dibujadas de Nochevieja. Mi sobrina descubrió que el año funciona sin ordenar los colores.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-050",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La app de cita previa me ofreció caché. Por fin algo guardado mientras no consigo guardar una cita.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-051",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "En Barcelona expliqué redes usando el metro. La línea equivocada ilustró muy bien el coste de un mal encaminamiento.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-052",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El pan con tomate es computación reversible solo hasta el primer bocado. Después aumenta mucho la dificultad experimental.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-053",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mi patio cordobés tiene microclimas. La maceta de la esquina ha pedido su propia estación meteorológica.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-054",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "En el Prado medí la proporción de un cuadro. La vigilante midió enseguida mi distancia al cuadro.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-055",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El formulario municipal exige un campo opcional. He encontrado una contradicción lógica con sello administrativo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-056",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "En Canarias hice análisis dimensional del mojo. El resultado se expresa en ganas de repetir por papa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-057",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mi grupo familiar de Sevilla replica fotos. La consistencia eventual llega cuando todos envían la misma otra vez.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-058",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El dragón de Sant Jordi tiene una vulnerabilidad: cualquier libro interesante detiene su tarea principal.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-059",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El viento del patio gaditano introdujo ruido en mi sensor. La ropa tendida confirmó el dato con excelente resolución.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-060",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "En una clase de León enseñé binario con bocadillos. Los alumnos entendieron enseguida la diferencia entre tener y no tener.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-061",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mi clasificador de churros confunde curva y recta. El chocolate asegura que acepta todos los formatos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-062",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La ruta por las murallas de Lugo es circular. Mi reloj insiste en llamarla progreso.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-063",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "En Navarra modelé el relleno de un pimiento. Descubrí límites muy concretos para la expansión del universo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-064",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Nuestra falla tiene simulación física. La mesa donde ponemos la maqueta sigue sin tener suficientes patas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-065",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La humedad de mi huerta valenciana envía alertas. La albahaca se ha convertido en mi contacto más constante.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-066",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El catálogo de la biblioteca de Cádiz conoce mis préstamos. Mi memoria ha solicitado acceso a su API.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-067",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El socarrat de la paella es una condición de contorno. Si te distraes, ocupa todo el dominio.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-068",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "En la sobremesa de Salamanca medí turnos de palabra. El modelo necesita admitir interrupciones anidadas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-069",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Los libros que compré en Sant Jordi superan mi capacidad de lectura. Es un problema clásico de entrada mayor que salida.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-070",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El lector del DNI funcionó. Guardé una captura porque la ciencia exige observaciones reproducibles.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-071",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "En el tren de Sóller mi móvil perdió cobertura. Los naranjos siguieron publicando novedades sin conexión.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-072",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La empanada gallega tiene encapsulación: oculta implementación y expone una interfaz deliciosamente clara.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-073",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Regué mi huerto murciano con lógica difusa. Algunas plantas interpretaron «más o menos» de manera demasiado literal.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-074",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El órgano de nuestra iglesia castellana parece un sintetizador. Su tiempo de arranque incluye encontrar al organista.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-075",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Nuestra oficina de Bilbao usa metodologías ágiles. Los pintxos del descanso completan cada sprint mucho antes que nosotros.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-076",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mi tabla de calorías del cocido madrileño tiene varias hojas. El primer plato ya exige paginación.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-077",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El chat vecinal de Valencia tiene demasiados nodos. La conexión más estable sigue siendo hablar por el balcón.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-078",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Programé un calendario de fiestas del pueblo. La función «descansar» resultó código sin ejecutar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-079",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Los geranios de Córdoba siguen el sol. Mi sistema de seguimiento solar necesita bastantes más tornillos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-080",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "En el cole de Málaga calculamos olas. La playa añadió muestras antes de que termináramos de contar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-081",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mi aplicación para dividir tapas implementa justicia. Mis amigos están buscando la función para apelar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-082",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El mapa del Camino de Santiago cabe en el móvil. Mis ampollas siguen prefiriendo un sistema de medida analógico.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-083",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Analicé el crujido de un churro. La muestra no pudo conservarse después de la revisión por pares hambrientos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-084",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El ninot de nuestro informático tiene tres cabezas: desarrollo, pruebas y «en mi ordenador funciona».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-085",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "En mi huerto de Almería probé aprendizaje por refuerzo. Los tomates no distinguen entre aplauso y viento.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-086",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La biblioteca de Valladolid tiene un sistema experto. La bibliotecaria lo llama treinta años escuchando preguntas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-087",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El queso manchego madura sin actualizaciones. Mi portátil considera ese rendimiento una acusación personal.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-088",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Nuestra sobremesa madrileña tiene memoria persistente. Un comentario de 2009 sigue apareciendo en cada reunión.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-089",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mi rosa de Sant Jordi perdió un pétalo. El programador de casa propuso recuperar una copia de primavera.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-090",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La sede electrónica agotó el tiempo de espera. Yo todavía tenía bastante espera disponible.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-091",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "En el tranvía de Zaragoza explicamos inercia. Mi mochila eligió una demostración práctica sin avisar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-092",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Los pimientos de Padrón complican el muestreo. Mi amigo exige un informe antes de cada bocado.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-093",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El olivar de Jaén ofrece procesamiento paralelo. Mi abuela sigue detectando la aceituna rara antes que mi cámara.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-094",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "En el museo de Mérida calculé siglos. Mi batería se quedó sin futuro antes del periodo romano.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-095",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La gestoría de Murcia solicita datos normalizados. Mi nombre compuesto se niega a vivir en dos casillas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-096",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La horchata valenciana se separó un poco. Mi físico interior recomienda agitar; el fotógrafo interior recomienda esperar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-097",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La junta de vecinos de Barcelona parece una red neuronal. Muchas conexiones y nadie explica la última decisión.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-098",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "En Reyes nuestra casa tiene logística inversa: el cartón sale en más viajes que los juguetes entraron.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-099",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La terraza gaditana es un túnel de viento económico. Mi servilleta acepta participar demasiado a menudo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-100",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "En el cole de Salamanca enseñamos conjuntos con meriendas. La intersección preferida contiene chocolate.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-101",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mi asistente recomienda la mejor tortilla de Madrid. Olvidó preguntar si buscaba una cena o abrir una discusión.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-102",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El metro bilbaíno tiene estaciones. Mi código también, pero las llama estados y no siempre sabe salir.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-103",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La ensaimada mallorquina sirve para explicar integrales. Al final queda una suma muy pequeña de migas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-104",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Nuestra maqueta de Fallas tiene render precioso. En la versión física apareció un problema llamado pegamento.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-105",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mi huerto navarro usa sensores inalámbricos. El caracol ha demostrado que ser lento no impide causar interrupciones.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-106",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El libro de Sant Jordi que compré pesa mucho. Es almacenamiento masivo con olor a papel.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-107",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Modelé el desayuno con aceite de Jaén. La variable «un chorrito» tiene una distribución sorprendentemente amplia.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-108",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Nuestra sobremesa de Segovia requiere un algoritmo de parada. «Un café más» reinicia el contador.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-109",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Los disfraces del carnaval de Cádiz son interfaces de usuario. El niño de dinosaurio tiene botones que no conocemos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-110",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El portal municipal verificó mi correo. Ojalá verificara también si todavía entiendo el trámite.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-111",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Calculé el trayecto por Toledo con distancia euclídea. Las escaleras solicitaron una revisión del marco teórico.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-112",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La croqueta presenta simetría aproximada. La mano de mi abuela conserva el derecho a pequeñas perturbaciones.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-113",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Los naranjos valencianos convierten luz en fruta. Mi panel solar exige muchos accesorios antes de ofrecer merienda.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-114",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El coro de Burgos estudia ondas. Las nuestras a veces interfieren destructivamente con la paciencia del director.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-115",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Nuestra oficina sevillana prueba el software en producción. La cafetera es el único sistema con entorno de pruebas habitual.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-116",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Las migas extremeñas tienen comportamiento granular. Mi mantel se ofrece como superficie de observación involuntaria.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-117",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El grupo familiar de Córdoba tiene redundancia. Siempre hay alguien que manda «por si no lo habéis visto».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-118",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Conté los pétalos de mi rosa de Sant Jordi. Mi pareja dijo que el análisis podía incluir también un abrazo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-119",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mi regadera inteligente de Murcia tiene un fallo: todavía necesita a alguien que la llene.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-120",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "En un colegio de León explicamos coordenadas. El balón del recreo descubrió puntos fuera del sistema acordado.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-121",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Hice una web de pintxos bilbaínos. El botón «cargar más» provoca hambre antes que latencia.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-122",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El tren a Cuenca cruzó un túnel. Mi videollamada recibió una demostración muy clara de pérdida de paquetes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-123",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La paella de mi familia tiene control de acceso. Solo una persona puede modificar el fuego.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-124",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La comisión fallera pidió una copia exacta del boceto. El cartón presentó sus propias restricciones de memoria.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-125",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mi patio cordobés tiene tantas especies que la hoja de cálculo ha desarrollado vocación de herbario.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-126",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El museo de Altamira muestra técnicas antiguas. Mi tableta se averió antes de poder explicarnos lo modernas que eran sus ventajas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-127",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La tortilla necesita estabilidad al darle la vuelta. Mi teoría funcionó mejor que el experimento.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-128",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "En la sobremesa de Teruel usamos búsqueda en profundidad. Una anécdota abre tres historias anteriores.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-129",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Las campanadas tienen una frecuencia conocida. Mi familia añade tanta discusión que parece una señal modulada.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-130",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El certificado digital quedó instalado. Lo anoté como un hito, no como una tarea, por respeto al esfuerzo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-131",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Optimicé una ruta de tapas en Granada. El problema del viajante nunca había tenido una función objetivo tan clara.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-132",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mi modelo de la empanada gallega suponía un borde uniforme. La cocinera defendió las irregularidades como firma digital.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-133",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "En el huerto de Valladolid medí el crecimiento de una calabaza. La gráfica exige ahora más papel que el presupuesto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-134",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La biblioteca madrileña me pidió renovar el préstamo. Mis proyectos personales agradecen conocer un sistema que admite prórrogas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-135",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El formulario de la gestoría tiene una casilla «otros». Por fin encuentro una categoría compatible con mi trayectoria profesional.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-136",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El salmorejo cordobés demuestra conservación de masa: lo que falta en el cuenco suele estar en mi pan.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-137",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Nuestra comunidad sevillana funciona por consenso. Es un algoritmo con pruebas de paciencia todavía no acotadas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-138",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Imprimí un dragón de Sant Jordi en 3D. Se terminó la bobina antes que sus ganas de tener cola.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-139",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mi limonero de Málaga produjo un solo limón. El sistema declara éxito porque la especificación nunca exigió plural.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-140",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "En mi clase de Valencia expliqué el cero con una caja vacía de fartons. La demostración fue demasiado convincente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-141",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mi app del menú del día necesita permisos. Lo único que quiero concederle es el derecho a traer postre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-142",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El plano del metro de Barcelona es un grafo. Mi tío insiste en resolverlo preguntando al primer pasajero.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-143",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "En Canarias estudié las papas arrugadas como superficie. La salsa simplificó mucho el problema de los relieves.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-144",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El calendario de nuestra peña riojana está sincronizado. Las ganas de llegar temprano siguen en versión experimental.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-145",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Los pájaros de mi huerto murciano derrotaron el reconocimiento facial. Todos se presentan con cara de inocentes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-146",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Digitalicé el archivo musical de mi banda valenciana. El trombón sigue ocupando exactamente el mismo espacio físico.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-147",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El bocadillo de calamares tiene geometría toroidal. El pan es la única estructura que impide que los anillos escapen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-148",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La sobremesa bilbaína es un proceso en segundo plano. Sigue funcionando mientras recogemos la mesa y buscamos los abrigos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-149",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mi estantería de Sant Jordi sufre desbordamiento. He parcheado el sistema apilando novelas horizontalmente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-150",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La sede electrónica guarda borradores. Mi ansiedad quería saber si también guarda personas a medio terminar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-151",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "En la ruta del Cares calculé desniveles. La calculadora no quiso asumir la parte de subirlos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-152",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El turrón de Navidad demuestra fractura de materiales. Mi abuelo recomienda aplicar experiencia antes que fuerza.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-153",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El riego del patio de Córdoba usa programación por turnos. La lluvia aparece como colaborador externo sin calendario compartido.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-154",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "En el Prado expliqué perspectivas. Mi sobrino eligió la perspectiva desde la que se veía la cafetería.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-155",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Nuestro equipo madrileño maneja datos abiertos. Sobre todo hojas de cálculo que nadie se atreve a cerrar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-156",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El pan con tomate tiene transferencia de color. Mi camisa blanca ha publicado resultados inesperadamente completos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-157",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La asociación vecinal de Zaragoza tiene control de cambios. Se llama alguien que recuerda cómo se hizo la última vez.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-158",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El ninot de nuestro robot fallero necesita equilibrio. La inteligencia artificial todavía depende de dos tacos de madera.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-159",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mi huerto navarro produce datos diarios. Las zanahorias prefieren mantener su desarrollo en modo privado.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-160",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "En un colegio de Cádiz enseñé acústica con conchas. El alumnado pidió probar también la versión con recreo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-161",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El mapa digital de tapas de Logroño calcula distancias. Mi hambre aporta una escala que no aparece en ajustes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-162",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El AVE tiene una velocidad impresionante. Mi documento compartido encontró tiempo para recibir siete comentarios por kilómetro.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-163",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La horchata de Valencia es mi sistema de refrigeración favorito. Necesita reposiciones más frecuentes que el portátil.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-164",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Los libros de Sant Jordi requieren clasificación. «Quiero leerlo ya» no está funcionando como categoría única.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-165",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "En el patio de Sevilla instalé sensores de luz. El gato ya conocía todos los resultados por posición de siesta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-166",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La biblioteca de León tiene memoria externa. Yo solo tengo que acordarme de llevar el carné.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-167",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El queso manchego aplica maduración lenta. Mi código también envejece, pero desarrolla olores menos prestigiosos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-168",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Nuestra sobremesa de Albacete permite llamadas recursivas a la infancia. Salir requiere deshacer muchos recuerdos pendientes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-169",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Programé luces para nuestro belén. El pastor de plástico se ha convertido en usuario de pruebas a tiempo completo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-170",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mi cita previa necesita autenticación doble. Primero demuestro quién soy; luego demuestro que aún conservo la paciencia.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-171",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "El mapa de Zaragoza muestra el trayecto más corto. Mi amigo añade una excepción por cada panadería conocida.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-172",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La empanada tiene redundancia en sus bordes. Es la parte que asegura la estructura y el siguiente bocado.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-173",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La maceta cordobesa tiene una fuga. El software la habría llamado función de drenaje sin modificar nada.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-174",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "En el museo de Mérida vi un mosaico. Una imagen con píxeles que llevan siglos sin actualizar controladores.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-175",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La oficina de Valencia abrió un canal de soporte. La primera petición fue explicar para qué servían los otros canales.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-176",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Las croquetas de mi abuela sevillana son una caja negra. Sabemos la entrada, adoramos la salida y nadie reproduce el modelo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-177",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "En la comunidad madrileña buscamos una solución óptima. Cada vecino está optimizando una función distinta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-nerd-178",
+    "collection": "es-es-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Nuestro dragón de Sant Jordi aprende a leer. Su primer error fue confundir «devorar un libro» con una instrucción literal.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. A technical concept used in a local everyday scene. Original AI-authored draft; no native human review claimed."
+  }
+]
