@@ -41,3 +41,10 @@ community*. Re-run `seed_showcase` to reset.
 Other states: Weather is **cooling** (its fans' signals are two weeks old);
 School/Science/Dating are small but active; 15% of the audience does not share
 analytics and is never counted.
+
+## Gotcha
+
+Re-running `seed_showcase` recreates the accounts. A browser still holding the
+previous JWT cookies gets 401 on login and 500 on token refresh — sign out first
+or use a private window. (The 500 is a pre-existing backend bug: a refresh token
+for a deleted user raises `User.DoesNotExist` instead of returning 401.)
