@@ -1,0 +1,27 @@
+# German–Austrian humor: editorial research and production brief
+
+Research date: 2026-09-27. This brief supports 1,600 new original German-language drafts added to the existing 200, producing exactly 200 records in each of nine categories. It does not certify native human review, represent all German or Austrian cultures, or turn fictional incidents into factual claims about either country.
+
+## Evidence and its limits
+
+German is pluricentric. Goethe-Institut's DACH guidance treats variation across German-speaking settings as a resource and cautions against treating national boundaries as complete cultural explanations. Use distinct vocabulary when the scene requires it; do not portray an Austrian standard form as broken German. [Goethe-Institut, “Diversität als Chance nutzen”](https://www.goethe.de/prj/dlp/de/magazin-sprache/21285442.html).
+
+The research-based Atlas zur deutschen Alltagssprache documents regional bread-roll names and changes across regions. *Semmel* also occurs in Germany; the contrast is not simply all Germans versus all Austrians. A fictional Hamburg–Vienna encounter may involve unfamiliar vocabulary, while a Munich character may recognize it immediately. The atlas also indexes food vocabulary, greetings, and names for days adjoining holidays, useful for checking a specific expression. [Atlas, “Brötchen/Semmel”](https://www.atlas-alltagssprache.de/brotchen/), [thematic register](https://www.atlas-alltagssprache.de/thematisches-register-test/).
+
+German bread-making is documented in the German national inventory of intangible cultural heritage. Regional ingredients, techniques, shapes, and seasonal uses provide more accurate context than a claim that everyone eats the same bread. [German UNESCO Commission, “Deutsche Brotkultur”](https://www.unesco.de/staette/deutsche-brotkultur/).
+
+Viennese coffeehouse culture entered Austria's national inventory in 2011. Its documented context includes newspaper tables, particular furniture, and lingering social and literary use. Describe this as a national-inventory entry, not an inscription on UNESCO's worldwide Representative List. [Austrian UNESCO Commission, “Wiener Kaffeehauskultur”](https://www.unesco.at/kultur/immaterielles-kulturerbe/verzeichnis/element/wiener-kaffeehauskultur), [City of Vienna, coffee-culture history](https://www.wien.gv.at/en/leisure/viennese-coffee-culture).
+
+Other concrete scenes include shared allotment-garden activity, German bottle-return practices, and the school-entry Schultüte. These are settings, not universal habits. Bottle deposits do not mean that every container is reusable. [German Allotment Garden Federation, community examples](https://kleingarten-bund.de/veranstaltungen/wettbewerbe/bundeswettbewerb/), [Federal Environment Agency, packaging questions](https://www.umweltbundesamt.de/themen/abfall-ressourcen/produktverantwortung-in-der-abfallwirtschaft/verpackungen/fragen-antworten-verpackungen-verpackungsabfaelle), [Goethe-Institut, “Erster Schultag”](https://www.goethe.de/prj/dlp/de/unterrichtsmaterial/reihe/feste_feiern_in_deutschland/erster_schultag).
+
+Neighbor jokes have a documented history, including Austrians as a target in German joke material. That describes a convention; it does not validate a stereotype or provide a license to reproduce the collected jokes. [University of Bremen dissertation, *Deutscher und Chinesischer Humor*, abstract and corpus description](https://media.suub.uni-bremen.de/entities/publication/c285bc84-ea52-4c65-bd73-88ee8d166ddd). Research on German–Austrian workplace exclusion shows why purportedly joking national distinctions cannot automatically be assumed harmless. [*Review of Managerial Science*, “Ostracism and nationalism in the workplace”](https://link.springer.com/article/10.1007/s11846-021-00454-z).
+
+## Writing decisions
+
+Use a broad mixture of bread and food vocabulary, allotment gardens, clubs and choirs, school-entry customs, seasonal crafts, named public-transport settings, hiking, music, local museums, and coffeehouse encounters. Every new record must contain an identifiable context in its actual wording; metadata alone is insufficient.
+
+German–Austrian banter should alternate who misunderstands, who finds a practical solution, and whether both are surprised by a third person or the situation. No fixed “stupid Austrian” or “robotic German” role, slurs, historical atrocity punchlines, or claims about innate national character. Do not imply that Austrians are a German regional subgroup. Mark actual Austrian contexts with `related_countries: ["AT"]`; the primary collection remains `de-de-everyday` as assigned.
+
+Write readable contemporary German, preserving inflection, capitalization, umlauts, and ß. A pun must have recoverable meanings; regional unfamiliarity alone is not a pun. Do not invent etymologies or portray intentionally literal fictional dialogue as the standard meaning of a local expression. For dark and edgy categories, direct the humor toward aging plans, institutions, consumer technology, and objects rather than vulnerable people.
+
+The production target is 177 additional wholesome, 177 office-proper, and 178 in each other category. Each new record has one primary category and a stable `intl-v2-de-{category}-{number}` ID. Existing 200 texts and IDs remain unchanged. Track authored counts separately from publication and human-review status. No jokes from research sources are copied into the corpus; all drafts are newly composed, and familiar mechanisms may still require semantic-duplicate screening.

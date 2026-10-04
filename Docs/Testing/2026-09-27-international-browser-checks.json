@@ -1,0 +1,85 @@
+{
+  "collections": [
+    {
+      "language": "fr",
+      "country": "FR",
+      "culture": "france-everyday",
+      "rendered": true,
+      "staleCards": false,
+      "presetCount": 1800
+    },
+    {
+      "language": "de",
+      "country": "DE",
+      "culture": "germany-everyday",
+      "rendered": true,
+      "staleCards": false,
+      "presetCount": 1800
+    },
+    {
+      "language": "nb",
+      "country": "NO",
+      "culture": "norway-everyday",
+      "rendered": true,
+      "staleCards": false,
+      "presetCount": 1800
+    },
+    {
+      "language": "hy",
+      "country": "AM",
+      "culture": "armenia-everyday",
+      "rendered": true,
+      "staleCards": false,
+      "presetCount": 1800
+    },
+    {
+      "language": "it",
+      "country": "IT",
+      "culture": "italy-everyday",
+      "rendered": true,
+      "staleCards": false,
+      "presetCount": 1800
+    },
+    {
+      "language": "es",
+      "country": "ES",
+      "culture": "spain-everyday",
+      "rendered": true,
+      "staleCards": false,
+      "presetCount": 1800
+    }
+  ],
+  "related": [
+    {
+      "language": "nb",
+      "country": "SE",
+      "rendered": true
+    },
+    {
+      "language": "nb",
+      "country": "FI",
+      "rendered": true
+    },
+    {
+      "language": "de",
+      "country": "AT",
+      "rendered": true
+    }
+  ],
+  "viewports": [
+    {
+      "width": 375,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "width": 1280,
+      "overflow": false
+    }
+  ],
+  "consoleErrors": [],
+  "persistenceAndClear": true
+}

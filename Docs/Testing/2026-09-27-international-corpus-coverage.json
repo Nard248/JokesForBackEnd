@@ -1,0 +1,891 @@
+{
+  "records": 10800,
+  "authored_complete": true,
+  "native_reviewed": false,
+  "authored_coverage": [
+    {
+      "collection": "es-es-everyday",
+      "locale": "es-ES",
+      "category": "wholesome",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "es-es-everyday",
+      "locale": "es-ES",
+      "category": "office-proper",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "es-es-everyday",
+      "locale": "es-ES",
+      "category": "dad",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "es-es-everyday",
+      "locale": "es-ES",
+      "category": "kid-safe",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "es-es-everyday",
+      "locale": "es-ES",
+      "category": "nerd",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "es-es-everyday",
+      "locale": "es-ES",
+      "category": "surreal",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "es-es-everyday",
+      "locale": "es-ES",
+      "category": "dark",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "es-es-everyday",
+      "locale": "es-ES",
+      "category": "edgy",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "es-es-everyday",
+      "locale": "es-ES",
+      "category": "puns",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "fr-fr-everyday",
+      "locale": "fr-FR",
+      "category": "wholesome",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "fr-fr-everyday",
+      "locale": "fr-FR",
+      "category": "office-proper",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "fr-fr-everyday",
+      "locale": "fr-FR",
+      "category": "dad",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "fr-fr-everyday",
+      "locale": "fr-FR",
+      "category": "kid-safe",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "fr-fr-everyday",
+      "locale": "fr-FR",
+      "category": "nerd",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "fr-fr-everyday",
+      "locale": "fr-FR",
+      "category": "surreal",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "fr-fr-everyday",
+      "locale": "fr-FR",
+      "category": "dark",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "fr-fr-everyday",
+      "locale": "fr-FR",
+      "category": "edgy",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "fr-fr-everyday",
+      "locale": "fr-FR",
+      "category": "puns",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "de-de-everyday",
+      "locale": "de-DE",
+      "category": "wholesome",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "de-de-everyday",
+      "locale": "de-DE",
+      "category": "office-proper",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "de-de-everyday",
+      "locale": "de-DE",
+      "category": "dad",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "de-de-everyday",
+      "locale": "de-DE",
+      "category": "kid-safe",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "de-de-everyday",
+      "locale": "de-DE",
+      "category": "nerd",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "de-de-everyday",
+      "locale": "de-DE",
+      "category": "surreal",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "de-de-everyday",
+      "locale": "de-DE",
+      "category": "dark",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "de-de-everyday",
+      "locale": "de-DE",
+      "category": "edgy",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "de-de-everyday",
+      "locale": "de-DE",
+      "category": "puns",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "hy-am-everyday",
+      "locale": "hy-AM",
+      "category": "wholesome",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "hy-am-everyday",
+      "locale": "hy-AM",
+      "category": "office-proper",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "hy-am-everyday",
+      "locale": "hy-AM",
+      "category": "dad",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "hy-am-everyday",
+      "locale": "hy-AM",
+      "category": "kid-safe",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "hy-am-everyday",
+      "locale": "hy-AM",
+      "category": "nerd",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "hy-am-everyday",
+      "locale": "hy-AM",
+      "category": "surreal",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "hy-am-everyday",
+      "locale": "hy-AM",
+      "category": "dark",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "hy-am-everyday",
+      "locale": "hy-AM",
+      "category": "edgy",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "hy-am-everyday",
+      "locale": "hy-AM",
+      "category": "puns",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "it-it-everyday",
+      "locale": "it-IT",
+      "category": "wholesome",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "it-it-everyday",
+      "locale": "it-IT",
+      "category": "office-proper",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "it-it-everyday",
+      "locale": "it-IT",
+      "category": "dad",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "it-it-everyday",
+      "locale": "it-IT",
+      "category": "kid-safe",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "it-it-everyday",
+      "locale": "it-IT",
+      "category": "nerd",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "it-it-everyday",
+      "locale": "it-IT",
+      "category": "surreal",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "it-it-everyday",
+      "locale": "it-IT",
+      "category": "dark",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "it-it-everyday",
+      "locale": "it-IT",
+      "category": "edgy",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "it-it-everyday",
+      "locale": "it-IT",
+      "category": "puns",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "nb-no-everyday",
+      "locale": "nb-NO",
+      "category": "wholesome",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "nb-no-everyday",
+      "locale": "nb-NO",
+      "category": "office-proper",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "nb-no-everyday",
+      "locale": "nb-NO",
+      "category": "dad",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "nb-no-everyday",
+      "locale": "nb-NO",
+      "category": "kid-safe",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "nb-no-everyday",
+      "locale": "nb-NO",
+      "category": "nerd",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "nb-no-everyday",
+      "locale": "nb-NO",
+      "category": "surreal",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "nb-no-everyday",
+      "locale": "nb-NO",
+      "category": "dark",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "nb-no-everyday",
+      "locale": "nb-NO",
+      "category": "edgy",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    },
+    {
+      "collection": "nb-no-everyday",
+      "locale": "nb-NO",
+      "category": "puns",
+      "count": 200,
+      "target": 200,
+      "missing": 0
+    }
+  ],
+  "database": {
+    "created": 1600,
+    "unchanged": 9200,
+    "removed": 0,
+    "context_mismatches": [],
+    "context_complete": true,
+    "public_bundle_records": 10800,
+    "coverage": [
+      {
+        "collection": "es-es-everyday",
+        "category": "wholesome",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "es-es-everyday",
+        "category": "office-proper",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "es-es-everyday",
+        "category": "dad",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "es-es-everyday",
+        "category": "kid-safe",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "es-es-everyday",
+        "category": "nerd",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "es-es-everyday",
+        "category": "surreal",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "es-es-everyday",
+        "category": "dark",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "es-es-everyday",
+        "category": "edgy",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "es-es-everyday",
+        "category": "puns",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "fr-fr-everyday",
+        "category": "wholesome",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "fr-fr-everyday",
+        "category": "office-proper",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "fr-fr-everyday",
+        "category": "dad",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "fr-fr-everyday",
+        "category": "kid-safe",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "fr-fr-everyday",
+        "category": "nerd",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "fr-fr-everyday",
+        "category": "surreal",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "fr-fr-everyday",
+        "category": "dark",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "fr-fr-everyday",
+        "category": "edgy",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "fr-fr-everyday",
+        "category": "puns",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "de-de-everyday",
+        "category": "wholesome",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "de-de-everyday",
+        "category": "office-proper",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "de-de-everyday",
+        "category": "dad",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "de-de-everyday",
+        "category": "kid-safe",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "de-de-everyday",
+        "category": "nerd",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "de-de-everyday",
+        "category": "surreal",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "de-de-everyday",
+        "category": "dark",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "de-de-everyday",
+        "category": "edgy",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "de-de-everyday",
+        "category": "puns",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "hy-am-everyday",
+        "category": "wholesome",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "hy-am-everyday",
+        "category": "office-proper",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "hy-am-everyday",
+        "category": "dad",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "hy-am-everyday",
+        "category": "kid-safe",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "hy-am-everyday",
+        "category": "nerd",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "hy-am-everyday",
+        "category": "surreal",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "hy-am-everyday",
+        "category": "dark",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "hy-am-everyday",
+        "category": "edgy",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "hy-am-everyday",
+        "category": "puns",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "it-it-everyday",
+        "category": "wholesome",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "it-it-everyday",
+        "category": "office-proper",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "it-it-everyday",
+        "category": "dad",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "it-it-everyday",
+        "category": "kid-safe",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "it-it-everyday",
+        "category": "nerd",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "it-it-everyday",
+        "category": "surreal",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "it-it-everyday",
+        "category": "dark",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "it-it-everyday",
+        "category": "edgy",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "it-it-everyday",
+        "category": "puns",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "nb-no-everyday",
+        "category": "wholesome",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "nb-no-everyday",
+        "category": "office-proper",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "nb-no-everyday",
+        "category": "dad",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "nb-no-everyday",
+        "category": "kid-safe",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "nb-no-everyday",
+        "category": "nerd",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "nb-no-everyday",
+        "category": "surreal",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "nb-no-everyday",
+        "category": "dark",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "nb-no-everyday",
+        "category": "edgy",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      },
+      {
+        "collection": "nb-no-everyday",
+        "category": "puns",
+        "target": 200,
+        "public_count": 200,
+        "mature_count": 0,
+        "missing": 0
+      }
+    ],
+    "public_complete": true
+  },
+  "reimport_verification": {
+    "created": 0,
+    "unchanged": 10800,
+    "removed": 0,
+    "context_mismatches": [],
+    "context_complete": true,
+    "public_bundle_records": 10800,
+    "public_complete": true
+  }
+}
