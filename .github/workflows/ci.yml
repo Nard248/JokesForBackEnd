@@ -81,7 +81,7 @@ jobs:
       # for the pip-audit findings. Flip these to blocking once the backlog
       # they'd surface is under control.
       - name: bandit (security scan, non-blocking)
-        run: bandit -c pyproject.toml -r JokesForProject jokes notifications creator_insights follows audit billing inbox || true
+        run: bandit -c pyproject.toml -r JokesForProject jokes notifications creator_insights communities follows audit billing inbox || true
 
       - name: pip-audit (dependency vulnerabilities, non-blocking)
         run: pip-audit -r requirements.txt || true
