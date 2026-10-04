@@ -40,8 +40,8 @@ profile saves replace the version
 **after commit** (`communities/signals.py`; anonymous shares are ignored). A stale
 entry is recomputed at most every `COMMUNITIES_MIN_REFRESH_SECONDS` (default 5)
 by one lock holder while others serve the previous state, so engagement bursts
-cannot force recomputation. Scaling path: materialize per-(user, community)
-scores incrementally; engine inputs unchanged.
+cannot force recomputation. Recomputation reads the materialized signal table,
+not the engagement ledgers — see **Scale: incremental materialization** below.
 
 **Residual risks (accepted 2026-10-04, documented):**
 - Formation is Sybil-sensitive — five consenting accounts can activate a theme.
@@ -52,6 +52,72 @@ scores incrementally; engine inputs unchanged.
   noise (differential privacy).
 Both are acceptable while communities grant no privileges and expose no member
 lists; revisit before community feeds, conversations or member directories.
+
+## Scale: incremental materialization
+
+Single Cloud Run service, no workers or schedules — the write that changes the
+ledger also changes the materialization, in the same transaction.
+
+**`CommunitySignal`** (`communities/models.py`, migrations `communities/0003`
+schema + `0004` backfill): one row per positive ledger row —
+`(user, joke, kind ∈ like|favorite|save|share, source_id, occurred_at)`, unique
+on `(kind, source_id)`, indexed on `occurred_at` and `(user, joke, kind)`.
+`like` mirrors a `lol`/`crying` `JokeReaction` at its `updated_at`; favorites,
+saves and signed-in shares mirror `created_at`. Negative reactions and anonymous
+shares never get a row.
+
+**Upkeep** (`communities/materialize.py`, wired in `communities/signals.py`):
+`post_save`/`post_delete` on `JokeReaction`, `Favorite`, `SavedJoke`,
+`ShareEvent` upsert or delete the mirror row synchronously. A reaction switched
+to 🤔/🙄 or toggled off loses its row; one switched back gets the new
+`updated_at`. Unsaving from one collection keeps saves in the others. Shares are
+the only unbounded kind: a share older than 7 days that has a newer share also
+older than 7 days can never again change any number, so it is pruned on write
+(deleting a share resyncs that person/joke's shares from the ledger). Deleting
+an account or joke cascades. Writes that bypass model signals (`bulk_create`,
+`QuerySet.update` on a ledger, `loaddata`) must be followed by
+`python manage.py rebuild_community_signals` (idempotent: recreates the table
+from the four ledgers and prunes); `seed_showcase` and `seed_demo_creator` call
+it.
+
+**Eligibility stays at read time:** consent (`share_analytics`, active, adult,
+signal after the latest opt-in), `tier_1`, `is_removed=False`, themes and
+listing are applied when reading, so withdrawals, account deletion, takedowns
+(even via `QuerySet.update`), tier changes and re-tags apply on the next
+recompute without touching the table. Re-tags also invalidate the cached
+aggregate (`m2m_changed` on `Joke.context_tags`); takedowns and tier changes
+done with `QuerySet.update` are picked up within the 1-hour max age, as before.
+
+**Read:** `services.signal_rows()` filters the table (eligibility as
+semi/anti-joins, evaluated set-wise). `services.affinities_at()` lets Postgres
+take each person's strongest capped, decayed signal per joke
+(`min(4, weight) · 2^(−age/7 days)`, the same double-precision operations as
+`engine.decay`, half-life applied at read time) and sum it per (person, theme)
+with the number of contributing jokes; `engine.affinities_from_totals()` then
+applies the unchanged membership rules (≥ 6 points across ≥ 2 jokes, `left`
+overrides, `joined` never activates). Activity counts and distinct
+contributors are grouped per (theme, UTC day) in SQL too. A fixed set of
+queries regardless of traffic (asserted in tests); Python handles one row per
+(person, community) instead of one per signal. Local benchmark (3,000
+consenting adults, 313k ledger rows → 176k mirrored): ledger scan 1,048 ms,
+materialized 410 ms per recompute, byte-identical output. Recompute still runs
+at most once per refresh floor behind the cache.
+
+**Equivalence:** `communities/tests/test_materialization.py` replays randomized
+engagement (reactions, switches, unreacts, favorites, multi-collection saves,
+repeated shares, consent histories, minors, inactive accounts, memberships,
+takedowns, tier and theme changes, withdrawal, account and joke deletion)
+through the real write paths and asserts the result equals the frozen ledger
+scan (`communities/tests/legacy.py`) field by field — aggregates, per-person
+affinities now and a week ago, viewer states and creator audiences — both under
+incremental upkeep and after a full rebuild. Membership sets and counts are
+compared exactly; scores to 9 decimals (Postgres may add the same terms in a
+different order, so only the last bit can differ).
+
+**Next step if recompute time grows:** keep per-(person, theme) running totals
+anchored to a fixed epoch (`Σ w·2^(t/h)`) so a recompute reads one row per pair;
+needs lazy correction for signals leaving the 90-day window and for the
+week-ago comparison.
 
 ## GET `communities/` — AllowAny
 
@@ -130,8 +196,9 @@ descriptions of current evidence, never predictions.
 ## Account data
 
 `GET users/me/data-export/` includes `community_memberships`
-(`[{community, state, updated_at}]`). Inferred affinity is not stored; account
-deletion cascades memberships.
+(`[{community, state, updated_at}]`). Inferred affinity is not stored;
+`CommunitySignal` only mirrors reactions, favorites, saves and shares that the
+export already contains. Account deletion cascades memberships and signals.
 
 ## Demo data
 

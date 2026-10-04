@@ -32,7 +32,7 @@ from django.db import connection, connections, transaction
 from django.utils import timezone
 
 from billing.models import Plan, Subscription
-from communities import services
+from communities import materialize, services
 from communities.models import Community, CommunityMembership
 from creator_insights import library
 from follows.models import Follow
@@ -162,6 +162,7 @@ class Command(BaseCommand):
         self.now = timezone.now()
         self.opted_in = self.now - timedelta(days=120)  # consent predates every seeded signal
         self._seed()
+        materialize.rebuild()  # signals were bulk-created and backdated
         services.invalidate()
         self._report()
 

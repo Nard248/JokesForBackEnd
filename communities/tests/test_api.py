@@ -7,7 +7,7 @@ from django.utils import timezone
 from rest_framework.test import APIClient
 
 from billing.models import Plan, Subscription
-from communities import services
+from communities import materialize, services
 from communities.models import Community, CommunityMembership
 from jokes.models import (
     AgeRating,
@@ -142,6 +142,7 @@ class FormationTests(CommunityFixture):
         old = timezone.now() - timedelta(days=21)
         JokeReaction.objects.update(updated_at=old)
         Favorite.objects.update(created_at=old)
+        materialize.rebuild()  # QuerySet.update bypasses the model signals that maintain the mirror
         rows, _ = self.directory()
         self.assertNotEqual(rows['space']['status'], 'active')
 

@@ -25,6 +25,7 @@ from django.db import transaction
 from django.db.models import Max, Min, Q
 from django.utils import timezone
 
+from communities import materialize
 from creator_insights.services import build_creator_insights
 from follows.models import Follow
 from jokes.models import (
@@ -449,6 +450,7 @@ class Command(BaseCommand):
         self._bulk_backdate(SavedJoke, saves, 'created_at')
         self._bulk_backdate(Favorite, favs, 'created_at')
         self._bulk_backdate(ShareEvent, shares, 'created_at')
+        materialize.rebuild()  # engagement was bulk-created; keep community signals in step
 
         # --- Followers (upward slope toward recent days) ---
         n_followers = min(len(viewers), int(len(viewers) * random.uniform(0.72, 0.90)))

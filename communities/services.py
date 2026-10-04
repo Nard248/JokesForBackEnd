@@ -13,26 +13,42 @@ Population rules (the line that must hold):
 * Signals come only from tier_1, non-removed jokes, so mature or taken-down
   content can never form a community.
 
-Single-service constraint: everything is request-triggered. The aggregate is
-computed from a bounded 90-day signal window and cached; engagement writes
-invalidate it (see ``signals.py``). At scale this becomes an incremental
-per-(user, community) materialization — the engine's inputs do not change.
+Single-service constraint: everything is request-triggered. Engagement writes
+maintain ``CommunitySignal`` synchronously (``materialize.py``); the aggregate
+lets the database reduce it to per-(person, theme) totals inside the 90-day
+window, applies the unchanged engine rules to those totals, and is cached;
+engagement writes invalidate it (see ``signals.py``).
 """
 import time
 import uuid
 from collections import Counter, defaultdict
-from datetime import timedelta
+from datetime import UTC, datetime, timedelta
 from itertools import combinations
 
 from dateutil.relativedelta import relativedelta
 from django.conf import settings
 from django.core.cache import cache
-from django.db.models import Count, Max, OuterRef, Subquery, Value
-from django.db.models.functions import Coalesce
+from django.db import connection
+from django.db.models import (
+    Case,
+    Count,
+    DateTimeField,
+    Exists,
+    F,
+    FloatField,
+    Func,
+    Max,
+    OuterRef,
+    Subquery,
+    Value,
+    When,
+)
+from django.db.models.functions import Cast, Coalesce, TruncDate
 from django.utils import timezone
 
 from communities import engine
-from communities.models import Community, CommunityMembership
+from communities.materialize import POSITIVE_REACTIONS, TREND_DAYS
+from communities.models import Community, CommunityMembership, CommunitySignal
 from creator_insights.privacy import eligible_analytics_users
 from jokes.identity import public_display_name, public_handle
 from jokes.models import AnalyticsConsentRecord, Favorite, Joke, JokeReaction, SavedJoke, ShareEvent
@@ -44,7 +60,6 @@ VERSION_KEY = 'communities:aggregate:version'
 LOCK_KEY = 'communities:aggregate:lock'
 # Backstop: even if every invalidation were lost, nothing is served older than this.
 MAX_AGE_SECONDS = 3600
-POSITIVE_REACTIONS = (JokeReaction.REACTION_LOL, JokeReaction.REACTION_CRYING)
 
 METHODOLOGY = {
     'half_life_days': engine.HALF_LIFE_DAYS,
@@ -66,74 +81,88 @@ METHODOLOGY = {
 }
 
 
-def _signal_specs():
-    return (
-        (JokeReaction.objects.filter(reaction__in=POSITIVE_REACTIONS), 'updated_at', 'like'),
-        (Favorite.objects.all(), 'created_at', 'favorite'),
-        (SavedJoke.objects.all(), 'created_at', 'save'),
-        (ShareEvent.objects.filter(user__isnull=False), 'created_at', 'share'),
+def signal_rows(since, until=None, users=None, jokes=None, eligible=False, exclude_user=None):
+    """Materialized positive signals on tier_1, non-removed jokes, read from ``CommunitySignal``.
+
+    With ``eligible`` the rows are limited to the eligible population, each
+    inside its consent period. Consent is not applied backwards: reactions from
+    before someone turned on audience analytics never feed a public or
+    creator-visible number, and people with no recorded opt-in contribute
+    nothing. Eligibility is evaluated here, at read time, so withdrawals,
+    deletions, takedowns, tier changes and re-tags apply immediately.
+    """
+    rows = CommunitySignal.objects.filter(
+        occurred_at__gte=since, joke__content_tier='tier_1', joke__is_removed=False,
     )
-
-
-def collect_signals(since, users=None, jokes=None):
-    """Return ``(user_id, joke_id, kind, occurred_at)`` positive signals since ``since``."""
-    rows = []
-    for queryset, stamp, kind in _signal_specs():
-        queryset = queryset.filter(
-            **{f'{stamp}__gte': since}, joke__content_tier='tier_1', joke__is_removed=False,
-        )
-        if users is not None:
-            queryset = queryset.filter(user__in=users)
-        if jokes is not None:
-            queryset = queryset.filter(joke__in=jokes)
-        rows.extend(
-            (user_id, joke_id, kind, at)
-            for user_id, joke_id, at in queryset.values_list('user_id', 'joke_id', stamp).iterator()
+    if until is not None:
+        rows = rows.filter(occurred_at__lte=until)
+    if users is not None:
+        rows = rows.filter(user__in=users)
+    if jokes is not None:
+        rows = rows.filter(joke__in=jokes)
+    if eligible:
+        population = eligible_analytics_users()
+        if exclude_user is not None:
+            population = population.exclude(pk=exclude_user.pk)
+        # "At or after the latest opt-in", phrased as (anti-)semi-joins so the
+        # database can evaluate it set-wise instead of once per signal.
+        opt_ins = AnalyticsConsentRecord.objects.filter(user=OuterRef('user_id'), enabled=True)
+        rows = rows.filter(
+            Exists(opt_ins.filter(recorded_at__lte=OuterRef('occurred_at'))),
+            ~Exists(opt_ins.filter(recorded_at__gt=OuterRef('occurred_at'))),
+            user__in=population.values('pk'),
         )
     return rows
 
 
-def consent_starts(users):
-    """When each currently-consenting person's latest opt-in was recorded.
+def _decayed_weight(moment):
+    """SQL for ``min(CONTENT_CAP, WEIGHTS[kind]) * engine.decay(occurred_at, moment)``.
 
-    Consent is not applied backwards: reactions from before someone turned on
-    audience analytics never feed a public or creator-visible number. People
-    with no recorded opt-in contribute nothing.
+    The same IEEE double operations in the same order as ``engine.decay``, with
+    the half-life applied at read time.
     """
-    return dict(
-        AnalyticsConsentRecord.objects.filter(user__in=users, enabled=True)
-        .values_list('user_id').annotate(start=Max('recorded_at'))
+    weight = Cast(Case(*[When(kind=kind, then=Value(float(min(engine.CONTENT_CAP, engine.WEIGHTS[kind]))))
+                         for kind, _ in CommunitySignal.KIND_CHOICES]), FloatField())
+    decay = Func(
+        Value(moment, output_field=DateTimeField()), F('occurred_at'), arg_joiner=' - ',
+        template=('POWER(2::float8, -GREATEST(0::float8, EXTRACT(EPOCH FROM (%(expressions)s))::float8) '
+                  f'/ {86400 * engine.HALF_LIFE_DAYS}::float8)'),
+        output_field=FloatField(),
     )
+    return weight * decay
 
 
-def eligible_signals(since, jokes=None, exclude_user=None):
-    """Positive signals from the eligible population, each inside its consent period."""
-    users = eligible_analytics_users()
-    if exclude_user is not None:
-        users = users.exclude(pk=exclude_user.pk)
-    starts = consent_starts(users.values('pk'))
-    return [
-        signal for signal in collect_signals(since, users=list(starts), jokes=jokes)
-        if signal[3] >= starts[signal[0]]
-    ]
+def _by_theme(inner, select, group_by, tag_ids):
+    """Run ``select`` over ``inner`` (alias ``b``) fanned out to each joke's listed themes (alias ``t``)."""
+    sql, params = inner.query.sql_with_params()
+    through = Joke.context_tags.through._meta.db_table
+    with connection.cursor() as cursor:
+        cursor.execute(
+            f'SELECT {select} FROM ({sql}) AS b JOIN {through} AS t ON t.joke_id = b.joke_id '
+            f'WHERE t.contexttag_id = ANY(%s) GROUP BY {group_by}',
+            [*params, list(tag_ids)],
+        )
+        return cursor.fetchall()
 
 
-def _tags_by_joke(joke_ids, tag_to_community):
-    through = Joke.context_tags.through
-    mapping = defaultdict(list)
-    pairs = through.objects.filter(joke_id__in=joke_ids, contexttag_id__in=list(tag_to_community))
-    for joke_id, tag_id in pairs.values_list('joke_id', 'contexttag_id'):
-        mapping[joke_id].append(tag_to_community[tag_id])
-    return mapping
+def affinities_at(rows, moment, tag_to_community, overrides=()):
+    """Engine affinities at ``moment`` from materialized signal rows.
 
-
-def to_engine_events(signals, tag_to_community):
-    tags = _tags_by_joke({joke for _, joke, _, _ in signals}, tag_to_community)
-    return [
-        {'actor_id': user, 'content_id': joke, 'subject_id': community, 'kind': kind, 'occurred_at': at}
-        for user, joke, kind, at in signals
-        for community in tags.get(joke, ())
-    ]
+    The database takes each person's strongest decayed signal per joke and sums
+    them per theme (with the number of jokes that contributed); the engine then
+    applies the unchanged membership rules. Python handles one row per
+    (person, community), not one per signal.
+    """
+    per_joke = (rows.filter(occurred_at__lte=moment).order_by()
+                .values('user_id', 'joke_id').annotate(v=Max(_decayed_weight(moment))))
+    totals = {
+        (person, tag_to_community[tag]): (score, count)
+        for person, tag, score, count in _by_theme(
+            per_joke, 'b.user_id, t.contexttag_id, SUM(b.v), COUNT(*)', 'b.user_id, t.contexttag_id',
+            tag_to_community,
+        )
+    }
+    return engine.affinities_from_totals(totals, overrides)
 
 
 def listed_communities():
@@ -157,8 +186,23 @@ def compute_aggregate(now=None):
     now = now or timezone.now()
     communities = listed_communities()
     tag_to_community = {c.tag_id: c.pk for c in communities}
-    signals = eligible_signals(now - timedelta(days=WINDOW_DAYS))
-    events = to_engine_events(signals, tag_to_community)
+    eligible = signal_rows(now - timedelta(days=WINDOW_DAYS), eligible=True)
+    past_time = now - timedelta(days=TREND_DAYS)
+
+    # Activity sparkline: every signal (not only the strongest) per UTC day, today included.
+    first_day = now.date() - timedelta(days=TREND_DAYS - 1)
+    recent = eligible.filter(
+        occurred_at__gte=datetime.combine(first_day, datetime.min.time(), tzinfo=UTC),
+        occurred_at__lt=datetime.combine(now.date() + timedelta(days=1), datetime.min.time(), tzinfo=UTC),
+    ).order_by().values('user_id', 'joke_id', day=TruncDate('occurred_at', tzinfo=UTC))
+    activity = defaultdict(lambda: [0] * TREND_DAYS)
+    for tag, day, count in _by_theme(recent, 't.contexttag_id, b.day, COUNT(*)', 't.contexttag_id, b.day',
+                                     tag_to_community):
+        activity[tag_to_community[tag]][TREND_DAYS - 1 - (now.date() - day).days] += count
+    contributors = {
+        tag_to_community[tag]: count for tag, count in _by_theme(
+            recent, 't.contexttag_id, COUNT(DISTINCT b.user_id)', 't.contexttag_id', tag_to_community)
+    }
 
     # Consent gates every aggregate: an explicit join by someone who does not
     # share analytics changes only their own view, never a public number.
@@ -170,10 +214,9 @@ def compute_aggregate(now=None):
     )
     overrides = [{'actor_id': m['user_id'], 'subject_id': m['community_id'], 'state': m['state']}
                  for m in memberships]
-    current = engine.affinities(events, now, overrides)
-    past_time = now - timedelta(days=7)
+    current = affinities_at(eligible, now, tag_to_community, overrides)
     past_overrides = [o for o, m in zip(overrides, memberships, strict=True) if m['updated_at'] <= past_time]
-    previous = engine.affinities([e for e in events if e['occurred_at'] <= past_time], past_time, past_overrides)
+    previous = affinities_at(eligible, past_time, tag_to_community, past_overrides)
 
     inferred, members, before = defaultdict(set), defaultdict(set), defaultdict(set)
     scores = Counter()
@@ -188,14 +231,6 @@ def compute_aggregate(now=None):
     for (person, community), result in previous.items():
         if result['inferred']:
             before[community].add(person)
-
-    activity = defaultdict(lambda: [0] * 7)
-    contributors = defaultdict(set)
-    for event in events:
-        days_ago = (now.date() - event['occurred_at'].date()).days
-        if 0 <= days_ago <= 6:
-            activity[event['subject_id']][6 - days_ago] += 1
-            contributors[event['subject_id']].add(event['actor_id'])
 
     bridges = Counter()
     for person_topics in topics.values():
@@ -214,7 +249,7 @@ def compute_aggregate(now=None):
             'members': sorted(members[cid]),
             'engaged': len(inferred[cid]),
             'previous': len(before[cid]),
-            'contributors': len(contributors[cid]),
+            'contributors': contributors.get(cid, 0),
             'score': round(scores[cid], 2),
             'activity': activity[cid],
             'joke_count': joke_counts.get(community.tag_id, 0),
@@ -283,14 +318,12 @@ def viewer_states(user, communities):
         return {}
     now = timezone.now()
     tag_to_community = {c.tag_id: c.pk for c in communities}
-    events = to_engine_events(
-        collect_signals(now - timedelta(days=WINDOW_DAYS), users=[user.pk]), tag_to_community,
-    )
     overrides = [
         {'actor_id': user.pk, 'subject_id': cid, 'state': state}
         for cid, state in CommunityMembership.objects.filter(user=user).values_list('community_id', 'state')
     ]
-    results = engine.affinities(events, now, overrides)
+    results = affinities_at(signal_rows(now - timedelta(days=WINDOW_DAYS), users=[user.pk]), now,
+                            tag_to_community, overrides)
     return {cid: results.get((user.pk, cid)) for cid in tag_to_community.values()}
 
 
@@ -451,7 +484,8 @@ def community_bridges(community, data):
 
 def export_memberships(user):
     """Explicit join/leave choices for the GDPR export. Inferred affinity is not
-    stored; it is recomputed from the reactions/saves/shares already exported."""
+    stored; it is recomputed from the reactions/saves/shares already exported
+    (``CommunitySignal`` only mirrors those rows and is deleted with the account)."""
     return [
         {'community': slug, 'state': state, 'updated_at': updated.isoformat()}
         for slug, state, updated in CommunityMembership.objects.filter(user=user)
@@ -483,11 +517,11 @@ def creator_reach(user):
     key = f'communities:creator-audience:{user.pk}:{day}'
     audience = cache.get(key)
     if audience is None:
-        audience = {
-            person for person, _, _, _ in eligible_signals(
-                now - timedelta(days=WINDOW_DAYS), jokes=creator_jokes.values('pk'), exclude_user=user,
-            )
-        }
+        audience = set(
+            signal_rows(now - timedelta(days=WINDOW_DAYS), jokes=creator_jokes.values('pk'), eligible=True,
+                        exclude_user=user)
+            .order_by().values_list('user_id', flat=True).distinct()
+        )
         cache.set(key, audience, 26 * 3600)
     # Snapshot membership, but *current* consent: a withdrawal or deletion takes
     # effect immediately (numbers can only fall within the day, never rise).
