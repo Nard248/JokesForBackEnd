@@ -13,6 +13,7 @@ class Notification(models.Model):
         ('joke_removed', 'Your joke was removed'),
         ('joke_rejected', 'Your submission was rejected'),
         ('appeal_resolved', 'Your appeal was resolved'),
+        ('community_formed', 'A community you belong to formed'),
     ]
 
     recipient = models.ForeignKey(

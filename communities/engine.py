@@ -34,12 +34,24 @@ def affinities(events, now, overrides=()):
         score = min(CONTENT_CAP, WEIGHTS[event["kind"]]) * decay(event["occurred_at"], now)
         content = event["content_id"]
         contributions[key][content] = max(score, contributions[key].get(content, 0))
+    totals = {}
+    for key, values in contributions.items():
+        totals[key] = (sum(values.values()), sum(value > 0 for value in values.values()))
+    return affinities_from_totals(totals, overrides)
+
+
+def affinities_from_totals(totals, overrides=()):
+    """The same membership rules applied to precomputed per-(actor, subject) totals.
+
+    ``totals`` maps ``(actor_id, subject_id)`` to ``(score, content_count)``: the
+    sum of the per-content strongest decayed signals and how many contents had
+    one — exactly what ``affinities`` derives from raw events. The database
+    computes these for the community aggregate.
+    """
     states = {(item["actor_id"], item["subject_id"]): item["state"] for item in overrides}
     results = {}
-    for key in contributions.keys() | states.keys():
-        values = contributions.get(key, {}).values()
-        score = sum(values)
-        distinct = sum(value > 0 for value in values)
+    for key in totals.keys() | states.keys():
+        score, distinct = totals.get(key, (0, 0))
         engaged = distinct >= MINIMUM_CONTENT and score >= MEMBERSHIP_THRESHOLD
         left = states.get(key) == "left"
         results[key] = {

@@ -7,7 +7,7 @@ from django.utils import timezone
 from rest_framework.test import APIClient
 
 from billing.models import Plan, Subscription
-from communities import services
+from communities import materialize, services
 from communities.models import Community, CommunityMembership
 from jokes.models import (
     AgeRating,
@@ -24,9 +24,11 @@ from jokes.models import (
 
 User = get_user_model()
 OPTED_IN = timezone.now() - timedelta(days=365)
+JOINED = timezone.now() - timedelta(days=400)
 
 
-@override_settings(COMMUNITIES_MIN_REFRESH_SECONDS=0)
+# Exact-count assertions: noise off here; communities/tests/test_privacy.py covers it.
+@override_settings(COMMUNITIES_MIN_REFRESH_SECONDS=0, COMMUNITIES_NOISE_EPSILON=0)
 class CommunityFixture(TestCase):
     def setUp(self):
         cache.clear()
@@ -39,14 +41,18 @@ class CommunityFixture(TestCase):
         self.office = ContextTag.objects.create(name='Office life', slug='office-life')
         self.space_jokes = [self.joke(f'space {i}', self.space) for i in range(3)]
         self.office_jokes = [self.joke(f'office {i}', self.office) for i in range(3)]
+        # Untagged jokes people enjoy to become established (3+ distinct jokes)
+        # without touching any community's numbers.
+        self.warmup_jokes = [self.joke(f'warm-up {i}', None) for i in range(3)]
 
     def joke(self, text, tag, tier='tier_1', creator=None):
         joke = Joke.objects.create(text=text, format=self.fmt, age_rating=self.age, language=self.lang,
                                    content_tier=tier, creator=creator)
-        joke.context_tags.add(tag)
+        if tag is not None:
+            joke.context_tags.add(tag)
         return joke
 
-    def person(self, name, adult=True, consent=True):
+    def person(self, name, adult=True, consent=True, established=True):
         user = User.objects.create_user(username=name, email=f'{name}@example.test', password='pw-12345678')
         user.profile.date_of_birth = date(1990, 1, 1) if adult else date.today() - timedelta(days=365 * 15)
         user.profile.share_analytics = consent
@@ -54,7 +60,14 @@ class CommunityFixture(TestCase):
         if consent:
             AnalyticsConsentRecord.objects.create(user=user, enabled=True, policy_version='test',
                                                   provenance='preference', recorded_at=OPTED_IN)
+        if established:
+            self.establish(user)
         return user
+
+    def establish(self, user):
+        User.objects.filter(pk=user.pk).update(date_joined=JOINED)
+        for joke in self.warmup_jokes:
+            JokeReaction.objects.create(user=user, joke=joke, reaction='lol')
 
     def enjoy(self, user, jokes):
         with self.captureOnCommitCallbacks(execute=True):
@@ -142,6 +155,7 @@ class FormationTests(CommunityFixture):
         old = timezone.now() - timedelta(days=21)
         JokeReaction.objects.update(updated_at=old)
         Favorite.objects.update(created_at=old)
+        materialize.rebuild()  # QuerySet.update bypasses the model signals that maintain the mirror
         rows, _ = self.directory()
         self.assertNotEqual(rows['space']['status'], 'active')
 
@@ -410,6 +424,81 @@ class CreatorReachTests(CommunityFixture):
         for i in range(3):
             self.enjoy(self.person(f'fan{i}'), self.mine)
         self.client.force_authenticate(self.creator)
+        response = self.client.get('/api/v1/creators/me/communities/')
+        self.assertIsNone(response.data['audience']['size'])
+        self.assertTrue(all(r['reached_members'] is None for r in response.data['communities']))
+
+
+class EstablishedAccountTests(CommunityFixture):
+    """Sybil resistance: only established accounts move community numbers."""
+
+    def test_new_accounts_cannot_activate_a_community(self):
+        fans = [self.person(f'new{i}', established=False) for i in range(5)]
+        for fan in fans:
+            for joke in self.warmup_jokes:
+                JokeReaction.objects.create(user=fan, joke=joke, reaction='lol')
+            self.enjoy(fan, self.space_jokes[:2])
+        rows, data = self.directory()
+        self.assertEqual(rows['space']['status'], 'forming')
+        self.assertIsNone(data['stats']['members'])
+        # A week later the same accounts are established and the community forms.
+        User.objects.filter(pk__in=[f.pk for f in fans]).update(date_joined=timezone.now() - timedelta(days=8))
+        services.invalidate()
+        rows, _ = self.directory()
+        self.assertEqual(rows['space']['status'], 'active')
+
+    def test_accounts_need_signals_on_three_distinct_jokes(self):
+        fans = [self.person(f'thin{i}', established=False) for i in range(5)]
+        User.objects.filter(pk__in=[f.pk for f in fans]).update(date_joined=JOINED)
+        for fan in fans:
+            self.enjoy(fan, self.space_jokes[:2])  # two jokes: a member by taste, not yet counted
+        rows, _ = self.directory()
+        self.assertEqual(rows['space']['status'], 'forming')
+        for fan in fans:
+            self.enjoy(fan, self.office_jokes[:1])  # any third joke establishes the account
+        rows, _ = self.directory()
+        self.assertEqual(rows['space']['status'], 'active')
+
+    def test_thresholds_are_settings(self):
+        fans = [self.person(f'new{i}', established=False) for i in range(5)]
+        for fan in fans:
+            self.enjoy(fan, self.space_jokes[:2])
+        with self.settings(COMMUNITIES_ESTABLISHED_ACCOUNT_DAYS=0, COMMUNITIES_ESTABLISHED_MIN_JOKES=2):
+            services.invalidate()
+            rows, data = self.directory()
+            self.assertEqual(rows['space']['status'], 'active')
+            self.assertEqual(data['methodology']['established_min_jokes'], 2)
+
+    def test_explicit_joins_by_new_accounts_change_only_their_own_view(self):
+        for i in range(5):
+            self.enjoy(self.person(f'fan{i}'), self.space_jokes[:2])
+        joiners = [self.person(f'sock{i}', established=False) for i in range(5)]
+        for sock in joiners:
+            CommunityMembership.objects.create(user=sock, community=self.space.community, state='joined')
+        rows, data = self.directory(joiners[0])
+        self.assertEqual(rows['space']['members'], 5)
+        self.assertEqual(data['stats']['members'], 5)
+        self.assertTrue(rows['space']['viewer']['member'])
+        self.assertEqual(rows['space']['viewer']['explicit'], 'joined')
+        self.assertFalse(data['viewer']['counted'])
+        self.assertIn('space', data['viewer']['communities'])
+
+    def test_new_consenting_viewer_learns_when_they_will_count(self):
+        me = self.person('me', established=False)
+        self.enjoy(me, self.space_jokes[:2])
+        rows, data = self.directory(me)
+        self.assertFalse(data['viewer']['counted'])
+        self.assertTrue(data['viewer']['shares_analytics'])
+        self.assertTrue(rows['space']['viewer']['inferred'])
+        self.assertIn('7 days old', rows['space']['explanation'])
+
+    def test_new_accounts_do_not_count_toward_creator_reach(self):
+        creator = self.person('creator')
+        mine = [self.joke(f'mine {i}', self.space, creator=creator) for i in range(2)]
+        Subscription.objects.create(user=creator, plan=Plan.objects.get(slug='creator_pro'), status='active')
+        for i in range(6):
+            self.enjoy(self.person(f'sock{i}', established=False), mine)
+        self.client.force_authenticate(creator)
         response = self.client.get('/api/v1/creators/me/communities/')
         self.assertIsNone(response.data['audience']['size'])
         self.assertTrue(all(r['reached_members'] is None for r in response.data['communities']))
