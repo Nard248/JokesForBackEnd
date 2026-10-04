@@ -1,0 +1,2445 @@
+[
+  {
+    "id": "intl-v2-de-puns-001",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Unser Berliner Bäcker trennt sich ungern von guten Ideen. Er lässt sie lieber noch etwas gehen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Gehen means dough rising and allowing something to leave. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-002",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus kann ich schlecht abschalten: Ich bin ständig auf dem Sprung zum nächsten Verlängerten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Verlängerter is an Austrian coffee name; it also evokes prolonging the stay. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-003",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Im Berliner U-Bahnhof komponiere ich besonders gern. Da hat sogar mein schlechter Einfall Anschluss.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Anschluss connects train connections and an idea gaining continuity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-004",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Im Kleingarten habe ich endlich Wurzeln geschlagen. Die kaputte Schaufel hätte ich trotzdem gern ersetzt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Wurzeln schlagen means becoming settled; schlagen also evokes physical blows. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-005",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Unser Berliner Chor sucht einen neuen Bass. Der Angelladen war bei der Stellenbeschreibung überraschend hilfsbereit.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Bass names a low voice in German and, in the fishing context, evokes the English fish name; a bilingual misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-006",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "In Graz nahm ich mir den Topfen zu Herzen. Meine Freundin meinte, das sei für einen Aufstrich etwas übertrieben.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Sich etwas zu Herzen nehmen is metaphorically caring; Topfen is Austrian curd cheese. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-007",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Mit meinen Pfandflaschen habe ich einen stabilen Rückhalt. Er klappert nur bei jeder Kurve.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money",
+      "puns"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Rückhalt support is reinterpreted as bottles physically braced behind the speaker. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-008",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Im Harz bin ich auf einen grünen Zweig gekommen. Für den Rest des Baumes fehlte mir die Klettererfahrung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Auf einen grünen Zweig kommen means prospering; a literal branch replaces success. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-009",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Die Leipziger Bibliothek gab mir neuen Rückhalt. Leider war es nur die verstärkte Rückseite meines kaputten Buchs.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Rückhalt is support and becomes literal support of a book spine. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-010",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Unser Nürnberger Lebkuchenhaus hat einen süßen Mietvertrag: Die Klauseln sind zum Anbeißen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Zum Anbeißen means attractive or literally edible. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-011",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Beim Bürgeramt wollte ich Eindruck hinterlassen. Der Stempel konnte das erheblich schneller.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Eindruck means an impression and a physically stamped indentation. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-012",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Mein Wiener Kollege hat einen Fenstertag genommen. Mein deutscher Chef suchte sofort nach einer Lücke im Rahmen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Fenstertag is Austrian bridge-day vocabulary; frame/window imagery makes the word literal. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-013",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Zum Schulanfang in Leipzig nahm mein Kind alles auf die leichte Schulter. Die schwere Schultüte bestand auf einer gründlichen Begriffsklärung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school",
+      "puns"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Auf die leichte Schulter nehmen means not taking something seriously, contrasted with physical weight. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-014",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Im Berliner Vereinsheim ist das WLAN völlig ausgelastet. Der Router zählt sogar das Netz der Tischtennisplatte mit.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "puns"
+    ],
+    "cultural_note": "Technology meeting a specifically named German everyday custom or institution. Netz means a network and a physical sports net. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-015",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Der Sauerteigkurs in Hamburg hat mein Leben verändert. Ich führe jetzt endlich eine Kultur, die auf mich hört.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Kultur means culture and a microbial starter culture. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-016",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Die Wiener Kellnerin hatte eine klare Linie. Sie stand als Strich auf meinem Bierdeckel.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Linie is a consistent stance or a literal drawn line. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-017",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "In der Wuppertaler Schwebebahn bleibe ich gern sachlich. Alles andere wäre schon wieder abgehoben.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Abgehoben means elevated physically and pretentious figuratively. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-018",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Die Bohnen im Schrebergarten haben keinen Aufstieg versprochen. Sie haben einfach die Stange genommen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Aufstieg means promotion and plant climbing; Stange is a climbing support. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-019",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Im Kölner Karnevalsverein bewahre ich Haltung. Meist hängt sie allerdings zusammen mit dem Kostüm am Bügel.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Haltung is posture or attitude, made into an item hung with a costume. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-020",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Bei der Wiener Jause blieb ich hart. Das Brot hätte mir diese Rolle ruhig überlassen können.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Hart bleiben stubbornness is contrasted with literal hardness of stale bread. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-021",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Mein Pfandkonto ist flüssig. Bis zur Rückgabe muss ich nur noch den Rest austrinken.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money",
+      "puns"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Flüssig means liquid and financially liquid. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-022",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Im Schwarzwald gehe ich Schwierigkeiten gern aus dem Weg. Praktischerweise sind die leichteren Wege ausgeschildert.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Aus dem Weg gehen avoids difficulty figuratively and chooses another hiking path literally. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-023",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Unser Dresdner Orchester geriet in eine schiefe Lage. Die Notenständer waren tatsächlich falsch eingestellt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Schiefe Lage means a predicament and an actual tilted position. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-024",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Der Erzgebirger Nussknacker beschäftigt sich mit harten Fällen. Seine Erfolgsquote ist erstaunlich knackig.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Harter Fall means difficult case and a hard-shelled nut. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-025",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Das Bürgeramt verlangt klare Verhältnisse. Ich brachte vorsichtshalber ein Lineal für meine Wohnungszeichnung mit.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Klare Verhältnisse clear circumstances becomes measurable proportions. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-026",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Beim Ausflug nach Wien hatten wir Deutschen gute Karten. Ohne Stadtplan wären wir trotzdem verloren gewesen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Gute Karten haben means good prospects and possessing maps. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-027",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Zum Schulanfang in Leipzig bekam ich eine Schultüte mit Bodenhaftung. Die Süßigkeiten hatten sich alle unten versammelt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school",
+      "puns"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Bodenhaftung groundedness is literal contact with the cone's bottom. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-028",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Die neue Vereinswebsite ist bodenständig. Der Server steht tatsächlich im Keller unter dem Sportheim.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "puns"
+    ],
+    "cultural_note": "Technology meeting a specifically named German everyday custom or institution. Bodenständig down-to-earth becomes physical server placement. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-029",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Unsere Münchner Brezel gerät nie auf die schiefe Bahn. Sie hat ihre eigenen Kurven längst eingebaut.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Schiefe Bahn figurative delinquency becomes the pretzel's curved shape. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-030",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus lasse ich mich gern nieder. Nur die Rechnung darf dabei auf dem Tisch bleiben.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Sich niederlassen settles in, contrasted with where an object is placed. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-031",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Die Berliner Ringbahn ist meine runde Sache. Nur die Rechnung für die vergessene Fahrkarte hatte Ecken.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Runde Sache means a satisfying complete thing and the circular railway route. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-032",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Im deutschen Kleingarten haben wir eine klare Rangordnung: Alles, was rankt, kommt an das Gitter.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Rangordnung rank order echoes ranken, plants climbing a trellis. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-033",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Unser deutscher Chor lebt von Beziehungen. Besonders wichtig ist die zwischen Tonhöhe und dem tatsächlich gesungenen Ton.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Beziehungen social connections becomes relations between musical quantities. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-034",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Der Wiener Strudelteig geht mir durch den Kopf. Leider nur als Kreisverkehr bis zur nächsten Portion.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Strudel evokes pastry and a vortex, with circular thought replacing digestion. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-035",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Der Pfandautomat hat mich durchschaut. Meine Flasche war eben durchsichtig.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money",
+      "puns"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Durchschauen means seeing through a person's intentions and literal transparency. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-036",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Auf dem Brocken wurde ich kleinlaut. Bei dem Wind hätte großlaut auch nur wegfliegende Wörter produziert.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Kleinlaut timid speech versus invented physical loudness being carried away by wind. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-037",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Mein Leipziger Buchhändler versteht sich aufs Einbinden. Nach fünf Minuten war ich schon für den Leseabend zuständig.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Einbinden means binding books and involving people. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-038",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Mein Adventskranz kommt zur Sache: Er beleuchtet das Problem von vier Seiten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Beleuchten means illuminating physically and examining a problem. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-039",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Auf dem deutschen Formular sollte ich Stellung nehmen. Der einzige freie Platz war neben dem Kopierer.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Stellung nehmen means stating a position, reinterpreted as occupying a location. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-040",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Mein Grazer Freund sagt Erdäpfel. Ich sage Kartoffeln. Beim Schälen liegen unsere Ansichten erstaunlich nah beieinander.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Ansichten means opinions and visual perspectives; the names lead to the same peeled food. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-041",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Bei unserem Kölner Schulchor bin ich eine tragende Stimme. Ich schleppe die Lautsprecher.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school",
+      "puns"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Tragende Stimme is a resonant voice or literally one that carries equipment. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-042",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Unser Berliner Drucker ist ein echter Papiermensch. Sobald es digital wird, zieht er sich ein Blatt zurück.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "puns"
+    ],
+    "cultural_note": "Technology meeting a specifically named German everyday custom or institution. Papiermensch a paperwork person; ein Blatt zurückziehen makes withdrawal mechanical. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-043",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Beim Dresdner Bäcker hat mein Geld Kruste bekommen. Ich habe es vollständig in Brot angelegt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Geld anlegen investing becomes spending it on bread, which supplies the crust. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-044",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "In Wien habe ich meinen Kaffee verlängern lassen. Meine Pause beanspruchte daraufhin Gleichbehandlung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Verlängern is adding water to coffee and lengthening a break. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-045",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Die Münchner Tram fährt mit Haltung. An jeder Haltestelle legt sie eine kurze Probe davon ab.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Haltung posture echoes halten stopping and Haltestelle. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-046",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Im Schrebergarten stehe ich auf Rosen. Der Gärtner empfiehlt dringend einen anderen Standort.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Auf etwas stehen means liking it and literally standing on flowers. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-047",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Unser Schachverein spielt gern auf Zeit. Das Brett darunter war irgendwann zu langsam.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Auf Zeit spielen strategically delays; playing on time as a physical surface creates absurdity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-048",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Beim Wiener Kaiserschmarrn sehe ich schwarz für meine Vorsätze. Puderzucker kann die Lage nur oberflächlich aufhellen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Schwarzsehen pessimism and aufhellen brightening are literally countered by white sugar. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-049",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ich halte mein Pfandversprechen. Die Flaschen lassen sich mit zwei Händen gerade noch tragen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money",
+      "puns"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Ein Versprechen halten keep a promise, literal holding of returnables. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-050",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "In der Sächsischen Schweiz habe ich den Überblick verloren. Er lag offenbar noch auf dem Aussichtsfelsen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Überblick overview/understanding becomes a literal view left at a lookout. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-051",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Im Leipziger Museum blieb mein Eindruck hängen. Die Garderobenmarke fand ich erst zu Hause wieder.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Eindruck bleiben lasting impression, blended with a tangible item remaining with the visitor. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-052",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Die Weihnachtspyramide im Erzgebirge ist gut aufgestellt. Trotzdem dreht sich bei ihr ständig alles im Kreis.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Gut aufgestellt means well positioned; im Kreis drehen means circular motion or unproductive repetition. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-053",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Die deutsche Verwaltung räumt mir Spielraum ein. Leider steht darin schon der Aktenschrank.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Spielraum means discretion or a literal room for play. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-054",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Meine Wiener Freundin nennt mich beim Wandern einen Dickkopf. Zum Glück ist dafür in meinem deutschen Hut noch Platz.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Dickkopf stubborn person becomes a physically large head needing hat space. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-055",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Unsere Berliner Schultüte ist eine Spitzenleistung. Den Rest erledigt das Kind hoffentlich selbst.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school",
+      "puns"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Spitze means a cone's point and excellence, combining with Leistung. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-056",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Der digitale Kleingartenplan hat einen Fehler. Die Karotten erscheinen im Stammverzeichnis.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "puns"
+    ],
+    "cultural_note": "Technology meeting a specifically named German everyday custom or institution. Stammverzeichnis means root directory; Stamm is a plant trunk and roots invite the garden confusion. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-057",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Beim Berliner Bäcker kam ich aus mir heraus. Der Verkäufer hätte es trotzdem bevorzugt, wenn ich mit der Bestellung herausgerückt wäre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Aus sich herauskommen means becoming outgoing; mit etwas herausrücken means revealing it. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-058",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus las ich zwischen den Zeilen. Dort war zum Glück noch kein Kaffeefleck.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Zwischen den Zeilen lesen means inferring meaning and literally reading spaces on a stained page. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-059",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Im ICE habe ich meinen Anschluss gefunden. Jetzt muss nur noch jemand den Stecker dafür mitnehmen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Anschluss means travel connection and electrical socket or connection. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-060",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Mein Schrebergarten ist voll im Saft. Der Apfelkorb wollte das unbedingt auch dem Kofferraum beweisen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Voll im Saft means vigorous and literally full of juice. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-061",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Der Vorstand unseres Wandervereins sitzt fest im Sattel. Wir hätten trotzdem gern mal einen Fußweg vorgeschlagen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Fest im Sattel secure in office, taken literally in a hiking group. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-062",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "In Salzburg habe ich mir etwas eingebrockt. Die Suppe behauptet, es sei endlich genug Brot.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Sich etwas einbrocken means causing oneself trouble and crumbling bread into soup. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-063",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Mein Pfandbon ist ein kleiner Lichtblick. Im Sonnenlicht wurde er leider noch kleiner.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money",
+      "puns"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Lichtblick hopeful development and thermal-print fading in actual light. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-064",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Im Allgäu ging mir ein Licht auf. Die Stirnlampe hatte den Schalter also doch rechts.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Ein Licht geht auf means realizing something and a lamp physically turning on. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-065",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Im Hamburger Theater hatte ich eine tragende Rolle. Vier Stühle, bis in den dritten Stock.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Tragende Rolle means an important part and a literal carrying duty. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-066",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Unser Adventskalender kennt keine verschlossenen Türen. Mein Bruder war nur schon wieder früher wach.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Verschlossene Türen figurative obstacles become opened calendar doors. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-067",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Mein Antrag im Bürgeramt hatte Hand und Fuß. Der Sachbearbeiter bevorzugte trotzdem die digitale Unterschrift.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Hand und Fuß haben means being well founded; literal body parts clash with digital signing. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-068",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Beim deutsch-österreichischen Chorabend lagen wir auf einer Wellenlänge. Der falsche Ton kam erstaunlich synchron.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Auf einer Wellenlänge means rapport and acoustic wave frequencies. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-069",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Im deutschen Schulorchester schlug ich einen neuen Weg ein. Leider führte der Taktstock direkt zum Notenständer.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school",
+      "puns"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Einen Weg einschlagen choose a path; schlagen striking with a conductor's baton. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-070",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Meine Pfand-App hat sich verrechnet. Sie hielt mein flüssiges Vermögen für ein Wetterproblem.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "puns"
+    ],
+    "cultural_note": "Technology meeting a specifically named German everyday custom or institution. Flüssiges Vermögen financial liquidity is treated as liquid and weather. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-071",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Die Hamburger Bäckerin sagte, der Teig brauche Führung. Ich bot ihm eine kleine Betriebsbesichtigung an.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Teigführung is fermentation management; Führung also means guided tour. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-072",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus war ich tief bewegt. Der wackelige Sessel hatte einfach eine besonders engagierte Feder.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Bewegt means emotionally moved and physically shifted. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-073",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Die Wuppertaler Schwebebahn schafft Distanz. Meine Sorgen stehen noch immer unten an der Ampel.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Distanz schaffen means mental distance and literal elevated separation. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-074",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Im Gemeinschaftsgarten kamen wir auf keinen grünen Nenner. Einer wollte Spinat, die andere Rote Bete.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Auf einen gemeinsamen Nenner kommen means agree; grün colors the shared plant choice. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-075",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Unser deutscher Chor sucht Nachwuchs. Die Topfpflanze auf dem Klavier zeigt bereits erste Triebe.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Nachwuchs young recruits and new plant growth. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-076",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Mein Wiener Freund riet mir, kleinere Brötchen zu backen. Ich bestand auf der regionalen Zuständigkeit seiner Semmeln.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Kleine Brötchen backen means lower ambitions; Semmel vocabulary play on a literal baking instruction. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-077",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Die Rückgabe meiner Pfandflaschen hat Gewicht. Vor allem im vierten Stock ohne Aufzug.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money",
+      "puns"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Gewicht haben figurative importance becomes physical burden. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-078",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Im Harz lief alles nach Plan. Der Plan lief nur nicht mit; ich hatte ihn auf der Bank liegen lassen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Nach Plan laufen means proceed as intended; laufen becomes the map walking with its user. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-079",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "In der Frankfurter Buchhandlung nahm ich die Kritik auseinander. Sie lag auf drei Prospektständern verteilt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Auseinandernehmen means critically dismantle and physically separate pieces. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-080",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Mein Schwibbogen hat Ausstrahlung. Das Bewerbungsgespräch für den Fensterplatz war entsprechend kurz.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Ausstrahlung means charisma and emitting light. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-081",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Der deutsche Aktenordner kennt seine Grenzen. Sie heißen alphabetisch A bis F.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Grenzen kennen knowing limitations becomes printed file indexing boundaries. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-082",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Unsere Freunde aus Linz haben im Garten Wurzeln geschlagen. Wir aus Köln durften wenigstens die Pflanzlöcher graben.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Wurzeln schlagen settle in literally becomes garden planting divided between friends. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-083",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Die Schultüte brachte mich auf den Geschmack. Für Mathematik war es allerdings erstaunlich viel Schokolade.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school",
+      "puns"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Auf den Geschmack kommen means developing a liking and literally tasting treats. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-084",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Das WLAN im deutschen Vereinsheim hat Charakter. Es lässt sich nicht von jedem sofort durchschauen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "puns"
+    ],
+    "cultural_note": "Technology meeting a specifically named German everyday custom or institution. Durchschauen means understanding behavior and seeing through, treating opaque connectivity as personality. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-085",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Der Sauerteig in München nimmt immer mehr Raum ein. Eine richtige Kulturbewegung auf meiner Küchenablage.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Kulturbewegung cultural movement combines microbial culture and spreading dough. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-086",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "In Wien schlug ich die Zeitung auf. Der Kaffee blieb vernünftig und schlug nicht zurück.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Aufschlagen means opening a book/newspaper and striking, inviting a literal retaliation. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-087",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Die Berliner S-Bahn bringt mich auf andere Gedanken. Die meisten beginnen mit „Wo muss ich jetzt umsteigen?“.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Auf andere Gedanken bringen distraction becomes literal route-planning thoughts. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-088",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Der deutsche Kleingartenverein steht für Wachstum. Bei der Gebührenordnung sieht man das besonders deutlich.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Wachstum plant growth and growing administrative fees. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-089",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Im Salzburger Schloss verlor ich den Schlüssel. Der Hausmeister fand, ich hätte die Größenordnung des Problems falsch eingeschätzt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. Schloss means castle and lock; a castle visit turns into a key-and-lock misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-090",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Die Münchner Bäckerin freut sich über steigenden Absatz. Ich empfehle trotzdem flache Schuhe für die Frühschicht.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Absatz means sales and shoe heel. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-091",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus behalte ich immer die Fassung. Die neue Glühbirne passt sonst nirgends hinein.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Fassung means composure and a light-bulb socket. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-092",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Die Berliner Theaterpremiere hatte viel Spannung. Die Elektriker waren trotzdem unzufrieden mit der Sicherung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Spannung means dramatic suspense and electrical voltage. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-093",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Unser Kleingarten braucht einen neuen Leiter. Der alte lässt sich immerhin platzsparend zusammenklappen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Leiter means a male leader or a ladder with a different grammatical gender; the setup delays clarification. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-094",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "In der Allgäuer Hütte ging es um die Decke. Ich war für wärmer, der Architekt für höher.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Decke means blanket and ceiling. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-095",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "In Wien bestellte ich eine Platte. Zum Käse hätte ich trotzdem lieber Musik gehört als eine Bedienungsanleitung für den Plattenspieler.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Platte means serving platter and phonograph record. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-096",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "In der Hamburger Fähre spiele ich gern Karten. Meine Mitreisenden nehmen mir immer den Stadtplan weg.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Karten means playing cards and maps. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-097",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Unser deutscher Chor hat gute Noten. Die Schule meines Sohnes will sie leider nicht anrechnen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Noten means music scores and school grades. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-098",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Im Bürgeramt suchte ich den richtigen Fachmann. Er sortierte gerade Briefe in die falschen Fächer.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Fach as subject expertise and storage compartment underlies Fachmann and Fächer. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-099",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Mein Wiener Freund bestand auf einem guten Zug. Ich öffnete das Fenster; er zeigte auf das Schachbrett.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Zug means draft of air and a move in chess. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-100",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Der Erzgebirger Kerzenschnitzer ist eine helle Erscheinung. Abends nimmt er diese Bewertung sehr wörtlich.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Helle Erscheinung can mean a bright presence and actual candlelight. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-101",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Der Server unseres Berliner Chors verlangt mehr Takt. Die Dirigentin bot vier Viertel an.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "puns"
+    ],
+    "cultural_note": "Technology meeting a specifically named German everyday custom or institution. Takt means clock cycles or musical meter. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-102",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Im deutschen Getränkemarkt bin ich gut aufgestellt. Die Kisten leider nicht; die oberste rutscht schon.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money",
+      "puns"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Gut aufgestellt means well prepared and physically stacked securely. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-103",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Unsere Leipziger Lehrerin forderte mehr Einsatz. Das Kind schob den Stifteinsatz tiefer in den Schulranzen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school",
+      "puns"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Einsatz means effort and an insert or fitted inner component. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-104",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Beim Roggenbrotkurs lag ich goldrichtig. Leider nur mit der Kruste; die Mitte blieb ein sehr überzeugender Rohstoff.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Goldrichtig means exactly right, with golden crust contrasted against raw dough. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-105",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "In Innsbruck fand ich endlich meinen Standpunkt. Er war mit „Bitte hinter der Linie warten“ markiert.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. Standpunkt means viewpoint/opinion and a physical standing location. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-106",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Die Dresdner Ausstellung hat einen großen Rahmen. Die Bilder müssen sich mit kleineren begnügen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Rahmen means scope or setting and picture frame. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-107",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Mein Schrebergarten wurde zur Schule des Lebens. Die Tomaten haben mich ordentlich ausgegeizt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Ausgeizen is removing tomato side shoots, echoed in geizen/withholding and the garden taxing its owner. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-108",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Die Wiener Kaffeehauszeitung schlug hohe Wellen. Jemand hatte das Wasser darauf verschüttet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Hohe Wellen schlagen means causing a stir and the paper literally rippling after water damage. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-109",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "In der Berliner Ringbahn herrscht reger Verkehr. Meine Gedanken nehmen daran mit besonders vielen Umleitungen teil.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Verkehr literal transport combined with thoughts following detours. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-110",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Unser Münchner Chor legt Wert auf saubere Übergänge. Der Hausmeister wischt jetzt vor jedem Tonartenwechsel.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Saubere Übergänge means smooth musical transitions and literally clean passages. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-111",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Die Grazer Köchin kennt ihr Gericht. Der Richter am Nachbartisch wollte trotzdem keine Zuständigkeit übernehmen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Gericht means dish and court. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-112",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Am Brocken ging ich in mich. Zum Glück hatte meine Regenjacke dafür noch genügend Platz.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. In sich gehen means introspection and physically retreating inside clothing. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-113",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Das Bürgeramt bat um Unterlagen. Ich brachte Filzgleiter; der wackelnde Tisch war schließlich offensichtlich.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Unterlagen means documents and pads placed underneath something. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-114",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Mein österreichischer Freund hat einen guten Kern. Beim Marillenessen legt er ihn demonstrativ auf den Teller.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Kern means inner character and a fruit stone. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-115",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Unser Adventskranz leistet Widerstand. Die neue LED-Kette macht das jetzt sogar elektrisch.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Widerstand means resistance to something and electrical resistance. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-116",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Die Berliner Bibliothek hat ein offenes System. Jetzt fragt der Wind, wo er seine Bücher ausleihen kann.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "puns"
+    ],
+    "cultural_note": "Technology meeting a specifically named German everyday custom or institution. Offenes System technical openness becomes a literal open building admitting wind. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-117",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Mein Pfandbon hat einen hohen Stellenwert. Ich lege ihn immer ganz oben ins Portemonnaie.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money",
+      "puns"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Stellenwert means importance and a literal location value. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-118",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Beim Berliner Schulkonzert war mein Kind tonangebend. Es hatte den einzigen funktionierenden Lautsprecher gefunden.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school",
+      "puns"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Tonangebend means influential and literally producing the sound. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-119",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "In der deutschen Brotprüfung hatte ich einen Hänger. Das angeschnittene Laibstück wollte einfach nicht aus der Brotschneidemaschine.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Hänger means a lapse or snag and a physically stuck piece. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-120",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Auf dem Wiener Naschmarkt habe ich Stellung bezogen. Der Verkäufer nennt sie „Bitte einen Schritt zur Seite“.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. Stellung beziehen means taking a position in a debate and standing physically. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-121",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "In der Leipziger Buchhandlung verliere ich häufig den Faden. Die Buchbinderei hebt mir die Reste auf.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Den Faden verlieren means losing a train of thought and literal bookbinding thread. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-122",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Meine Kleingartenhecke ist ausgesprochen schlagfertig. Jeder zurückgebogene Zweig liefert sofort eine Antwort.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Schlagfertig means quick-witted; branches literally spring back with a blow. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-123",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus wollte ich die Lage sondieren. Der Kellner zeigte mir erst einmal die freien Plätze.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Lage sondieren assess the situation becomes inspecting table positions. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-124",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Die Hamburger Fähre bringt mich wieder ins Lot. Die Elbe übernimmt dabei die weniger stabile Hälfte der Vereinbarung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Ins Lot bringen restore balance and the nautical vertical/plumb meaning of Lot. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-125",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Unser Verein hat zu viele Posten. Der neue Kassenwart wollte zunächst die Geldbeträge, dann die Ämter abschaffen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Posten means expense items and official positions. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-126",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Beim Salzburger Strudel war ich Feuer und Flamme. Der Ofenhandschuh empfahl eine sachlichere Beteiligung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Feuer und Flamme enthusiasm becomes the physical risk around a hot oven. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-127",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "In der Eifel blieb ich bei der Stange. Der Wanderstock lag zum Glück schon in meiner Hand.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Bei der Stange bleiben means persevering and literally remaining with a stick. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-128",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Die Akten im deutschen Amt stehen hoch im Kurs. Den oberen Schrank erreicht man nur mit Leiter.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Hoch im Kurs means highly valued and is reinterpreted as high physical placement. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-129",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Beim Wiener Besuch liefen wir uns warm. Die erste hitzige Debatte betraf bereits Topfen und Quark.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Warmlaufen means warming up physically or becoming engaged; hitzig extends heat to debate. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-130",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Der Nürnberger Weihnachtsmarkt hat Zugkraft. Mein Kind zog jedenfalls sehr überzeugend Richtung Lebkuchenstand.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Zugkraft means attraction and literal pulling force. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-131",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Der Berliner Vereinsserver hat ein Gedächtnis wie ein Elefant. Nur mit den aktuellen Passwörtern ist er sehr nachtragend.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "puns"
+    ],
+    "cultural_note": "Technology meeting a specifically named German everyday custom or institution. Nachtragend means unforgiving and suggests storing old data/entries. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-132",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Mein Pfandautomat ist nachtragend. Er zählt die letzte Flasche immer erst, wenn ich schon weitergehen will.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money",
+      "puns"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Nachtragend means resentful and nachtragen adding an item belatedly. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-133",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "In der deutschen Schulbibliothek bin ich gut aufgehoben. Die Bibliothekarin hat mich aus Versehen ins Gruppenfoto sortiert.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school",
+      "puns"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Gut aufgehoben means safely cared for; aufgehoben can also be picked up or included. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-134",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Der Brezelkurs brachte mich ins Schleudern. Der Teig nahm die sportliche Anweisung sofort an.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Ins Schleudern geraten means losing control and physically whirling dough. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-135",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "In Salzburg folgte ich meinem inneren Kompass. Er zeigte erstaunlich hartnäckig auf die Kuchenvitrine.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. Innerer Kompass personal judgment becomes a literal directional instrument. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-136",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Das Münchner Museum wollte Haltung zeigen. Die Skulptur erledigte den Auftrag seit zweihundert Jahren.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Haltung zeigen means demonstrating principles and literally posing. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-137",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Meine Bohnen im Kleingarten sind anständig erzogen. Sie halten sich an die dafür vorgesehenen Stangen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Erziehen training a person or plant; sich halten an means obey and grip. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-138",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus machte ich einen guten Schnitt. Danach war vom Strudel allerdings nur noch die Hälfte übrig.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Einen guten Schnitt machen means getting a good return and cutting a pastry. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-139",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Der ICE hat mir einen Platz eingeräumt. Ein Fahrgast musste dafür seinen Koffer ausräumen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Einräumen concede/grant or allocate space is made physically literal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-140",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Unser deutscher Tischtennisverein kommt schnell auf den Punkt. Danach beginnt sofort der nächste Ballwechsel.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Auf den Punkt kommen means getting to the point and scoring a sport point. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-141",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Die Wiener Jause hat Hand und Fuß. Wir essen mit der Hand und stellen das Brett auf den wackelnden Tischfuß.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Hand und Fuß haben logically sound becomes literal hands and furniture legs. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-142",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Im Schwarzwald ließ ich die Seele baumeln. Die Hängematte übernahm den Rest von mir.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Die Seele baumeln lassen means relaxing; baumeln becomes actual hammock swinging. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-143",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Das deutsche Bauamt verlangt tragfähige Argumente. Ich zeichnete vorsichtshalber zwei zusätzliche Stützen ein.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Tragfähig means persuasive/viable and structurally load-bearing. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-144",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Mein Grazer Freund brachte mich auf die Palme. Zum Glück war die im botanischen Garten nur im Blumentopf.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Auf die Palme bringen means infuriating, literally climbing a palm. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-145",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Der Erzgebirger Räuchermann hat einen guten Riecher. Seine Nase ist beruflich allerdings parteiisch.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Guter Riecher means intuition and an actual sense of smell, linked to incense. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-146",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Unsere Berliner Schultüten-App hat einen spitzen Kommentar hinterlassen: „Dieser Inhalt läuft nach unten zusammen.“",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "puns"
+    ],
+    "cultural_note": "Technology meeting a specifically named German everyday custom or institution. Spitz means pointed in shape and cutting or witty in language. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-147",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Meine Pfandflaschen haben Rückgrat. Zumindest stehen sie zuverlässiger gerade als mein Einkaufszettel.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money",
+      "puns"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Rückgrat means integrity and literal structural backbone, applied to upright bottles. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-148",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Beim Leipziger Schulstart zeigte mein Kind Größe. Die zu große Schultüte lieferte den sichtbaren Teil davon.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school",
+      "puns"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Größe zeigen means magnanimity and physical size. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-149",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Unser Berliner Bäcker macht keine halben Sachen. Bei halben Broten nennt er es deshalb präzise Portionierung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Halbe Sachen machen means doing incomplete work and literally halving bread. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-150",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Beim Wandern in Tirol kam alles ins Rollen. Ich hätte meinen Apfel nicht auf den Hang legen sollen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. Ins Rollen kommen means starting events and literal downhill rolling. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-151",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Der Hamburger Schauspieler ging im Beruf auf. Der Bühnenaufzug half dabei ganz erheblich.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Im Beruf aufgehen means finding fulfillment; aufgehen rising literally uses the stage lift. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-152",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Im Schrebergarten bin ich auf Draht. Das Rankgitter war allerdings kein geeigneter Sitzplatz.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Auf Draht sein means alert and literally being on wire. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-153",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus bekam ich einen Korb. Die Semmeln darin machten die Zurückweisung erstaunlich angenehm.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Einen Korb bekommen means romantic rejection and literally receiving a bread basket. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-154",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "An der Berliner Weiche musste ich mich entscheiden. Einfach hart bleiben war fahrplantechnisch keine Lösung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Weiche railway switch also reads as the feminine soft one, contrasted with hart. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-155",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Unser Chor sitzt fest im Sattel. Die Reiterstaffel wollte ihre Probenräume trotzdem zurück.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Fest im Sattel secure figuratively becomes literal occupation of riders' space. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-156",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Die Salzburger Köchin hat den Bogen raus. Ihr Strudelteig reicht jetzt um den gesamten Küchentisch.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Den Bogen raushaben means mastering something; Bogen curved shape frames stretched dough. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-157",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Am Rheinwanderweg blieb ich im Bilde. Der Fotograf hatte mich versehentlich ganz hinten aufgenommen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Im Bilde sein means informed and literally inside a photograph. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-158",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Meine deutsche Steuererklärung hat Tiefe. Sie liegt ganz unten unter dem Stapel ungelesener Briefe.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Tiefe intellectual depth becomes physical depth in a pile. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-159",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Unsere Wiener Freunde verstehen sich aufs Auftischen. Nicht einmal ihre Reisegeschichten kamen ohne zusätzliche Beilage.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Auftischen means serving food and spinning a story, linked by Beilage/accompaniment. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-160",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Unser Adventsstern hat Format. Beim Fensterputzen nennt meine Familie es inzwischen Überformat.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Format means caliber and actual dimensions. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-161",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Die Leipziger Bibliothekssoftware hat eine gute Bindung. Nur leider zum alten Drucker, nicht zu den Lesern.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "puns"
+    ],
+    "cultural_note": "Technology meeting a specifically named German everyday custom or institution. Bindung means attachment or binding books; device dependency replaces reader affinity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-162",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ich gab dem Pfandautomaten eine Runde aus. Er nahm ausschließlich Flaschen an und blieb bei seiner eigenen Rechnung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money",
+      "puns"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Eine Runde ausgeben means buying drinks for a group; the machine processes a literal round of bottles. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-163",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "In der Berliner Grundschule ging mein Kind der Sache auf den Grund. Die Schultüte war schneller leer als erwartet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school",
+      "puns"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Auf den Grund gehen means investigating and literally reaching a container's bottom. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-164",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Das Roggenbrot in Leipzig hat Biss. Meine dünne Papiertüte hätte vor dem Transport besser ihre Grenzen geklärt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Biss means assertiveness and a firm texture capable of stressing paper. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-165",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Im Wiener Museum fasste ich mich kurz. Die Aufsicht fand trotzdem, Hände gehörten überhaupt nicht an die Skulptur.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. Sich kurz fassen means speaking briefly; fassen grasp is taken literally. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-166",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Unser Dresdner Cellist hält große Stücke auf sein Instrument. Kleine passen eben schlecht zum abendfüllenden Konzert.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Große Stücke auf etwas halten means esteem; Stücke are musical compositions. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-167",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "In der Kleingartenversammlung wurde ich übergangen. Die Bohnenranken hatten meinen Stuhl schon vorher erfolgreich eingenommen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Übergehen means ignoring someone and physically growing across/passing over a place. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-168",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Die Wiener Kaffeehausrechnung ging mir unter die Haut. Beim Griff danach bekam ich einen Papierschnitt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Unter die Haut gehen means being deeply affecting and literally cutting skin; mild non-graphic paper cut. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-169",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Im Kölner Bahnhof nahm ich die Sache in die Hand. Der Kofferrollgriff hatte den metaphorischen Teil aufgegeben.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. In die Hand nehmen means taking charge and literally carrying a broken-handled suitcase. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-170",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Unser deutscher Chor hat den Dreh raus. Seit der neuen Bühne drehen sich die Sänger allerdings öfter als geplant.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Den Dreh raushaben means mastering a technique and literal stage rotation. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-171",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Der Topfen aus Graz hat Substanz. Mein schlanker Vorsatz passt inzwischen kaum noch daneben in den Kühlschrank.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Substanz means substance physically and meaningful weight figuratively; schlank contrasts the plan with food. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-172",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Im Schwarzwald bekam ich wieder Boden unter die Füße. Die Wurzeln bestanden auf einer sehr gründlichen persönlichen Vorstellung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Boden unter die Füße bekommen means recovering stability and literal contact with uneven ground. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-173",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Das deutsche Formular verlangt einen festen Wohnsitz. Mein Klappstuhl wird offenbar noch immer nicht ernst genommen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Fester Wohnsitz means permanent residence; fest and Sitz become a sturdy chair. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-174",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Mein Wiener Freund brachte Licht ins Dunkel. Danach sahen wir beide, dass wir die falsche Wanderkarte eingepackt hatten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Licht ins Dunkel bringen means explaining a mystery and literally switching on a light. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-puns-175",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Unsere Weihnachtspyramide hält alle in Bewegung. Ihre Führungsposition verdankt sie hauptsächlich warmer Luft.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Warme Luft means actual thermal energy and figuratively empty talk. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-176",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Der Berliner Vereinsdrucker ist hervorragend vernetzt. Die Spinne hinter dem Gerät betreut das System persönlich.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech",
+      "puns"
+    ],
+    "cultural_note": "Technology meeting a specifically named German everyday custom or institution. Vernetzt means networked and literally covered in spider webs. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-177",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Bei der Pfandrückgabe lege ich Wert auf Ordnung. Der Automat legt Wert auf genau fünfundzwanzig Einzelgespräche.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money",
+      "puns"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Wert legen means valuing; Pfand monetary value and ordered individual scanning extend the phrase. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-puns-178",
+    "collection": "de-de-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Unsere Kölner Schultüte macht keine langen Reden. Sie kommt sofort auf den süßen Punkt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school",
+      "puns"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Auf den Punkt kommen means getting to the point, which is literally the cone tip. Original AI-authored draft; no native human review claimed."
+  }
+]

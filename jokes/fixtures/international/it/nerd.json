@@ -1,0 +1,2138 @@
+[
+  {
+    "id": "intl-v2-it-nerd-001",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Lo SPID mi manda un codice di sei cifre. Il mio cervello ne conserva cinque e un'opinione.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-nerd-002",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La tombola è un generatore casuale con un'interfaccia vocale molto affettuosa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-nerd-003",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Pinocchio non supera il test booleano: ogni falso modifica anche l'hardware.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-nerd-004",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le orecchiette sono tutte in ascolto. Nessuna ha ancora risposto al ping.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-nerd-005",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La sfoglina chiude tortellini a velocità costante. Il mio script rallenta appena qualcuno lo guarda.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-nerd-006",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il pizzaiolo ruota la pizza di pochi gradi. Ho finalmente capito una trasformazione geometrica senza aprire il manuale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-nerd-007",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il vaporetto è un bus. Il programmatore è l'unico turista che trova la frase tecnicamente rassicurante.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-nerd-008",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il cioccolato di Modica conserva i granelli. È un formato che non applica l'antialiasing.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-nerd-009",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il mortaio non ha firmware. Il basilico gestisce tutte le note di rilascio.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-nerd-010",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "observ",
+    "text": "A Trieste, ordinare un capo in b è una chiamata corretta con un parametro locale obbligatorio.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-nerd-011",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "« È » e « E » non sono la stessa cosa. Il mio compilatore italiano ha una personalità accentuata.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-nerd-012",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La torre di Pisa sopravvive ai miei tentativi di raddrizzarla in fotografia. Il sistema conserva lo stato originale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-nerd-013",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La fattura elettronica ha superato i controlli. Il pranzo che documenta non ha superato il giudizio del gruppo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scena lavorativa italiana con un riferimento concreto; procedure e dialoghi sono inventati, non indicazioni professionali."
+  },
+  {
+    "id": "intl-v2-it-nerd-014",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La pasta al dente è un intervallo temporale minuscolo tra due stati molto discussi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-nerd-015",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il Giro d'Italia minimizza i tempi. Io massimizzo il numero di telecamere che mostrano castelli.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-nerd-016",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il puparo usa fili, il mio computer cavi. Solo il primo riesce a far sembrare tutto intenzionale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-nerd-017",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Sanremo è un processo che avvio convinto di sapere quando terminerà.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-nerd-018",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La PEC produce una ricevuta per la ricevuta. Il log ha sviluppato una vita propria.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-nerd-019",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il girone di Dante è una struttura dati: se ci entri, l'uscita non è documentata per l'utente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-nerd-020",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Ho ordinato le orecchiette per dimensione. La nonna ha eliminato l'ordinamento con un mestolo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-nerd-021",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "I portici sono un livello di astrazione tra il pedone e la pioggia.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-nerd-022",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La pizza a portafoglio è una compressione con perdita di olive.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-nerd-023",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le calli del navigatore esistono tutte. È la mia valigia che non rispetta i requisiti minimi di larghezza.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-nerd-024",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La granita cambia risoluzione mentre aspetto. Dopo dieci minuti i pixel non sono più distinguibili.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-nerd-025",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il pesto nel frullatore è veloce. La nonna contesta la scelta dell'algoritmo, non il tempo di esecuzione.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-nerd-026",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La moka è una macchina a stati: attesa, borbottio, corsa verso il fornello.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-nerd-027",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il congiuntivo è il ramo del programma che molti utenti non testano.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-nerd-028",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "I trulli hanno un'ottima gestione del tetto. Il mio modello 3D li interpreta come cappelli sopra un cilindro.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-nerd-029",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il codice destinatario della fattura è corretto. Il nome del file resta « prova_vera_ultima ».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scena lavorativa italiana con un riferimento concreto; procedure e dialoghi sono inventati, non indicazioni professionali."
+  },
+  {
+    "id": "intl-v2-it-nerd-030",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il risotto richiede polling continuo. Non basta lanciare il comando e andare a leggere le mail.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-nerd-031",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il gruppo del Giro è un cluster. I corridori chiamano il bilanciamento del carico « darsi il cambio ».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-nerd-032",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "L'Opera dei Pupi fa animazione in tempo reale. Il rendering dipende molto dai polsi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-nerd-033",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La Befana usa un sacco non indicizzato. Il recupero delle caramelle è sorprendentemente efficiente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-nerd-034",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "L'F24 sembra un indirizzo esadecimale. Vorrei che bastasse decodificarlo per capire dove sono andati i soldi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-nerd-035",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il Museo del Cinema di Torino mi fa provare gli effetti ottici. Per una volta il bug è esattamente ciò che dovevo vedere.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-nerd-036",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il tarallo forma un anello. Il mio codice lo percorre senza ricordarsi dove era partito.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-nerd-037",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il tortellino incapsula il ripieno. La forchetta accede comunque ai dati senza chiedere permesso.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-nerd-038",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il forno della pizzeria ha un carico elevato. Per una volta il surriscaldamento fa parte dei requisiti.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-nerd-039",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "observ",
+    "text": "A Venezia, il percorso più corto sulla mappa include una nuotata. Ho disattivato l'ottimizzazione aggressiva.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-nerd-040",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il tuppo della brioche è una componente opzionale che nessuno accetta di rimuovere.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-nerd-041",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le trofie trattengono il pesto. Una struttura elicoidale con un eccellente rendimento a pranzo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-nerd-042",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il barista trasforma « il solito » in un ordine preciso. La sua cache ha un tasso di successo inquietante.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-nerd-043",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il plurale di « file » non cambia in italiano. Finalmente una migrazione senza modifiche allo schema.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-nerd-044",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "I mosaici di Ravenna sono immagini a pixel con una durata di supporto impressionante.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-nerd-045",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La PEC arriva nel fine settimana. Il protocollo non conosce il valore del sabato.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scena lavorativa italiana con un riferimento concreto; procedure e dialoghi sono inventati, non indicazioni professionali."
+  },
+  {
+    "id": "intl-v2-it-nerd-046",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La lasagna è un'architettura multistrato in cui il backend sa davvero di qualcosa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-nerd-047",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il cronometro del Giro dà un risultato esatto. Il mio calcolo di quando uscire di casa no.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-nerd-048",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il cavaliere dei pupi cade se si rompe il filo. È una dimostrazione drammatica della dipendenza dal controller.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-nerd-049",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La tombola riempie una matrice senza mai chiedermi di allargare una colonna.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-nerd-050",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Lo SPID funziona anche sul computer nuovo. Il mio vecchio segnalibro resta convinto che Internet si trovi nella cartella di prima.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-nerd-051",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Dante ha suddiviso tutto in cantiche. Anche un viaggio ultraterreno beneficia di una struttura di cartelle leggibile.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-nerd-052",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "L'orecchietta è un microfono senza registrazione. La mia riunione dovrebbe imparare la discrezione.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-nerd-053",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La sfoglia si assottiglia col mattarello. Una compressione dati che migliora davvero l'esperienza finale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-nerd-054",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il pizzaiolo osserva il cornicione. Il mio sensore di temperatura vorrebbe quella sicurezza senza pile.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-nerd-055",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il vaporetto ha fermate condivise. Le gondole offrono istanze dedicate.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-nerd-056",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La cassata contiene troppi colori per la mia vecchia stampante. Finalmente un limite tecnologico appetitoso.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-nerd-057",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il basilico sul balcone richiede acqua. È l'unico dispositivo verde che non accetta promesse di manutenzione.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-nerd-058",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il capo in b di Trieste arriva in vetro. Posso finalmente ispezionare tutti i livelli della pausa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-nerd-059",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "« Qual è » ha uno spazio che il correttore sorveglia. La lingua italiana prende sul serio i separatori.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-nerd-060",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La cupola di Brunelleschi sta ancora lì. Il mio prototipo richiede tre aggiornamenti prima di pranzo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-nerd-061",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il gestionale chiama « anagrafica » la lista clienti. Ogni record si sente leggermente più adulto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scena lavorativa italiana con un riferimento concreto; procedure e dialoghi sono inventati, non indicazioni professionali."
+  },
+  {
+    "id": "intl-v2-it-nerd-062",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La mozzarella ha un'elevata estensibilità. Il pane del panino non supporta la stessa scalabilità.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-nerd-063",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La tappa del Giro è un percorso ottimizzato. Il mio amico la ridisegna per includere quattro panifici.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-nerd-064",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il puparo gestisce più personaggi. Il mio sistema operativo fatica già con due finestre di videoriunione.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-nerd-065",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La Befana consegna di notte. Il monitoraggio del sonno dei bambini è la sua dashboard principale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-nerd-066",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "PagoPA conferma l'operazione. Il mio conto ha appena registrato una modifica irreversibile dello stato.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-nerd-067",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Pinocchio ha un problema di spazio quando mente. Il suo limite di memoria è la lunghezza della stanza.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-nerd-068",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il tarallo è circolare. La bambina lo mangia e risolve il problema della condizione d'uscita.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-nerd-069",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il portico separa le precipitazioni dall'utente. Una delle poche interfacce che non richiede consenso ai cookie.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-nerd-070",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La pizza cuoce mentre scrivo un'email. L'email è ancora una bozza, la pizza ha già rilasciato la versione stabile.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-nerd-071",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il GPS a Venezia ricalcola. I ponti ricordano al software che la terza dimensione esiste.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-nerd-072",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il cannolo viene riempito prima di servirlo. Un caricamento differito con ottime ragioni strutturali.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-nerd-073",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il mortaio fa elaborazione locale. Nessuna foglia di basilico viene inviata al cloud.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-nerd-074",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La moka non permette di annullare il borbottio. Una notifica che va gestita di persona.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-nerd-075",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "L'apostrofo di « un'amica » fa parte dell'interfaccia. « Un amico » utilizza un altro protocollo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-nerd-076",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "I Sassi di Matera sono un database scavato nella roccia. Le modifiche allo schema richiedono prudenza reale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-nerd-077",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il file della fattura elettronica è XML. Il panino fatturato aveva un formato molto più immediato.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scena lavorativa italiana con un riferimento concreto; procedure e dialoghi sono inventati, non indicazioni professionali."
+  },
+  {
+    "id": "intl-v2-it-nerd-078",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La pasta si scola una volta. Il mio programma continua a svuotare la stessa variabile per sicurezza.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-nerd-079",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il Giro usa secondi e abbuoni. Il mio foglio di calcolo ha chiesto una pausa sportiva.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-nerd-080",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il pupo ha poche articolazioni. Riesce comunque a esprimere più emozioni del mio chatbot aziendale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-nerd-081",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La tombola non garantisce vincite. Garantisce che qualcuno chieda quale numero sia appena uscito.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-nerd-082",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "L'app IO mi notifica tutto. Vorrei una funzione che consegnasse anche la voglia di occuparmene.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-nerd-083",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il latino distingue i casi. Il mio codice preferisce lanciarli tutti come eccezioni.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-nerd-084",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le orecchiette ascoltano il sugo. Un sistema event-driven con un condimento eccellente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-nerd-085",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La sfoglina usa le dita come strumenti di misura. Io ho aperto tre app per stimare una porzione.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-nerd-086",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La margherita dispone i colori in modo leggibile. Il nostro designer ha impiegato una settimana per una schermata più confusa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-nerd-087",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il canale è pieno di riflessi. Il mio algoritmo di riconoscimento conta due Venezia e sbaglia il budget.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-nerd-088",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La granita richiede un campionamento frequente. Il cucchiaino insiste che sia ricerca.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-nerd-089",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Ho automatizzato il pesto. Il nonno mi ha chiesto se avevo automatizzato anche il profumo: progetto sospeso.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-nerd-090",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "L'espresso ha bassa latenza. L'effetto sul mio cervello resta soggetto a condizioni di rete.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-nerd-091",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il congiuntivo passato gestisce eventi che non so nemmeno se siano avvenuti. Il mio database li rifiuta per incertezza.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-nerd-092",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il ponte di Rialto supporta traffico continuo. Il mio server prende ferie a cento utenti.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-nerd-093",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La PEC verifica la consegna, non la semantica. Il collega continua a confondere i due servizi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scena lavorativa italiana con un riferimento concreto; procedure e dialoghi sono inventati, non indicazioni professionali."
+  },
+  {
+    "id": "intl-v2-it-nerd-094",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il panettone contiene uvetta distribuita. Mio fratello propone una migrazione completa verso il mio piatto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-nerd-095",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il cambio della bici del Giro ha molti rapporti. Nessuno richiede una riunione per essere selezionato.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-nerd-096",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il puparo fa motion capture al contrario: parte dalle mani e convince il resto del mondo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-nerd-097",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il calendario di Sanremo ha una fine teorica. La televisione preferisce l'esecuzione ottimistica.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-nerd-098",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il codice fiscale contiene abbastanza informazioni da farmi rimpiangere quando mi chiamavano semplicemente Luca.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-nerd-099",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "A Faenza, il ceramista mescola smalti. Gli ho chiesto il codice RGB e lui mi ha mostrato un vasetto senza etichetta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-nerd-100",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "I taralli sono una lista circolare. Il sacchetto fornisce comunque una chiara condizione di terminazione.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-nerd-101",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La rete dei portici ha molti nodi. Il mio navigatore resta sorpreso da quanto sia piacevole attraversarli a piedi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-nerd-102",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il forno a legna non ha barra di caricamento. Il pizzaiolo legge lo stato direttamente sul disco.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-nerd-103",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le calli hanno larghezze variabili. Il trolley è il dispositivo che non si adatta al layout.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-nerd-104",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La frutta martorana supera il mio classificatore visivo. Il primo morso corregge subito il modello.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-nerd-105",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il pesto cambia con ogni mortaio. L'hash del pranzo non coincide mai, e nessuno apre un bug.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-nerd-106",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "observ",
+    "text": "A Trieste, « nero » è un ordine di caffè. Il mio parser aveva capito un tema grafico.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-nerd-107",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "« Perché » richiede un accento preciso. Anche le domande hanno dipendenze di configurazione.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-nerd-108",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il Colosseo gestiva grandi folle prima dei sistemi di prenotazione. La mia riunione di sei persone perde ancora il link.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-nerd-109",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La fattura elettronica è scartata per un campo. Il cliente ha compilato il resto con grandissima creatività.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scena lavorativa italiana con un riferimento concreto; procedure e dialoghi sono inventati, non indicazioni professionali."
+  },
+  {
+    "id": "intl-v2-it-nerd-110",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le tagliatelle si aggrovigliano. Il mio algoritmo di ordinamento preferisce non partecipare al pranzo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-nerd-111",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "observ",
+    "text": "Al Giro, chi segue sfrutta la scia. Ho provato con il codice del collega: meno aerodinamico del previsto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-nerd-112",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il cavaliere di legno non ha batteria. Il puparo sì, e si ricarica con un panino.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-nerd-113",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La Befana ordina i dolci per casa. Il gatto testa il sistema cambiando tutte le calze di posto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-nerd-114",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Lo SPID ha un timeout. Il tempo necessario a trovare gli occhiali ha presentato reclamo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-nerd-115",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Nella Divina Commedia, il percorso va per livelli. Dante aveva capito bene la progressione dei giochi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-nerd-116",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La burrata apre un flusso di dati bianchi. Il piatto deve avere capacità sufficiente prima del taglio.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-nerd-117",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il tortellino è piccolo ma completo. Il nostro software usa molto più spazio per fare meno cose.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-nerd-118",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La pizza a portafoglio si piega senza perdere il nome. Il mio documento PDF cambia impaginazione appena lo tocco.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-nerd-119",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "observ",
+    "text": "A Venezia, il percorso pedonale richiede ponti. Il mio sistema ha finalmente una definizione concreta di collegamento.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-nerd-120",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il tuppo della brioche è una feature molto visibile. Il resto del prodotto continua a funzionare anche dopo la sua rimozione.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-nerd-121",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il mortaio converte energia muscolare in pesto. Il portatile converte la stessa pazienza in aggiornamenti.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-nerd-122",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La moka termina con un segnale acustico. Un'interfaccia accessibile progettata senza tutorial.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-nerd-123",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il mio programma ha tradotto « in bocca al lupo » alla lettera. Il collega straniero ha chiesto se il meeting fosse assicurato.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-nerd-124",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La torre di Pisa dimostra che un'inclinazione nota non è automaticamente un bug.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-nerd-125",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il commercialista vuole esportare in CSV. I miei scontrini si oppongono: preferiscono il disordine analogico.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scena lavorativa italiana con un riferimento concreto; procedure e dialoghi sono inventati, non indicazioni professionali."
+  },
+  {
+    "id": "intl-v2-it-nerd-126",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il risotto non accetta elaborazione asincrona. Se lo lasci da solo, presenta subito un risultato diverso.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-nerd-127",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il Giro ha una classifica aggiornata. La chat dei tifosi utilizza una verità decisamente eventuale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-nerd-128",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il pupo obbedisce al filo. Il mouse del mio computer gradirebbe la stessa affidabilità.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-nerd-129",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La tombola è multiplayer locale. La nonna funge da server e da moderazione.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-nerd-130",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La PEC ha cambiato il modo di litigare con gli allegati. Adesso almeno sappiamo quando sono arrivati.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-nerd-131",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il naso di Pinocchio è un grafico in tempo reale. Gli manca soltanto una legenda.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-nerd-132",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le orecchiette vengono fatte una alla volta. Il nonno parla di qualità, io di throughput molto appetitoso.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-nerd-133",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il portico nasconde un'uscita su ogni strada. È la prima applicazione in cui apprezzo tanti percorsi alternativi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-nerd-134",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La pizza margherita ha tre colori principali. Il formaggio realizza tutte le sfumature senza plugin.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-nerd-135",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il vaporetto fa raccolta passeggeri a intervalli. Il traffico del canale decide la frequenza di campionamento.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-nerd-136",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La granita inizia a fondere. Ho perso la finestra ottimale per fotografare lo stato solido.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-nerd-137",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il basilico sta in un vaso piccolo. La sua influenza sulla cucina usa invece un raggio molto ampio.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-nerd-138",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il liutaio di Cremona usa la stessa pialla da anni. Il mio software vorrebbe obbligarlo a comprare il nuovo abbonamento alla levigatura.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento italiano a liuteria, musica o teatro come contesto di una scena inventata; nessuna imitazione di un autore."
+  },
+  {
+    "id": "intl-v2-it-nerd-139",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il doppio senso italiano è un sovraccarico di funzione con risata facoltativa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-nerd-140",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "I mosaici di Ravenna non hanno zoom. Sono io che devo aggiornare la distanza dal muro.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-nerd-141",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il codice destinatario è lungo sette caratteri. Lo sbaglio in otto modi diversi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scena lavorativa italiana con un riferimento concreto; procedure e dialoghi sono inventati, non indicazioni professionali."
+  },
+  {
+    "id": "intl-v2-it-nerd-142",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La frutta martorana mi ha insegnato l’importanza dei metadati. Visivamente era una melanzana; la dieta aveva urgente bisogno di sapere il resto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-nerd-143",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il ciclista del Giro riceve dati nell'auricolare. Io ricevo consigli sul divano senza averli richiesti.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-nerd-144",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il puparo riavvia il cavaliere con un gesto. Il mio computer richiede tre aggiornamenti e una promessa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-nerd-145",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La Befana ha una sola scopa per tutte le consegne. Un'architettura semplice con un carico stagionale notevole.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-nerd-146",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "PagoPA mostra « operazione riuscita ». Mi fa piacere che almeno uno di noi consideri il pagamento un successo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-nerd-147",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Dante divide la materia in canti. Il professore la ricompone in interrogazioni molto dense.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-nerd-148",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il tarallo è toroidale. La fame non richiede di conoscere questa proprietà per verificarne la robustezza.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-nerd-149",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il tortellino galleggia. Il test di integrazione col brodo procede bene.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-nerd-150",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il pizzaiolo gestisce più pizze nel forno. Il mio timer sa occuparsi di una sola e si vanta pure.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-nerd-151",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La gondola segue una traiettoria elegante. Il mio GPS la descrive come una serie di correzioni minori.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-nerd-152",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il cioccolato di Modica conserva lo zucchero granulare. Il mio algoritmo voleva lisciarlo: progetto respinto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-nerd-153",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "observ",
+    "text": "Nel mortaio tutti gli ingredienti finiscono insieme. Finalmente una merge senza commenti ostili.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-nerd-154",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il barista ricorda la mia tazzina. Un sistema di riconoscimento facciale con finalità che approvo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-nerd-155",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il punto e virgola italiano unisce frasi. In codice, quando lo dimentico, divide il pomeriggio.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-nerd-156",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "observ",
+    "text": "A Cremona, il liutaio ascolta il legno. Il mio microfono avrebbe chiesto prima di accettare l'informativa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento italiano a liuteria, musica o teatro come contesto di una scena inventata; nessuna imitazione di un autore."
+  },
+  {
+    "id": "intl-v2-it-nerd-157",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "observ",
+    "text": "Al Museo Egizio di Torino ho visto testi più antichi del mio sistema operativo. Erano anche più leggibili.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-nerd-158",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Ho cercato Scala per programmare. Il motore di ricerca mi ha offerto un posto in platea a Milano.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento italiano a liuteria, musica o teatro come contesto di una scena inventata; nessuna imitazione di un autore."
+  },
+  {
+    "id": "intl-v2-it-nerd-159",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "observ",
+    "text": "A Cinecittà, una strada finisce dietro la facciata. Il frontend è bellissimo, il backend resta essenziale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-nerd-160",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il correttore cambia « cache » in « cacche ». Il mio rapporto tecnico ha bisogno di una revisione adulta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-nerd-161",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il codice fiscale omette alcune vocali. Il mio primo algoritmo di compressione aveva intenti molto meno ufficiali.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-nerd-162",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La cupola del Pantheon ha un'apertura centrale. Il mio collega chiede se si possa configurare come dark mode.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-nerd-163",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il televoto di Sanremo produce numeri enormi. La chat di famiglia produce un dataset di indignazione ancora più grande.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-nerd-164",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il violino cremonese non ha una porta USB. Il musicista resta l'adattatore più costoso del sistema.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento italiano a liuteria, musica o teatro come contesto di una scena inventata; nessuna imitazione di un autore."
+  },
+  {
+    "id": "intl-v2-it-nerd-165",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il ponte di Bassano usa legno e secoli di manutenzione. Il mio prototipo preferisce promettere una soluzione permanente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-nerd-166",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La versione di latino è un problema di decodifica in cui il dizionario collabora solo parzialmente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-nerd-167",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il Museo della Scienza di Milano spiega Leonardo. Io vorrei sapere dove teneva i cavi dei progetti incompiuti.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-nerd-168",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il display del Frecciarossa mi mostra la velocità. Ho smesso di aggiornare la pagina: il treno sa procedere da solo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena ambientata in un luogo o servizio italiano nominato; incidenti immaginari, senza affermazioni su servizi attuali."
+  },
+  {
+    "id": "intl-v2-it-nerd-169",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "A Cremona, il metronomo del liutaio non accetta ritardi. Il mio calendario lo considera un software ostile.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento italiano a liuteria, musica o teatro come contesto di una scena inventata; nessuna imitazione di un autore."
+  },
+  {
+    "id": "intl-v2-it-nerd-170",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La marca da bollo è un token fisico. Il sistema verifica l'autenticità senza chiedere la scansione della mia faccia.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-nerd-171",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il tabellone della tombola ha novanta caselle. La nonna riconosce subito ogni errore di sincronizzazione.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-nerd-172",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "observ",
+    "text": "A Murano, il vetraio controlla la viscosità a occhio. La mia simulazione ha ancora bisogno di scegliere il colore del grafico.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-nerd-173",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il linguaggio burocratico italiano supporta l'annidamento delle subordinate. Il parser umano va spesso in overflow.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Gioco originale basato su significati, espressioni o suoni italiani; non traduzione di una battuta di un altro corpus."
+  },
+  {
+    "id": "intl-v2-it-nerd-174",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La funicolare di Napoli ha due versi di marcia. Il mio modello ha finalmente un problema con poche opzioni.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena ambientata in un luogo o servizio italiano nominato; incidenti immaginari, senza affermazioni su servizi attuali."
+  },
+  {
+    "id": "intl-v2-it-nerd-175",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Il David è un modello tridimensionale molto ben rifinito. Nessuno ha trovato il comando per cambiare posa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-nerd-176",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La maschera di Arlecchino supera il riconoscimento facciale. Il costume continua a essere identificato da tutti.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-nerd-177",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "L'analisi logica della frase ha un soggetto. Il ticket del progetto ne cerca ancora uno responsabile.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-nerd-178",
+    "collection": "it-it-everyday",
+    "category": "nerd",
+    "format": "observ",
+    "text": "A Ravenna ho provato a contare le tessere del mosaico. Il museo ha chiuso prima che completassi il primo ciclo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  }
+]

@@ -1,0 +1,2316 @@
+[
+  {
+    "id": "intl-v2-hy-puns-001",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Վերնիսաժում վաճառողն ասաց՝ այս գորգը պատմություն ունի։ Խնդրեցի կարճ պատմել, որովհետև երկար տարբերակը ճամպրուկիս մեջ չէր տեղավորվի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Vernissage carpet; a long history is confused with the physical length of the object carrying it."
+  },
+  {
+    "id": "intl-v2-hy-puns-002",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Գյումրիի դարբինը խոստացավ ամուր գործ անել։ Այնքան ամուր արեց, որ դարպասը բացելու համար առանձին բանակցություն է պետք։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Gyumri ironwork; ամուր means solid workmanship but also tightly fixed, frustrating the gate's purpose."
+  },
+  {
+    "id": "intl-v2-hy-puns-003",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Կասկադում ասացի՝ տեսարանն ինձ բարձրացնում է։ Ընկերս ցույց տվեց աստիճանները՝ «Դրանք էլ մի քիչ մասնակցեցին»։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Cascade climb; emotional elevation is contrasted with literal steps lifting the visitor."
+  },
+  {
+    "id": "intl-v2-hy-puns-004",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Դիլիջանի անտառում մտքերս ցրվեցին։ Քարտեզով փնտրեցի, բայց մտքերի արահետ դեռ նշված չէր։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dilijan forest; ցրվել means becoming distracted or physically scattering, prompting a map search."
+  },
+  {
+    "id": "intl-v2-hy-puns-005",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Լավաշ թխելիս տատիկն ասաց՝ ձեռքդ բաց պահիր։ Ես լայն բացեցի մատներս, ու ամբողջ ալյուրը սեղանին մնաց։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "food"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Lavash lesson; ձեռքդ բաց պահիր evokes generosity or an open hand, taken as spreading fingers physically."
+  },
+  {
+    "id": "intl-v2-hy-puns-006",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Բյուրականում ինձ ասացին՝ հեռուն նայիր։ Սկսեցի թոշակային ծրագրից, բայց աստղադիտակն ավելի հեռուն էր պահանջում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "science"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Byurakan astronomy; հեռուն նայել means thinking ahead and literally looking far away."
+  },
+  {
+    "id": "intl-v2-hy-puns-007",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Մատենադարանում գրչի ուժի մասին լսեցի։ Տանը փորձեցի իմ գրիչով պահարանի դուռը հրել. ուժը, երևի, ուրիշ բաժնում էր։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Matenadaran and writing; գրչի ուժ figurative power of the pen is tested as physical force."
+  },
+  {
+    "id": "intl-v2-hy-puns-008",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Սևանի ափին մտա թեմայի խորքը։ Ընկերս խնդրեց՝ պատմությունը շարունակելիս գոնե ջրից հեռու կանգնեմ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Lake Sevan; թեմայի խորքը intellectual depth becomes literal lake depth."
+  },
+  {
+    "id": "intl-v2-hy-puns-009",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Քոչարիի փորձին ասացին՝ ընդհանուր լեզու գտեք։ Մենք լուռ նույն քայլն արեցինք. լեզուն այս անգամ ոտքերի գործն էր։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Kochari rehearsal; ընդհանուր լեզու means mutual understanding, located comically in coordinated feet."
+  },
+  {
+    "id": "intl-v2-hy-puns-010",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Հայերեն թռչնագիր նկարեցի։ Ուսուցիչը խնդրեց տառերը նստեցնել տողի վրա. իմ նախադասությունը թռչելու պատրաստ էր։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian bird-shaped letter art; նստեցնել positioning letters on a line becomes making birds perch."
+  },
+  {
+    "id": "intl-v2-hy-puns-011",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Վերնիսաժից ծանր գիրք գնեցի։ Ընկերս ասաց՝ լուրջ ընթերցանություն է։ Առայժմ միայն պայուսակս է լրջորեն տառապում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Vernissage book purchase; ծանր and լուրջ shift from intellectual weight to physical load."
+  },
+  {
+    "id": "intl-v2-hy-puns-012",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Գյումրիի արհեստանոցում գործս առաջ չէր գնում։ Վարպետը սեղանը մի քիչ հրեց՝ գոնե սկիզբը լինի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Gyumri workshop; գործն առաջ գնալ progress at work becomes physically moving the worktable."
+  },
+  {
+    "id": "intl-v2-hy-puns-013",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Դիլիջանի թանգարանում հին աթոռին նայեցի ու ասացի՝ լավ դիրք ունի։ Պահակը համաձայնեց, բայց այդ պաշտոնում նստել չթողեց։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dilijan museum chair; դիրք position refers to placement and prestigious status."
+  },
+  {
+    "id": "intl-v2-hy-puns-014",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Լավաշի համար խմորը հանգստացնում էինք։ Ես կողքին պառկեցի, որ պատասխանատու մեծահասակ ունենա։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "food"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Lavash dough; հանգստացնել means resting dough and calming or resting a person."
+  },
+  {
+    "id": "intl-v2-hy-puns-015",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Երևանի երգող շատրվանների ձայնը բարձրացավ։ Մեկը հարցրեց՝ ջո՞ւրն է բարձրացել։ Ասացի՝ հիմա երկուսն էլ ելույթ ունեն։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Republic Square fountains; բարձրանալ covers rising sound level and rising water."
+  },
+  {
+    "id": "intl-v2-hy-puns-016",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Վարդավառին ընկերս խոսքը ջրիկացրեց։ Մենք խնդրեցինք միայն խաղալիք դույլը լցնել, պատմությունն առանց այդ էլ երկար էր։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Voluntary Vardavar play; ջրիկացնել means dilute or make insubstantial, blending watery speech with actual water."
+  },
+  {
+    "id": "intl-v2-hy-puns-017",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Բյուրականում գիշերը պարզ էր։ Իմ հարցերը՝ ոչ. աստղերը ավելի արագ հասկանալի դարձան, քան աստղադիտակի կոճակները։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "science"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Byurakan night; պարզ means clear weather and easily understood explanation."
+  },
+  {
+    "id": "intl-v2-hy-puns-018",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Մատենադարանի ցուցահանդեսում թեման բացեցին։ Ես դռան մոտ մնացի՝ չգիտեի, թե որ կողմից են ներս թողնելու։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Manuscript exhibition; թեման բացել means opening up a topic and is mistaken for opening a physical entrance."
+  },
+  {
+    "id": "intl-v2-hy-puns-019",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Գորգագործության դասին մի հանգույց լուծեցի։ Մնացածները բողոքեցին՝ սա խնդի՞ր էր, թե՞ գորգ. ինչո՞ւ ես քանդում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Carpet weaving; հանգույց լուծել unties a knot and figuratively resolves a difficult problem."
+  },
+  {
+    "id": "intl-v2-hy-puns-020",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Սևանի ափին խոսակցությունը սառեց։ Մենք սվիտեր հագանք, իսկ խոսակցությունը շարունակեց նույն համառությամբ լռել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "weather"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Sevan conversation; սառել means becoming cold and a conversation becoming awkward or inactive."
+  },
+  {
+    "id": "intl-v2-hy-puns-021",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Վերնիսաժում ասացին՝ բաժակը ձեռքի աշխատանք է։ Ձեռքիս տվեցի, որ աշխատանքային փորձ ձեռք բերի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "food"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Vernissage handmade cup; ձեռքի աշխատանք handicraft is taken as work performed by the buyer's hand."
+  },
+  {
+    "id": "intl-v2-hy-puns-022",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Գյումրիի դարպասի նախշը շատ նուրբ էր։ Վարպետին ցածրաձայն գովեցի, որ նրբությունը չվնասեմ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Gyumri decorative ironwork; նուրբ means finely detailed and emotionally delicate, prompting excessive gentleness."
+  },
+  {
+    "id": "intl-v2-hy-puns-023",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Կասկադի մոտ ընկերոջս ասացի՝ մի քայլ առաջ մտածիր։ Նա տեղափոխվեց հաջորդ աստիճանին ու սպասեց իմ նոր գաղափարին։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Cascade stairs; մի քայլ առաջ մտածել anticipating events becomes moving one physical step."
+  },
+  {
+    "id": "intl-v2-hy-puns-024",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Դիլիջանի անտառում ծառի ստվերում թեթևացա։ Պայուսակս համաձայն չէր. մեջը նույնքան հուշանվեր կար։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dilijan outing; թեթևանալ means emotional relief and reduction of physical weight."
+  },
+  {
+    "id": "intl-v2-hy-puns-025",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Լավաշով սեղանը բացեցինք։ Տատիկը զգուշացրեց՝ փայտե մասը բաց թողեք, դա ճաշի մեջ չի մտնում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "food"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Lavash table setting; սեղան բացել lay a meal is made literal through opening or exposing the physical table."
+  },
+  {
+    "id": "intl-v2-hy-puns-026",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Դուդուկի ձայնը փափուկ էր։ Փորձեցի դրան բարձ անվանել, բայց երաժիշտն ասաց՝ գլուխդ նոտաների վրա չդնես։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Duduk listening; փափուկ describes soft timbre and a physically soft cushion."
+  },
+  {
+    "id": "intl-v2-hy-puns-027",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Հայերեն զարդատառիս ոտքը երկար ստացվեց։ Տառը դեռ տեղում է, բայց տողի վերջն արդեն բռնել է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian ornamental lettering; ոտք a letter stroke is treated as a limb reaching across the line."
+  },
+  {
+    "id": "intl-v2-hy-puns-028",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Բյուրականում աստղի դիրքը որոշեցինք։ Իմ դիրքորոշումը պարզ էր՝ այդքան հեռու տեղից ես չէի տեղափոխվի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "science"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Byurakan; դիրք physical position echoes դիրքորոշում viewpoint, giving the observer an opinion about stellar relocation."
+  },
+  {
+    "id": "intl-v2-hy-puns-029",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Մատենադարանի մասին նյութս խմբագիրը կտրեց։ Սոսինձ տարա, բայց ասաց՝ մտքերը հետ կպցնել պետք չէ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Writing about Matenadaran; նյութ կտրել editorial cutting is treated as physically cutting material."
+  },
+  {
+    "id": "intl-v2-hy-puns-030",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Քոչարիի ուսուցիչն ասաց՝ կապը մի կորցրեք։ Ես հեռախոսս ստուգեցի, իսկ խումբն արդեն մյուս կողմ էր պարում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Kochari; կապ means interpersonal physical coordination or a phone connection."
+  },
+  {
+    "id": "intl-v2-hy-puns-031",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Սևանի լուսանկարում ալիք կա։ Հեռուստացույցի պուլտով երկար փորձեցի մյուսին անցնել, բայց լիճը մեկ ծրագրով էր աշխատում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Sevan photo; ալիք means water wave and television channel."
+  },
+  {
+    "id": "intl-v2-hy-puns-032",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Վերնիսաժում շախմատ ընտրելիս քարերը ծանր թվացին։ Վաճառողն ասաց՝ մտքիդ ծանրությունն էլ հաշվի առ, տուփը չի ցույց տալիս։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Vernissage chess set; ծանրություն shifts between physical chess-piece weight and mental effort."
+  },
+  {
+    "id": "intl-v2-hy-puns-033",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Գյումրիի դարբինն ասաց՝ երկաթը լեզու ունի։ Ես սկսեցի այբուբենից, ինքը՝ մուրճից. ուսուցման մեթոդները տարբեր էին։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Gyumri metalwork; նյութի լեզու the language of a material becomes literal language instruction."
+  },
+  {
+    "id": "intl-v2-hy-puns-034",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Դիլիջանում ոտքս գցեցի անտառ։ Ընկերս ասաց՝ մյուսն էլ բեր, միայնակ չթողնես։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dilijan walk; ոտք գցել colloquial setting foot somewhere is literalized as depositing one foot."
+  },
+  {
+    "id": "intl-v2-hy-puns-035",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Լավաշը շատ բարակ բացեցի։ Տատիկն ասաց՝ մտածելակերպդ էլ մի քիչ այդպես բացվի, բայց անցքեր չլինեն։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "food"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Lavash rolling; բացել means opening or rolling out, transferred to an open mind with dough-like holes."
+  },
+  {
+    "id": "intl-v2-hy-puns-036",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Երևանի շատրվանները գույն փոխեցին։ Ընկերս էլ փոխեց՝ երբ իր հեռախոսի դատարկ մարտկոցը տեսավ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Republic Square fountains; գույն փոխել literal light changes contrasts with changing facial color from dismay."
+  },
+  {
+    "id": "intl-v2-hy-puns-037",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Հայերեն տառատեսակն ընտրելիս ասացին՝ բնավորություն ունենա։ Հիմա «չի ստացվում» գրությունն ավելի համառ է երևում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian typography; բնավորություն is visual character and stubborn personal temperament."
+  },
+  {
+    "id": "intl-v2-hy-puns-038",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Բյուրականում բաց երկնքի տակ դաս արեցինք։ Առաջին անգամ դասարանի առաստաղը ոչ ոք չէր կարող ամբողջությամբ չափել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "science"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Byurakan outdoor lesson; բաց class setting and the metaphorical sky-ceiling play on the classroom boundary."
+  },
+  {
+    "id": "intl-v2-hy-puns-039",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Գորգի նախշի մեջ իմ տեղը չգտա։ Վարպետն ասաց՝ դու այդ կողմում նստիր, նախշը առանց քեզ էլ կհավաքվի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Carpet workshop; տեղը գտնել finding one's role is mistaken for fitting physically inside a woven pattern."
+  },
+  {
+    "id": "intl-v2-hy-puns-040",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Մատենադարանի ցուցադրությունը մտքիս մեջ նստեց։ Ամբողջ օրը մտքերս ստիպված ոտքի վրա էին մնում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Matenadaran visit; մտքում նստել a thought lodging firmly is literalized as occupying a seat."
+  },
+  {
+    "id": "intl-v2-hy-puns-041",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Վերնիսաժում փայտե գդալին ասացին՝ տաք գործիք է։ Սուպը համաձայնեց, իսկ ես բռնակը ավելի զգույշ բռնեցի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "food"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Crafted wooden spoon; տաք evokes warm material or character and literal heat from soup."
+  },
+  {
+    "id": "intl-v2-hy-puns-042",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Գյումրիի պատշգամբը աչքիս ընկավ։ Բարեբախտաբար՝ միայն պատկերավոր. այդքան երկաթի համար աչքս փոքր էր։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Gyumri iron balcony; աչքին ընկնել means attracting attention, literally falling into the eye."
+  },
+  {
+    "id": "intl-v2-hy-puns-043",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Կասկադում հայացքս հեռուն գնաց։ Ոտքերս հրաժարվեցին հետևել՝ ասացին, թե այդքան բարձրանալուց հետո իրենք հերթը տվել են։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Cascade view; հայացքը գնալ a gaze traveling contrasts with feet refusing literal travel."
+  },
+  {
+    "id": "intl-v2-hy-puns-044",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Դիլիջանի արահետը մտքիս թելը կտրեց։ Հիմա գոնե գիտեմ, թե անտառում որն էր ամենաբարակ ճյուղը։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dilijan forest; մտքի թել train of thought is treated as a breakable physical thread among branches."
+  },
+  {
+    "id": "intl-v2-hy-puns-045",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Լավաշի թերթը ձեռքս առա ու հարցրի՝ նորություններ կա՞ն։ Տատիկն ասաց՝ կան, այսօրվա հացը դու ես բաժանելու։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "food"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Lavash sheet; թերթ means thin sheet and newspaper, prompting a request for news."
+  },
+  {
+    "id": "intl-v2-hy-puns-046",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Դուդուկի ուսուցիչն ասաց՝ շունչը պահիր։ Ես պահեցի, իսկ մեղեդին առանց ինձ գնաց ընդմիջման։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Duduk lesson; շունչը պահել can mean controlling breath or literally holding it, stopping the sound."
+  },
+  {
+    "id": "intl-v2-hy-puns-047",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Վարդավառին ընկերս սառը ընդունեց առաջարկս։ Ջուրը տաքացրի, բայց պարզվեց՝ պարզապես այսօր խաղալ չէր ուզում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Consent-respecting Vardavar scene; սառը ընդունել means receive coolly, mistaken for a water-temperature problem."
+  },
+  {
+    "id": "intl-v2-hy-puns-048",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Բյուրականում իմ հարցը օդում մնաց։ Հետո պարզվեց՝ այնքան հեռու էի տարել, որ պատասխանը դեռ ճանապարհին է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "science"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Astronomy visit; հարցը օդում մնալ unresolved question is imagined literally suspended at cosmic distance."
+  },
+  {
+    "id": "intl-v2-hy-puns-049",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Հայերեն այբուբենի դասին տառերի դեմքերը նկարեցինք։ Հիմա իմ սխալագրությանը նույնիսկ «Ա»-ն է զարմացած նայում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian letter art; դեմք visual appearance or personified face lets an alphabet judge spelling."
+  },
+  {
+    "id": "intl-v2-hy-puns-050",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Քոչարիի ընթացքում ընկերոջս ձեռքը թեթև էր։ Նա ասաց՝ պայուսակս քեզ եմ տվել, դրանից է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Kochari; թեթև ձեռք deft or gentle handling is reinterpreted through a literal transfer of carried weight."
+  },
+  {
+    "id": "intl-v2-hy-puns-051",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Սևանի տեսարանը լեզուս կապեց։ Ընկերս ուրախացավ՝ վերջապես հանգույց, որը գորգագործը չի շտապելու բացել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Sevan landscape; լեզուն կապել renders someone speechless, imagined as an actual knot."
+  },
+  {
+    "id": "intl-v2-hy-puns-052",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Վերնիսաժի բաժակի գինը կծում էր։ Խնդրեցի գոնե բռնակը հեզ լինի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "money"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Vernissage purchase; գինը կծում է a steep price bites, giving the cup's handle a contrasting gentle temperament."
+  },
+  {
+    "id": "intl-v2-hy-puns-053",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Գյումրիի դարբինը ուղիղ խոսք ասաց։ Ես չափաքանոն դրեցի կողքին՝ տեսնելու, թե արհեստը որքան հեռուն է գնում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Gyumri craft; ուղիղ խոսք frank speech becomes physically straight speech measurable with a ruler."
+  },
+  {
+    "id": "intl-v2-hy-puns-054",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Կասկադի վրա մտքերս կարգի բերեցի։ Ներքև իջնելիս նորից խառնվեցին. երևի դասավորությունը թեքության համար չէր հաշվարկված։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Cascade stairs; մտքերը կարգի բերել organizing thoughts becomes physically stacking items affected by slope."
+  },
+  {
+    "id": "intl-v2-hy-puns-055",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Դիլիջանի թանգարանի ցուցանակը շատ բան ասաց։ Ուրախացա, որ այս անգամ շատախոսը հերթ չի պահանջում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Museum label; շատ բան ասել communicates information but is interpreted as a talkative person's speech."
+  },
+  {
+    "id": "intl-v2-hy-puns-056",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Լավաշի վերջին կտորի շուրջ կարծիքները բաժանվեցին։ Հացը դեռ ամբողջական էր. անարդարություն էր ստացվում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "food"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Lavash sharing; բաժանվել divided opinions contrasts with an undivided piece of bread."
+  },
+  {
+    "id": "intl-v2-hy-puns-057",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Երևանի շատրվանների մոտ երաժշտությունը ջրի երես դուրս եկավ։ Գաղտնիքը պահելն իսկապես դժվար է, երբ բոլորը լուսավորված են։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Singing fountains; ջրի երես դուրս գալ means coming to light, literally applied to music at the water surface."
+  },
+  {
+    "id": "intl-v2-hy-puns-058",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Հայերեն խմբագրիչը բառս փոխեց։ Ասացի՝ խոսքիս տերը ես եմ։ Համակարգիչը պատասխանելու փոխարեն նորից ուղղեց ինձ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian autocorrect; խոսքի տերը լինել means standing by one's words and is reinterpreted as ownership rights over a typed word."
+  },
+  {
+    "id": "intl-v2-hy-puns-059",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Գորգագործության դասին գործս խճճվեց։ Առաջին անգամ փոխաբերությունը ձեռքիս մեջ էր, և մկրատով լուծում ուներ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Weaving workshop; խճճվել means a complicated situation or literal tangled threads."
+  },
+  {
+    "id": "intl-v2-hy-puns-060",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Մատենադարանի մասին պատմությունը կուլ էի տալիս։ Ուղեկցորդը մի պահ կանգ առավ, որ գոնե թվականները ծամեմ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Matenadaran tour; կուլ տալ eagerly absorb information becomes swallowing, with dates needing chewing."
+  },
+  {
+    "id": "intl-v2-hy-puns-061",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Վերնիսաժում կուժի ականջը բռնեցի։ Վաճառողն ասաց՝ զգույշ, ես էլ շշուկով խոսեցի, որ չցավեցնեմ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Vernissage pottery; ականջ means ear and a jug handle, causing concern about loud speech."
+  },
+  {
+    "id": "intl-v2-hy-puns-062",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Գյումրիի դարբինը շղթայական լուծում առաջարկեց։ Ես պատճառներն էի սպասում, նա՝ երկաթե օղակներն էր շարում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Gyumri blacksmith; շղթայական evokes a chain of reasoning and a physical chain assembled link by link."
+  },
+  {
+    "id": "intl-v2-hy-puns-063",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Կասկադում մակարդակս բարձրացրի։ Գործընկերս հարցրեց՝ դասընթա՞ց անցար։ Ասացի՝ ոչ, այս անգամ ուղղակի չնստեցի կես ճանապարհին։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Cascade; մակարդակը բարձրացնել means improve one's level and physically gain elevation."
+  },
+  {
+    "id": "intl-v2-hy-puns-064",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Դիլիջանի անտառում խոսքիս երանգ տվեցի։ Ընկերս խնդրեց կանաչը քիչ անել՝ առանց այդ էլ ամեն կողմ ծառ է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dilijan forest; երանգ տալ gives nuance to speech, made into a literal green tint."
+  },
+  {
+    "id": "intl-v2-hy-puns-065",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Լավաշի դասին չափը պահեցի։ Հիմա տանը երկար քանոն ունենք, բայց հացը դեռ սեղանից դուրս է գալիս։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "food"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Lavash rolling; չափը պահել means moderation or keeping measurements, reduced to possessing a ruler."
+  },
+  {
+    "id": "intl-v2-hy-puns-066",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Դուդուկի մեղեդին սիրտս բացեց։ Սենյակում քամի չկար, բայց ես ամեն դեպքում կոճակներս ստուգեցի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Duduk music; սիրտը բացել emotional openness is imagined as a physical opening needing a clothing check."
+  },
+  {
+    "id": "intl-v2-hy-puns-067",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Բյուրականում աստղերը շատ վառ էին։ Ընկերս հարցրեց՝ լավ ապագա՞ ունեն։ Ասացի՝ նախ ներկայի լույսը վայելենք։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "science"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Byurakan stars; վառ means brightly luminous and a promising future."
+  },
+  {
+    "id": "intl-v2-hy-puns-068",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Մատենադարանի մասին ելույթս կշիռ ունեցավ։ Տպված թերթերը վերջապես օգուտ տվեցին՝ բաց դուռը պահեցին։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Matenadaran presentation; կշիռ weight as authority becomes the physical mass of printed pages."
+  },
+  {
+    "id": "intl-v2-hy-puns-069",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Գորգի նոր նախշը շրջանակի մեջ պահեցինք։ Վարպետը նկատեց՝ գաղափարդ ազատ է, բայց թելերը դեռ աշխատանքի են եկել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Carpet workshop; շրջանակ framework or constraint is also the physical weaving frame."
+  },
+  {
+    "id": "intl-v2-hy-puns-070",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Քոչարիի փորձին ընդհանուր շրջան կազմեցինք։ Իմ սխալ քայլը շրջանից դուրս չէր գալիս՝ ամեն պտույտին նորից հանդիպում էինք։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Kochari; շրջան physical circle and recurring cycle turn one error into a repeated encounter."
+  },
+  {
+    "id": "intl-v2-hy-puns-071",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Սևանում ալիքների տակտը բռնեցի։ Ափին բոլորը հանգիստ էին, միայն իմ ծափերն էին բացատրում, թե ով է կորցրել տակտը։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Sevan waves; տակտ means rhythmic timing and social tact."
+  },
+  {
+    "id": "intl-v2-hy-puns-072",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Վերնիսաժի կավե բաժակը նեղ բերան ուներ։ Մայրս ասաց՝ գոնե ընտանեկան գաղտնիքները քիչ կհոսի դուրս։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Vernissage cup; բերան opening or mouth is treated as a gossiping human mouth."
+  },
+  {
+    "id": "intl-v2-hy-puns-073",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Գյումրիի դարպասի ծայրը սուր էր։ Վարպետին խնդրեցի մի քիչ մեղմացնել, նա ասաց՝ սա բնավորության դասընթաց չէ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Gyumri gate; սուր sharp and մեղմացնել soften cross physical edges and personal temperament."
+  },
+  {
+    "id": "intl-v2-hy-puns-074",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Կասկադի աստիճանների շարքը վերջապես ավարտվեց։ Ուզում էի շնորհակալություն հայտնել, բայց շունչս դեռ նախորդ շարքում էր։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Cascade; շարք means a row or series, allowing breath to be left behind in an earlier sequence."
+  },
+  {
+    "id": "intl-v2-hy-puns-075",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Դիլիջանում ծառերի խորհուրդը լսեցի։ Անտառապահը հարցրեց՝ ժողովի արձանագրությունն ո՞ւր է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dilijan trees; խորհուրդ means advice and a council, changing listening into a formal meeting."
+  },
+  {
+    "id": "intl-v2-hy-puns-076",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Լավաշի մի շերտը ծալեցի ու ասացի՝ հարցը փակված է։ Ընկերս բացեց՝ մեջը պանիր էր պակասում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "food"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Lavash wrap; հարցը փակել means settling a matter, here literally closing a wrap that lacks filling."
+  },
+  {
+    "id": "intl-v2-hy-puns-077",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Դուդուկի ձայնը երկար պահեցի։ Հարևանս ասաց՝ հիմա էլ փորձիր կարճ պահել, համեմատությունը գիտության համար է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Duduk practice; ձայն պահել sustaining sound and պահել holding or restraining it prompt a pointed alternative."
+  },
+  {
+    "id": "intl-v2-hy-puns-078",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Հայերեն նախադասությունս հարթեցրի։ Ուսուցիչը գոհ էր, բայց տետրի ծալքը դեռ խանգարում էր։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian writing; հարթեցնել smooth stylistically and physically flatten a creased page."
+  },
+  {
+    "id": "intl-v2-hy-puns-079",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Բյուրականում աչքս աստղին գցեցի։ Ընկերս անհանգստացավ՝ հետ բերելը շատ ժամանակ կպահանջի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "science"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Astronomy; աչք գցել cast a glance becomes literally sending an eye across stellar distance."
+  },
+  {
+    "id": "intl-v2-hy-puns-080",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Մատենադարանի մասին գրքում մանր տառեր կային։ Պապիկն ասաց՝ միտքը մեծ լինի, տառերը հետո կմեծացնենք։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Book on manuscripts; մեծ means physically large and intellectually substantial."
+  },
+  {
+    "id": "intl-v2-hy-puns-081",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Վարդավառին խաղի կանոնները չոր շարադրեցի։ Ընկերներս ասացին՝ ջուրը քեզ չի օգնել ավելի հետաքրքիր բացատրել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Vardavar; չոր means dry and dull in style, independent of actual wetness."
+  },
+  {
+    "id": "intl-v2-hy-puns-082",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Վերնիսաժի զարդի շղթան կարճ էր։ Վաճառողը երկար բացատրություն տվեց, բայց այն վզիս կապել չհաջողվեց։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Vernissage jewelry; երկար lengthy explanation cannot replace a physically long chain."
+  },
+  {
+    "id": "intl-v2-hy-puns-083",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Գյումրիի վարպետը գործի գլուխ կանգնեց։ Ես աթոռ բերեցի՝ ղեկավարելն էլ ոտքի աշխատանք չդառնա։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Gyumri craft; գործի գլուխ կանգնել taking charge becomes physically standing at a task's head."
+  },
+  {
+    "id": "intl-v2-hy-puns-084",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Կասկադի վերևում մտքերս լուսավորվեցին։ Հեռախոսս նախանձեց՝ իր էկրանի պայծառությունը դեռ քիչ էր։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Cascade outlook; լուսավորվել intellectual illumination contrasts with a screen's brightness."
+  },
+  {
+    "id": "intl-v2-hy-puns-085",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Դիլիջանի թանգարանում ժամանակի հետք գտա։ Տանը սեղանիս փոշին ցույց տվեցի՝ մենք էլ ունենք, ուղղակի ցուցանակ չունի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dilijan museum; ժամանակի հետք traces of history become mundane accumulated dust."
+  },
+  {
+    "id": "intl-v2-hy-puns-086",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Լավաշի համար տատիկը տաք խոսքեր ասաց։ Խմորը դեռ չէր թխվում. պետք էր թոնիրն էլ համոզել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "food"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Lavash preparation; տաք խոսքեր warm affectionate words are tested as actual baking heat."
+  },
+  {
+    "id": "intl-v2-hy-puns-087",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Դուդուկահարին ասացին՝ ձայնդ մի քիչ ցածր պահիր։ Նա նստեց ցածր աթոռին, բայց խնդիրը երաժշտական էր։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Duduk player; ցածր ձայն lower volume is confused with lower bodily position."
+  },
+  {
+    "id": "intl-v2-hy-puns-088",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Հայերեն զարդատառի պոչը շատ երկար ստացվեց։ Հաջորդ բառը խնդրեց՝ գոնե հերթի մեջ կանգնի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian calligraphy; պոչ decorative tail and the image of a queue make the next word wait."
+  },
+  {
+    "id": "intl-v2-hy-puns-089",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Բյուրականում աստղերի կյանքը քննարկեցինք։ Իմ աստղագուշակ ընկերը վիրավորվեց՝ իրեն ոչ մի ընտանեկան մանրամասն չպատմեցին։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "science"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Byurakan; աստղերի կյանք means stellar evolution, humorously expected to be a celebrity-style personal life; astronomy remains distinct from astrology."
+  },
+  {
+    "id": "intl-v2-hy-puns-090",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Մատենադարանի մասին նյութս խորը էր։ Գտա այն համակարգչի յոթերորդ ենթապանակում և վերջապես համաձայնեցի խմբագրի հետ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Manuscript research text; խորը intellectual depth becomes deeply nested file storage."
+  },
+  {
+    "id": "intl-v2-hy-puns-091",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Քոչարիի խմբում հենարան գտա։ Ընկերս ասաց՝ բարոյապես՝ որքան ուզես, բայց ամբողջ քաշդ իմ ուսին մի դիր։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Kochari group; հենարան emotional support becomes physical weight on a dance partner."
+  },
+  {
+    "id": "intl-v2-hy-puns-092",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Սևանի ափին միտքս տեղը եկավ։ Հիմա մտքիցս հասցեն եմ հարցնում, որ հաջորդ անգամ մենակ չմոլորվեմ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Sevan reflection; միտքը տեղը գալ regaining clarity is literalized as thought arriving at a specific address."
+  },
+  {
+    "id": "intl-v2-hy-puns-093",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Վերնիսաժի գորգը տաք գույներ ուներ։ Ձմռանը պարզվեց՝ դրանցից ոչ մեկը ջեռուցման վճարը չի կրճատում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Vernissage carpet; տաք գույներ warm colors are confused with actual heating."
+  },
+  {
+    "id": "intl-v2-hy-puns-094",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Գյումրիի երկաթե ծաղիկը բացվեց ցուցահանդեսում։ Ջրել պետք չէր, բայց բացման խոսք պահանջեց։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Gyumri metal flower exhibition; բացվել means a flower opening and an exhibition opening."
+  },
+  {
+    "id": "intl-v2-hy-puns-095",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Կասկադով բարձրանալիս խոսքս կտրվեց։ Ընկերս ասաց՝ պատմությունն այստեղ երկու մասի բաժանենք, երկրորդը նստած կլսենք։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Cascade climb; խոսքը կտրվել becoming breathless interrupts speech, reimagined as a story physically cut into parts."
+  },
+  {
+    "id": "intl-v2-hy-puns-096",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Դիլիջանի անտառի լռությունը խիտ էր։ Լուսանկարիչը խնդրեց՝ մի քիչ նոսրացնեմ, ծառերն էլ երևան։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dilijan woodland; խիտ means dense vegetation and metaphorically thick silence."
+  },
+  {
+    "id": "intl-v2-hy-puns-097",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Լավաշի տակի պանիրը տեղն ընկավ։ Հացը գոհ էր, սեղանին պահած լրացուցիչ ափսեն՝ ոչ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "food"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Lavash wrap; տեղն ընկնել being put to good use becomes fitting into a literal place in bread."
+  },
+  {
+    "id": "intl-v2-hy-puns-098",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Դուդուկի ուսուցիչն ասաց՝ մեղեդուն մարմին տուր։ Ես թղթից ոտքեր նկարեցի. երաժշտական անատոմիան դեռ սովորելու եմ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Duduk instruction; մարմին տալ giving substance to a melody is taken as adding a physical body."
+  },
+  {
+    "id": "intl-v2-hy-puns-099",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Հայերեն նախադասությունը երկար շունչ ուներ։ Բարձրաձայն կարդալուց հետո պարզվեց՝ իմ շունչը այդքան պայմանագիր չէր ստորագրել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian prose; երկար շունչ sustaining a long phrase contrasts with the reader's limited actual breath."
+  },
+  {
+    "id": "intl-v2-hy-puns-100",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Բյուրականում տիեզերքի հարցերը բաց մնացին։ Պահակը փակեց դարպասը՝ գոնե իր պատասխանատվության սահմաններում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "science"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Byurakan visit; բաց մնալ unresolved scientific questions contrasts with a physically open gate."
+  },
+  {
+    "id": "intl-v2-hy-puns-101",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Սևանի ալիքները միտքս տարան։ Ընկերս հարցրեց՝ հետադարձ տոմսն էլ տվեցի՞ր, թե՞ մենակ պիտի վերադառնաս։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Sevan waves; միտքը տանել means captivating someone, literalized as transporting the mind so that it needs a return ticket."
+  },
+  {
+    "id": "intl-v2-hy-puns-102",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Վերնիսաժում կավե սափորը լավ ուսեր ուներ։ Առաջարկեցի պայուսակս կրի, բայց պարզվեց՝ գեղեցկությունն աշխատանքային պարտավորություն չէ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Vernissage pottery; a vessel's shoulders become human shoulders capable of carrying a bag."
+  },
+  {
+    "id": "intl-v2-hy-puns-103",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Գյումրիի դարբնի մտքերը կոփված էին։ Խնդրեցի բացատրել՝ առանց մուրճը ձեռքին պահելու, որ ես էլ հանգիստ հասկանամ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Gyumri smithing; կոփված means tempered metal and well-honed character or thinking."
+  },
+  {
+    "id": "intl-v2-hy-puns-104",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Կասկադում լավ կետ ընտրեցի լուսանկարի համար։ Հայերենի ուսուցիչս նայեց ու ասաց՝ ստորակետով էլ կարող էիր շունչ քաշել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Cascade photo; կետ means a point in space and punctuation full stop; a comma becomes an alternate pause."
+  },
+  {
+    "id": "intl-v2-hy-puns-105",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Դիլիջանի ծառերը նոր հագուստ էին հագել։ Ճամպրուկս փակելիս հիշեցի՝ գոնե աշունն ավելորդ բաճկոնի տեղ չի վճարում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dilijan foliage; trees' seasonal հագուստ clothing is treated as actual luggage garments."
+  },
+  {
+    "id": "intl-v2-hy-puns-106",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Լավաշը բացեցի, իսկ խոսքս՝ կարճ կապեցի։ Սեղանի մոտ ոչ ոք չէր ուզում, որ երկուսն էլ երկար լինեն։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "food"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Lavash meal; երկար applies to long bread and long speech; կարճ կապել means speaking briefly."
+  },
+  {
+    "id": "intl-v2-hy-puns-107",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Դուդուկի ձայնը հոգուս դիպավ։ Փորձեցի հասցեն ճշտել՝ հաջորդ անգամ երաժշտությունն ուղիղ այնտեղ ուղարկելու համար։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Duduk music; հոգուն դիպչել emotionally touching someone becomes physical delivery to an address."
+  },
+  {
+    "id": "intl-v2-hy-puns-108",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Հայերեն տառերի միջև տարածք թողեցի։ Հիմա բառերը բողոքում են՝ հարևանին բարևելու համար պիտի երկար քայլեն։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian letter spacing; տարածք typographic space becomes a physical neighborhood distance."
+  },
+  {
+    "id": "intl-v2-hy-puns-109",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Բյուրականում իմ հարցը ծանր էր։ Աստղագետը ժպտաց՝ աստղերի զանգվածից հետո դա տանելի բեռ է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "science"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Byurakan; ծանր հարց difficult question becomes physical mass compared with stellar mass."
+  },
+  {
+    "id": "intl-v2-hy-puns-110",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Մատենադարանի նյութերը ձեռքիս տակ էին։ Ամենակարևոր թուղթը հենց արմունկիս տակ էր մնացել, դրա համար էլ չէի գտնում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Manuscript research papers; ձեռքիս տակ readily available becomes literally hidden beneath the arm."
+  },
+  {
+    "id": "intl-v2-hy-puns-111",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Քոչարիի փորձին քայլս կոշտ էր։ Ուսուցիչը խնդրեց մեղմացնել, ես սկսեցի ավելի փափուկ կոշիկ փնտրել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Kochari instruction; կոշտ stiff dancing and physical shoe hardness lead to the wrong correction."
+  },
+  {
+    "id": "intl-v2-hy-puns-112",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Վարդավառի խաղից առաջ պայմանները պարզ էին։ Հետո ջուրը թղթի վրա տարածվեց, ու պարզությունը դարձավ գեղարվեստական։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Agreed Vardavar game; պարզ clear rules and clear legibility are undermined differently by water."
+  },
+  {
+    "id": "intl-v2-hy-puns-113",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Վերնիսաժի գորգի նախշը խոսուն էր։ Հյուրերը գնացին, իսկ նա շարունակեց սենյակին բան պատմել առանց ձայնի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Vernissage carpet; խոսուն expressive visual design is imagined as a continuously speaking storyteller."
+  },
+  {
+    "id": "intl-v2-hy-puns-114",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Գյումրիի երկաթե նախշը ձեռք էր խնդրում։ Ես բարևեցի, վարպետը պարզաբանեց՝ աշխատանքն ավարտելու օգնություն է պետք։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Gyumri workshop; ձեռք asking for a helping hand is mistaken for a greeting hand."
+  },
+  {
+    "id": "intl-v2-hy-puns-115",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Կասկադի տեսարանից աչքերս բացվեցին։ Ընկերս ասաց՝ լավ է, հիմա սանդուղքն էլ կտեսնես։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Cascade view; աչքերը բացվել gaining realization becomes literal eye-opening for safe navigation."
+  },
+  {
+    "id": "intl-v2-hy-puns-116",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Դիլիջանի անտառում հանգիստ շունչ քաշեցի։ Ընկերս խնդրեց իրեն էլ մի քիչ թողնել, երկար ենք քայլելու։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dilijan air; շունչ քաշել take a breath is treated as drawing from a limited shared supply."
+  },
+  {
+    "id": "intl-v2-hy-puns-117",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Լավաշի բաժինը մեծ էր։ Խոհարարը խոստացավ փոքրացնել, բայց ես վարչական վերակազմավորում չէի խնդրել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "food"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Lavash serving; բաժին means a food portion and an organizational department, triggering reorganization language."
+  },
+  {
+    "id": "intl-v2-hy-puns-118",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Դուդուկի նոտաները կարդացի, բայց գործը տեղից չշարժվեց։ Երաժիշտը հիշեցրեց՝ այս գրքին պետք է նաև շնչով թերթել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Duduk sheet music; reading and turning pages become breath-driven performance rather than silent reading."
+  },
+  {
+    "id": "intl-v2-hy-puns-119",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Հայերեն խմբագրիչը կետ դրեց իմ վեճին։ Խոսքս չավարտվեց, պարզապես նախադասությունը կարճացավ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian punctuation software; կետ դնել means ending a dispute and literally inserting a full stop."
+  },
+  {
+    "id": "intl-v2-hy-puns-120",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Մատենադարանի ցուցադրությունը մեծ հետք թողեց։ Տանը կոշիկներս ստուգեցի՝ պարզվեց, պատմությունը ցեխից ավելի համառ է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Matenadaran visit; հետք թողնել leaving an impression contrasts with literal muddy footprints."
+  },
+  {
+    "id": "intl-v2-hy-puns-121",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Մատենադարանի մասին պատմության վերջում կետ դրեցի։ Փոքրիկս կողքին ծով նկարեց՝ ասաց, կենդանուն չոր տեղում մի թող։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian manuscript story; կետ means a punctuation point and a whale, motivating a drawn sea."
+  },
+  {
+    "id": "intl-v2-hy-puns-122",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Վերնիսաժի կավե բաժակը բերանբաց էր մնացել։ Ես էլ՝ գինը լսելուց հետո. առաջին իսկ պահից ընդհանուր բան գտանք։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "money"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Vernissage pottery; բերանբաց literally open-mouthed describes the cup and figurative amazement in the buyer."
+  },
+  {
+    "id": "intl-v2-hy-puns-123",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Գյումրիի վարպետն ասաց՝ աշակերտիս թիկունքին պիտի կանգնենք։ Բոլորս մոտեցանք, ու տղան խնդրեց գոնե լույսի ճանապարհը բաց թողնել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Gyumri craft workshop; թիկունքին կանգնել means supporting someone, literalized as a group standing behind an apprentice and blocking the light."
+  },
+  {
+    "id": "intl-v2-hy-puns-124",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Կասկադի մասին գրքիս վերնագիրը շատ բարձր դրեցի։ Խմբագիրը խնդրեց առաջին էջին վերադարձնել, տանիքում ընթերցող քիչ կլինի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Cascade book title; բարձր title placement or lofty ambition becomes literal placement on a roof."
+  },
+  {
+    "id": "intl-v2-hy-puns-125",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Դիլիջանի անտառում ճանապարհը բռնեցի։ Ընկերս զգուշացրեց՝ ամուր մի բռնիր, ուրիշներն էլ պիտի անցնեն։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dilijan walk; ճանապարհը բռնել means taking a road, literalized as physically gripping it."
+  },
+  {
+    "id": "intl-v2-hy-puns-126",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Լավաշի համով խոսեցինք։ Վերջում այնքան համով ստացվեց, որ զրույցին էլ պանիր առաջարկեցի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "food"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Lavash discussion; համով means tasty food and engaging speech, inviting cheese with the conversation."
+  },
+  {
+    "id": "intl-v2-hy-puns-127",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Դուդուկահարն իր գործին հոգի էր տալիս։ Գործիքը գոհ էր, բայց պատյանը խնդրեց՝ իրեն էլ երբեմն բարևեն։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Duduk craft; հոգի տալ bringing life to work personifies the instrument and its neglected case."
+  },
+  {
+    "id": "intl-v2-hy-puns-128",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Հայերեն տառարվեստի դասին միտքս թև առավ։ Թռչնագրիս տակ վանդակ չնկարեցի՝ առաջին հաջողությունը պետք չէ փակել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian bird-letter art; միտքը թև առնել inspiration takes literal wings in bird-shaped calligraphy, unlike the baseline transport joke."
+  },
+  {
+    "id": "intl-v2-hy-puns-129",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Բյուրականում աստղագետն ասաց՝ այս աստղը մեզ մոտ է։ Ես զարմացա՝ այդքան մոտ ծանոթ ունենք ու երբեք հյուր չենք գնում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "science"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Byurakan; մոտ means nearby spatially and a close acquaintance, shifting astronomical proximity into friendship."
+  },
+  {
+    "id": "intl-v2-hy-puns-130",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Քոչարիի շարքում կողմ բռնեցի։ Ուսուցիչը խնդրեց՝ վեճ դեռ չկա, ուղղակի կողքիդ պարողի ձեռքը բռնիր։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Kochari; կողմ բռնել means taking sides in a dispute, confused with holding the adjacent dancer."
+  },
+  {
+    "id": "intl-v2-hy-puns-131",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Սևանում հորիզոնը լայն էր։ Ընկերս ասաց՝ մտահորիզոնդ էլ լայնացրու։ Ես մի քայլ հետ գնացի՝ ավելի շատ տեղավորվի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Sevan horizon; մտահորիզոն mental horizons and physical horizon share the expansion metaphor, answered with a camera-like step back."
+  },
+  {
+    "id": "intl-v2-hy-puns-132",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Մատենադարանի ձեռագրի տողատակն էի փնտրում։ Ուղեկցորդն ասաց՝ թղթի տակ նայելով գաղտնի միտք չես գտնի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Manuscript interpretation; տողատակ means subtext or what lies beneath a line, literally searched under the page."
+  },
+  {
+    "id": "intl-v2-hy-puns-133",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Վերնիսաժում գլխով արեցի վաճառողին։ Նա ժպտաց, բայց ասաց՝ այս անգամ վճարումն էլ դրամով անենք։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "money"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Vernissage purchase; գլխով անել nodding assent is humorously offered as if doing or paying something with one's head."
+  },
+  {
+    "id": "intl-v2-hy-puns-134",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Գյումրիի դարպասը լավ փակվեց։ Վարպետն ասաց՝ հիմա հարցն էլ փակենք։ Բայց ես դեռ դրսում էի կանգնած։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Gyumri gate; հարցը փակել settling an issue contrasts with a literally closed gate excluding the customer."
+  },
+  {
+    "id": "intl-v2-hy-puns-135",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Կասկադի աստիճաններն ինձ դաս տվեցին։ Գնահատականը ոտքերս գրեցին, և այն բարձրաձայն կարդալ պետք չէր։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Cascade climb; դաս տալ teaching a lesson is embodied as legs recording the result of exertion."
+  },
+  {
+    "id": "intl-v2-hy-puns-136",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Դիլիջանի հուշանվերի խանութում աչքս կպավ մի բաժակի։ Խանութպանը փաթեթավորեց բաժակը, աչքս խնդրեց ինձ մոտ պահել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dilijan souvenir; աչքը կպչել means a gaze being caught by something, literalized as an eye stuck to a cup."
+  },
+  {
+    "id": "intl-v2-hy-puns-137",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Լավաշի սեղանի շուրջ խոսքիս աղը շատ եղավ։ Տատիկը խնդրեց ջուր բերել՝ միտքն էլ հեշտ մարսվի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "food"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Lavash meal; խոսքի աղ wit or flavor in speech is treated as literal salt needing water."
+  },
+  {
+    "id": "intl-v2-hy-puns-138",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Դուդուկի մեղեդին ներսս տաքացրեց։ Սենյակի ջեռուցումը դրանից հետո իրեն մի քիչ ավելորդ զգաց։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Duduk listening; ներսը տաքացնել emotional warmth becomes heating that competes with the radiator."
+  },
+  {
+    "id": "intl-v2-hy-puns-139",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Հայերեն «օ» տառը կլոր նկարեցի։ Ուսուցիչն ասաց՝ խոսքն այդքան պտտեցնել պետք չէ, մնացած տառերն էլ գրիր։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian round letter օ; խոսքը պտտեցնել talking around a subject becomes circling the same written letter."
+  },
+  {
+    "id": "intl-v2-hy-puns-140",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Բյուրականում հարցս աստղերին հասցրեցի։ Հիմա սպասում եմ առաքման ծանուցմանը՝ ուղերձը շատ հեռու գնաց։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "science"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Byurakan; հասցնել communicate or bring to a point becomes delivering a parcel to stars."
+  },
+  {
+    "id": "intl-v2-hy-puns-141",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Վարդավառին ընկերս ջրից չոր դուրս եկավ։ Պարզվեց՝ պարզապես համաձայնել էր լուսանկարել մեր խաղը, ոչ թե մասնակցել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Consent-respecting Vardavar; ջրից չոր դուրս գալ normally means escaping consequences, here literally staying dry as a photographer."
+  },
+  {
+    "id": "intl-v2-hy-puns-142",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Վերնիսաժի փայտե տուփը սիրտս շահեց։ Տանը բացեցի՝ տեսնեմ որտեղ է պահել, ներսում միայն իմ կոճակներն էին։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Vernissage box; սիրտ շահել winning someone's heart is imagined as physically storing the heart in a box."
+  },
+  {
+    "id": "intl-v2-hy-puns-143",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Գյումրիի դարբնի առաջարկը երկաթյա տրամաբանություն ուներ։ Փորձեցի հակաճառել, բայց գործիքներ չէի բերել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Gyumri smith; երկաթյա տրամաբանություն iron logic becomes physical metal requiring tools to counter."
+  },
+  {
+    "id": "intl-v2-hy-puns-144",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Կասկադ բարձրանալիս հոգիս տեղն ընկավ։ Ոտքերս խնդրեցին տեղն ասեմ՝ իրենք էլ նստեն։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Cascade; հոգին տեղն ընկնել feeling reassured is treated as finding an actual resting place."
+  },
+  {
+    "id": "intl-v2-hy-puns-145",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Դիլիջանի անտառում արմատական որոշում ընդունեցի։ Ծառերի մեծ մասը համաձայն էր, ճյուղերը դեռ առանձին կարծիք ունեին։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dilijan forest; արմատական means fundamental or radical and contains արմատ root, giving roots and branches political voices."
+  },
+  {
+    "id": "intl-v2-hy-puns-146",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Լավաշ պատրաստելն արդեն ձեռքիցս գալիս է։ Միայն խմորն է համառորեն ձեռքիս մնում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "food"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Lavash preparation; ձեռքից գալ means being capable of something, contrasted with sticky dough physically remaining on the hand."
+  },
+  {
+    "id": "intl-v2-hy-puns-147",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Դուդուկի մասին խոսքս մեղեդային էր։ Ընկերս խնդրեց գոնե գնի մասին հատվածը առանց երկար նոտաների ասել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Duduk discussion; մեղեդային musical prose is taken as actual sung notes lengthening a practical price explanation."
+  },
+  {
+    "id": "intl-v2-hy-puns-148",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Հայերեն նախադասության վերջը չգտա։ Պարզվեց՝ ստորակետերն այնքան հյուրընկալ էին, որ բոլոր մտքերին ներս էին թողել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian punctuation; a sentence's end becomes a destination delayed by hospitable commas admitting more ideas."
+  },
+  {
+    "id": "intl-v2-hy-puns-149",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Բյուրականում աստղադիտակն ուղղեցինք երկնքին։ Ես էլ խոսքս ուղղեցի նրան, բայց առաջինի պատասխանը շատ ավելի լուսավոր էր։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "science"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Byurakan; ուղղել means physically pointing an instrument and directing speech to someone or something."
+  },
+  {
+    "id": "intl-v2-hy-puns-150",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Գորգագործ վարպետը նոր միտք հյուսեց։ Խնդրեցի չափերը նշել՝ տեսնեմ մեր սենյակում քանի գաղափար կտեղավորվի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian carpet workshop; միտք հյուսել weaving a thought becomes weaving a room-sized physical object."
+  },
+  {
+    "id": "intl-v2-hy-puns-151",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Սևանի ափին ընկերոջս տրամադրությունը բարձրացավ։ Ասացի՝ լճին էլ զգուշացրու, որ չափման սարքերը չշփոթվեն։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Sevan; տրամադրություն բարձրանալ mood rising is contrasted with measurable lake level."
+  },
+  {
+    "id": "intl-v2-hy-puns-152",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Վերնիսաժի զարդը աչք էր շոյում։ Ձեռքս մեկնեցի՝ թող իրեն էլ բաժին հասնի, վաճառողն անմիջապես գինը հիշեցրեց։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "money"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Vernissage jewelry; աչք շոյել pleasing the eye is literalized as a caress the hand also wants."
+  },
+  {
+    "id": "intl-v2-hy-puns-153",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Գյումրիի դարբինը պողպատե համբերություն ուներ։ Ես իմը կողքին դրեցի՝ գուցե նյութը վարակիչ լինի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Gyumri craft; պողպատե համբերություն steely patience becomes a transferable material property."
+  },
+  {
+    "id": "intl-v2-hy-puns-154",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Կասկադի լուսանկարս բարձր որակ ուներ։ Ընկերս ասաց՝ ներքևում նկարածներդ էլ պետք է այդքան բարձր լինեն։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Cascade photography; բարձր որակ high quality is confused with the elevation where a photograph is taken."
+  },
+  {
+    "id": "intl-v2-hy-puns-155",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Դիլիջանի արահետն ինձ բացեց նոր աշխարհ։ Ես քարտեզը փակեցի՝ միաժամանակ երկու բաց բան պահելը դժվար էր։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dilijan walk; աշխարհ բացել revealing a new world is compared with physically opening a map."
+  },
+  {
+    "id": "intl-v2-hy-puns-156",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Լավաշը բաժանելիս ձեռքս դողաց։ Ընկերս ասաց՝ որոշումդ պինդ պահիր, բայց հացը շատ մի սեղմիր։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "food"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Lavash serving; պինդ պահել being firm in a decision becomes physically gripping bread too hard."
+  },
+  {
+    "id": "intl-v2-hy-puns-157",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Դուդուկի ձայնը ծավալվեց սենյակում։ Բացեցի պատուհանը՝ մտածեցի, թե պահարանին արդեն տեղ չի մնա։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Duduk sound; ծավալվել spreading sonically is taken as occupying physical storage volume."
+  },
+  {
+    "id": "intl-v2-hy-puns-158",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Հայերեն թռչնագիրս թռիչք ուներ։ Խմբագիրը խնդրեց իջեցնել՝ ստորագրության համար վայրէջք է պետք։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian bird-letter art; թռիչք expressive flourish becomes literal flight needing a landing for a signature."
+  },
+  {
+    "id": "intl-v2-hy-puns-159",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Բյուրականում աստղի լույսը հասավ մեզ։ Ես էլ իմաստին հասա, բայց մի քիչ ուշ. երկու ճանապարհներն էլ երկար էին։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "science"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Astronomy; հասնել means physical arrival and reaching understanding, comparing light travel with comprehension."
+  },
+  {
+    "id": "intl-v2-hy-puns-160",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Մատենադարանի նյութերը գլխումս տեղավորեցի։ Գլխարկս հետո նեղ թվաց. երևի լրացուցիչ տարեթվեր էի վերցրել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Manuscript study; գլխում տեղավորել absorbing knowledge becomes physically filling the head until a hat feels tight."
+  },
+  {
+    "id": "intl-v2-hy-puns-161",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Քոչարիի փորձին ընկերոջս թև տվեցի։ Նա խնդրեց պարից հետո հիշեցնել՝ բաճկոնի մյուս թևն էլ է պետք։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Kochari; թև տալ offering an arm or encouragement echoes a garment sleeve, թև."
+  },
+  {
+    "id": "intl-v2-hy-puns-162",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Վարդավառի խաղի մասին խոսելիս ջուր էինք ծեծում։ Ընկերս դույլը բերեց՝ գոնե խոսակցությունը գործնական դարձնենք։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Vardavar planning; ջուր ծեծել means idle talk, literalized as beating or stirring actual water in a bucket."
+  },
+  {
+    "id": "intl-v2-hy-puns-163",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Վերնիսաժի բաժակին թեթև գին էի փնտրում։ Վաճառողը թեթև բաժակ տվեց. մեկ պայմանս, գոնե, կատարեց։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "money"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Vernissage cup; թեթև price as affordable and physically light cup satisfy different interpretations of lightness."
+  },
+  {
+    "id": "intl-v2-hy-puns-164",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Գյումրիի վարպետը խնդրեց ձեռք չտալ աշխատանքին։ Ես հեռվից միայն գովեցի՝ այդ օգնությունը մատնահետք չի թողնում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Gyumri workshop; ձեռք տալ means touching or interfering, contrasted with offering support without fingerprints."
+  },
+  {
+    "id": "intl-v2-hy-puns-165",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Կասկադի վերևից Երևանը ափիս մեջ էր։ Ընկերս խնդրեց ամուր պահել, ինքը ներքևում հանդիպման է գնում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Cascade panorama; ափի մեջ as plainly visible or within grasp becomes literally holding the city in a palm."
+  },
+  {
+    "id": "intl-v2-hy-puns-166",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Դիլիջանի անտառում բառի արմատը գտանք։ Հիմա նախադասությունը վերատնկելու համար ավելի մեծ տետր ենք փնտրում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dilijan language walk; բառի or խոսքի արմատ linguistic root becomes a plant requiring replanting space."
+  },
+  {
+    "id": "intl-v2-hy-puns-167",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Լավաշի վերջին կտորը սեղանի կենտրոնում մնաց։ Բոլորը կենտրոնացած էին. առաջին անգամ բառը այդքան ուտելի նշանակություն ուներ։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "food"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Lavash sharing; կենտրոն and կենտրոնացած link physical center and concentrated attention on the final piece."
+  },
+  {
+    "id": "intl-v2-hy-puns-168",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Դուդուկի դասից հետո միտքս բացվեց։ Ուսուցիչը խնդրեց հաջորդ անգամ գործիքի անցքերն այդպես բոլորը չբացել։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Duduk lesson; միտքը բացվել understanding opens, contrasted with physically uncovering all finger holes at once."
+  },
+  {
+    "id": "intl-v2-hy-puns-169",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Հայերեն տառերի շարքը կարգի բերեցի։ «Եվ»-ը բողոքեց՝ միշտ իրեն միացնելու գործն է բաժին հասնում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "school"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Armenian writing; եվ/և as the conjunction 'and' is personified as responsible for joining other elements; no alphabet-count claim."
+  },
+  {
+    "id": "intl-v2-hy-puns-170",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Բյուրականում գիտելիքս ընդարձակվեց։ Ճամպրուկս չհամաձայնեց՝ հուշանվերների համար նույն հին սահմաններն էր պահում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "science"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Byurakan learning; ընդարձակվել expanding knowledge is contrasted with a suitcase's fixed physical capacity."
+  },
+  {
+    "id": "intl-v2-hy-puns-171",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Մատենադարանի ձեռագրերը լեզու առան ուղեկցորդի պատմությամբ։ Իմ հեռախոսն էլ ձայն հանեց ու վատ պահի միացավ քննարկմանը։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "tech"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Matenadaran tour; լեզու առնել finding a voice or becoming expressive is interrupted by a phone's literal sound."
+  },
+  {
+    "id": "intl-v2-hy-puns-172",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Գորգի գույները իրար բռնում էին։ Վարպետը հանգստացրեց՝ կռիվ չկա, պարզապես լավ համադրություն է։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Carpet colors; իրար բռնել means matching or fitting together and suggests grabbing each other in a fight."
+  },
+  {
+    "id": "intl-v2-hy-puns-173",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Սևանի ափին խաղաղություն գտա։ Տուն բերելու համար պայուսակ բացեցի, բայց քամին ասաց՝ այս ապրանքը տեղում է օգտագործվում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Sevan tranquility; խաղաղություն գտնել finding peace becomes acquiring a portable object."
+  },
+  {
+    "id": "intl-v2-hy-puns-174",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Վերնիսաժի տուփը սիրեցի, որովհետև լավ էր փակվում։ Վաճառողն ասաց՝ բաց մարդ ես, բայց փակ բաներն ես գնահատում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "family"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Vernissage crafted box; բաց մարդ means an open or frank person, contrasted with a physically closed box."
+  },
+  {
+    "id": "intl-v2-hy-puns-175",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Գյումրիի արհեստանոցում բառերս կշռադատեցի։ Վարպետը խնդրեց կշեռքի վրա ուրիշ բան չդնել՝ իր երկաթը հաշիվ ունի։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "work"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Gyumri workshop; կշռադատել weighing words figuratively becomes using the smith's actual scales."
+  },
+  {
+    "id": "intl-v2-hy-puns-176",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Կասկադում մտքիս նոր պատուհան բացվեց։ Ընկերս խորհուրդ տվեց փակել՝ այդ քամուն գաղափարները հեշտ կթռչեն։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "travel"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Cascade; a new mental պատուհան window of perspective becomes a physical opening in the wind."
+  },
+  {
+    "id": "intl-v2-hy-puns-177",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Դիլիջանի թանգարանից դուրս եկա հարուստ տպավորություններով։ Սրճարանում պարզվեց՝ այդ հարստությունը դեռ քարտով չի վճարվում։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "money"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Dilijan museum; հարուստ rich impressions are contrasted with spendable monetary wealth."
+  },
+  {
+    "id": "intl-v2-hy-puns-178",
+    "collection": "hy-am-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Լավաշի շուրջ զրույցը համ ու հոտ ստացավ։ Տատիկը ժպտաց՝ լավ է, բայց խոհանոցից էլ մի բան բերեք, խոսքերով չենք կշտանա։",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns",
+      "food"
+    ],
+    "cultural_note": "AI-authored Eastern Armenian original draft; no native-speaker review claimed. Lavash meal; համ ու հոտ engaging liveliness of a conversation becomes literal taste and smell that cannot feed guests."
+  }
+]

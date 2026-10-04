@@ -1,0 +1,135 @@
+{
+  "catalog_counts": {
+    "de-DE": 1800,
+    "es-ES": 1800,
+    "fr-FR": 1800,
+    "hy-AM": 1800,
+    "it-IT": 1800,
+    "nb-NO": 1800
+  },
+  "checks": [
+    {
+      "locale": "es-ES",
+      "browse_count": 1800,
+      "categories": {
+        "wholesome": 200,
+        "office-proper": 200,
+        "dad": 200,
+        "kid-safe": 200,
+        "nerd": 200,
+        "surreal": 200,
+        "dark": 200,
+        "edgy": 200,
+        "puns": 200
+      },
+      "random_language": "es",
+      "unicode_search": "Sant",
+      "search_count": 1800
+    },
+    {
+      "locale": "fr-FR",
+      "browse_count": 1800,
+      "categories": {
+        "wholesome": 200,
+        "office-proper": 200,
+        "dad": 200,
+        "kid-safe": 200,
+        "nerd": 200,
+        "surreal": 200,
+        "dark": 200,
+        "edgy": 200,
+        "puns": 200
+      },
+      "random_language": "fr",
+      "unicode_search": "Pour",
+      "search_count": 200
+    },
+    {
+      "locale": "de-DE",
+      "browse_count": 1800,
+      "categories": {
+        "wholesome": 200,
+        "office-proper": 200,
+        "dad": 200,
+        "kid-safe": 200,
+        "nerd": 200,
+        "surreal": 200,
+        "dark": 200,
+        "edgy": 200,
+        "puns": 200
+      },
+      "random_language": "de",
+      "unicode_search": "Unser",
+      "search_count": 170
+    },
+    {
+      "locale": "hy-AM",
+      "browse_count": 1800,
+      "categories": {
+        "wholesome": 200,
+        "office-proper": 200,
+        "dad": 200,
+        "kid-safe": 200,
+        "nerd": 200,
+        "surreal": 200,
+        "dark": 200,
+        "edgy": 200,
+        "puns": 200
+      },
+      "random_language": "hy",
+      "unicode_search": "Լավաշի",
+      "search_count": 30
+    },
+    {
+      "locale": "it-IT",
+      "browse_count": 1800,
+      "categories": {
+        "wholesome": 200,
+        "office-proper": 200,
+        "dad": 200,
+        "kid-safe": 200,
+        "nerd": 200,
+        "surreal": 200,
+        "dark": 200,
+        "edgy": 200,
+        "puns": 200
+      },
+      "random_language": "it",
+      "unicode_search": "Befana",
+      "search_count": 61
+    },
+    {
+      "locale": "nb-NO",
+      "browse_count": 1800,
+      "categories": {
+        "wholesome": 200,
+        "office-proper": 200,
+        "dad": 200,
+        "kid-safe": 200,
+        "nerd": 200,
+        "surreal": 200,
+        "dark": 200,
+        "edgy": 200,
+        "puns": 200
+      },
+      "random_language": "nb",
+      "unicode_search": "Hyttas",
+      "search_count": 25
+    }
+  ],
+  "related_countries": {
+    "AT": {
+      "language": "de",
+      "count": 407
+    },
+    "SE": {
+      "language": "nb",
+      "count": 180
+    },
+    "FI": {
+      "language": "nb",
+      "count": 180
+    }
+  },
+  "incompatible_selection_count": 0
+}

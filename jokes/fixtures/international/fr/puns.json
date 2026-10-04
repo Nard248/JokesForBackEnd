@@ -1,0 +1,2291 @@
+[
+  {
+    "id": "intl-v2-fr-puns-001",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "J'ai donné ma langue au chat. Il l'a utilisée pour réclamer du thon avec un accent impeccable.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-002",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La baguette mène le repas à la baguette. Le fromage commence à réclamer des élections.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-puns-003",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "J'avais un bouchon dans ma journée lyonnaise. Il servait des quenelles.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-puns-004",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le crêpier n'a pas de fortune. Il possède quand même une jolie galette.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-puns-005",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le bretzel a dénoué l'affaire. L'enquête manquait surtout de beurre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-puns-006",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La socca est tombée dans les pois. Le pois chiche réclame une précision orthographique.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-puns-007",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le roi de la galette prend ses fonctions à cœur. Les autres prennent la frangipane.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-008",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le cahier Seyès garde la ligne. Mon écriture fait régulièrement des écarts.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school",
+      "puns"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-puns-009",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le TER m'a remis sur les rails. Mon agenda préférait pourtant dérailler en douceur.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-puns-010",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le joueur de pétanque marque un point. Son collègue voudrait qu'il revienne à la ligne.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-puns-011",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le financier ne manque pas de fonds. Il manque surtout d'amandes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-puns-012",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "J'ai pris la mouche. Le train m'a demandé un supplément pour animal de compagnie.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-013",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le CERFA réclame des pièces. Mon puzzle administratif en a déjà beaucoup trop.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-puns-014",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le métro m'offre une correspondance. Je préférerais une lettre d'amour au prochain couloir.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-puns-015",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "observ",
+    "text": "À Guérande, mon voisin met son grain de sel. Il a l'avantage de travailler à la source.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-puns-016",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "J'ai posé un lapin au restaurateur. Il m'a demandé si je souhaitais aussi une garniture.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-017",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le boulanger a du pain sur la planche. Il aimerait parfois y trouver ses clés.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-puns-018",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La traboule est une issue de secours pour les conversations trop longues.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-puns-019",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ma galette est complète. Mon explication reste en cours de garniture.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-puns-020",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Les colombages donnent du corps à la maison. Le loyer s'occupe de lui donner du poids.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-puns-021",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "observ",
+    "text": "À la Chandeleur, mes idées sautent aux yeux. Heureusement, la crêpe a raté les lunettes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-022",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le Bescherelle prend tous les temps. Moi, je n'ai que dix minutes avant le contrôle.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school",
+      "puns"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-puns-023",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "J'ai demandé une voie de recours. La SNCF m'a indiqué le quai voisin.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-puns-024",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "observ",
+    "text": "À la pétanque, je vise juste. C'est la boule qui négocie un compromis.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-puns-025",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le millefeuille a tourné la page. La crème n'a pas suivi le mouvement.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-puns-026",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "J'ai mis les pieds dans le plat. Le serveur a immédiatement revu son plan de table.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-027",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le dossier est classé sans suite. Mon feuilleton administratif perd son diffuseur.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-puns-028",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "observ",
+    "text": "Au Louvre, j'ai perdu le fil. Les tapisseries ont refusé de me prêter le leur.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-puns-029",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le pont du Gard prend l'eau très au sérieux. Il en a fait toute une carrière.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-puns-030",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La tradition tient à peu de chose : farine, eau, sel, levure et beaucoup d'obstination croustillante.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-puns-031",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "J'ai cassé du sucre sur le dos du pâtissier. Il m'a envoyé sa facture de nettoyage.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-032",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La crêpière retourne sa veste. Elle avait oublié de retirer le tablier plein de caramel.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-puns-033",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le bouchon lyonnais ne ralentit jamais mon appétit. Seulement ma sortie de table.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-puns-034",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le kougelhopf tourne autour du pot. Il préfère laisser un trou au milieu.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-puns-035",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La socca a du pois. La diététicienne demande qu'on précise le chiche.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-puns-036",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ma couronne est en carton. Mon autorité doit rester au sec.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-037",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La dictée m'a remis les points sur les i. Les virgules attendent un autre rendez-vous.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school",
+      "puns"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-puns-038",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Mon TGV a un train de vie rapide. Mon portefeuille préfère la marche.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-puns-039",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "J'ai fait un carreau à la pétanque. Le vitrier refuse toujours de venir admirer.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-puns-040",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La tarte Tatin renverse la vapeur, mais surtout les pommes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-puns-041",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Je broie du noir. Mon imprimeur me félicite pour mon autonomie.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-042",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "FranceConnect me met en relation avec moi-même. Nous cherchons un terrain d'entente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-puns-043",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le Pont-Neuf garde son nom. Il a manifestement de bons produits d'entretien lexical.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-puns-044",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Les salines de Guérande ont du sel dans leur histoire. Elles n'ont pas besoin d'en rajouter.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-puns-045",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La boulangerie a perdu le nord. Toutes ses traditions restent pourtant bien orientées dans le panier.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-puns-046",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "J'ai pris le taureau par les cornes. Il m'a conseillé un métier plus sédentaire.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-047",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le beurre salé prend la parole. Il met tout le monde d'accord sur le fondant.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-puns-048",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le funiculaire de Fourvière élève le débat sans demander l'avis des passagers.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-puns-049",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le pain d'épices est plein d'esprit. Surtout quand la cannelle s'en mêle.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-puns-050",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Sur la Promenade des Anglais, je fais le pas. Mon accent reste assis.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-puns-051",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La fève a pris la clé des champs. La galette a porté plainte pour vacance du pouvoir.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-052",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le cahier Seyès fait bonne impression. Mon écriture se charge de la suite.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school",
+      "puns"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-puns-053",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le Navigo me donne le passage. Il reste très discret sur le passage à l'âge adulte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-puns-054",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Je suis à côté de la plaque. À la pétanque, on appelle ça beaucoup trop loin du cochonnet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-puns-055",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le flan parisien me fait trembler. Il sait retourner la situation émotionnelle.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-puns-056",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "J'ai le cafard. Il refuse de contribuer au loyer.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-057",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le CERFA demande ma situation. Je lui ai envoyé un plan de métro et mes excuses.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-puns-058",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Les bouquinistes tiennent leurs histoires à quai. Aucune n'a besoin de billet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-puns-059",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le phare de Cordouan a les idées claires. Il les partage toutes les quelques secondes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-puns-060",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "J'ai coupé court à la baguette. Le sandwich m'a demandé de développer.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-puns-061",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "J'ai avalé ma fierté. Le pharmacien cherche encore la notice digestive.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-062",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le fest-noz m'a fait tourner la tête. Mes pieds avaient commencé le débat.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-puns-063",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La Saône suit son cours. Les étudiants aimeront son assiduité.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-puns-064",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le bretzel me noue l'estomac. Il a pris son travail à l'envers.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-puns-065",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La chaise bleue a trouvé sa place au soleil. Mon CV veut son adresse.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-puns-066",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le roi de la galette ne fait pas de quartier. Il coupe directement des huitièmes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-067",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Mon stylo plume a pris son envol. La dictée se termine au crayon.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school",
+      "puns"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-puns-068",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le TER assure la liaison. Mes phrases auraient besoin du même service.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-puns-069",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Mon cochonnet a pris le large. Le terrain de pétanque devient une expédition.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-puns-070",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le soufflé a perdu de sa superbe. Il n'a pas perdu une miette de son fromage.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-puns-071",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "J'ai une faim de loup. Le berger m'a proposé un menu végétarien.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-072",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La mairie m'a demandé un état civil. J'ai promis d'être poli au guichet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-puns-073",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "observ",
+    "text": "À Montmartre, je prends de la hauteur. Mes chaussures prennent surtout la parole.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-puns-074",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le Mont-Saint-Michel garde la tête hors de l'eau. Il possède une avance architecturale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-puns-075",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La baguette a rompu le pain avec moi. Notre amitié tient désormais en deux morceaux.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-puns-076",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "J'ai vendu la mèche. Le coiffeur dit que j'aurais dû négocier toute la coupe.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-077",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La galette-saucisse roule pour Rennes. Elle refuse de prendre les virages sans serviette.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-puns-078",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le bouchon a une bonne table. La circulation s'y porte beaucoup mieux.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-puns-079",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le munster se fait sentir. Il n'attend jamais qu'on lui demande son avis.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-puns-080",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "observ",
+    "text": "Au Cours Saleya, les fleurs ont bonne mine. Le marchand ne vend pas de crayons.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-puns-081",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La crêpe a plié bagage. La confiture a réservé à l'intérieur.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-082",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Mon Bescherelle a de la suite dans les idées : présent, imparfait, passé simple.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school",
+      "puns"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-puns-083",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le TGV me transporte. Mon roman préfère le faire sans contrôle de billet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-puns-084",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le coureur du Tour a un coup de pompe. Son mécanicien propose une lecture littérale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-puns-085",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La chouquette a pris du sucre sur le dos. Elle estime que c'est plutôt un compliment.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-puns-086",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "J'ai la tête dans les nuages. La météo m'a demandé de me décaler pour la photo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-087",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le CERFA fait état de mes ressources. Il est resté très sobre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-puns-088",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La Seine a beaucoup de ponts. Elle sait faire le lien sans réunion.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-puns-089",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La dune du Pilat a du sable dans les rouages. Elle appelle ça son activité principale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-puns-090",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le boulanger a mis la main à la pâte. Son téléphone ne l'a pas reconnu ensuite.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-puns-091",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "J'ai jeté l'éponge. Elle a réclamé une mutation vers une cuisine plus calme.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-092",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le kouign-amann est bien en chair. Il préfère qu'on dise en beurre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-puns-093",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La traboule m'a ouvert des portes. Mon réseau professionnel peut attendre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-puns-094",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La tarte flambée brûle les étapes. Elle arrive surtout très vite sur ma table.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-puns-095",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La socca est bonne pâte. Sauf quand on tarde trop à la servir.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-puns-096",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "J'ai tiré les rois. Ils ont demandé qu'on utilise plutôt un couteau à galette.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-097",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La marge du cahier Seyès garde ses distances. Elle connaît trop bien mon écriture.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school",
+      "puns"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-puns-098",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le train a du retard sur moi. Je suis déjà arrivé à la conclusion que j'aurais dû partir plus tôt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-puns-099",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La pétanque manque de piquant. Le cochonnet refuse de devenir hérisson.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-puns-100",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le financier compte pour moi. Surtout quand il en reste un seul.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-puns-101",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "J'ai mis de l'eau dans mon vin. Le sommelier a mis du silence dans sa réponse.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-102",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le dossier est en souffrance. Je propose qu'on lui donne une chaise près du guichet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-puns-103",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La tour Eiffel a bon pied. Les quatre, même après une longue journée.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-puns-104",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le pont du Gard enjambe les siècles. Il ne saute pourtant jamais son entretien.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-puns-105",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Mon pain perdu a retrouvé sa voie dans une poêle. Le GPS sent le beurre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-puns-106",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "J'ai fait chou blanc. Le maraîcher propose un échange contre deux carottes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-107",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La crêperie met tout le monde à plat. Les galettes apprécient cette égalité.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-puns-108",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le Rhône et la Saône ont des atomes crochus. La géographie appelle ça un confluent.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-puns-109",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le kougelhopf manque de centre. Il compense par un solide entourage.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-puns-110",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La Promenade des Anglais marche bien. La circulation piétonne confirme le bilan.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-puns-111",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La galette fait tourner les têtes. La couronne règle ensuite le problème de taille.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-112",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La dictée me laisse sans voix. Ce n'est malheureusement pas ce qu'on évalue.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school",
+      "puns"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-puns-113",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "J'ai pris le train en marche dans la discussion. Le contrôleur demande où commence ma question.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-puns-114",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le joueur de pétanque est sur la touche. Il affirme qu'il analyse simplement le terrain.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-puns-115",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La madeleine me revient. Le reste du paquet, beaucoup moins.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-puns-116",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "J'ai le cœur sur la main. Le médecin m'a demandé de remettre les choses à leur place.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-117",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le CERFA n'a pas le sens de la formule courte. Il préfère ses propres formulations longues.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-puns-118",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le Louvre expose des maîtres. Mon chat trouve étrange qu'ils restent tous dans leur cadre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-puns-119",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "observ",
+    "text": "À Grasse, j'ai du nez. Le parfumeur aimerait surtout que j'aie un choix.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-puns-120",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La baguette se casse la croûte. Elle invente le déjeuner réflexif.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-puns-121",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "J'ai pris mes jambes à mon cou. Le kiné conseille un itinéraire plus classique.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-122",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le far breton voit loin. Il attend surtout le prochain café.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-puns-123",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le funiculaire a le moral en hausse. Cela dépend du sens du trajet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-puns-124",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Mon bretzel a trouvé le nœud du problème. Il était lui-même le goûter.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-puns-125",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La socca chauffe les esprits. Les doigts demandent simplement une minute.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-puns-126",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "observ",
+    "text": "À la Chandeleur, mon projet est bien tourné. La poêle le confirme une fois sur deux.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-127",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le Bescherelle donne le ton. Mon accent choisit parfois une autre musique.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school",
+      "puns"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-puns-128",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Mon Navigo a perdu le fil. Il reste heureusement sans contact.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-puns-129",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La boule de pétanque garde son sang-froid. Son cœur d'acier aide beaucoup.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-puns-130",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le millefeuille a de la profondeur. On la découvre surtout sur la nappe.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-puns-131",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "J'ai un chat dans la gorge. Il réclame un panier avec meilleure ventilation.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-132",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "FranceConnect crée un lien. Mon attachement reste très administratif.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-puns-133",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La fontaine Wallace a de la ressource. Elle préfère la partager au verre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-puns-134",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "observ",
+    "text": "À Carnac, j'ai posé une question de fond. Les menhirs ont gardé leur position.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-puns-135",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le boulanger a levé le doute. Le levain a levé le reste.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-puns-136",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "J'ai tiré mon épingle du jeu. Le tailleur voudrait maintenant récupérer le plateau.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-137",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La galette complète n'a rien à ajouter. Le client trouve toujours le moyen de demander du fromage.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-puns-138",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La traboule fait court. Mon guide compense par une longue explication.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-puns-139",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le pain d'épices a du caractère. Il sent très vite quand on le sous-estime.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-puns-140",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La chaise bleue prend la mer au sérieux. Elle ne lui tourne jamais le dossier.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-puns-141",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La couronne a pris la grosse tête. Le carton demande un cran supplémentaire.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-142",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le cahier Seyès ne dépasse pas les bornes. Il a choisi les lignes comme métier.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school",
+      "puns"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-puns-143",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le TER fait son chemin. Mon GPS tient absolument à commenter.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-puns-144",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le cochonnet mène la danse. Les boules apprennent surtout les rapprochements.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-puns-145",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La tarte Tatin m'a retourné. Je suis devenu partisan des fins croustillantes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-puns-146",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "J'ai coupé les cheveux en quatre. Le coiffeur facture désormais mon raisonnement.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-147",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le CERFA reste dans les clous. Mes lettres dépassent encore des cases.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-puns-148",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La colonne Morris tient l'affiche. Elle en fait même toute sa carrière.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-puns-149",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La mer monte au Mont-Saint-Michel. Les escaliers prennent cela très personnellement.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-puns-150",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La baguette ne mange pas de ce pain-là. Elle tient à sa propre recette.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-puns-151",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "J'ai pris une veste. Le magasin m'a félicité pour ma défaite bien taillée.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-152",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le beurre salé relève le plat. Mon assiette voudrait néanmoins rester sur la table.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-puns-153",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le bouchon me laisse sans faim. C'est sa façon de libérer la circulation.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-puns-154",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le kougelhopf a le sens du vide. Il en fait un argument de présentation.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-puns-155",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La socca part en miettes. Elle développe son réseau de petits morceaux.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-puns-156",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le roi de la galette prend une part du pouvoir. Les autres demandent une part de dessert.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-157",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le stylo plume me fait de l'encre. Il refuse de comprendre que je disais « de l'ombre ».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school",
+      "puns"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-puns-158",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le TGV poursuit sa voie. Mon bilan d'orientation devrait s'en inspirer.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-puns-159",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "observ",
+    "text": "À la pétanque, j'ai du répondant. Surtout après avoir raté mon tir.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-puns-160",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le cannelé a une bonne croûte. Son avis reste un peu dur en surface.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-puns-161",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "J'ai fait la fine bouche. Le dentiste préfère travailler avec une ouverture plus large.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-162",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La mairie attend une pièce originale. Mon monologue au guichet n'a pas été retenu.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-puns-163",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Les bouquinistes ont pignon sur quai. L'immobilier apprécie les variantes littéraires.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-puns-164",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le sel de Guérande pimente la discussion. Le poivre conteste l'usage du verbe.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-puns-165",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le boulanger m'a passé un savon. J'avais confondu son pain de mie et son pain de mousse.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-puns-166",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "J'ai ramené ma fraise au débat. Le pâtissier m'a immédiatement nommé rapporteur du dessert.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-167",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "observ",
+    "text": "À Lille, ma gaufre fourrée a de la répartie. Elle répond toujours « vanille » quand je demande ce qu'elle cache.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-puns-168",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le saint-nectaire travaille son aura. Il sent déjà beaucoup la sainteté du plateau.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-puns-169",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "J'ai mis la puce à l'oreille de mon ordinateur. Il m'a conseillé de consulter le service technique.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-170",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le maire a pris la parole sur la mer. Le correcteur automatique préfère attendre le procès-verbal.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work",
+      "puns"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-puns-171",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "observ",
+    "text": "À Orsay, je prends le temps d'admirer l'horloge. Elle me le rend seconde par seconde.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family",
+      "puns"
+    ],
+    "cultural_note": "Lieu culturel, patrimoine ou pratique de lecture en France comme cadre d’une fiction humoristique originale."
+  },
+  {
+    "id": "intl-v2-fr-puns-172",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Le fest-noz m'a remis d'aplomb. J'ai dû danser longtemps de travers pour y arriver.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-puns-173",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Les lentilles du Puy voient venir le dîner. Elles ont toujours eu une bonne perspective culinaire.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-puns-174",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "Ma dictée manque d'accord. Le chef d'orchestre refuse pourtant de la corriger.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school",
+      "puns"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-puns-175",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La religieuse au chocolat a un faible pour les éclairs. La pâtisserie connaît ses coups de foudre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-puns-176",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "J'ai pris la porte. Le menuisier espère que je reviendrai avec les gonds.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-puns-177",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La tradition n'a pas froid aux yeux. Elle sort tout juste du four et n'a toujours pas de lunettes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food",
+      "puns"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-puns-178",
+    "collection": "fr-fr-everyday",
+    "category": "puns",
+    "format": "oneliner",
+    "text": "La Seine suit le courant. Son conseiller d'orientation n'avait pas proposé beaucoup d'alternatives.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel",
+      "puns"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  }
+]

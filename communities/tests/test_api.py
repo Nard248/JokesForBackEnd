@@ -357,6 +357,50 @@ class DetailTests(CommunityFixture):
         self.assertEqual([c['id'] for c in response.data['creators']], [public.pk])
 
 
+    def test_detail_jokes_follow_the_default_language(self):
+        french = Language.objects.get_or_create(code='fr', defaults={'name': 'French'})[0]
+        foreign = self.joke('espace', self.space)
+        Joke.objects.filter(pk=foreign.pk).update(language=french)
+
+        def ids(params=None):
+            data = self.client.get('/api/v1/communities/space/', params or {}).data
+            return {j['id'] for j in data['trending'] + data['newest']}
+
+        self.assertNotIn(foreign.pk, ids())
+        self.assertIn(foreign.pk, ids({'language': 'fr'}))
+        self.assertIn(foreign.pk, ids({'language': 'all'}))
+
+    def test_detail_query_count_does_not_grow_with_jokes(self):
+        from django.db import connection
+        from django.test.utils import CaptureQueriesContext
+
+        from jokes.models import Country, CultureTag
+        spain = Country.objects.get(code='ES')
+        culture = CultureTag.objects.create(slug='detail-culture', name='Detail culture')
+
+        def tag_all():
+            for joke in Joke.objects.filter(context_tags=self.space):
+                joke.countries.add(spain)
+                joke.culture_tags.add(culture)
+
+        def count():
+            with CaptureQueriesContext(connection) as ctx:
+                response = self.client.get('/api/v1/communities/space/')
+            self.assertEqual(response.status_code, 200)
+            return len(ctx.captured_queries), len(response.data['trending']) + len(response.data['newest'])
+
+        tag_all()
+        count()  # warm the community aggregate cache
+        few, few_rows = count()
+        for i in range(4):
+            self.joke(f'extra space {i}', self.space)
+        tag_all()
+        count()
+        many, many_rows = count()
+        self.assertGreater(many_rows, few_rows)
+        self.assertEqual(few, many)
+
+
 class CreatorReachTests(CommunityFixture):
     def setUp(self):
         super().setUp()

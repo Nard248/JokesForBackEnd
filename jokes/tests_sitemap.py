@@ -69,6 +69,10 @@ class SitemapViewTests(TestCase):
             content_tier='tier_3', creator=cls.creator,
         )
 
+        # Unreviewed generated corpus text is not advertised to crawlers.
+        cls.generated_joke = _make_joke(cls.fmt, cls.age, cls.lang, text='Generated joke')
+        Joke.objects.filter(pk=cls.generated_joke.pk).update(editorial_status='generated')
+
         # A user with zero public jokes -- not a "creator" for sitemap purposes.
         cls.bare_user = _make_user('bare_user@test.com')
 
@@ -148,6 +152,9 @@ class SitemapViewTests(TestCase):
 
     def test_tier3_joke_excluded(self):
         self.assertNotIn(f'{_FRONTEND_URL}/jokes/{self.tier3_joke.id}', self.locs)
+
+    def test_unreviewed_generated_joke_excluded(self):
+        self.assertNotIn(f'{_FRONTEND_URL}/jokes/{self.generated_joke.id}', self.locs)
 
     # -- creators --------------------------------------------------------
 

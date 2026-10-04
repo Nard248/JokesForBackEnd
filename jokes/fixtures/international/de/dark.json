@@ -1,0 +1,2249 @@
+[
+  {
+    "id": "intl-v2-de-dark-001",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mein Schrebergartenkalender empfiehlt Rückschnitt. Endlich jemand, der meine Jahresziele realistisch beurteilt.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-002",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus ist die Zeitung älter als mein Optimismus. Sie hat wenigstens ein Datum, an dem sie gültig war.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-003",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Das Brot von gestern wird hart. Eine beeindruckend schnelle berufliche Neuorientierung zum Briefbeschwerer.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-004",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Unsere Vereinschronik erwähnt meine Jugend. Ich hätte nicht gedacht, einmal unter „bewährte Traditionen“ einsortiert zu werden.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-005",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mein altes Bahnticket liegt im Portemonnaie. Der einzige Reiseplan darin, der definitiv keine Zukunft mehr erwartet.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-006",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mein Wiener Freund und ich vergleichen graue Haare. Die Ländergrenze hilft erstaunlich wenig beim Verhandeln mit der Zeit.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-007",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Meine Pfandkiste ist leer. Selbst mein kleines Nebenvermögen hat beschlossen, sich aus dem Haushalt zurückzuziehen.",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-008",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die Adventskerze zählt den Dezember anders: Bei ihr bedeutet jeder gemütliche Abend weniger eigene Substanz.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-009",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Im Harz sah ich den Weg meiner letzten Wanderung. Meine Knie erinnern sich genauer als meine Fotos.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-010",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Im Museum steht ein Radio meiner Kindheit. Ich bin erstmals älter als etwas, dessen Alter öffentlich erklärt wird.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-011",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Meine vertrocknete Kleingartentomate trägt noch das Schild „vielversprechend“. Das Marketing hält bemerkenswert lange durch.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-012",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der Wiener Kaffeehaustisch kennt meine Pläne seit Jahren. Er ist höflich genug, bei Wiederholungen nicht zu knarren.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-013",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die letzte Brezel wurde hart, während wir höflich darauf verzichteten. Man kann Dinge auch durch Rücksichtnahme verlieren.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-014",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der Wanderverein ehrt meine lange Mitgliedschaft. Früher hätte ich gehofft, irgendwann für die Strecke ausgezeichnet zu werden.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-015",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "In der Berliner Ringbahn komme ich irgendwann zurück. Ein beneidenswert klares Modell für meine übrigen Lebensentscheidungen.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-016",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mein österreichischer Freund bringt Erinnerungen mit, ich alte Fotos. Beide zeigen Menschen, die mit erstaunlich wenig Grund zuversichtlich waren.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-017",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der Pfandbon verblasst im Portemonnaie. Selbst kleine sichere Werte möchten offenbar nicht ewig auf mich warten.",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-018",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mein Adventskalender ist vom letzten Jahr. Ich habe selten so deutlich gesehen, wie ordentlich sich verpasste Freude verpacken lässt.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-019",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die Bank im Schwarzwald steht noch am selben Ort. Von uns beiden hat eindeutig sie besser auf ihre Form geachtet.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-020",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mein Ausweis für die Stadtbibliothek ist abgelaufen. Sogar die Geschichten warten inzwischen auf einen Verwaltungsakt von mir.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-021",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der Gartenzwerg lächelt seit Jahrzehnten. Vielleicht hilft es, beruflich nichts von der nächsten Ernte zu erwarten.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-022",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus lese ich Stellenanzeigen aus Gewohnheit. Es ist beruhigend, dass auch Möglichkeiten nicht ewig dieselben bleiben.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-023",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der Sauerteig wächst, während ich schlafe. Einer von uns nutzt die nächtlichen Stunden offensichtlich konsequenter.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-024",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Im Vereinsfoto von früher stehe ich hinten. Mein Talent, wichtige Entwicklungen leicht zu verdecken, war offenbar früh erkennbar.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-025",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die letzte Fähre ist abgefahren. Der Hamburger Hafen bietet mir dafür unbegrenzte Zeit, über klare Zeichen nachzudenken.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-026",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mein Freund aus Graz nennt unsere alten Pläne Schmäh. Diese nachträgliche Genreänderung rettet uns viel Würde.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-027",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Am Pfandautomaten gibt es für Leeres Geld zurück. Ein System, das ich gern auf einige besonders lange Besprechungen ausweiten würde.",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-028",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die Weihnachtsdekoration liegt wieder in der Kiste. Manche Hoffnungen besitzen einfach einen sehr geregelten saisonalen Vertrag.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-029",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der Wanderstock im Allgäu hat mehr Kratzer als früher. Gut, dass wenigstens einer von uns Beweise fürs Durchhalten sammelt.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-030",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Im Leipziger Museum las ich „unbekannter Zweck“. Es war tröstlich, dass auch Gegenstände damit dauerhaft einen Platz bekommen.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-031",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mein Gartenplan zeigt, wo alles blühen sollte. Die Wirklichkeit wurde bisher offenbar nur in einer anderen Auflage gedruckt.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-032",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der Kaffee in Wien wird kalt, während ich Erinnerungen ordne. Selbst die Gegenwart möchte ungern warten, bis ich fertig bin.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-033",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Das Pumpernickel hält länger als mein Vorsatz, gemütlich zu frühstücken. Es liegt noch da, während ich längst aus der Tür bin.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-034",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Unser Sportverein hat meinen alten Rekord archiviert. Eine gute Lösung, wenn die Gegenwart keine freundlichen Vergleichswerte mehr liefert.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-035",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die Bahnkarte meiner Jugend zeigt weniger Strecken als meine Erinnerungen. Offenbar fährt Nostalgie gern ohne gültige Verbindung.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-036",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der Wiener und ich erinnern uns unterschiedlich an denselben Urlaub. So haben wir wenigstens doppelt so viel verlorene Zeit zur Auswahl.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-037",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mein Pfandbon war in der gewaschenen Hose. Selten wurde eine finanzielle Absicht so gründlich bereinigt.",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-038",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die letzte Kerze am Adventskranz ist am größten. Man sieht, was aus einem werden kann, wenn die Erwartungen spät beginnen.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-039",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die Bank am Eifelweg erinnert sich nicht an mich. Eigentlich fair: Auch ich nenne sie nur „die mit der guten Pause“.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-040",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Meine alten Schulbücher stehen jetzt auf einem Flohmarkt. Das Wissen ist noch da; nur die Hoffnung auf meine Mitarbeit wird billiger.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-041",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Im Schrebergarten wächst Moos auf meinem Stuhl. Die Natur besetzt freie Stellen entschlossener als ich meinen Kalender.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-042",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der Zeitungshalter im Wiener Kaffeehaus ist älter als ich. Er trägt schlechte Nachrichten allerdings mit deutlich geraderem Rücken.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-043",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die Bäckertüte riecht noch gut, obwohl sie leer ist. Eine erstaunlich präzise Verpackung für vergangene Möglichkeiten.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-044",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die Vereinsversammlung bestätigte mich erneut. Manchmal ist Beständigkeit einfach das Ausbleiben weiterer Freiwilliger.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-045",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der alte Stadtplan von Berlin kennt mein Lieblingscafé noch. Papier besitzt eine beneidenswerte Begabung zum Nichtloslassen.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-046",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mein österreichischer Freund sagte, wir würden weiser. Wir haben zumindest gelernt, alte Rechnungen nicht zusammenzurechnen.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-047",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "In der Pfandtasche fand ich den Einkaufszettel für ein geplantes Fest. Die Flaschen kamen nie, die Liste blieb zuverlässig.",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-048",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mein Weihnachtswunschzettel aus Kindertagen ist erstaunlich kurz. Damals hielt ich Dinge noch für eine ausreichende Lösung.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-049",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der Gipfel im Harz sieht von unten unverändert aus. Nur meine Einschätzung des Wortes „locker“ hat deutlich an Höhe verloren.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-050",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Im Museumskatalog steht mein Geburtsjahr unter „historischer Überblick“. Ich hätte mir einen persönlicheren Hinweis auf diesen Übergang gewünscht.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-051",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die Regentonne im Kleingarten ist voll. Mein Samstag besteht trotzdem weiterhin aus vertrockneten Absichten.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-052",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Im Kaffeehaus in Wien darf man lange bleiben. Ein angenehmer Ort für Ideen, die außerhalb schon mehrfach ihre Frist verpasst haben.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-053",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Das Brotende überstand alle Gäste. Es ist offenbar leichter, übrig zu bleiben, wenn alle aufeinander Rücksicht nehmen.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-054",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Unser Chor singt das Lied von früher. Heute brauchen wir mehr Luft für dieselben Versprechen.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-055",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Auf der Leipziger Straßenbahnkarte wurde eine alte Haltestelle gestrichen. Meine Kindheit muss dort jetzt ohne offizielle Gelegenheit aussteigen.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-056",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der Freund aus Innsbruck nennt den Berg zeitlos. Das ist leicht gesagt, wenn man selbst keine Knie dabei hat.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-057",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die Pfandkiste wartet seit Wochen im Flur. Mein Vermögen ist nicht groß, aber bemerkenswert geduldig.",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-058",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der Adventsstern leuchtet noch im Januar. Ich gönne jemandem im Haus den Mut, am ursprünglichen Plan festzuhalten.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-059",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der Schwarzwaldweg ist gut markiert. Eine fast unverschämte Menge Orientierung für einen ganz gewöhnlichen Nachmittag.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-060",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "In der Bibliothek entdeckte ich meine nie gelesene Empfehlung wieder. Das Buch war inzwischen zweimal ersetzt worden; meine Absicht nicht.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-061",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mein Gartenhandschuh hat ein Loch. Endlich kann ich die Erde direkt spüren, die ich jahrelang mit guter Ausrüstung vermeiden wollte.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-062",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus bekam ich denselben Platz wie früher. Nur meine früheren Möglichkeiten hatten offenbar anderswo reserviert.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-063",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mein Sauerteig heißt Hoffnung. Manchmal muss ich ihn trotzdem wegwerfen; Namen sind kein Ersatz für Pflege.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-064",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der Vereinsvorsitz wurde erneut vertagt. Selbst eine ehrenamtliche Zukunft braucht offenbar mehr Mut, als gerade im Raum sitzt.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-065",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mein unbenutztes Bahnticket ist ein Souvenir ohne Reise. Effizienter lassen sich enttäuschte Erwartungen kaum lagern.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-066",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Wir Deutsche und unsere Wiener Freunde vergleichen Vorsätze. Über die Grenze haben sie es geschafft, über den Februar nicht.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-067",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die letzte Pfandflasche stand hinter der Tür. Ein kleiner Restwert, den selbst mein Aufräumen lange respektierte.",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-068",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die Weihnachtskugel zeigt mein Gesicht verzerrt. Immerhin vermeidet sie damit den unangenehmen Anspruch vollständiger Ehrlichkeit.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-069",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Beim Taunusspaziergang erkenne ich jeden Ruheplatz. Mein Gedächtnis spezialisiert sich zunehmend auf Orte ohne Anforderungen.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-070",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Im Stadtmuseum wurde ein Gegenstand „ehemals modern“ genannt. Es war überraschend, mich von einer Kaffeemaschine so verstanden zu fühlen.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-071",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mein Kleingartenbeet ist leer. Auf dem Papier ist das eine Pause, vor Ort sieht es eher nach unbeantworteter Einladung aus.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-072",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die Wiener Zeitung von gestern liegt noch neben dem Tisch. Auch überholte Sorgen finden hier erstaunlich leicht Gesellschaft.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-073",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mein selbst gebackenes Brot wurde zu Zwieback. Es hat die Enttäuschung immerhin in eine haltbare zweite Karriere verwandelt.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-074",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Unser Fußballpokal verstaubt im Vereinsheim. Erfolg ist offenbar auch nur ein Gegenstand, den irgendwann jemand putzen muss.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-075",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die Hamburger Fähre fährt auch ohne mich ab. Der Fahrplan lebt bemerkenswert frei von meiner Bedeutung.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-076",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Meine Salzburger Freundin erinnerte mich an frühere Abenteuer. Heute heißt Abenteuer, auf dem Heimweg die Lesebrille nicht zu verlieren.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-077",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Ich verrechnete mein Pfand mit dem Wocheneinkauf. Das Ergebnis war ein Rabatt auf eine weiterhin sehr reale Rechnung.",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-078",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die Plätzchendose ist noch dieselbe wie früher. Der Inhalt verschwindet inzwischen nur schneller, weil Geduld offenbar mit zu den Zutaten zählt.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-079",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Im Allgäu sagte jemand, der Weg sei das Ziel. Ich hätte gern ein Ziel mit etwas weniger Steigung gewählt.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-080",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Meine Lieblingsschallplatte steht im Museumsshop. Jetzt kann man meine damalige Gegenwart als stilvolles Geschenk kaufen.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-081",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der Gartenzwerg hat den Winter überlebt. Sein einziger Vorsatz war offenbar, nicht umzufallen; ein bemerkenswert vernünftiger Plan.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-082",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus schrieb ich eine Liste neuer Anfänge. Der Kellner fragte höflich, ob es wieder dieselbe Bestellung sein dürfe.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-083",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die Kruste meines Brotes ist fester als meine Pläne. Sie hatte allerdings auch eine klar geregelte Backzeit.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-084",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Unsere Vereinschronik endet mit einem Ausblick. Darin steckt noch erstaunlich viel Zukunft, die seither nicht vorbeigekommen ist.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-085",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "In der Berliner U-Bahn sah ich mein Spiegelbild. Der Tunnel liefert eine kurze, unerwünschte Bilanz zwischen zwei Haltestellen.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-086",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mein Wiener Freund und ich lachen über das Älterwerden. Wenigstens diese Fähigkeit unterliegt noch keiner gemeinsamen Wartungsvereinbarung.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-087",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der Pfandbon wird langsam blass. Er möchte wohl vermeiden, sein ganzes Leben als unerledigte Kleinigkeit zu verbringen.",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-088",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die Adventskerzen standen perfekt gerade. Ihr weiterer Lebensweg war trotzdem von Anfang an ziemlich eindeutig.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-089",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der Wegweiser im Schwarzwald ist verwittert. Selbst Orientierung darf irgendwann unsicher aussehen, wenn sie lange genug gearbeitet hat.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-090",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Im Museum hängt ein Porträt mit unbekanntem Namen. Ein beruhigender Hinweis, dass man auch ohne gelungenes Personal Branding bleiben kann.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-091",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Unser alter Gartenstuhl knarrt bei jedem Hinsetzen. Er führt offenbar ein deutlich ehrlicheres Tagebuch als ich.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-092",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die Wiener Kaffeehausuhr ging nach. Für einen Nachmittag war sogar mein Zuspätkommen etwas weniger außergewöhnlich.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-093",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Das Sonntagsbrot ist weg, die Krümel bleiben. Glück besitzt offenbar eine hartnäckige Dokumentationsabteilung.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-094",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der Wanderverein plant eine Nostalgietour. Wir besuchen Orte, an denen wir früher weniger aus der Puste waren.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-095",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mein Zugfenster zeigt die Landschaft hinter mir. Es passt sich damit ausgezeichnet an die Richtung meiner Gedanken an.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-096",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der Freund aus Graz nennt Erinnerungen kostbar. Gut, denn weiterverkaufen kann ich die peinlichsten offenbar nicht.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-097",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Meine Pfandtasche hat einen Riss. Sogar gesammelte kleine Sicherheiten brauchen gelegentlich bessere Unterstützung.",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-098",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die Weihnachtspyramide dreht immer dieselbe Runde. Niemand wirft ihr mangelnde persönliche Entwicklung vor; beneidenswert.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-099",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die Bank am Harzgipfel war besetzt. Selbst nach erfülltem Ehrgeiz muss man mit begrenzten Ruheplätzen rechnen.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-100",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "In der Bibliothek wurde mein Lieblingsbuch aussortiert. Auch Geschichten müssen irgendwann beweisen, dass sie noch jemand braucht.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-101",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mein Gartenkalender zeigt noch April. Die Bohnen haben ihre Karriere inzwischen vollkommen ohne meine offizielle Begleitung fortgesetzt.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-102",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Im Kaffeehaus in Wien bestellte ich wie früher. Nur der Mut, danach noch alles Mögliche zu tun, stand nicht auf der Karte.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-103",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der Sauerteig braucht täglich Aufmerksamkeit. Ich hatte gehofft, wenigstens ein Hobby würde mich auch mal ohne Pflege weiterbringen.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-104",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Unser Vereinsfoto wird jedes Jahr voller Erfahrung. Für die zusätzlichen Stühle im Schatten gibt es bereits eine Warteliste.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-105",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die letzte Berliner Straßenbahn hörte ich nur noch. Manche verpassten Chancen haben einen sehr gut erkennbaren Klang.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-106",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mein österreichischer Freund zeigte alte Reisebilder. Wir sahen aus wie Menschen, die dem Wetterbericht noch bedingungslos glaubten.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-107",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die Pfandkiste wurde endlich zurückgebracht. Im Flur fehlt jetzt ein zuverlässiger Zeuge meiner monatelangen Untätigkeit.",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-108",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die Weihnachtskarten sind aufgehoben. Manche Freundschaften sprechen mit mir inzwischen vor allem in saisonaler Handschrift.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-109",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Im Erzgebirge blieb ich länger vor der Aussicht stehen. Ehrfurcht klingt einfach besser als Erholungsbedarf.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-110",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mein alter Taschenrechner ist im Technikmuseum. Er hat beruflich mehr Anerkennung gefunden als die damit berechneten Pläne.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-111",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die Gartenhecke wächst nach jedem Schnitt weiter. Meine Motivation hält Verletzungen durch realistische Kritik deutlich schlechter aus.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-112",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die Zeitung im Wiener Kaffeehaus bietet viele Nachrufe auf alte Ideen. Meine eigenen sind bisher immerhin noch nicht druckreif.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-113",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Das Brot liegt im Gefrierfach. Es hat einen besseren Plan zum Aufschieben des Alterns als der Rest der Küche.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-114",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Unser Chor singt vom ewigen Frühling. Die Heizkosten im Vereinsheim wirken als angenehm nüchterne Gegenstimme.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-115",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Auf der Hamburger Fähre verschwand mein Ziel kurz im Nebel. Es war ungewohnt, meine Unsicherheit so anschaulich außerhalb des Kopfes zu sehen.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-116",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mein Freund aus Innsbruck lobt meine Ausdauer. Er meint damit inzwischen, wie lange ich über die vorige Wanderung rede.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-117",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Im Pfandautomaten verschwand die Flasche unserer Feier. Der Bon erinnert sich erfreulich wenig an die peinlichen Reden.",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-118",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der Osterhase aus Schokolade ist noch ungeöffnet. Manche Freuden warten so lange auf den richtigen Moment, bis sie ein Lagerproblem werden.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-119",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mein Wanderpass enthält viele Stempel. Ein beeindruckender Beweis dafür, dass ich nicht jede Anstrengung nur angekündigt habe.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-120",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Im Museum las ich „dauerhaft außer Betrieb“. Ich wusste nicht, dass Gegenstände ihren Ruhestand so überzeugend formulieren dürfen.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-121",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der Kompost macht aus Vergangenem Neues. Mein Schreibtisch versucht seit Jahren dasselbe, bisher mit deutlich weniger überzeugendem Ergebnis.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-122",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus gab ich dem Nachmittag keinen Plan. Er blieb trotzdem irgendwann nicht mehr bei mir.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-123",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die alte Brotdose riecht noch nach Schulpausen. Manche Zeitreisen passen erstaunlich gut zwischen zwei Gurkenscheiben.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-124",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Unser Vereinsarchiv enthält meine erste Unterschrift. Selbst mein Name hatte damals eine ehrgeizigere Linienführung.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-125",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der Zug kam am richtigen Ort an. Ich wünsche, meine übrigen längeren Sitzphasen hätten einen ähnlich überprüfbaren Nutzen.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-126",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Beim Besuch aus Wien tauschten wir Geschichten vom Scheitern. Immerhin haben sie inzwischen die Grenze zur guten Unterhaltung überschritten.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-127",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mein Pfandgeld reichte genau für einen Kaffee. Kleine Kreisläufe halten große Erwartungen erfreulich kurz.",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-128",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die Adventsdekoration wurde eingelagert. Mein Jahr besteht zunehmend aus Dingen, die auf eine passendere Jahreszeit warten.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-129",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Im Allgäu nahm ich die leichtere Route. Es war erstaunlich still, nachdem ich aufgehört hatte, meiner Vergangenheit etwas beweisen zu wollen.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-130",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die Stadtbibliothek mahnte ein vergessenes Buch an. Jemand dort glaubt also noch daran, dass ich Dinge zu Ende bringe.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-131",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Meine Tomatenpflanze trägt nur noch ihr Etikett. Das Versprechen ist farbig, der Rest bevorzugt eine sachliche Brauntönung.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-132",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus saß ich neben einer sehr alten Uhr. Wir bewegten uns beide langsam, aber nur einer von uns hatte ein Zifferblatt als Ausrede.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-133",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Das halbe Brot sollte für morgen reichen. Eine klassische Fehlkalkulation, sobald Gegenwart mit Butter ins Spiel kommt.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-134",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der Sportverein nennt uns inzwischen die erfahrene Gruppe. Erfahrung zeigt sich vor allem daran, dass wir die Pausen früh reservieren.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-135",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die alte Bahnfahrkarte ist erstaunlich gut erhalten. Anders als die Begeisterung, mit der ich sie damals gekauft habe.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-136",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mein Salzburger Freund erinnerte sich an mein altes Tempo. Ich bat ihn, solche sensiblen Daten künftig behutsamer zu speichern.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-137",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die leeren Flaschen warten hinter der Tür. Ein übersichtliches Archiv aller Abende, an denen ich genug vom Tag hatte.",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-138",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mein Schwibbogen beleuchtet den Flur. Das Vergangene schafft es immerhin noch, mir regelmäßig den Weg zu zeigen.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-139",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Am Schwarzwaldweg sah ich eine zerfallene Bank. Selbst Ruhe ist offenbar nicht für immer wetterfest.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-140",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Im Puppentheater endete die Geschichte glücklich. Ich blieb einen Moment sitzen, um die Organisation dieses Erfolgs zu bewundern.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-141",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mein Schrebergarten wird irgendwann ohne mich weiterwachsen. Schon jetzt erledigt das Unkraut einen beträchtlichen Teil der Eigeninitiative.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-142",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der Kaffeehauskellner in Wien erkannte mich wieder. Schön, wenn wenigstens eine Entscheidung im Leben zuverlässig dieselbe bleibt.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-143",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die Brezel verlor ihre letzten Salzkörner. Auch eine klare Persönlichkeit muss gelegentlich etwas von sich auf dem Tisch lassen.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-144",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Unsere Vereinsurkunde vergilbt. Der Rahmen hält noch so energisch fest, als wäre Anerkennung eine Frage guter Schrauben.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-145",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "In der Kölner Straßenbahn fuhr ich am alten Wohnhaus vorbei. Mein früheres Leben hatte offenbar noch immer passende Gardinen.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-146",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mein Wiener Freund sagt, manche Dinge kommen wieder. Bei unbezahlten Rechnungen funktioniert dieser Optimismus tatsächlich tadellos.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-147",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der Pfandbon ist das Gegenteil eines Wunschzettels: Er beschreibt genau, was ich tatsächlich einmal besessen und leer gemacht habe.",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-148",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der letzte Weihnachtskeks blieb übrig. Er wollte besonders lange Freude machen und endete als Beweis für zu viel Geduld.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-149",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der Harzweg heißt noch immer kurz. Die Jahre haben heimlich meine persönliche Definition dieses Wortes verlängert.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-150",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die Museumsvitrine schützt einen zerbrochenen Becher. Erstaunlich, wie viel besser manche Schäden aussehen, sobald Zeit dazwischenliegt.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-151",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mein Gartenstuhl bekommt eine neue Lasur. Gegenstände lassen sich mit wenigen Handgriffen wieder glaubwürdig hoffnungsvoll anmalen.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-152",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus setzte ich einen Punkt unter meine Pläne. Der Strudel war immerhin vollständig abgearbeitet.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-153",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Meine Brotkrümel liegen überall. Zumindest das Frühstück hinterlässt Spuren, die nicht erst lange erklärt werden müssen.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-154",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Unser Vereinsausflug ging an denselben Ort wie früher. Die Landschaft musste nichts tun, um uns deutlich verändert vorzufinden.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-155",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die Berliner Ringbahn schloss ihren Kreis. Ich bewundere Projekte, die Ende und Neuanfang so überzeugend am selben Ort unterbringen.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-156",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Beim Abschied von unseren Grazer Freunden sagten wir „bald wieder“. Ein kleines Wort mit erstaunlich großer Unterkunft für die Unsicherheit.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-157",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die Pfandkiste steht wieder im Flur. Manche Neuanfänge klingen verdächtig genau wie die vorige Runde.",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-158",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Unser Weihnachtsstern wurde eingepackt, bevor die Batterie leer war. Ein seltener würdevoller Abschied mit eigener Restenergie.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-159",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die Wanderkarte knittert an meinen Lieblingswegen. Erinnerungen zeigen immerhin manchmal, wo sie am liebsten angefasst werden.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-160",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Im Leipziger Museum stand „Restaurierung geplant“. Ich überlege, ob dieses Schild auch über meinem Schreibtisch glaubwürdig wäre.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-161",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "In meiner alten Schultüte fand ich einen Zettel mit Berufswünschen. Er ist noch immer der optimistischste Lebenslauf im Haus.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-162",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Das Bürgeramt bestätigte mir meine neue Adresse. Schön, dass wenigstens eine Stelle weiß, wo ich gerade im Leben stehe.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-163",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Unser Grazer Freund nannte den Rest im Topf „letzte Jause“. Der Käse nahm diesen großen Abschied erstaunlich gelassen hin.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-164",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mein Deutschlandticket verlängert sich automatisch. Eine bemerkenswert entschlossene Beziehung zu meiner Zukunft.",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology meeting a specifically named German everyday custom or institution. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-165",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Auf der Innsbrucker Aussichtsplattform fragte ich, wie weit man sehen könne. Weiter als planen, stellte sich heraus.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-166",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Meine Berliner Schrippe war steinhart. Endlich etwas aus meiner Jugend, das sich nicht weichzeichnen lässt.",
+    "age_rating": "teen",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Regional German vocabulary or a German idiom supplies the mechanism. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-167",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Den Schwibbogen im Erzgebirge stellen wir jedes Jahr ans Fenster. Meine unerledigten Vorsätze haben inzwischen ebenfalls einen festen Aussichtspunkt.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-168",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "In der Weimarer Ausstellung lag ein unfertiges Manuskript. Offenbar muss man nur berühmt genug werden, damit Aufschieben eine Vitrine bekommt.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-169",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mein Freund aus Salzburg und ich verglichen unsere alten Wanderfotos. Wir hatten beide früher erstaunlich kleine Knieprobleme auf dem Bild.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-170",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Im Getränkemarkt nahm der Automat meine zerdrückte Flasche an. Mein Montagmorgen wünscht sich dieselbe unvoreingenommene Anerkennung.",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-171",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Unser Schachverein besitzt eine Uhr, die jede verlorene Minute dokumentiert. Für meine übrigen Hobbys wäre das unnötig persönlich.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-172",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Beim Dresdner Bäcker bekam ich ein Endstück. Es ist tröstlich, dass manche Enden noch extra Kruste mitbringen.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-173",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Die Wiener Kellnerin fragte, ob ich noch einen Wunsch hätte. Ich bestellte Kaffee; für die andere Antwort war der Tisch zu klein.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-174",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Im Harz erreichte ich endlich die Bank, die ich mir als Ziel gesetzt hatte. Meine Ambitionen haben sich inzwischen bequem eingerichtet.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-175",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Im Kleingarten hängt noch das Schild „Hier wächst Zukunft“. Darunter machen vor allem die Schnecken Karriere.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-176",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Der Wuppertaler Wagen schwebte über mir hinweg. Sogar der Nahverkehr bekommt hier gelegentlich Abstand zu seinen Problemen.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dark-177",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "In Wien teilten wir den letzten Kaiserschmarrn. Die Vergänglichkeit hätte ruhig etwas weniger Puderzucker hinterlassen können.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dark-178",
+    "collection": "de-de-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Meine deutschen Steuerunterlagen liegen im Ordner „Erledigt“. Ein wunderschönes Wort für Dinge, die nächstes Jahr wiederkommen.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Mild melancholy or existential incongruity without graphic or adult material. Original AI-authored draft; no native human review claimed."
+  }
+]

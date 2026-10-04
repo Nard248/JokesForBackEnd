@@ -1,0 +1,2138 @@
+[
+  {
+    "id": "intl-v2-it-surreal-001",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La Befana ha comprato un aspirapolvere robot. Lo aspetta sul tetto da tre ore.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-surreal-002",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il Canal Grande ha chiesto un cambio di nome. Si sente molto più intimo dopo mezzanotte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-surreal-003",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Pinocchio ha detto una verità così grande che il naso è rientrato nel capitolo precedente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-surreal-004",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le orecchiette hanno ascoltato una telefonata privata. Adesso il sugo ricatta il parmigiano.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-surreal-005",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La pizza a portafoglio ha chiesto un conto corrente. La banca accetta solo versamenti in mozzarella.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-surreal-006",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il basilico si è trasferito nel mortaio prima del raccolto. Voleva scegliere la camera.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-surreal-007",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Un portico si è staccato da Bologna. Cercava qualcuno da proteggere durante un temporale personale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-surreal-008",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La granita ha fermato l'estate per non sciogliersi. Gli ombrelloni organizzano una trattativa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-surreal-009",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La torre di Pisa si è raddrizzata per una visita ufficiale. I fotografi chiedono il rimborso.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-surreal-010",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La moka ha cominciato a parlare chiaramente. Ora rimpiangiamo il borbottio.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-surreal-011",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La lasagna ha installato un ascensore. I piselli aspettano il piano nobile.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-surreal-012",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il pupo muove il puparo. Lo spettacolo riguarda un signore che non riesce a trovare gli occhiali.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-surreal-013",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Un violino di Cremona rifiuta le note nuove. Vuole prima conoscere la loro famiglia.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento italiano a liuteria, musica o teatro come contesto di una scena inventata; nessuna imitazione di un autore."
+  },
+  {
+    "id": "intl-v2-it-surreal-014",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Lo SPID ha creato un mio duplicato. È bravissimo a dimenticare le stesse password.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-surreal-015",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La tombola ha estratto il numero pi greco. La nonna cerca un fagiolo abbastanza preciso.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-surreal-016",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La gondola ha deciso di salire i ponti. Per una volta vuole guardare il proprio riflesso dall'alto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-surreal-017",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Dante ha aperto un ascensore tra i gironi. L'amministratore condominiale pretende una chiave per ogni piano.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-surreal-018",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Un trullo ha perso il tetto e ha scoperto di essere spettinato.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-surreal-019",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il cornicione della pizza si è trasformato in una pista ciclabile. Il basilico chiede attraversamenti protetti.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-surreal-020",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La focaccia ha assorbito il tramonto. Il sacchetto perde luce da un angolo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-surreal-021",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le Due Torri si sono scambiate l'altezza. La cartolina non sa più come rivolgersi a loro.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-surreal-022",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il cannolo ha nascosto una ricotta infinita. Il pasticciere chiede una porta più larga per il laboratorio.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-surreal-023",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La Mole Antonelliana ha sfiorato la luna. Torino deve compilare un modulo per il piccolo graffio.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-surreal-024",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "observ",
+    "text": "A Trieste, il capo in b ha convocato tutte le tazzine. Il latte vuole eleggere un rappresentante.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-surreal-025",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il tiramisù ha sollevato il tavolo. Nessuno aveva precisato chi dovesse essere tirato su.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-surreal-026",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il cavaliere dei pupi è uscito a comprare il pane. Ha duellato con la porta automatica.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-surreal-027",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il mandolino ha inghiottito una serenata. Adesso suona solo quando gli si parla con gentilezza.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento italiano a liuteria, musica o teatro come contesto di una scena inventata; nessuna imitazione di un autore."
+  },
+  {
+    "id": "intl-v2-it-surreal-028",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La PEC certifica i sogni. Stanotte ho ricevuto la ricevuta di un drago consegnato al destinatario sbagliato.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-surreal-029",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La Befana ha parcheggiato una nuvola davanti al camino. La scopa era in officina.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-surreal-030",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il vaporetto ha raggiunto il soffitto. L'acqua alta nel mio sogno non conosce il piano di sopra.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-surreal-031",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Pinocchio è diventato bibliotecario. Riconosce i romanzi dai parenti nella carta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-surreal-032",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le orecchiette si sono ribellate al silenzio del piatto. Hanno fondato una radio al ragù.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-surreal-033",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il pizzaiolo ha lanciato l'impasto così in alto che il cielo porta un cappello di farina.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-surreal-034",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il mortaio ha cominciato a pestare il pestello. Il basilico si è allontanato con discrezione.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-surreal-035",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il portico di San Luca si è accorciato. I pellegrini chiedono dove abbia messo tutto l'impegno risparmiato.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-surreal-036",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La frutta martorana ha messo radici nel vassoio. Il giardiniere propone irrigazione a sciroppo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-surreal-037",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il Colosseo ha chiuso tutti gli archi. Roma sembra improvvisamente senza parentesi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-surreal-038",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La moka ha aperto un ufficio reclami. Le prime pratiche riguardano chi la riempie fino all'orlo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-surreal-039",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il risotto all'onda ha preso la marea. Lo mangiamo solo quando il cucchiaio riesce ad attraccare.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-surreal-040",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il cavaliere dei pupi ha indossato un’armatura di pane. Il drago sospetta che il duello nasconda un invito a cena.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-surreal-041",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il violino cremonese cresce un ramo. Il liutaio lo considera un ritorno alle origini non richiesto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento italiano a liuteria, musica o teatro come contesto di una scena inventata; nessuna imitazione di un autore."
+  },
+  {
+    "id": "intl-v2-it-surreal-042",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il mio codice fiscale è diventato una persona. Trova il mio nome troppo breve per presentarsi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-surreal-043",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La tombola ha estratto domani. Tutti controllano se l'hanno già coperto sul calendario.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-surreal-044",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La laguna si è messa in tasca le gondole. Dice che vuole uscire senza lasciare tutto in giro.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-surreal-045",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Pinocchio ha insegnato a mentire alla riga. Ora il quaderno è lungo due metri.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-surreal-046",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il tarallo è diventato una ruota del tempo. Ogni morso riporta alla merenda precedente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-surreal-047",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La margherita ha telefonato al prato. Vuole sapere se il pomodoro può iscriversi al gruppo dei fiori.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-surreal-048",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il pesto ha dipinto i caruggi di verde. I turisti seguono il profumo anziché la mappa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-surreal-049",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Un tortellino ha inghiottito il brodo. Il piatto si sente escluso dal progetto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-surreal-050",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il tuppo della brioche è diventato un vulcano. L'Etna gli manda consigli sul cioccolato.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-surreal-051",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il Ponte Vecchio ha venduto un anello all'Arno. Il fiume promette di non toglierselo mai.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-surreal-052",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "L'espresso ha preso il treno espresso. Sono arrivati entrambi con una crema impeccabile.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-surreal-053",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La polenta ha trasformato il pavimento in una montagna. Le pantofole cercano una guida alpina.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-surreal-054",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il pupo ha aperto una palestra per fili. Vuole un'armatura più pesante entro l'estate.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-surreal-055",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La Scala ha fatto una scala a chiocciola nella mia radio. Le arie arrivano affannate.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento italiano a liuteria, musica o teatro come contesto di una scena inventata; nessuna imitazione di un autore."
+  },
+  {
+    "id": "intl-v2-it-surreal-056",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "PagoPA accetta ricordi. Il conto è saldato con due estati e un compleanno particolarmente felice.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-surreal-057",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La Befana si è iscritta a un corso di volo. L'istruttore ha passato la prima lezione a pulire la pista.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-surreal-058",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le calli si spostano di notte. Il navigatore dorme con un occhio aperto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-surreal-059",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Dante cerca Virgilio al supermercato. Il reparto surgelati ha assunto temporaneamente la funzione di guida.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-surreal-060",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Un trullo si è messo in fila al parrucchiere. Vuole accorciare la punta senza perdere volume.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-surreal-061",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La pizza ha un cornicione abitabile. Le olive chiedono un contratto con vista mozzarella.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-surreal-062",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il basilico parla genovese al mortaio. Il frullatore si sente escluso dalla conversazione.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-surreal-063",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "I portici hanno chiesto un giorno di sole da soli. I pedoni devono aspettare fuori Bologna.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-surreal-064",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il cannolo è diventato un cannocchiale. In fondo si vede sempre un pasticciere soddisfatto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-surreal-065",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La torre di Pisa si appoggia a un'altra torre. Ha avuto una giornata architettonicamente difficile.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-surreal-066",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il capo in b ordina un dipendente in tazza. Il barista preferisce non seguire l'organigramma.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-surreal-067",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La mozzarella fila fino alla luna. Il pane sta decidendo se intraprendere il viaggio.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-surreal-068",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il puparo trova un cavaliere vero nella scatola. Quello piccolo è andato a fare il turno in ufficio.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-surreal-069",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il mandolino ha perso tutte le note alte. Sono rimaste impigliate nel lampadario.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento italiano a liuteria, musica o teatro come contesto di una scena inventata; nessuna imitazione di un autore."
+  },
+  {
+    "id": "intl-v2-it-surreal-070",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "L'app IO mi ha scritto « oggi faccio io ». Da allora paga i bollettini lamentandosi con il telefono.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-surreal-071",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La tombola ha estratto una lettera. L'alfabeto festeggia l'ammissione al gioco.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-surreal-072",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il vaporetto si è fermato davanti al mio letto. La fermata Sonno Profondo è stata soppressa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-surreal-073",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Pinocchio ha detto una bugia rotonda. Il naso ha cominciato a fare il giro della stanza.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-surreal-074",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le orecchiette ascoltano il mare dentro una conchiglia. Il sugo teme una concorrenza sleale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-surreal-075",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il forno della pizzeria ha chiesto il cappotto. È stanco di essere sempre quello caloroso.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-surreal-076",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La focaccia ha chiuso tutti i buchi. Vuole una giornata senza domande.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-surreal-077",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La Garisenda si è inclinata dall'altra parte. La città controlla chi le abbia cambiato l'umore.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-surreal-078",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La granita ha congelato il cucchiaino. Lo libererà soltanto in cambio di una brioche.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-surreal-079",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il treno del Bernina ha portato giù una montagna. La neve voleva visitare la città.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-surreal-080",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La moka ha preparato un caffè per se stessa. Ha finalmente capito perché tutti la chiamano al mattino.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-surreal-081",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il panettone ha perso l'anno di scadenza. Continua a festeggiare un Natale privato nel ripostiglio.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-surreal-082",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il pupo cavaliere si è laureato in fili. La tesi aveva un'ottima tenuta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-surreal-083",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il violino di Cremona mi ha accordato le scarpe. Cammino finalmente in tonalità maggiore.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento italiano a liuteria, musica o teatro come contesto di una scena inventata; nessuna imitazione di un autore."
+  },
+  {
+    "id": "intl-v2-it-surreal-084",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La PEC certifica un silenzio. Ho ricevuto quattro notifiche per assicurarmi che non fosse stato detto nulla.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-surreal-085",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La Befana viaggia su una virgola. Finalmente può fermarsi senza atterrare del tutto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-surreal-086",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La gondola chiede una patente di montagna. Ha sempre voluto provare una salita senza acqua.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-surreal-087",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Dante ha aggiunto un girone per le password dimenticate. La porta si apre soltanto col codice precedente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-surreal-088",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il tarallo ha perso il buco. La panetteria espone un avviso circolare.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-surreal-089",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La pizza a portafoglio ha chiuso un mutuo. Adesso possiede un forno tutto suo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-surreal-090",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il mortaio è diventato un cratere. Il basilico organizza esplorazioni con caschi di pinolo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-surreal-091",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "I tortellini hanno costruito un porto nel brodo. Il cucchiaio paga il pedaggio in parmigiano.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-surreal-092",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La brioche col tuppo ha vinto un concorso di cappelli. La moda preferisce non discutere gli ingredienti.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-surreal-093",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "I mosaici di Ravenna hanno cambiato disegno. Le tessere volevano sedersi vicino agli amici.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-surreal-094",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "observ",
+    "text": "A Trieste, il caffè nero ha chiesto una cornice. Si sente molto più di una bevanda monocromatica.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-surreal-095",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La piadina si è stesa sul divano. Il divano teme l'arrivo del ripieno.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-surreal-096",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il pupo ha tagliato i fili e ha comprato un abbonamento dell'autobus. Cerca un'avventura con fermate regolari.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-surreal-097",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La scala musicale sale sulla Mole. Le note più basse aspettano al bar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento italiano a liuteria, musica o teatro come contesto di una scena inventata; nessuna imitazione di un autore."
+  },
+  {
+    "id": "intl-v2-it-surreal-098",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Lo SPID ha aperto un portale nel Medioevo. Nessuno trova la casella per dichiarare il cavallo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-surreal-099",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La tombola chiama il numero infinito. La nonna dispone i fagioli per una serata lunga.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-surreal-100",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il Canal Grande si arrotola come un tappeto. Venezia sta spostando i mobili.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-surreal-101",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Pinocchio incontra una matita che mente. Finalmente qualcuno gli chiede consigli invece di farne.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-surreal-102",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La burrata nasconde un temporale. Il pane apre l'ombrello di basilico.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-surreal-103",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il pomodoro della pizza è diventato una piazza. Le olive si incontrano per discutere il forno.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-surreal-104",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il pesto parla a bassa voce. Il basilico lo sente comunque dal balcone.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-surreal-105",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Un portico entra nel mio ombrello. Dice di voler capire come si vive in piccolo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-surreal-106",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La frutta martorana prende l'autobus per il mercato. Vuole incontrare i modelli dal vivo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-surreal-107",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La torre di Pisa rifiuta di inclinarsi nelle foto verticali. Ha una clausola sul formato.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-surreal-108",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La moka ha imparato a cantare. Il caffè esce soltanto dopo l'ultimo ritornello.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-surreal-109",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Gli gnocchi hanno organizzato un giovedì per conto proprio. Il calendario non era stato invitato.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-surreal-110",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il cavaliere dei pupi si nasconde nel pubblico. Vuole vedere chi si preoccupa quando non combatte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-surreal-111",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il mandolino ha comprato un megafono. La serenata teme un cambio di genere.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento italiano a liuteria, musica o teatro come contesto di una scena inventata; nessuna imitazione di un autore."
+  },
+  {
+    "id": "intl-v2-it-surreal-112",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il CAF accetta documenti dal futuro. Il mio anno prossimo risulta sorprendentemente disordinato.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-surreal-113",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La Befana ha riempito la luna di caramelle. Si era dimenticata dove finiva la calza.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-surreal-114",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il vaporetto naviga nella mia tazza. Chiede se il cappuccino abbia correnti forti.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-surreal-115",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Dante ha smarrito la selva in un parcheggio. Virgilio cerca il biglietto all'entrata.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-surreal-116",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le orecchiette hanno ascoltato così tante confidenze che la pentola ha sviluppato un segreto industriale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-surreal-117",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La pizza margherita ha messo petali bianchi. Il formaggio sostiene che fossero già di sua competenza.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-surreal-118",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "I caruggi si sono allargati per ballare. Genova ha perso per una notte il gusto dei passaggi stretti.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-surreal-119",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La sfoglia è diventata trasparente. Il futuro dei tortellini si vede finalmente con chiarezza.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-surreal-120",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il cannolo ha chiesto due porte d'ingresso. Il pasticciere gli ha fatto notare che le possiede già.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-surreal-121",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il Duomo di Milano si è tolto le guglie per dormire. La skyline fa fatica a riconoscerlo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-surreal-122",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "L'espresso torna nella moka. Dice di aver dimenticato qualcosa di importante sul fondo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-surreal-123",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il risotto scrive un romanzo a chicchi. Il parmigiano si offre di sistemare il finale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-surreal-124",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il puparo ha legato i fili a una nuvola. Il cavaliere combatte con un leggero rischio di pioggia.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-surreal-125",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il violino di Cremona ha assunto un grillo. Gli serviva un collega per il turno serale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento italiano a liuteria, musica o teatro come contesto di una scena inventata; nessuna imitazione di un autore."
+  },
+  {
+    "id": "intl-v2-it-surreal-126",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "PagoPA mi restituisce un pomeriggio. Non era previsto, ma accetto la forma di rimborso.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-surreal-127",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La calza della Befana è diventata una metropolitana. Ogni stazione offre un tipo diverso di caramella.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-surreal-128",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La gondola ha chiesto un tappeto per l'inverno. Il canale teme di dover togliersi le scarpe.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-surreal-129",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Pinocchio si è diplomato falegname. La famiglia segue con apprensione i suoi primi progetti.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-surreal-130",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Un trullo ha imparato a girare la testa. Adesso sceglie ogni mattina la vista dalla finestra.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-surreal-131",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La pala della pizza è diventata una racchetta. Il forno pretende una partita al meglio di tre margherite.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-surreal-132",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La focaccia ha aperto un ombrellone sul piatto. L'olio si è sistemato comodamente all'ombra.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-surreal-133",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "I portici raccontano pettegolezzi alle colonne. La pioggia resta sempre fuori dalle conversazioni.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-surreal-134",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La granita ha comprato un biglietto per l'Etna. La brioche le consiglia una destinazione meno impegnativa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-surreal-135",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il Colosseo si è iscritto a un corso di ceramica. Vorrebbe imparare a richiudere almeno un lato.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-surreal-136",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il capo in b è diventato una montagna trasparente. Gli alpinisti chiedono se il latte segni il limite delle nevi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-surreal-137",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La lasagna ha cambiato ordine dei piani. Il ragù non riconosce più il vicino.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-surreal-138",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il pupo cavaliere riceve una lettera dal drago. Per una volta chiede soltanto una ricetta di biscotti.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-surreal-139",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il mandolino ha nascosto il silenzio nella cassa. Lo tira fuori quando arrivano i vicini.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento italiano a liuteria, musica o teatro come contesto di una scena inventata; nessuna imitazione di un autore."
+  },
+  {
+    "id": "intl-v2-it-surreal-140",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La PEC ha consegnato il mio pensiero prima che lo formulassi. Chiedo almeno una bozza da correggere.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-surreal-141",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La tombola estrae il mio numero di scarpe. Finalmente qualcosa che posso verificare senza occhiali.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-surreal-142",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il vaporetto scambia posto con il campanile. Venezia trascorre una mattina molto difficile da fotografare.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-surreal-143",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Dante trova una scorciatoia. Virgilio gli ricorda che hanno già venduto il viaggio in tre volumi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-surreal-144",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il tarallo si è raddrizzato. Sostiene di aver sempre voluto vedere il mondo dall'altra estremità.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-surreal-145",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il cornicione della pizza apre un albergo. Le acciughe chiedono camere lontane dal forno.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-surreal-146",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il mortaio ha convocato i pinoli per un colloquio. Il basilico garantisce per tutti.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-surreal-147",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Un tortellino si è srotolato sul tavolo. Vuole raccontare tutta la sua storia, senza omissioni di pasta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-surreal-148",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La frutta martorana ha chiesto un contadino in marzapane. Tiene molto alla coerenza del progetto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-surreal-149",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La torre di Pisa ha prenotato un massaggio. L'architetto domanda di essere presente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-surreal-150",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La moka annuncia il meteo. Domani, pressione alta e possibilità di caffè.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-surreal-151",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il supplì ha tirato il filo fino al salotto. La mozzarella voleva guardare la televisione.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-surreal-152",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il teatro dei pupi ha messo in scena uno spettatore addormentato. Il pubblico aspetta con ansia il momento in cui si sveglierà per applaudire se stesso.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-surreal-153",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Un violino di Cremona sogna un violoncello. Si sveglia con un cassetto in più.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento italiano a liuteria, musica o teatro come contesto di una scena inventata; nessuna imitazione di un autore."
+  },
+  {
+    "id": "intl-v2-it-surreal-154",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il codice fiscale ha scritto la propria autobiografia. Il mio nome compare solo nei ringraziamenti.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-surreal-155",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La Befana ha consegnato una calza piena di martedì. Ho chiesto cortesemente il cambio con biscotti.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-surreal-156",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le mura di Lucca hanno cominciato a pedalare. I ciclisti corrono a piedi per non perdere il giro.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-surreal-157",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il Carnevale di Viareggio ha costruito un carro tanto realistico che paga già l'assicurazione.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-surreal-158",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La fontana di Trevi restituisce i desideri non utilizzati. Ho ricevuto una busta piena di corsi di chitarra.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-surreal-159",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La sbrisolona ha trovato la colla. Mantova la invita a riflettere sulla propria identità.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-surreal-160",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "I cavalli del Palio hanno chiesto una gara di lettura. Le contrade stanno scegliendo i segnalibri.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-surreal-161",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Sanremo è finito prima di iniziare. La televisione manda comunque quattro ore di ringraziamenti preventivi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-surreal-162",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Una ceramica di Faenza ha decorato il pittore. Lui ammette che i colori gli stanno bene.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-surreal-163",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il pane carasau si è messo a cantare. La Sardegna guadagna un coro molto croccante.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-surreal-164",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il Castel dell'Ovo si è schiuso. Napoli aspetta di capire quanto crescerà il piccolo castello.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-surreal-165",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "L'orchestra della Scala ha perso una pausa. La cercano tutti facendo silenzio.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento italiano a liuteria, musica o teatro come contesto di una scena inventata; nessuna imitazione di un autore."
+  },
+  {
+    "id": "intl-v2-it-surreal-166",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il mercato di Ballarò si è trasferito nella mia sveglia. Mi alzo sempre con una voglia precisa di melanzane.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-surreal-167",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La maschera di Arlecchino ha cambiato proprietario da sola. Cercava una persona capace di gestire più colori.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-surreal-168",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il ponte di Bassano ha imparato a nuotare. Il Brenta vorrebbe discutere la novità con calma.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-surreal-169",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il gianduiotto ha attraversato il Po. Ora insiste per essere esposto al Museo della Marina del cioccolato.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-surreal-170",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Il Prato della Valle ha preso una vacanza in un vaso. Padova organizza le visite a turno.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-surreal-171",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La Befana consegna una calza a un polpo. Gennaio termina molto più tardi del previsto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-surreal-172",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La Reggia di Caserta ha perso una chiave. I portieri hanno convocato un convegno per stabilire da quale porta iniziare.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-surreal-173",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Lo strudel ha fatto crescere un melo in soggiorno. Il divano chiede di essere spostato fuori dalla zona raccolta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-surreal-174",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La Lanterna di Genova illumina il passato. Le navi tornano con ricevute molto antiche.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-surreal-175",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Pinocchio ha chiesto al Grillo Parlante di comunicare per email. La coscienza ha risposto con quarantadue notifiche.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-surreal-176",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "I nuraghi hanno organizzato una festa di compleanno comune. La torta occupa metà Sardegna.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-surreal-177",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Le olive ascolane hanno aperto un collegio. Ogni alunna arriva già con il pranzo dentro.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-surreal-178",
+    "collection": "it-it-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "La tombola ha estratto una porta. L'abbiamo aperta: finalmente qualcuno aveva preparato la cena.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  }
+]

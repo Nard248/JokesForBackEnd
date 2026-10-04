@@ -1,7 +1,6 @@
 import secrets
 import uuid
 
-import pgtrigger
 from django.conf import settings
 from django.contrib.postgres.indexes import GinIndex
 from django.contrib.postgres.search import SearchVectorField
@@ -66,19 +65,54 @@ class Language(models.Model):
     """Language: ISO 639-1 code and name"""
     code = models.CharField(max_length=10, unique=True)  # ISO 639-1
     name = models.CharField(max_length=100)
+    native_name = models.CharField(max_length=100, blank=True)
 
     def __str__(self):
         return f"{self.name} ({self.code})"
 
 
+class Country(models.Model):
+    """Geographic setting, independent of a joke's language or cultural context."""
+    code = models.CharField(max_length=2, unique=True)
+    name = models.CharField(max_length=100)
+    native_name = models.CharField(max_length=100, blank=True)
+
+    class Meta:
+        ordering = ['name']
+
+    def __str__(self):
+        return f'{self.name} ({self.code})'
+
+
 class CultureTag(models.Model):
-    """Cultural context: American, British, universal"""
+    """Curated cultural context; does not describe a reader's identity."""
     name = models.CharField(max_length=100, unique=True)
+    native_name = models.CharField(max_length=100, blank=True)
+    languages = models.ManyToManyField(Language, blank=True, related_name='cultures')
+    countries = models.ManyToManyField(Country, blank=True, related_name='cultures')
     slug = models.SlugField(max_length=100, unique=True)
     description = models.TextField(blank=True)
 
     def __str__(self):
         return self.name
+
+
+class CulturalCollection(models.Model):
+    """An explicitly supported language/country/culture combination."""
+    slug = models.SlugField(max_length=100, unique=True)
+    language = models.ForeignKey(Language, on_delete=models.PROTECT, related_name='cultural_collections')
+    country = models.ForeignKey(Country, on_delete=models.PROTECT, related_name='cultural_collections')
+    culture = models.ForeignKey(CultureTag, on_delete=models.PROTECT, related_name='cultural_collections')
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=['language', 'country', 'culture'], name='uniq_cultural_collection_context',
+            ),
+        ]
+
+    def __str__(self):
+        return self.slug
 
 
 class Source(models.Model):
@@ -91,13 +125,8 @@ class Source(models.Model):
         return self.name
 
 
-@pgtrigger.register(
-    pgtrigger.UpdateSearchVector(
-        name='joke_search_vector_update',
-        vector_field='search_vector',
-        document_fields=['text', 'setup', 'punchline'],
-    )
-)
+# Search is maintained by database triggers on this row, classification rows,
+# and their through tables; see migration 0041_unified_joke_search.
 class Joke(models.Model):
     """Main joke model with rich metadata for search and filtering"""
 
@@ -130,6 +159,14 @@ class Joke(models.Model):
     tones = models.ManyToManyField(Tone, related_name='jokes')
     context_tags = models.ManyToManyField(ContextTag, related_name='jokes')
     culture_tags = models.ManyToManyField(CultureTag, related_name='jokes', blank=True)
+    countries = models.ManyToManyField(Country, related_name='jokes', blank=True)
+    seed_key = models.CharField(max_length=160, unique=True, null=True, blank=True)
+    cultural_note = models.TextField(blank=True)
+    editorial_status = models.CharField(
+        max_length=20, default='legacy',
+        choices=[('legacy', 'Legacy content'), ('generated', 'AI generated'),
+                 ('native_reviewed', 'Reviewed by a native speaker')],
+    )
 
     # Content classification (compliance: three-bucket framework)
     CONTENT_TIER_CHOICES = [
@@ -162,6 +199,7 @@ class Joke(models.Model):
 
     # Search
     search_vector = SearchVectorField(null=True, blank=True)
+    search_vector_simple = SearchVectorField(null=True, blank=True)
 
     # Share card
     share_image = models.ImageField(
@@ -181,6 +219,7 @@ class Joke(models.Model):
         ordering = ['-created_at']
         indexes = [
             GinIndex(fields=['search_vector'], name='joke_search_vector_idx'),
+            GinIndex(fields=['search_vector_simple'], name='joke_simple_search_idx'),
         ]
 
     def __init__(self, *args, **kwargs):
@@ -650,6 +689,7 @@ class JokeSubmission(models.Model):
     culture_tags = models.ManyToManyField(
         CultureTag, blank=True, related_name='submissions'
     )
+    countries = models.ManyToManyField(Country, blank=True, related_name='submissions')
 
     # Knock-knock dialogue storage. Mirrors Joke.lines. Null for non-knock formats.
     lines = models.JSONField(

@@ -1,0 +1,2138 @@
+[
+  {
+    "id": "intl-v2-es-dad-001",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá dice que domina la tortilla. De momento solo ha conseguido que gire antes que el plato.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-002",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le pedí a mi padre un bocadillo de calamares ligero. Me quitó la servilleta y dijo que ya pesaba menos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-003",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá compró queso manchego curado. Lleva toda la semana preguntándole de qué estaba enfermo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-004",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En la panadería papá pidió pan con experiencia. Quería saber si el del día anterior cobraba menos por veterano.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-005",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá llama al salmorejo «la reunión donde el tomate consigue que todos se mezclen».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-006",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le dije que la croqueta estaba muy caliente. Papá respondió que debía de haber discutido con la freidora.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-007",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá considera las aceitunas una actividad deportiva: entrena la puntería con los huesos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-008",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En el bar pidió una tapa. Luego preguntó dónde estaba la olla a la que pertenecía y nos pidió que no suspiráramos todos a la vez.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-009",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá dice que las papas arrugadas tienen mucha experiencia. Yo solo quiero saber cuándo llega el mojo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-010",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le pedí un trozo pequeño de empanada gallega. Cortó uno enorme y explicó que era pequeño comparado con Galicia.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-011",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá quiso hacer una paella con ritmo. Pasó el sofrito cantando para que el arroz no perdiera el compás.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-012",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La fabada estaba reposando. Papá se tumbó a su lado para demostrar que participaba en la receta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-013",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le dije que el churro estaba torcido. Papá aseguró que así se agarraba mejor a la conversación.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-014",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá pidió un café solo. El camarero tuvo que escuchar que no queríamos abandonarlo en un momento tan difícil.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-015",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá dice que el pintxo tiene un gran punto a su favor. Señala el palillo y espera nuestra reacción.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-016",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le pedí más fundamento en sus argumentos. Papá me ofreció una rebanada más gruesa de pan con tomate.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-017",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá llama a las patatas bravas «las únicas que se atreven a contestar con salsa».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-018",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La empanada no cerraba bien. Papá dijo que seguramente tenía algo importante que comunicar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-019",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá compró pan de pueblo. Lleva desde entonces preguntándole por la familia.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-020",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le dije que el gazpacho estaba para repetir. Papá se acercó al cuenco y contó otra vez el mismo chiste.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-021",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá dice que la sobremesa no es perder tiempo. Es vigilar que la mesa no vuelva a tener hambre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-022",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le pedí a mi padre que pasara página en la discusión vecinal. Sacó el acta y siguió leyendo la siguiente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-023",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá llama al balcón «mi despacho exterior». Solo trabaja en supervisar lo que hacen los de enfrente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-024",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En la plaza le dije que tomara asiento. Lo levantó unos centímetros y preguntó adónde había que llevarlo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-025",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Mi padre cree que la comunidad de vecinos necesita altura de miras. Por eso insiste en celebrar la reunión en el último piso.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-026",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le pedí que echara una mano con la mesa camilla. La dejó encima y dijo que el encargo era bastante sencillo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-027",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá dice que el sofá del pueblo conoce la historia familiar. Tiene todas las monedas como pruebas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-028",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En la sobremesa preguntamos si alguien quería algo más. Papá dijo «unos centímetros de cinturón» y esperó aplausos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-029",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá puso una planta en la escalera. Dice que ahora el edificio tiene una planta más sin obras.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-030",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le dije que había que arreglar las cosas con el vecino. Fue a buscar la caja de herramientas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-031",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá llama al tendedero «la red social de las camisetas». Todas se enteran de lo que ha pasado en la lavadora.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-032",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La puerta del portal no cerraba. Papá dijo que por fin teníamos un vecino de mente abierta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-033",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En la terraza papá pidió aire fresco. Cuando llegó una ráfaga, dijo que el servicio había sido excelente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-034",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá dice que la siesta del gato es profesional. Nunca ha tenido una falta de asistencia.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-035",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le pedí que no diera más vueltas al asunto. Se sentó en la plaza y siguió contándolo desde la silla.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-036",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá llama al ascensor del bloque «el vecino que mejor sabe subir el ánimo y bajar las expectativas».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-037",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Mi padre quiso mejorar el ambiente de la reunión vecinal. Abrió una ventana y dio el trabajo por terminado.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-038",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le dije que la sobremesa se alargaba. Papá midió la mesa y aseguró que seguía igual.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-039",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá considera la cortina un gran ejemplo de discreción: sabe todo lo que pasa en el balcón y apenas se corre la voz.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-040",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La silla de la plaza estaba coja. Papá le ofreció apoyo moral antes de buscar una piedra.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-041",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá lleva calculadora en Nochevieja. Dice que las uvas no deberían tener ventaja por jugar en casa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-042",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le dije que las campanadas iban deprisa. Papá miró la torre y aseguró que no se había movido.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-043",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá llamó a la rosa de Sant Jordi «una conversación con varios puntos delicados».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-044",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En Fallas le pedimos que no hiciera chistes malos. Dijo que los guardaría para mejorar el material combustible de la conversación.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-045",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá vio un ninot enorme y preguntó si también tenía que pagar entrada para sus propias fotos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-046",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En la verbena le dije que siguiera el ritmo. Lo siguió hasta donde estaban los altavoces y preguntó qué tocaba hacer después.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-047",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá considera al abanico el único asesor de la feria que mejora las cosas cuanto más se agita.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-048",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La comisión de fiestas pidió un esfuerzo. Papá levantó el programa, que tenía treinta páginas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-049",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le dije que la charanga tenía fuerza. Papá preguntó si después podría ayudarnos con las sillas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-050",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En la feria del libro papá buscó una novela ligera. La comparó en la mano con el catálogo y eligió por gramos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-051",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá dice que el pregón es como un audio familiar: empieza con «seré breve» y termina con recuerdos de otras épocas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-052",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Compramos doce uvas de dibujo para un juego. Papá felicitó al reloj por una noche sin problemas digestivos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-053",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá llegó a la verbena con zapatos cómodos. «Hoy quiero que los únicos que protesten sean mis chistes.»",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-054",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En Sant Jordi le pedí una historia que me atrapara. Me entregó el libro atado con el lazo de la rosa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-055",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá llamó a los farolillos «gente muy colgada, pero con ideas brillantes».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-056",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le dije que el desfile avanzaba lento. Papá aseguró que así duraba más por el mismo precio.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-057",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En el concurso de disfraces papá fue de puntual. Nadie lo reconoció porque llegó primero.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-058",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La banda pidió silencio antes del concierto. Papá quiso saber si se podía guardar para la vuelta en coche.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-059",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá dice que la fiesta del pueblo tiene buenas raíces. Por eso llevamos veinte años celebrándola en la misma plaza.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-060",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En la verbena le pedí que se soltara un poco. Se desabrochó el primer botón y pidió instrucciones más precisas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-061",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá llamó al metro de Madrid «una ciudad que ha encontrado la forma de circular por debajo de sus propias preocupaciones».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-062",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le dije que el tren tenía retraso. Papá miró el reloj del vagón y preguntó si alguien había probado a darle cuerda.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-063",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En el Camino le pedí que marcara el paso. Dibujó una cruz en su bota y dijo que ya estaba identificado.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-064",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá dice que los puentes españoles son muy sociables: siempre están uniendo gente que iba por su lado.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-065",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En el paseo marítimo le pedí una opinión profunda. Se acercó al borde para ver cuánto cubría.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-066",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "El guía de Toledo nos invitó a mirar hacia arriba. Papá dijo que por fin una visita tenía instrucciones sencillas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-067",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá llama a la maleta «el único miembro de la familia que acepta irse de viaje cerrado».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-068",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le dije que el camino gallego estaba lleno de historia. Papá miró las botas y aseguró que también de barro contemporáneo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-069",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En Valencia nos perdimos junto al tranvía. Papá propuso seguirlo porque parecía tener la vida más encarrilada.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-070",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá dice que la plaza mayor nunca termina de graduarse: lleva siglos siendo mayor y todavía necesita que la barran.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-071",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En el tren a Toledo le pedí a papá que bajara la voz. Se agachó para contarme el mismo chiste desde el suelo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-072",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La guía de Córdoba nos habló de un arco importante. Papá preguntó si faltaban las flechas o si era solo decorativo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-073",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá llamó al billete de ida y vuelta «un papel con problemas para comprometerse con un destino».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-074",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le dije que la mochila del Camino pesaba demasiado. Papá sugirió quitarle importancia y pareció satisfecho con el consejo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-075",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En la estación pedí una salida rápida. Papá empezó a despedirse sin terminar las frases.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-076",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá dice que las rotondas son cursos intensivos de volver a pensar las decisiones.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-077",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le dije que el faro gallego orientaba a los barcos. Papá le pidió también consejo sobre dónde cenar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-078",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En la plaza de Segovia papá propuso una foto espontánea. Nos colocó durante seis minutos antes de dar permiso para improvisar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-079",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá compró un mapa desplegable. Dice que viene con suficiente territorio para ocupar toda la mesa del bar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-080",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le pedí que hiciera más corto el viaje. Dobló la ruta en el mapa y nos pidió reconocer su capacidad de adaptación.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-081",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En el patio de Córdoba papá dijo que todas las flores eran de confianza: ya las conocíamos de vista.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-082",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le pedí que regara con medida. Sacó la regla y preguntó cuántos centímetros de agua queríamos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-083",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá considera el huerto un buen colegio. Las verduras empiezan pequeñas y algunas terminan muy cultivadas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-084",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La planta del balcón necesitaba apoyo. Papá le dijo «tú puedes» y volvió a sentarse.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-085",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá llamó a la regadera «la vecina que siempre acaba repartiendo todo lo que sabe».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-086",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En la huerta valenciana preguntamos por la calidad del tomate. Papá dijo que él lo veía con muy buen color para una entrevista.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-087",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "El geranio del patio se inclinaba. Papá pensó que quería escuchar mejor la conversación de los vecinos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-088",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le dije que el limonero estaba cargado. Papá propuso ayudarle a llevar algunas cosas a casa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-089",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá dice que las macetas del concurso de patios son muy humildes: se conforman con subir un poco en la pared.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-090",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La enredadera llegaba al balcón. Papá aseguró que alguien por fin estaba haciendo carrera en el edificio.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-091",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le pedí que cuidara las raíces. Papá empezó a preguntar por la abuela del naranjo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-092",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá llama al cactus canario «el amigo que te avisa con mucha antelación de que no quiere abrazos».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-093",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En el jardín botánico le dije que respetara los caminos. Papá les saludó al pasar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-094",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La manguera tenía un nudo. Papá dijo que seguramente le costaba expresar lo que llevaba dentro.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-095",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le pedí que podara con criterio. Escribió una lista de opiniones antes de coger las tijeras.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-096",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá considera a la sombra la mejor vecina de la terraza: viene cuando puede y nunca pide café.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-097",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "El árbol de la plaza perdía hojas. Papá le recomendó una carpeta de anillas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-098",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le dije que las flores se habían abierto. Papá preguntó si ya aceptaban visitas sin reserva.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-099",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En el patio mi padre felicitó a la fuente por mantener la conversación cuando los vecinos se callaban.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-100",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá llama a las malas hierbas «plantas que se han enterado de la fiesta sin recibir invitación».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-101",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En el Prado le pedí a papá que mirara con perspectiva. Dio tres pasos atrás y dijo que ahora había más sitio para hacerlo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-102",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá dice que los marcos son muy pacientes: llevan años esperando a que el cuadro les agradezca el apoyo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-103",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le pedí un libro con ritmo. Papá golpeó suavemente la portada de una novela y dijo que dependía del lector.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-104",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En la biblioteca del pueblo buscó una historia larga. La bibliotecaria le señaló la estantería, no la fila de préstamos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-105",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá llamó al diccionario «el amigo que sabe muchas palabras y jamás te deja terminar una discusión».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-106",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La guitarra del taller de flamenco estaba desafinada. Papá recomendó llegar a un acuerdo entre todas sus cuerdas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-107",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le dije que el cuadro tenía mucha luz. Papá propuso apagar la lámpara del museo para ahorrar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-108",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En la exposición papá pidió una obra accesible. Señaló una que no estaba detrás del grupo más alto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-109",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá considera al marcapáginas el lector más constante de la familia: siempre está ahí cuando abrimos el libro.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-110",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le pedí que se metiera en la historia. Se acercó tanto a la página que tuvimos que prestarle las gafas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-111",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "El pianista del pueblo buscaba un tono distinto. Papá recomendó hablar más bajo al principio.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-112",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá dice que la escultura tiene una gran ventaja en las reuniones: nadie espera que cambie de postura.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-113",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En la feria del libro le pedí algo que sorprendiera. Compró el catálogo y dijo que nadie lo había visto venir.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-114",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La novela era de bolsillo. Papá comprobó el suyo y pidió una edición que tuviera en cuenta las llaves.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-115",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le dije que el autor dejaba espacio a la imaginación. Papá señaló la página en blanco y lo felicitó por la generosidad.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-116",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En el teatro del pueblo papá llamó al telón «el único que sabe retirarse a tiempo y volver cuando hace falta».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-117",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La banda municipal ensayaba escalas. Papá dijo que se alegraba de que hubiera ascensor para los instrumentos pesados.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-118",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le pedí que apreciara el detalle del cuadro. Buscó la etiqueta del precio y silbó con mucho respeto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-119",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá dice que los libros de viajes tienen una vida injusta: conocen muchos sitios, pero siempre vuelven a la misma estantería.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-120",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En la biblioteca le dije que guardara silencio. Cerró la mochila para que no se escapara.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-121",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá fue al ayuntamiento a pedir información clara. Lleva una linterna por si el trámite lo requiere.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-122",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le dijeron que necesitaba un justificante. Papá comenzó explicando que lo había hecho con la mejor intención.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-123",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En la reunión de vecinos le pidieron un punto de vista. Se sentó junto a la ventana y dijo que ese estaba bastante bien.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-124",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá llama a la ventanilla «el lugar donde una pregunta entra pequeña y sale con tres anexos».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-125",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "El empleado le pidió que firmara abajo. Papá se agachó antes de encontrar el recuadro.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-126",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá considera al sello un profesional comprometido: siempre deja constancia de que ha pasado por allí.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-127",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le pedí que ordenara los papeles de la comunidad. Les dijo en voz alta que se pusieran por fechas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-128",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En la gestoría le hablaron de su situación actual. Papá respondió que estaba sentado y bastante cómodo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-129",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La cita del ayuntamiento era a las diez. Papá llevó flores porque decía que nunca estaba de más causar buena impresión.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-130",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le dijeron que el expediente seguía su curso. Papá preguntó si habría ceremonia de graduación.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-131",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En la asamblea pidieron manos para ayudar. Papá levantó las dos y preguntó si eso le daba derecho a elegir tarea.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-132",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá llama al acta vecinal «la versión del partido que escribe quien todavía conserva el bolígrafo».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-133",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La oficina necesitaba alguien resolutivo. Papá se ofreció a quitar primero el crucigrama de la sala de espera.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-134",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le pidieron una copia fiel. Papá prometió que el papel no iba a traicionar a nadie.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-135",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En la reunión de la peña papá propuso ir al grano. Nadie entendió por qué había sacado un saco de arroz.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-136",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "El formulario de nuestra asociación vecinal de Madrid pedía datos de contacto. Papá escribió que prefería un apretón de manos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-137",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le dijeron que la respuesta estaba en camino. Papá preguntó si convenía esperar en la estación.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-138",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá considera la silla de la sala de espera un puesto estable: se queda allí cuando todos acabamos marchándonos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-139",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "El presidente de la comunidad pidió un voto de confianza. Papá dijo que confiaba, pero que quería ver primero la urna.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-140",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En el ayuntamiento le hablaron de una gestión ágil. Papá se quitó la chaqueta por si había que correr.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An explicitly Spanish workplace, public-service, or association scene; institutional satire is not a national trait. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-141",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá puso la foto del patio en la nube. Ahora pregunta si hay que recogerla cuando amenaza lluvia.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-142",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La aplicación del metro perdió la conexión. Papá le ofreció sentarse junto a nosotros para que no estuviera sola.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-143",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le pedí que abriera una pestaña para comprar entradas del museo. Papá miró la pantalla con un ojo muy abierto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-144",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá dice que el cargador es el miembro más responsable de la familia: siempre vuelve a casa con energía para otro.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-145",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "El móvil del pueblo iba lento. Papá aseguró que había entendido perfectamente el concepto de turismo tranquilo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-146",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le dije que hiciera una copia de seguridad del recetario. Lo puso detrás de una segunda puerta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-147",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá llama al wifi del bar «el invitado que todo el mundo pregunta si ha llegado antes de sentarse».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-148",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La tableta pedía una actualización. Papá le contó lo que había pasado en la plaza esa mañana.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-149",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le dije que el mapa digital necesitaba ubicación. Papá lo colocó en el centro de la mesa y esperó felicitaciones.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-150",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá dice que la impresora de la biblioteca tiene un trabajo de muchas páginas y poca perspectiva de vacaciones.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-151",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "El reloj inteligente contó demasiados pasos en la verbena. Papá dijo que algunos eran opiniones de sus pies.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-152",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le pedí que bajara el archivo del ayuntamiento. Papá llevó el portátil al piso de abajo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-153",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá compró un lector electrónico para la feria del libro. Dice que ahora puede llevar la estantería sin negociar con el maletero.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-154",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "El teléfono se quedó sin espacio durante las Fallas. Papá lo apartó un poco de los demás para ver si se arreglaba.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-155",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le dije que el ordenador estaba pensando. Papá dejó el café al lado y dijo que así trabajaría mejor.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-156",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá llama a la contraseña del bar «el único secreto que todo el mundo pide en voz alta».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-157",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La aplicación le pidió permiso para recordar. Papá le contó otra vez la anécdota del viaje a Toledo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-158",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le dije que conectara la impresora a la red. Apareció con la bolsa reutilizable de la compra y muy pocas dudas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-159",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Papá considera al ratón inalámbrico un animal doméstico bastante razonable: no exige paseo, pero desaparece igual.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-160",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "El móvil se puso en modo ahorro durante la excursión. Papá dijo que era el único del grupo que había leído el presupuesto.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology or science applied to an explicitly local Spanish setting. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-161",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En el colegio pidieron un trabajo sobre el pueblo. Papá quiso incluir sus ocho años hablando de arreglar la fuente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-162",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le dije que estudiábamos comunidades autónomas. Papá preguntó si la nuestra ya podía ordenar sola la habitación.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-163",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La profesora pidió una descripción de la plaza. Papá empezó por el banco donde mejor se entiende el mundo sin levantarse.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-164",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Mi tarea sobre Sant Jordi necesitaba un final. Papá dijo que el libro ya lo llevaba, pero que no convenía empezar por ahí.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-165",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le pedí ayuda con una redacción sobre la huerta. Papá insistió en que lo primero era dejar madurar la idea.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-166",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "El colegio organizó una visita al museo. Papá preguntó si también se admitían padres todavía en uso.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-167",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le dije que tenía que mejorar la letra. Papá sugirió empezar por una que me cayera especialmente bien.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-168",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En la clase de música estudiábamos silencios. Papá pidió una copia del material para la sobremesa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-169",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Mi maqueta del acueducto se caía. Papá explicó que le faltaban siglos de experiencia.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-170",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le pedí una idea para el concurso de patios del colegio. Papá propuso plantas que ya supieran posar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-171",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La tarea pedía explicar el clima de España. Papá dijo que podía resumir el de nuestra cocina después de romper un plato.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-172",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "En educación física teníamos que coordinar movimientos. Papá ofreció su experiencia repartiendo platos en la verbena.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-173",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le dije que la profesora quería respuestas completas. Papá añadió «muchas gracias» a todas las del cuestionario.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-174",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "El colegio pidió una foto familiar para el mural. Papá envió la mesa de la última comida y aseguró que allí estaban todas nuestras características.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-175",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Mi dibujo del faro necesitaba luz. Papá lo acercó a la ventana y dijo que el problema era sencillo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-176",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le pedí que revisara la tarea sin cambiarla. Se quedó mirándola muy seriamente y declaró terminada la supervisión.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-177",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "La clase preparaba un mapa del barrio. Papá quiso marcar todos los bares como centros de información vecinal.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-dad-178",
+    "collection": "es-es-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Le dije que había sacado un diez en la redacción sobre Segovia. Papá preguntó de dónde lo había sacado y si no lo echarían de menos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Gentle groaner or literal-minded exaggeration. Original AI-authored draft; no native human review claimed."
+  }
+]

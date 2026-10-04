@@ -1,0 +1,2282 @@
+[
+  {
+    "id": "intl-v2-de-nerd-001",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mein Sauerteig hat mehr aktive Kulturen als mein Kalender. Biologisch läuft das Networking ausgezeichnet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-002",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Unser deutsch-österreichisches Wörterbuch kennt Semmel und Brötchen. Der Einkaufsalgorithmus hat trotzdem zweimal bestellt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-003",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Ich modellierte den Pfandkreislauf als Graphen. Mein Sohn fragte nur, an welchem Knoten das Eis entsteht.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-004",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Im Schrebergarten messe ich Bodenfeuchte per Sensor. Die Nachbarin misst sie am Ausdruck meiner traurigen Tomaten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-005",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Berliner U-Bahn-Karte ist für mich ein Graph. Für meine Mutter ist sie weiterhin eine Frage an den nächsten Menschen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-006",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus optimierte ich die Sitzdauer pro Bestellung. Das Ergebnis ähnelte verdächtig dem Verhalten aller ohne Tabellenkalkulation.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-007",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Unser Schachverein digitalisierte die Eröffnungen. Meine ersten Fehler stehen jetzt in erstaunlich vielen Dateiformaten bereit.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-008",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Ich programmierte den Adventskalender rekursiv. Hinter Türchen eins lag eine Anleitung, Türchen eins erneut zu öffnen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-009",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mein Wander-GPS zeichnet jeden Schritt im Harz auf. Die Kekspausen erscheinen als besonders entschlossene Datenpunkte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-010",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Der Knödel zerfiel in der Suppe. Mein österreichischer Freund nannte das Problem eine ungeplante Verteilung der Systemkomponenten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-011",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Im Technikmuseum verstand ich den historischen Computer. Seine begrenzten Möglichkeiten stimmen erstaunlich genau mit meiner heutigen Konzentration überein.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-012",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Ich dokumentiere meine Brotversuche. Version sieben schmeckt gut; leider hatte ich beim Erfolg vergessen, die Änderungen zu speichern.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-013",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Für das Team aus Wien und Hamburg schrieb ich einen Grußformel-Konverter. Bei „Mahlzeit“ wechselt er automatisch in die Pause.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-014",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mein Pfandbon ist ein sehr kleines Finanzmodell. Endlich sind alle Annahmen vorher tatsächlich durch meine Hände gegangen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-015",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Wetterstation im Kleingarten meldet Regen. Der nasse Laptop bestätigt das unabhängig und etwas nachdrücklicher.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-016",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Auf der Hamburger Hafenfähre erklärte ich Auftrieb. Mein Kind bevorzugte die kurze Fassung: „Wir kommen an.“",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-017",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mein Kaffeehaustisch in Wien ist ein guter Cache. Alles Wichtige liegt nah, ältere Zeitungen werden gelegentlich ersetzt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-018",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Der Chor möchte digitaler werden. Ich habe zuerst die Suchfunktion für gleichzeitig verschwundene Notenmappen vorgeschlagen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-019",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Meine Weihnachtslichter lassen sich programmieren. Seitdem feiern wir zusätzlich den jährlichen Neustart des Controllers.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-020",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Schwarzwaldwanderung hatte eine perfekte Höhenkurve. Meine Laune folgte ihr mit negativem Vorzeichen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-021",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Beim Strudelteig diskutierten wir Oberflächenspannung. Die österreichische Gastgeberin empfahl zunächst weniger Theorie und mehr Mehl.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-022",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Im Planetarium verlor ich das Zeitgefühl. Selten ist ein Raum so überzeugend für die eigene Orientierungslosigkeit eingerichtet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-023",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mein Brotbackautomat hat ein Programm namens normal. Ich hätte gern gewusst, welche statistische Stichprobe dahintersteckt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-024",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Der Wiener sagte „geht sich aus“. Mein deutsches Projektmodell verlangte weiterhin eine nachprüfbare Einheit dafür.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-025",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Am Pfandautomaten bemerkte ich einen Barcodefehler. Die Maschine und ich interpretierten dieselbe Flasche emotional völlig unterschiedlich.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-026",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Im Kleingarten optimierte ich den Gießweg. Die Schnecken hatten das Salatbeet längst mit einem deutlich einfacheren Algorithmus gefunden.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-027",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Münchner S-Bahn und mein Terminplan bilden ein verteiltes System. Gelegentlich vergessen beide, mir ihren aktuellen Zustand mitzuteilen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-028",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Im Kaffeehaus sortierte ich Zeitungsteile nach Relevanz. Der Strudel erhielt ohne Diskussion die höchste Priorität.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-029",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Unser Vereinsserver hat ein Backup. Schön, dass die digitale Kuchenausschreibung unsterblicher ist als der tatsächliche Kuchen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-030",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Ich berechnete die ideale Sternverteilung am Weihnachtsbaum. Die Katze optimierte anschließend auf maximale Erreichbarkeit.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-031",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Im Allgäu nannte ich die Serpentinen eine iterative Lösung. Meine Knie verlangten nach einem direkteren Beweis.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-032",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Der österreichische Knödel ist näher an einer Kugel als meine Handskizze. Mittags gewinnt praktische Geometrie regelmäßig.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-033",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Im Berliner Museum las ich alle Maße am Exponat. Mein Sohn wollte vor allem wissen, ob es in sein Zimmer passt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-034",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mein Sauerteig braucht regelmäßige Fütterung. Ich habe ihn als Dienst ohne automatische Skalierung dokumentiert.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-035",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die deutsche und österreichische Rezeptdatenbank stritten über Topfen und Quark. Der Kuchen selbst bestand jeden Integrationstest.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-036",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Ich digitalisierte meine Pfandbons. Der Laden möchte trotzdem die Papieroriginale; eine bemerkenswert materielle Schnittstelle.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-037",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Unsere Gartenpumpe hat jetzt Fernsteuerung. Die Pflanzen sind der einzige Teil des Systems, der keine Updates verlangt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-038",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Schwebebahn erklärte meinem Kind stabile Aufhängung. Mein Laptop im Rucksack demonstrierte gleichzeitig instabile Akkulaufzeit.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-039",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus prüfte ich mein neuronales Netz. Es klassifizierte jeden Kuchenteller zuverlässig als Ablenkung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-040",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Im Schachclub gewann die Software gegen mich. Sie hatte allerdings keinerlei soziale Bedenken, meine Bauern unfreundlich zu behandeln.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-041",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Der digitale Adventskranz zählt die Wochen automatisch. Die echte Kerze überzeugt weiterhin durch die anschaulichere Verbrauchsanzeige.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-042",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Beim Eifelwandern verwechselte ich Luftlinie mit Strecke. Mein mathematischer Optimismus erhielt eine sehr konkrete Geländekorrektur.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-043",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Salzburger Marillenknödel lösten ein Auswahlproblem. Ich nahm von jeder sichtbaren Größe einen Kontrollfall.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-044",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "In der Stadtbibliothek fragte ich nach Metadaten. Die Bibliothekarin zeigte auf das Schild, das ich bereits dreimal übersehen hatte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-045",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Ich wiege Mehl auf ein Gramm genau. Meine Familie bewertet das Ergebnis weiterhin in der Einheit „noch eine Scheibe“.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-046",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Der Kollege aus Graz nennt den Feiertagsanschluss Fenstertag. Mein Terminprogramm suchte dafür erst nach einer grafischen Oberfläche.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-047",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Pfandkiste ist mein einfachstes Datenlager. Jede Flasche hat einen klaren Zustand und macht bei Bewegung eine brauchbare Fehlermeldung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-048",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Ich führte ein digitales Schneckenprotokoll im Schrebergarten. Die Population reagierte mit überzeugendem Wachstum der Datenmenge.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-049",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Auf der Leipziger Straßenbahnkarte suchte ich den kürzesten Weg. Der Bäcker stellte einen gewichteten Sonderfall dar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-050",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Melange im Wiener Kaffeehaus ist kein homogenes Forschungsprojekt. Ich rühre trotzdem gern, bis meine Hypothese verschwindet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-051",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Unser Chor probt eine Fuge. Ich höre darin einen erstaunlich musikalischen Versuch, parallele Prozesse zu synchronisieren.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-052",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Beim Plätzchenbacken setzte ich auf parametrische Formen. Meine Familie nennt die Ergebnisse seitdem verstellbare Sterne.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-053",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mein Harz-GPS verlor das Signal. Der Wegweiser bot eine robuste Offline-Schnittstelle mit sehr geringem Energieverbrauch.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-054",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die österreichische Jause folgt bei mir einem Prioritätsbaum. Käse steht oben, alles mit langer Erklärung darf warten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-055",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Im Technikmuseum kurbelte ich Strom. Seitdem bewerte ich eine geladene Powerbank mit etwas größerem Respekt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-056",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Das Brot ist außen dunkler geworden. Meine Backkurve hat offenbar an der Kruste überangepasst.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-057",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Beim Besuch aus Wien erklärte ich meinen Smart Garden. Mein Gast goss die Pflanze; sein Prototyp war beeindruckend schnell.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-058",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Ich schrieb ein Programm für Pfandrückgaben. Es fand heraus, dass ich die Flaschen trotzdem selbst tragen muss.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-059",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Der Kompost im Kleingarten verarbeitet heterogene Eingaben. Nur meine schlecht gelaunten Kommentare bleiben bisher erstaunlich unverändert.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-060",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Hamburger Fährfahrt ist eine praktische Demonstration relativer Bewegung. Besonders beim Versuch, Kaffee ohne zusätzliche Modellannahmen zu trinken.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-061",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mein Wiener Kaffeehaustermin brauchte kein WLAN. Wir synchronisierten unsere Neuigkeiten erfolgreich über eine altbewährte Sprachschnittstelle.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-062",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Vereinswebsite hat eine Suchfunktion. Sie findet jetzt sehr schnell sämtliche veralteten Öffnungszeiten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-063",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Ich scannte den Nussknacker in drei Dimensionen. Die Nuss daneben blieb ein ungelöstes mechanisches Problem.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-064",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Auf dem Schwarzwaldweg brach ich das Tracking ab. Der Wald hatte meine Laufleistung auch ohne Statistik bereits überzeugend erfasst.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-065",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Beim Knödelrollen erklärte ich Kugelvolumen. Die Gastgeberin fragte, ob meine Gleichung auch das Abwaschen einschließe.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-066",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Im Museum sah ich ein altes Rechengerät. Es brauchte Strom aus Muskeln, aber erstaunlich wenig Zustimmung zu Nutzungsbedingungen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-067",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Meine Bäckereibestellung nutzt Kompression: „Wie immer.“ Nur bei einem neuen Mitarbeiter muss ich das vollständige Datenpaket senden.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-068",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Das Wien-Berlin-Projekt braucht Übersetzung für „bald“. Alle anderen Wörter übertragen sich technisch problemlos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-069",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Ich ordnete Pfandflaschen nach Informationsdichte. Mein Partner sortierte sie nach „passt in die Tasche“ und gewann den Praxistest.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-070",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Das Hochbeet ist ein guter Versuchsaufbau. Leider behandeln die Amseln meine Kontrollgruppe als freien Feldzugang.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-071",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Im ICE optimierte ich meine Sitzposition. Die Steckdose erwies sich als wichtigere Variable als die theoretisch beste Aussicht.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-072",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Beim Wiener Kaffeehausbesuch rechnete ich die Zeit pro Seite aus. Der Kulturteil war schuld, dass wir eine zweite Bestellung brauchten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-073",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Unser Sportverein hat eine Trainingsapp. Sie kennt jede Strecke, aber noch nicht den erstaunlichen Einfluss frisch belegter Brötchen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-074",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Meine Weihnachtsbaumbeleuchtung läuft als Zustandsautomat. Der häufigste Zustand heißt „wo ist noch einmal die Anleitung?“",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-075",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Im Erzgebirge folgte ich einem digitalen Höhenmodell. Die echte Steigung lieferte die bisher überzeugendste Validierung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-076",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Beim österreichischen Frühstück ist meine Zielfunktion einfach: Marmelade maximieren, Tischklebrigkeit unter einem vertretbaren Grenzwert halten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-077",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Leipziger Buchmesse lieferte mehr Daten, als mein Lesepensum verarbeitet. Mein Stapel ist jetzt eine Warteschlange mit Kulturanspruch.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-078",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Ich fotografierte die Poren meines Sauerteigbrots. Endlich sieht mein Frühstück nach einer Forschungsförderung aus.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-079",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Meine österreichische Kollegin testete meine Rezept-App. Bei Semmelknödeln fiel auf, dass nicht jeder Brotname ein austauschbarer Platzhalter ist.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-080",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Pfandmaschine lehnt verbeulte Flaschen manchmal ab. Mein Bilderkennungsmodell nennt das eine unangenehm vertraute Herausforderung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-081",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Im Kleingarten zeichnete ich Schattenverläufe auf. Die Katze lieferte zuverlässige Live-Daten direkt vom wärmsten Messpunkt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-082",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Das Kölner Straßenbahnnetz ist übersichtlich. Komplex wird es erst, wenn meine Gruppe gleichzeitig vier verschiedene Eisdielen optimiert.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-083",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Ich wollte im Wiener Kaffeehaus Quantenphysik erklären. Der Kellner brachte zwei Gabeln und löste wenigstens das Kuchenproblem klassisch.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-084",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Unser Schachturnier verwendet eine Uhr. Mein Gehirn hätte gern dieselbe sichtbare Anzeige für verbleibende sinnvolle Einfälle.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-085",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Weihnachtspyramide ist mein liebster Analogrechner. Sie berechnet zuverlässig, wie lange ich anderen beim Drehen zusehen kann.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-086",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Beim Taunuslauf glättete die App meine Strecke. Meine Beine finden diese nachträgliche Vereinfachung sachlich unangemessen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-087",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Der Apfelstrudel demonstriert Schichtsysteme. Ich bevorzuge Versuche, bei denen die Proben nach der Analyse gegessen werden dürfen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-088",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Der Audioguide im Museum bietet eine Pause-Taste. Ein Modell, das ich einigen meiner eigenen Erklärungen dringend nachrüsten sollte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-089",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Bei meinem Roggenbrot ist die Zutatenliste stabil. Die Krustenform bleibt ein Forschungsgebiet mit überraschend kreativen Ergebnissen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-090",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mein Wiener Freund verstand meine Programmiersprache nicht. Er zeigte mir seine Kaffeekarte, und wir erklärten uns gegenseitig zu Anfängern.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-091",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Meine Pfandstatistik hat einen saisonalen Trend. Im Sommer steigt nicht nur die Temperatur, sondern auch die Zahl meiner klebrigen Beutel.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-092",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Der Regenmesser im Schrebergarten braucht keine Cloud. Er speichert deren Ausgabe direkt lokal.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-093",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Wuppertaler Schwebebahn inspirierte meine Architekturzeichnung. Mein Kollege fragte, ob der Server wirklich an der Decke hängen müsse.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-094",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus versuchte ich Deep Learning. Mein wichtigster Lernfortschritt war die Tiefe der Kuchenvitrine.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-095",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Unser Chor hat Latenzprobleme. Manche Einsätze erreichen die hintere Reihe erst nach einer kurzen persönlichen Prüfung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-096",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mein Adventskalender besitzt keine Datenbank. Deshalb kann kein Update versehentlich das bereits gegessene Türchen wiederherstellen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-097",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Beim Spreewaldwandern zeigte ich meinem Kind Flussverzweigungen. Es fragte, welche davon zum besten Eis kompiliere.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-098",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Topfenfüllung verhielt sich anders als erwartet. Mein Wiener Gastgeber riet mir, zunächst die Milchprodukte statt die Theorie zu prüfen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-099",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Im Planetarium erkannte ich drei Sternbilder. Die übrigen klassifizierte ich ehrlich als sehr schön angeordnete Unsicherheit.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-100",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Unser Bäcker arbeitet mit Vorbestellungen. Ein erfreulich anschauliches Beispiel für eine Warteschlange, die am Ende duftet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-101",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die deutsche und österreichische Gruppe verglich Dialektdaten. Das gemeinsame Gelächter bildete einen überraschend gut synchronisierten Audiokanal.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-102",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Am Pfandautomaten testete ich dieselbe Flasche erneut. Meine Hoffnung auf ein anderes Ergebnis benötigt noch eine statistische Begründung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-103",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Gartenkamera erkannte Bewegung im Beet. Es war mein Hut; der Salat hatte trotz ausführlicher Beobachtung keine Fortschritte beim Weglaufen gemacht.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-104",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "In der Berliner U-Bahn änderte ich die Route. Mein Navi fand die spontane Neuplanung aufregender als meine Mitreisenden.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-105",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Wiener Kaffeehauszeitung ist wie ein Snapshot. Morgen ist sie historisch, heute blockiert sie angenehm meine E-Mails.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-106",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Das Mitgliederverzeichnis des Wandervereins hat doppelte Einträge. Offenbar wächst zumindest jemand durch Datenmigration über sich hinaus.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-107",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Beim Sternfalten errechnete ich die Winkel. Das Papier blieb dennoch bei seiner eigenen Interpretation von Symmetrie.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-108",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Eifelwanderung hatte ein hohes Verhältnis von Aussicht zu Bildschirmzeit. Meine Smartwatch war über ihre geringe Beteiligung leicht verstimmt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-109",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Beim österreichischen Knödelessen nannte ich den letzten Rest einen Randfall. Er verschwand überraschend schnell aus der Spezifikation.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-110",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Im Berliner Naturkundemuseum lernte ich neue Artennamen. Mein Gedächtnis archivierte zuverlässig nur „das mit dem lustigen Kopf“.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-111",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mein Sauerteig braucht keine Versionsnummer. An seinem Verhalten erkennt man ohnehin sofort, ob heute wieder etwas Grundlegendes anders ist.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-112",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Ein Innsbrucker erklärte mir seine Bergkarte. Ich erklärte ihm meine Debug-Ausgabe; beide enthalten auffallend viele Stellen, an denen man stehenbleibt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-113",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Ich suchte eine Formel für das Tragen voller Pfandtaschen. Die entscheidende Variable heißt weiterhin „noch eine Hand“.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-114",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Im Gemeinschaftsgarten testen wir automatische Bewässerung. Die zuverlässigste Rückmeldung bleibt der Nachbar, wenn sein Stuhl versehentlich nass wird.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-115",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Hamburger Fähre bietet mir eine gute Rechenpause. Wellen lassen sich angenehm beobachten, ohne sie sofort diskretisieren zu müssen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-116",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mein Wiener Kollege speichert Ideen auf Servietten. Das Format ist offen, die Haltbarkeit bei Kaffee jedoch bedauerlich eingeschränkt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-117",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Unser Vereinsarchiv wird digitalisiert. Jetzt kann ich auch die unleserliche Handschrift von vor dreißig Jahren in hoher Auflösung bewundern.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-118",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Weihnachtsbeleuchtung hat einen Bewegungsmelder. Der Igel im Garten übernimmt inzwischen einen großen Teil der abendlichen Programmgestaltung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-119",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mein GPS meldete im Harz eine Rekordgeschwindigkeit. Ich saß im Zug; erfreulich, wie kooperativ Daten bei guter Interpretation sein können.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-120",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Wiener Mehlspeise war schwer zu teilen. Mein Vorschlag für faire Algorithmen scheiterte an sehr persönlichen Ansichten über Rosinen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-121",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Bibliothek nutzt Barcodes. Meine privaten Bücher verwenden das ältere System „ich weiß ungefähr, unter welchem Stapel“.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-122",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Ich entwickelte einen Brotfrische-Sensor. Meine Familie bevorzugt die eingebaute Methode aus Nase und sofortiger Kostprobe.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-123",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Im Wien-München-Chat diskutierten wir Semantik. Die Nachricht „Kuchen ist da“ erreichte in beiden Städten unübertroffene Eindeutigkeit.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-124",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mein Pfandbon zeigt nur eine Summe. Ein wohltuendes Interface ohne Diagramm für meine finanzielle Selbstverbesserung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-125",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Schnecken im Kleingarten verteilen sich effizient. Ich hätte gern ihren Quellcode, vorzugsweise mit einer abschaltbaren Salatfunktion.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-126",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Der Leipziger Straßenbahnfahrplan ist ein diskretes Modell. Mein Sprint zur Haltestelle bleibt bedauerlicherweise ein kontinuierliches Problem.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-127",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus sammelte ich Beobachtungsdaten. Nach dem zweiten Strudel war die Stichprobe vor allem satt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-128",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Unser Schachverein führt Statistiken. Meine Lieblingskategorie „gute Absicht“ wird darin bislang methodisch unterbewertet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-129",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Adventskranzkerzen haben unterschiedliche Restlaufzeiten. Zum ersten Mal lässt sich Weihnachten als Batterieanzeige verstehen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-130",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Auf dem Schwarzwaldweg wechselte ich zu Flugmodus. Die Vögel zeigten sich von dieser Funktionsbezeichnung wenig beeindruckt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-131",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Der Salzburger Kuchenboden war perfekt eben. Ich fragte nach dem Messgerät; die Gastgeberin zeigte auf jahrzehntelange Wiederholungsversuche.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-132",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Im Museum für Kommunikation sah ich alte Telefone. Schon damals konnte eine Leitung besetzt sein, ganz ohne Softwarefehlerbericht.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-133",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mein Bäcker weiß, welches Brot ich kaufe. Sein Empfehlungssystem funktioniert ohne Cookie-Banner und mit besserer Kruste.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-134",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Unser österreichischer Gast benannte die Zutaten anders. Der deutsche Einkaufszettel erhielt endlich ein sinnvoll begründetes Datenmodell-Update.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-135",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Meine Pfanddatenbank trennt Flaschen und Bons. Im Alltag scheitert die Beziehung trotzdem gelegentlich an einer verschwundenen Jackentasche.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-136",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Der Feuchtigkeitssensor im Schrebergarten warnte frühzeitig. Ich hatte nur noch keine Benachrichtigung für „Warnung auch lesen“ eingerichtet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-137",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "In der Schwebebahn zeichnete ich Kraftpfeile. Mein Kind fand, die Aussicht hätte ohne Zusatzbeschriftung mehr Freude gemacht.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-138",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Melange kühlte nach physikalischen Regeln ab. Mein Wiener Freund schlug vor, statt weiterer Messungen endlich zu trinken.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-139",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Unser Chor liefert beeindruckende Mehrkanaldaten. Musikalisch arbeiten wir noch daran, sie gelegentlich auf dasselbe Wort auszurichten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-140",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Ich simulierte die Kugeln am Weihnachtsbaum. Die echte Katze lieferte eine Belastungsprüfung, an die niemand gedacht hatte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-141",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Beim Taunuswandern erklärte ich Fraktale anhand der Äste. Mein Sohn fand vor allem interessant, dass alle irgendwann Schatten ergeben.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-142",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Beim Knödelkochen nutzte ich einen Timer. Die österreichische Gastgeberin beobachtete den Topf; ihr Interface war deutlich größer.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-143",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Im Technikmuseum roch der alte Apparat nach Werkstatt. Mein Laptop liefert denselben Eindruck nur in sehr ungünstigen Momenten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-144",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Unsere Brotdose ist ein geschlossenes System. Leider gilt das nicht, sobald jemand an Käse interessiert ist.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-145",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Zwischen Graz und Köln tauschten wir Rezepte als Klartext. Die größte Inkompatibilität lag weiterhin bei „nach Gefühl“.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-146",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Flaschen in meinem Pfandbeutel bilden ein akustisches Messsystem. Es meldet jeden meiner ungeschickten Schritte in Echtzeit.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-147",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Das Gartenbeet wurde exakt vermessen. Die Kürbisranke betrachtet Koordinaten offenbar als eine höfliche gesellschaftliche Konvention.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-148",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Im ICE fand ich endlich einen reproduzierbaren Arbeitsplatz: Tisch auf, Laptop auf, Ellenbogen des Nachbarn berücksichtigen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-149",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Der Wiener Kaffeehausstuhl braucht kein Betriebssystem. Seit einer Stunde unterstützt er meine Arbeit ohne einzige Versionsabfrage.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-150",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Unser Verein hat ein digitales Abstimmungstool. Jetzt kann Unentschlossenheit wenigstens gleichzeitig auf mehreren Bildschirmen stattfinden.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-151",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Ich baute einen elektronischen Weihnachtsstern. Der erste Probelauf sah eher nach sehr konzentriertem Nordlicht aus.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-152",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mein Wandertracker lobte die Höhenmeter. Die Bank am Aussichtspunkt verstand meine eigentlichen Bedürfnisse ohne Messdaten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-153",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Jausenplatte meines österreichischen Freundes ist gut partitioniert. Beim Essen verwischen die ursprünglichen Datengrenzen allerdings erfreulich schnell.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-154",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Im Planetarium verlor ich meinen Schal. Ein winziges lokales Objekt erwies sich als schwieriger auffindbar als die Andromedagalaxie.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-155",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mein Sauerteigexperiment ist peer-reviewed. Drei Nachbarn prüfen regelmäßig, ob ich die Ergebnisse auch schmeckbar veröffentliche.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-156",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Der Wiener und ich wollten unser Frühstück automatisieren. Die Brötchen kamen trotzdem erst, als einer persönlich zum Bäcker ging.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-157",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Am Pfandautomaten erklärte ich Fehlerkorrektur. Meine Tochter drehte einfach die Flasche; ihre Lösung war bemerkenswert rechenarm.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-158",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Wetterdaten sagen trockenen Boden voraus. Im Schrebergarten nennt Oma das seit Jahren „morgen die große Kanne mitnehmen“.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-159",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Berliner Ringbahn inspirierte meine Schleife. Leider fehlt meinem Programm noch die gut erkennbare Möglichkeit, an einer Station auszusteigen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-160",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus schrieb ich sauberen Code. Zu Hause entdeckte ich drei Strudelflecken auf dem logisch einwandfreien Entwurf.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-161",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Unser Vereinskalender importiert Termine automatisch. Jetzt verpasse ich wichtige Zusammenkünfte in einem deutlich konsistenteren Format.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-162",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Nüsse im Adventsteller eignen sich für Wahrscheinlichkeitsrechnung. Besonders die Frage, warum genau die letzte so schwer zu öffnen ist.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-163",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Beim Allgäu-Ausflug zeigte mein Handy optimale Bedingungen. Die Wolke über uns hatte die aktuelle Dokumentation offenbar nicht gelesen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-164",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die österreichische Semmel hat eine symmetrische Oberfläche. Mein erster Biss leistete sofort einen praktischen Beitrag zur Symmetriebrechung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-165",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Im Leipziger Museum gab es ein interaktives Modell. Mein Kind fand den entscheidenden Knopf, während ich noch die Systembeschreibung las.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-166",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Schultüte meines Kindes ist ein Überraschungspaket. Ich nenne die Stifte Pflichtabhängigkeiten und die Schokolade ein sehr überzeugendes Zusatzmodul.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-167",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Unser Schrebergarten hat WLAN. Jetzt kann ich das schlechte Wachstum der Tomaten wenigstens direkt vor Ort mit wissenschaftlichen Ausreden begleiten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology meeting a specifically named German everyday custom or institution. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-168",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Beim Wien-Berlin-Sprachvergleich analysierten wir Satzmelodien. Der Rauchmelder bei den angebrannten Semmeln lieferte leider den lautesten gemeinsamen Nenner.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-169",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Ich berechnete das optimale Verhältnis von Kruste zu Brot. Meine Familie änderte die Randbedingungen, indem sie zuerst die Endstücke aß.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-170",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Meine Pfand-App erkennt jede Flasche. Den Beutel unter der Küchentreppe entdeckt sie leider noch nicht selbstständig.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-171",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Der Kompostthermometer zeigt Aktivität. Mein Büroprojekt hätte gern einen ähnlich einfachen Nachweis dafür, dass sich im Hintergrund etwas tut.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-172",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Im Schachverein analysierte ich meinen Fehler per Software. Früher reichte dem Gegner dafür ein sehr kurzes glückliches Gesicht.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-173",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Ich verschlüsselte die Adventskalenderhinweise. Meine Schwester knackte das System, indem sie die Schokolade roch.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-174",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Wanderroute im Erzgebirge enthält viele Datenpunkte. Mein Knie möchte trotzdem einzelne davon persönlich reklamieren.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-175",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mein WLAN-Passwort im Wiener Kaffeehaus stand auf dem Bon. Ein seltener Fall, in dem Bezahlen tatsächlich neue Verbindungen schafft.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-176",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Wiener Strudelrolle ist ein gutes Verpackungsmodell. Das Entpacken lohnt sich allerdings wesentlich mehr als die technische Spezifikation.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-nerd-177",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Rheinfähre demonstriert kontinuierliche Strömung und diskrete Abfahrten. Ich demonstriere derweil, dass man eine davon immer knapp verpassen kann.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-nerd-178",
+    "collection": "de-de-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Die Bibliothek empfahl mir ein Buch über Informationsüberlastung. Ich stellte es fürs Erste zu den anderen sieben hilfreichen Empfehlungen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. A technical or scholarly concept is applied to the everyday context. Original AI-authored draft; no native human review claimed."
+  }
+]

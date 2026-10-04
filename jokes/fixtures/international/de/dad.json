@@ -1,0 +1,2282 @@
+[
+  {
+    "id": "intl-v2-de-dad-001",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Meine Brezel ist ergonomisch. Egal, wo ich hineinbeiße, irgendwo bleibt ein praktischer Griff.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-002",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "In Wien bestellte ich eine Melange. Mein Sohn fragte, ob mein bisheriger Kaffee zu ordentlich getrennt gewesen sei.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-003",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Im Schrebergarten trage ich Arbeitshandschuhe auch beim Sitzen. Man muss auf spontane Aufgaben vorbereitet wirken.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-004",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Ich bringe Pfandflaschen einzeln zurück. Kleine Erfolgserlebnisse sollte man nicht unnötig bündeln.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-005",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Auf dem Harzwanderweg stand „leichter Anstieg“. Ich hätte gern die Gewichtsangabe für meine Knie gesehen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-006",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Meine Kuckucksuhr meldet sich stündlich. Der Schwarzwald hat Benachrichtigungen offenbar schon vor dem Smartphone erfunden.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-007",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Im Kegelverein bekomme ich endlich direkte Rückmeldung: Entweder fällt etwas um oder nicht.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-008",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Die österreichischen Knödel sehen rund aus. Gut, ich hatte Sorge, mein Mittagessen könnte irgendwo anecken.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-009",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Beim Roggenbrot kaufe ich immer den halben Laib. So bleibt meine Entschlossenheit glaubwürdig teilbar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-010",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "In der Berliner U-Bahn lese ich Stationsnamen laut. Mein Kind nennt das meine erste öffentliche Vortragsreihe.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-011",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Mein Wiener Freund sagte „Servus“. Ich antwortete „gern geschehen“; Höflichkeit sollte nicht am Wörterbuch scheitern.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-012",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Ich habe meinen Gartenzwerg gedreht. Jetzt überwacht er endlich den Bereich, in dem ich tatsächlich nichts tue.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-013",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Die Schultüte meines Sohnes hat einen stabilen Boden. Seine Zukunft beginnt also schon mal besser als mein Papierkorb.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-014",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus las ich drei Zeitungen. Mein Kaffee blieb ruhig; er hatte die Nachrichten offenbar bereits verdaut.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-015",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Der Pfandautomat nimmt mich ernst. Er quittiert wenigstens schriftlich, wenn ich etwas abgegeben habe.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-016",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Mein Wanderstock hat im Schwarzwald mehr Bodenproben genommen als ich Erinnerungsfotos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-017",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Ich habe die Adventskerzen nach Höhe sortiert. Jetzt sieht man auf einen Blick, wer die meiste Berufserfahrung hat.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-018",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Mein Fußballverein nennt mich vielseitig. Ich kann sowohl die Bank wärmen als auch danach wegtragen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-019",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Ich bestellte in Graz Topfen. Das klingt nach wenig, aber der Strudel wirkte erfreulich ausführlich.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-020",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Mein Brotzeitmesser schneidet auch Butter. Es gehört damit zu den wenigen Dingen mit wirklich erfülltem Zusatzversprechen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-021",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Die Hamburger Hafenfähre schaukelt. Gut, sonst hätte mein Kaffee gar keine sportliche Betätigung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-022",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Ein Innsbrucker zeigte mir den Wanderplan. Ich fragte nach der flachen Ausgabe fürs erste Kennenlernen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-023",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Die Heckenschere im Kleingarten ist elektrisch. Meine Ausreden mussten dadurch leider auf Akkubetrieb umsteigen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-024",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Zur Einschulung bekam mein Sohn ein Lineal. Endlich kann jemand zu Hause nachmessen, wie lang meine Erklärungen werden.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-025",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Im Kaffeehaus nahm ich einen Platz am Fenster. Meine Gedanken sollen wenigstens eine ordentliche Aussicht haben.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-026",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Die Getränkekiste ist leer. Im Pfandsystem nennt man das Vorbereitung auf einen erfolgreichen Abschluss.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-027",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Auf meiner Wanderkarte ist der Aussichtspunkt nur ein Punkt. Für die Anstrengung hätte ich eine größere Schrift erwartet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-028",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Unser Schwibbogen steht schief. Ich nenne das eine persönliche Interpretation erzgebirgischer Landschaft.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-029",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Im Wanderverein ist mein Tempo bekannt. Man kann mich problemlos als bewegliche Pausenplanung einsetzen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-030",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Beim Wiener Riesenrad achtete ich auf die Uhr. Wollte nur wissen, wie lang eine vernünftige Runde Ausblick dauert.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-031",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Vollkornbrot macht mich zufrieden. Endlich kaufe ich etwas, bei dem ausdrücklich nichts Wichtiges herausverhandelt wurde.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-032",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Die Straßenbahn in Dresden hat Haltewunschknöpfe. So stelle ich mir ein ordentliches Mitspracherecht bei Familienausflügen vor.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-033",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Mein Freund aus Graz nennt das Pause, ich Brotzeit. Wir haben das Problem durch ausreichend Essen gelöst.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-034",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Der Gartenzwerg schaut so ernst. Wahrscheinlich weiß er, dass er gleich wieder das Gießen beaufsichtigen muss.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-035",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Mein Kind braucht Hausschuhe für die Schule. Ich hätte nicht gedacht, dass Bildung so gemütlich anfangen darf.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-036",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Der Zeitungshalter im Kaffeehaus ist praktisch. Meine Arme wirken damit auch ohne Sport angenehm beschäftigt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-037",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Ich sammle Pfandbons alphabetisch. Bisher kommen sie alle unter „Bald einlösen“.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-038",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Auf dem Eifelweg war ich fast am Ziel. Das Schild fand meine Definition von „fast“ sehr großzügig.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-039",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Meine Weihnachtspyramide dreht sich ohne Strom. Ich habe sie vorsichtshalber nicht nach meinem WLAN-Passwort gefragt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-040",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Beim Kegeln streue ich meine Ergebnisse. Man soll schließlich nicht alles auf einen einzigen Kegel setzen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-041",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Marillenmarmelade auf dem Frühstücksbrot: Mein österreichischer Sprachkurs verlangt erfreulich wenig Schreibarbeit.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-042",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Der Brotkorb ist geflochten. Selbst unser Frühstück hat handwerklich mehr vorzuweisen als mein letztes Regal.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-043",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "In Köln fuhr ich eine Station zu weit. Das Ticket war offenbar besser für meine Neugier geeignet als der Fahrplan.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-044",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Meine Wiener Bekannte schrieb „passt“. Ich bewahre die Nachricht für meinen nächsten Versuch auf, den Koffer zu schließen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-045",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Im Kleingarten habe ich einen Regenmesser. Endlich bekommt auch schlechtes Wetter eine überprüfbare Arbeitsleistung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-046",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Die Schultüte ist spitz. Offenbar soll mein Kind gleich lernen, dass selbst Süßigkeiten klare Ziele brauchen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-047",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Ich bestellte in Wien einen kleinen Kaffee. Es schien vernünftig, eine neue Bekanntschaft langsam anzufangen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-048",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Mein Sohn fragte, warum auf Flaschen Pfand ist. „Damit sie nicht glauben, die Reise sei nach dem Trinken vorbei.“",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-049",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Auf dem Taunusweg hieß es „festes Schuhwerk“. Meine Schuhe versicherten mir, keinerlei Kündigungsabsichten zu haben.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-050",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Beim Plätzchenausstechen nehme ich Sterne. Bei Kreisen würde mir niemand glauben, dass ich Gestaltungsideen hatte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-051",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Unser Heimatverein sucht Zeitzeugen. Ich habe einen Wecker angeboten, der zumindest die letzten Jahre zuverlässig miterlebt hat.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-052",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "In Salzburg kaufte ich einen Stadtplan. Jetzt kann ich mich wenigstens mit kulturellem Hintergrund verlaufen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-053",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Meine Brezel hat große Löcher. Das ist der Teil des Frühstücks, bei dem ich besonders erfolgreich Kalorien spare.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-054",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Die Wuppertaler Schwebebahn fährt über mir. Gut, endlich muss ich für den Nahverkehr nicht immer nach unten schauen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-055",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Mein Tiroler Gastgeber fragte, ob ich bergfest sei. Ich versprach zumindest, nicht bei jeder Steigung sofort umzukehren.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-056",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Meine Gartenlaube hat einen Klapptisch. Die Mittagspause lässt sich damit offiziell öffnen und schließen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-057",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Das Hausaufgabenheft hat ein Lesebändchen. Schön, wenn wenigstens das Heft weiß, wo wir weitermachen sollten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-058",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus trug ich meine Lesebrille. Man möchte zwischen so vielen Zeitungen schließlich ausreichend qualifiziert aussehen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-059",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Beim Flaschenrückgeben trainiere ich Koordination. Eine Hand hält die Flasche, die andere die Hoffnung auf eine störungsfreie Annahme.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-060",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Unser Wanderweg hatte eine Abkürzung. Die Aussicht musste heute eben mit weniger Aufmerksamkeit auskommen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-061",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Ich habe den Adventskalender gerade aufgehängt. Jetzt hängt zumindest ein Teil meiner Dezemberplanung nicht schief.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-062",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Im Blasorchester sollte ich mehr Luft holen. Endlich eine musikalische Anweisung, die ich ohne Notenkenntnisse verstehe.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-063",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Beim Kaiserschmarrn gefallen mir die ungleichen Stücke. Endlich sieht ein zerlegtes Ergebnis offiziell so aus, wie es soll.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-064",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Die Bäckertüte hat ein Sichtfenster. Mein Frühstück lebt damit transparenter als mein Terminplan.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-065",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Die Leipziger Straßenbahn hat große Fenster. So sehe ich wenigstens genau, an welcher Ecke ich hätte aussteigen sollen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-066",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Mein Wiener Freund lobte meinen Schmäh. Ich habe vorsichtshalber nachgesehen, ob noch Senf am Hemd war.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-067",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Die Bohnen wachsen an Stangen. Mein Rücken wünscht sich für Gartenarbeit ein ähnlich gutes Unterstützungssystem.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-068",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Zum Schulanfang sortierte ich die Buntstifte. Mein Sohn korrigierte die Reihenfolge nach Wichtigkeit für Drachen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-069",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Im Kaffeehaus nahm ich die Zeitung von gestern. Ich wollte meinem Tag nicht gleich zu viel Neues zumuten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-070",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Die Pfandtasche raschelt auf dem Heimweg nicht. Ein guter Finanzabschluss sollte sich eben angenehm leer anhören.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-071",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Auf dem Spreewaldweg bog ich falsch ab. Bei so viel Wasser kann man wenigstens von einem fließenden Übergang sprechen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-072",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Unser Nussknacker steht neben den Nüssen. Ich respektiere seine klare Trennung zwischen Darstellung und tatsächlicher Arbeit.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-073",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Beim Vereinsfest bewache ich die Servietten. Jemand muss schließlich verhindern, dass die Organisation einfach davonfliegt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-074",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Die Wiener Straßenbahn gefiel mir. Ein Fahrzeug, das einem die Stadt erklärt, ohne ein Gespräch anfangen zu müssen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-075",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Mein Sauerteig bekommt regelmäßig Futter. Ich hoffe, er erwähnt meine Zuverlässigkeit irgendwann gegenüber den Zimmerpflanzen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-076",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "In Bremen nahm ich die Straßenbahn zum Spaziergang. Man soll sportliche Ziele schließlich vernünftig einteilen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-077",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Der Salzburger fragte nach meinem Lieblingsberg. Ich nannte den Wäscheberg; dort kenne ich jede schwierige Passage.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-078",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Ich habe im Schrebergarten einen Kompost. Meine misslungenen Salate haben damit endlich einen anerkannten weiteren Bildungsweg.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-079",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Der Schulranzen hat Reflektoren. Mein Kind wird damit selbst bei schlechter Stimmung noch gut gesehen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-080",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Zum Wiener Kaffee gab es Wasser. Ich trank es zuletzt: Erst die Forschung, dann die Grundversorgung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-081",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Mein Pfandbon ist zerknittert. Ein kleines Vermögen darf durchaus Spuren verantwortungsvoller Aufbewahrung zeigen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-082",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Beim Wandern im Erzgebirge lobe ich jede Bank. Positive Rückmeldung fördert hoffentlich weitere Sitzgelegenheiten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-083",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Die Weihnachtsmarkt-Tasse behalte ich. Wenn eine Erinnerung einen Henkel hat, lässt sie sich besser festhalten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-084",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Unser Chor verlangt regelmäßiges Üben. Ich singe jetzt beim Spülen; die Teller können wenigstens nicht weglaufen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-085",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Mein österreichischer Freund brachte Erdäpfelsalat. Ich mochte, dass der Name den Pflanzen ihren ursprünglichen Arbeitsplatz lässt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-086",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Ich lasse das Brot beim Bäcker schneiden. Man muss dem Fachpersonal Gelegenheit geben, seine Stärken zu zeigen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-087",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Die Münchner Tram ist mein rollender Stadtplan. Leider blättert sie manchmal weiter, bevor ich alles verstanden habe.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-088",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Die Wienerin sagte „leiwand“. Ich freute mich über das Lob und fragte erst später, ob mein Hemd vielleicht gemeint war.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-089",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Mein Schrebergarten hat ein Schild „Ruheplatz“. Für die Arbeit muss ich offenbar in den anderen Teil.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-090",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Der Füller meines Sohnes ist ergonomisch. Mein eigener Kugelschreiber lebt noch nach dem Prinzip „halt irgendwie fest“.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-091",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Im Kaffeehaus fragte ich nach einem ruhigen Tisch. Ich hatte nicht bedacht, wie viel eine Zeitung beim Umblättern zu sagen hat.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-092",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Mein Kofferraum riecht nach Apfelschorle. Die Pfandkiste hält offenbar ein sehr anschauliches Reisetagebuch.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-093",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Am Rheinsteig genieße ich die Aussicht besonders langsam. Man sollte schließlich nicht alles gleichzeitig verbrauchen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-094",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Den Osterstrauß stelle ich hoch. Die Katze soll bei ihrer Kulturteilnahme wenigstens ein bisschen nachdenken müssen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-095",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Im Sportverein halte ich die Fahne. Mein Beitrag zum Mannschaftserfolg lässt sich damit schon aus der Ferne erkennen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-096",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Beim Grazbesuch stand ich lange vor dem Uhrturm. Ein ordentlicher Zeitvergleich braucht eben seine Zeit.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-097",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Die Brezel ist gesalzen. Gut, dann muss ich mein Frühstück heute nicht auch noch persönlich nachwürzen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-098",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "In Hamburg nahm ich den Aufzug zur Bahn. Jede Reise verdient einen überschaubaren Anfang mit klarer Richtung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-099",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Mein österreichischer Kollege fragte nach einer Jause. Ich zeigte ihm meine Brotdose; für die erste Übersetzung reichte Sichtkontakt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-100",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Meine Gießkanne hat eine Brause. Die Pflanzen bekommen damit regelmäßig bessere Duschen als mein Gartenschlauch mir erlaubt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-101",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Das Kind hat eine Brotdose mit Fächern. Seine Schulpause ist bereits besser organisiert als unsere Küchenschublade.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-102",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "In Wien bestellte ich meinen Kaffee am Marmortisch. Wenigstens die Unterlage behält einen kühlen Kopf.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-103",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Ich zähle Pfandflaschen vor der Rückgabe. Das ist wie eine kleine Inventur, die niemand als Teamveranstaltung verkauft.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-104",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Der Wanderführer verspricht einen Rundweg. Endlich eine Reise, bei der Vergesslichkeit am Ende von selbst wieder zu Hause landet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-105",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Ich bewahre die Adventsdekoration beschriftet auf. „Sterne“ ist erstaunlich nützlich, wenn auf jeder Kiste einfach Weihnachten steht.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-106",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Im Kleingartenverein wurde ich Gerätewart. Offenbar fiel auf, dass ich besonders gern Dinge ordentlich anlehne.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-107",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Topfenstrudel esse ich vorsichtig. Schließlich möchte ich eine neu gelernte österreichische Vokabel nicht sofort ganz aufbrauchen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-108",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Mein Brotzeitbrett ist aus Holz. Praktisch, so passt wenigstens etwas in unserem Haushalt noch ohne Update zur Tradition.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-109",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Auf der Fahrt nach Dresden nahm ich ein Buch mit. Für längere Geschichten habe ich inzwischen immer eine eigene Reserve.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-110",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Der Innsbrucker nannte meine Wanderung einen Spaziergang. Ich nenne seine Treppe seitdem ein Trainingslager.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-111",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Die Regenwassertonne ist voll. Mein Garten hat damit zum ersten Mal mehr liquide Mittel als ich.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-112",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Zum ersten Schultag putzte ich meine Schuhe. Ich wusste nicht, ob Eltern ebenfalls einen guten ersten Eindruck benoten lassen müssen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-113",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus fragte ich nach einem Dessertlöffel. Große Gedanken vertragen gelegentlich kleine Werkzeuge.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-114",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Den Pfandbon stecke ich zur Einkaufsliste. Dort darf wenigstens ein Zettel beweisen, dass er bereits etwas erledigt hat.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-115",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Im Allgäu habe ich einen Aussichtspunkt gefunden. Mein Foto zeigt hauptsächlich den Finger, der ihn besonders begeistert erklären wollte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-116",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Beim Weihnachtsbaumschmücken fange ich unten an. Das verschafft den höheren Ästen Zeit, sich auf ihre Rolle vorzubereiten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-117",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Mein Gesangsverein braucht Bassstimmen. Ich biete meine Stimme direkt nach dem Aufwachen an; später wird sie wieder unverbindlicher.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-118",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "In Salzburg setzte ich mich ans Wasser. Ich wollte eine Sehenswürdigkeit, die mir etwas entgegenbringt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-119",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Beim Bäcker kaufte ich ein Kürbiskernbrötchen. Mein Sohn zählt die Kerne wie versteckte Zusatzleistungen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-120",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Die Bremer Straßenbahn fuhr ohne mein Zutun los. Ich genieße Dienstleister, die ihre Aufgabe gelegentlich vollständig selbst übernehmen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-121",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Beim deutsch-österreichischen Frühstück sagte ich „noch einen Kaffee“. Das war heute mein fehlerfreister grenzüberschreitender Satz.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-122",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Meine Gartenbank steht unter dem Apfelbaum. Ich nenne das eine strategisch gute Position für eingehende Aufgaben.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-123",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Die Schultüte hat eine Schleife. Damit weiß man sofort, wo die feierliche Verwaltung des Inhalts anfängt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-124",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Im Kaffeehaus nahm mein Freund den Wirtschaftsteil. Ich übernahm die Kuchenkosten; klare Zuständigkeiten schaffen Harmonie.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-125",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Die Pfandkiste passt genau unter die Garderobe. Meine Finanzplanung hat damit wenigstens einen festen Standort.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-126",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Beim Taunuswandern nehme ich ein Fernglas mit. So kann ich die nächste Sitzbank frühzeitig in meine Überlegungen einbeziehen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-127",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Unser Laternenstab ist teleskopierbar. Das Kind kann seinen Festlichkeitsradius inzwischen selbst regulieren.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-128",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Der Vereinsausweis hat kein Ablaufdatum. Meine sportliche Form wurde offenbar bewusst in einem anderen Vertrag geregelt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-129",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Beim Wiener Strudelbrechen spare ich mir exakte Stücke. Tradition soll schließlich nicht an Geometrie scheitern.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-130",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Pumpernickel packe ich unten in die Brotdose. Ein gutes Frühstück braucht ein belastbares Fundament.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-131",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Die Schwebebahn hatte ich mir höher vorgestellt. Mein Sohn fand beruhigend, dass auch Erwartungen unterschiedliche Sitzhöhen haben.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-132",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Mein Grazer Freund versprach eine kleine Runde. Ich hätte genauer fragen sollen, ob er die Stadt oder die Berge meinte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-133",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Mein Gartenkalender hängt neben dem Saatgut. Wenigstens die Samen wissen jetzt, wann ich normalerweise hinterherhinke.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-134",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Der Schulranzen steht schon abends bereit. Ich habe ihn gebeten, diese Haltung gelegentlich meinem eigenen Rucksack zu erklären.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-135",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Die Wiener Zeitung kam im Holzhalter. Endlich muss ich die Schlagzeilen nicht völlig ohne Unterstützung tragen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-136",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Den Flaschenpfandbetrag kann ich im Kopf rechnen. Bei Ausgaben mit Trinkvergnügen davor bleibt Mathematik einfach besser hängen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-137",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Der Harzweg bietet mehrere Abzweigungen. Ich werte das als höfliche Anerkennung meiner wechselnden Tagesform.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-138",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Meine Plätzchendose schließt luftdicht. Das schützt den Inhalt allerdings nicht gegen Menschen, die den Deckel verstehen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-139",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Im Kegelverein habe ich einen festen Abend. Schön, wenn wenigstens ein Termin ausdrücklich umfallende Ziele erlaubt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-140",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "In Wien fuhr ich eine Runde mit der Tram. Mein Stadtwissen dreht sich jetzt auf einem deutlich größeren Radius.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-141",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Ich kaufte beim Bäcker ein Brot für mehrere Tage. Meine Familie las diese Zeitangabe offenbar als Gruppenvorschlag.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-142",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Der Hamburger Fähranleger schwimmt leicht. Ein guter Ort, um die eigene Standfestigkeit nicht zu selbstbewusst zu beurteilen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-143",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Die österreichische Freundin nannte mein Abendbrot eine Jause. Ich begrüße jede sprachliche Aufwertung meiner Käsereste.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-144",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Mein Gartenzwerg trägt einen Spaten. Ich erwarte zwar keine Wunder, finde seine Arbeitshaltung aber bemerkenswert dauerhaft.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-145",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Die Einschulungsfeier begann pünktlich. Mein Sohn fragte, ob man das später als freiwillige Leistung abwählen könne.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-146",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Im Kaffeehaus bestellte ich noch Wasser. Mein Nachmittag soll nicht ausschließlich aus wichtigen Meinungen bestehen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-147",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Ich nehme zum Pfandautomaten immer eine Extratasche mit. Optimismus bedeutet, auch die abgelehnte Flasche respektvoll heimzutragen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-148",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Beim Wandern im Teutoburger Wald lese ich jede Markierung. Man möchte den fleißigen Malern ihr Publikum schließlich nicht vorenthalten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-149",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Die erzgebirgische Holzfigur hat einen Besen. Im Advent ist sie damit bereits angemessener vorbereitet als ich.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-150",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Unser Dorfverein braucht Klapptische. Endlich eine Anschaffung, die nach getaner Arbeit ausdrücklich kleiner werden darf.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-151",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Die österreichische Speisekarte sagte Knödel. Ich fragte nach der Mehrzahl in der Portion; Sprache soll praktisch bleiben.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-152",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Mein Brötchen ist noch warm. Ich nehme solche unmittelbaren Hinweise auf gute Entscheidungen sehr ernst.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-153",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "In der Leipziger Tram saß ich rückwärts. So konnte ich meine Orientierungslosigkeit wenigstens auf die Perspektive schieben.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-154",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Mein Wiener Freund sagt beim Abschied auch Servus. Ein praktisches Wort: Man muss es nicht ständig neu verpacken.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-155",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Meine Gartenhose hat viele Taschen. Für jede nicht gefundene Schraube gibt es damit eine neue begründete Vermutung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-156",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Die Schultüte ist nach oben offen. Ich finde es gut, wenn die Zukunft ausreichend Platz für Nachschub hat.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-157",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus ließ ich mir Zeit. Das war die einzige Bestellung, die ich völlig ohne Blick in die Karte aufgeben konnte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-158",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Meine Pfandbons liegen jetzt im Portemonnaie. Sie sollen lernen, sich wie richtiges Geld zu benehmen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-159",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Beim Eifelspaziergang nahm ich den schattigen Weg. Mein Ehrgeiz muss schließlich nicht auch noch Sonnencreme tragen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-160",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Ich kaufe Weihnachtskarten früh. So haben die guten Wünsche ausreichend Zeit, sich in meiner Schublade vorzubereiten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-161",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Im Schützenverein half ich beim Stühlerücken. Meine Trefferquote an den vorgesehenen Tischplätzen war erfreulich hoch.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-162",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Die Salzburger Gassen sind gut für Spaziergänge. Man kann sich verlaufen und dabei trotzdem behaupten, man folge einer hübschen Linie.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-163",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Das Brotzeitbrett hat eine Saftrille. Endlich ist auch das unerwartete Gurkenwasser im Familienplan berücksichtigt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-164",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "In Köln wartete ich an der richtigen Haltestelle. Man darf kleine Erfolge auf Reisen ruhig anerkennen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-165",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Mein Tiroler Freund gab mir Wanderstöcke. Ich habe jetzt zwei zusätzliche Gesprächspartner, die jede meiner Pausen mittragen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-166",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Die Gartenhütte ist klein, aber vollständig. Alles, was ich suche, muss sich immerhin in überschaubarer Entfernung verstecken.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-167",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Mein Kind bekam eine Schreibunterlage zum Schulstart. Das ist mehr institutionelle Unterstützung, als meine Einkaufsliste jemals erlebt hat.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-168",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Zum letzten Wiener Kaffee nahm ich ein Stück Kuchen. Abschiede sollten nicht ganz ohne belastbare Grundlage stattfinden.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-169",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Der Pfandautomat druckte einen langen Bon. Selten sah ein kurzer Einkauf so nach erfolgreicher Verwaltung aus.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-170",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Auf dem Rückweg unserer Schwarzwaldwanderung erkannte ich jede Bank wieder. Ich verfüge eben über ein spezialisiertes Landschaftsgedächtnis.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-171",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Beim Adventsbasar kaufte ich einen selbst gestrickten Topflappen. Unsere heißen Diskussionen müssen weiterhin ohne Schutz geführt werden.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-172",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Unser Tischtennisverein bietet Schnuppertraining. Ich hatte nicht gewusst, dass der Ball auch vor dem ersten Treffer persönliche Bekanntschaft erwartet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-173",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Mein Bäcker empfiehlt Brote nach Geschmack. Ich bevorzuge außerdem solche, die ungefähr zum vorhandenen Brotkasten passen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-174",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Die Wienerin erklärte mir Paradeiser. Ich erklärte ihr unseren Toaster; auch ich wollte etwas Vertrautes interessant vorstellen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-175",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Im Schrebergarten teile ich den Rechen gern. Eine seltene Gelegenheit, Arbeit gleichzeitig abzugeben und als guter Nachbar dazustehen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-176",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Beim Heimatmuseum fragte ich nach der ältesten Uhr. Wollte sehen, wie weit man mit regelmäßiger Betreuung kommen kann.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-dad-177",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "In Innsbruck schaute ich lange aufs Bergpanorama. Die Berge erwiderten meinen Blick mit bemerkenswert stabiler Mimik.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-dad-178",
+    "collection": "de-de-everyday",
+    "category": "dad",
+    "format": "oneliner",
+    "text": "Auf der Rheinfähre stellte ich mich in Fahrtrichtung. So wirkt selbst entspanntes Herumstehen wie eine zielgerichtete Entscheidung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. A deliberate groaner, literal reading, or gentle exaggeration. Original AI-authored draft; no native human review claimed."
+  }
+]
