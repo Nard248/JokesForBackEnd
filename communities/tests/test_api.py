@@ -220,6 +220,24 @@ class FormationTests(CommunityFixture):
         response = self.client.get('/api/v1/communities/space/')
         self.assertEqual(response.data['trending'][0]['id'], self.space_jokes[2].pk)
 
+    def test_lost_version_key_never_serves_stale_data(self):
+        fans = [self.person(f'fan{i}') for i in range(5)]
+        for fan in fans[:4]:
+            self.enjoy(fan, self.space_jokes[:2])
+        self.directory()
+        JokeReaction.objects.create(user=fans[4], joke=self.space_jokes[0], reaction='lol')
+        Favorite.objects.create(user=fans[4], joke=self.space_jokes[1])  # no on_commit in TestCase
+        cache.delete(services.VERSION_KEY)  # e.g. culled by DatabaseCache
+        rows, _ = self.directory()
+        self.assertEqual(rows['space']['status'], 'active')
+
+    def test_public_counts_are_coarsened(self):
+        for i in range(7):
+            self.enjoy(self.person(f'fan{i}'), self.space_jokes[:2])
+        rows, _ = self.directory()
+        self.assertEqual(rows['space']['members'], 5)
+        self.assertIn('About 5 people', rows['space']['explanation'])
+
     def test_payload_never_contains_user_identities(self):
         fans = [self.person(f'fan{i}') for i in range(6)]
         for fan in fans:
@@ -283,7 +301,7 @@ class ViewerTests(CommunityFixture):
                                                state='joined')
         rows, _ = self.directory()
         self.assertEqual(rows['space']['status'], 'forming')
-        self.assertEqual(rows['space']['members'], 6)
+        self.assertEqual(rows['space']['members'], 5)  # 6 rounds to the nearest 5
 
     def test_membership_requires_auth_and_valid_action(self):
         response = self.client.post('/api/v1/communities/space/membership/', {'action': 'join'}, format='json')
@@ -375,6 +393,17 @@ class CreatorReachTests(CommunityFixture):
         self.enjoy(fans[5], self.mine)  # one more reader the same day
         second = self.client.get('/api/v1/creators/me/communities/').data
         self.assertEqual(first, second)
+
+    def test_withdrawn_consent_leaves_creator_reach_immediately(self):
+        self.pro()
+        fans = [self.person(f'fan{i}') for i in range(5)]
+        for fan in fans:
+            self.enjoy(fan, self.mine)
+        self.client.force_authenticate(self.creator)
+        self.assertEqual(self.client.get('/api/v1/creators/me/communities/').data['audience']['size'], 5)
+        fans[0].profile.share_analytics = False
+        fans[0].profile.save()
+        self.assertIsNone(self.client.get('/api/v1/creators/me/communities/').data['audience']['size'])
 
     def test_small_reach_is_suppressed(self):
         self.pro()

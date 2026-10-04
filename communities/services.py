@@ -42,6 +42,8 @@ MIN_DISPLAY = engine.MINIMUM_MEMBERS
 CACHE_KEY = 'communities:aggregate:v2'
 VERSION_KEY = 'communities:aggregate:version'
 LOCK_KEY = 'communities:aggregate:lock'
+# Backstop: even if every invalidation were lost, nothing is served older than this.
+MAX_AGE_SECONDS = 3600
 POSITIVE_REACTIONS = (JokeReaction.REACTION_LOL, JokeReaction.REACTION_CRYING)
 
 METHODOLOGY = {
@@ -227,10 +229,12 @@ def compute_aggregate(now=None):
 
 
 def _version():
+    """Opaque, never-reused version. A culled key yields a fresh value, which
+    forces a recompute instead of colliding with a cached entry."""
     version = cache.get(VERSION_KEY)
     if version is None:
-        cache.add(VERSION_KEY, 1, None)
-        version = cache.get(VERSION_KEY, 1)
+        cache.add(VERSION_KEY, uuid.uuid4().hex, None)
+        version = cache.get(VERSION_KEY) or uuid.uuid4().hex
     return version
 
 
@@ -245,7 +249,8 @@ def aggregate():
     entry = cache.get(CACHE_KEY)
     now = time.time()
     min_refresh = getattr(settings, 'COMMUNITIES_MIN_REFRESH_SECONDS', 10)
-    if entry is not None and (entry['version'] == version or now - entry['computed'] < min_refresh):
+    age = now - entry['computed'] if entry is not None else None
+    if entry is not None and age < MAX_AGE_SECONDS and (entry['version'] == version or age < min_refresh):
         return entry['data']
     token = uuid.uuid4().hex
     owns_lock = cache.add(LOCK_KEY, token, 30)
@@ -263,14 +268,13 @@ def aggregate():
 
 
 def invalidate():
-    try:
-        cache.incr(VERSION_KEY)
-    except ValueError:
-        cache.set(VERSION_KEY, 2, None)
+    cache.set(VERSION_KEY, uuid.uuid4().hex, None)
 
 
 def _shown(count):
-    return count if count >= MIN_DISPLAY else None
+    """Public person-counts: hidden under MIN_DISPLAY, otherwise rounded to the
+    nearest MIN_DISPLAY so one extra account rarely changes a visible number."""
+    return _coarse_round(count)
 
 
 def viewer_states(user, communities):
@@ -300,7 +304,7 @@ def viewer_context(user):
 def _explanation(community, status, engaged, viewer, counted):
     name = community.tag.name
     if status == 'active':
-        text = (f'{engaged} people each enjoyed at least {engine.MINIMUM_CONTENT} {name} jokes recently.'
+        text = (f'About {_shown(engaged)} people each enjoyed at least {engine.MINIMUM_CONTENT} {name} jokes recently.'
                 if engaged >= MIN_DISPLAY else f'People are regularly enjoying {name} jokes together.')
     elif status == 'cooling':
         text = f'Engagement around {name} has cooled. Fresh laughs bring this community back.'
@@ -338,7 +342,8 @@ def community_row(community, data, viewer=None, viewer_ctx=None):
         'status': status,
         'members': _shown(len(row['members'])),
         'engaged_members': _shown(row['engaged']),
-        'growth': row['engaged'] - row['previous'] if status == 'active' and row['previous'] >= MIN_DISPLAY else None,
+        'growth': (_round_to_step(row['engaged'] - row['previous'])
+                   if status == 'active' and row['previous'] >= MIN_DISPLAY else None),
         'score': row['score'] if visible_activity else None,
         'joke_count': row['joke_count'],
         'activity': row['activity'] if visible_activity else None,
@@ -367,7 +372,8 @@ def directory(user):
     rows.sort(key=lambda r: ({'active': 0, 'forming': 1, 'cooling': 2}[r['status']], -(r['score'] or 0), r['name']))
     slug_by_id = {c.pk: c.tag.slug for c in communities}
     bridges = sorted(
-        ({'source': min(slug_by_id[a], slug_by_id[b]), 'target': max(slug_by_id[a], slug_by_id[b]), 'members': n}
+        ({'source': min(slug_by_id[a], slug_by_id[b]), 'target': max(slug_by_id[a], slug_by_id[b]),
+          'members': _shown(n)}
          for a, b, n in data['bridges'] if n >= MIN_DISPLAY and a in slug_by_id and b in slug_by_id),
         key=lambda bridge: (bridge['source'], bridge['target']),
     )
@@ -439,7 +445,7 @@ def community_bridges(community, data):
         other = by_id.get(b if a == community.pk else a)
         if other:
             out.append({'slug': other.tag.slug, 'name': other.tag.name, 'emoji': other.emoji,
-                        'color': other.color, 'members': n})
+                        'color': other.color, 'members': _shown(n)})
     return sorted(out, key=lambda r: -r['members'])
 
 
@@ -471,18 +477,22 @@ def creator_reach(user):
 
     now = timezone.now()
     day = now.date().isoformat()
-    key = f'communities:creator-reach:{user.pk}:{day}'
-    cached = cache.get(key)
-    if cached is not None:
-        return cached
     communities = listed_communities()
     data = daily_aggregate(day)
     creator_jokes = resolve_creator_jokes(user).filter(content_tier='tier_1')
-    audience = {
-        person for person, _, _, _ in eligible_signals(
-            now - timedelta(days=WINDOW_DAYS), jokes=creator_jokes.values('pk'), exclude_user=user,
-        )
-    }
+    key = f'communities:creator-audience:{user.pk}:{day}'
+    audience = cache.get(key)
+    if audience is None:
+        audience = {
+            person for person, _, _, _ in eligible_signals(
+                now - timedelta(days=WINDOW_DAYS), jokes=creator_jokes.values('pk'), exclude_user=user,
+            )
+        }
+        cache.set(key, audience, 26 * 3600)
+    # Snapshot membership, but *current* consent: a withdrawal or deletion takes
+    # effect immediately (numbers can only fall within the day, never rise).
+    still_eligible = set(eligible_analytics_users().values_list('pk', flat=True))
+    audience = audience & still_eligible
     your_jokes = dict(
         Joke.context_tags.through.objects.filter(
             joke_id__in=creator_jokes.values('pk'), contexttag_id__in=[c.tag_id for c in communities],
@@ -492,7 +502,7 @@ def creator_reach(user):
     for community in communities:
         base = community_row(community, data)
         # A creator is also a reader; their own membership never inflates their reach.
-        members = set(data['rows'].get(community.pk, {}).get('members', ())) - {user.pk}
+        members = (set(data['rows'].get(community.pk, {}).get('members', ())) & still_eligible) - {user.pk}
         reached = len(members & audience)
         shown_reached = _coarse_floor(reached)
         rows.append({
@@ -518,7 +528,6 @@ def creator_reach(user):
             'Opportunities describe current evidence; they do not predict or guarantee reach.',
         ],
     }
-    cache.set(key, result, 26 * 3600)
     return result
 
 
@@ -531,6 +540,10 @@ def daily_aggregate(day):
         data = compute_aggregate()
         cache.set(key, data, 26 * 3600)
     return data
+
+
+def _round_to_step(delta):
+    return int(abs(delta) / MIN_DISPLAY + 0.5) * MIN_DISPLAY * (1 if delta >= 0 else -1)
 
 
 def _coarse_floor(count):

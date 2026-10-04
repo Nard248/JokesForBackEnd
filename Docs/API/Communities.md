@@ -25,14 +25,18 @@ laughs stop.
 only active adults with `share_analytics` (`creator_insights.privacy.eligible_analytics_users`),
 and only signals recorded **after** that person's latest opt-in
 (`AnalyticsConsentRecord`; consent is never applied backwards). Signals only from
-`tier_1`, non-removed jokes. Counts under 5 are `null`; `activity` and `score`
+`tier_1`, non-removed jokes. Public person-counts (members, engaged members,
+bridges, stats, growth) are rounded to the nearest 5 and are `null` under 5;
+`activity` and `score`
 are `null` while fewer than 5 people contributed in the last 7 days. No response
 contains user ids, names or samples. A person's own affinity is computed from
 their own activity and returned only to them. Explicit joins by people who do not
 share analytics change only their own view.
 
 Request-triggered only. The aggregate is cached without TTL
-(`communities:aggregate:v2`); engagement writes and profile saves bump a version
+(`communities:aggregate:v2`) behind an opaque, never-reused version (a culled
+version key forces a recompute) and a 1-hour hard max age; engagement writes and
+profile saves replace the version
 **after commit** (`communities/signals.py`; anonymous shares are ignored). A stale
 entry is recomputed at most every `COMMUNITIES_MIN_REFRESH_SECONDS` (default 10)
 by one lock holder while others serve the previous state, so engagement bursts
@@ -66,8 +70,9 @@ privileges; revisit before adding community feeds or conversations.
 }
 ```
 
-`members`, `engaged_members`, `stats.members`, `stats.multi_community_members`:
-`null` under 5. `growth`: only for active communities with ≥5 engaged a week ago.
+`members`, `engaged_members`, `stats.members`, `stats.multi_community_members`,
+`bridges[].members`: nearest 5, `null` under 5. `growth`: nearest 5, only for
+active communities with ≥5 engaged a week ago.
 
 ## GET `communities/<slug>/` — AllowAny
 
@@ -111,8 +116,10 @@ creator from matching a single new reader (e.g. with sock accounts plus a "new
 follower" notification) the payload is a **daily snapshot** (`snapshot_date`, UTC)
 and counts are coarsened: `reached_members` and `audience.size` floor to multiples
 of 5, `members` rounds to the nearest 5, `reach_rate` floors to 5 % steps; under 5
-is `null`. Opportunities are rule-based descriptions of current evidence, never
-predictions.
+is `null`. Snapshot sets are intersected with **current** eligibility on every
+read, so consent withdrawal or account deletion removes a reader immediately
+(numbers can fall within a day, never rise). Opportunities are rule-based
+descriptions of current evidence, never predictions.
 
 ## Account data
 
