@@ -27,7 +27,7 @@ Examples:
 
 With a query, default ordering is relevance, creation date, then primary key. Without a query, newest jokes come first. `ordering=-created_at` and `ordering=popularity` remain supported. Pagination uses the existing server page size and `next` link. Do not assume client `page_size` requests override server limits.
 
-Filters compose with text search: `joke_format`, `age_rating`, `categories` (alias `tones`), `themes` (alias `context_tags`), `culture_tags`, `language`, `country`, and `vibe`. Category/theme aliases take precedence over their legacy names when both are present. Comma-separated taxonomy selections are a union within that axis; separate axes intersect. Explicit language/country/culture selections never silently fall back to another catalog.
+Filters compose with text search: `joke_format`, `age_rating`, `categories` (alias `tones`), `themes` (alias `context_tags`), `culture_tags`, `language`, `country`, and `vibe`. Category/theme aliases take precedence over their legacy names when both are present. Comma-separated taxonomy selections are a union within that axis; separate axes intersect. Explicit language/country/culture selections never silently fall back to another catalog. A nonempty `q` without `language` searches every language; an empty `q` without `language` browses the viewer's default content language (preferred language, else English). `language=all` selects every language explicitly.
 
 `GET /api/v1/saved-jokes/search/?q=...` uses the same indexed documents and validation but requires authentication and a nonempty query. It restricts matches to the caller's saved and visible jokes, preserving saved-list ordering and the nested saved-joke response.
 

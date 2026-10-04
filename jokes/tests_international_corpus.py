@@ -186,10 +186,22 @@ class InternationalCorpusImportTests(TestCase):
         ContextTag.objects.get_or_create(slug='work', defaults={'name': 'Work'})
 
     def run_import(self, **kwargs):
+        if not kwargs.get('dry_run'):
+            kwargs.setdefault('publish_unreviewed', True)
         output = StringIO()
         call_command('import_international_jokes', manifest=str(self.root / 'manifest.json'),
                      stdout=output, **kwargs)
         return output.getvalue()
+
+    def test_database_import_requires_publication_acknowledgement(self):
+        from django.core.management.base import CommandError
+
+        from jokes.models import Joke
+        before = Joke.all_objects.count()
+        with self.assertRaisesMessage(CommandError, '--publish-unreviewed'):
+            self.run_import(publish_unreviewed=False)
+        self.assertEqual(Joke.all_objects.count(), before)
+        self.assertIn('dry run', self.run_import(dry_run=True))
 
     def write_bundle(self):
         (self.root / 'manifest.json').write_text(json.dumps(self.manifest), encoding='utf-8')

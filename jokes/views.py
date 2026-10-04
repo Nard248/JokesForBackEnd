@@ -10,6 +10,7 @@ Provides viewsets for all models:
 import io
 import json
 import zipfile
+import zlib
 from datetime import timedelta
 
 from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
@@ -50,11 +51,14 @@ from notifications.models import EmailMessageLog, EmailVerification
 
 from .achievements import evaluate_for as evaluate_achievements_for
 from .discovery import (
+    ALL_LANGUAGES,
     DISCOVERY_PARAMETERS,
+    default_language_code,
     discovery_pool,
     discovery_selectors,
     filter_discovery,
     locale_catalog,
+    servable_jokes,
 )
 from .identity import (
     is_valid_handle,
@@ -264,7 +268,11 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
             OpenApiParameter(
                 name='language',
                 type=str,
-                description='Filter by language code (e.g., en)',
+                description=(
+                    "Language code (e.g., en). Omitted: browsing uses the viewer's preferred "
+                    "language (English by default) and a q search spans every language; "
+                    "'all' selects every language."
+                ),
                 required=False,
             ),
             OpenApiParameter(
@@ -332,7 +340,12 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
             filters['context_tags'] = [t.strip() for t in context_tags_param.split(',') if t.strip()]
         if culture_tags_param:
             filters['culture_tags'] = [t.strip() for t in culture_tags_param.split(',') if t.strip()]
-        if language_code:
+        if 'language' not in request.query_params:
+            # A browse with no language selector is served in the viewer's
+            # default language; a text search spans every language.
+            if not query_text:
+                filters['language'] = default_language_code(request)
+        elif language_code and language_code.lower() != ALL_LANGUAGES:
             filters['language'] = language_code.lower()
         country_code = request.query_params.get('country', '').strip().upper()
         if country_code:
@@ -585,8 +598,10 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
         days = period_map.get(period, 7)
         since = timezone.now() - timedelta(days=days)
 
+        # Selectors are applied through a pk subquery: joining culture_tags into
+        # this grouped query would multiply each aggregate by the matched slugs.
         jokes = Joke.objects.filter(
-            content_tier__in=allowed_tiers(request)
+            pk__in=discovery_pool(request).values('pk'),
         ).select_related(
             'format', 'age_rating', 'language', 'source'
         ).prefetch_related('tones', 'context_tags', 'culture_tags', 'countries').annotate(
@@ -600,7 +615,6 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
             Q(recent_likes__gt=0) | Q(recent_shares__gt=0) | Q(recent_saves__gt=0)
         ).order_by('-score')
 
-        jokes = filter_discovery(visible_jokes(jokes, request), discovery_selectors(request.query_params))
         page = self.paginate_queryset(jokes)
         results = []
         pw_state = paywall_state(request)  # compute once for the whole page
@@ -1251,10 +1265,76 @@ class DailyJokeViewSet(viewsets.GenericViewSet):
     def get_queryset(self):
         """Return daily jokes for the current user."""
         if self.request.user.is_authenticated:
+            # History is the viewer's own record: only explicit selectors narrow
+            # it, never the default content language.
             return DailyJoke.objects.filter(
-                user=self.request.user, joke_id__in=discovery_pool(self.request).values('pk'),
+                user=self.request.user,
+                joke_id__in=discovery_pool(self.request, default_language=False).values('pk'),
             )
         return DailyJoke.objects.none()
+
+    @staticmethod
+    def _selection_pick(request, day):
+        """A stable per-(viewer, day, selection) pick that is never stored.
+
+        Served when the stored daily pick is still valid but outside the
+        requested selection, so changing selectors cannot reroll the pick.
+        """
+        pool = discovery_pool(request)
+        recent = get_recently_shown_joke_ids(request.user, days=30)
+        fresh = pool.exclude(id__in=recent)
+        if fresh.exists():
+            pool = fresh
+        pool = pool.select_related(
+            'format', 'age_rating', 'language', 'source',
+        ).prefetch_related(
+            'tones', 'context_tags', 'culture_tags', 'countries', 'media__asset',
+        ).order_by('id')
+        total = pool.count()
+        if not total:
+            return None
+        selectors = discovery_selectors(request.query_params, request)
+        seed = f"{request.user.pk}:{day.isoformat()}:{selectors['language']}:" \
+               f"{selectors['country']}:{','.join(sorted(selectors['culture_tags']))}"
+        return pool[zlib.crc32(seed.encode('utf-8')) % total]
+
+    def _resolve_daily(self, request, day):
+        """Return ``(daily, stored)`` for ``day``, or ``(None, False)`` if nothing fits.
+
+        The stored (user, day) row is the stable pick. It is replaced only when
+        its joke can no longer be served to this viewer (taken down, tier or
+        block change); a selector that merely excludes it gets an unstored
+        selection pick instead.
+        """
+        stored = DailyJoke.objects.filter(user=request.user, date=day).select_related(
+            'joke', 'joke__format', 'joke__age_rating', 'joke__language',
+        ).prefetch_related(
+            'joke__tones', 'joke__context_tags', 'joke__culture_tags', 'joke__countries',
+        ).first()
+        if stored is not None and servable_jokes(request).filter(pk=stored.joke_id).exists():
+            if discovery_pool(request).filter(pk=stored.joke_id).exists():
+                return stored, True
+            joke = self._selection_pick(request, day)
+            if joke is None:
+                return None, False
+            return DailyJoke(user=request.user, date=day, joke=joke), False
+
+        # No usable stored pick: generate on demand (respecting allowed tiers
+        # and the current selection) and store it.
+        joke = get_personalized_joke(
+            request.user,
+            exclude_joke_ids=get_recently_shown_joke_ids(request.user, days=30),
+            allowed_tiers=allowed_tiers(request),
+            selectors=discovery_selectors(request.query_params, request),
+        )
+        if joke is None:
+            return None, False
+        # update_or_create, not create: a stale row for (user, day) may exist
+        # (the unservable-joke case above) and (user, date) is unique.
+        daily, _ = DailyJoke.objects.update_or_create(
+            user=request.user, date=day, defaults={'joke': joke, 'delivered_at': None},
+        )
+        return daily, True
 
     @extend_schema(
         description='Get today\'s joke. Personalized for authenticated users, editorial pick for anonymous.',
@@ -1298,52 +1378,17 @@ class DailyJokeViewSet(viewsets.GenericViewSet):
                 'date': today_date.isoformat(),
             })
 
-        # Authenticated users get personalized daily joke. Gate the stored
-        # joke on is_removed: if today's DailyJoke points at a since-removed
-        # joke, treat it as absent and regenerate — a taken-down joke must
-        # never serve as the daily.
-        daily = DailyJoke.objects.filter(
-            user=request.user,
-            date=today_date,
-            joke__is_removed=False,
-            joke_id__in=discovery_pool(request).values('pk'),
-        ).select_related(
-            'joke',
-            'joke__format',
-            'joke__age_rating',
-            'joke__language'
-        ).prefetch_related(
-            'joke__tones',
-            'joke__context_tags', 'joke__culture_tags', 'joke__countries'
-        ).first()
-
-        if not daily:
-            # Fallback: generate on-demand (respecting allowed tiers for this user)
-            exclude_ids = get_recently_shown_joke_ids(request.user, days=30)
-            joke = get_personalized_joke(
-                request.user,
-                exclude_joke_ids=exclude_ids,
-                allowed_tiers=allowed_tiers(request),
-                selectors=discovery_selectors(request.query_params),
+        # Authenticated users get a personalized daily joke. A taken-down
+        # joke never serves as the daily: such a stored row is regenerated.
+        daily, stored = self._resolve_daily(request, today_date)
+        if daily is None:
+            return Response(
+                {'detail': 'No jokes available. Please try again later.'},
+                status=status.HTTP_404_NOT_FOUND
             )
 
-            if joke:
-                # update_or_create, not create: a stale row for (user, today)
-                # may already exist (removed-joke case above) — the (user,
-                # date) unique constraint would otherwise raise.
-                daily, _ = DailyJoke.objects.update_or_create(
-                    user=request.user,
-                    date=today_date,
-                    defaults={'joke': joke, 'delivered_at': None},
-                )
-            else:
-                return Response(
-                    {'detail': 'No jokes available. Please try again later.'},
-                    status=status.HTTP_404_NOT_FOUND
-                )
-
-        # Mark as delivered on first access
-        if not daily.delivered_at:
+        # Mark the stored pick as delivered on first access
+        if stored and not daily.delivered_at:
             daily.delivered_at = timezone.now()
             daily.save(update_fields=['delivered_at'])
 
@@ -1362,28 +1407,12 @@ class DailyJokeViewSet(viewsets.GenericViewSet):
         """GET /api/v1/daily-jokes/tomorrow/ — preview tomorrow's joke."""
         from datetime import timedelta
         tomorrow_date = timezone.now().date() + timedelta(days=1)
-        daily = DailyJoke.objects.filter(
-            user=request.user, date=tomorrow_date,
-            joke_id__in=discovery_pool(request).values('pk'),
-        ).select_related('joke', 'joke__format').first()
-
-        if not daily:
-            # Lazy-generate (replaces the Celery beat task)
-            exclude_ids = get_recently_shown_joke_ids(request.user, days=30)
-            joke = get_personalized_joke(
-                request.user,
-                exclude_joke_ids=exclude_ids,
-                allowed_tiers=allowed_tiers(request),
-                selectors=discovery_selectors(request.query_params),
-            )
-            if joke is None:
-                return Response(
-                    {'detail': 'No jokes available for tomorrow yet.'},
-                    status=status.HTTP_404_NOT_FOUND,
-                )
-            daily, _ = DailyJoke.objects.update_or_create(
-                user=request.user, date=tomorrow_date,
-                defaults={'joke': joke, 'delivered_at': None},
+        # Lazy-generate (replaces the Celery beat task); a stored pick is kept.
+        daily, _ = self._resolve_daily(request, tomorrow_date)
+        if daily is None:
+            return Response(
+                {'detail': 'No jokes available for tomorrow yet.'},
+                status=status.HTTP_404_NOT_FOUND,
             )
 
         full_text = daily.joke.text or daily.joke.setup or ''
@@ -3483,7 +3512,7 @@ class MysteryBoxRollView(APIView):
 
         pool, source_vibe = _mystery_pool_for_user(
             request.user, allowed=allowed_tiers(request),
-            selectors=discovery_selectors(request.query_params),
+            selectors=discovery_selectors(request.query_params, request),
         )
         joke = pool.order_by('?').first()
         if joke is None:
@@ -3537,7 +3566,10 @@ class RecentlyViewedView(APIView):
                 joke__is_removed=False,  # taken-down jokes vanish (FK bypasses JokeManager)
             )
             .select_related('joke', 'joke__format', 'joke__age_rating', 'joke__language')
-            .prefetch_related('joke__tones', 'joke__context_tags', 'joke__media__asset')
+            .prefetch_related(
+                'joke__tones', 'joke__context_tags', 'joke__culture_tags', 'joke__countries',
+                'joke__media__asset',
+            )
             .order_by('-viewed_at')[:limit]
         )
         ctx = {'request': request, 'paywall_state': paywall_state(request)}
@@ -3690,7 +3722,9 @@ class JokePackViewSet(viewsets.ReadOnlyModelViewSet):
             Q(expires_at__isnull=True) | Q(expires_at__gt=now)
         )
         if any(discovery_selectors(self.request.query_params).values()):
-            qs = qs.filter(entries__joke_id__in=discovery_pool(self.request).values('pk')).distinct()
+            qs = qs.filter(
+                entries__joke_id__in=discovery_pool(self.request, default_language=False).values('pk'),
+            ).distinct()
         return qs.prefetch_related('entries')
 
     def get_serializer_class(self):
@@ -3793,7 +3827,7 @@ class JokePackInProgressView(APIView):
         )
         if any(discovery_selectors(request.query_params).values()):
             progress_qs = progress_qs.filter(
-                pack__entries__joke_id__in=discovery_pool(request).values('pk'),
+                pack__entries__joke_id__in=discovery_pool(request, default_language=False).values('pk'),
             ).distinct()
         packs = [p.pack for p in progress_qs if p.pack.is_published]
         return Response(

@@ -1,22 +1,66 @@
-"""Shared, strict content selectors. Languages, countries and cultures are independent."""
+"""Shared, strict content selectors. Languages, countries and cultures are independent.
+
+Language default: a request that omits the ``language`` parameter is served in
+the viewer's preferred language (English when unset or anonymous), so a client
+that predates content selectors never receives a mostly foreign-language feed.
+``language=all`` (or a present-but-blank ``language=``) explicitly selects every
+language. Country and culture selectors have no default.
+"""
 from django.db.models import Count
 from drf_spectacular.utils import OpenApiParameter
 
-from .models import Country, CulturalCollection, CultureTag, Joke, Language
+from .models import Country, CulturalCollection, CultureTag, Joke, Language, UserPreference
 from .moderation import visible_jokes
 from .serving import allowed_tiers
 
+ALL_LANGUAGES = 'all'
+FALLBACK_LANGUAGE = 'en'
+
 DISCOVERY_PARAMETERS = [
-    OpenApiParameter('language', str, description='ISO language code; empty means every language.'),
+    OpenApiParameter(
+        'language', str,
+        description=(
+            "ISO language code. Omitted means the viewer's preferred language (English by default); "
+            "'all' or an empty value means every language."
+        ),
+    ),
     OpenApiParameter('country', str, description='ISO 3166-1 alpha-2 country setting; independent of language.'),
     OpenApiParameter('culture_tags', str, description='Comma-separated cultural-context slugs (union).'),
 ]
 
 
-def discovery_selectors(params):
-    """Normalize optional selectors without guessing a country from a language."""
+def default_language_code(request):
+    """The language served when a request names none: the viewer's preference, else English."""
+    cached = getattr(request, '_discovery_default_language', None)
+    if cached is not None:
+        return cached
+    code = None
+    user = getattr(request, 'user', None)
+    if user is not None and user.is_authenticated:
+        code = (UserPreference.objects.filter(user=user)
+                .values_list('preferred_language__code', flat=True).first())
+    code = (code or FALLBACK_LANGUAGE).lower()
+    try:
+        request._discovery_default_language = code
+    except AttributeError:  # pragma: no cover - immutable request stand-ins
+        pass
+    return code
+
+
+def discovery_selectors(params, request=None):
+    """Normalize optional selectors without guessing a country from a language.
+
+    Without ``request`` only explicit choices are returned (an omitted language
+    is ''). With ``request``, an omitted language resolves to the viewer default.
+    """
+    raw_language = params.get('language') if 'language' in params else None
+    language = str(raw_language or '').strip().lower()
+    if language == ALL_LANGUAGES:
+        language = ''
+    if raw_language is None and request is not None:
+        language = default_language_code(request)
     return {
-        'language': str(params.get('language', '')).strip().lower(),
+        'language': language,
         'country': str(params.get('country', '')).strip().upper(),
         'culture_tags': [s.strip() for s in str(params.get('culture_tags', '')).split(',') if s.strip()],
     }
@@ -34,11 +78,20 @@ def filter_discovery(queryset, selectors):
     return queryset.distinct()
 
 
-def discovery_pool(request):
-    """Only currently visible, permitted jokes can influence discovery or its counts."""
+def servable_jokes(request):
+    """Jokes this viewer may be served at all: permitted tier, visible, not removed."""
+    return visible_jokes(Joke.objects.filter(content_tier__in=allowed_tiers(request)), request)
+
+
+def discovery_pool(request, default_language=True):
+    """Only currently visible, permitted jokes can influence discovery or its counts.
+
+    ``default_language=False`` leaves an omitted language unconstrained; curated
+    surfaces (packs, the viewer's own daily history) use it.
+    """
     return filter_discovery(
-        visible_jokes(Joke.objects.filter(content_tier__in=allowed_tiers(request)), request),
-        discovery_selectors(request.query_params),
+        servable_jokes(request),
+        discovery_selectors(request.query_params, request if default_language else None),
     )
 
 
@@ -46,7 +99,7 @@ def locale_catalog(request):
     cultures = list(CultureTag.objects.prefetch_related('languages', 'countries').order_by('name'))
     languages = list(Language.objects.order_by('name'))
     countries = list(Country.objects.order_by('name'))
-    visible = visible_jokes(Joke.objects.filter(content_tier__in=allowed_tiers(request)), request)
+    visible = servable_jokes(request)
     counts = {
         (r['language__code'], r['countries__code'], r['culture_tags__slug']): r['total']
         for r in visible.values('language__code', 'countries__code', 'culture_tags__slug').annotate(

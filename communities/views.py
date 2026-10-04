@@ -11,11 +11,10 @@ from communities import services
 from communities.models import Community
 from creator_insights.permissions import IsCreator
 from creator_insights.throttles import CreatorInsightsThrottle
+from jokes.discovery import DISCOVERY_PARAMETERS, discovery_pool
 from jokes.models import Joke
-from jokes.moderation import visible_jokes
 from jokes.paywall import paywall_state
 from jokes.serializers import JokeSerializer
-from jokes.serving import allowed_tiers
 
 COMMUNITY_ROW = inline_serializer(name='CommunityRow', fields={
     'slug': serializers.CharField(), 'name': serializers.CharField(),
@@ -62,7 +61,9 @@ class CommunityDetailView(APIView):
     @extend_schema(
         operation_id='communities_detail',
         description='One community: its state, trending and newest jokes visible to you, public '
-                    'creators on the theme and overlapping communities.',
+                    'creators on the theme and overlapping communities. Jokes and creators follow '
+                    'the discovery selectors (omitted language = your default language).',
+        parameters=DISCOVERY_PARAMETERS,
         responses={200: inline_serializer(name='CommunityDetail', fields={
             'community': COMMUNITY_ROW,
             'trending': serializers.ListField(child=serializers.DictField()),
@@ -76,11 +77,13 @@ class CommunityDetailView(APIView):
         data = services.aggregate()
         ctx = services.viewer_context(request.user)
         viewer = services.viewer_states(request.user, [community]).get(community.pk) if ctx else None
-        base = visible_jokes(
-            Joke.objects.filter(content_tier__in=allowed_tiers(request))
+        # The discovery pool (tiers, takedowns, blocks, content selection with
+        # the viewer's default language) is applied as a pk subquery so the
+        # community scoring aggregates are not multiplied by selector joins.
+        base = (
+            Joke.objects.filter(pk__in=discovery_pool(request).values('pk'))
             .select_related('format', 'age_rating', 'language', 'source', 'creator__profile')
-            .prefetch_related('tones', 'context_tags', 'culture_tags', 'media__asset'),
-            request,
+            .prefetch_related('tones', 'context_tags', 'culture_tags', 'countries', 'media__asset')
         )
         trending, newest = services.community_jokes(community, base)
         context = {'request': request, 'paywall_state': paywall_state(request)}

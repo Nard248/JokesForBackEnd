@@ -15,9 +15,19 @@ GET /api/v1/jokes/random/?language=fr&country=FR
 GET /api/v1/daily-jokes/today/?language=it&country=IT
 ```
 
-The language, country, and culture dimensions intersect. Multiple comma-separated culture tags are a union within the culture dimension. Unknown or incompatible selectors return no matching content; they do not broaden to English. Omitted selectors retain existing unfiltered behavior. Language codes are normalized to lowercase and country codes to uppercase. These selectors are also applied to trending, tomorrow/history, mystery-box, and pack discovery. Viewer tier, block, removal and paywall restrictions remain in force.
+The language, country, and culture dimensions intersect. Multiple comma-separated culture tags are a union within the culture dimension. Unknown or incompatible selectors return no matching content; they do not broaden to English. Language codes are normalized to lowercase and country codes to uppercase. These selectors are also applied to trending, tomorrow/history, mystery-box, community detail, and pack discovery. Viewer tier, block, removal and paywall restrictions remain in force.
 
-Joke responses add `countries: [{id, code, name, native_name}]`, `cultural_note`, and `editorial_status`. Explanatory cultural notes are withheld when a joke is paywall-locked. Editorial status is `legacy`, `generated`, or `native_reviewed`; generated records do not imply a human review.
+### Language default (added 2026-10-04)
+
+A request that omits the `language` parameter is served in the viewer's default content language: the signed-in viewer's `preferred_language`, otherwise English. Clients that predate selectors therefore never receive a mostly non-English feed once the international corpus is installed. `language=all` (case-insensitive) or a present-but-blank `language=` explicitly selects every language; a client offering an "All languages" choice must send one of them. Country and culture selectors have no default.
+
+The default applies to joke browsing without `q`, random, daily today/tomorrow (anonymous and signed-in), trending, mystery box and community detail jokes/creators. It does not apply to text search (`/jokes/?q=...` spans every language unless `language` is given), to packs (curated content; only explicit selectors narrow them), or to daily history (the viewer's own record).
+
+### Daily pick stability
+
+A signed-in viewer's stored `(user, date)` daily pick is never replaced because the selection changed. When the stored joke is outside the requested selection, the endpoint serves a selection pick that is stable for that viewer, day and selection but is not stored (`id`, `delivered_at` and `created_at` are `null`). The stored row is replaced only when its joke can no longer be served to the viewer (taken down, tier or block change). Tomorrow's teaser follows the same rule.
+
+Joke responses add `countries: [{id, code, name, native_name}]`, `cultural_note`, and `editorial_status`. Explanatory cultural notes are withheld when a joke is paywall-locked. Editorial status is `legacy`, `generated`, or `native_reviewed`; generated records do not imply a human review. `/sitemap.xml` omits `generated` jokes until an editor changes their status.
 
 `GET /api/v1/countries/` is an unpaginated editor lookup. Submission/draft input accepts `language` as a code and `countries` as a list of country codes; existing `culture_tags` accepts culture slugs. Omitted language on a new submission defaults to English. A partial update that omits language preserves its current value. Admin publication copies country associations.
 

@@ -1444,7 +1444,9 @@ class JokePackListSerializer(serializers.ModelSerializer):
         from .discovery import discovery_pool, discovery_selectors
         request = self.context.get('request')
         if request and any(discovery_selectors(request.query_params).values()):
-            return obj.entries.filter(joke_id__in=discovery_pool(request).values('pk')).count()
+            return obj.entries.filter(
+                joke_id__in=discovery_pool(request, default_language=False).values('pk'),
+            ).count()
         return obj.entries.count()
 
     def get_user_progress(self, obj) -> dict | None:
@@ -1485,7 +1487,7 @@ class JokePackDetailSerializer(JokePackListSerializer):
         ).order_by('order')
         if request is not None:
             from .discovery import discovery_pool
-            entries = entries.filter(joke_id__in=discovery_pool(request).values('pk'))
+            entries = entries.filter(joke_id__in=discovery_pool(request, default_language=False).values('pk'))
         return [
             {
                 'order': e.order,

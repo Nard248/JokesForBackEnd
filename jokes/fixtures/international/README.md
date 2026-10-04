@@ -29,8 +29,10 @@ DATABASE_URL='' DB_NAME=jokesfor_international DEBUG=True \
 DATABASE_URL='' DB_NAME=jokesfor_international DEBUG=True \
   DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib \
   .venv/bin/python manage.py import_international_jokes --require-complete \
-  --report /tmp/international-installed-coverage.json
+  --publish-unreviewed --report /tmp/international-installed-coverage.json
 ```
+
+Every database import requires `--publish-unreviewed`: imported records go live immediately, as generated text without native-speaker review, with their tier derived from the age rating (`kid-safe`, `family-friendly` and `teen` all become `tier_1`, including the 2,400 `dark`/`edgy` records). Do not run it against production until the owner has approved that publication and the policy for unreviewed `dark`/`edgy` records. Clients without a language selector keep receiving their default language, and generated jokes are omitted from `/sitemap.xml`.
 
 Use `--manifest PATH` for another authored bundle. `--require-complete` rejects unmet authored targets; when importing, it also requires complete installed public counts and country associations. It must pass before reporting quota completion. See the current report in `Docs/Testing/2026-09-27-international-corpus-coverage.json` for actual installed coverage.
 

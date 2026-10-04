@@ -16,9 +16,12 @@ from jokes.models import (
     DailyJoke,
     Format,
     Joke,
+    JokeRating,
     JokeSubmission,
+    JokeView,
     Language,
     UserBlock,
+    UserPreference,
 )
 
 
@@ -215,3 +218,146 @@ class InternationalDiscoveryTests(APITestCase):
         country_languages = {row['code']: row['language_codes'] for row in body['countries']}
         self.assertEqual(country_languages['ES'], ['es'])
         self.assertEqual(country_languages['FR'], ['fr'])
+
+
+class DiscoveryLanguageDefaultTests(APITestCase):
+    """Clients that send no language selector are served the viewer's language."""
+
+    @classmethod
+    def setUpTestData(cls):
+        cls.en = Language.objects.get(code='en')
+        cls.es, _ = Language.objects.get_or_create(code='es', defaults={'name': 'Spanish'})
+        cls.fr, _ = Language.objects.get_or_create(code='fr', defaults={'name': 'French'})
+        fmt = Format.objects.get(slug='oneliner')
+        age = AgeRating.objects.get(slug='family-friendly')
+        with patch('jokes.models.Joke._generate_share_image'):
+            cls.english = Joke.objects.create(text='My coffee called in sick.', language=cls.en,
+                                              format=fmt, age_rating=age)
+            cls.spanish = Joke.objects.create(text='Mi café pidió vacaciones.', language=cls.es,
+                                              format=fmt, age_rating=age)
+            cls.french = Joke.objects.create(text='Mon café a pris un congé.', language=cls.fr,
+                                             format=fmt, age_rating=age)
+        cls.user = get_user_model().objects.create_user(username='default-reader', password='pw')
+
+    def ids(self, path, params=None):
+        body = self.client.get(path, params or {}).data
+        rows = body['results'] if isinstance(body, dict) and 'results' in body else body
+        return {row.get('joke', row)['id'] for row in rows}
+
+    def foreign_ids(self):
+        return {self.spanish.pk, self.french.pk}
+
+    def test_browse_without_language_is_english_for_anonymous(self):
+        ids = self.ids('/api/v1/jokes/')
+        self.assertIn(self.english.pk, ids)
+        self.assertFalse(ids & self.foreign_ids())
+        for _ in range(5):
+            joke = self.client.get('/api/v1/jokes/random/').data
+            self.assertEqual(joke['language']['code'], 'en')
+        self.assertEqual(self.client.get('/api/v1/daily-jokes/today/').data['joke']['language']['code'], 'en')
+
+    def test_explicit_all_or_blank_language_spans_every_language(self):
+        for value in ['all', 'ALL', '']:
+            with self.subTest(language=value):
+                ids = self.ids('/api/v1/jokes/', {'language': value})
+                self.assertTrue({self.english.pk, self.spanish.pk, self.french.pk} <= ids)
+        self.assertEqual(self.ids('/api/v1/jokes/', {'language': 'fr'}), {self.french.pk})
+
+    def test_text_search_without_language_spans_every_language(self):
+        self.assertIn(self.spanish.pk, self.ids('/api/v1/jokes/', {'q': 'vacaciones'}))
+
+    def test_signed_in_viewer_defaults_to_preferred_language(self):
+        UserPreference.objects.update_or_create(user=self.user, defaults={'preferred_language': self.fr})
+        self.client.force_authenticate(self.user)
+        self.assertEqual(self.ids('/api/v1/jokes/'), {self.french.pk})
+        self.assertEqual(self.client.get('/api/v1/jokes/random/').data['id'], self.french.pk)
+        today = self.client.get('/api/v1/daily-jokes/today/').data
+        self.assertEqual(today['joke']['id'], self.french.pk)
+
+    def test_trending_scores_are_not_multiplied_by_culture_matches(self):
+        first = CultureTag.objects.create(slug='trend-a', name='Trend A')
+        second = CultureTag.objects.create(slug='trend-b', name='Trend B')
+        fmt, age = self.english.format, self.english.age_rating
+        with patch('jokes.models.Joke._generate_share_image'):
+            both = Joke.objects.create(text='Matches two cultures.', language=self.en, format=fmt, age_rating=age)
+            one = Joke.objects.create(text='Matches one culture.', language=self.en, format=fmt, age_rating=age)
+        both.culture_tags.add(first, second)
+        one.culture_tags.add(first)
+        fans = [get_user_model().objects.create_user(username=f'trend-fan-{i}') for i in range(2)]
+        JokeRating.objects.create(user=fans[0], joke=both, rating=1)
+        for fan in fans:
+            JokeRating.objects.create(user=fan, joke=one, rating=1)
+        body = self.client.get('/api/v1/jokes/trending/', {'culture_tags': 'trend-a,trend-b'}).data
+        rows = [(row['joke']['id'], row['likes']) for row in body['results']]
+        self.assertEqual(rows, [(one.pk, 2), (both.pk, 1)])
+
+    def test_selector_request_never_rerolls_the_stored_daily_pick(self):
+        self.client.force_authenticate(self.user)
+        today = timezone.now().date()
+        tomorrow = today + timedelta(days=1)
+        DailyJoke.objects.create(user=self.user, date=today, joke=self.english)
+        DailyJoke.objects.create(user=self.user, date=tomorrow, joke=self.english)
+        first = self.client.get('/api/v1/daily-jokes/today/').data
+        self.assertEqual(first['joke']['id'], self.english.pk)
+        delivered_at = DailyJoke.objects.get(user=self.user, date=today).delivered_at
+        self.assertIsNotNone(delivered_at)
+
+        for language, joke in [('fr', self.french), ('es', self.spanish)]:
+            response = self.client.get('/api/v1/daily-jokes/today/', {'language': language})
+            self.assertEqual(response.data['joke']['id'], joke.pk)
+            self.assertIsNone(response.data['id'])
+            again = self.client.get('/api/v1/daily-jokes/today/', {'language': language})
+            self.assertEqual(again.data['joke']['id'], joke.pk)
+            self.assertIn('café', self.client.get(
+                '/api/v1/daily-jokes/tomorrow/', {'language': language}).data['preview'])
+
+        stored = DailyJoke.objects.get(user=self.user, date=today)
+        self.assertEqual((stored.joke_id, stored.delivered_at), (self.english.pk, delivered_at))
+        self.assertEqual(DailyJoke.objects.get(user=self.user, date=tomorrow).joke_id, self.english.pk)
+        self.assertEqual(self.client.get('/api/v1/daily-jokes/today/').data['joke']['id'], self.english.pk)
+        self.assertEqual(DailyJoke.objects.filter(user=self.user).count(), 2)
+
+    def test_unservable_stored_daily_pick_is_still_replaced(self):
+        self.client.force_authenticate(self.user)
+        today = timezone.now().date()
+        DailyJoke.objects.create(user=self.user, date=today, joke=self.spanish)
+        Joke.all_objects.filter(pk=self.spanish.pk).update(is_removed=True)
+        response = self.client.get('/api/v1/daily-jokes/today/', {'language': 'all'})
+        self.assertEqual(response.status_code, 200)
+        self.assertNotEqual(response.data['joke']['id'], self.spanish.pk)
+        self.assertEqual(DailyJoke.objects.get(user=self.user, date=today).joke_id, response.data['joke']['id'])
+
+    def test_history_is_not_narrowed_by_the_default_language(self):
+        self.client.force_authenticate(self.user)
+        DailyJoke.objects.create(user=self.user, date=timezone.now().date() - timedelta(days=1), joke=self.french)
+        response = self.client.get('/api/v1/daily-jokes/history/')
+        rows = response.data['results'] if isinstance(response.data, dict) else response.data
+        self.assertEqual([row['joke']['id'] for row in rows], [self.french.pk])
+
+    def test_recently_viewed_query_count_is_constant(self):
+        from django.db import connection
+        from django.test.utils import CaptureQueriesContext
+
+        self.client.force_authenticate(self.user)
+        spain = apps.get_model('jokes', 'Country').objects.get(code='ES')
+        culture = CultureTag.objects.create(slug='viewed-culture', name='Viewed')
+
+        def view(joke):
+            joke.countries.add(spain)
+            joke.culture_tags.add(culture)
+            JokeView.objects.create(user=self.user, joke=joke, source=JokeView.SOURCE_OTHER)
+
+        def count():
+            with CaptureQueriesContext(connection) as ctx:
+                response = self.client.get('/api/v1/users/me/recently-viewed/')
+            self.assertEqual(response.status_code, 200)
+            return len(ctx.captured_queries), len(response.data)
+
+        view(self.english)
+        few, rows = count()
+        self.assertEqual(rows, 1)
+        view(self.spanish)
+        view(self.french)
+        many, rows = count()
+        self.assertEqual(rows, 3)
+        self.assertEqual(few, many)

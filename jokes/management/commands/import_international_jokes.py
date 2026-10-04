@@ -36,6 +36,11 @@ class Command(BaseCommand):
             help='Reject unmet category targets or missing authored country associations',
         )
         parser.add_argument('--report', type=Path, help='Write a JSON coverage report to this local path')
+        parser.add_argument(
+            '--publish-unreviewed', action='store_true',
+            help=('Required for database writes: acknowledge that imported records go live '
+                  '(age-rating-derived tier) as generated text without native-speaker review'),
+        )
 
     def handle(self, *args, **options):
         try:
@@ -50,6 +55,12 @@ class Command(BaseCommand):
             self.stdout.write(
                 f"{row['collection']}/{row['category']}: "
                 f"{row['count']}/{row['target']}; missing {row['missing']}"
+            )
+        if not options['dry_run'] and not options['publish_unreviewed']:
+            raise CommandError(
+                'Importing publishes generated, unreviewed jokes to every eligible reader. '
+                'Re-run with --publish-unreviewed once that publication is approved, '
+                'or use --dry-run to validate only.'
             )
         if options['dry_run']:
             report['mode'] = 'validation_only'
