@@ -35,6 +35,7 @@ from jokes.models import (
     Source,
     Tone,
 )
+from jokes.publication import blank_share_cards, visibility_changed
 from jokes.serving import TIER_1, TIER_2, content_tier_for_age_rating
 
 TIER_3 = 'tier_3'
@@ -337,6 +338,11 @@ class Command(BaseCommand):
         stats['published'] = live_rows.filter(
             seed_key__in=list(publish), editorial_status=HELD,
         ).exclude(content_tier=TIER_3).update(editorial_status=SCREENED, updated_at=now)
+        if stats['blocked'] or stats['blocked_unpublished']:
+            # Blocked rows are no longer public: no share card may keep serving them.
+            blank_share_cards(Joke.all_objects.filter(seed_key__in=blocked_keys).exclude(share_image=''))
+        if any(stats[key] for key in ('mature_floor', 'blocked', 'blocked_unpublished', 'published')):
+            visibility_changed()
         if launch_set is not None and (
             stats['published'] or stats['blocked'] or stats['blocked_unpublished']
         ):

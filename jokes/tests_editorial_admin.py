@@ -66,3 +66,47 @@ class ReviewQueueAdminTests(GateFixture):
         self.model_admin.publish_ai_screened(self.request(), self.queryset(self.held, prohibited))
         self.assertEqual(Joke.all_objects.get(pk=self.held.pk).editorial_status, 'generated')
         self.assertEqual(Joke.all_objects.get(pk=prohibited.pk).editorial_status, 'generated')
+
+
+class UnpublishSideEffectTests(ReviewQueueAdminTests):
+    """Bulk editorial updates bypass signals: unpublishing must still clean up
+    the two surfaces that are not read-gated (share cards, community caches)."""
+
+    def test_hold_deletes_the_share_card_file(self):
+        import tempfile
+
+        from django.core.files.uploadedfile import SimpleUploadedFile
+        from django.test import override_settings
+
+        with tempfile.TemporaryDirectory() as media, override_settings(MEDIA_ROOT=media):
+            self.screened.share_image.save('card.png', SimpleUploadedFile('card.png', b'png-bytes'), save=False)
+            Joke.all_objects.filter(pk=self.screened.pk).update(share_image=self.screened.share_image.name)
+            path = self.screened.share_image.path
+            self.model_admin.hold_jokes(self.request(), self.queryset(self.screened))
+            held = Joke.all_objects.get(pk=self.screened.pk)
+            self.assertEqual(held.editorial_status, 'generated')
+            self.assertFalse(held.share_image)
+            import os
+            self.assertFalse(os.path.exists(path))
+
+    def test_hold_refreshes_community_state_after_commit(self):
+        from django.core.cache import cache
+
+        from communities import services
+        services.invalidate()
+        before = cache.get(services.VERSION_KEY)
+        with self.captureOnCommitCallbacks(execute=True):
+            self.model_admin.hold_jokes(self.request(), self.queryset(self.screened))
+        self.assertNotEqual(cache.get(services.VERSION_KEY), before)
+
+    def test_held_joke_leaves_community_trending(self):
+        from communities.models import Community
+        from jokes.models import ContextTag
+        tag = ContextTag.objects.create(name='Holdtheme', slug='holdtheme')
+        self.screened.context_tags.add(tag)
+        Community.objects.get_or_create(tag=tag)
+        ids = lambda: [j['id'] for j in self.client.get('/api/v1/communities/holdtheme/').data['trending']]  # noqa: E731
+        self.assertIn(self.screened.pk, ids())
+        with self.captureOnCommitCallbacks(execute=True):
+            self.model_admin.hold_jokes(self.request(), self.queryset(self.screened))
+        self.assertNotIn(self.screened.pk, ids())

@@ -8,6 +8,7 @@ from django.utils import timezone
 from django.utils.html import format_html
 
 from .international_corpus import MATURE_CATEGORIES
+from .managers import PUBLISHED_EDITORIAL_STATUSES
 from .models import (
     Achievement,
     AgeRating,
@@ -46,6 +47,7 @@ from .models import (
     UserVibe,
     Vibe,
 )
+from .publication import blank_share_cards, visibility_changed
 from .serving import TIER_1, TIER_2, content_tier_for_age_rating
 
 # 36h/48h SLA clock values (spec verbatim) — shared by AppealAdmin's
@@ -173,6 +175,12 @@ class JokeAdmin(admin.ModelAdmin):
                 content_tier=TIER_2, updated_at=now,
             )
             moved = Joke.all_objects.filter(pk__in=ids).update(editorial_status=status, updated_at=now)
+            failed_cards = []
+            if status not in PUBLISHED_EDITORIAL_STATUSES:
+                # Unpublished: its share card must not keep serving at its guessable path.
+                failed_cards = blank_share_cards(Joke.all_objects.filter(pk__in=ids))
+            if moved or raised:
+                visibility_changed()
             for pk in ids:
                 record_audit(
                     request, audit_action, outcome='success', actor=request.user,
@@ -186,6 +194,10 @@ class JokeAdmin(admin.ModelAdmin):
         if skipped:
             message += f' {skipped} skipped (removed, prohibited, or not eligible from their current status).'
         self.message_user(request, message)
+        if failed_cards:
+            self.message_user(
+                request, f'Share card delete FAILED for joke(s) {failed_cards}; retry Hold.', level='WARNING',
+            )
         return ids
 
     @admin.action(description='Publish as AI-screened (AI generated, screened)')
@@ -252,6 +264,8 @@ class JokeAdmin(admin.ModelAdmin):
                     level='WARNING',
                 )
         n = queryset.update(is_removed=False, removed_at=None)
+        if n:
+            visibility_changed()
         # REVERSAL: the share card was blanked at takedown time (or, for a
         # media joke, may still be an old pre-fix text-only card) -- rebuild
         # it now that the joke is live and its media has been released.
@@ -548,6 +562,8 @@ class ContentReportAdmin(admin.ModelAdmin):
         removed = Joke.all_objects.filter(pk__in=joke_ids, is_removed=False).update(
             is_removed=True, removed_at=now,
         )
+        if removed:
+            visibility_changed()
         # TAKEDOWN LEAK: the share card is a SEPARATELY generated PNG (not
         # the media asset itself) embedding a downscaled copy of the
         # poster/image at a guessable share-cards/joke-<pk>.png path. Left
