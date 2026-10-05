@@ -83,8 +83,16 @@ class ReleasedCountsTests(CommunityFixture):
             self.enjoy(fan, self.space_jokes[:2])  # five more members the same day
         after, later = self.directory()
         self.assertEqual(after['space']['status'], 'active')  # live: the fifth laugh activates it
-        for field in ('members', 'engaged_members'):
-            self.assertEqual(after['space'][field], before['space'][field])
+        # A forming community shows no size; once active it shows the noisy
+        # release of the morning's frozen count (4) — never the live 9.
+        today, pk = timezone.now().date().isoformat(), self.space.community.pk
+        self.assertIsNone(before['space']['members'])
+        members = privacy.release(4, 'members', pk, day=today)
+        engaged = privacy.release(4, 'engaged', pk, day=today)
+        self.assertEqual(after['space']['members'], members)
+        # Engaged ⊆ members: hidden with members, never larger.
+        self.assertEqual(after['space']['engaged_members'],
+                         None if members is None or engaged is None else min(engaged, members))
         self.assertEqual(later['stats']['members'], data['stats']['members'])
         with freeze_time(timezone.now() + timedelta(days=1)):
             tomorrow = {r['slug']: r for r in self.directory()[1]['communities']}

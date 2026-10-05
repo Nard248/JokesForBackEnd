@@ -11,6 +11,7 @@ from django.contrib.auth import get_user_model
 from django.test import TestCase
 from rest_framework.test import APIClient
 
+from creator_insights.tests.consent import record_opt_in
 from jokes.models import (
     AgeRating,
     Format,
@@ -31,6 +32,7 @@ def _analytics_user(**kwargs):
     user.profile.date_of_birth = date(1990, 1, 1)
     user.profile.share_analytics = True
     user.profile.save(update_fields=['date_of_birth', 'share_analytics'])
+    record_opt_in(user)
     return user
 
 INSIGHTS_URL = '/api/v1/creators/me/insights/'

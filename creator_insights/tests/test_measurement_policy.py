@@ -10,6 +10,7 @@ from django.utils import timezone
 from rest_framework.test import APIClient
 
 from creator_insights.services import build_creator_insights
+from creator_insights.tests.consent import record_opt_in
 from follows.models import Follow
 from jokes.models import (
     AgeRating,
@@ -40,6 +41,8 @@ def reader(name, *, consent=True, born=date(1990, 1, 1)):
     user.profile.share_analytics = consent
     user.profile.date_of_birth = born
     user.profile.save(update_fields=['share_analytics', 'date_of_birth'])
+    if consent:
+        record_opt_in(user)
     return user
 
 
@@ -179,6 +182,76 @@ class MeasurementPolicyTests(TestCase):
         self.assertEqual(data['overview']['views'], 0)
         self.assertEqual(data['overview']['followers'], 0)
         self.assertEqual(data['top_jokes'][0]['reactions'], 0)
+
+    def _engage(self, user, at=None):
+        """One of every counted interaction by ``user``, optionally backdated to ``at``."""
+        rows = [
+            JokeView.objects.create(user=user, joke=self.joke),
+            JokeImpression.objects.create(user=user, joke=self.joke),
+            JokeReaction.objects.create(user=user, joke=self.joke, reaction='lol'),
+            Favorite.objects.create(user=user, joke=self.joke),
+            SavedJoke.objects.create(user=user, joke=self.joke),
+            ShareEvent.objects.create(user=user, joke=self.joke),
+            Follow.objects.create(follower=user, creator=self.creator),
+        ]
+        if at is not None:
+            for row in rows:
+                stamps = {'created_at': at}
+                if isinstance(row, JokeView):
+                    stamps = {'viewed_at': at, 'viewed_date': at.date()}
+                elif isinstance(row, JokeImpression):
+                    stamps['created_date'] = at.date()
+                type(row).objects.filter(pk=row.pk).update(**stamps)
+
+    COUNTED = ('reach', 'views', 'impressions', 'unique_reach', 'reactions', 'favorites', 'saves', 'shares',
+               'followers')
+
+    def test_activity_before_the_latest_opt_in_is_not_counted(self):
+        """Same rule as community aggregates: consent is never applied backwards."""
+        now = timezone.now()
+        late = reader('measurement-late', consent=False)
+        late.profile.share_analytics = True
+        late.profile.save(update_fields=['share_analytics'])
+        record_opt_in(late, at=now - timedelta(hours=1))
+        self._engage(late, at=now - timedelta(days=2))
+        data = build_creator_insights(self.creator, 'all')
+        for metric in self.COUNTED:
+            with self.subTest(metric=metric, phase='before opt-in'):
+                self.assertEqual(data['overview'][metric], 0)
+        self.assertEqual(data['top_jokes'][0]['views'], 0)
+        self.assertEqual(data['top_jokes'][0]['reactions'], 0)
+
+        # Edges are unique per person/joke: replace them with post-opt-in ones.
+        for model in (JokeView, JokeImpression, JokeReaction, Favorite, SavedJoke, ShareEvent):
+            model.objects.filter(user=late).delete()
+        Follow.objects.filter(follower=late).delete()
+        self._engage(late)
+        data = build_creator_insights(self.creator, 'all')
+        for metric in self.COUNTED:
+            with self.subTest(metric=metric, phase='after opt-in'):
+                self.assertEqual(data['overview'][metric], 1)
+        self.assertEqual(data['top_jokes'][0]['views'], 1)
+        self.assertEqual(data['reactions_breakdown'], [{'reaction': 'lol', 'count': 1}])
+
+    def test_re_opt_in_restarts_the_window(self):
+        now = timezone.now()
+        record_opt_in(self.adult, at=now - timedelta(days=3), enabled=False)
+        record_opt_in(self.adult, at=now - timedelta(days=1))
+        # Recorded under the first opt-in, before the withdrawal: excluded now.
+        self._engage(self.adult, at=now - timedelta(days=4))
+        self.assertEqual(build_creator_insights(self.creator, 'all')['overview']['views'], 0)
+        JokeView.objects.create(user=self.adult, joke=self.joke)
+        self.assertEqual(build_creator_insights(self.creator, 'all')['overview']['views'], 1)
+
+    def test_current_consent_without_a_recorded_opt_in_counts_nothing(self):
+        unrecorded = reader('measurement-unrecorded', consent=False)
+        unrecorded.profile.share_analytics = True
+        unrecorded.profile.save(update_fields=['share_analytics'])
+        self._engage(unrecorded)
+        data = build_creator_insights(self.creator, 'all')
+        for metric in self.COUNTED:
+            with self.subTest(metric=metric):
+                self.assertEqual(data['overview'][metric], 0)
 
     def test_open_rate_matches_user_joke_day_instead_of_dividing_unmatched_views(self):
         second = reader('measurement-second')
