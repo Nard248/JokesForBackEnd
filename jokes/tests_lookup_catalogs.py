@@ -51,3 +51,27 @@ class LookupCatalogueCompletenessTests(APITestCase):
         slugs = {r['slug'] for r in rows}
         self.assertGreater(ContextTag.objects.count(), 10)
         self.assertEqual(len(slugs), ContextTag.objects.count())
+
+
+class FreshDatabaseCataloguesTests(APITestCase):
+    """The E2E contract spec asserts every catalogue is non-empty on a database
+    that has only been migrated (plus ``seed_e2e``, which adds no taxonomy).
+
+    Each catalogue is reference data seeded by a migration -- culture tags by
+    0040 (with the cultural collections of 0042 PROTECT-referencing them) -- so
+    the test database, built by running those same migrations, must show it.
+    """
+
+    def test_every_catalogue_is_populated_by_migrations_alone(self):
+        for path, _model in _CATALOGUES:
+            with self.subTest(catalogue=path):
+                body = self.client.get(f'/api/v1/{path}/').json()
+                rows = body['results'] if isinstance(body, dict) else body
+                self.assertGreater(len(rows), 0, f'/{path}/ is empty on a freshly migrated database')
+
+    def test_culture_tags_are_the_migration_seeded_collections(self):
+        slugs = {row['slug'] for row in self.client.get('/api/v1/culture-tags/').json()}
+        self.assertLessEqual(
+            {'spain-everyday', 'france-everyday', 'germany-everyday', 'armenia-everyday', 'italy-everyday'},
+            slugs,
+        )
