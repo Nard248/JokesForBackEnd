@@ -568,6 +568,18 @@ class InternationalLaunchSetTests(TestCase):
         self.assertTrue(removed.is_removed)
         self.assertEqual(removed.editorial_status, 'generated')
 
+    def test_launch_set_is_authoritative_for_ai_screened_records(self):
+        # A key dropped from `publish` is held again on the next run (no drift),
+        # while native review (the human path) is never undone.
+        self.run_import(launch_set=self.launch_set(publish=[self.keys[0]]))
+        self.assertEqual(self.joke(0).editorial_status, 'ai_screened')
+        from jokes.models import Joke
+        Joke.all_objects.filter(seed_key=self.keys[1]).update(editorial_status='native_reviewed')
+        output = self.run_import(launch_set=self.launch_set(publish=[]))
+        self.assertIn('unpublished=1', output)
+        self.assertEqual(self.joke(0).editorial_status, 'generated')
+        self.assertEqual(self.joke(1).editorial_status, 'native_reviewed')
+
     def test_blocked_keys_become_prohibited_held_and_withdraw_a_screen(self):
         from jokes.models import Joke
         self.run_import(launch_set=self.launch_set(publish=[self.keys[0]]))

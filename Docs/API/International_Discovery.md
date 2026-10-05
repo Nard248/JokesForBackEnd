@@ -98,7 +98,8 @@ Nobody needs production database access: committing a new launch set (or corpus 
 ### Owner workflow: native review
 
 1. Admin → Jokes → filter **Editorial status**, **Language** and **Origin country** (e.g. `ai_screened` + `de` + Germany).
-2. Read each joke. Bulk actions: **Mark native-reviewed (publish)** (a dark/edgy joke is kept at `tier_2`), **Publish as AI-screened** (refuses dark/edgy — those need native review), **Hold** (unpublishes AI-authored content; creator jokes are skipped — withdraw those with the takedown action, which sends the DSA notice). Each changed joke gets an audit row (`editorial_native_reviewed`, `editorial_publish_ai_screened`, `editorial_hold`).
+2. Read each joke. Bulk actions: **Mark native-reviewed (publish)** (a dark/edgy joke is kept at `tier_2`) and **Hold** (unpublishes AI-authored content and deletes its share card; creator jokes are skipped — withdraw those with the takedown action, which sends the DSA notice). Each changed joke gets an audit row (`editorial_native_reviewed`, `editorial_hold`).
+   - **AI-screened publication is launch-set-only.** `jokes/fixtures/international/launch_set.json` is the single source of truth for `ai_screened` corpus records: it is reviewed as code and applied by the Cloud Build `ImportInternational` step on every deploy. Adding a key publishes it; **removing a key holds it again on the next deploy** (fail-closed, no drift); a `blocked` entry makes it `tier_3`. Native review is never undone by the importer.
 3. Use the content-report takedown for anything that must be removed; set `content_tier=tier_3` for prohibited content.
 4. Native-reviewed jokes become indexable and enter the sitemap on the next frontend deploy.
 

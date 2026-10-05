@@ -32,15 +32,11 @@ class ReviewQueueAdminTests(GateFixture):
         for name in ('editorial_status', 'language', 'origin_country'):
             self.assertIn(name, self.model_admin.list_filter)
 
-    def test_publish_as_ai_screened_refuses_dark_and_audits(self):
-        dark = self.make('Held dark joke', status='generated')
-        dark.tones.add(self.dark)
-        self.model_admin.publish_ai_screened(self.request(), self.queryset(self.held, dark))
-        self.assertEqual(Joke.all_objects.get(pk=self.held.pk).editorial_status, 'ai_screened')
-        self.assertEqual(Joke.all_objects.get(pk=dark.pk).editorial_status, 'generated')
-        self.assertTrue(AuditLog.objects.filter(
-            action='editorial_publish_ai_screened', target_id=str(self.held.pk)).exists())
-        self.assertFalse(AuditLog.objects.filter(target_id=str(dark.pk)).exists())
+    def test_ai_screened_publication_is_launch_set_only(self):
+        # Admin cannot publish as AI-screened: the reviewed launch set is the
+        # single source of truth and would revert it on the next deploy.
+        self.assertNotIn('publish_ai_screened', self.model_admin.actions)
+        self.assertFalse(hasattr(self.model_admin, 'publish_ai_screened'))
 
     def test_mark_native_reviewed_keeps_dark_out_of_tier_1(self):
         dark = self.make('Held dark joke', status='generated')
@@ -63,7 +59,7 @@ class ReviewQueueAdminTests(GateFixture):
     def test_actions_never_touch_removed_or_prohibited_jokes(self):
         Joke.all_objects.filter(pk=self.held.pk).update(is_removed=True)
         prohibited = self.make('Prohibited', status='generated', tier='tier_3')
-        self.model_admin.publish_ai_screened(self.request(), self.queryset(self.held, prohibited))
+        self.model_admin.mark_native_reviewed(self.request(), self.queryset(self.held, prohibited))
         self.assertEqual(Joke.all_objects.get(pk=self.held.pk).editorial_status, 'generated')
         self.assertEqual(Joke.all_objects.get(pk=prohibited.pk).editorial_status, 'generated')
 

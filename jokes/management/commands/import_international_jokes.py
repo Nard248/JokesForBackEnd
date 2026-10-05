@@ -119,7 +119,7 @@ class Command(BaseCommand):
                 ))
             self.stdout.write(self.style.SUCCESS(
                 f"Imported: created={stats['created']} unchanged={stats['unchanged']} "
-                f"removed={stats['removed']} published={stats['published']} "
+                f"removed={stats['removed']} published={stats['published']} unpublished={stats['unpublished']} "
                 f"blocked={stats['blocked']} mature_floor={stats['mature_floor']} "
                 f"origin_backfilled={stats['origin_backfilled']}. "
                 f"Live: {stats['live']}; held: {stats['held']}. Native review is not claimed."
@@ -338,13 +338,25 @@ class Command(BaseCommand):
         stats['published'] = live_rows.filter(
             seed_key__in=list(publish), editorial_status=HELD,
         ).exclude(content_tier=TIER_3).update(editorial_status=SCREENED, updated_at=now)
+        # The launch set is authoritative for AI-screened corpus records: a key
+        # dropped from `publish` is held again on the next run (fail-closed), so
+        # production can never drift from the reviewed file. Native review is
+        # the human path and is never touched here.
+        stats['unpublished'] = 0
+        if launch_set is not None:
+            drifted = live_rows.filter(
+                seed_key__in=[r['id'] for r in corpus.records], editorial_status=SCREENED,
+            ).exclude(seed_key__in=list(publish))
+            drifted_jokes = list(drifted.exclude(share_image=''))
+            stats['unpublished'] = drifted.update(editorial_status=HELD, updated_at=now)
+            blank_share_cards(drifted_jokes)
         if stats['blocked'] or stats['blocked_unpublished']:
             # Blocked rows are no longer public: no share card may keep serving them.
             blank_share_cards(Joke.all_objects.filter(seed_key__in=blocked_keys).exclude(share_image=''))
-        if any(stats[key] for key in ('mature_floor', 'blocked', 'blocked_unpublished', 'published')):
+        if any(stats[key] for key in ('mature_floor', 'blocked', 'blocked_unpublished', 'published', 'unpublished')):
             visibility_changed()
         if launch_set is not None and (
-            stats['published'] or stats['blocked'] or stats['blocked_unpublished']
+            stats['published'] or stats['blocked'] or stats['blocked_unpublished'] or stats['unpublished']
         ):
             from audit.services import record_audit
             record_audit(

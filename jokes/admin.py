@@ -141,7 +141,9 @@ class JokeAdmin(admin.ModelAdmin):
     # for appeal."). Removals must go through the takedown action, which does
     # all of that; `restore_jokes` remains the supported way back.
     readonly_fields = ['created_at', 'updated_at', 'removed_at', 'is_removed']
-    actions = ['restore_jokes', 'publish_ai_screened', 'mark_native_reviewed', 'hold_jokes']
+    # AI-screened publication is launch-set-only (reviewed as code, applied on deploy);
+    # admin offers the human path (native review) and Hold.
+    actions = ['restore_jokes', 'mark_native_reviewed', 'hold_jokes']
     fieldsets = [
         ('Content', {'fields': ['text', 'setup', 'punchline']}),
         ('Classification', {'fields': ['format', 'age_rating', 'content_tier', 'language', 'source']}),
@@ -199,23 +201,6 @@ class JokeAdmin(admin.ModelAdmin):
                 request, f'Share card delete FAILED for joke(s) {failed_cards}; retry Hold.', level='WARNING',
             )
         return ids
-
-    @admin.action(description='Publish as AI-screened (AI generated, screened)')
-    def publish_ai_screened(self, request, queryset):
-        # An AI-only screen never publishes dark/edgy jokes: they need a native
-        # reviewer (the launch-set importer enforces the same rule).
-        mature = queryset.filter(tones__slug__in=MATURE_CATEGORIES).values('pk')
-        refused = queryset.filter(pk__in=mature, editorial_status=Joke.EDITORIAL_GENERATED).count()
-        self._set_editorial_status(
-            request, queryset.exclude(pk__in=mature), Joke.EDITORIAL_AI_SCREENED,
-            from_statuses=[Joke.EDITORIAL_GENERATED], audit_action='editorial_publish_ai_screened',
-        )
-        if refused:
-            self.message_user(
-                request,
-                f'{refused} dark/edgy joke(s) were NOT published: they require native review.',
-                level='WARNING',
-            )
 
     @admin.action(description='Mark native-reviewed (publish)')
     def mark_native_reviewed(self, request, queryset):
