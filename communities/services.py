@@ -37,7 +37,6 @@ from django.db.models import (
     Case,
     Count,
     DateTimeField,
-    Exists,
     F,
     FloatField,
     Func,
@@ -53,9 +52,9 @@ from django.utils import timezone
 from communities import engine, formation, privacy
 from communities.materialize import POSITIVE_REACTIONS, TREND_DAYS
 from communities.models import Community, CommunityMembership, CommunitySignal
-from creator_insights.privacy import analytics_allowed
+from creator_insights.privacy import analytics_allowed, since_latest_opt_in
 from jokes.identity import public_display_name, public_handle
-from jokes.models import AnalyticsConsentRecord, Favorite, Joke, JokeReaction, SavedJoke, ShareEvent
+from jokes.models import Favorite, Joke, JokeReaction, SavedJoke, ShareEvent
 
 WINDOW_DAYS = 90
 MIN_DISPLAY = engine.MINIMUM_MEMBERS
@@ -122,14 +121,8 @@ def signal_rows(since, until=None, users=None, jokes=None, eligible=False, exclu
         population = privacy.established_users()
         if exclude_user is not None:
             population = population.exclude(pk=exclude_user.pk)
-        # "At or after the latest opt-in", phrased as (anti-)semi-joins so the
-        # database can evaluate it set-wise instead of once per signal.
-        opt_ins = AnalyticsConsentRecord.objects.filter(user=OuterRef('user_id'), enabled=True)
-        rows = rows.filter(
-            Exists(opt_ins.filter(recorded_at__lte=OuterRef('occurred_at'))),
-            ~Exists(opt_ins.filter(recorded_at__gt=OuterRef('occurred_at'))),
-            user__in=population.values('pk'),
-        )
+        # "At or after the latest opt-in" — the same cutoff creator Insights use.
+        rows = since_latest_opt_in(rows.filter(user__in=population.values('pk')), 'occurred_at')
     return rows
 
 
