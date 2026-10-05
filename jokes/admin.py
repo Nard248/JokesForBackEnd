@@ -7,6 +7,8 @@ from django.db.models import Case, IntegerField, Value, When
 from django.utils import timezone
 from django.utils.html import format_html
 
+from .international_corpus import MATURE_CATEGORIES
+from .managers import PUBLISHED_EDITORIAL_STATUSES
 from .models import (
     Achievement,
     AgeRating,
@@ -45,7 +47,8 @@ from .models import (
     UserVibe,
     Vibe,
 )
-from .serving import content_tier_for_age_rating
+from .publication import blank_share_cards, visibility_changed
+from .serving import TIER_1, TIER_2, content_tier_for_age_rating
 
 # 36h/48h SLA clock values (spec verbatim) — shared by AppealAdmin's
 # hours_open red flag and the "overdue" list filter.
@@ -118,8 +121,17 @@ class SourceAdmin(admin.ModelAdmin):
 
 @admin.register(Joke)
 class JokeAdmin(admin.ModelAdmin):
-    list_display = ['__str__', 'format', 'age_rating', 'language', 'is_removed', 'created_at']
-    list_filter = ['is_removed', 'format', 'age_rating', 'tones', 'context_tags', 'language', 'countries', 'editorial_status']
+    list_display = [
+        '__str__', 'format', 'age_rating', 'language', 'origin_country', 'editorial_status',
+        'content_tier', 'is_removed', 'created_at',
+    ]
+    # Review queue: editorial_status + language + origin_country narrow the
+    # imported AI corpus to one language/country batch for review.
+    list_filter = [
+        'editorial_status', 'language', 'origin_country', 'content_tier', 'is_removed',
+        'format', 'age_rating', 'tones', 'context_tags', 'countries',
+    ]
+    list_select_related = ['format', 'age_rating', 'language', 'origin_country']
     search_fields = ['text', 'setup', 'punchline']
     filter_horizontal = ['tones', 'context_tags', 'culture_tags', 'countries']
     # `is_removed` is READ-ONLY on purpose. Ticking it by hand hid the joke
@@ -129,11 +141,13 @@ class JokeAdmin(admin.ModelAdmin):
     # for appeal."). Removals must go through the takedown action, which does
     # all of that; `restore_jokes` remains the supported way back.
     readonly_fields = ['created_at', 'updated_at', 'removed_at', 'is_removed']
-    actions = ['restore_jokes']
+    # AI-screened publication is launch-set-only (reviewed as code, applied on deploy);
+    # admin offers the human path (native review) and Hold.
+    actions = ['restore_jokes', 'mark_native_reviewed', 'hold_jokes']
     fieldsets = [
         ('Content', {'fields': ['text', 'setup', 'punchline']}),
         ('Classification', {'fields': ['format', 'age_rating', 'content_tier', 'language', 'source']}),
-        ('Tags', {'fields': ['tones', 'context_tags', 'culture_tags', 'countries']}),
+        ('Tags', {'fields': ['tones', 'context_tags', 'culture_tags', 'countries', 'origin_country']}),
         ('Moderation', {'fields': ['is_removed', 'removed_at']}),
         ('Cultural context', {'fields': ['cultural_note', 'editorial_status', 'seed_key']}),
         ('Metadata', {'fields': ['created_at', 'updated_at'], 'classes': ['collapse']}),
@@ -142,6 +156,69 @@ class JokeAdmin(admin.ModelAdmin):
     def get_queryset(self, request):
         # Admin must see removed jokes (the default manager hides them).
         return Joke.all_objects.get_queryset()
+
+    def _set_editorial_status(self, request, queryset, status, *, from_statuses, audit_action):
+        """Move selected live, non-prohibited jokes between editorial statuses.
+
+        Removed and tier_3 jokes are never touched; a dark/edgy joke is never
+        left at tier_1 (it is raised to tier_2). One audit row per joke.
+        """
+        from audit.services import record_audit
+        candidates = queryset.filter(is_removed=False, editorial_status__in=from_statuses).exclude(
+            content_tier='tier_3',
+        )
+        ids = list(candidates.values_list('pk', flat=True))
+        mature_ids = set(
+            Joke.all_objects.filter(pk__in=ids, tones__slug__in=MATURE_CATEGORIES).values_list('pk', flat=True)
+        )
+        now = timezone.now()
+        with transaction.atomic():
+            raised = Joke.all_objects.filter(pk__in=mature_ids, content_tier=TIER_1).update(
+                content_tier=TIER_2, updated_at=now,
+            )
+            moved = Joke.all_objects.filter(pk__in=ids).update(editorial_status=status, updated_at=now)
+            failed_cards = []
+            if status not in PUBLISHED_EDITORIAL_STATUSES:
+                # Unpublished: its share card must not keep serving at its guessable path.
+                failed_cards = blank_share_cards(Joke.all_objects.filter(pk__in=ids))
+            if moved or raised:
+                visibility_changed()
+            for pk in ids:
+                record_audit(
+                    request, audit_action, outcome='success', actor=request.user,
+                    target_type='joke', target_id=str(pk),
+                    metadata={'editorial_status': status, 'mature_category': pk in mature_ids},
+                )
+        skipped = queryset.count() - moved
+        message = f'{moved} joke(s) set to {status}.'
+        if raised:
+            message += f' {raised} dark/edgy joke(s) raised to tier_2 (mature).'
+        if skipped:
+            message += f' {skipped} skipped (removed, prohibited, or not eligible from their current status).'
+        self.message_user(request, message)
+        if failed_cards:
+            self.message_user(
+                request, f'Share card delete FAILED for joke(s) {failed_cards}; retry Hold.', level='WARNING',
+            )
+        return ids
+
+    @admin.action(description='Mark native-reviewed (publish)')
+    def mark_native_reviewed(self, request, queryset):
+        self._set_editorial_status(
+            request, queryset, Joke.EDITORIAL_NATIVE_REVIEWED,
+            from_statuses=[Joke.EDITORIAL_GENERATED, Joke.EDITORIAL_AI_SCREENED],
+            audit_action='editorial_native_reviewed',
+        )
+
+    @admin.action(description='Hold (unpublish AI-authored jokes)')
+    def hold_jokes(self, request, queryset):
+        # Holding is for AI-authored editorial content only. A creator's joke is
+        # withdrawn through a takedown, which carries the DSA notice + appeal.
+        self._set_editorial_status(
+            request, queryset.filter(creator__isnull=True), Joke.EDITORIAL_GENERATED,
+            from_statuses=[Joke.EDITORIAL_AI_SCREENED, Joke.EDITORIAL_NATIVE_REVIEWED],
+            audit_action='editorial_hold',
+        )
 
     @admin.action(description='Restore selected jokes (un-remove)')
     def restore_jokes(self, request, queryset):
@@ -172,6 +249,8 @@ class JokeAdmin(admin.ModelAdmin):
                     level='WARNING',
                 )
         n = queryset.update(is_removed=False, removed_at=None)
+        if n:
+            visibility_changed()
         # REVERSAL: the share card was blanked at takedown time (or, for a
         # media joke, may still be an old pre-fix text-only card) -- rebuild
         # it now that the joke is live and its media has been released.
@@ -468,6 +547,8 @@ class ContentReportAdmin(admin.ModelAdmin):
         removed = Joke.all_objects.filter(pk__in=joke_ids, is_removed=False).update(
             is_removed=True, removed_at=now,
         )
+        if removed:
+            visibility_changed()
         # TAKEDOWN LEAK: the share card is a SEPARATELY generated PNG (not
         # the media asset itself) embedding a downscaled copy of the
         # poster/image at a guessable share-cards/joke-<pk>.png path. Left

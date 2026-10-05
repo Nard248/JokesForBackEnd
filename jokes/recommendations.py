@@ -3,6 +3,7 @@ from datetime import timedelta
 from django.db.models import Count, Q
 from django.utils import timezone
 
+from .managers import live_joke_q, prefer_human
 from .models import DailyJoke, Joke
 
 
@@ -86,9 +87,9 @@ def get_personalized_joke(
                 base_queryset = preference_matches
             # If no preference matches, fall back to base_queryset (any joke)
 
-    # Order by popularity (save count) with randomness
-    # This balances quality (popular jokes) with variety (randomness)
-    return base_queryset.annotate(
+    # Human-written/reviewed jokes are preferred whenever any qualify; then
+    # order by popularity (save count) with randomness for variety.
+    return prefer_human(base_queryset).annotate(
         save_count=Count('saved_by')
     ).order_by('-save_count', '?').first()
 
@@ -100,8 +101,8 @@ def get_daily_editorial_joke(target_date=None):
     the day" row. For the digest, which needs ONE joke to feature for every
     recipient, we take the mode of today's DailyJoke rows: whichever joke the
     most authenticated users were personally served today, tie-broken by
-    joke id for determinism. A since-removed joke is never eligible even if
-    it was the day's most-delivered pick.
+    joke id for determinism. A since-removed or held joke is never eligible
+    even if it was the day's most-delivered pick.
 
     content_tier='tier_1' (Universal) ONLY. Per-user DailyJoke rows can be
     tier_2 (Mature, 18+ opt-in) for eligible adults -- every other serving
@@ -122,7 +123,7 @@ def get_daily_editorial_joke(target_date=None):
     target_date = target_date or timezone.now().date()
     top = (
         DailyJoke.objects
-        .filter(date=target_date, joke__is_removed=False, joke__content_tier='tier_1')
+        .filter(live_joke_q('joke__'), date=target_date, joke__content_tier='tier_1')
         .values('joke_id')
         .annotate(n=Count('id'))
         .order_by('-n', 'joke_id')
@@ -131,5 +132,5 @@ def get_daily_editorial_joke(target_date=None):
     if not top:
         return None
     return Joke.objects.filter(pk=top['joke_id']).select_related(
-        'format', 'age_rating', 'language'
+        'format', 'age_rating', 'language', 'origin_country'
     ).first()

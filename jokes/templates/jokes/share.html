@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ lang|default:'en' }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +12,7 @@
          immediately. -->
     <meta http-equiv="refresh" content="0; url={{ frontend_joke_url }}">
     <link rel="canonical" href="{{ frontend_joke_url }}">
+    {% if noindex %}<meta name="robots" content="noindex">{% endif %}
 
     <!-- Open Graph -->
     <meta property="og:title" content="{{ title }}" />
