@@ -20,7 +20,9 @@ def get_recently_shown_joke_ids(user, days=30):
     )
 
 
-def get_personalized_joke(user, exclude_joke_ids=None, allowed_tiers=frozenset({'tier_1'})):
+def get_personalized_joke(
+    user, exclude_joke_ids=None, allowed_tiers=frozenset({'tier_1'}), selectors=None,
+):
     """
     Content-based filtering using UserPreference.
     Returns a joke matching user's preferences, avoiding recently shown.
@@ -53,6 +55,9 @@ def get_personalized_joke(user, exclude_joke_ids=None, allowed_tiers=frozenset({
     hidden = hidden_user_ids(user)
     if hidden:
         base_queryset = base_queryset.exclude(creator_id__in=hidden)
+
+    from .discovery import filter_discovery
+    base_queryset = filter_discovery(base_queryset, selectors)
 
     if not base_queryset.exists():
         # All jokes exhausted - return None (caller should handle reset)

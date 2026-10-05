@@ -1,6 +1,8 @@
 from django.contrib.postgres.search import SearchQuery, SearchRank
 from django.db import models
-from django.db.models import Count, Q
+from django.db.models import Case, Count, F, Func, Q, When
+
+from .search import normalize_search_query
 
 
 class JokeManager(models.Manager):
@@ -43,17 +45,26 @@ class JokeManager(models.Manager):
         if allowed_tiers is not None:
             qs = qs.filter(content_tier__in=allowed_tiers)
 
-        # Full-text search.
-        # The pgtrigger that populates `search_vector` uses pg_catalog.english,
-        # so we must use the same config in the query side or lemmas won't
-        # match (e.g. "coffee" → "coffe" in english config but stays "coffee"
-        # under the DB default 'simple' config).
-        has_query = query_text and query_text.strip()
+        # Each language uses one consistent parser for both matching and rank.
+        # OR-ing English/simple matches for the same row breaks exclusions.
+        query_text = normalize_search_query(query_text)
+        has_query = bool(query_text)
         if has_query:
-            query = SearchQuery(query_text.strip(), search_type='websearch', config='english')
-            qs = qs.annotate(
-                rank=SearchRank('search_vector', query)
-            ).filter(search_vector=query)
+            query = SearchQuery(query_text, search_type='websearch', config='english')
+            simple_query = SearchQuery(query_text, search_type='websearch', config='simple')
+            qs = qs.alias(
+                _search_tree=Func(query, function='querytree', output_field=models.TextField()),
+                _simple_search_tree=Func(
+                    simple_query, function='querytree', output_field=models.TextField(),
+                ),
+            ).annotate(rank=Case(
+                When(language__code='en', then=SearchRank(F('search_vector'), query)),
+                default=SearchRank(F('search_vector_simple'), simple_query),
+            )).filter(
+                (Q(language__code='en', search_vector=query) & ~Q(_search_tree__in=['', 'T']))
+                | (~Q(language__code='en') & Q(search_vector_simple=simple_query)
+                   & ~Q(_simple_search_tree__in=['', 'T']))
+            )
 
         # Apply filters
         if filters:
@@ -76,23 +87,32 @@ class JokeManager(models.Manager):
             if filters.get('culture_tags'):
                 qs = qs.filter(culture_tags__slug__in=filters['culture_tags'])
             if filters.get('language'):
-                qs = qs.filter(language__code=filters['language'])
+                qs = qs.filter(language__code=str(filters['language']).lower())
+            if filters.get('country'):
+                qs = qs.filter(countries__code=str(filters['country']).upper())
 
         # Apply ordering
         if ordering == 'popularity' or ordering == '-popularity':
             qs = qs.annotate(
                 like_count=Count('ratings', filter=Q(ratings__rating=1)),
                 save_count=Count('saved_by'),
-            ).order_by('-like_count', '-save_count', '-created_at')
+            ).order_by('-like_count', '-save_count', '-created_at', '-pk')
         elif ordering == '-created_at':
-            qs = qs.order_by('-created_at')
+            qs = qs.order_by('-created_at', '-pk')
         elif ordering == 'relevance' and has_query:
-            qs = qs.order_by('-rank')
+            qs = qs.order_by('-rank', '-created_at', '-pk')
         elif has_query:
             # Default when searching: order by relevance
-            qs = qs.order_by('-rank')
+            qs = qs.order_by('-rank', '-created_at', '-pk')
         else:
             # Default when browsing: order by date
-            qs = qs.order_by('-created_at')
+            qs = qs.order_by('-created_at', '-pk')
 
-        return qs.distinct()
+        # Only to-many filter joins can duplicate jokes. Avoid forcing a wide
+        # DISTINCT/Unique sort (including both vectors) for ordinary searches;
+        # PostgreSQL can then use a cheap count and top-N relevance sort.
+        if filters and any(filters.get(key) for key in (
+            'tones', 'context_tags', 'culture_tags', 'country',
+        )):
+            return qs.distinct()
+        return qs

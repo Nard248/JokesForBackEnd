@@ -1,0 +1,2138 @@
+[
+  {
+    "id": "intl-v2-it-dark-001",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La PEC certifica che il problema è arrivato. Nessuno certifica quando se ne andrà.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-dark-002",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La moka borbotta prima di me. Ha vinto anche questo lunedì.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-dark-003",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il carbone dolce della Befana mi ricorda che il giudizio annuale esisteva già prima delle risorse umane. Almeno allora si poteva mangiare il risultato.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-dark-004",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Pinocchio diventa un bambino vero. Io sto ancora aspettando di sentirmi un adulto credibile.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-dark-005",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La gondola ha qualcuno che decide dove andare. Io ho soltanto un calendario pieno.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-dark-006",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le orecchiette ascoltano tutto. Sarebbero perfette per le mie confidenze, se il pranzo non finisse così presto.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-dark-007",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La pizza arriva fumante. Il mio entusiasmo per la settimana si era già raffreddato all'ordine.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-dark-008",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "I portici riparano dalla pioggia. Il resto delle preoccupazioni conosce la strada coperta.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-dark-009",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il mortaio riduce tutto in pesto. Almeno qualcuno riesce a trasformare la pressione in qualcosa di buono.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-dark-010",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La granita si scioglie mentre rispondo alle mail. Il lavoro trova sempre un modo per partecipare alle ferie.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-dark-011",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La torre di Pisa è storta e famosa. Io devo correggere anche l'inclinazione della firma.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dark-012",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il tiramisù ha un nome impegnativo. Oggi gli chiedo di iniziare almeno dalle spalle.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-dark-013",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La tredicesima passa sul conto. Le bollette la salutano come una vecchia compagna di viaggio.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scena lavorativa italiana con un riferimento concreto; procedure e dialoghi sono inventati, non indicazioni professionali."
+  },
+  {
+    "id": "intl-v2-it-dark-014",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La maglia rosa cambia proprietario. La mia maglia da palestra non cambia posizione nel cassetto.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-dark-015",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il pupo conosce chi tira i suoi fili. Io devo ancora capire chi gestisce il calendario condiviso.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-dark-016",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Lo SPID mi chiede un codice nuovo. È l'unica cosa della giornata che posso cambiare subito.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-dark-017",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La tombola mi insegna ad aspettare numeri favorevoli. Il resto dell'anno completa il tirocinio.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-dark-018",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il barista mi vede stanco e prepara il solito. La mia faccia ha ormai un contratto di fornitura.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-dark-019",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Dante aveva una guida per attraversare i problemi. Io ho una pagina di domande frequenti.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-dark-020",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "observ",
+    "text": "A Venezia il navigatore mi perde con eleganza. Nella vita riesco benissimo anche senza canali.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-dark-021",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il tarallo si rompe appena lo afferro. Anche la merenda cerca di ridurre le mie certezze.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-dark-022",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il cornicione della pizza è rimasto. Persino il mio piacere ha una periferia trascurata.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-dark-023",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Sotto i portici posso continuare a camminare con la pioggia. La città non mi concede nemmeno quella scusa.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-dark-024",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La focaccia finisce prima di arrivare a casa. Il sacchetto conserva una testimonianza unta del progetto.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-dark-025",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il cannolo promette ricotta fino in fondo. Raramente le altre promesse hanno questa precisione.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-dark-026",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "I Sassi di Matera sono abitazioni antiche. Il mio affitto si comporta come una scoperta del futuro.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dark-027",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il risotto vuole attenzione continua. L'ho scelto proprio nella sera in cui speravo di non servire a nessuno.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-dark-028",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il cedolino arriva puntuale. La serenità continua a sostenere di non avere ricevuto l'invito.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scena lavorativa italiana con un riferimento concreto; procedure e dialoghi sono inventati, non indicazioni professionali."
+  },
+  {
+    "id": "intl-v2-it-dark-029",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il Giro ha una tappa di riposo. La chat del lavoro non segue quel calendario.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-dark-030",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il cavaliere dei pupi affronta sempre un nuovo nemico. Il puparo lo chiama repertorio, io ricorrenza settimanale.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-dark-031",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il CAF mi ha restituito una copia di tutto. Il passato torna sempre, ma raramente così ben pinzato.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-dark-032",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "observ",
+    "text": "A Ferragosto il telefono tace. È inquietante scoprire quanto bene funzioni quando nessuno mi cerca.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-dark-033",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "L'espresso dura un minuto. La riunione che doveva giustificarlo si è presa il pomeriggio.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-dark-034",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Pinocchio mente e tutti se ne accorgono. Il mio curriculum preferisce dettagli meno visibili.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-dark-035",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il vaporetto annuncia le fermate. Le mie decisioni importanti arrivano quasi sempre senza altoparlante.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-dark-036",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La burrata tiene tutto dentro fino al taglio. Mi sembra un metodo organizzativo fin troppo familiare.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-dark-037",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La pizza a portafoglio si è aperta sulla camicia. Il mio pranzo ha scelto un’esistenza pubblica contro il mio parere.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-dark-038",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La salita a San Luca finisce in cima. Una caratteristica che apprezzo molto nei problemi.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-dark-039",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il basilico appassisce mentre sono in riunione. Anche il balcone presenta un costo umano del progetto.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-dark-040",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La brioche col tuppo sembra ottimista. La mangio prima che controlli le notizie.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-dark-041",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "I mosaici di Ravenna sono fatti di pezzi. Io speravo di diventare interessante prima di rompermi metaforicamente in tanti.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dark-042",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La lasagna ha strati ordinati. La mia settimana li mette uno sull'altro senza teglia.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-dark-043",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "I buoni pasto mi aspettano nell'app. Persino la pausa necessita di credenziali migliori delle mie.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scena lavorativa italiana con un riferimento concreto; procedure e dialoghi sono inventati, non indicazioni professionali."
+  },
+  {
+    "id": "intl-v2-it-dark-044",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La bocciofila chiude presto. Il mio talento per perdere avrebbe apprezzato un orario più ampio.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-dark-045",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il pupo torna nella scatola a fine spettacolo. Un confine tra lavoro e vita che trovo molto civile.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-dark-046",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "PagoPA mi ringrazia. È bello che qualcuno sia felice della mia spesa imprevista.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-dark-047",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La calza della Befana è vuota. La appendo lo stesso: certe aspettative meritano una casa.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-dark-048",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il capo in b è quasi finito. Il bicchiere vuoto conserva ancora l’impronta del rossetto di una giornata che doveva essere migliore.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-dark-049",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il tema di maturità parlava del futuro. Sarebbe stato corretto indicare che non erano ammesse verifiche pratiche.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-dark-050",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La maschera veneziana mi dona. È un complimento che preferisco non analizzare troppo.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-dark-051",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le orecchiette si chiudono nel sacchetto. Hanno terminato l'ascolto prima che iniziassi a raccontare il lunedì.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-dark-052",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La sfogliatella perde pezzi camminando. La capisco, ma vorrei poter recuperare i miei con un tovagliolo.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-dark-053",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il portico protegge tutti senza conoscere il curriculum. A volte l'architettura ha criteri migliori dei selezionatori.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-dark-054",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il pesto richiede pazienza. Ho finito quella disponibile scegliendo quale ricetta fosse abbastanza autentica.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-dark-055",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La frutta martorana sembra sana. È la pubblicità più convincente che io abbia mai mangiato.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-dark-056",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La Mole si vede da lontano. Le mie opportunità non hanno mai investito nella stessa visibilità.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dark-057",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Gli gnocchi vengono a galla quando sono pronti. Ho provato ad aspettare un segnale simile per la mia carriera.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-dark-058",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La tredicesima aveva grandi progetti. L'assicurazione l'ha riportata subito alla realtà.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scena lavorativa italiana con un riferimento concreto; procedure e dialoghi sono inventati, non indicazioni professionali."
+  },
+  {
+    "id": "intl-v2-it-dark-059",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La maglia del Giro ha uno sponsor per ogni spazio. Il mio tempo libero è già occupato senza compensi.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-dark-060",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il puparo può interrompere un duello chiudendo il sipario. Io devo ancora inventare qualcosa per i gruppi di famiglia.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-dark-061",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il codice fiscale sa quando sono nato. Il portale usa questa informazione soprattutto per farmi compilare un altro campo.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-dark-062",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "observ",
+    "text": "Alla tombola vinco un piccolo premio. La famiglia lo racconta ancora come la mia stagione fortunata.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-dark-063",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La moka non si avvia da sola. Rispetto almeno un oggetto che non finge autonomia.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-dark-064",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Dante torna a vedere le stelle. Io torno a vedere le notifiche appena esco dalla riunione.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-dark-065",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Venezia ha ponti per quasi tutto. Il mio piano di risparmio presenta ancora qualche canale scoperto.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-dark-066",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il tarallo ha una forma conclusa. Le mie questioni aperte lo osservano con invidia.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-dark-067",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il forno della pizzeria lavora sotto pressione termica. Almeno il risultato viene chiamato capolavoro più spesso del mio.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-dark-068",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La sfoglina stende la pasta con fermezza. Io lascio che sia il lunedì a stendere me.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-dark-069",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La focaccia lascia tracce. Il mio ultimo progetto ne ha lasciate soprattutto nella casella delle bozze.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-dark-070",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La granita regge poco al caldo. Io reggo poco alla domanda « hai due minuti? ».",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-dark-071",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il Colosseo è ancora in piedi. La mia sedia economica preferisce un orizzonte storico più breve.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dark-072",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il panettone supera gennaio. Le promesse di capodanno non hanno la stessa conservabilità.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-dark-073",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il CCNL è lungo. La frase « non abbiamo budget » riesce sempre a essere brevissima.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scena lavorativa italiana con un riferimento concreto; procedure e dialoghi sono inventati, non indicazioni professionali."
+  },
+  {
+    "id": "intl-v2-it-dark-074",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il Giro attraversa paesi bellissimi. Io attraverso il corridoio per un'altra call senza panorama.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-dark-075",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il cavaliere dei pupi riceve applausi per le stesse battaglie. Il mio computer si riavvia senza riconoscenza.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-dark-076",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La PEC conserva tutte le prove. La mia memoria aveva organizzato una gestione molto più indulgente.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-dark-077",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Ferragosto passa. Il lunedì successivo entra senza nemmeno chiedere com'è andata.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-dark-078",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "L'espresso è amaro per scelta. Io preferisco dire che sono solo poco zuccherato oggi.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-dark-079",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Pinocchio diventa vero dopo molte prove. L'amministrazione mi chiede comunque un documento.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-dark-080",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il vaporetto lascia il molo. I miei rimpianti hanno sempre un abbonamento valido.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-dark-081",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La burrata costa un poco di più. Per una volta pago volentieri qualcosa che non nasconde di essere pieno.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-dark-082",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La pizza consegnata tiepida è ancora buona. Vorrei concedere alle mie giornate la stessa tolleranza.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-dark-083",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le torri di Bologna hanno resistito a secoli. Il mio portatile chiede sostituzione dopo tre anni di opinioni professionali.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-dark-084",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il mortaio fa rumore. È rassicurante sentire con precisione dove stia finendo la propria energia.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-dark-085",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il cannolo dura pochi morsi. La fotografia resta a ricordare una felicità che non ho saputo mangiare piano.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-dark-086",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "observ",
+    "text": "A Pisa l'inclinazione è patrimonio. Nel mio bilancio la chiamano squilibrio.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dark-087",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il risotto si attacca se lo trascuro. I problemi, invece, si attaccano anche con tutta l'attenzione disponibile.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-dark-088",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il buono pasto ha una data di scadenza. Il collega che propone sempre lo stesso ristorante no.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scena lavorativa italiana con un riferimento concreto; procedure e dialoghi sono inventati, non indicazioni professionali."
+  },
+  {
+    "id": "intl-v2-it-dark-089",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Alla bocciofila, la boccia rotola finché può. Un modello di ambizione più onesto di certe presentazioni.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-dark-090",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il pupo viene riparato quando cade. Io ricevo una mail sul miglioramento della resilienza.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-dark-091",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "L'app IO mi conosce per nome. Preferirei essere riconosciuto meno e lasciato in pace di più.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-dark-092",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La Befana porta via le feste. Il calendario del lavoro le ha già mandato un ringraziamento.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-dark-093",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il barista chiede se ho dormito. La schiuma del cappuccino evita domande invadenti.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-dark-094",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La maturità dura qualche settimana. L'immaturità trova sempre contratti più lunghi.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-dark-095",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La gondola è stretta ma elegante. Il mio appartamento ha copiato soltanto il primo requisito.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-dark-096",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le orecchiette sono fatte a mano. Il mio pranzo mangiato al computer è disfatto con altrettanta cura.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-dark-097",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La margherita mi fa felice con pochi ingredienti. Il mio piano annuale richiede troppe risorse per meno soddisfazione.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-dark-098",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "I portici offrono riparo continuo. Il mio contratto preferisce parlare di periodi.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-dark-099",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il basilico muore se manca l'acqua. Il mio senso dell'umorismo ha una soglia simile per il caffè.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-dark-100",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La brioche col tuppo ha una sommità chiara. Le mie priorità litigano per il piano più alto.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-dark-101",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "observ",
+    "text": "A Matera, le case stanno nella roccia. Io continuo a sognare almeno un canone scolpito nella pietra.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dark-102",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il tiramisù ha provato a sollevarmi. Alla terza mail si è dichiarato semplice dessert.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-dark-103",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La busta paga è riservata. Anche il mio entusiasmo dopo averla letta preferisce restare privato.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scena lavorativa italiana con un riferimento concreto; procedure e dialoghi sono inventati, non indicazioni professionali."
+  },
+  {
+    "id": "intl-v2-it-dark-104",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il Giro prevede chilometri neutralizzati. Io vorrei almeno un lunedì senza conseguenze.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-dark-105",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il puparo cambia voce per ogni personaggio. Io ne uso una sola e già fatico a farmi capire.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-dark-106",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il CAF mi ha restituito gli originali. Le scelte che documentano non sono rimborsabili.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-dark-107",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La tombola estrae novanta possibilità. Riesco a preoccuparmi per tutte con una sola cartella.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-dark-108",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "A Trieste, il caffè al tavolo permette di restare seduti a lungo. Il mio senso di colpa continua a ordinare qualcosa per giustificarmi.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-dark-109",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il vecchio diario di scuola finiva dopo i compiti di Dante. Quello dei doveri adulti è passato al cloud per evitare quel limite rassicurante.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-dark-110",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La maschera del Carnevale di Venezia nasconde il viso. Le scarpe stanche raccontano comunque tutta la giornata.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-dark-111",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il tarallo si spezza con facilità. La mia abitudine di rimandare conserva una struttura molto più tenace.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-dark-112",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La pizza a portafoglio va tenuta bene. Il mio stipendio non mi dà il tempo di imparare.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-dark-113",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Sotto i portici, la pioggia mi accompagna a distanza. Vorrei lo stesso accordo con le urgenze.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-dark-114",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La focaccia si mangia anche camminando. Il pranzo ha trovato il modo di non disturbare la produttività.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-dark-115",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La granita non aspetta nessuno. Una lezione di priorità più efficace dei corsi che ho pagato.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-dark-116",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "I mosaici di Ravenna si ricompongono tessera per tessera. Il mio weekend non viene venduto con pezzi di ricambio.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dark-117",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La lasagna avanzata migliora il giorno dopo. Mi piace credere che esista un futuro anche per le cose incompiute.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-dark-118",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La tredicesima si chiama così perché dodici volte non bastavano a stupirmi delle spese.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scena lavorativa italiana con un riferimento concreto; procedure e dialoghi sono inventati, non indicazioni professionali."
+  },
+  {
+    "id": "intl-v2-it-dark-119",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La bicicletta del Giro ha un telaio leggero. Il mio giro di pensieri parte già sovraccarico.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-dark-120",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il pupo sa che la battaglia finisce col sipario. Io ho disattivato le notifiche per simulare l'effetto.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-dark-121",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La marca da bollo si attacca bene. Le promesse di semplificazione preferiscono superfici meno impegnative.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-dark-122",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Ferragosto dura un giorno. I contenitori sporchi del pranzo organizzano una celebrazione più lunga.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-dark-123",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La moka fa il caffè per tre. Vivo da solo, ma la giornata ha molte personalità.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-dark-124",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Pinocchio può riconoscere le bugie dal naso. Io devo leggere tutte le clausole in piccolo.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-dark-125",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il Canal Grande riflette tutto. Io ho perso la capacità già al secondo punto dell'ordine del giorno.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-dark-126",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La burrata non è fatta per durare. Apprezzo un piacere che dichiari subito la propria disponibilità.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-dark-127",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La sfogliatella si sbriciola senza chiedere scusa. Vorrei imparare questa gestione dignitosa dell'imperfezione.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-dark-128",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La salita a San Luca mi toglie il fiato. Il prezzo dell'affitto lo aveva già allenato.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-dark-129",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il pesto richiede ingredienti buoni. Il mio progetto ha ricevuto soltanto una buona intenzione.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-dark-130",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il cannolo è vuoto prima della ricotta. La differenza tra potenziale e risultato mi guarda dal bancone.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-dark-131",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La torre di Pisa pende da sempre. Le mie scadenze pendono soltanto finché non diventano urgenze.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dark-132",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il panettone è tornato in negozio. L'anno ha deciso di finire senza chiedere se avessi capito il precedente.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-dark-133",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il piano ferie per Ferragosto è approvato. La mia voglia di partire aveva già fatto la valigia da settimane.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scena lavorativa italiana con un riferimento concreto; procedure e dialoghi sono inventati, non indicazioni professionali."
+  },
+  {
+    "id": "intl-v2-it-dark-134",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il Giro ha una maglia per ogni qualità. Io avrei qualche possibilità nella costanza delle esitazioni.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-dark-135",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il cavaliere dei pupi perde l'elmo e continua. Io perdo una mail e devo ricostruire tutta la settimana.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-dark-136",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La PEC mi avvisa di un messaggio non letto. Il punto, a volte, è proprio quello.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-dark-137",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La Befana porta carbone dolce. Il mondo adulto preferisce consegnare quello metaforico senza zucchero.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-dark-138",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "L'espresso finisce. La giornata lo interpreta come un via libera che non avevo concesso.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-dark-139",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Dante aveva paura nella selva. Io guardo il menu del portale e mi sento stranamente rappresentato.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scena scolastica in italiano con un oggetto, una pratica o un riferimento letterario riconoscibile."
+  },
+  {
+    "id": "intl-v2-it-dark-140",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il vaporetto passa oltre la mia fermata. Per un minuto mi sembra una decisione presa dalla vita al posto mio.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scena veneziana con elementi locali riconoscibili; non attribuisce tratti personali a tutti i residenti."
+  },
+  {
+    "id": "intl-v2-it-dark-141",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le orecchiette tengono il sugo. Il mio calendario non riesce a trattenere nemmeno una promessa di riposo.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento pugliese a forme della pasta, preparazioni, trulli o luoghi esplicitamente nominati; invenzione originale."
+  },
+  {
+    "id": "intl-v2-it-dark-142",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il cornicione della pizza si gonfia in pochi minuti. Il mio ottimismo richiede condizioni molto più rare.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena originale ambientata nella cultura materiale napoletana: impasto, forno, pizza o un riferimento locale esplicito; nessuna generalizzazione sugli abitanti."
+  },
+  {
+    "id": "intl-v2-it-dark-143",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il portico continua anche quando io mi fermo. Bologna ha un programma più costante del mio.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Contesto bolognese concreto, con portici, università, sfoglia o altri elementi locali; personaggi inventati."
+  },
+  {
+    "id": "intl-v2-it-dark-144",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il mortaio resiste a ogni colpo. Il mio telefono chiede una cover per affrontare un tavolo.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Contesto ligure esplicito, con pesto al mortaio, focaccia, caruggi o paesaggio cittadino secondo la scena."
+  },
+  {
+    "id": "intl-v2-it-dark-145",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La granita è diventata liquida. La chiamo bevanda per non ammettere che ho perso un'altra occasione.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Riferimento siciliano concreto a preparazioni, oggetti o luoghi locali; scena inventata, non una barzelletta tradizionale raccolta."
+  },
+  {
+    "id": "intl-v2-it-dark-146",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il Colosseo ha perso pezzi e resta riconoscibile. Il mio progetto cambia una funzione e nessuno sa più cosa sia.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dark-147",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Gli gnocchi affiorano tutti insieme. Le mie incombenze hanno studiato lo stesso metodo.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-dark-148",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La tredicesima è entrata e uscita. Una visita breve, ma molto apprezzata dagli estranei al mio conto.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scena lavorativa italiana con un riferimento concreto; procedure e dialoghi sono inventati, non indicazioni professionali."
+  },
+  {
+    "id": "intl-v2-it-dark-149",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "observ",
+    "text": "Alla bocciofila posso misurare quanto ho sbagliato. Fuori, l'incertezza si prende più spazio.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena originale intorno a una pratica o manifestazione sportiva italiana nominata."
+  },
+  {
+    "id": "intl-v2-it-dark-150",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il pupo torna nel baule. Ha almeno una casa il cui costo non cambia ogni anno.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Scena immaginaria con l’Opera dei Pupi siciliana; non riproduce dialoghi o trame del repertorio tradizionale."
+  },
+  {
+    "id": "intl-v2-it-dark-151",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Lo SPID mi ha lasciato entrare. Era solo l'anticamera di altri documenti da cercare.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-dark-152",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La tombola mi ha dato quasi tutti i numeri. Il quasi mantiene una posizione centrale nella mia biografia.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-dark-153",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "observ",
+    "text": "Al Sacro Bosco di Bomarzo, i mostri restano immobili. Una forma di cortesia che apprezzo dopo la settimana.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dark-154",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il violino di Cremona viene scelto per la sua voce. Io sto ancora cercando di capire quale usare nelle riunioni.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento italiano a liuteria, musica o teatro come contesto di una scena inventata; nessuna imitazione di un autore."
+  },
+  {
+    "id": "intl-v2-it-dark-155",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Sanremo dura fino a tardi. Il mercoledì mattina non riconosce alcun valore culturale alla mia stanchezza.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-dark-156",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il ponte di Rialto sostiene migliaia di passi. Il mio piano quinquennale teme già il primo.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dark-157",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La sbrisolona si serve spezzata. È rassicurante vedere un risultato approvato senza doverlo ricomporre.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-dark-158",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il mio F24 ha una scadenza chiara. Il rimborso atteso preferisce un rapporto meno rigido col tempo.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-dark-159",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La fontana di Trevi riceve desideri e monete. Il distributore dell'ufficio pretende monete e restituisce soltanto acqua.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dark-160",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il badge segna il tempo; il CCNL ne definisce i limiti. La mia testa resta in riunione anche mentre faccio la spesa.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scena lavorativa italiana con un riferimento concreto; procedure e dialoghi sono inventati, non indicazioni professionali."
+  },
+  {
+    "id": "intl-v2-it-dark-161",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La calza della Befana è stata ricucita. Qualcuno ha creduto nel mio futuro zuccherato più di me.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-dark-162",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il Museo Egizio conserva oggetti di millenni fa. Io non riesco a ritrovare lo scontrino di ieri.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dark-163",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il pane carasau dura a lungo. La mia disciplina alimentare incontra difficoltà già all'apertura del pacco.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-dark-164",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La ricevuta pagoPA è arrivata. La sento come il saluto educato di denaro che non tornerà.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-dark-165",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il David non deve scegliere cosa indossare. Una libertà rinascimentale che sottovalutiamo.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dark-166",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La moka sa quando fermarsi. È l'unico membro della cucina che non risponde « ancora cinque minuti ».",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scena del caffè in Italia; quando indicato, capo in b richiama il lessico triestino del caffè macchiato in bicchiere."
+  },
+  {
+    "id": "intl-v2-it-dark-167",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "observ",
+    "text": "Alla sagra, la fila è lunga ma il premio è noto. Altrove faccio molta più fatica senza garanzie sul condimento.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-dark-168",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le case di Burano cambiano il mio umore con il colore. La mia parete bianca continua a rinviare l'intervento.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dark-169",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il gelato cade dal cono. Una dimostrazione troppo rapida di quanto poco controllo io abbia sul pomeriggio.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-dark-170",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il commercialista ha trovato una deduzione. Per un momento il mio anno sembra avere una giustificazione logica.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-dark-171",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La Lanterna di Genova indica la strada agli altri. Io ho difficoltà già con l'indirizzo della mia prossima decisione.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dark-172",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il liutaio di Cremona elimina un difetto alla volta. Il mio software li raccoglie per il prossimo aggiornamento.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento italiano a liuteria, musica o teatro come contesto di una scena inventata; nessuna imitazione di un autore."
+  },
+  {
+    "id": "intl-v2-it-dark-173",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Il CCNL promette certezze scritte. Il calendario scrive sempre a matita sopra le mie pause.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scena lavorativa italiana con un riferimento concreto; procedure e dialoghi sono inventati, non indicazioni professionali."
+  },
+  {
+    "id": "intl-v2-it-dark-174",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La tombola mi ha fatto vincere una tazza. È arrivata giusto in tempo per contenere un altro caffè di necessità.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  },
+  {
+    "id": "intl-v2-it-dark-175",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le mura di Lucca fanno un giro completo. Le mie riflessioni fanno lo stesso senza offrire una bella vista.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Luogo, manufatto o costume regionale italiano concretamente nominato; contesto e non identità dell’autore."
+  },
+  {
+    "id": "intl-v2-it-dark-176",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La pasta al forno avanzata ha un futuro chiaro. Io mi limito a prepararle il contenitore.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Preparazione italiana esplicitamente identificata come base materiale della battuta; non stereotipo sui consumatori."
+  },
+  {
+    "id": "intl-v2-it-dark-177",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La PEC mi restituisce un errore di consegna. Il problema tornerà domani con l'indirizzo corretto, motivatissimo.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satira lieve di modulistica o servizi italiani nominati; non descrive regole o scadenze ufficiali."
+  },
+  {
+    "id": "intl-v2-it-dark-178",
+    "collection": "it-it-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La Befana ha lasciato un mandarino. Anche la magia ritiene opportuno ricordarmi qualcosa di pratico.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Riferimento a una festa o pratica sociale presente in Italia, senza supporre che tutti vi partecipino."
+  }
+]

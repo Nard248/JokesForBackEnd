@@ -21,6 +21,9 @@ another anonymous request:
     (see JokeManager.get_queryset), so `is_removed=False` below is a
     defensive repeat, not a new condition -- keeps the leakage guard
     visible at the call site instead of relying solely on the manager.
+    Unreviewed machine-generated jokes (editorial_status='generated', e.g.
+    the bulk international corpus) are kept out until an editor reviews
+    them; they stay readable in the app, they just are not advertised.
 
   - Creators: any creator with >= 1 directly-attributed (Joke.creator FK)
     tier_1, non-removed joke -- the same condition
@@ -85,7 +88,9 @@ def _add_url(urlset, path, lastmod=None):
 def _public_joke_queryset():
     """Publicly-servable jokes -- exactly what an anonymous JokeViewSet
     request (GET /jokes/ or /jokes/<id>/) returns. See module docstring."""
-    return Joke.objects.filter(is_removed=False, content_tier__in=BASE_TIERS)
+    return Joke.objects.filter(is_removed=False, content_tier__in=BASE_TIERS).exclude(
+        editorial_status='generated',
+    )
 
 
 def _public_pack_queryset():

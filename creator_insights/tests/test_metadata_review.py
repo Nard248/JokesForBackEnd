@@ -65,10 +65,12 @@ class CreatorMetadataReviewTests(TestCase):
         self.assertEqual(Joke.objects.count(), total)
         before.pop('updated_at')
         after.pop('updated_at')
-        # Signals may legitimately refresh the search vector for changed tags.
-        before.pop('search_vector')
-        after.pop('search_vector')
+        # Database triggers refresh both indexed documents for approved tags.
+        for field in ('search_vector', 'search_vector_simple'):
+            before.pop(field)
+            after.pop(field)
         self.assertEqual(before, after)
+        self.assertTrue(Joke.objects.search('review category').filter(pk=self.joke.pk).exists())
         self.assertEqual(AuditLog.objects.filter(action='creator_metadata_review', target_id=str(review['id'])).count(), 1)
         self.assertNotIn('Correct the topic', str(AuditLog.objects.get(action='creator_metadata_review').metadata))
 

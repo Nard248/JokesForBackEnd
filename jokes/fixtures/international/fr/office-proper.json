@@ -1,0 +1,2126 @@
+[
+  {
+    "id": "intl-v2-fr-office-proper-001",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mes RTT ont un agenda plus chargé que moi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-002",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le pot de départ commence à quinze heures. Même les départs font des heures supplémentaires.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-003",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le CSE propose du théâtre. Nous avons déjà la réunion budgétaire.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-004",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mes titres-restaurant financent surtout mes négociations avec la boulangerie.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-005",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Notre séminaire CSE promet de casser les silos. Le traiteur apporte des verrines.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-006",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le CERFA demande une case lisible. Mon écriture réclame un médiateur.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-007",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "J'ai posé une RTT. Mon calendrier l'a aussitôt entourée de réunions jalouses.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-008",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La réunion dans le TGV avance vite. Les décisions restent à quai.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-009",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "observ",
+    "text": "Au bureau, la baguette devient une unité de mesure : « Encore deux tartines et on commence. »",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-010",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Notre séminaire lyonnais prévoit un bouchon. L'équipe logistique avait compris un risque.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-011",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le forfait jours mesure mon travail. Mes soupirs restent hors forfait.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-012",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Les titres-restaurant arrivent sur une appli. Mon déjeuner doit désormais accepter les notifications.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-013",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "FranceConnect me reconnaît. Mon chef hésite encore depuis le télétravail.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-014",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le compte rendu du CSE compte dix pages. Le compte à rebours jusqu'au déjeuner aussi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-015",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "observ",
+    "text": "Au bureau, la galette a élu notre stagiaire. Pour une fois, le recrutement était transparent.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-016",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le pot de départ de Luc a été reporté. Il craint maintenant un renouvellement par tacite reconduction.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-017",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mon Navigo ouvre les portiques. Pour ouvrir une discussion sur mon salaire, je cherche encore l'abonnement.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-018",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Ma journée de RTT est validée. Elle attend maintenant l'approbation de ma boîte mail.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-019",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le déjeuner d’équipe propose du comté de trois âges. Enfin un rapport intergénérationnel qui ne nécessite aucun atelier.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scène autour des usages de table et de spécialités présentes en France ; le personnage ne représente pas une population."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-020",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Notre tableau de suivi ressemble à un cahier Seyès. Sauf qu'aucun adulte ne nous félicite pour les marges.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-021",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La corbeille du CSE contient du chocolat. Premier avantage social qui disparaît dès sa mise en place.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-022",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "J'ai imprimé le CERFA en recto verso. Le dossier possède enfin deux opinions.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-023",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Notre réunion sur les RTT occupe une demi-journée. Nous négocions une réparation en nature.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-024",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "observ",
+    "text": "À Lyon, le consultant emprunte une traboule. Il appelle cela une transformation du parcours client.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-025",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Au pot de bienvenue, les chouquettes ont réuni tous les services. Le projet attend encore cette performance.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-026",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le cannelé du séminaire a une croûte solide et un cœur tendre. Notre organigramme essaie l'inverse.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-027",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "observ",
+    "text": "Dans le TGV professionnel, je travaille côté fenêtre. Les vaches sont mes seules notifications pertinentes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-028",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mon titre-restaurant refuse le dossier urgent. Pourtant, il me nourrit de soucis.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-029",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le formulaire français exige « sans objet ». Pour une fois, je connais le titre de ma réunion.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-030",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le CSE organise une sortie escalade. Nous avons déjà l'ascension des validations.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-031",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La réunion avec viennoiseries affiche complet. Les croissants maîtrisent mieux l'engagement que nos sondages.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-032",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "J'ai activé mon absence pour RTT. C'est mon texte le plus lu de l'année.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-033",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le pot de départ avait un budget. La nostalgie s'est servie gratuitement.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-034",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Notre bureau donne sur une colonne Morris. Même le trottoir présente mieux ses projets.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-035",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le compte épargne-temps augmente. J'aimerais connaître les horaires d'ouverture pour retirer ma vie.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-036",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La case « profession » du CERFA est minuscule. Mon intitulé LinkedIn dépose un recours.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-037",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le TER a des arrêts définis. Notre réunion de lancement lui envie cette gouvernance.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-038",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "observ",
+    "text": "Au CSE, on parle de qualité de vie. Le néon qui clignote demande la parole.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-039",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La fève a désigné le responsable du prochain compte rendu. La monarchie a perdu de son charme.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-040",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mon collègue part en RTT « pour ne rien faire ». Il a enfin un objectif mesurable.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-041",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le déjeuner d'affaires dure jusqu'au fromage. Le contrat bénéficie d'un affinage supplémentaire.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scène autour des usages de table et de spécialités présentes en France ; le personnage ne représente pas une population."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-042",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La carte de titres-restaurant connaît tous mes bistrots. Je lui confierais volontiers mon entretien annuel.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-043",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Notre attestation destinée à la mairie nécessite trois signatures. L’honneur a un comité de pilotage.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-044",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le séminaire à Fourvière promet de prendre de la hauteur. L'ascenseur a obtenu le meilleur résultat.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-045",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le CSE offre des chèques-cadeaux. Mon tableur veut être reconnu comme personne à charge.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-046",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le pot de départ est un succès : chacun a enfin trouvé un créneau pour parler à Paul.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-047",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Ma réunion commence à l'arrivée du TGV. Le chef consulte désormais la SNCF comme un agenda partagé.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-048",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le pain au chocolat a disparu de la salle de pause. La piste du comité de direction reste feuilletée.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-049",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mon solde de RTT ressemble à un roman acheté : beaucoup de promesses, jamais le temps.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-050",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le tampon « reçu » sur mon CERFA m’a ému. Au bureau, je n’obtiens souvent qu’un emoji.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-051",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Notre CSE prévoit un atelier poterie. Nous savons déjà tourner autour des problèmes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-052",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le plateau de chouquettes est vide. L'équipe a démontré sa capacité d'exécution.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-053",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Pour mon pot de départ, j'ai demandé zéro discours. Le directeur a annoncé une introduction de vingt minutes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-054",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le Navigo est mon badge le plus sincère : il admet qu'il faut parfois sortir.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-055",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "L'accord télétravail précise les jours. Le chat négocie désormais les horaires du fauteuil.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-056",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le CERFA réclame mon adresse permanente. Même mon bureau n'est plus attitré.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-057",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Une RTT sans notification : mon projet pilote préféré.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-058",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le déjeuner d’équipe prévoit une quiche lorraine « légère ». L’ordre du jour n’a pas reçu la consigne.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scène autour des usages de table et de spécialités présentes en France ; le personnage ne représente pas une population."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-059",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "observ",
+    "text": "Dans le bouchon lyonnais, notre équipe choisit le menu. Première décision collective prise sans atelier.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-060",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le CSE propose des places de cinéma. Une réunion où quelqu'un d'autre a préparé le scénario.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-061",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Ma carte de titres-restaurant m'envoie un bilan. Elle connaît mon parcours professionnel par les sauces.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-062",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mon dossier CERFA a été transmis au bon service. Nous célébrons cette destination comme une mutation.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-063",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La RTT du vendredi a créé une urgence le jeudi. Le repos est une industrie très productive.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-064",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "observ",
+    "text": "À la galette du bureau, chacun se baisse sous la table. Enfin une réorganisation horizontale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-065",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le pot de départ de notre graphiste a une affiche. Il a corrigé la marge avant de partir.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-066",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le train Intercités m'offre une prise. La réunion demande toujours de prendre sur moi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-067",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le CSE a commandé des gourdes. Mes collègues ont enfin un récipient pour leurs bonnes résolutions.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-068",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le chef dit « on partage la charge ». À la boulangerie, il prend deux croissants.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-069",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Ma demande est « en cours d'instruction ». Elle poursuit des études plus longues que moi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-070",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "J'ai converti des heures en RTT. Premier calcul dont j'apprécie vraiment le résultat.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-071",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Nos titres-restaurant restent rangés dans l'appli. Mes tickets de caisse occupent tout le bureau.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-072",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Notre séminaire au Mont-Saint-Michel a prévu la marée. Le retour du directeur aussi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-073",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le pot de départ a son fichier Excel. Nous savons industrialiser l'émotion.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-074",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La mairie demande un justificatif récent. Ma fatigue du lundi est disponible immédiatement.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-075",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le CSE ouvre une boîte à idées. Nous proposons d'abord une boîte pour les réponses.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-076",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "observ",
+    "text": "Dans le TGV, le chef parle de mobilité. Mon ordinateur cherche surtout une table stable.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-077",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "J'ai programmé mes RTT jusqu'à décembre. Ma vie privée dispose enfin d'une feuille de route.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-078",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le séminaire offre des macarons. Seules les petites choses obtiennent un budget couleur.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-079",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le pot de bienvenue a coûté moins que l'onboarding. Et je retiens beaucoup mieux le prénom du pâtissier.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-080",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le CERFA demande mon nom de naissance. Enfin une donnée qui n’a pas changé depuis la dernière réunion.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-081",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Ma carte de titres-restaurant est dématérialisée. Mon sandwich conserve heureusement sa stratégie matérielle.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-082",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "observ",
+    "text": "Au musée des Confluences, le chef veut rapprocher les services. Le Rhône et la Saône ont déjà signé.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-083",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Notre CSE organise une randonnée. Les collègues demandent si l'on peut déléguer les dénivelés.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-084",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le boulanger connaît mon rythme de réunions : lundi, deux croissants ; comité stratégique, quatre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-085",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "L'absence pour RTT se gère automatiquement. La présence nécessite quatre logiciels.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-086",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le CERFA comporte une notice. Notre projet aurait dû demander le même financement.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-087",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "observ",
+    "text": "Au pot de départ, on m'a offert un carnet. Pour une carrière entière passée à réduire le papier.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-088",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La SNCF affiche la voie. J'apprécierais la même précision dans mon plan de carrière.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-089",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Les chèques-vacances sont arrivés. Mon navigateur a immédiatement amélioré sa productivité sur les plages.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-090",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La galette du bureau est en huit parts. Nous sommes neuf : voilà le véritable exercice de leadership.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-091",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mon titre-restaurant fait mieux que ma présentation : il débouche toujours sur quelque chose de concret.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-092",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "J’ai signé le CERFA à l’encre bleue. Le dossier possède désormais une identité graphique.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-093",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La réunion CSE est prévue entre deux réunions. Même le bien-être doit trouver un interstice.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-094",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le déjeuner d'affaires a quatre services. Notre dossier n'arrive pas à quitter le premier.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scène autour des usages de table et de spécialités présentes en France ; le personnage ne représente pas une population."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-095",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La RTT a été refusée pour manque d'effectif. Mon calendrier m'a demandé une augmentation.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-096",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "observ",
+    "text": "En réunion près de Saint-Lazare, chacun parle de connexions. J'aimerais simplement attraper la mienne.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-097",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le pot de départ réunit les anciens collègues. Notre CRM devrait apprendre leur méthode.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-098",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "« Pièce jointe manquante. » Mon dossier de mairie a lui aussi des problèmes de recrutement.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-099",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le CSE rembourse l'activité sportive. Je mesure les kilomètres entre nos salles de réunion.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-100",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le buffet de quiches a fédéré le service. Notre stratégie tient dans un moule.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-101",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "observ",
+    "text": "Au retour de RTT, ma boîte mail affichait 143 nouveautés. Aucune ne concernait une civilisation meilleure.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-102",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "observ",
+    "text": "Dans le TER, mon collègue dit qu'il travaille en mouvement. Son curseur tremble, effectivement.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-103",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La carte restaurant demande un code. Pour mon déjeuner, je fournis davantage de sécurité que pour nos décisions.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-104",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Ma démarche FranceConnect est terminée. Je savoure cette rare réunion avec moi-même qui aboutit.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-105",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La DRH appelle mes RTT un solde. Je préfère les appeler des promesses de samedi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-106",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le chef a réservé un bouchon à Lyon. L'équipe a enfin accepté une situation bloquée.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-107",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le CSE propose un escape game. On pourra s'entraîner avec notre logiciel de notes de frais.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-108",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le croissant de neuf heures est une réunion asynchrone : tous les services passent le consulter.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-109",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mon pot de départ a commencé à l'heure. La preuve qu'on me laisse faire quand je pars.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-110",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La case « observations » ne permet que deux lignes. Toute ma carrière réclame une annexe.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-111",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "J'ai choisi une RTT pour mon anniversaire. Mon calendrier professionnel vient d'apprendre la discrétion.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-112",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le traiteur annonce un assortiment terroir. Notre réunion découvre enfin des racines vérifiables.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scène autour des usages de table et de spécialités présentes en France ; le personnage ne représente pas une population."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-113",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le compte épargne-temps est plein. Je suis riche dans une monnaie que je ne dépense jamais.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-114",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "observ",
+    "text": "Au wagon-bar, la décision est simple. Café ou réunion : je prends le café.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-115",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le CSE a organisé une initiation au yoga. Le budget se plie déjà dans tous les sens.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-116",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "J’ai écrit « néant » sur le CERFA. Le correcteur a proposé « réunion ».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-117",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Les titres-restaurant sont arrivés avant le compte rendu. Le seul document qui tient ses promesses à midi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-118",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Notre service organise sa galette en février. Même la royauté dépend du planning.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-119",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La RTT du lundi raccourcit la semaine. Le point hebdomadaire tente de la reconstruire.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-120",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Les madeleines du pot d'accueil créent un souvenir immédiat : il fallait arriver plus tôt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-121",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "L'accord de branche ne couvre pas le ficus. Pourtant, il subit les mêmes réunions.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-122",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le justificatif de domicile pour la mairie était parfait. Mon dossier dispose d’un logement avant d’avoir un avenir.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-123",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Notre déplacement en TGV était productif : nous avons enfin lu les diapositives de la réunion précédente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-124",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le CSE propose un concert. L'équipe réclame un groupe qui sait terminer dans les temps.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-125",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "observ",
+    "text": "Au pot de départ, on raconte mes qualités. J'aurais dû inviter le recruteur à mon entretien annuel.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-126",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La baguette du déjeuner craque plus fort que nos arguments. On lui a laissé la parole.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-127",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Ma demande de RTT mentionne « motif personnel ». J'ai résisté à écrire « redevenir une personne ».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-128",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "L’attestation destinée à la mairie doit être datée du jour. Mon enthousiasme aurait besoin de la même actualisation.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-129",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le titre-restaurant est accepté au bistrot. Mon titre de « coordinateur transversal » provoque surtout des silences.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-130",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Notre atelier lyonnais veut créer des passerelles. Quelqu'un a proposé de commencer par les traboules.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-131",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La corbeille de fruits du CSE est vide de pommes. L'offre satisfait manifestement un besoin croquant.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-132",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le portique Navigo refuse mon passage. J'ai tenté « comme convenu lors de notre dernier échange ».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-133",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mon manager a validé mes RTT avec un pouce. Deux jours de liberté tiennent dans une phalange.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-134",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le CERFA veut des majuscules. Enfin un espace où mon clavier peut exprimer ses sentiments.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-135",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le pot de départ de la comptable tombe juste. Même son émotion respecte le budget.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-136",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "observ",
+    "text": "Au déjeuner professionnel, le plateau de fromages passe deux fois. Une relance commerciale bien accueillie.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scène autour des usages de table et de spécialités présentes en France ; le personnage ne représente pas une population."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-137",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Les chèques-vacances sont dans mon tiroir. Ils tiennent une permanence du rêve.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-138",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Notre réunion dure plus longtemps que l'affinage annoncé sur le petit chèvre du buffet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-139",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le CSE organise un cours de cuisine. Nous avons déjà tous les ingrédients pour une nouvelle commission.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-140",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mon dossier CERFA est complet. Je prends une capture d’écran pour mes petits-enfants.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-141",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "J'ai transféré mes réunions avant ma RTT. Le repos exige une équipe de déménageurs.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-142",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le TGV indique « espace calme ». J'ai photographié le panneau pour notre salle de réunion.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-143",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Au pot de bienvenue, on me présente toute l’équipe. Le saint-nectaire possède heureusement une étiquette.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-144",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La galette du service informatique contient deux fèves. Première double authentification appréciée.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-145",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La carte de titres-restaurant a un plafond. Mon appétit prépare une demande de dérogation.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-146",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le CERFA exige une signature manuscrite. Mon stylo se sent soudain indispensable à la transformation numérique.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-147",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le bilan du CSE est positif. Les collègues ont particulièrement apprécié la ligne « chocolats ».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-148",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Je prends une tradition avant la réunion. Elle contient moins d'air que la présentation.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-149",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mon absence pour RTT annonce mon retour. Ma présence n'explique toujours pas ma mission.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-150",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le séminaire auvergnat propose de l'aligot. Enfin un lien entre services qu'on peut voir s'étirer.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-151",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le pot de départ a son canal dédié. Mes dossiers ouverts n'ont jamais reçu autant de messages.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-152",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Une annexe réclame une annexe. Mon CERFA vient de fonder une famille.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-153",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "J'ai rangé mes chèques-vacances près du badge. Ils se motivent mutuellement.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-154",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le TER traverse les vignes. Mon tableur conserve obstinément son paysage de cases.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-155",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La réunion sur l'accord télétravail se tient en présentiel. La symbolique n'a pas été invitée.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-156",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le buffet breton propose des galettes complètes. Une qualité que nous aimerions retrouver dans le cahier des charges.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-157",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Ma RTT commence à dix-huit heures la veille, émotionnellement.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-158",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "FranceConnect m'a évité un mot de passe. Il reste à connecter les personnes autour du dossier.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-159",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le CSE a acheté une table de ping-pong. Les responsabilités circulent déjà très bien.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-160",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le croissant du directeur a laissé des preuves sur le budget. Enfin une trace des décisions.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-161",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "observ",
+    "text": "Au pot de départ, mes collègues regrettent mon humour. Ils ont manifestement lu mes estimations de délais.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-162",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mon Navigo se recharge vite. Je cherche toujours le même bouton après les réunions.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-163",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Les titres-restaurant sont nominatifs. Mon sandwich a davantage d'informations personnelles que certains collègues.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-164",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le dossier de mairie est passé du guichet au portail. Il a changé de porte, pas encore de pièce.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-165",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mon compte épargne-temps ressemble à une cave. J'attends la bonne occasion pour ouvrir un vendredi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-166",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "La couronne du bureau se transmet sans augmentation. Voilà une promotion conforme au budget.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-167",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le CSE propose un atelier céramique. Pour une fois, nos erreurs pourront servir de pots à crayons.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-168",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "observ",
+    "text": "Dans le funiculaire de Fourvière, le chef annonce une progression rapide. Personne n'a même ouvert Excel.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-169",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Ma dernière RTT de l'année est entourée en rouge. Un petit jour qui joue la finale.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-170",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le CERFA « simplifié » tient sur trois pages. L’ancien devait avoir une préface.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-171",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le pot de départ finit avec des restes. Mon successeur hérite aussi du taboulé.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-172",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le déjeuner d'affaires se conclut au café. Notre dossier aimerait connaître cette expression : « l'addition, s'il vous plaît ».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Scène autour des usages de table et de spécialités présentes en France ; le personnage ne représente pas une population."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-173",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "J'ai gardé un titre-restaurant papier en souvenir. Mes déjeuners ont désormais un document historique.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-174",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mon CERFA réclame « le cas échéant ». Aucun collègue ne reconnaît cet échéant dans notre planning.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-175",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Le CSE finance la piscine. Excellente nouvelle pour tous ceux qui nagent dans les procédures.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-176",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "observ",
+    "text": "En déplacement SNCF, je choisis la voiture silencieuse. Ma présentation avait besoin d'un public convaincu.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-office-proper-177",
+    "collection": "fr-fr-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "On m'a rendu une RTT oubliée. Mon vendredi venait de recevoir une invitation à exister.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  }
+]

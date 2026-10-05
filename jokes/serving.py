@@ -77,3 +77,14 @@ def allowed_tiers(request):
         'user_id': user.pk,
     })
     return BASE_TIERS
+
+
+def content_tier_for_age_rating(age_rating):
+    """Derive a published joke's tier from its age rating (the single rule).
+
+    Adult/mature ratings (min_age >= 18) ship as tier_2; everything else is
+    universal tier_1. Shared by admin bulk-publish and the corpus importer so
+    the two publication paths cannot drift apart.
+    """
+    min_age = getattr(age_rating, 'min_age', None) or 0
+    return TIER_2 if min_age >= 18 else TIER_1

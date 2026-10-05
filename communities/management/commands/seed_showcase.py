@@ -8,7 +8,11 @@ What it builds (all identities use the reserved ``@showcase.invalid`` domain):
 * ``theo@showcase.invalid`` — Theo Lindqvist, a creator on the free plan, to
   show which Studio tools are included and which are Creator Pro.
 * ``sam@showcase.invalid`` — Sam Rivera, a reader one laugh away from becoming
-  the fifth member who activates the forming *Space* community.
+  the fifth member who activates the forming *Space* community — which sends
+  "community formed" inbox notifications to Sam (member) and to Maya and Priya
+  (creators with Space jokes). Every showcase
+  account is backdated months, so the scripted readers are *established*
+  (old enough, 3+ distinct jokes enjoyed) and count toward communities.
 * ~260 synthetic audience members whose engagement forms overlapping active
   communities, one cooling community (Weather) and one forming one (Space).
   About 15% do not share analytics: their activity exists but is never counted.
@@ -32,8 +36,8 @@ from django.db import connection, connections, transaction
 from django.utils import timezone
 
 from billing.models import Plan, Subscription
-from communities import services
-from communities.models import Community, CommunityMembership
+from communities import materialize, services
+from communities.models import Community, CommunityMembership, CommunityState
 from creator_insights import library
 from follows.models import Follow
 from jokes.models import (
@@ -161,8 +165,15 @@ class Command(BaseCommand):
         self.rng = random.Random(RANDOM_SEED)
         self.now = timezone.now()
         self.opted_in = self.now - timedelta(days=120)  # consent predates every seeded signal
+        self.joined = self.now - timedelta(days=150)  # accounts are established (older than consent)
         self._seed()
+        materialize.rebuild()  # signals were bulk-created and backdated
+        services.forget_daily_aggregate()  # released counts must come from the reseeded data
         services.invalidate()
+        # Re-baseline formation tracking on the reseeded data (Space is recorded as
+        # forming), so Sam's next laugh announces it to him, Maya and Priya again.
+        CommunityState.objects.all().delete()
+        services.recompute()
         self._report()
 
     # ------------------------------------------------------------------ helpers
@@ -252,11 +263,15 @@ class Command(BaseCommand):
         self._scripted_space()
         self._scripted_weather()
         self._passive_exposure()
+        self._peer_laughs()
         self._write_signals()
         self._follows()
         self._studio_library()
         CommunityMembership.objects.create(user=self.reader, community=self.tags['puns'].community,
                                            state='joined')
+        # Communities only count established accounts (communities/privacy.py): every
+        # showcase account is months old; enjoying 3+ distinct jokes comes from the script.
+        User.objects.filter(email__endswith=DOMAIN).update(date_joined=self.joined)
 
     def _joke(self, creator, theme, tone, fmt, body):
         setup, punchline, text = ('', '', body) if isinstance(body, str) else (body[0], body[1], f'{body[0]} {body[1]}')
@@ -394,6 +409,24 @@ class Command(BaseCommand):
                                                                   created_date=at.date()), at))
                 if self.rng.random() < 0.45:
                     self.signals['view'].append((JokeView(user=fan, joke_id=joke_id, source='feed', viewed_date=at.date()), at))
+
+    def _peer_laughs(self):
+        """Creators laugh at three peers' jokes, one per theme (never Space), so they are
+        established accounts without joining any community or touching the Space script."""
+        own = {pk for jokes in self.creator_jokes.values() for pk in (j.pk for j in jokes)}
+        for creator in self.creators.values():
+            picks = []
+            for theme in THEME_WEIGHTS:
+                joke_id = next((pk for pk in self.pool[theme]
+                                if pk not in own and (creator.pk, pk) not in self.seen), None)
+                if joke_id is not None:
+                    picks.append(joke_id)
+                if len(picks) == 3:
+                    break
+            for index, joke_id in enumerate(picks):
+                self.seen.add((creator.pk, joke_id))
+                at = self.now - timedelta(days=10 + index)
+                self.signals['reaction'].append((JokeReaction(user=creator, joke_id=joke_id, reaction='lol'), at))
 
     def _write_signals(self):
         stamps = {

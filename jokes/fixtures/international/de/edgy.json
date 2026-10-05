@@ -1,0 +1,2282 @@
+[
+  {
+    "id": "intl-v2-de-edgy-001",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Mein Bürgeramt wirbt mit kurzen Wegen. Seit der Onlineumstellung führt jeder davon zurück zum Drucker.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-002",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Berliner U-Bahn bittet um gegenseitige Rücksicht. Mein Rucksack hat den Aushang offenbar als persönliche Einladung gelesen.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-003",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Der Pfandautomat nennt meine Flasche unbekannt. Das Marketing hatte sie gestern noch als Kultmarke bezeichnet.",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-004",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Unser deutscher Sportverein fordert mehr Jugendbeteiligung. Die Jugend darf jetzt das Protokoll der Forderung tippen.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-005",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Im Kleingartenverein gilt absolute Gleichberechtigung. Jeder darf exakt dieselbe Heckenhöhe selbst entscheiden.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-006",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus kostet mich das lange Sitzen nichts extra. Meine Wohnung hat von diesem Geschäftsmodell leider nie gehört.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-007",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Mein Wiener Kollege nennt es Fenstertag, ich Brückentag. Unser Chef nennt beide Varianten zufällig Teamtag.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-008",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Berliner Bäckerei verkauft „ehrliches Brot“. Endlich stellt sich jemand den dubiosen Geschäften des Toasts entgegen.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-009",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Unser Rathaus hat einen Digitalisierungsbeauftragten. Seine E-Mails tragen den Hinweis „Bitte in zweifacher Ausfertigung“.",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology meeting a specifically named German everyday custom or institution. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-010",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Der Weihnachtsmarkt nennt sich besinnlich. Die Lautsprecher scheinen den Begriff mit „bis hinten hörbar“ zu übersetzen.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-011",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Das Berliner Museum möchte barrierearm wirken. Die Erklärung dafür beginnt mit „diskursive Zugangsniedrigschwelligkeit“.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-012",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Im Schwarzwald lobt das Wanderhotel die Ruhe. Dann erklärt mir der Zimmerbildschirm zwanzig Minuten lang die Ausschaltfunktion.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-013",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Der Wiener Souvenirladen verkauft „einzigartige Erinnerungen“ in einer Kiste mit Mengenrabatt.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-014",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Mein Finanzamt glaubt an Belege. Schade, dass das bei den Versprechen meiner Produktivitäts-App keine anerkannte Haltung ist.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-015",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Beim Wiener Strudelworkshop hieß es „authentisch selbst gemacht“. Den Teig dafür mussten wir vorher im Webshop abonnieren.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-016",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Unsere deutsche Schulkonferenz diskutiert weniger Bildschirmzeit. Die Präsentation dauert neunzig Folien.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-017",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Mehrwegkampagne bekam neue Wegwerf-Flyer. Konsequenz ist anscheinend noch im Layout.",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-018",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Im ICE wird um leise Telefonate gebeten. Der Mann neben mir führt deshalb seine Übernahmeverhandlungen mit dem gesamten Wagen.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-019",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Unser Schützenverein modernisiert sein Erscheinungsbild. Der verstaubte Schrank heißt jetzt Archiv mit Patina.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-020",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Im Schrebergarten bin ich Selbstversorger. Vorausgesetzt, der Baumarkt versorgt mich vorher umfassend.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-021",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Mein Wiener Stammcafé hat WLAN abgeschafft, damit Menschen wieder reden. Jetzt reden alle darüber, dass das WLAN fehlt.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-022",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Eine deutsche und eine österreichische Firma vereinfachten gemeinsam ihr Formular. Es ist jetzt in beiden Ländern unverständlich.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-023",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Der Münchner Bäcker nennt sein winziges Gebäck „bewusste Portion“. Meine Rechnung praktiziert diese Zurückhaltung nicht.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-024",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die App meines Verkehrsverbunds kennt meinen Standort. Der Bus bleibt ihrem Forschungsinteresse gegenüber diskret.",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology meeting a specifically named German everyday custom or institution. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-025",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Auf dem Adventsmarkt wird Konsumkritik angeboten. Handgeschnitzt, drei Stück zum Sonderpreis.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-026",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Im Leipziger Literaturbetrieb heißt es „mutige neue Stimme“. Gemeint war offenbar jemand, der beim Empfang nach einem Stuhl fragte.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-027",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Das Eifeler Wellnesshotel verspricht Natur pur. Das Gras vor dem Empfang hat mehr Termine mit dem Pflegepersonal als ich.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-028",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "In Salzburg fotografierten wir das Schild „Bitte keine Gruppen bilden“. Die Gruppe fand das sehr verbindend.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-029",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Unser deutsches Großraumbüro heißt jetzt Kollaborationsfläche. Die Kopfhörer heißen weiterhin Kopfhörer.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-030",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Im Wiener Café ist der Kaffee regional geröstet. Der Vortrag darüber hatte allerdings eine internationale Flugstrecke.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-031",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die deutsche Elternrunde wünscht sich unkomplizierte Ausflüge. Ich wurde in vier Planungsgruppen aufgenommen.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-032",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Ich brachte meine Pfandflaschen zurück. Der Automat bestand auf Individualgesprächen mit jeder einzelnen.",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-033",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "In der Hamburger Fähre heißt freie Platzwahl, dass man die Taschen fremder Leute bewundern darf.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-034",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Unser Verein will neue Mitglieder gewinnen. Der erste Eindruck besteht aus einer PDF mit siebzehn Abkürzungen.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-035",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Im Kleingarten wurde der Gemeinschaftssinn gestärkt. Dafür bekam jeder eine eigene Liste, was die anderen falsch machen.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-036",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Das Wiener Kaffeehaus bietet Zeit zum Nachdenken. Seit der neuen Karte denke ich hauptsächlich über die Rechnung nach.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-037",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Meine Berliner Agentur und das Grazer Büro duzen sich jetzt. Die Hierarchie hat einfach kleinere Buchstaben bekommen.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-038",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Das Roggenbrot ist „nach alter Tradition“. Die Kartenzahlungsgebühr ist eine ausgesprochen lebendige neue.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-039",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Unser Rathaus nutzt künstliche Intelligenz. Bisher erkennt sie zuverlässig, wann man den Menschen wieder eine Hotline geben sollte.",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology meeting a specifically named German everyday custom or institution. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-040",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Der Dresdner Weihnachtsmarkt hat einen Ruhebereich. Man erkennt ihn am etwas kleineren Werbebanner.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-041",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Das Münchner Museum macht Kunst zugänglich. Der kostenlose Audioguide erklärt, warum der Eintritt so hoch ist.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-042",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Der Harzer Wanderweg führt mitten durch die Natur. Mein Reiseanbieter nennt das inzwischen ein exklusives Zusatzpaket.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-043",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Unser Innsbrucker Hotel legt großen Wert auf Nachhaltigkeit. Der tägliche Werbezettel dazu liegt immer frisch im Zimmer.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-044",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Der deutsche Bürokaffee wurde im Rahmen einer Qualitätsinitiative umbenannt. Er heißt jetzt Wachmacher statt zumutbar.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-045",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Das Salzburger Restaurant ist auf ehrliche Jause spezialisiert. Nur die Portionsfotos haben einen sehr kreativen Lebenslauf.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-046",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Beim Schulfest in Köln durfte jedes Kind frei wählen, an welcher von drei verpflichtenden Stationen es zuerst ansteht.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-047",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Mein Berliner Supermarkt rettet Lebensmittel. Das Gemüse musste dafür nur vorher sehr lange ohne Preissenkung durchhalten.",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-048",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Durchsage in der Münchner Tram dankt für unser Verständnis. Ich wusste gar nicht, dass ich es bereits eingereicht hatte.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-049",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Im Karnevalsverein darf jeder seine Meinung sagen. Danach entscheidet der Vorstand, welches Kostüm sie tragen soll.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-050",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Unsere Kleingartenversammlung wurde zur offenen Aussprache. Das Fenster durfte offen bleiben; die Tagesordnung nicht.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-051",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Das Wiener Café bewahrt Tradition. Auch meine Reservierungsanfrage wird offenbar langsam historisch.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-052",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Beim deutsch-österreichischen Workshop war Vielfalt das Thema. Die Moderation erlaubte dafür genau eine Schriftart.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-053",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Eine Hamburger Bäckerei verkauft Brot mit Charakter. Es weigert sich jedenfalls konsequent, in meinen Toaster zu passen.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-054",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Berliner Coworkingküche ist smart. Sie registriert genau, wie viele Menschen das Nachfüllen der Spülmaschine ignorieren.",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology meeting a specifically named German everyday custom or institution. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-055",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Im Nürnberger Adventsschaufenster liegt ein Buch gegen Kaufzwang. Leider nur zusammen mit dem passenden Geschenkset.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-056",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Frankfurter Vernissage feiert klare Aussagen. Der Begleittext hat vorsorglich kein einziges Verb riskiert.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-057",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die App für den Schwarzwald empfiehlt digitale Auszeiten. Meine erste beginnt direkt hinter dem Empfangsbalken.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-058",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Unser Wiener Hotel nennt sein winziges Zimmer „urban kompakt“. Mein Koffer nennt es Konkurrenz.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-059",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Behörde wollte meine Geduld verbessern. Dafür gibt es offenbar ein unbegrenztes kostenloses Trainingsprogramm.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-060",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Im Grazer Lokal wird jeder Teller persönlich erklärt. Ich hatte nur gefragt, ob ich schon essen darf.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-061",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Schultütenwerbung verspricht einen entspannten Schulstart. Unsere Kaufentscheidung brauchte einen Familienausschuss.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-062",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Pfandbon-Schrift ist so klein, dass man Nachhaltigkeit offenbar mit sehr guten Augen beginnen soll.",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-063",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Der Ruhebereich im ICE ist ein Raum, in dem Menschen besonders deutlich flüstern, wie wichtig sie sind.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-064",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Unser Heimatverein digitalisiert das Archiv. Die Freiwilligen dürfen jetzt jahrzehntealten Staub zusätzlich auf dem Bildschirm suchen.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-065",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Satzung unserer Kleingartenanlage ist flexibel. Sie lässt sich leicht um weitere Verbote ergänzen.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-066",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Wiener Kaffeehauszeitung ist zum gemeinsamen Lesen da. Mein Tischnachbar teilt großzügig alles außer dem Wirtschaftsteil.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-067",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Unser Münchner Team und die Wiener Kollegen betreiben flache Hierarchien. Dafür wurden zwei zusätzliche Abstimmungsebenen eingerichtet.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-068",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Brezel ist jetzt „Handwerk zum Mitnehmen“. Schön, dass man ihr nach Jahrhunderten eine Reiseerlaubnis gibt.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-069",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Das Bürgerportal meldet „Wir sind für Sie da“. Die Fehlermeldung hält dieses Versprechen wirklich rund um die Uhr.",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology meeting a specifically named German everyday custom or institution. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-070",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Der Kölner Weihnachtsmarkt empfiehlt achtsamen Genuss. Die Warteschlange sorgt dafür, dass man jedes Waffeleisen sehr bewusst erlebt.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-071",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die deutsche Buchmesse nennt mein Herumstehen Networking. So fühlt sich wenigstens ein Teil meiner Müdigkeit beruflich relevant an.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-072",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Der Allgäuer Aussichtspunkt ist ein Geheimtipp. Das stand auf allen sechs Reisebussen davor.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-073",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "In Wien wollte ich ein Café ohne Inszenierung finden. Der Reiseführer lieferte eine Liste der beliebtesten authentischen Geheimnisse.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-074",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Unsere deutsche Firma hat die Meetingkultur reformiert. Die Besprechung heißt jetzt kurzer Austausch und dauert weiter bis Mittag.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-075",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Der Kaiserschmarrn wurde dekonstruiert serviert. Ein beeindruckender Versuch, ein ohnehin zerrissenes Gericht organisatorisch aufzuwerten.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-076",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Elternvertretung erklärte die Kommunikation für zu kompliziert. Zur Lösung eröffnete sie einen zusätzlichen Chat.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-077",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Der Pfandautomat fordert „Etikett nach oben“. Selbst mein Leergut braucht anscheinend eine überzeugende Selbstdarstellung.",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-078",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Berliner Fahrgastwerbung zeigt Menschen, die sich im Wagen frei bewegen. Ich vermute eine sehr teure Spezialwirkung.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-079",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Unser Chor will moderner werden. Die alte Streitfrage wurde deshalb als Innovationskonflikt neu aufgerufen.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-080",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Im Kleingarten darf ich der Natur nahe sein. Wie nahe genau, erklärt Anlage drei der Gartenordnung.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-081",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Im Wiener Café bestellte ich einfach Kaffee. Die Beratung war umfangreicher als beim Kauf meines Laptops.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-082",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Unser deutscher und unser österreichischer Chef wollten kulturelle Unterschiede klären. Beide hielten ihr eigenes Schweigen für Zustimmung.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-083",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Der Berliner Bäcker nennt das abgeschnittene Brot „kuratierte Scheiben“. Endlich weiß ich, warum ich die Krümel kaum bezahlen kann.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-084",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die neue Vereins-App spart Papier. Jetzt druckt der Vorstand zusätzlich die Anleitung für die App aus.",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology meeting a specifically named German everyday custom or institution. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-085",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Der Adventskalender für mehr Achtsamkeit enthält täglich einen Gutscheincode. Offenbar soll ich meine Aufmerksamkeit gut verteilen.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-086",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Im deutschen Designmuseum war ein unbequemer Stuhl ausgezeichnet. Endlich hatte mein Rücken einmal konkrete Kritik an der Jury.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-087",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Schwarzwaldhütte bietet Entschleunigung. Der QR-Code für die Speisekarte lädt seit zehn Minuten überzeugend vor.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-088",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Der Wiener Souvenirshop verkauft Schneekugeln in Einheitsgröße. Individualität braucht hier schließlich ins Handgepäck zu passen.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-089",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Meine Personalabteilung in Hamburg hört aktiv zu. Ich erkenne es am standardisierten Absatz über meine individuellen Bedürfnisse.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-090",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "In Österreich wird die Jause bei uns jetzt als Meeting geführt. Die Topfenbrote haben dadurch endlich Zugang zur Kostenstelle.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-091",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Bei unserem Berliner Schulprojekt stand Teamarbeit im Mittelpunkt. Die Eltern konkurrierten sehr engagiert um das beste Beispiel.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-092",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Kampagne gegen Verpackungsmüll kam mit einem Gratisbeutel, den wiederum eine Plastikfolie schützen musste.",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-093",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Im Kölner Bahnhof wird mein Einkaufserlebnis optimiert. Mein Umsteigen bleibt ein persönliches Entwicklungsprojekt.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-094",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Unser Sportverein fördert Eigeninitiative. Wer eine Idee äußert, bekommt sofort dauerhaft den Schlüssel dazu.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-095",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Der Gartenvorstand liebt naturnahe Gestaltung. Die Gänseblümchen müssen nur vorher erklären, warum sie genau dort wachsen.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-096",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus wurde die Karte verschlankt. Die Preise haben aus Solidarität die verlorene Fläche übernommen.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-097",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Unsere Teams aus Dresden und Linz wollten Vorurteile abbauen. Zuerst stritten sie, wessen Methode dafür objektiv besser sei.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-098",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Beim Sauerteigkurs in Berlin sollten wir Geduld lernen. Der Kursleiter verkaufte dazu ein Expresspaket.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-099",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Meine deutsche Krankenkassen-App fordert einen starken Zugangscode. Die winzige Schrift auf dem Brief war schon eine solide Zugangshürde.",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology meeting a specifically named German everyday custom or institution. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-100",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Der traditionelle Adventsmarkt hat jetzt Premiumzugang. Besinnlichkeit muss offenbar besser ausgelastet werden.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-101",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Hamburger Galerie erklärt, dass Kunst Fragen stellen soll. Meine Frage nach einem Sitzplatz galt leider nicht als Beitrag.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-102",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Ein Wanderblog nennt den Harzer Weg menschenleer. Die Menschen lesen ihn offensichtlich alle zur gleichen Zeit.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-103",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Das Grazer Café wirbt mit persönlicher Nähe. Der Nachbartisch ist tatsächlich am Gespräch beteiligt, ob er will oder nicht.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-104",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Unser Amt bietet eine bürgerfreundliche Sprechstunde. Sie liegt genau während meiner ebenfalls arbeitnehmerfreundlichen Arbeitszeit.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-105",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Wiener Melange bekam eine neue Markenstory. Der Kaffee selbst sagte weiterhin nichts und erledigte seinen Job.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-106",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Beim deutschen Schulbasar wurde ein Wettbewerb für mehr Gelassenheit angekündigt. Die Anmeldefrist setzte uns sofort unter Druck.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-107",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Mein Mehrwegbecher ist nach drei Werbegeschenken in Überzahl. Nachhaltigkeit verlangt offenbar auch eine größere Küche.",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-108",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Im ICE verspricht die Werbung Freiheit. Der Mensch am Gang schläft bereits seit Kassel darauf.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-109",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Unser Verein nennt sich offen für alle. Den Eingang findet man, wenn man schon jemanden kennt.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-110",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Der Kleingarten wurde mein Rückzugsort. Der Aushang erinnert mich wöchentlich an meine gesellschaftlichen Verpflichtungen dort.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-111",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Das Wiener Kaffeehaus möchte junge Gäste ansprechen. Die Playlist tut dies so gründlich, dass die jungen Gäste einander nicht mehr verstehen.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-112",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Beim Berliner Start-up und der Wiener Beratung heißt es „ein Team“. Auf der Rechnung gelten wieder feinere Unterschiede.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-113",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die deutsche Brotbox aus dem Designladen kann besonders wenig Brot aufnehmen. Dafür bleibt reichlich Platz für die Idee dahinter.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-114",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Unsere Kommune modernisiert ihren Internetauftritt. Das Formular von früher trägt jetzt eine Animation beim Herunterladen.",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology meeting a specifically named German everyday custom or institution. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-115",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Der Adventsmarkt verkauft handgemachte Ruhe. Die Tüte knistert bis nach Hause darüber.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-116",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Leipziger Lesung wurde für bessere Sicht gestreamt. Zu Hause sah ich endlich genau, welche Säule meinen Platz verdeckt hätte.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-117",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Der Schwarzwaldprospekt nennt den Berg unberührt. Der Prospekt hat schon drei Kamerateams hinaufgeschickt.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-118",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Unser Salzburger Stadtspaziergang sollte spontan sein. Die App erinnerte uns pünktlich an das gebuchte spontane Erlebnis.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-119",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Das deutsche Büro feiert papierlose Arbeit. Die Urkunde dafür hängt jetzt eingerahmt am Kopierer.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-120",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Grazer Jausenplatte ist zum Teilen gedacht. Das Restaurant unterschätzt die Verhandlungen über das letzte Käsebrot erheblich.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-121",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Schultüte soll neugierig machen. Meine erste Frage galt der Tragkraft des dafür benötigten Familienbudgets.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-122",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Der Pfandautomat lobt mich nach jeder Rückgabe. Mein Arbeitgeber sollte sich bei der Maschine ein paar grundlegende Funktionen abschauen.",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-123",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Hamburger Fähre bringt mich über die Elbe. Der Fahrkartenautomat prüft vorher, wie ernst mir dieses Vorhaben ist.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-124",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Unsere Vereinswahl setzt auf Transparenz. Jeder kann genau sehen, wer die Vorhänge vor der Abstimmung zuzieht.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-125",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Gartenordnung verbietet unnatürliche Dekoration. Unser Gartenzwerg beantragt gerade eine botanische Einstufung.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-126",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Wiener Cafékarte nennt ihren Kuchen zeitlos. Zum Glück steht das nur beim Stil und nicht beim Herstellungsdatum.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-127",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Beim deutsch-österreichischen Erfahrungsaustausch teilten beide Seiten ihre besten Praktiken. Die Probleme behielten sie aus Wettbewerbsgründen.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-128",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Der Düsseldorfer Bäcker verkauft „Brot für Entdecker“. Ich entdeckte hauptsächlich, wie viel ein einzelner Kürbiskern kosten kann.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-129",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die deutsche Vereinssoftware ist intuitiv. Man muss nur intuitiv wissen, was der Entwickler unter Mitgliederbestandspfad versteht.",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology meeting a specifically named German everyday custom or institution. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-130",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Mein Adventskalender will mich überraschen. Nach Türchen sieben kannte ich sämtliche Sponsoren schon persönlich.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-131",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Münchner Ausstellung heißt „Weniger ist mehr“. Beim Eintritt wurde diese These großzügig umgedreht.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-132",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Der Naturpark wirbt für leises Wandern. Unser Reiseführer erklärte den Punkt mit eingeschaltetem Gruppenlautsprecher.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-133",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Wiener Museums-App möchte mich durch den Raum führen. Zuerst führte sie mich durch ihre Datenschutzoptionen.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-134",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Der deutsche Büroflur wurde zur Begegnungszone erklärt. Der kaputte Kopierer war da schon jahrelang Vorreiter.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-135",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Wiener Kaffeeberatung empfiehlt bewusstes Schmecken. Meine Zunge empfiehlt erst einmal bewusstes Abkühlen.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-136",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Bei der deutschen Schulaufführung war jedes Kind gleich wichtig. Die ersten drei Sitzreihen hatten trotzdem schon Namen.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-137",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Auf dem Mehrwegdeckel steht „Bitte Verantwortung übernehmen“. Schön, dass mein Kaffee die Führungsaufgabe direkt delegiert.",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-138",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Berliner Tram hat eine Vorrangschaltung. Ich hätte gern die private Ausgabe für meinen Tag.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-139",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Unser Vereinsvorstand bittet um frische Ideen. Sie sollen nur nahtlos ins bisherige Programm von 1998 passen.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-140",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Im Kleingarten nennen wir Unkraut inzwischen Wildwuchs. Die neue Sprache hat meine Wochenendarbeit noch nicht merklich erleichtert.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-141",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Im Wiener Café gilt mein Laptop als störend. Die Zeitung am Nebentisch braucht zwar dreimal so viel Platz, hat aber Tradition.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-142",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Das deutsch-österreichische Planungsteam will pragmatisch bleiben. Es arbeitet gerade an einer gemeinsamen Definition davon.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-143",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Nürnberger Bäckerei bietet ein Brot ohne Schnickschnack. Seine Verpackung erklärt das auf vier Seiten.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-144",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die E-Akte meiner Stadt soll Wege verkürzen. Ich musste nur kurz hinfahren, um den digitalen Zugang persönlich zu beantragen.",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology meeting a specifically named German everyday custom or institution. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-145",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Der Weihnachtsmarkt fordert „Lasst euch verzaubern“. Mein Kartenlesegerät zu Hause nennt den Vorgang nüchterner Abbuchung.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-146",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Im Berliner Kunstgespräch sollte jede Deutung erlaubt sein. Meine Deutung, dass wir eine Pause brauchen, stieß auf formale Einwände.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-147",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Mein Allgäuer Wanderpaket enthält garantiert neue Perspektiven. Besonders auf die Preise von Wasser in Gipfelnähe.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-148",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "In Innsbruck wurde uns ein unverfälschtes Bergerlebnis angeboten. Es musste nur vorher durch die Bildfilter der Werbeagentur.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-149",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Das deutsche Büro hat Vertrauensarbeitszeit. Der Kalender kontrolliert nur sicherheitshalber jede Viertelstunde davon.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-150",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Der Salzburger Souvenirladen verkauft Jausenbretter mit Lebensweisheiten. Der Käse bringt immerhin überprüfbare Inhalte mit.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-151",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Beim Elternabend in Leipzig ging es um kürzere Kommunikationswege. Wir fanden sehr ausführlich heraus, warum das schwierig ist.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-152",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Mein Pfandbon verblasst schnell. Selbst ein Beleg für verantwortungsvolles Verhalten sollte offenbar bescheiden bleiben.",
+    "age_rating": "teen",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-153",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Das Premiumabteil im Zug verspricht konzentriertes Arbeiten. Die anderen Fahrgäste konzentrieren sich bereits laut auf ihre Gespräche.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-154",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Unser Chor wünscht sich mehr Mut zu Veränderungen. Ich habe vorgeschlagen, die Diskussion darüber einmal pünktlich zu beenden.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-155",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Im deutschen Gemeinschaftsgarten teilen wir alles. Außer der Meinung, wer zuletzt tatsächlich gegossen hat.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-156",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Das Wiener Café bietet entschleunigte Bedienung. Mein Hunger wurde über diesen neuen Lebensstil leider nicht rechtzeitig informiert.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-157",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Beim Workshop zwischen Hamburg und Wien sollte jeder auf Augenhöhe reden. Der Beamerstand war das einzige tatsächlich verstellbare Element.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-158",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Mein Sauerteigbrot wird mit persönlicher Geschichte verkauft. Ich wäre bereit, die kürzere Fassung ohne Preisaufschlag zu nehmen.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-159",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Der deutsche Veranstaltungsnewsletter erlaubt einfaches Abmelden. Dafür hat er mir vorsorglich einen weiteren Bestätigungsnewsletter geschickt.",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology meeting a specifically named German everyday custom or institution. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-160",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Auf dem Adventsmarkt fand ich ein Schild „Zurück zum Wesentlichen“. Darunter standen achtzehn verschiedene Duftkerzen-Sondereditionen.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-161",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Museumsführung in Dresden erklärte, dass man Kunst Zeit geben muss. Mein Parkticket vertrat eine deutlich andere Auffassung.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-162",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Schwarzwaldhütte bietet regionale Schlichtheit. Die Speisekarte brauchte dafür sehr viele englische Adjektive.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-163",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Im Grazer Hotel konnte ich die Reinigung abwählen. Die Werbung dafür wurde trotzdem täglich gewissenhaft erneuert.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-164",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die deutsche Dienstbesprechung heißt jetzt Fokuszeit. Ich fokussiere mich darauf, wann die eigentliche Arbeit noch stattfinden könnte.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-165",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Beim Wiener Kaffeeworkshop wurde mein Geschmack ernst genommen. Bis er von der empfohlenen Bohne abwich.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-166",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Unsere deutsche Schule lobt eigenständiges Denken. Die Bastelanleitung fürs Schulfest hat vorsichtshalber Farbcodes für die Eltern.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-167",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "In der Berliner U-Bahn heißt mein Platz am Fenster jetzt mobile Aussicht. Die Werbung hat selbst den Tunnel erfolgreich ausgestattet.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-168",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Unser Heimatverein will Geschichte lebendig machen. Die Diskussion über neue Öffnungszeiten praktiziert das seit mehreren Jahrzehnten.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-169",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Der Kleingartenverein wirbt mit Entspannung. Das Werbefoto zeigt praktischerweise niemanden beim Lesen der Pachtbedingungen.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-170",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Das Wiener Café betont, dass Gäste lange bleiben dürfen. Der winzige Kuchen schafft jedenfalls keinen frühen Sättigungsgrund.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-171",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Mein Wiener und mein Kölner Team vereinbarten weniger Mails. Die Nachricht darüber kam als Mail mit drei Erinnerungen.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-172",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Im Berliner Brotseminar soll ich meinen Instinkten folgen. Allerdings ausschließlich mit der vom Kurs angebotenen Waage.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-173",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die App für meinen deutschen Sportverein erinnert mich an Bewegung. Meistens bewege ich daraufhin den Finger zur Stummschaltung.",
+    "age_rating": "teen",
+    "themes": [
+      "tech"
+    ],
+    "cultural_note": "Technology meeting a specifically named German everyday custom or institution. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-174",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Im Literaturhaus hieß es, wir sollten Dinge hinterfragen. Die Nachfrage nach der unbezahlten Garderobenarbeit kam unerwartet schlecht an.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-175",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Mein Schwarzwaldhotel verbietet Stress. Ich hoffe, mein voller Posteingang hält sich an die Hausordnung.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-176",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Der Wiener Stadtführer versprach Einblicke hinter die Kulissen. Dort sahen wir die nächste Gruppe schon warten.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-edgy-177",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Das Rathaus spart durch Selbstbedienung Zeit. Jetzt sitze ich zu Hause in meiner eigenen Warteschleife und bezahle sogar den Kaffee.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-edgy-178",
+    "collection": "de-de-everyday",
+    "category": "edgy",
+    "format": "oneliner",
+    "text": "Die Grazer Jause wurde als unkompliziert beworben. Das Brett benötigte dennoch eine halbe Tischumbauphase.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Satire of institutions, commerce, or habits; no identity group is treated as inferior. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  }
+]

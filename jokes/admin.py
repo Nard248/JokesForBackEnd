@@ -14,6 +14,8 @@ from .models import (
     Collection,
     ContentReport,
     ContextTag,
+    Country,
+    CulturalCollection,
     CultureTag,
     DailyJoke,
     Favorite,
@@ -43,6 +45,7 @@ from .models import (
     UserVibe,
     Vibe,
 )
+from .serving import content_tier_for_age_rating
 
 # 36h/48h SLA clock values (spec verbatim) — shared by AppealAdmin's
 # hours_open red flag and the "overdue" list filter.
@@ -80,11 +83,31 @@ class LanguageAdmin(admin.ModelAdmin):
     search_fields = ['code', 'name']
 
 
+@admin.register(Country)
+class CountryAdmin(admin.ModelAdmin):
+    list_display = ['code', 'name', 'native_name']
+    search_fields = ['code', 'name', 'native_name']
+
+
 @admin.register(CultureTag)
 class CultureTagAdmin(admin.ModelAdmin):
+    filter_horizontal = ['languages', 'countries']
     list_display = ['name', 'slug']
     prepopulated_fields = {'slug': ('name',)}
     search_fields = ['name']
+
+
+@admin.register(CulturalCollection)
+class CulturalCollectionAdmin(admin.ModelAdmin):
+    list_display = ['slug', 'language', 'country', 'culture']
+    list_filter = ['language', 'country', 'culture']
+    search_fields = ['slug', 'culture__name', 'country__name', 'language__name']
+    list_select_related = ['language', 'country', 'culture']
+
+    def save_model(self, request, obj, form, change):
+        super().save_model(request, obj, form, change)
+        obj.culture.languages.add(obj.language)
+        obj.culture.countries.add(obj.country)
 
 
 @admin.register(Source)
@@ -96,9 +119,9 @@ class SourceAdmin(admin.ModelAdmin):
 @admin.register(Joke)
 class JokeAdmin(admin.ModelAdmin):
     list_display = ['__str__', 'format', 'age_rating', 'language', 'is_removed', 'created_at']
-    list_filter = ['is_removed', 'format', 'age_rating', 'tones', 'context_tags', 'language']
+    list_filter = ['is_removed', 'format', 'age_rating', 'tones', 'context_tags', 'language', 'countries', 'editorial_status']
     search_fields = ['text', 'setup', 'punchline']
-    filter_horizontal = ['tones', 'context_tags', 'culture_tags']
+    filter_horizontal = ['tones', 'context_tags', 'culture_tags', 'countries']
     # `is_removed` is READ-ONLY on purpose. Ticking it by hand hid the joke
     # without a statement-of-reasons notification, without quarantining its
     # media, without blanking the share card, and left removed_at NULL — which
@@ -110,8 +133,9 @@ class JokeAdmin(admin.ModelAdmin):
     fieldsets = [
         ('Content', {'fields': ['text', 'setup', 'punchline']}),
         ('Classification', {'fields': ['format', 'age_rating', 'content_tier', 'language', 'source']}),
-        ('Tags', {'fields': ['tones', 'context_tags', 'culture_tags']}),
+        ('Tags', {'fields': ['tones', 'context_tags', 'culture_tags', 'countries']}),
         ('Moderation', {'fields': ['is_removed', 'removed_at']}),
+        ('Cultural context', {'fields': ['cultural_note', 'editorial_status', 'seed_key']}),
         ('Metadata', {'fields': ['created_at', 'updated_at'], 'classes': ['collapse']}),
     ]
 
@@ -265,7 +289,7 @@ class JokeSubmissionAdmin(admin.ModelAdmin):
                     'format', 'status', 'updated_at']
     list_filter = ['status', 'format', 'age_rating']
     search_fields = ['user__email', 'text', 'setup', 'punchline']
-    filter_horizontal = ['tones', 'context_tags', 'culture_tags']
+    filter_horizontal = ['tones', 'context_tags', 'culture_tags', 'countries']
     readonly_fields = ['created_at', 'updated_at']
     raw_id_fields = ['published_joke']
     actions = ['approve_and_publish']
@@ -340,8 +364,7 @@ class JokeSubmissionAdmin(admin.ModelAdmin):
                     # reaches minors/anon; tier_2 is mature and adults-only.
                     # Derive the tier from the submission's age rating so
                     # adult/mature jokes (min_age >= 18) don't ship as universal.
-                    min_age = getattr(submission.age_rating, 'min_age', None) or 0
-                    content_tier = 'tier_2' if min_age >= 18 else 'tier_1'
+                    content_tier = content_tier_for_age_rating(submission.age_rating)
                     joke = Joke.objects.create(
                         text=submission.text,
                         setup=submission.setup,
@@ -357,6 +380,7 @@ class JokeSubmissionAdmin(admin.ModelAdmin):
                     joke.tones.set(submission.tones.all())
                     joke.context_tags.set(submission.context_tags.all())
                     joke.culture_tags.set(submission.culture_tags.all())
+                    joke.countries.set(submission.countries.all())
                     for link in submission.media.all():
                         JokeMedia.objects.create(
                             joke=joke, asset=link.asset, position=link.position,

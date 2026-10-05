@@ -1,0 +1,2126 @@
+[
+  {
+    "id": "intl-v2-es-wholesome-001",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi abuela comparte su tortilla: todos recibimos un trozo y una segunda opinión sobre si tenemos hambre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-002",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En nuestra sobremesa de Zaragoza, el café se enfría porque también quiere quedarse escuchando.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-003",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Por Sant Jordi me regalaron un libro enorme. Mi rosa pidió una estantería propia por solidaridad.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-004",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En el patio de Córdoba, mi vecino riega mis geranios. Ahora florecen con acento de amistad.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-005",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En el metro de Madrid cedí el asiento a una maleta: su dueña ya sujetaba tres conversaciones familiares.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-006",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi abuelo visitó el Prado para ver originales. A mí me presentó como su obra más reciente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-007",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En Bilbao compartimos pintxos. Mi hermana organiza los turnos como si repartiera pequeños premios Nobel.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-008",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La plaza de mi pueblo tiene bancos nuevos. Mi abuelo sigue prefiriendo el que conoce sus historias.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-009",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi sobrino dibujó una falla tan amable que el dragón pedía permiso antes de asustar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-010",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En la huerta murciana sembramos paciencia. Los tomates salieron antes de que yo aprendiera la lección.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-011",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Llegamos a Santiago muy cansados. Mi madre abrazó primero a mis botas: habían hecho todo el trabajo pesado.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-012",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En la biblioteca de Salamanca, mi hija pidió un cuento largo para que el abrazo de lectura durara más.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-013",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi padre cortó el queso manchego en porciones iguales. Luego se comió las diferencias para garantizar la justicia.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-014",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Nuestra vecina de Sevilla vino a pedir sal. Se marchó con cena y el problema resuelto por exceso.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-015",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En Nochevieja, mi abuelo contó deseos en vez de uvas. Le salieron nietos por todas partes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-016",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi balcón valenciano es pequeño. Las plantas han decidido crecer hacia los cumplidos de la vecina.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-017",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En el tranvía de Zaragoza, un niño saludó a cada parada. Ya tiene más conocidos que yo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-018",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En la feria del libro de Madrid compré una novela para mi madre. Ahora también me visita su protagonista.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-019",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La empanada gallega de mi tía incluye cariño. Lo comprobamos porque nunca cabe del todo en la bandeja.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-020",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En nuestro pueblo castellano, perderse consiste en recibir cinco acompañantes en vez de una indicación.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-021",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi hija hizo una corona de Reyes para el perro. Su primera orden fue abolir el baño.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-022",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En los patios cordobeses mi abuelo admira las flores. Mi abuela comprueba discretamente quién les habla mejor.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-023",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi abuela estrenó el AVE y guardó el billete: quería enseñárselo a su paciencia de toda la vida.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-024",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En Barcelona, mi librero conoce mis gustos y mis excusas. Siempre me recomienda algo ligero para ambas cosas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-025",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "El salmorejo cordobés de mi padre salió espeso. Lo llamamos abrazo servido con cuchara.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-026",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi familia alarga la sobremesa en Valladolid. El mantel ya aparece en todas las fotos como un primo más.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-027",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En la feria de abril mi sobrina perdió el miedo al baile. El ritmo aún sigue escondido.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-028",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La tomatera de nuestro huerto riojano dio un tomate. Celebramos la cosecha con una rueda de prensa familiar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-029",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En el ferry de Cádiz, mi hijo pidió saludar al mar. Las olas hicieron el turno de respuesta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-030",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La banda de mi pueblo ensayó bajo mi ventana. Mi abuelo sacó una silla: entrada preferente sin gastos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-031",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En Asturias, mi amiga sirvió fabada para cuatro. La olla incluyó por si acaso a nuestros futuros conocidos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-032",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Nuestra comunidad madrileña instaló un banco en el portal. Ahora las despedidas necesitan asiento.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-033",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi belén murciano tiene un panadero nuevo. Lo puso mi nieta porque todo el mundo tendría hambre del viaje.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-034",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En Málaga mi madre cuida una maceta rescatada. La llama por su nombre y por el del vivero.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-035",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi tío caminó por Segovia contando historias. El acueducto agradeció encontrar a alguien con tantos años de conversación.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-036",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi hija llevó un dibujo al museo de Málaga. Preguntó dónde se presentaban las obras que aún olían a rotulador.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-037",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi amigo canario compartió sus papas con mojo. Yo compartí mi entusiasmo; era lo único que no se terminaba.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-038",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En la plaza de León mi abuelo saluda incluso a las palomas nuevas. Dice que hay que cuidar las incorporaciones.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-039",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Por Sant Jordi, regalé una rosa a mi hermana. Ella me prestó un libro: nuestra cultura ya circula.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-040",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "El limonero de mi patio sevillano dio sombra antes que limones. Empezó ofreciendo lo que podía.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-041",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En el tren a Cuenca mi sobrino se durmió. Le guardamos todos los paisajes para contárselos después.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-042",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi abuela entró en una librería de Burgos por refugiarse de la lluvia. Salió con tres inviernos preparados.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-043",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi padre preparó paella en Valencia y dejó que ayudáramos. Nuestra aportación principal fue admirarle muy cerca.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-044",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La vecina de nuestro pueblo aragonés devuelve siempre los platos con comida. Tenemos una vajilla que viaja mejor que nosotros.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-045",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En la fiesta del pueblo, mi abuelo ganó al bingo. El premio verdadero fue repetir cómo ganó.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-046",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi hija habla con los naranjos de Valencia. Les explica que ella también está creciendo sin entender muy bien cómo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-047",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En el autobús de Santander se me cayó una mandarina. Tres pasajeros organizaron su regreso familiar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-048",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "El coro de mi barrio granadino aceptó mi voz. Me colocaron entre dos personas muy generosas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-049",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Las croquetas de mi abuela vienen con una advertencia: «Coge pocas». Es su manera de decir que queda otra bandeja.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-050",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En nuestra sobremesa salmantina nadie mira el reloj. El reloj ya sabe que no tiene nada nuevo que aportar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-051",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi hijo puso zapatos diminutos para los Reyes. Luego añadió una nota: «Los juguetes pueden sobresalir».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-052",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi vecino cuida el patio de Córdoba como un escenario. Las macetas son famosas sin conceder entrevistas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-053",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En el paseo marítimo de Gijón, mi abuela va despacio para que el mar no se quede atrás.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-054",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi padre volvió de la biblioteca de Toledo con letra grande. Dice que por fin los libros hablan claro.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-055",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Compartimos un bocadillo de calamares en Madrid. Mi pareja me dejó el último anillo: romance con pan.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-056",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi sobrino pregunta a todo el barrio de Logroño si ha visto a su gato. El gato ya tiene club de admiradores.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-057",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En la verbena de nuestro pueblo, mi madre bailó conmigo. Le cobré únicamente dos pisotones de matrícula.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-058",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi huerto de Navarra produce más consejos vecinales que lechugas. Menos mal que los consejos también se comparten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-059",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En el funicular de Bilbao, mi nieta saludó a la ciudad. Desde arriba todos parecían invitados a su cumpleaños.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-060",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi amigo llevó su primera poesía a un recital de Granada. Yo aplaudí tan pronto que casi le hice un prólogo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-061",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En Barcelona aprendí a preparar pan con tomate. Mi abuelo aprobó el examen repasando todas las rebanadas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-062",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi tía de Albacete guarda sillas plegables para visitas inesperadas. El cariño tiene muy buena capacidad de almacenamiento.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-063",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En Fallas, mi hija vio un ninot sonriente. Le devolvió la sonrisa por si tenía un día difícil.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-064",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "El rosal de mi patio toledano crece torcido. Mi madre dice que está buscando la mejor vista.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-065",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En la estación de Atocha abracé tan fuerte a mi hermano que su mochila llegó antes al reencuentro.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-066",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi abuela se apuntó a un taller de cerámica en Talavera. Ya tenemos cariño resistente al lavavajillas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-067",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En Cantabria compartimos sobaos. Mi padre los parte con una precisión que nunca aplica a las tareas domésticas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-068",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La sobremesa en casa de mis primos de Jaén terminó al anochecer. El postre ya conocía nuestros planes de jubilación.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-069",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi hija puso un dibujo en la carroza de su peña. Nunca había viajado su arte con tanto acompañamiento.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-070",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Plantamos una olivera en nuestro pueblo andaluz. Mi abuelo ya le ofrece consejos para cuando tenga su edad.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-071",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En el tranvía de Tenerife, mi sobrino quiso validar también el billete de su peluche. Nadie viaja solo con él.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-072",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi librera de Valladolid me reservó una novela. Dice que los libros también necesitan encontrar a su persona.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-073",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi vecino de Cáceres comparte el pimentón. Con una cucharadita te arregla la cena y la conversación.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-074",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En nuestro barrio bilbaíno, el perro aprendió el camino a la panadería. Lo ascendimos a responsable del desayuno.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-075",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi padre ensayó las campanadas con cucharillas. La familia entró en el año nuevo con banda sonora casera.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-076",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En la terraza de Murcia, mi sobrina cuida una albahaca. La planta huele a primera responsabilidad.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-077",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En el tren a Oviedo mi madre compartió galletas. Llegamos con más familia de la que figura en el billete.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-078",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi hijo leyó un cuento en la biblioteca de Cádiz. Hizo todas las voces salvo la del silencio.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-079",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En Mallorca mi amiga dividió la ensaimada. La espiral nos permitió discutir cariñosamente dónde empezaba cada parte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-080",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En la plaza de Teruel, mi abuelo me enseñó a jugar al ajedrez. Me deja ganar solo cuando consigo merecer su despiste.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-081",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Nuestra comparsa de Cádiz desafina junta. La amistad es saber exactamente dónde no dejar solo al otro.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-082",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi madre riega las macetas del patio granadino y también la conversación con quien pase.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-083",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En el metro de Barcelona mi hermana me guardó un sitio. Lo ocupaba temporalmente su mejor historia del día.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-084",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi padre se emocionó en el museo de cerámica de Manises. Nunca había visto tantas cosas que mamá le impediría tocar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-085",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Las lentejas de mi abuelo riojano vienen con pan de escolta. Ninguna cucharada debe sentirse desamparada.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-086",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi vecina de Salamanca puso una alfombra de bienvenida. Su gato la interpreta como una reserva permanente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-087",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Para Sant Jordi, mi sobrina escribió su propio libro. La dedicatoria ocupaba más páginas que la aventura.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-088",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En nuestro huerto de Almería salió una calabaza enorme. Mi hijo le preguntó si había comido sus verduras.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-089",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En la ruta del Cares mi amigo llevó agua para todos. Se convirtió en nuestro paisaje favorito a mitad de camino.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-090",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La banda de Valencia dejó tocar el triángulo a mi hija. Nunca había visto una figura geométrica recibir tanto orgullo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-091",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi primo vallisoletano cocinó por primera vez. La tortilla salió torcida; todos nos sentamos un poco de lado.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-092",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En la sobremesa de mi familia madrileña los silencios duran poco: siempre aparece alguien con ganas de compartirlos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-093",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En la fiesta de nuestro barrio zaragozano, la rifa me dio una cesta. Mis vecinos se encargaron de que pesara conversación.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-094",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi abuelo puso nombres a los tomates de su huerta murciana. El bocadillo de hoy venía muy bien presentado.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-095",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En el paseo de la Concha, mi hija reunió conchas para regalarnos. El mar aceptó cobrar en saltos de alegría.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-096",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi amigo toca la guitarra en Granada. Yo paso las páginas: nuestro dúo reparte el talento con prudencia.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-097",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi abuela sevillana preparó torrijas para «unos pocos». La fuente entiende que tenemos una familia mucho más grande.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-098",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La plaza de mi pueblo burgalés tiene mala cobertura. Las noticias llegan igual, pero con nombre y saludo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-099",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En Reyes, mi sobrino envolvió un abrazo en papel. Fue el único regalo que mejoró al abrirse.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-100",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En Córdoba, una vecina llama «chiquitines» a sus macetas gigantes. El cariño nunca consulta una cinta métrica.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-101",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi padre guardó el mapa del Camino. Señaló primero las personas que nos ayudaron; los pueblos vinieron después.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-102",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En la feria del libro de Sevilla, mi madre pidió una dedicatoria. Yo agradecí que también escribieran dentro del ejemplar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-103",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi hermano cortó jamón en nuestra cena extremeña. Cada loncha fina era un pequeño triunfo contra su impaciencia.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-104",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En casa de mis tíos de Soria, la manta del sofá tiene más invitados habituales que la habitación de huéspedes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-105",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi hija decoró el abanico para la feria. Ahora el aire nos llega con dibujos de toda la familia.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-106",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi huerto de Valencia dio dos fresas. Hicimos una degustación tan solemne que parecían una cosecha histórica.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-107",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En el autobús de Málaga, un desconocido me avisó de mi parada. Mi despiste volvió a casa bien acompañado.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-108",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi abuela visitó una exposición de fotografías en León. A todas les faltaba, según ella, alguien conocido.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-109",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Compartimos migas en Extremadura. Mi tío insiste en que así los trocitos pequeños practican trabajo en equipo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-110",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En nuestra comunidad de Barcelona, el ascensor se estropeó. La vecina de arriba recibió compras y cinco visitas inesperadas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-111",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "El belén de mi sobrina tiene biblioteca. Dice que el viaje sería muy largo sin cuentos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-112",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En el patio de Jaén, mi padre puso una silla junto al olivo. Ya tienen sitio reservado para envejecer conversando.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-113",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi nieto subió al tren de Sóller y saludó a los árboles. El viaje le devolvía abrazos por todas las ventanas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-114",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi madre fue al museo en Bilbao por acompañarme. Ahora soy yo quien la acompaña a repetir.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-115",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En Navarra mi amiga me dio el último pimiento relleno. No hizo falta que dijera que me quería.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-116",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En la plaza de nuestro pueblo soriano, mi abuela cuenta anécdotas. Algunas ya se sientan solas en su banco.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-117",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi padre colocó luces navideñas en Cuenca. La estrella quedó torcida, orientada exactamente hacia nuestra ventana.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-118",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi hijo hizo un espantapájaros para la huerta. Los pájaros lo usan para reunirse; salió demasiado simpático.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-119",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En la estación de León, mi perro recibió a mi madre antes que yo. Tiene cuatro patas de ventaja emocional.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-120",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi hermana leyó su poema en Valladolid. El micrófono temblaba tanto que también parecía su primera vez.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-121",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi abuela asturiana pregunta si quiero repetir. Mi plato contesta acercándose antes que yo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-122",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En mi barrio de Madrid, el panadero recuerda cómo tomo el pan. Mi móvil aún me pregunta quién soy.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-123",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi hija regaló rosas de papel por Sant Jordi. Ha conseguido una primavera que no depende del riego.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-124",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Las macetas de nuestra azotea gaditana sobreviven al viento. Mi abuelo las llama su tripulación verde.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-125",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En el tren a Pamplona mi sobrina narró el paisaje. Nunca había sabido que tantas montañas eran amigas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-126",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi tío se apuntó a pintura en Valencia. Sus primeros árboles parecen felices de tener permiso para ser distintos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-127",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En el mercado de Logroño me dieron una pera de prueba. Me llevé fruta y la sensación de haber aprobado.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-128",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi vecina murciana se ofrece a cuidar las plantas. Mis plantas ya preguntan cuándo me voy de vacaciones.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-129",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La fiesta de nuestro pueblo alcarreño tuvo un baile infantil. Los adultos aprendimos que el ritmo es una sugerencia.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-130",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi abuelo cultiva acelgas en Valladolid. Dice que crecen mejor desde que les cuenta sus partidos de joven.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-131",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Paseamos por las murallas de Lugo con mi madre. Ella encontró más motivos para parar que toda la historia romana.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-132",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi librero de Cádiz me guarda los libros alegres. Dice que los lunes necesitan su propia medicina de papel.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-133",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "El arroz con leche asturiano de mi tía me devuelve a la infancia. La ración demuestra que entonces tenía mucho apetito.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-134",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En la sobremesa de mis primos manchegos, una foto antigua genera más capítulos que una serie.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-135",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi sobrino puso gafas al muñeco de su falla. Quería que pudiera ver lo bien que lo habíamos hecho.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-136",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En el patio cordobés, mi madre cambia las macetas de sitio. Las flores tienen una vida social muy activa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-137",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En el tranvía de Granada, mi abuelo me cuenta cómo era cada calle. El billete incluye viaje de ida y vuelta en el tiempo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-138",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi hijo prestó su cuento favorito a la biblioteca escolar de Sevilla. Lo visita para comprobar que tiene amigos.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-139",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi amiga de Tenerife sirvió gofio con orgullo. Yo intenté decirle cuánto me gustaba sin perder una cucharada.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-140",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi abuelo de Cuenca pone dos tazas aunque vaya solo a la cocina. Dice que el café sabe atraer compañía.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-141",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En la cabalgata del barrio, mi hija saludó al barrendero. Era quien recogía todas las estrellas de papel.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-142",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La parra de nuestro patio manchego da sombra compartida. Es la vecina que menos discute sobre dónde termina cada casa.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-143",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En el tren a Salamanca, mi hermano me dejó la ventana. Él ya conocía mi cara cuando veía un castillo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-144",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi abuela compró un cuaderno en la feria de Granada. Sus recetas merecían por fin edición de autora.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-145",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La tortilla familiar de Santander se decide por votación. Mi padre cuenta cada patata como un voto favorable.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-146",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En la plaza de mi pueblo navarro, mi nieta aprendió a montar en bici. Los bancos hicieron de grada.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-147",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Por Sant Jordi intercambiamos libros usados. Las dedicatorias nuevas saludaron educadamente a las antiguas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-148",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi padre plantó girasoles en su huerto leonés. Dice que así alguien reconoce siempre dónde está la luz.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-149",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En el paseo marítimo de A Coruña, compartimos un paraguas. La lluvia consiguió una reunión familiar compacta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-150",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "El coro de nuestro pueblo manchego aceptó a mi abuelo. Desde entonces canta hasta las instrucciones del microondas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-151",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi abuela de Jaén moja el pan en aceite y en consejos. El aceite es la parte que se termina antes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-152",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En casa de mis primos de Burgos siempre sobra una silla. Es su manera de reservar sitio al futuro.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-153",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi sobrino dibujó su deseo de Año Nuevo: otra mesa para que cupieran todos los que quiere.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-154",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En el patio malagueño, el gato vigila las macetas. Ninguna ha escapado en años; un profesional impecable.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-155",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En el bus de Oviedo, mi hija le dio las gracias al conductor y al botón que nos dejó bajar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-156",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En el museo de Valladolid, mi padre explicó una pintura a su nieta. Ella corrigió amablemente el nombre del perro.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-157",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Compartimos buñuelos en Valencia. Los huecos del plato se llenaron de decisiones sobre quién merecía el siguiente.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-158",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Nuestro banco favorito de la plaza sevillana no tiene reserva. Mi abuelo le guarda sitio con puntualidad.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-159",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La peña de mi pueblo riojano hizo camisetas nuevas. Mi abuela pidió una para poder animarnos con uniforme.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-160",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi hijo regó la huerta murciana con su cubo de playa. El verano ya había encontrado otro empleo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-161",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi madre me recogió en Sants con bocadillos. El reencuentro venía convenientemente envuelto para llevar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-162",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En la biblioteca de Zaragoza, mi sobrino eligió un libro enorme: quería que el dragón tuviera espacio.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-163",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "El cocido madrileño de mi padre llega por entregas. Cada plato anuncia que la conversación puede continuar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-164",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En nuestra sobremesa alicantina, hasta quien dice «me voy» recibe un turno más de cariño.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-165",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi hija puso una biblioteca en miniatura junto al belén. El pastor ahora tarda porque termina un capítulo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-166",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En el patio de Córdoba, mi abuelo reconoce mis pasos. Las flores reciben el saludo por adelantado.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-167",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En el tren a Mérida, mi nieta dibujó nuestros billetes. Según ella, también debían tener una cara contenta.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-168",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi madre salió del Prado con ganas de pintar. El primer retrato fue mío; me permitió tener la nariz de siempre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-169",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En Bilbao, mi amigo me guardó el pintxo más bonito. Yo lo admiré durante un tiempo prudente de medio segundo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-170",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi vecina de Murcia me devolvió el táper lleno. La tapa ya entiende que el vacío es algo provisional.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-171",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En la fiesta mayor de mi barrio barcelonés, mi abuelo bailó sentado. El ritmo también admite puertas de entrada cómodas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-172",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La maceta de mi ventana en Cádiz se inclina hacia dentro. Sospechamos que le gusta escuchar las sobremesas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-173",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En el paseo del Retiro, mi sobrino repartió nombres a los patos. Ahora los domingos visitamos a personas importantes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-174",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Mi abuelo aprendió a usar la biblioteca digital de León. Aun así, le da las gracias al ordenador al devolver un libro.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-175",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "En Galicia mi prima hizo empanada para despedirme. Mi mochila volvió con más hogar que equipaje.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-176",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "La mesa de mi familia en Soria es extensible. Se ve que el carpintero conocía bien nuestras despedidas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-wholesome-177",
+    "collection": "es-es-everyday",
+    "category": "wholesome",
+    "format": "oneliner",
+    "text": "Por Sant Jordi, mi nieta me dio una rosa dibujada dentro de un libro. Dice que así ninguno viaja solo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Warm incongruity or an affectionate reversal. Original AI-authored draft; no native human review claimed."
+  }
+]

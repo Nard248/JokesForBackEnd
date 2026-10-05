@@ -1,0 +1,36 @@
+{
+  "method": "Within each language: NFKC/casefold word trigrams; candidate pairs share at least 4 trigrams, have character-length ratio at least0.60, and difflib.SequenceMatcher similarity at least0.76. Exact normalized fingerprints are checked separately by the corpus validator.",
+  "limitations": "Textual screening does not certify semantic uniqueness, global originality, native fluency, or comedic quality.",
+  "languages": [
+    {
+      "language": "nb",
+      "records": 1800,
+      "candidates": []
+    },
+    {
+      "language": "fr",
+      "records": 1800,
+      "candidates": []
+    },
+    {
+      "language": "de",
+      "records": 1800,
+      "candidates": []
+    },
+    {
+      "language": "hy",
+      "records": 1800,
+      "candidates": []
+    },
+    {
+      "language": "it",
+      "records": 1800,
+      "candidates": []
+    },
+    {
+      "language": "es",
+      "records": 1800,
+      "candidates": []
+    }
+  ]
+}

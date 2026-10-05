@@ -1,0 +1,27 @@
+# Spanish corpus: regional context and editorial decisions
+
+Research date: 27 September 2026. The `es-ES` collection contains original Spanish-language AI drafts situated in Spain. It does not claim to represent all Spanish speakers, all Spanish cultures, or all languages spoken in Spain. Native human editorial review has not taken place. Existing 200 baseline records retain their IDs and text; the expansion adds 1,600, reaching 200 records in each of nine primary categories.
+
+## Language and place
+
+Spanish is pluricentric; Spain is multilingual. Keep language, country, regional context and joke mechanism separately interpretable. A Spanish-language joke set at Sant Jordi remains Spanish-language content about a Catalan celebration, not evidence that Catalan is a dialect or that Catalan humor has been fully covered. The Instituto Cervantes explicitly describes cultural work as including Spain's different cultures and languages. Preserve names such as Sant Jordi and pintxos, accents, inverted punctuation and idiomatic Spanish register. Do not caricature accents or imply that one variety is incorrect. [Instituto Cervantes: languages and diversity](https://cultura.cervantes.es/espanya/es/tributo-a-la-diversidad-ling%C3%BC%C3%ADstica/159222).
+
+## Concrete topic brief
+
+Use local social situations rather than an abstract national personality: family conversations around a meal, neighborhood plazas, public transport, food markets, book events and apartment communities. Mix affectionate misunderstandings, self-deprecation, literalized idioms and institutional satire. Technical and surreal categories still need a concrete cultural anchor in the actual joke text. A country's name appended to an otherwise interchangeable joke is a weak anchor and should be avoided where richer detail is available.
+
+Food offers varied settings: Basque pintxos, Valencian rice dishes, Galician empanada, Córdoba salmorejo, Canary Island papas and mojo, Asturian dishes, Madrid bocadillos, Catalan bread with tomato and Andalusian markets. Spain's tourism body describes different regional tapas practices; it does not establish that every tapa is free or every region uses the same term. Keep invented menu arguments personal, without presenting recipes as a single legally fixed national standard. Do not repeat disputed origin legends as fact. [Official tourism: regional tapas](https://www.spain.info/es/top/arte-tapear-espana/).
+
+Seasonal contexts should be precisely named. Valencia's Fallas include locally made satirical figures and craft work: useful settings are making, viewing and discussing the figures, not jokes promoting dangerous fireworks. Córdoba's patio festival involves shared domestic spaces and their care: use neighbors, watering, flowers and the contrast between presentation and ordinary life. [UNESCO: Fallas](https://ich.unesco.org/es/RL/la-fiesta-de-las-fallas-de-valencia-00859), [UNESCO: Córdoba patios](https://ich.unesco.org/en/RL/fiesta-of-the-patios-in-cordova-00846).
+
+Sant Jordi provides books, roses, dedications and crowded bookstalls. Do not impose a gender rule about who gives which gift. New Year's grapes provide counting, timekeeping and family anticipation; in child-safe jokes, use counting, drawings or pretend clocks rather than encouraging children to swallow whole grapes quickly. December 28 is the relevant local practical-joke occasion, but invented scenarios should be harmless. [Official tourism: Sant Jordi](https://www.spain.info/es/descubrir-espana/fiesta-sant-jordi-barcelona/), [New Year's Eve](https://www.spain.info/es/descubrir-espana/nochevieja-espana/), [December celebrations](https://www.spain.info/es/consulta/fiestas-diciembre-espana/).
+
+## Mechanisms and boundaries
+
+Wordplay must work in Spanish rather than transplant an English pun. Useful mechanisms include polysemy (banco, planta, cuenta, letra), figurative expressions made literal, register collisions and a reversal between speaker and object. A Cervantes-hosted intercultural teaching paper emphasizes pragmatic and contextual interpretation; this supports adding cultural notes without claiming jokes are automatically understandable outside their setting. [Cervantes teaching paper: intercultural humor](https://cvc.cervantes.es/ensenanza/biblioteca_ele/publicaciones_centros/PDF/napoles_2008/14_diez.pdf).
+
+Avoid national laziness, stupidity, wealth or cleanliness stereotypes; avoid presenting siesta, bullfighting, flamenco or any regional practice as universal. Do not target minority languages or identities, migrations, religious observance or recent tragedy. Dark material remains mild reflection on time, abandoned plans and objects. Edgy material targets administration, commercial exaggeration, workplace jargon and technology. No source joke text is copied; sources establish contexts only.
+
+## Application and review
+
+Country and language filters close a real discovery gap; regional notes improve search relevance without pretending the present single collection is a complete cultural taxonomy. Content Quality and Child Safety remain ahead of catalog count. Measure the effect through Weekly Active Searchers, language-filter searches, search-to-reveal rates, empty-result rates and reports of mistranslation or stereotyping. Native editors should sample every category and regional context before any claim of native review, particularly puns and region-specific terms. Never turn the present expansion count into a claim that every culture within Spain has 200 independently validated jokes.

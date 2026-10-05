@@ -1,0 +1,2138 @@
+[
+  {
+    "id": "intl-v2-es-kid-safe-001",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Dibujé un dragón para Sant Jordi. Mi goma pidió primero una armadura.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-002",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mi tortilla de patatas salió cuadrada. La sartén quiere saber quién cambió las reglas.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-003",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el metro de Madrid mi peluche no pierde paradas: viaja pegado a la ventana.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-004",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "El geranio de nuestro patio cordobés creció mucho. Le estoy buscando una maceta de hermano mayor.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-005",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el Prado pregunté por los cuadros recién nacidos. Me mandaron al taller de pintura infantil.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-006",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La plaza de mi pueblo tiene eco. Es el único vecino que nunca olvida devolver el saludo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-007",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "El churro cayó al chocolate. Fue un chapuzón con desayuno incluido.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-008",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mi ninot de plastilina lleva paraguas. En nuestra falla de juguete solo llueve confeti.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-009",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "El tren de Sóller pasa entre árboles. Parece que el campo le ha organizado un pasillo de bienvenida.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-010",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En mi cole de Málaga dibujamos el mar. El azul fue el primer lápiz que pidió vacaciones.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-011",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La ensaimada mallorquina tiene vueltas. Me la comí empezando por donde se había perdido.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-012",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mi espantapájaros de Murcia lleva sombrero. Los gorriones creen que hemos abierto una escuela elegante.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-013",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "El libro que compré en Sant Jordi tiene dragones. Lo guardo lejos del papel de los deberes.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-014",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mi abuela de León dice que estoy alto. El marco de la puerta está empezando a tomar notas.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-015",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En nuestra cabalgata de juguete, el rey mago reparte botones. Mi oso necesitaba uno desde hace meses.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-016",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "El tranvía de Zaragoza tiene campana. Yo creía que anunciaba el recreo de los coches.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-017",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "A mi bocadillo de calamares se le salió un aro. Debía de querer jugar al lanzamiento.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-018",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La tomatera valenciana tiene tutor. Espero que no le ponga deberes de matemáticas.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-019",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En la biblioteca de Cádiz devolví un libro triste. Ya llevaba dentro un dibujo para animarlo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-020",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mi maestra de Burgos pidió una frase con historia. Escribí lo que pasó con mi merienda.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-021",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mi abanico de feria sevillana está lleno de estrellas. Ahora me da aire del espacio.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-022",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Las papas arrugadas canarias me gustan. Son patatas que ya conocen muchos cuentos.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-023",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el funicular de Bilbao pregunté si la ciudad también bajaba cuando nosotros subíamos.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-024",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "El limonero de mi patio de Jaén tiene frutos verdes. Todavía está ensayando el amarillo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-025",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el museo de cerámica de Talavera vi platos enormes. Algún gigante se ha quedado sin vajilla.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-026",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mi abuelo de Soria juega al ajedrez. Yo vigilo que los caballos no se coman el tablero.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-027",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mis uvas de Nochevieja son de papel. Puedo contar el año sin manchar el cuaderno.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-028",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "El pimiento de Navarra está relleno. Ha llegado al plato con la mochila por dentro.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-029",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el tren a Segovia vi un túnel. La montaña nos dejó pasar por su bolsillo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-030",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el cole de Valencia estudiamos naranjas. Mi desayuno pidió que reconocieran sus créditos.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-031",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La empanada gallega guarda cosas dentro. Mi madre no acepta que la llame estuche de comida.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-032",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "El patio de Córdoba tiene muchas macetas. Yo les paso lista cuando mi abuela se distrae.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-033",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En la feria del libro de Madrid compré un cuento pequeño. El monstruo venía doblado.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-034",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En la sobremesa de mi familia pregunté cuándo venía la debajomesa. Mi gato ya la estaba celebrando.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-035",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "El belén de casa tiene un astronauta. El viaje era largo y alguien debía revisar las estrellas.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-036",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el ferry de Cádiz mi osito miró el agua. Le recordé que su pasaporte no es lavable.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-037",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Los buñuelos de Valencia desaparecieron del plato. La investigación tiene todos los dedos azucarados.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-038",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Planté una lechuga en el huerto de Murcia. Mi caracol cree que le he construido una casa.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-039",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el museo de Bilbao el edificio brillaba. Mi hermana preguntó quién tenía un estropajo tan grande.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-040",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Nuestro colegio de Sevilla hizo una biblioteca. Los cuentos ya tienen más dormitorios que nosotros.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-041",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mi rosa de Sant Jordi es azul. El dragón del dibujo dice que combina con sus zapatillas.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-042",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La croqueta se abrió en el plato. Me enseñó su currículum de pollo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-043",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "El metro de Barcelona me llevó por debajo de la ciudad. Volví a casa con una aventura subterránea y hambre.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-044",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mi girasol de Valladolid mira el sol. Yo le he avisado de que no copiaré sus deberes de astronomía.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-045",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "El tambor de la banda valenciana tiene barriga. Mi primo asegura que está lleno de marchas.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-046",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En nuestra plaza de Zamora aprendí a patinar. El suelo quiso saludarme demasiado pronto.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-047",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En la fiesta del pueblo me pintaron un tigre. Mi merienda exigió cambiar de nombre a presa.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-048",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La horchata de Valencia tiene pajita. Mi abuelo dice que no es una antena para escucharla mejor.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-049",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "El bus de Santander dobla esquinas. Mis dibujos se arrugan cuando intento hacer lo mismo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-050",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La profe de Granada pidió silencio. Le dibujé uno, porque decirlo lo habría estropeado.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-051",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "El salmorejo cordobés lleva cosas por encima. Es sopa con vecinos en la azotea.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-052",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mi maceta gaditana se inclina con el viento. Está practicando saludos al mar.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-053",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En la biblioteca de León pregunté si los diccionarios se aprenden todas las palabras de memoria.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-054",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mi abuela manchega guarda botones. Dice que algún día volverán sus camisas a buscarlos.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-055",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En la cabalgata saludé a un camello de cartón. Tenía cara de agradecer un vaso sin agua.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-056",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "El tranvía de Tenerife pasó junto a nosotros. Mi perro cree que es una correa enorme sin dueño.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-057",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "El queso manchego tiene agujeritos. Metí una mirada por uno para buscar al ratón arquitecto.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-058",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La parra del patio toledano hace sombra. Es un paraguas que también prepara merienda.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-059",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el teatro de Mérida mi voz tuvo eco. Por fin alguien repitió mi papel sin equivocarse.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-060",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En mi cole de Oviedo dibujé lluvia. El papel pidió una chaqueta impermeable.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-061",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "El ninot que hice en Valencia tiene tres ojos. Así encontrará antes las piezas que se me pierden.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-062",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La tostada con aceite de Jaén brilla. Mi madre dice que no hace falta llevarla al joyero.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-063",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el tren de cercanías de Madrid pregunté por las lejanías. Quería un viaje con más bocadillo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-064",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La alcachofa de nuestra huerta murciana parece un castillo. La cuchara aún no sabe por dónde entrar.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-065",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el taller de cerámica de Manises hice un cuenco. Mi gato lo ha contratado para beber.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-066",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mi abuelo de Teruel me enseñó las estrellas. Yo le enseñé dónde guardo mis pegatinas de las buenas.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-067",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Para Sant Jordi dibujé un libro dentro de una rosa. El caracol tendrá una biblioteca perfumada.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-068",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "El roscón de Reyes es redondo para que todas las porciones puedan sentarse en familia.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-069",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En las murallas de Lugo di toda la vuelta. La piedra llevaba siglos esperando que acabara mi carrera.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-070",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el colegio de Salamanca aprendimos sobre castillos. Mi estuche pidió un foso para proteger los lápices.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-071",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Las migas extremeñas son tan pequeñas que necesitan hacer equipo para llenar la cuchara.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-072",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mi planta del balcón barcelonés crece hacia fuera. Creo que quiere ver la fiesta mayor.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-073",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el Prado vi un caballo pintado. Le susurré que el marco tenía una puerta imaginaria.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-074",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En la plaza de Logroño encontré una pluma. La paloma perdió el lápiz antes del dictado.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-075",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La guirnalda de nuestra verbena hace curvas. Le pregunté si estaba bailando sin música.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-076",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el teleférico de Madrid le dije a mi peluche que no mirara abajo si se le mareaban los botones.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-077",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mi pincho de tortilla tenía un palillo. Mi hermano lo llamó patata con bandera.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-078",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "El olivo de Jaén es más viejo que mi abuelo. Seguro que también conoce el mando de la tele.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-079",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En la feria del libro de Sevilla pedí un cuento que no acabara. La librera me dio ganas de otro.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-080",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "El mapa de España del cole no cabía en mi carpeta. Las islas pidieron viajar en un bolsillo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-081",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mi disfraz de carnaval de Cádiz es de nube. He pedido que no me guarden en el armario soleado.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-082",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "El pintxo bilbaíno es pequeño. Mi hermano cree que está esperando a cumplir años para ser bocadillo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-083",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el AVE pregunté por las plumas. Mamá me dijo que aquel pájaro solo coleccionaba ventanas.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-084",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mi tomate de Almería se puso rojo. Debe de haber oído que íbamos a fotografiarlo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-085",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La guitarra que vimos en Granada tenía seis cuerdas. Mi cometa solo lleva una y ya se cree importante.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-086",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mi abuela de Cuenca tiene una silla favorita. Yo sospecho que es la que mejor escucha.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-087",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mi belén tiene un paso de cebra. Los pastores también merecen cruzar tranquilos.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-088",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "El sobao cántabro me dejó migas en la camiseta. Quería asegurarse de que no olvidara el desayuno.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-089",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el funicular de Bilbao saludé a las casas altas. Normalmente nadie llega a sus timbres.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-090",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En mi clase de Murcia plantamos semillas. Ahora los deberes también necesitan regadera.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-091",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "El chocolate con churros es mi experimento favorito: todo lo que sale bien se puede repetir.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-092",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "El cactus de mi terraza malagueña no acepta abrazos. Le mando besos a una distancia profesional.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-093",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En la biblioteca de Zaragoza pedí un libro con lobos vegetarianos. Las ovejas merecen algún domingo libre.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-094",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En la plaza de Ávila corrí mucho. La muralla se quedó: estaba guardando mi sitio.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-095",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En Fallas hice un muñeco de mi mochila. Lo difícil fue dibujarla sin que pareciera cansada.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-096",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el ferry de Santander pregunté si las olas también necesitaban billete de vuelta.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-097",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La naranja valenciana trae gajos para compartir. La mandarina hizo el mismo plan en tamaño excursión.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-098",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mi regadera del huerto navarro tiene flores pintadas. Riega primero a sus compañeras de trabajo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-099",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el museo de Valladolid vi una armadura. Parecía un robot al que le habían quitado el cargador.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-100",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Nuestro cole de Córdoba hizo una exposición. Mi dibujo pidió quedarse cerca de la puerta para recibir visitas.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-101",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En la cabalgata mi oso quería recoger caramelos. Le expliqué que sus bolsillos los cose otra persona.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-102",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "El bocadillo de calamares de Madrid tiene anillos. Mi hermano preguntó cuándo se casaba el pan.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-103",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "El tranvía de Granada pasó otra vez. Mi hija dice que le gusta repetir porque aprende rápido.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-104",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mi albahaca del balcón sevillano perfuma los deberes. Por fin el cuaderno huele a algo aprobado.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-105",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el museo de Altamira pregunté si los bisontes dormían cuando apagaban la luz.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-106",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En la plaza de nuestro pueblo de Huesca, mi sombra corre conmigo sin gastar zapatillas.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-107",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mi rosa de papel para Sant Jordi no tiene espinas. Quería que pudiera abrazar también al libro.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-108",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "El turrón duro pidió permiso antes de entrar en la merienda. Los dientes convocaron una reunión.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-109",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el tren a León mi mochila ocupó mi sitio. Le recordé quién había comprado los bocadillos.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-110",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mi profe de Bilbao pidió una idea brillante. Le dibujé la farola de la puerta del colegio.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-111",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La ensaimada parece un caracol. Es el único que consigue adelantar a todos cuando aparece la merienda.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-112",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "El patio de Córdoba tiene flores en las paredes. Las plantas han aprendido a poner cuadros.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-113",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el taller de alfarería de Toledo hice un plato hondo. El plano salió cuando me senté sin querer.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-114",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En la sobremesa de Navidad conté un chiste. Mi abuela se rio antes: dice que confía en mí.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-115",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Nuestro dragón de Sant Jordi lleva bufanda. No quiere resfriarse y estornudar confeti.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-116",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el tren de Sóller hay tantas vistas que mis ojos pidieron una mochila para llevárselas.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-117",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La patata de mi tortilla no quiere ir sola. Ha invitado a todos los huevos de la nevera.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-118",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La calabaza de la huerta murciana creció enorme. Le pregunté si necesitaba cambio de cuna.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-119",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En la librería de Pamplona elegí un cuento de piratas. Lo sujeté fuerte para que no zarpara.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-120",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En mi colegio de Tarragona tenemos un reloj muy serio. Nunca acepta que falten dos minutos para el recreo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-121",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La estrella de nuestro belén está pegada con celo. La astronomía también necesita material escolar.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-122",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La empanada gallega llegó cerrada. Mi hermana pidió permiso para abrir el regalo del almuerzo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-123",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el metro de Madrid me aprendí una línea. Mi maestra dice que no sirve para el poema.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-124",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Las aceitunas del olivo de Jaén llevan hueso. Mi hermano está buscando dónde les quedaron los brazos.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-125",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el Prado vi un cuadro de frutas. Pregunté si lo guardaban en la nevera por la noche.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-126",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mi abuelo de Palencia tiene bigote. Cuando bebe leche, le sale un segundo bigote de vacaciones.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-127",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La banda de nuestra fiesta valenciana toca fuerte. Mi globo dice que puede sentir la música por dentro.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-128",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La horchata se acabó antes que el fartón. Mi merienda ha perdido su piscina.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-129",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "El bus de Málaga frenó suavemente. Mi peluche hizo una reverencia: cree que siempre hay que dar las gracias.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-130",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el colegio de Soria dibujamos un pueblo. Yo añadí una heladería para mejorar la geografía.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-131",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Los pimientos rellenos de Navarra vienen con secreto. La cuchara es una detective bastante impaciente.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-132",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el patio granadino puse una casita para pájaros. El gato pidió verla y le dije que no era su barrio.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-133",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el museo de Bilbao busqué cuadros pequeños. Quería encontrar la clase de infantil del arte.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-134",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La fuente de la plaza de Salamanca habla todo el día. Lo raro es que nunca tiene sed.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-135",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mi dibujo de las campanadas tiene doce campanas. No quería que una sola acabara agotada.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-136",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el tren a Burgos saludé a una vaca. Parecía ocupada revisando el césped.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-137",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mi tostada con tomate de Barcelona tiene color de semáforo. El hambre siempre la ve en verde.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-138",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "El girasol de mi huerto de León es más alto que yo. Debe de haberse comido sus propias pipas.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-139",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En la biblioteca de Murcia elegí un cuento de lluvia. Lo metí en una bolsa por educación.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-140",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mi clase de Sevilla visitó un mercado. Los números tenían precio y olían a melocotón.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-141",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En nuestro carnaval de Cádiz soy un lápiz. Mamá dice que no me tumbe encima de los dibujos ajenos.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-142",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "El salmorejo se quedó en la cuchara. Era el primero de la fila para conocer mi pan.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-143",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En la estación de Atocha mi tren tenía número. Pregunté si también se sabía las tablas.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-144",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mi naranjo valenciano suelta hojas. Está repartiendo invitaciones para que empiece el otoño.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-145",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En la feria de Madrid compré un libro de gigantes. Lo guardé arriba para que no se sintiera bajito.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-146",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mi abuelo de Zamora cuenta ovejas para dormir. Yo le propuse pingüinos para que no se repita.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-147",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La rosa de Sant Jordi perdió un pétalo. Le hice una curita de papel rojo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-148",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mi croqueta se escondió bajo una hoja de lechuga. El camuflaje no funciona si hueles a cena.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-149",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "El tranvía de Zaragoza suena al llegar. Es el único invitado que trae todas sus sillas.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-150",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el colegio de Valencia hicimos un volcán. La conserje pidió que no entrara en erupción durante la limpieza.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-151",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Las papas con mojo de Tenerife alegraron el plato. Hasta el tenedor se puso a bailar entre ellas.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-152",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el huerto de Navarra planté zanahorias. Son las verduras que juegan mejor al escondite.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-153",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el teatro de Granada me tocó hacer de árbol. Por fin pude quedarme quieto con permiso del profesor.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-154",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La plaza de mi pueblo manchego tiene una estatua. Mi hermano cree que lleva ganando al escondite muchos años.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-155",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Puse un dragón en la falla de cartón. Le di un libro para que esperara tranquilo la exposición.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-156",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el paseo marítimo de Gijón mi cometa quiso subir. La cuerda le recordó que aún era pequeña.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-157",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La tortilla se dio la vuelta. Yo tardé mucho más en aprender esa parte de gimnasia.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-158",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "El geranio cordobés estrenó flor. Mi hermana le cantó cumpleaños feliz por si acaso.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-159",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mi cuento de la biblioteca de Cuenca tiene un mapa. Así el lobo no tiene excusa para entrar donde no debe.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-160",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La clase de música de Bilbao usa claves. Mi estuche ha pedido una cerradura para estar a la altura.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-161",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En Reyes envolví una canción para mi abuela. El paquete sonaba incluso antes de abrirlo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-162",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La paella valenciana parecía un sol. El tenedor se declaró astronauta de arroz.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-163",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el tren a Cáceres conté ventanas. Mi hermano contó galletas: cada científico elige su campo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-164",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mi planta del patio de Sevilla bebe agua de lluvia. Dice que es reparto a domicilio.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-165",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el museo de cerámica de Talavera vi jarrones altos. Las flores deben entrar usando escalera.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-166",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La sobremesa familiar dura tanto que mi dibujo de un bebé ya tendría que empezar el colegio.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-167",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En la fiesta del barrio barcelonés me disfracé de libro. Mi amiga intentó pasarme la página de la camiseta.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-168",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "El queso manchego está curado. Le pregunté si ya podía volver al patio del colegio.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-169",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el funicular de Bilbao mi globo quiso adelantarse. Lo nombramos guía con correa.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-170",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mi cole de Cádiz pidió traer una hoja. Llevé una de papel y otra del árbol para no discutir con las estaciones.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "A named Spanish school or child-learning context; no universal school policy is asserted. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-171",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "El churro salió torcido. Mi abuelo dice que buscaba el chocolate por el camino más entretenido.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-172",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En Córdoba mi maceta tiene plato. Le pregunto a veces si quiere un tenedor pequeñito.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-173",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En la biblioteca de Oviedo el libro de animales rugía en mi cabeza. Me puse a leer más bajito.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish books, music, visual arts, or museum setting; characters are fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-174",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mi abuelo de Segovia dice que el acueducto no se cansa. Tiene más piernas que nosotros, así cualquiera.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish plaza, neighborhood, family, or sobremesa setting with a fictional individual reversal. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-175",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En Sant Jordi le dibujé gafas al dragón. Ya no confundirá princesas con pasteles.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Named Spanish seasonal or local celebration; regional customs are not universalized. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-176",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En el metro de Barcelona mi sombra desapareció un rato. Seguro que encontró asiento antes que yo.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Named Spanish transport, walking route, or local landmark; service behavior is fictional. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-177",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "La ensaimada se enrolla sola. Mi bufanda lleva años sin aprender esa parte.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Named Spanish regional food or market context; no single dish represents every region. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-es-kid-safe-178",
+    "collection": "es-es-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "En la huerta de Murcia planté un cartel: «Aquí crecerá una sorpresa». Las zanahorias están siguiendo las instrucciones.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Spanish patio, huerta, terrace, coast, or nature context with local detail. Child-friendly imagination or misunderstanding. Original AI-authored draft; no native human review claimed."
+  }
+]

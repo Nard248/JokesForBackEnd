@@ -23,6 +23,7 @@ from rest_framework.test import APIClient
 from jokes.models import (
     AgeRating,
     ContextTag,
+    Country,
     CultureTag,
     Format,
     Joke,
@@ -89,6 +90,7 @@ class JokeFeedN1RegressionTests(TestCase):
                 joke.tones.set(tones)
                 joke.context_tags.set(context_tags)
                 joke.culture_tags.set([culture])
+                joke.countries.set([Country.objects.get(code='ES')])
                 cls.jokes.append(joke)
         # Media on every other joke so get_media()'s media__asset prefetch
         # (and the N+1 it guards against) is actually exercised.
@@ -108,7 +110,7 @@ class JokeFeedN1RegressionTests(TestCase):
         blow this well past 100 queries for a 10-row page. After the fix:
         a small fixed number, independent of row count.
         """
-        with self.assertNumQueries(19):
+        with self.assertNumQueries(20):
             response = self.client.get('/api/v1/jokes/')
         self.assertEqual(response.status_code, 200)
         self.assertEqual(len(response.data['results']), PAGE_SIZE)
@@ -120,9 +122,9 @@ class JokeFeedN1RegressionTests(TestCase):
         query count -- the count must not scale with which/how many rows
         are being serialized.
         """
-        with self.assertNumQueries(19):
+        with self.assertNumQueries(20):
             resp1 = self.client.get('/api/v1/jokes/', {'page': 1})
-        with self.assertNumQueries(19):
+        with self.assertNumQueries(20):
             resp2 = self.client.get('/api/v1/jokes/', {'page': 2})
         self.assertEqual(len(resp1.data['results']), PAGE_SIZE)
         self.assertEqual(len(resp2.data['results']), PAGE_SIZE)
@@ -147,6 +149,7 @@ class JokeFeedN1RegressionTests(TestCase):
             self.assertEqual(row['age_rating']['slug'], 'all-ages')
             self.assertEqual(row['language']['code'], 'en')
             self.assertEqual(row['source']['name'], 'Feed N1 Test Source')
+            self.assertEqual([c['code'] for c in row['countries']], ['ES'])
             self.assertEqual(
                 sorted(t['slug'] for t in row['tones']), ['clean', 'dad-joke'],
             )

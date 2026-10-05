@@ -1,0 +1,2138 @@
+[
+  {
+    "id": "intl-v2-fr-dark-001",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mon CERFA est complet. Il ne lui manque plus qu'un avenir.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-dark-002",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le dernier TER m'a vu courir. Nous avons partagé un bref moment de séparation.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-dark-003",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La baguette de dimanche est devenue une arme contre mon lundi.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-dark-004",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "J'épargne mes RTT pour plus tard. Plus tard n'a toujours pas signé le contrat.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-dark-005",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le GPS m'a envoyé dans une traboule fermée. Même mes raccourcis ont renoncé.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-dark-006",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le kouign-amann m'a offert un instant de bonheur. Mon pantalon conserve le dossier.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-dark-007",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mon pain d'épices sent Noël. Nous sommes en mars et lui aussi semble dépassé.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-dark-008",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La chaise bleue regarde la mer toute la journée. J'ai choisi le mauvais diplôme.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-dark-009",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La galette m'a fait roi. Mon premier décret a été de sortir les poubelles.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-dark-010",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mon Bescherelle a survécu à mes ambitions. Il connaît encore tous les futurs possibles.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-dark-011",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "observ",
+    "text": "À la pétanque, même le cochonnet garde ses distances avec mes projets.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-dark-012",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mon studio parisien est lumineux. Dès que j'ouvre le frigo.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-dark-013",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le soufflé s'est effondré avant les invités. Il a toujours eu une excellente intuition sociale.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-dark-014",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "observ",
+    "text": "Au Mont-Saint-Michel, même la mer obtient le droit de se retirer.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-dark-015",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "FranceConnect confirme mon identité. C'est déjà plus que mon entretien annuel.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-dark-016",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le TGV a atteint sa destination. Moi, je consulte toujours mon plan de carrière.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-dark-017",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Ma baguette rassit plus vite que mes regrets. Au moins, elle sait avancer.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-dark-018",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mon compte épargne-temps ressemble à une succession que je me prépare à moi-même.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-dark-019",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le funiculaire monte tout le monde. La promotion interne pourrait prendre des notes.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-dark-020",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La galette complète est la seule chose achevée de ma semaine.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-dark-021",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le kougelhopf a un vide au centre. Le pâtissier appelle cela une forme réussie.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-dark-022",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La Promenade des Anglais longe la mer. Mon trajet longe surtout mon découvert.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-dark-023",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La couronne en carton s'est déchirée. Une destitution rapide, sans même changer de chaise.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-dark-024",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mon cahier Seyès est resté bien droit. C'est le parcours scolaire qui a zigzagué.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-dark-025",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le Tour de France repasse près de chez moi. Mes bonnes résolutions non.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-dark-026",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "observ",
+    "text": "À Châtelet, j'ai trouvé la sortie. J'ai perdu le souvenir de la personne que j'étais en entrant.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-dark-027",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La tarte Tatin a réussi sa chute. Je trouve cette compétence offensante.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-dark-028",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La dune du Pilat entre dans mes chaussures. Même le paysage réclame une place dans ma vie.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-dark-029",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mon CERFA est « en cours ». Il mène une existence plus stable que la mienne.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-dark-030",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mon Navigo se renouvelle automatiquement. Ma motivation préfère attendre un rappel.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-dark-031",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La dernière baguette est partie devant moi. Le destin avait simplement plus de monnaie.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-dark-032",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mes titres-restaurant expirent avant mon envie de démissionner.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-dark-033",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "observ",
+    "text": "Dans le bouchon lyonnais, je me sens enfin bloqué pour une bonne raison.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-dark-034",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le fest-noz tourne sans moi. Une démonstration festive de ma dispensabilité.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-dark-035",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Les marchés de Noël ferment. Mon besoin de récompense ne respecte aucune saison.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-dark-036",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La socca refroidit. Même mon réconfort impose des délais.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-dark-037",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "J'ai gardé ma couronne de galette. Le carton se souvient mieux de mes réussites que moi.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-dark-038",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le bac de philosophie m'a demandé qui j'étais. Vingt ans après, le formulaire relance.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-dark-039",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le cochonnet a un objectif clair : rester là. Il est pourtant plus recherché que moi.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-dark-040",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le métro annonce le terminus avec assurance. J'aimerais cette confiance dans mes conclusions.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-dark-041",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mon camembert possède une date limite. Mes hésitations bénéficient d'un renouvellement permanent.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-dark-042",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le pont du Gard tient depuis des siècles. Mon étagère a refusé un dictionnaire.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-dark-043",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La case « sans objet » du CERFA résume étonnamment bien ma journée.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-dark-044",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le TER passe devant mon ancien bureau. Même le paysage sait rappeler les erreurs.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-dark-045",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le pain de campagne a quitté la campagne. Il s'en sort mieux que mes vacances.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-dark-046",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La RTT est validée. J'ai réservé ce jour pour récupérer des autres.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-dark-047",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Une traboule me fait gagner trois minutes. Je les dépense immédiatement à chercher la sortie.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-dark-048",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le beurre salé améliore tout, sauf la lettre de relance.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-dark-049",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le bretzel s'est cassé. Mon nœud au ventre reste remarquablement solide.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-dark-050",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Une chaise bleue m'attend à Nice. Elle ne m'envoie jamais de nouvelles, mais c'est déjà une relation saine.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-dark-051",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La fève est un minuscule espoir entouré d'une quantité raisonnable de dettes caloriques.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-dark-052",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mon vieux cahier de poésie promettait le printemps. Mon agenda professionnel n'en parle pas.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-dark-053",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "observ",
+    "text": "À la pétanque, le mètre ruban mesure exactement la taille de ma déception.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-dark-054",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Les bouquinistes vendent des vies complètes pour quelques euros. La mienne n'a pas encore de quatrième de couverture.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-dark-055",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le millefeuille s'effondre dès qu'on le touche. Il a compris la gestion de la pression.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-dark-056",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "observ",
+    "text": "À Carnac, les pierres ne bougent pas. Une carrière exemplaire dans la continuité.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-dark-057",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La mairie conserve mon acte de naissance. Quelqu'un avait donc prévu de garder les preuves.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-dark-058",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "À Carnac, les pierres sont restées debout des siècles. Mon bureau réglable demande déjà une réparation.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-dark-059",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La tradition coûte un peu plus cher. Mon passé facture maintenant des frais de service.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-dark-060",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mon pot de départ a révélé que j'étais formidable. Il fallait donc partir pour obtenir l'information.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-dark-061",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La Saône coule tranquillement. Elle ne consulte pas les offres d'emploi à minuit.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-dark-062",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le kouign-amann a rempli le vide. Le reste de ma vie préfère rester conceptuel.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-dark-063",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La maison à colombages assume toutes ses poutres apparentes. Je cache encore mes brouillons.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-dark-064",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "observ",
+    "text": "À Nice, le soleil se lève gratuitement. Le logement compense généreusement.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-dark-065",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La crêpe est retombée dans la poêle. Même elle n'a pas réussi à changer de milieu.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-dark-066",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mon Bescherelle sait conjuguer « réussir ». Nous entretenons une relation surtout théorique.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-dark-067",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La voiture-balai du Tour a une mission claire. Je lui envie cette définition de poste.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-dark-068",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La tour Eiffel scintille cinq minutes. Mon enthousiasme professionnel peut tenir moins longtemps.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-dark-069",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le soufflé me ressemble : impressionnant tant qu'on ne retarde pas le dîner.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-dark-070",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le phare de Cordouan travaille toutes les nuits. Au moins, on reconnaît son utilité à distance.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-dark-071",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "FranceConnect m'a déconnecté. Mon administration pratique la solitude numérique.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-dark-072",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le dernier métro ferme ses portes avec politesse. Le refus est plus cruel quand il sonne juste.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-dark-073",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La baguette a perdu sa chaleur. Elle n'a pourtant assisté à aucune réunion.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-dark-074",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mes RTT figurent dans un portail. Comme beaucoup de libertés, elles sont derrière une connexion.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-dark-075",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Guignol reçoit des applaudissements en disant ce qu'on lui fait dire. J'ai mal choisi mon secteur.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-dark-076",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Ma galette est complète. Ma candidature continue de demander des pièces.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-dark-077",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le kougelhopf conserve son trou après découpe. Certaines absences résistent vraiment à tout.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-dark-078",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La socca laisse des miettes. Mon week-end laisse surtout du linge.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-dark-079",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La couronne de l'Épiphanie m'allait bien. Je suis donc fait pour les responsabilités jetables.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-dark-080",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mon cahier de vacances n'a jamais connu de vacances. Je respecte ce précurseur du télétravail.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-dark-081",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le cochonnet part loin. Les boules ont au moins le droit de le suivre.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-dark-082",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Les loyers parisiens ont beaucoup de caractère. Les appartements économisent sur le reste.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-dark-083",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La madeleine ramène les souvenirs. Je préférerais qu'elle rembourse ceux de la cantine.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-dark-084",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le Mont-Saint-Michel survit entouré d'eau. Ma paperasse craint un seul café.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-dark-085",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le CERFA exige que je barre la mention inutile. Je contemple longuement mon intitulé de poste.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-dark-086",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le TER annonce « arrêt à la demande ». Mon cerveau cherche ce bouton depuis mardi.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-dark-087",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le boulanger me demande si c'est tout. Une question trop profonde avant huit heures.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-dark-088",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le CSE offre des places de cinéma. J'irai voir des gens dont les problèmes se résolvent en deux heures.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-dark-089",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Les traboules cachent des cours. Mon immeuble cache surtout le prix du chauffage.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-dark-090",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le fest-noz continue après ma fatigue. Les traditions ont un meilleur contrat d'endurance.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-dark-091",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Les bredele disparaissent chaque Noël. Les discussions gênantes sont moins périssables.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-dark-092",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La chaise bleue fait face à l'horizon. Mon siège de bureau fait face à une réunion.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-dark-093",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "observ",
+    "text": "À la Chandeleur, même la crêpe a droit à un retournement de situation.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-dark-094",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le stylo de ma dictée a séché. Mes fautes possèdent désormais un monument définitif.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-dark-095",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mon tir de pétanque a raté sa cible. Il reste excellent en évitement.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-dark-096",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le métro parisien m'annonce des correspondances. Mes anciens amis ne le font plus.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-dark-097",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La tarte Tatin a une deuxième chance après s'être retournée. Les fichiers supprimés sont moins généreux.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-dark-098",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Les menhirs de Carnac sont alignés. Mes priorités refusent encore une opération similaire.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-dark-099",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mon justificatif est trop ancien. Moi aussi, mais on me demande encore de travailler.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-dark-100",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le TGV fait disparaître les kilomètres. Mon compte bancaire se charge des euros.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-dark-101",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La baguette du matin promettait une belle journée. Je conserve les miettes comme témoignage.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-dark-102",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le compte épargne-temps est plein. Ma semaine reste vide de temps libre.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-dark-103",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le bouchon lyonnais m'a retenu une heure. Mon agenda nomme cela un incident heureux.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-dark-104",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le far breton supporte très bien les pruneaux. J'aimerais aussi savoir accueillir les surprises.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-dark-105",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le munster s'affirme sans présentation. J'ai préparé trente diapositives pour exister dix minutes.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-dark-106",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "observ",
+    "text": "Au Cours Saleya, les fleurs ont leur saison. Mon dossier attend toujours la sienne.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-dark-107",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La galette a désigné un roi. L'évier a immédiatement rappelé la séparation des pouvoirs.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-dark-108",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le Bescherelle propose un futur antérieur. Je suis déjà fatigué rien qu'en pensant à tout ce qui aura fallu faire.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-dark-109",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le Tour revient chaque été. Mon vélo revient surtout sur ma liste de bonnes résolutions.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-dark-110",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La Seine traverse Paris sans payer de loyer. Voilà le vrai privilège du mouvement.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-dark-111",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le financier est minuscule. Pour une fois, le nom promettait davantage d'argent que de gâteau.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-dark-112",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La dune du Pilat avance. Même le sable a un projet mieux défini que le mien.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-dark-113",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La mairie m'a envoyé un accusé de réception. Première fois cette semaine que quelqu'un reconnaît ma présence.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-dark-114",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mon billet Intercités a une destination. Mon lundi reste disponible pour toute mauvaise surprise.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-dark-115",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le pain rassis revient en pain perdu. Mes erreurs n'ont jamais reçu de sucre.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-dark-116",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La RTT du vendredi est mon plus beau projet. Il exige surtout de ne rien construire.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-dark-117",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La Fête des Lumières éclaire Lyon. Mon tableur conserve obstinément ses zones d'ombre.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-dark-118",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La galette-saucisse a une prise en main simple. Ma vie attend toujours sa notice.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-dark-119",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La boîte de bredele est vide. Elle garde cependant une excellente réputation.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-dark-120",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Les galets de Nice savent rester impassibles. J'aimerais ce niveau après trois relances.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-dark-121",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Ma couronne en carton plie sous la pluie. Mes fonctions ne résistent pas aux conditions réelles.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-dark-122",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le cahier Seyès possède des marges. Mon budget n'a pas reçu le même matériel.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-dark-123",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "observ",
+    "text": "À la pétanque, on peut perdre en ayant simplement été moins proche. Je connais déjà ce sport social.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-dark-124",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La pétanque se joue dehors. Une occasion rare d’entendre parler de stratégie avec un véritable horizon.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-dark-125",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le comté gagne en valeur en vieillissant. Mon ordinateur en profite pour réfléchir à sa condition.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-dark-126",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le château de Chambord possède beaucoup d'escaliers. Mes difficultés savent aussi multiplier les accès.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-dark-127",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le CERFA demande une profession. « Tenir bon » n'entre pas dans la liste.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-dark-128",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le contrôleur du TER demande mon billet. Pour une fois, j'ai la preuve de ma direction.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-dark-129",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La baguette s'est cassée en deux. Elle a trouvé sa voie vers la séparation sans avocat.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-dark-130",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Les titres-restaurant financent mon déjeuner. Personne ne subventionne le café après le point mensuel.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-dark-131",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La Croix-Rousse m'apprend l'effort. Le loyer avait déjà commencé les cours.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-dark-132",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le kouign-amann dure cinq minutes. Mon remords se réserve l'après-midi.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-dark-133",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le bretzel reste noué même après cuisson. Je me sens compris par l'Alsace.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-dark-134",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La socca arrive chaude. Une attention que je ne réclame même plus à mes messages professionnels.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-dark-135",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La fève représente une maison. C'est le bien immobilier le plus accessible de mon année.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-dark-136",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le cochonnet a roulé sous le banc. Pour la première fois, l’objectif assume ouvertement de se cacher.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-dark-137",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le cochonnet ne fait rien et concentre toute l'attention. Mon bureau connaît ce modèle.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-dark-138",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le métro annonce « merci de votre patience ». Je ne savais pas que j'avais déjà fait ce don.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-dark-139",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le millefeuille n'a pas de plan pour tenir debout. Il ressemble étrangement à ma semaine.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-dark-140",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "observ",
+    "text": "À Étretat, la falaise recule lentement. Elle gère les pressions avec plus de calme que moi.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-dark-141",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "FranceConnect connaît mon identité. Je lui demanderai demain ce que je suis censé en faire.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-dark-142",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le TGV a disparu dans la nuit. Ma motivation pratique le même départ sans annonce.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-dark-143",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La tradition du dimanche survit à toutes mes résolutions. Le beurre organise la résistance.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-dark-144",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mon pot de départ a enfin rempli mon agenda de messages chaleureux. L'absence possède un excellent marketing.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-dark-145",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La traboule est fermée. Mon raccourci vient d'acquérir les mêmes horaires que mes problèmes.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-dark-146",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "observ",
+    "text": "Au fest-noz, tout le monde se tient. Je reviendrai quand mon agenda saura faire pareil.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-dark-147",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le kougelhopf a un moule adapté. Certaines ambitions commencent avec de meilleures conditions.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-dark-148",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La Promenade des Anglais ne mène nulle part de précis. Elle le fait pourtant avec beaucoup d'élégance.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-dark-149",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "J'ai gardé la fève dans un tiroir. Une petite preuve que le hasard m'a déjà remarqué.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-dark-150",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le Bescherelle a une réponse pour chaque verbe. Je cherche la page consacrée à « continuer ».",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-dark-151",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La pétanque se termine quand quelqu'un gagne. Nos réunions disposent d'un règlement plus sombre.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-dark-152",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Les fontaines Wallace offrent de l'eau. Paris garde quelques gestes qu'il n'a pas encore mis sur abonnement.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-dark-153",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le soufflé redescend. Lui au moins ne prétend pas que c'est une nouvelle stratégie.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-dark-154",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le phare éclaire les autres. Mon écran éclaire seulement mes mauvaises décisions nocturnes.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-dark-155",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le CERFA est signé. Ma liberté passe désormais au format archive.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-dark-156",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le Navigo a expiré. Il a réussi à poser une limite que je cherche depuis des années.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-dark-157",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mon boulanger connaît mes habitudes. C'est inquiétant d'être aussi prévisible pour quelqu'un qui vend des surprises feuilletées.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-dark-158",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mon solde de RTT diminue. Les réunions regardent cela comme un retour à la normale.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-dark-159",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le funiculaire de Fourvière me ramène en bas. Même mes ascensions ont un billet retour.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-dark-160",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La galette complète finit vide. Une belle carrière dans le cycle des promesses.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-dark-161",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le marché de Noël ferme ses chalets. Le froid poursuit son contrat sans eux.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-dark-162",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La chaise bleue attend demain sans inquiétude. Elle n'a jamais ouvert sa messagerie.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-dark-163",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Ma crêpe s’est collée à la poêle. Mon poignet prépare une reconversion dans les desserts froids.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-dark-164",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "observ",
+    "text": "Au musée des Arts et Métiers, j'ai retrouvé mon ancien téléphone. Il expose maintenant sa carrière réussie.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Lieu culturel, patrimoine ou pratique de lecture en France comme cadre d’une fiction humoristique originale."
+  },
+  {
+    "id": "intl-v2-fr-dark-165",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le ballon captif d'Angers monte attaché. Une image très précise de ma liberté professionnelle.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-dark-166",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le timbre fiscal est dématérialisé. La douleur du paiement conserve une présence physique remarquable.",
+    "age_rating": "teen",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-dark-167",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le certificat de scolarité prouve que j'ai appris. Il reste discrètement muet sur quoi.",
+    "age_rating": "teen",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-dark-168",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mon ticket de caisse de café parisien ferait un excellent certificat de sacrifice.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-dark-169",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "La nonnette de Dijon promet du miel. Elle tient mieux parole que mon assurance.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-dark-170",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "observ",
+    "text": "À la Fête des voisins, j'ai découvert ceux qui percent les murs. Ils apportaient une salade sans outils.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-dark-171",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le marégraphe de Marseille mesure le niveau de la mer. J'aimerais un appareil aussi clair pour ma lassitude.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-dark-172",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "« On verra » est le futur français qui n'a aucune obligation de résultat.",
+    "age_rating": "teen",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-dark-173",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le conditionnel m'a permis une belle carrière. Principalement dans les phrases commençant par « j'aurais pu ».",
+    "age_rating": "teen",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-dark-174",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le pithiviers montre sa garniture seulement quand on le coupe. Mon budget pratique la même réserve.",
+    "age_rating": "teen",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-dark-175",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "observ",
+    "text": "À Saint-Lazare, tout le monde sait où courir. J'envie cette certitude collective de fin de journée.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-dark-176",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Le sel de Guérande conserve longtemps. Je préfère ne pas vérifier son effet sur les rancunes familiales.",
+    "age_rating": "teen",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-dark-177",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "Mon billet pour Roland-Garros promet des échanges. Mon téléphone aimerait obtenir le même engagement.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-dark-178",
+    "collection": "fr-fr-everyday",
+    "category": "dark",
+    "format": "oneliner",
+    "text": "À la BnF, mon livre sur la crise existentielle est classé en développement personnel. Même mon désarroi doit progresser.",
+    "age_rating": "teen",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Lieu culturel, patrimoine ou pratique de lecture en France comme cadre d’une fiction humoristique originale."
+  }
+]

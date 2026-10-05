@@ -1,0 +1,2285 @@
+[
+  {
+    "id": "intl-v2-de-surreal-001",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Meine Brezel zog ihre Knoten auf. Sie wollte heute beim Bäcker einmal als unbeschriebene Stange anfangen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-002",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Zwischen Berlin und Wien vertauschten die Wörter ihre Koffer. Seither bestellt mein Wörterbuch morgens selbst eine Semmel.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-003",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Schrebergarten beantragte Urlaub. Die Tomaten vertreten ihn, möchten aber keine Verantwortung für den Gartenzwerg übernehmen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-004",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Hamburger Hafenfähre parkte vor meiner Haustür. Sie hatte genug davon, immer nur Leute am Wasser kennenzulernen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-005",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus stand die Zeit vom Tisch auf. Der Kellner bat sie, wenigstens ihren Löffel liegen zu lassen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-006",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mein Adventskalender öffnete mich. Hinter meinem Montag fand er drei unerledigte Nachrichten und eine sehr kleine Hoffnung auf Schokolade.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-007",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Unser Chor sang so tief, dass das Vereinsheim anschließend einen zusätzlichen Keller hatte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-008",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Pfandautomat nahm einen Regenbogen an. Auf dem Bon stand eine Gutschrift für außergewöhnlich gute Verpackung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-009",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Brocken kam meiner Wandergruppe entgegen. Er meinte, wir hätten ohnehin schon genug Höhenmeter geplant.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-010",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Wiener Melange wurde zum Wetterbericht. Über der Sahne kündigte sich örtlich begrenzte Nachdenklichkeit an.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-011",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Im Berliner Museum tauschten die Rahmen ihre Bilder. Nur der Audioguide bestand darauf, dass wir uns falsch herum erinnern.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-012",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mein Sauerteig eröffnete eine eigene Bäckerei im Brotkasten. Er zahlt Miete in Kruste und beschwert sich über die enge Nachbarschaft.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-013",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mein Hamburger „Moin“ fuhr nach Wien. Es kam mit einem Mantel zurück, der großzügig „Servus“ auf beiden Ärmeln trug.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-014",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Gartenzwerg richtete einen Coworking-Platz unter seinem Hut ein. Die Ameisen streiten seitdem über die Dachterrasse.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-015",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Berliner Ringbahn wickelte sich abends zusammen. Sie wollte aufgeräumt aussehen, bevor die Stadt einschlief.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-016",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Zeitung im Kaffeehaus bestellte mich. Sie wollte endlich jemanden lesen, der etwas weniger über die Welt wusste.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-017",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Weihnachtsstern verlangte eine Sonnenbrille. Seine Arbeit an der eigenen Leuchtkraft gehe inzwischen auf die Augen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-018",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Unser Kegelverein bekam einen Besuch von der Schwerkraft. Sie wollte sehen, ob ihre langjährige Unterstützung gewürdigt wird.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-019",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Pfandbon wuchs zu einer Landkarte. Alle Wege führten zurück zu der Flasche, die ich zu Hause vergessen hatte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-020",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Schwarzwald borgte sich meinen Kamm. Er hatte für den nächsten Wanderführer einen gepflegteren Eindruck vor.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-021",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Ein Salzburger Knödel rollte ins Planetarium. Die anderen Himmelskörper fanden seine Umlaufbahn ausgesprochen appetitlich.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-022",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "In der Leipziger Bibliothek baten die Bücher um Lesebrillen. Sie wollten endlich sehen, wer an ihren Seiten so nachdenklich wird.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-023",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Das Pumpernickel schlug ein dunkleres Kapitel vor. Die Marmelade war dagegen: Sie hatte sich auf ein freundliches Frühstück eingestellt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-024",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die deutsch-österreichische Grenze kam zum Abendessen. Sie setzte sich zwischen die Kartoffeln und erklärte, heute nur zuzuhören.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-025",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Meine Gartenhecke schnitt mich zurück. Ich war ihr in letzter Zeit etwas zu weit in den Samstagnachmittag gewachsen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-026",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Wuppertaler Schwebebahn bat um Bodenkontakt. Die Straße wusste vor Überraschung nicht, wohin mit ihren Fahrspuren.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-027",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus bekam jeder Gedanke eine eigene Zeitung. Mein kleinster Einfall beschwerte sich über die schwere Sonntagsausgabe.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-028",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Weihnachtspyramide nahm einen Tanzkurs. Sie wollte bei Familienfesten nicht immer nur dieselbe Drehung zeigen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-029",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Fußballverein verpflichtete einen Schatten als Torwart. Bei Flutlicht hatte er allerdings mehrere Vertragsverhältnisse gleichzeitig.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-030",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Pfandautomat gab mir meine Sommerferien zurück. Offenbar hatte ich einen besonders erinnerungsfähigen Saft getrunken.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-031",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Im Harz bat eine Wegmarkierung um einen neuen Weg. Den bisherigen kenne sie mittlerweile wirklich auswendig.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-032",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Topfenstrudel in Wien bekam Post aus dem Urlaub. Die Rosinen hatten ihre freien Tage offenbar geschickt abgestimmt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-033",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Im Puppentheater zog der Vorhang ein Publikum vor sich. Er wollte auch einmal erleben, wie sich gespannte Erwartung anfühlt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-034",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Das Laugenbrötchen mietete eine Etage im Toaster. Es bestand auf einem warmen Ausblick und sehr kurzer Vertragsdauer.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-035",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Wien und Hamburg trafen sich auf einem Stadtplan. Wien brachte Kaffee, Hamburg vorsichtshalber eine ausreichend große Wasserfläche mit.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-036",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Unsere Gartenlaube bekam Schluckauf. Seitdem stehen alle Blumentöpfe in leicht versetzten Jahresringen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-037",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Leipziger Straßenbahn erzählte mir ihren Traum: einmal durch einen Satz fahren, der keine Haltestelle enthält.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-038",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Marmortisch im Kaffeehaus faltete sich zur Zeitung. Er wollte wissen, warum die Nachrichten täglich mehr Aufmerksamkeit bekommen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-039",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Adventskerzen machten einen Ausflug. Sie kamen so begeistert zurück, dass der ganze Kranz den Dezember nicht abwarten konnte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-040",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Schachverein stellte den König als Hausmeister ein. Mehr als ein Feld auf einmal müsse er dafür nicht schaffen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-041",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Pfandflaschen ließen mich am Automaten anstehen. Sie wollten vorher noch diskutieren, ob ich sorgfältig genug zurückgegeben werde.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-042",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Eifel zog ihre Hügel an die Garderobe. Bei so vielen Wanderern wollte sie einmal luftig auftreten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-043",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Ein Wiener Kaffee bekam einen Doktortitel. Er hatte so lange über dem kalten Nachmittag nachgedacht, dass niemand mehr widersprach.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-044",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Das Technikmuseum lieh meinem Laptop ein Stück Vergangenheit. Seitdem macht er bei jedem Neustart ein sehr würdiges Kurbelgeräusch.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-045",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Meine Brezel hielt den Himmel zusammen. Einer ihrer Knoten hatte sich versehentlich mit der Wetterkarte verbunden.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-046",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Wiener Schmäh und mein Berliner Stadtplan gründeten eine Wohngemeinschaft. Niemand weiß, wo sie wohnen, aber die Beschreibung ist großartig.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-047",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Kompost im Schrebergarten schrieb einen Roman. Alle Figuren kehren in anderer Gestalt wieder; das Ende riecht erstaunlich hoffnungsvoll.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-048",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Rheinfähre nahm die Ufer mit. Sie wollte ihren Gästen endlich einen Ausflug ohne Abschied ermöglichen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-049",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus saß der Nachmittag auf meinem Stuhl. Er bot mir einen Platz auf seinem gestrigen Ende an.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-050",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mein Nussknacker bewarb sich als Zahnarzt für Walnüsse. Die erste Patientin bestand auf einer rein beratenden Behandlung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-051",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Unser Chor verlor einen Ton im Treppenhaus. Er lebt dort jetzt als besonders höfliches Echo.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-052",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Pfandautomat begann Gedichte zu drucken. Alle handeln davon, wie schwer ein voller Lebensabschnitt beim Zurückgeben sein kann.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-053",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Schwarzwald schickte eine E-Mail. Im Anhang lagen so viele Tannennadeln, dass mein Drucker nach frischer Luft fragte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-054",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Kaiserschmarrn rekonstruierte sich selbst. Der Wiener Kellner bat ihn, keine historischen Hoffnungen auf eine ganze Palatschinke zu wecken.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-055",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Im Berliner Museum winkte die Statue ihrem eigenen Schatten. Er hatte einen anderen Saal gebucht und wenig Zeit.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-056",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Brotkasten legte ein Ei. Unser Bäcker erklärte, wir müssten bei guter Pflege bald mit einem kleinen Frühstück rechnen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-057",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Wörter Jänner und Januar trafen sich im Zug. Beide behaupteten, denselben kalten Termin schon einmal erlebt zu haben.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-058",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Schrebergartenpforte führte plötzlich ans Meer. Der Vorstand diskutierte zuerst, ob Sand noch als Wegbelag gelte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-059",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Hamburger Hafenfähre trug einen Schal. Ihr sei die ständige Zugluft zwischen den Horizonten zu viel geworden.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-060",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Kaffeehauszeitung in Wien faltete meinen Vater zusammen. Sie suchte eine handliche Ausgabe seiner ausführlichen Wettermeinung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-061",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Adventskalender stellte eine Gegenfrage. Er wollte wissen, wann wir eigentlich sein Lieblingsgeschenk öffnen: einen ganzen Tag Ruhe.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-062",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Kegelkugel ging spazieren. Der Verein verlangte einen Nachweis, dass sie dabei nicht unerlaubt neue Kurven gelernt habe.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-063",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mein Pfandbon wurde durchsichtig. Er hatte beschlossen, zum ersten Mal wirklich liquide Mittel darzustellen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-064",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Wanderweg im Allgäu rollte sich nachts auf. Morgens mussten wir zunächst gemeinsam die Aussicht auspacken.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-065",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "In Salzburg verhandelten die Marillen mit dem Strudelteig. Sie wollten mehr Fensterfläche in ihrer neuen Wohnung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-066",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Leipziger Bibliothek bekam ein Buch, das seine Leser auslieh. Ich durfte vier Wochen bei einer sehr neugierigen Geschichte wohnen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-067",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Unser Roggenbrot wuchs Wurzeln. Der Bäcker meint, es wolle seine Herkunft nicht immer nur mündlich erklären müssen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-068",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Ein Salzburger Berg besuchte Hamburg. Die Möwen baten um genauere Auskunft, ob er dauerhaft eine zusätzliche Aussichtsetage anbiete.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-069",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Gartenzaun wechselte die Seiten. Seitdem schaut der Nachbar bei jedem Besuch so aus, als sei er bei mir zu Hause geboren.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-070",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Münchner Tram machte auf dem Stadtplan eine Pause. Ihr Fahrer holte sie mit einem Radiergummi vorsichtig vom falschen Gleis.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-071",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus bestellte ich eine Erinnerung. Der Kellner fragte, ob ich sie mit oder ohne die damalige Frisur möchte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-072",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Weihnachtspyramide schwebte davon. Unsere Holzengel wollten ihre Fluglizenz nicht noch ein Jahr nur theoretisch nutzen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-073",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Das Vereinsheim bewarb sich beim Wanderverein. Es möchte die Mitglieder auch einmal unterwegs kennenlernen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-074",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Pfandautomat schluckte meine Einkaufsliste. Er gab sie mit dem Hinweis zurück, dass Wünsche keine stapelbaren Behälter seien.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-075",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Im Harz nahm ein Gipfel sein Schild ab. Er wollte wissen, ob wir ihn ohne Berufsbezeichnung noch wiedererkennen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-076",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Meine Wiener Melange bekam Post vom Ozean. Die kleine Milchoberfläche habe eine vielversprechende Begabung für Wellen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-077",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Im Technikmuseum begann ein Rechenschieber, mein Alter abzuziehen. Er fand, jemand müsse hier die Beziehung zur Geschichte auflockern.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-078",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Brezel verteilte Eintrittskarten zu ihren Löchern. Ich fragte nach der Sicht; sie versprach freie Durchblicke.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-079",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der österreichische Akzent meines Freundes setzte sich in meinen Koffer. Jetzt kommentiert mein Gepäck jede Reiseentscheidung mit besonderer Gelassenheit.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-080",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Im Schrebergarten teilte der Wind neue Parzellennummern aus. Die Blätter fanden die Verwaltung erstaunlich beweglich.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-081",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Berliner U-Bahn fuhr durch meinen Traum. Leider musste ich zum Aufwachen noch einmal umsteigen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-082",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Wiener Kaffeehausstuhl schrieb meine Memoiren. Er konzentrierte sich auf die Kapitel, in denen ich sitzen blieb.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-083",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Weihnachtsmarktbude trat einen Schritt zurück. Sie wollte ihrem Zimtduft mehr Platz für den Empfang lassen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-084",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Unser Schachbrett wurde zur Stadt. Die Bauern gründeten als Erstes einen Verein für kürzere Wege zum anderen Ende.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-085",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die leere Pfandkiste verlangte einen Urlaub in den Bergen. Sie habe genug von ausschließlich flüssigen Reiseerinnerungen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-086",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Eifelwald gab seine Bäume zum Lüften nach draußen. Ich wollte nicht unhöflich nachfragen, was er damit genau meinte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-087",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der österreichische Knödel nahm Gesangsunterricht. Seine runde Stimme passte leider noch durch keinen Löffel.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-088",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Im Museum klingelte das ausgestellte Telefon. Der Audioguide erklärte, die Vergangenheit wünsche kurz jemand Zuständigen zu sprechen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-089",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mein Brotzeitbrett segelte nach Wien. Es hatte gehört, dass dort sogar Nachmittage mit anständigem Geschirr empfangen werden.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-090",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die deutsche Semmel und das österreichische Brötchen tauschten ihre Ausweise. Niemand bemerkte es, bis die Marmelade nach Herkunft fragte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-091",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Gartenzwerg wurde riesig. Er entschuldigte sich: Im Urlaub habe er endlich einmal über den Tellerrand des Blumenbeets schauen wollen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-092",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Hamburger U-Bahn tauchte kurz auf dem Hafenbecken auf. Sie wollte wissen, warum die Fähre für Wasserfahrt ständig gelobt wird.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-093",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus setzte sich eine Wolke an meinen Tisch. Sie suchte dringend jemanden, der ihre Gedanken etwas auflockert.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-094",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Adventskerze bekam einen eigenen Sonnenaufgang. Mein Wohnzimmer wirkte morgens deshalb wie vier kleine Zeitzonen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-095",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Unser Chor verlor die letzte Strophe. Sie wurde später gefunden, tief schlafend im Resonanzraum der Vereinsglocke.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-096",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Pfandautomat bestand auf einem Gedicht zur Flasche. Ich habe selten so persönlich über Apfelschorle gesprochen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-097",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Im Schwarzwald bekam jeder Baum einen Stuhl. Der Wald wollte künftig ganz offiziell im Sitzen wachsen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-098",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Strudel in Wien bog eine Ecke zu viel. Jetzt führt sein Inneres direkt in den Nachbartisch.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-099",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Im Leipziger Museum trat ein Gemälde aus dem Rahmen. Es wollte sehen, ob die Besucher aus der Nähe auch so interessant aussehen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-100",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Brezel wurde zum Verkehrsknoten. Der Bäcker musste für die vielen Gabeln eine Einbahnregelung erfinden.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-101",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Hamburg schickte Wien eine Flasche Nebel. Wien antwortete mit einer Tasse Nachmittag, sorgfältig gegen Hektik verpackt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-102",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Meine Gartenbohnen zogen eine Leiter hoch. Sie hätten gehört, dass unten bald wieder über Ernte gesprochen werde.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-103",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Straßenbahn in Dresden bekam Schlittschuhe. Sie wollte den Winter nicht immer nur vom gleichen Gleis aus kommentieren.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-104",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Wiener Kaffeehauszeitung las meinen Blick. In der nächsten Ausgabe hieß die Überschrift: „Mann noch nicht bereit für Montag.“",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-105",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Nussknacker sammelte weiche Wolken. Er braucht ein Hobby, bei dem nicht ständig alles knackt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-106",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Fußball im Vereinsheim bat um eine eigene Eintrittskarte. Er finde, sein Anteil an den Veranstaltungen werde unterschätzt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-107",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Meine Pfandflasche erinnerte sich an den Regen vor ihrer Herstellung. Der Bon wurde ein ausgesprochen langer Wetterbericht.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-108",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Harz rollte sich eine Decke aus Nebel aus. Unsere Wandergruppe sollte bitte im Flüstermodus vorbeigehen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-109",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Ein Wiener Strudel lud mich zum Einrollen ein. Ich erklärte, dass mein Terminkalender bereits kompliziert genug gefaltet sei.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-110",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Bibliotheksleiterin stellte einen Roman ins Fenster. Er wollte endlich seine Beschreibung des Wetters mit der Praxis vergleichen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-111",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Brotkorb bestellte eine größere Küche. Er habe inzwischen genug Frühstückserfahrung für eine Führungsposition.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-112",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Wiener Schmäh streichelte meine Berliner Fahrkarte. Sie fühlte sich danach wichtig genug, selbst das Reiseziel auszusuchen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-113",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Gartenlaube ging zum Friseur. Der Dachdecker war von der gewünschten Ponyform wenig begeistert.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-114",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Wuppertaler Schwebebahn wurde zum Lesezeichen. Seitdem hält sie mir jeden Abend eine besonders schöne Stadtansicht offen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-115",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Im Kaffeehaus fragte mich mein Schatten nach der Speisekarte. Er habe mich den ganzen Tag begleitet und Anspruch auf einen Strudelrand.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-116",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mein Adventskalender öffnete ein Türchen in die Zukunft. Dahinter stand ich und suchte bereits wieder die Weihnachtsdekoration.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-117",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Unser Chor lieh sich den Mond als Notenständer. Die Sterne beschwerten sich über die unregelmäßigen Pausen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-118",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Pfandautomat gab mir eine winzige Bühne. Auf dem Bon stand, mein Flaschenvortrag verdiene weitere öffentliche Auftritte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-119",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Auf dem Rheinsteig begegnete uns ein müder Horizont. Er bat, wir sollten die Aussicht heute etwas früher fertig anschauen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-120",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Semmel in Wien bekam ein Navigationsgerät. Sie wollte herausfinden, wohin all die Brösel verschwinden.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-121",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Im Museum verdoppelte sich die Vergangenheit. Wir mussten zwei Garderobenmarken abgeben, bevor wir wieder in die Gegenwart durften.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-122",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mein Sauerteig mietete einen Konzertsaal. Er fand, sein leises Blubbern habe bisher viel zu wenig angemessenen Raum bekommen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-123",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Wörter „Tschüss“ und „Servus“ blieben beim Abschied stehen. Sie wollten nicht länger immer als Erste verschwinden müssen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-124",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Gartenschlauch bekam Fernweh. Er wickelte sich um einen Koffer und nannte das die Vorbereitung auf große Wasserreisen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-125",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Berliner Straßenbahn fuhr durch eine alte Postkarte. Der Fahrer bat uns, kurz nostalgisch aus dem Fenster zu schauen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-126",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Wiener Kaffeehaustisch rückte näher an mein Leben. Er wolle endlich verstehen, warum ich so viel davon über ihm ausbreite.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-127",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Weihnachtspyramide hielt an, weil ein Engel seine Wolke falsch geparkt hatte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-128",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Unser Kegelverein spielte gegen Berge. Wir verloren knapp, können aber den Alpen jetzt eine sehr persönliche Form geben.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-129",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Pfandbon faltete ein Boot aus mir. Er wollte seine eigene Rückreise nicht immer allein antreten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-130",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Im Allgäu bat der Wanderweg um neue Schuhe. Wir seien heute besonders schwer mit Ausflugserwartungen unterwegs.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-131",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mein österreichischer Knödel teilte sich in mehrere Monde. Die Suppe erhielt daraufhin einen sehr ambitionierten Geografieunterricht.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-132",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Bibliothek verlieh mir einen leeren Nachmittag. Rückgabe bitte rechtzeitig, andere Menschen wollten auch endlich lesen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-133",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Brezel zog mit ihren Löchern um. Der Bäcker blieb vor einer völlig unverständlichen Stange Gebäck zurück.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-134",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Eine Wiener Parkbank besuchte unser Berliner Sofa. Beide waren sich einig, dass Menschen ihr Sitzen häufig unnötig begründen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-135",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Kleingartenzaun wuchs Blätter. Er wollte bei unseren Pflanzbesprechungen endlich als Fachmann mitreden dürfen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-136",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Hamburger Hafenfähre wurde durchsichtig. Der Kapitän meinte, bei so viel guter Aussicht brauche man nicht noch ein Schiff davor.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-137",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Im Kaffeehaus ordnete der Abend meine Notizen. Er bestand darauf, „noch bleiben“ als einzigen dringenden Punkt zu markieren.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-138",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mein Weihnachtsstern fiel in die Teetasse. Das Ergebnis war zu hell zum Trinken, aber sehr gut zum Nachdenken.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-139",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Unser Schachverein bekam Besuch von der Zeit. Sie verlor, weil sie überall gleichzeitig ziehen wollte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-140",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Pfandautomat erinnerte sich an meinen Geburtstag. Er hatte einfach alle Flaschen unserer letzten Feier chronologisch sortiert.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-141",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Schwarzwald rollte seine Schatten ein. Die Wanderer sollten nachher bitte etwas ordentlicher auf die Lichtungen treten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-142",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Marillen in Salzburg beschlossen, ihr eigenes Wetter zu machen. Der Knödel bekam angenehm fruchtige Nebelschwaden.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-143",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Im Berliner Puppentheater sprach der leere Stuhl mit mir. Er sei seit Jahren wichtiger Teil des Publikums und bislang übersehen worden.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-144",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Das Brotzeitmesser wurde butterweich. Unser Frühstück musste kurzfristig auf diplomatische Lösungen umstellen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-145",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Zwischen Graz und Köln wurde ein Satz gespannt. Wir konnten auf seinen Kommas sitzen und die unterschiedlichen Wörter betrachten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-146",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Gießkanne im Schrebergarten sammelte Durst. Sie fand, Wasser allein sei auf Dauer eine einseitige Berufserfahrung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-147",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Dresdner Straßenbahn fragte nach einer Geige. Das Quietschen in der Kurve verdiene endlich eine musikalische Weiterbildung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-148",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Zeitung im Wiener Kaffeehaus zeigte morgen nur mein Gesicht. Offenbar hatte ich heute besonders wichtige Fragen an den Kuchen gestellt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-149",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Adventskranz bekam Jahresringe. Nach einer langen Diskussion galt er offiziell als besonders kleiner Weihnachtsbaum mit Wohnungserfahrung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-150",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Unser Vereinswappen wollte ein neues Hobby. Es hatte genug davon, selbst am Wochenende immer nur auf Jacken zu stehen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-151",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Eine Flasche am Pfandautomaten begann zu erzählen. Ich ließ sie reden; Rückgabe war offensichtlich auch eine emotionale Angelegenheit.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-152",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Wanderstock im Harz beantragte Mitspracherecht. Ohne ihn hätten wir schließlich die Hälfte der Aussicht im Sitzen erreicht.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-153",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Wiener Strudel zog sich in eine Landkarte um. Ich hatte noch nie eine so deutlich markierte Rosinenroute gesehen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-154",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Im Technikmuseum träumte die Dampfmaschine von einer Wolke. Der Wetterdienst prüft noch, ob das als Bewerbung gilt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-155",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Unser Bäcker verkaufte ein Brot mit Tür. Die Butter zog sofort ein, die Marmelade bestand auf regelmäßigen Besuchsrechten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-156",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mein Wiener Freund schickte mir einen besonders langen Seufzer. Ich musste ihn quer durch das Berliner Wohnzimmer auspacken.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-157",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Im Schrebergarten versammelten sich die Regentropfen zur Inventur. Der Teich bot sich großzügig als Gruppenfoto an.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-158",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Rheinfähre fragte den Fluss nach einer Empfehlung. Er schlug vor, einmal selbst in die andere Richtung zu fließen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-159",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Das Wiener Kaffeehaus bekam Füße. Die Stammgäste blieben sitzen; man werde schon merken, wenn der Nachmittag ankomme.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-160",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Holzengel faltete die Weihnachtszeit zusammen. Sie passte leider wieder nicht in die dafür vorgesehene Kiste.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-161",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Chorleiter dirigierte versehentlich den Regen. Die Noten waren sauber, aber alle Jacken klangen hinterher etwas nass.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-162",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Mein Pfandbon wünschte sich einen Rahmen. So viel verlässlich ausgewiesener Wert solle nicht einfach in meiner Hosentasche zerknittern.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-163",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Eifelweg erzählte von seinen Jugendkurven. Unsere Wandergruppe musste mehrfach anhalten, um die Pointe nicht zu verpassen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-164",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Kaiserschmarrnstücke gründeten ein Orchester. Eine gemeinsame Richtung war ihnen weniger wichtig als überzeugende Einzelauftritte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-165",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Im Leipziger Museum nahm die Garderobe meinen Montag entgegen. Beim Abholen fühlte er sich überraschend ordentlich aufgehängt an.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-166",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Meine Brezel träumte von einem geraden Leben. Die Bäckerin riet ihr, zunächst die vielen interessanten Umwege wertzuschätzen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-167",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Berlin und Wien tauschten für einen Tag ihre Nachmittage. Niemand bemerkte den Unterschied, bis die Spree nach Kaffee duftete.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-168",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Kleingarten wurde am Morgen größer. Die Nachbarn vermuten, dass die Zucchini heimlich die Parzellengrenzen gießt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-169",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Münchner Tram legte sich aufs Gleis und las. Der Fahrplan durfte ausnahmsweise einmal zusehen, wie jemand anderes seine Zeit gestaltet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-170",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus sah ich meine Gedanken am Nachbartisch. Sie hatten den besseren Kuchen bestellt und vermieden Blickkontakt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-171",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Schwibbogen spannte sich über die Straße. Plötzlich hatten alle Nachbarn einen sehr festlichen gemeinsamen Hauseingang.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-172",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Unser Sportverein erhielt eine Medaille vom Rasen. Er wolle das jahrelange Bemühen der Schuhe endlich anerkennen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-173",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Pfandautomat gab mir den Klang meiner Flaschen zurück. Ich trage den Bon jetzt sehr vorsichtig, damit er nicht wieder klappert.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-174",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Auf dem Allgäuer Wanderweg verlor der Berg seine Höhe. Wir halfen beim Suchen und kamen diesmal erstaunlich bequem zum Gipfel.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-175",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Der Wiener Kaffee umrührte den Löffel. Er wollte in dieser Beziehung endlich einmal der aktive Teil sein.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-surreal-176",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Die Stadtbibliothek verlieh ihren eigenen Eingang. Wir warten geduldig im ersten Kapitel des Flurs auf seine Rückkehr.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-177",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Das Roggenbrot lud die Sonne zum Frühstück. Die Kruste versprach, sich bei so viel direkter Aufmerksamkeit nur ganz leicht zu bräunen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-surreal-178",
+    "collection": "de-de-everyday",
+    "category": "surreal",
+    "format": "oneliner",
+    "text": "Ein Hamburger Komma besuchte einen Wiener Gedanken. Es blieb drei Stunden, weil dort offenbar jede Pause zum Bleiben eingeladen wird.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. An impossible event receives an everyday practical response. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  }
+]

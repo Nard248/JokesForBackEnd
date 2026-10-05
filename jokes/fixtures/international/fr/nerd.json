@@ -1,0 +1,2138 @@
+[
+  {
+    "id": "intl-v2-fr-nerd-001",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Ma baguette a une croûte stable et une mie aérée. Enfin une architecture avec une bonne séparation des couches.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-nerd-002",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le cahier Seyès est mon premier environnement de développement : les lignes étaient déjà configurées.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-nerd-003",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "FranceConnect m'identifie partout. Mon ordinateur peine encore à reconnaître son imprimante.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-nerd-004",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mon correcteur remplace « clé primaire » par « clé première ». La base de données passe le bac de français.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-nerd-005",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le TGV optimise la distance. Mon algorithme optimise surtout le temps passé à expliquer ses résultats.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-nerd-006",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le kouign-amann est récursif : derrière chaque couche de beurre, une raison d'en reprendre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-nerd-007",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Les traboules sont des liens symboliques que Lyon a rendus visitables.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-nerd-008",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le bretzel pose un problème de topologie. Le goûter le résout par suppression des arêtes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-nerd-009",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La socca est mon disque local préféré : aucune mise à jour, beaucoup de chaleur.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-nerd-010",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le plan du métro m'a appris les graphes. Les correspondances m'ont appris à douter des distances.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-nerd-011",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La fève est une clé primaire mal documentée dans une base feuilletée.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-nerd-012",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La pétanque optimise la distance euclidienne avec un bruit humain considérable.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-nerd-013",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mon millefeuille perd ses couches à chaque découpe. L'architecture n'avait prévu que la lecture.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-nerd-014",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mon clavier AZERTY connaît mes mots de passe mieux que moi. Il change seulement d'avis quand je voyage.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-nerd-015",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le CERFA propose des cases fixes. L'interface a choisi de ne pas écouter les utilisateurs trop longs.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-nerd-016",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mon TGV miniature fonctionne hors ligne. Le chat fait office d'interruption matérielle.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-nerd-017",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "J'ai appris les matrices en regardant un cahier Seyès. L'algèbre avait un cartable.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-nerd-018",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le levain est un système distribué. Le boulanger reste très prudent avec les changements de version.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-nerd-019",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "observ",
+    "text": "Au fest-noz, j'ai compris les listes chaînées. Le maillon qui oublie le pas bloque tout le groupe.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-nerd-020",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le confluent Rhône-Saône réalise une fusion sans demander de résoudre les conflits.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-nerd-021",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le moule à kougelhopf est un test unitaire : si le gâteau ne sort pas, tout échoue.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-nerd-022",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La tarte Tatin est un retournement de tableau qui améliore vraiment les données.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-nerd-023",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La tour Eiffel a quatre pieds. Une redondance matérielle plus rassurante que mon serveur.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-nerd-024",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le mot « œuf » a cassé mon tri ASCII. Le petit déjeuner exige Unicode.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-nerd-025",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "observ",
+    "text": "À la Chandeleur, la crêpe vérifie expérimentalement la gravité. Le plafond reste une anomalie de mesure.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-nerd-026",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Navigo valide mon identité de voyageur. Ma carte de fidélité au boulanger valide mon identité profonde.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-nerd-027",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le CERFA en PDF est un format portable. Ma patience, beaucoup moins.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-nerd-028",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mes RTT sont des ressources rares. Le gestionnaire de calendrier pratique pourtant l'allocation agressive.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-nerd-029",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La socca chaude représente un excellent dissipateur thermique. Surtout quand je souffle dessus.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-nerd-030",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mon tir de pétanque suit une parabole. Le cochonnet refuse de reconnaître l'élégance de la démonstration.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-nerd-031",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Les alignements de Carnac ressemblent à une base de données sans documentation de schéma.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-nerd-032",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le « e » muet est une variable déclarée pour rassurer le compilateur français.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-nerd-033",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le Bescherelle est une table de correspondance qui a pris son métier très au sérieux.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-nerd-034",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La baguette se fragmente pendant le transport. J'aurais dû activer le protocole de ramassage des paquets.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-nerd-035",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mon kouign-amann dépasse tous les seuils. J'ai augmenté la taille de l'assiette plutôt que corriger le code.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-nerd-036",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "observ",
+    "text": "À Lyon, le GPS ignore ma traboule. Le graphe souffre d'un problème d'encapsulation.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-nerd-037",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Un bretzel fermé pose moins de problèmes qu'une boucle infinie. Surtout à midi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-nerd-038",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le TGV affiche sa vitesse. Mon ordinateur affiche un cercle : il préfère rester abstrait.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-nerd-039",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "FranceConnect ne m'a pas trouvé. Je traverse une panne d'existence fédérée.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-nerd-040",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Les bouquinistes font du stockage froid depuis bien avant le cloud.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-nerd-041",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La galette utilise une distribution aléatoire du pouvoir. Les statisticiens demandent davantage d'échantillons.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-nerd-042",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le soufflé au fromage occupe tout l'espace disponible puis libère la mémoire sans prévenir.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-nerd-043",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "L'accent circonflexe ressemble à un curseur. Il indique surtout où mon orthographe a quitté la route.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-nerd-044",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le Tour de France cherche le minimum de temps. Moi, le minimum d'effort pour atteindre la télécommande.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-nerd-045",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mon cahier Seyès exige quatre interlignes. Une grille CSS qui ne pardonne rien au stylo plume.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-nerd-046",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le Minitel n'avait pas d'onglets. Toute une génération a dû inventer d'autres excuses pour se disperser.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-nerd-047",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le pont du Gard transporte désormais surtout des pixels. Les touristes ont changé le fluide.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-nerd-048",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Gallica m'a donné accès à trois siècles de livres. Je cherchais seulement une orthographe.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Lieu culturel, patrimoine ou pratique de lecture en France comme cadre d’une fiction humoristique originale."
+  },
+  {
+    "id": "intl-v2-fr-nerd-049",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Ma tradition a une durée de vie courte. La sauvegarde au congélateur reste controversée dans l'équipe.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-nerd-050",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La ronde du fest-noz n'a pas de serveur central. Elle a cependant une personne qui sait les pas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-nerd-051",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le funiculaire de Fourvière transforme l'énergie en excuse pour éviter les marches.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-nerd-052",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "J'ai modélisé un kougelhopf en 3D. L'imprimante refuse toujours de produire les raisins.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-nerd-053",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La recette de socca a peu de dépendances. Le four demeure un environnement exigeant.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-nerd-054",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La distribution des fèves prouve que le hasard favorise surtout celui qui reprend une part.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-nerd-055",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mon Navigo est sans contact. Mon sac, lui, doit être vidé intégralement pour le trouver.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-nerd-056",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le numéro de CERFA ressemble à une version logicielle. Je lis la notice comme un journal de modifications.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-nerd-057",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La dictée fait de l'analyse syntaxique sans message d'erreur avant la note.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-nerd-058",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La pétanque est un calcul approché. Le mètre ruban constitue la preuve formelle.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-nerd-059",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le cannelé conjugue transfert thermique et optimisme. Mon premier lot démontre surtout le premier.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-nerd-060",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mon regex accepte « Noël » mais refuse « cœur ». Le calendrier passe, les émotions attendront.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-nerd-061",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Les correspondances de Châtelet m'ont appris que deux sommets voisins peuvent être très loin à pied.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-nerd-062",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La BnF conserve des pages disparues. J'aimerais qu'elle s'intéresse au document avant mon dernier enregistrement.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Lieu culturel, patrimoine ou pratique de lecture en France comme cadre d’une fiction humoristique originale."
+  },
+  {
+    "id": "intl-v2-fr-nerd-063",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mon compte épargne-temps utilise des entiers. Mon sentiment de fatigue préfère les nombres complexes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-nerd-064",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le levain réclame un rafraîchi. Il a repris le vocabulaire de mon navigateur.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-nerd-065",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Une galette complète est une pile avec gestion native de l'œuf.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-nerd-066",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La traboule ressemble à une API privée. Elle fonctionne surtout quand on respecte la porte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-nerd-067",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Les colombages dessinent une triangulation. Mon architecte de logiciel commence immédiatement à parler stabilité.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-nerd-068",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le TER fait du traitement par lots : tout le monde descend au même arrêt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-nerd-069",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "FranceConnect m'a déconnecté après inactivité. J'étais seulement en train de lire les mentions.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-nerd-070",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La Chandeleur est un test de rotation avec retour utilisateur très rapide.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-nerd-071",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "L'aligot s'étire mieux que mon câble réseau. Il supporte beaucoup moins bien le trafic de données.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-nerd-072",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mon Bescherelle donne toutes les conjugaisons. Son moteur de recherche reste mon index droit.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-nerd-073",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le clavier AZERTY garde les chiffres en hauteur. Même les additions doivent faire un effort.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-nerd-074",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mon Bescherelle contient des exceptions imbriquées. C'est le seul arbre où je me perds assis.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-nerd-075",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La pyramide du Louvre est transparente. Mon projet aussi, selon la dernière diapositive opaque.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-nerd-076",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "observ",
+    "text": "À Carnac, j'ai proposé une recherche binaire. Le guide m'a demandé de laisser les pierres tranquilles.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-nerd-077",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le four du boulanger fait du calcul parallèle. Tous les cœurs chauffent réellement.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-nerd-078",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le beurre salé est une dépendance du kouign-amann que personne ne songe à supprimer.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-nerd-079",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Une traboule raccourcit mon chemin sans améliorer mon nombre de pas quotidien. Optimisation contradictoire.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-nerd-080",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le galet niçois possède une excellente interface tactile. Il manque seulement le bouton annuler quand on le lance.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-nerd-081",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mon bretzel n'est pas une erreur de parenthèses. Il a été validé par le boulanger.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-nerd-082",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le TGV traverse plusieurs antennes. Mon appel découvre les systèmes distribués à chaque tunnel.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-nerd-083",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le CERFA demande une date au format fixe. Mon existence doit d'abord réussir le parsing.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-nerd-084",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La fève cachée est une donnée sensible. Ma sœur mène un audit avec sa fourchette.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-nerd-085",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le flan parisien amortit les vibrations. Je refuse pourtant de le breveter comme support d'ordinateur.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-nerd-086",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La cédille est un correctif minuscule qui change tout le comportement du « c ».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-nerd-087",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mon modèle prédit le gagnant du Tour. Il se contente de relire les résultats : précision parfaite.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-nerd-088",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le cahier Seyès a anticipé le design responsive : ma petite écriture occupe simplement moins d'étages.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-nerd-089",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Gallica a numérisé mon auteur préféré. Mes notes restent dans un carnet que je ne retrouve pas.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Lieu culturel, patrimoine ou pratique de lecture en France comme cadre d’une fiction humoristique originale."
+  },
+  {
+    "id": "intl-v2-fr-nerd-090",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le Mont-Saint-Michel vérifie deux fois par jour les limites d'accès. L'océan gère les permissions.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-nerd-091",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Ma baguette rassise est un format en lecture seule. Le grille-pain propose une conversion.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-nerd-092",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le fest-noz synchronise cent personnes sans Bluetooth. Il reste quelques bugs au niveau des chevilles.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-nerd-093",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le métro lyonnais a des lettres. Mon GPS croit pouvoir résoudre la ville comme une équation.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-nerd-094",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le kougelhopf contient un espace vide intentionnel. Mon développeur appelle cela une fonctionnalité.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-nerd-095",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le TER affiche toutes ses étapes. Mon script affiche seulement « erreur » après vingt minutes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-nerd-096",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le CERFA PDF est bien aligné jusqu'au moment où je le remplis. La perfection préférait mon absence.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-nerd-097",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La socca refroidit selon les lois de la physique. Mon impatience n'a toujours pas obtenu de dérogation.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-nerd-098",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La galette des rois est un protocole de consensus qui finit très souvent par nommer le plus petit.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-nerd-099",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La quenelle gonfle dans la sauce. Mon disque dur aimerait connaître cette technique d'extension.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-nerd-100",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le français accorde le participe. Mon logiciel préfère refuser tout accord sans licence.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-nerd-101",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La pétanque m'a appris les tolérances. « À peu près » n'est pas une unité recevable.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-nerd-102",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le bac de philosophie demande de définir les termes. Mon équipe devrait tenter cela avant de créer les tickets.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-nerd-103",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "observ",
+    "text": "À la station Arts et Métiers, même mon trajet ressemble à un prototype.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-nerd-104",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La grande horloge d'Orsay continue d'afficher l'heure. Aucun compte utilisateur requis.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Lieu culturel, patrimoine ou pratique de lecture en France comme cadre d’une fiction humoristique originale."
+  },
+  {
+    "id": "intl-v2-fr-nerd-105",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mes RTT ne se compilent pas en vacances. Il manque une dépendance appelée « accord du chef ».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Scène professionnelle française avec un repère explicite tel que RTT, CSE, pot de départ ou titres-restaurant."
+  },
+  {
+    "id": "intl-v2-fr-nerd-106",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La Promenade des Anglais transporte des données très peu compressibles : promeneurs, poussettes et conversations entières.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-nerd-107",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "J'ai calculé la surface de ma galette. Le fromage a aussitôt dépassé le périmètre du projet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-nerd-108",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le Rhône et la Saône font du streaming avant que mon routeur ait fini de démarrer.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-nerd-109",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le moule à kougelhopf impose son schéma. La pâte accepte toutes les migrations.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-nerd-110",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le Navigo réduit ma présence à un bip. Une compression impressionnante pour quelqu'un d'aussi bavard.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-nerd-111",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "FranceConnect confirme que je suis moi. La philosophie a besoin d'une connexion plus longue.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-nerd-112",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mon algorithme cherche la fève. Ma nièce mange la galette : elle privilégie la méthode destructive.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-nerd-113",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Les couches du millefeuille communiquent mal. La fourchette déclenche systématiquement une panne en cascade.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-nerd-114",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "J'ai normalisé « é » en Unicode. Mon accent marseillais refuse toujours les paramètres par défaut.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-nerd-115",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Les boules de pétanque produisent un signal sonore clair. Mon ordinateur appelle cela une collision.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-nerd-116",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La dictée est un test sans autocomplétion. Mes mains viennent de découvrir le risque.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-nerd-117",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Les plans du métro simplifient les angles. Mes mollets découvrent la version complète.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-nerd-118",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le pont du Gard est une ancienne infrastructure dont les photos occupent une infrastructure moderne.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-nerd-119",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La mie de baguette a des alvéoles. Une base de données qui assume ses champs vides.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-nerd-120",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le fest-noz est un réseau pair à pair. Personne ne peut ignorer longtemps son voisin.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-nerd-121",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mon GPS connaît la place Bellecour. Il ne connaît pas mon envie de traverser à l'ombre.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-nerd-122",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "J'ai compté les raisins du kougelhopf. L'échantillon a disparu avant la publication.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-nerd-123",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La socca a une interface simple : prendre, souffler, recommencer plus prudemment.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-nerd-124",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le TGV propose le Wi-Fi. Mon paysage ne demande heureusement aucun portail captif.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-nerd-125",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le CERFA sauvegardé s'appelle « final_final2 ». L'administration a découvert le contrôle de versions artisanal.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-nerd-126",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La crêpe tourne à 180 degrés. Le carrelage refuse de préciser la suite du calcul.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-nerd-127",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le comté s'affine avec le temps. Mon ancien code devient surtout plus difficile à expliquer.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-nerd-128",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le « h » aspiré n'aspire rien. La documentation française aime les surprises.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-nerd-129",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le maillot jaune est une variable globale. Tout le peloton surveille sa valeur.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-nerd-130",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le cahier Seyès stocke mes données à l'encre. La sauvegarde s'appelle « ne renverse pas ton verre ».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-nerd-131",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La ligne circulaire idéale n'existe pas sur mon trajet parisien. Elle existe très bien dans ma discussion avec l'appli.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-nerd-132",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le catalogue de la BnF trouve un livre de 1780 plus vite que moi mon fichier de mardi.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Lieu culturel, patrimoine ou pratique de lecture en France comme cadre d’une fiction humoristique originale."
+  },
+  {
+    "id": "intl-v2-fr-nerd-133",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "J'ai modélisé la croûte de baguette. Le microphone demande une pièce insonorisée.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-nerd-134",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La galette complète compile trois ingrédients. Le jaune d'œuf constitue une sortie non déterministe.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-nerd-135",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le funiculaire réduit l'effort musculaire avec un moteur. Mon diaporama parle d'innovation depuis quarante slides.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-nerd-136",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le bretzel me rappelle les pointeurs : si je tire au mauvais endroit, tout casse.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-nerd-137",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mon billet SNCF contient un code carré. Une forêt de pixels pour traverser une vraie forêt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-nerd-138",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le portail de la mairie me propose « retour ». Il a résumé dix ans de démarches en un bouton.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-nerd-139",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La Promenade des Anglais est mon bus de données : poussettes, vélos autorisés selon l'espace, et beaucoup d'humains non compressibles.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-nerd-140",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La couronne en carton utilise une fermeture réglable. Une interface qui sait enfin s'adapter à l'utilisateur.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-nerd-141",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le cannelé est croustillant dehors et moelleux dedans. Mon boîtier d'ordinateur suit une autre politique thermique.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-nerd-142",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le mot « plus » change de son selon son sens. Le français a inventé la configuration contextuelle.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-nerd-143",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La pétanque connaît les distances, les angles et les probabilités. Elle connaît aussi mon oncle, qui ignore les trois.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-nerd-144",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le Bescherelle ne se met jamais en veille. C'est l'élève qui prend en charge cette fonction.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-nerd-145",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "L'escalator de Châtelet fait de la mise en file. Moi, je fais surtout de la mise en retard.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-nerd-146",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Une recherche Gallica renvoie mille résultats. Mon après-midi vient d'être indexé ailleurs.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Lieu culturel, patrimoine ou pratique de lecture en France comme cadre d’une fiction humoristique originale."
+  },
+  {
+    "id": "intl-v2-fr-nerd-147",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "observ",
+    "text": "À la dune du Pilat, l'érosion teste chaque nuit la robustesse de mon château.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-nerd-148",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La baguette sous le bras est une liaison de proximité avec perte de paquets croustillants.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-nerd-149",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le kouign-amann atteint vite la masse critique. Le problème est que j'en veux encore.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-nerd-150",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La traboule offre un chemin alternatif. Mon routeur applaudit, mes invités cherchent la bonne porte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-nerd-151",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La maison à colombages affiche sa structure. Mon application préfère cacher la sienne sous des dégradés.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-nerd-152",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le TER s'arrête à chaque station. Il respecte beaucoup mieux ses points d'arrêt que mon débogueur.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-nerd-153",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "FranceConnect utilise mon identité. Mon mot de passe utilise mes derniers restes de mémoire.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-nerd-154",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La socca passe du solide au souvenir. Une transition de phase que ma balance regrette.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Cadre niçois, avec socca, Cours Saleya ou Promenade des Anglais ; aucune généralisation sur les habitants."
+  },
+  {
+    "id": "intl-v2-fr-nerd-155",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "J'ai tenté de prédire la fève par imagerie. Ma mère a simplement marqué le dessous du plat.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-nerd-156",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "L'aligot est un câble extensible dont la bande passante se mesure en invités.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-nerd-157",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Les guillemets français gardent des espaces à l'intérieur. Même la typographie apprécie un peu de place.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-nerd-158",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mon calcul de trajectoire pétanque était exact. Le gravier avait une autre version des données.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-nerd-159",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La dictée vérifie l'intégrité des mots. L'accent oublié est une corruption minuscule, mais parfaitement notée.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-nerd-160",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La RATP dessine ses lignes en couleurs. Mon daltonisme a demandé une légende plus bavarde.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-nerd-161",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Orsay a transformé une gare en musée. Voilà une migration qui a conservé l'horloge.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Lieu culturel, patrimoine ou pratique de lecture en France comme cadre d’une fiction humoristique originale."
+  },
+  {
+    "id": "intl-v2-fr-nerd-162",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le boulanger incise la baguette avant cuisson. Une ouverture de ports dont je comprends enfin l'utilité.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "La boulangerie et la baguette constituent ici un cadre social concret ; invention originale, sans emprunt à une blague existante."
+  },
+  {
+    "id": "intl-v2-fr-nerd-163",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le fest-noz prouve qu'une boucle peut être infinie et agréable. Jusqu'à la fermeture de la salle.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Référence à la Bretagne : danses collectives du fest-noz, spécialités au blé noir ou vie du littoral selon la scène."
+  },
+  {
+    "id": "intl-v2-fr-nerd-164",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Les lumières de décembre à Lyon sont un rendu graphique qui n'entre pas dans ma carte mémoire.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Cadre lyonnais : traboules, bouchons, relief urbain ou Fête des Lumières ; jeux sur des lieux et usages précis."
+  },
+  {
+    "id": "intl-v2-fr-nerd-165",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le kougelhopf n'est pas un donut mal configuré. Il a ses propres spécifications.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Référence alsacienne à la pâtisserie, aux maisons à colombages ou aux marchés saisonniers ; fiction contemporaine."
+  },
+  {
+    "id": "intl-v2-fr-nerd-166",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mon TGV a quitté le tunnel. La messagerie vient de livrer toutes les urgences en un seul lot.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Scène de déplacement située dans un réseau français nommé ; détails et incidents sont fictifs, sans promesse sur le service."
+  },
+  {
+    "id": "intl-v2-fr-nerd-167",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mon CERFA demande un code postal. Pour une fois, l'administration s'intéresse à mon code.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  },
+  {
+    "id": "intl-v2-fr-nerd-168",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La galette avait deux fèves. Notre famille a découvert les conflits de leadership distribué.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence à une fête ou coutume pratiquée en France ; la scène ne suppose pas une pratique universelle."
+  },
+  {
+    "id": "intl-v2-fr-nerd-169",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "La crème du millefeuille manque de cohésion. Le développeur propose une nouvelle couche : erreur classique.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-nerd-170",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le tréma demande de séparer les sons. Mon compilateur français aime découper les problèmes.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-nerd-171",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le Tour de France est une longue boucle. Les coureurs apprécieraient parfois un simple « break ».",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Référence concrète à une pratique ou manifestation sportive française ; scène et dialogues inventés."
+  },
+  {
+    "id": "intl-v2-fr-nerd-172",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "J'ai transformé mon cahier Seyès en tableur. L'effacement conditionnel reste manuel.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "Scène scolaire située en France, utilisant un repère explicite tel que dictée, bac, cahier Seyès ou fournitures."
+  },
+  {
+    "id": "intl-v2-fr-nerd-173",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le métro m'a appris l'algorithmique gloutonne : choisir la première rame, regretter son remplissage.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Lieu ou pratique parisienne nommés comme décor ; personnage fictif, sans prétention à représenter Paris."
+  },
+  {
+    "id": "intl-v2-fr-nerd-174",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mon téléchargement Gallica est terminé. Ma lecture, elle, n'a toujours pas de barre de progression.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Lieu culturel, patrimoine ou pratique de lecture en France comme cadre d’une fiction humoristique originale."
+  },
+  {
+    "id": "intl-v2-fr-nerd-175",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le téléphérique de Grenoble m'a appris la suspension. Mon navigateur avait déjà essayé, avec moins de vue.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "Repère régional français explicite utilisé comme situation comique ; diversité locale, sans portrait national."
+  },
+  {
+    "id": "intl-v2-fr-nerd-176",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Mon clavier AZERTY transforme un raccourci en accent. Il préfère manifestement la littérature à la productivité.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "puns"
+    ],
+    "cultural_note": "Jeu original sur une expression française ou sur plusieurs sens d’un mot ; aucune citation de blague traditionnelle."
+  },
+  {
+    "id": "intl-v2-fr-nerd-177",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le sel de Guérande conserve les aliments. J'en ai épargné mon disque dur : je lis parfois la documentation.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Spécialité française explicitement nommée ; la chute porte sur un objet ou un personnage inventé."
+  },
+  {
+    "id": "intl-v2-fr-nerd-178",
+    "collection": "fr-fr-everyday",
+    "category": "nerd",
+    "format": "oneliner",
+    "text": "Le CERFA s'ouvre enfin. Mon ordinateur a demandé s'il fallait célébrer l'événement dans le calendrier.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "Satire fictive de démarches ou de formulaires français ; ne constitue pas une information administrative."
+  }
+]

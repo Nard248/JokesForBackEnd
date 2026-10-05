@@ -1,0 +1,2243 @@
+[
+  {
+    "id": "intl-v2-de-kid-safe-001",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Meine Schultüte wollte auch eingeschult werden. Die Lehrerin meinte, sie sei beim Fach Inhalt schon ziemlich weit.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-002",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Die Brezel spielte Verstecken. Man erkannte sie daran, dass immer irgendwo ein Loch durchs Gebüsch schaute.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-003",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Im Schrebergarten bekam die Schnecke einen Besucherausweis. Sie braucht für einen kurzen Besuch schließlich das ganze Wochenende.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-004",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Ein Kind aus Wien und eines aus Berlin tauschten Pausenbrote. Die Wörter waren verschieden; das „Mmh“ brauchte keine Übersetzung.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-kid-safe-005",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Meine Laterne ist ein Fuchs. Beim Umzug will sie ständig den leuchtenden Hühnern vor uns nachlaufen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-006",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Der Pfandautomat spuckte die Flasche zurück. Mein kleiner Bruder sagte: „Er möchte heute wohl lieber Saft.“",
+    "age_rating": "kid-safe",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-007",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "In der Schwebebahn fragte mein Teddy, warum die Straße unten mitfährt. Er ist zum ersten Mal Fahrer im Himmel.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-008",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Beim Vereinsfest durfte ich die Glocke läuten. Jetzt weiß das ganze Dorf, dass ich diese Aufgabe wirklich kann.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-009",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mein Knödel wollte nicht in die Suppe. Er hatte gerade erst seine runde Frisur fertig.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-kid-safe-010",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Auf dem Harzweg fotografierte ich einen Pilz. Er hat dafür extra seinen besten Hut anbehalten.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-011",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mein Ranzen bekam einen Stundenplan. Jetzt weiß er vorher, an welchem Tag er über Mathe seufzen darf.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-012",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Das Laugenbrötchen wollte schwimmen lernen. Die Bäckerin empfahl ihm lieber ein trockenes Hobby.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-013",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Unsere Gartenbohne klettert an einer Stange. Mein Bruder hat oben ein Schild „Du schaffst das!“ befestigt.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-014",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus hat die Zeitung einen Holzhalter. Mein Kind nennt ihn das Klettergerüst für Wörter.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-kid-safe-015",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Beim Plätzchenbacken verlor ein Stern eine Spitze. Er ist jetzt ein sehr zufriedenes neues Sternbild.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-016",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Ich brachte drei Pfandflaschen zurück. Mein Sparschwein hörte beim Klimpern sofort auf, dekorativ herumzustehen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-017",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Die Hamburger Fähre ließ eine Möwe mitfahren. Sie brauchte kein Ticket, weil sie ihren eigenen Rückflug organisiert hatte.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-018",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Unser Fußballvereinsmaskottchen hat riesige Füße. Es kann praktisch gleichzeitig auf dem Feld und schon beim Kuchen stehen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-019",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Im Wiener Riesenrad wollte mein Teddy ganz oben aussteigen. Ich erklärte ihm, dass die Wolken keine Haltestellen haben.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-kid-safe-020",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Im Puppentheater suchte mein Bruder den Stromstecker des Drachen. So viel Brüllen müsse schließlich irgendwo herkommen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-021",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Die Schultüte bekam einen Namen. Jetzt müssen wir vor dem Naschen höflich fragen, ob sie etwas abgeben möchte.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-022",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Die Brezel trug eine Schleife. „Doppelt hält besser“, sagte sie und sah sehr zufrieden verknotet aus.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-023",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Im Gartenverein fand ich eine krumme Möhre. Sie übt offenbar schon für unseren Tanznachmittag.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-024",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mein Freund aus Graz sagt Semmel. Ich sage Brötchen. Unser Hund sagt gar nichts und hat trotzdem alles verstanden.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-kid-safe-025",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Die Laterne beschwerte sich über den Wind. Sie wolle leuchten und nicht dauernd Tanzunterricht bekommen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-026",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mein Bruder hielt eine Zeichnung vor den Pfandautomaten. Er wollte wissen, ob eine gemalte Flasche wenigstens Spielgeld bringt.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-027",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Die Straßenbahn in Dresden klingelte. Mein Kuscheltier sagte „Herein“, und alle mussten lachen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-028",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Beim Kinderchor vergaß ich den Text. Ich sang einfach sehr überzeugt die Melodie meiner Gedanken.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-029",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Ein Kaiserschmarrn-Stück wollte wieder zusammenwachsen. Die Gabel fand, kleine Portionen seien viel geselliger.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-kid-safe-030",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Auf dem Schwarzwaldweg fragte ich eine Tanne nach dem Weg. Sie zeigte sehr viele Richtungen auf einmal.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-031",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mein Schulranzen hat Reflektoren. Der Mond kann mich damit auch auf dem Heimweg vom Laternenfest finden.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-032",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Das Brotende will nicht „Rest“ heißen. Es sagt, es sei die knusprige Abschlussrede.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-033",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Unser Gartenzwerg braucht keinen Regenschirm. Er behauptet, sein Bart sei bereits wetterfest eingerichtet.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-034",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "In Wien bekam mein Kakao einen Löffel. Der musste zuerst die Sahneberge erkunden, bevor ich trinken durfte.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-kid-safe-035",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Der Nussknacker wollte einen weichen Keks. Auch Fachleute brauchen manchmal einen einfachen Arbeitstag.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-036",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mein Pfandbon ist länger als meine Einkaufsliste. Ich bin offenbar schon besser im Zurückbringen als im Planen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-037",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "In der Kölner Straßenbahn suchte mein Bruder den Lenker. Er wollte sicher sein, dass wir nicht nur zufällig der Straße folgen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-038",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Beim Schachverein schlug ich dem Pferd eine Futterpause vor. Es hüpft schließlich viel mehr als die anderen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-039",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "In Salzburg zeichnete ich die Festung. Für die Wolken darüber baute ich ein zusätzliches Gästezimmer ein.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-kid-safe-040",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Im Museum sollte ich etwas Altes finden. Papa hob die Hand, aber ich wollte ihn nicht ausstellen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-041",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Die Schultüte will ihren Beruf wechseln. Nach dem ersten Schultag eignet sie sich hervorragend als Lautsprecher für gute Nachrichten.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-042",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Die Brezel ging zum Fotografen. Er fragte, ob sie bitte alle drei Fenster gleichzeitig offen lassen könne.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-043",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Im Schrebergarten zählt Oma die Erbsen. Ich zähle die, die unterwegs „versehentlich“ verschwinden.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-044",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mein Wiener Freund lernte „Moin“. Er sagte es zu seinem Wecker; nun beginnt der Morgen wenigstens höflich.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-kid-safe-045",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Unsere Laternenkatze sah eine echte Katze. Beide blieben stehen und warteten, wer zuerst leuchtet.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-046",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Der Pfandautomat zählt sehr schnell. Ich möchte ihn zum Geburtstag einladen, damit er meine Kerzen übernimmt.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-047",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Auf der Hamburger Hafenfähre winkte ich jedem Schiff. Meine Hand hat heute mehr Strecke gemacht als meine Beine.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-048",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Beim Sommerfest unseres Sportvereins gewann mein Ball die größte Freiheit: Er rollte ganz allein bis zum Kuchenstand.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-049",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Der Knödel sagte zum Salat: „Du bist immer so durcheinander.“ Der Salat antwortete: „Du siehst auch nur eine runde Seite.“",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-kid-safe-050",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Im Harz folgte ich den Wandermarkierungen. Mein kleiner Bruder wollte wissen, wann wir endlich alle Farben gesammelt hätten.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-051",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mein Lineal möchte in die Schultüte zurück. Dort wurde es wenigstens nicht jeden Tag mit langen Aufgaben verglichen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-052",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Die Brotdose hat ein Fach für Obst. Mein Apfel fühlt sich darin wie in einem kleinen eigenen Hotelzimmer.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-053",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Im Gemeinschaftsgarten bekam die Sonnenblume einen Stock. Jetzt hat sie einen Trainingspartner, der nie die Pausen verlängert.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-054",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus erklärte ich meinem Teddy die Zeitung. Sie ist ein Buch, das jeden Morgen neue Hausaufgaben mitbringt.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-kid-safe-055",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Der Adventskalender hat keine Klingel. Deshalb klopfe ich bei jedem Türchen vorher mit dem Finger an.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-056",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mein Bruder wollte den Pfandbon gießen. Er hatte gehört, dass Geld manchmal wachsen soll.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-057",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "In der Wuppertaler Schwebebahn sah ich den Fluss von oben. Die Enten machen offenbar Führungen für die unteren Plätze.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-058",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Unser Kinderchor singt ein Lied über Regen. Wir proben vorsichtshalber drinnen, damit es nicht zu überzeugend wird.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-059",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Im Wiener Prater wollte ich das Riesenrad auf dem Handy drehen. Papa erklärte, dass echte Ausflüge noch keinen Wischmodus haben.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-kid-safe-060",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Die Bibliothekarin zeigte mir den Rückgabeschlitz. Endlich haben Bücher eine eigene Haustür.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-061",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Meine Schultüte ist leer. Sie sagt, das sei kein Mangel, sondern Platz für neue Kenntnisse mit Zucker.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-062",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Die Brezel fragte nach einem Pullover. Der Schneider wollte zuerst wissen, durch welches Loch ihr Kopf komme.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-063",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Im Schrebergarten bauten wir ein Insektenhotel. Der erste Gast beschwerte sich nicht; er flog direkt durchs offene Fenster.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-064",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mein Freund aus Innsbruck malte einen Berg, ich einen Hügel. Zusammen hatten wir ein Bild mit leichter und schwerer Seite.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-kid-safe-065",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Beim Osterbasteln bekam mein Hase drei Ohren. Er ist für wichtige Familiennachrichten besonders gut vorbereitet.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-066",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Ich fragte den Pfandautomaten nach einem Berufswunsch. Er schwieg; vermutlich wollte er erst die Flasche fertig kennenlernen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-067",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Die Münchner Straßenbahn hielt vor einer roten Ampel. Mein Teddy fragte, ob sie gerade nachdenken müsse.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-068",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Im Tischtennisverein übe ich Aufschläge. Der Ball übt gleichzeitig spontane Ausflüge unter die Heizung.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-069",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Meine Salzburger Tante machte Marillenknödel. Ich fand gut, dass Obst auch einmal ein warmes Bett bekommt.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-kid-safe-070",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Beim Wandern in der Eifel suchte ich den höchsten Stein. Er durfte mein nächster Rastplatz werden.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-071",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mein Mäppchen hat einen Reißverschluss. So können die Stifte nachts keine unerlaubten Geschichten malen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-072",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Das Brötchen wollte ein Haustier. Die Bäckerin empfahl einen Krümel: pflegeleicht, aber schwer wiederzufinden.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-073",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Unsere Gartenlaube bekam einen Briefkasten. Die Schnecke braucht jetzt nicht mehr persönlich bis zur Tür zu kommen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-074",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "In einem Wiener Kaffeehaus bekam ich ein Glas Wasser zum Kakao. Mein Teddy fragte, ob es eine kleine Schwimmpause sei.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-kid-safe-075",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Die Weihnachtspyramide dreht sich. Mein Bruder wartet darauf, dass sein Lieblingsengel endlich winkt.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-076",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mein Pfandgeld reicht für ein kleines Eis. Die leeren Flaschen haben sich überraschend um meine Nachmittagsplanung gekümmert.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-077",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Die Hamburger Fähre hat kein Fahrradpedal. Ich finde gut, dass Erwachsene nicht alles Schwierige den Mitfahrern überlassen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-078",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Beim Vereinslauf hatte ich die größte Startnummer. Für einen Moment fühlte sich das schon wie der erste Platz an.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-079",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "In Graz malte ich dem Uhrturm ein Armband. Eine Uhr muss sich schließlich selbst auch als Uhr erkennen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-kid-safe-080",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Im Puppentheater rief ich dem Drachen einen guten Rat zu. Er hörte nicht, aber seine Hinterbeine wirkten dankbar.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-081",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Der Erstklässler wollte seine Schultüte wiegen. Er misstraute Papas Behauptung, darin stecke vor allem viel Liebe.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-082",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Die Brezel hatte einen Knoten im Gedanken. Ihre Freunde bemerkten keinen Unterschied, was sie sehr beruhigte.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-083",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Im Kleingarten tragen die Bohnen Namensschilder. Die Kartoffeln dürfen ihre Privatsphäre unter der Erde behalten.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-084",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mein österreichischer Freund brachte ein Wort für Aprikosen mit. Ich brachte Appetit mit; die Zusammenarbeit war hervorragend.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-kid-safe-085",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Meine Laterne sieht aus wie ein Haus. Ich habe vorsichtshalber ein winziges Schild „Familie Licht“ angebracht.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-086",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Der Pfandautomat hatte eine Pause. Mein Bruder legte ihm eine Flasche hin, damit er später in Ruhe frühstücken könne.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-087",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "In der Berliner U-Bahn gab ich meinem Teddy die Haltestellenkarte. Er ist für die Strecke verantwortlich, ich für das Aussteigen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-088",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Unser Schachverein hat eine Kindergruppe. Der König bekommt dort regelmäßig erklärt, warum er sich so wenig bewegen darf.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-089",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Die österreichische Semmel hatte fünf Linien. Mein Bruder dachte, sie wolle vor dem Frühstück noch eine Hand geben.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-kid-safe-090",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Auf dem Schwarzwaldweg las ich „Rastplatz“. Endlich ein Schild, das schon beim Lesen genau richtig klingt.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-091",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mein Füller lief im Schulranzen aus. Offenbar wollte er seine Geschichte nicht bis zur ersten Stunde warten lassen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-092",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Das Roggenbrot fand die Marmelade zu klebrig. Die Butter schlug vor, sich erst einmal vorsichtig dazwischenzulegen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-093",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Im Schrebergarten baute mein Bruder der Gießkanne eine Garage. Sie sei schließlich das wichtigste Wasserfahrzeug dort.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-094",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus durfte ich den Zucker umrühren. Mein Kakao hatte danach ein sehr abwechslungsreiches Wetter.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-kid-safe-095",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Der Nikolausstiefel wünschte sich einen Partner. Er findet, Geschenke sollte man nicht immer allein tragen müssen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-096",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Ich sammelte Pfandflaschen für ein Spielzeugauto. Die Flaschen mussten zuerst selbst zu Fuß zum Laden reisen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-097",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "In der Leipziger Tram winkte ich meinem Spiegelbild im Fenster. Im Tunnel war es besonders gut gelaunt zurück.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-098",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Beim Sportfest bekam der langsamste Läufer Applaus. Er hatte den anderen schließlich die längste Erholungspause geschenkt.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-099",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Unser Wiener Freund zeichnete ein Riesenrad aus Keksen. Leider ging beim Bauen jede zweite Gondel verloren.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-kid-safe-100",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Im Berliner Museum fragte ich nach den Dinosaurierbetten. So große Knochen können unmöglich bequem auf dem Boden geschlafen haben.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-101",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Die Schultüte möchte nächstes Jahr wiederkommen. Sie fand die kurze Karriere mit so viel Applaus ausgesprochen überzeugend.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-102",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Die Brezel hörte ein Rätsel. „Ich weiß es“, sagte sie, „aber meine Gedanken drehen sich gerade im Kreis.“",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-103",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "In der Gartenkolonie wachsen unsere Kürbisse nebeneinander. Mein Bruder hat ihnen eine gemeinsame Telefonnummer gemalt.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-104",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Ein Kind aus Hamburg und eines aus Wien bauten eine Stadt. Die Erwachsenen mussten erst fragen, welche Sprache das Spielzeugauto spreche.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-kid-safe-105",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Der Holzengel vom Weihnachtsmarkt wollte ans Fenster. Er hatte die ganze Woche nur Geschenkpapierlandschaften gesehen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-106",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mein Bruder schrieb einen Dankesbrief an den Pfandautomaten. Er fand selten jemanden, der so zuverlässig Taschengeld vorbereitet.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-107",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Die Dresdner Straßenbahn fuhr um die Kurve. Mein Teddy hielt die Ohren fest, damit sie nicht die Richtung wechseln.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-108",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Unser Kinderchor bekam neue Notenmappen. Die Lieder müssen jetzt vor der Probe ordentlich anstehen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-109",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Beim Strudelmachen rollte ich besonders langsam. Der Apfel sollte Gelegenheit bekommen, sich an seine neue Wohnung zu gewöhnen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-kid-safe-110",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Im Teutoburger Wald hörten wir einen Specht. Papa sagte, er arbeite; ich fragte nach seiner Mittagspausenklingel.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-111",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Meine Brotdose kam leer aus der Schule zurück. Sie behauptet, den ganzen Tag erfolgreich gearbeitet zu haben.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-112",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Das Laugengebäck verteilte Salzkrümel auf dem Tisch. Es wollte eine Karte für den Rückweg in die Tüte hinterlassen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-113",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Im Schrebergarten sahen wir eine Vogelscheuche. Mein Bruder brachte ihr ein Brot, weil sie offenbar den ganzen Tag keinen Laden erreicht.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-114",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus hatte mein Teddy keinen Stuhl. Wir gaben ihm die Zeitung; so wirkte er sofort wie Stammgast.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-kid-safe-115",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Meine Osterhasenzeichnung hat sehr lange Beine. Sie soll die Eier dieses Jahr wirklich überall finden.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-116",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Der Pfandbon verschwand in Papas Tasche. Ich hoffe, dort findet er die ganzen anderen Dinge, nach denen wir suchen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-117",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Auf der Rheinfähre fragte ich, ob das Wasser auch irgendwo hinmüsse. Es hatte es jedenfalls ziemlich eilig.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-118",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Beim Vereinsfest durfte ich die Lose mischen. Der Teddy in der Tombola sah dabei auffallend hoffnungsvoll aus.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-119",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "In Salzburg sahen wir eine Kutsche. Mein Bruder wollte wissen, wo das Pferd seine Parkscheibe aufbewahrt.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-kid-safe-120",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "In der Musikschule lernte ich eine Pause. Zu Hause führte ich sie gleich in einer sehr langen Fassung vor.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-121",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mein Radiergummi heißt im Mäppchen „Vielleicht“. Er ist bei fast jeder ersten Antwort dabei.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-122",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Die Brezel möchte gern telefonieren. Drei Löcher und trotzdem keines, aus dem eine vernünftige Stimme kommt.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-123",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Unser Gartensalat trägt nach dem Regen Tropfen. Mein Bruder nennt sie Medaillen fürs ruhige Stehenbleiben.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-124",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Meine Freundin aus Graz und ich tauschten Grußwörter. Jetzt winken unsere Stofftiere doppelt so lange.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-kid-safe-125",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Beim Laternenumzug wurde mein Drache nass. Er hat für dieses Jahr vorsichtshalber Wasser statt Feuer beantragt.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-126",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mein Pfandgeld liegt im Sparschwein. Das Schwein tut sehr beschäftigt, obwohl die Flaschen die ganze Arbeit gemacht haben.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-127",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Die Schwebebahn fuhr über eine Brücke. Ich fand gut, dass sie ihren Kollegen von oben besucht.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-128",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Beim Fußballtraining traf mein Ball den Hütchenstapel. Endlich hatte ich ein Ziel gefunden, das wirklich laut jubeln konnte.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-129",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Der Marillenknödel war in Bröseln gerollt. Mein Bruder meinte, so gehe man nach dem Sandkasten auch oft nach Hause.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-kid-safe-130",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Auf dem Harzweg trug ich den kleinsten Rucksack. Dafür hatte ich die größte Verantwortung für die Kekse.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-131",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mein Stundenplan ist bunt. Montags brauche ich offenbar besonders viele Farben, damit der Tag freundlich aussieht.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-132",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Das Pumpernickel wollte ein Bilderbuch. Mit so vielen Körnern kenne es schon genug kleine Punkte ohne Geschichte.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-133",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Im Kleingarten bauten wir einen Weg aus Steinen. Die Ameisen liefen daneben und nannten es vermutlich Abkürzung.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-134",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mein Kakao im Wiener Kaffeehaus hatte eine Sahnehaube. Ich fragte, ob er sie zum Trinken abnehmen dürfe.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-kid-safe-135",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Der Adventsstern hing kopfüber. Mein Bruder meinte, für Sterne gebe es im Himmel ohnehin keinen festen Fußboden.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-136",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Eine Flasche kam aus dem Automaten zurück. Ich drehte sie um; vielleicht hatte sie ihren Ausweis falsch herum gezeigt.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-137",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "In der Münchner Tram zählte ich die Türen. Ich wollte wissen, wie viele Möglichkeiten es gibt, die richtige Station zu verpassen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-138",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Beim Schachtraining versteckte ich den König hinter einem Bauern. Manche wichtige Leute mögen eben auch Verstecken.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-139",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Im Wiener Prater fotografierte ich das Riesenrad. Zu Hause klebte ich ein kleines Bild von mir oben hinein: zweite Fahrt kostenlos.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-kid-safe-140",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Die Stadtbibliothek lieh mir ein Drachenbuch. Ich versprach, es nicht direkt neben brennbaren Märchen zurückzustellen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-141",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Meine Schultüte ist jetzt eine Rakete. Sie hatte schon genug Süßigkeiten als Treibstoff geladen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-142",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Die Brezel bekam einen Schal. Der Schal fragte zuerst, wo bei ihr eigentlich der Hals aufhöre.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-143",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Im Schrebergarten wollte mein Bruder den Kürbis drehen. Er müsse doch auch einmal die Nachbarn sehen dürfen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-144",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mein Wiener Freund sagt „Bussi“. Mein Kuschelbär nahm das für einen Busnamen und wartete brav auf die nächste Umarmung.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-kid-safe-145",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Beim Plätzchenbacken wollte ich einen ganzen Sternenhimmel. Mama verlangte dafür eine zweite Backblech-Galaxie.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-146",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mein Bruder fragte, ob der Pfandautomat abends Durst habe. Den ganzen Tag nur leere Flaschen sei schließlich kein richtiges Trinken.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-147",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Die Hamburger Hafenfähre hatte einen Rettungsring. Mein Teddy fragte, ob das Schiff damit Schwimmen gelernt habe.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-148",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Unser Vereinsmaskottchen bekam eine Medaille. Sie war so groß, dass es beim Laufen dauernd seinen eigenen Applaus hörte.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-149",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Die Wiener Semmel lag neben meinem Berliner Brötchen. Beim Frühstück hatten beide auffallend ähnliche Zukunftspläne.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-kid-safe-150",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Auf dem Eifelweg sammelte ich Tannenzapfen. Papa sammelte die Gründe, warum wir nicht alle mitnehmen konnten.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-151",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mein Mäppchen ist durchsichtig. Die Buntstifte können schon vor der Kunststunde sehen, ob heute ein Drachenwetter ist.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-152",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Das Roggenbrötchen wollte kein Kostüm. Es fand seine Kruste bereits festlich genug fürs Bäckerregal.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-153",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Im Gartenverein malten wir Schilder für die Beete. Die Radieschen bekamen große Schrift, damit sie den Weg nach oben finden.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-154",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "In Wien sah ich einen großen Zeitungstisch. Mein Teddy fand erstaunlich, wie viel Frühstück Wörter offenbar brauchen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-kid-safe-155",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Der Kuckuck aus der Schwarzwalduhr kam zu spät. Mein Bruder vermutet, er habe drinnen seine Hausschuhe gesucht.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-156",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Ich klebte meinem Sparschwein ein Pfandsymbol auf. Jetzt sieht es endlich so aus, als wüsste es, woher sein Geld stammt.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-157",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Die Berliner U-Bahn fährt unter der Stadt. Mein Bruder fragt, ob die Häuser dabei manchmal an den Füßen gekitzelt werden.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-158",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Beim Kinderchor sangen wir vom Frühling. Der Wintermantel an der Garderobe sah etwas beleidigt aus.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-159",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Auf dem Spaziergang in Innsbruck malte ich den Bergen Gesichter. Einer sah genauso aus wie Papa nach der Treppe.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-kid-safe-160",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Im Museum gab es einen Audioguide. Mein Bruder fragte, warum die Bilder nicht selbst erzählen dürften.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-161",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Die Schultüte liegt neben dem Ranzen. Sie erinnert ihn täglich daran, wer auf dem ersten Klassenfoto beliebter war.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-162",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Die Brezel wollte sich gerade machen. Ihre Freunde baten sie, nicht ihre ganze Persönlichkeit aufzugeben.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-163",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Unser Gartenzaun hat ein Loch für den Igel. Mein Bruder schrieb daneben: „Bitte Rucksack vorher absetzen.“",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-164",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Ein Kind aus Köln und eines aus Salzburg planten eine Burg. Über die Tür waren sie sofort einig: breit genug für beide Kuscheltiere.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-kid-safe-165",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Die Laterne war nach dem Umzug müde. Wir stellten sie ans Fenster, damit sie im Sitzen weiterleuchten konnte.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-166",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mein Pfandbon bekam einen Ehrenplatz im Kinderkaufladen. Endlich ein Kassenzettel, der echte Verantwortung mitbringt.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-167",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "In der Leipziger Straßenbahn zählte ich die Haltestellen rückwärts. Vielleicht kommt man so schneller wieder zu den Ferien.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-168",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Beim Vereinslauf lief ich direkt neben meinem Schatten. Er hat mich überholt, aber an den Kurven ziemlich geschummelt.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-169",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Mein erster selbst gerollter Knödel war eckig. Die österreichische Tante nannte ihn eine Wohnung mit besonders viel Charakter.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-kid-safe-170",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Im Schwarzwald wollte mein Bruder dem Bach einen Namen geben. Er entschied sich für „Weiter“, weil der nie stehen bleibt.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "German walking, hiking, trail, and outdoor leisure contexts. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-171",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Der neue Schulranzen kann aufrecht stehen. Papa sagt, das sei morgens eine Fähigkeit, um die ihn viele Erwachsene beneiden.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-172",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Das Brötchen war mit Mohn bestreut. Mein Bruder suchte den Knopf, mit dem man den Sternenhimmel einschalten könne.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-173",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Im Kleingarten fand ich eine kleine Gießkanne. Sie ist für Pflanzen gedacht, die noch nicht bis zehn zählen können.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-174",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus bekam mein Teddy einen eigenen Löffel. Er behielt ihn für wichtige Gespräche mit dem Pudding.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-kid-safe-175",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Unser Weihnachtsengel hat schiefe Flügel. Er fliegt vermutlich gemütliche Kurven statt unnötig gerader Strecken.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-176",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Der Pfandautomat nahm alle Flaschen an. Mein Bruder klatschte; man sollte gute Zusammenarbeit schließlich anerkennen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-177",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Auf der Rheinfähre malte ich ein Boot auf Papier. Das richtige Boot transportierte meinen Entwurf sehr verantwortungsvoll zum anderen Ufer.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-kid-safe-178",
+    "collection": "de-de-everyday",
+    "category": "kid-safe",
+    "format": "oneliner",
+    "text": "Beim Sommerfest durfte ich die Siegerurkunden tragen. Für fünf Minuten war ich erfolgreicher als der ganze Sportverein zusammen.",
+    "age_rating": "kid-safe",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Child-friendly imagination or a simple misunderstanding. Original AI-authored draft; no native human review claimed."
+  }
+]

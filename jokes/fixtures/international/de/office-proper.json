@@ -1,0 +1,2285 @@
+[
+  {
+    "id": "intl-v2-de-office-proper-001",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unser Berliner Büro nennt die Kaffeeecke Innovationslabor. Das erste Ergebnis war ein verschwundener Teelöffel.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-002",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Beim deutsch-österreichischen Projekt schrieben wir Januar und Jänner in den Plan. Jetzt haben wir scheinbar einen Monat mehr Zeit.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-003",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Der Vorstand des Kleingartenvereins diskutierte digitale Ablage. Die Gießkannen haben inzwischen eindeutigere Stellplätze als die Dateien.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-004",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unser Wiener Kundentermin im Kaffeehaus lief hervorragend. Nur die Sachertorte beantwortete keine einzige strategische Frage.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-005",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Im Hamburger Büro hängt ein Hafenbild zur Motivation. Seitdem nennen wir ungelöste Aufgaben vorübergehend vor Anker liegend.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-006",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Kollegin aus Graz nennt den freien Freitag Fenstertag. Unser Team hat sofort gefragt, ob das Fenster auch Ausstiegsmöglichkeiten bietet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-007",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Wir führen im Münchner Büro eine gemeinsame Pfandkasse. Sie ist das einzige Budget, das regelmäßig hörbar nachwächst.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-008",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Beim Protokoll des Chorvereins fehlte ein Beschluss. Die Vorsitzende vermutet, dass jemand ihn zu leise abgestimmt hat.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-009",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unser Geschäftstermin begann im ICE. Die Tagesordnung bekam erfreulicherweise mehr Aussicht als sonst.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-010",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Der Wiener Kollege schrieb „geht sich aus“. Ich trug es als Zeitplan ein; er meinte die Kuchenportionen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-011",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Das Düsseldorfer Büro hat einen Kreativraum. Darin ist sogar der leere Whiteboard-Stift eine ergebnisoffene Erfahrung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-012",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unser Gartenteam erstellt Pflanzpläne. Die Zucchini betrachtet das Dokument offenbar als unverbindliche Empfehlung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-013",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Elternvertretung plante das Schulfest so gründlich, dass die Kuchenliste inzwischen eine Stellvertretung braucht.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-014",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die österreichische Kollegin brachte Jause zur Besprechung. Endlich enthielt die Agenda einen Punkt mit messbarem Nährwert.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-015",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Im städtischen Museum diskutieren wir Besucherströme. Vor der Kaffeemaschine verstehen plötzlich alle das Konzept.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-016",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Das Team aus Köln und Linz konnte sich auf keine Grußformel einigen. „Kuchen steht bereit“ funktioniert erstaunlich grenzüberschreitend.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-017",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unser Leipziger Coworking-Büro vermietet Fokusplätze. Meiner hat direkten Blick auf die Gespräche, die ich vermeiden wollte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-018",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Der Weihnachtsmarktverein bat um kurze Standberichte. Der Waffelstand schickte nur ein Foto der Schlange.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-019",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Bäckerei führte eine Morgenbesprechung ein. Der Teig ging trotzdem ohne Rücksprache weiter auf.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-020",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Beim Workshop in Salzburg hieß es, wir sollten Höhen gewinnen. Das Hotel stellte freundlicherweise einen Beamer bereit.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-021",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mein Stuttgarter Team nutzt farbige Haftnotizen. Selbst ein Stillstand sieht damit nach gut besuchtem Stadtfest aus.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-022",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Beim Termin mit Wien vergaß ich den Zeitunterschied: Ihre Mittagspause begann exakt mit meinem ersten Bissen Strudel.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-023",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Der Schachverein gründete einen Planungsausschuss. Nach einer Stunde war noch niemand bereit für den ersten Zug.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-024",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus erklärte ich das Geschäftsmodell. Die Kellnerin verstand es am besten: lange bleiben, gelegentlich nachbestellen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-025",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unsere Pfandkasse braucht zwei Unterschriften. Für eine einzige Flasche wäre ein Kronkorken als Beschluss einfacher.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-026",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Das Bremer Büro hat ein maritimes Leitbild. Leider können auch führungslose Projekte sehr lange schwimmen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-027",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Im Kleingartenverein heißt die Jahresplanung Beetbelegung. Das klingt sofort konkreter als unsere Bürostrategie.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-028",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Münchner und die Grazer Abteilung planten eine gemeinsame Pause. Selten fanden sich Zuständigkeiten so freiwillig.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-029",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Schulfestorganisation erklärte mich zum Materialwart. Mein gesamtes Amt passt in eine Kiste verlorener Klebebänder.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-030",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unser Theaterbüro probt die Premiere. Ich übe bereits meinen Satz: „Die endgültige Fassung kommt gleich.“",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-031",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "In der Frankfurter Besprechung sollten alle Zahlen sprechen. Meine Tabelle hatte sich offenbar für Schweigepflicht entschieden.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-032",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Wiener Kollegin bat um eine Melange. Ich bot eine Mischung aus Überstunden und Kaffee an; sie präzisierte die Bestellung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-033",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Der Sportverein braucht ein neues Organigramm. Auf dem alten führt weiterhin jede Linie zum Grillbeauftragten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-034",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Auf der Fahrt zum Berliner Kundentermin schrieb ich „unterwegs“. Selten war meine Statusmeldung derart präzise.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-035",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unsere Bäckerei testet flexible Arbeitszeiten. Der Sauerteig blieb überraschend wenig verhandlungsbereit.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-036",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Beim gemeinsamen Projekt mit Innsbruck wollten alle einen Gipfeltermin. Die Videokonferenz sparte uns wenigstens das Höhenprofil.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-037",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Das Essener Büro führte einen Ideenbriefkasten ein. Bislang ist die beste Idee, ihn gelegentlich zu leeren.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-038",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Meine Wiener Präsentation hatte nur drei Folien. Der Rest lag als Zeitungsbeilage direkt auf dem Kaffeehaustisch.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-039",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unser Gartenausschuss nutzt einen Gruppenchat. Die Tomaten erfahren dort früher von meiner Bewässerung als ich.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-040",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Planung des Adventsbasars begann im Sommer. Immerhin hatten unsere Lebkuchen klare berufliche Perspektiven.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-041",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Im Hannoveraner Büro wurde mein Tisch zum Hotdesk. Die einzige Hitze stammt bisher vom Laptoplüfter.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-042",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Der Kollege aus Salzburg sagte „passt schon“. Wir wollten das unterschrieben; er zeigte auf den korrekt sitzenden Projektorstecker.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-043",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Für die Berliner Teeküche bestellten wir Mehrwegbecher. Nun kreist nur noch die Frage, wem welcher gehört.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-044",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Im Heimatverein wurden Aufgaben verteilt. Die gemütliche Atmosphäre blieb leider ohne zuständige Person.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-045",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Bibliothek tagte über knappe Zusammenfassungen. Das Protokoll brauchte anschließend ein eigenes Inhaltsverzeichnis.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-046",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die deutsche und österreichische Buchhaltung fanden sofort Gemeinsamkeiten. Beide wollten wissen, wer den grenzüberschreitenden Kuchen bezahlt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-047",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unser Bonner Team macht täglich einen kurzen Stand. Nach dem dritten Thema lehnt er sich bereits an den Tisch.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-048",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Bei der Videokonferenz aus der Bahn nannte ich meine schwankende Verbindung mobilen Perspektivwechsel.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-049",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Der Elternbeirat sucht Freiwillige. Sobald es um Kuchentests geht, lässt die Personalknappheit merklich nach.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-050",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unser Wiener Coach empfiehlt Raum fürs Denken. Das Kaffeehaus berechnet glücklicherweise weiterhin nur die Bestellung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-051",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Das Nürnberger Büro stellte Pflanzen auf. Sie bringen endlich jemanden mit nachweisbar organischem Wachstum ins Team.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-052",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Im deutsch-österreichischen Handbuch steht nun „Brötchen/Semmel“. Für die Kekse haben wir vorsorglich ein Schlichtungsverfahren vorgesehen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-053",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Vereinsversammlung stritt über den Beamer. Er blieb der Einzige, der währenddessen kein Bild von sich zeigen wollte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-054",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Gartenkolonie führt jetzt digitale Listen. Die Schnecken wurden mangels E-Mail-Adresse vorläufig persönlich angeschrieben.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-055",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unser Bäcker nennt den Arbeitsplan Teigmanagement. Endlich hat wenigstens ein Meeting eine verlässliche Gehzeit.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-056",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Grazer Kollegin sagte „Mahlzeit“ zum ganzen Büro. Darauf war selbst meine belegte Stulle kurz etwas stolz.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-057",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Im Dortmunder Büro sprechen wir von kurzen Entscheidungswegen. Sie führen direkt zum nächsten Abstimmungstermin.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-058",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Der Weihnachtsfeierausschuss darf alles entscheiden. Außer Datum, Budget, Essen und wer diesmal die Rede hält.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-059",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unser Museumsverein diskutiert interaktive Angebote. Die Garderobenmarken liefern bereits intensive Beteiligung beim Wiederfinden.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-060",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "In Innsbruck machten wir einen Strategie-Spaziergang. Nach der Steigung waren plötzlich alle für flache Hierarchien.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-061",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Das Kieler Büro nennt Schwierigkeiten Gegenwind. Ich hätte dann gern passende Segel statt einer zusätzlichen Präsentation.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-062",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unsere Wiener Partner schickten ein Protokoll voller Schmäh. Die Aufgaben waren leichter lesbar, aber leider weiterhin meine.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-063",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Beim Teamevent sortierten wir Pfandflaschen. Zum ersten Mal war das Ergebnis sofort einlösbar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-064",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Im Vereinsheim wurde ein Büro eingerichtet. Die Tischtennisplatte verhandelt noch über ihre Doppelrolle.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-065",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Lehrerkonferenz plante einen Ruhetag. Der Beschluss brauchte ungewöhnlich wenige Wortmeldungen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-066",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mein Wiener Kollege reservierte einen Kaffeehaustisch statt eines Konferenzraums. Plötzlich passte niemand mehr auf die Uhr auf.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-067",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "In der Potsdamer Verwaltung hängt ein Wegweiser für Rückfragen. Er zeigt mutig in beide Richtungen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-068",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Das Kölner Team bestellte Büro-Räder. Unsere Meetings haben seither immerhin realistische Aussicht auf Bewegung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-069",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Beim Gartenvereinsbudget schlug jemand mehr Wachstum vor. Der Kompostbeauftragte fühlte sich sofort angesprochen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-070",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Wir planten mit Linz einen Brückentag. Die österreichischen Fenster machten die Terminübersicht erstaunlich architektonisch.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-071",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Projektgruppe in Mannheim nennt ihren Raum Werkstatt. Leider lässt sich eine kaputte Deadline nicht einfach festschrauben.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-072",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Der Bäcker wollte seine Lieferliste verschlanken. Seitdem beschreibt er belegte Brötchen nur noch als Sachverhalte mit Belag.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-073",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unser Chorvorstand bat um konstruktive Kritik. Die Bassgruppe lieferte eine besonders tragfähige Grundlage.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-074",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Bei der österreichischen Bürojause fragte ich nach Zuständigkeiten. Für den letzten Knödel wollte plötzlich jeder Verantwortung übernehmen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-075",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Im Opernbüro gibt es jeden Morgen Abstimmung. Die aus dem Orchestergraben klingt allerdings deutlich entschlossener.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-076",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unser Freiburg-Projekt soll nachhaltig sein. Vor allem die Besprechungen sind erstaunlich schwer abzubauen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-077",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Berliner Kollegin brachte Zeitplan, der Wiener Kollege Kuchen. Erfolg hatte die Person mit der besseren Schnittstelle: dem Messer.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-078",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Beim Karnevalsverein wurde eine ernste Sitzung angesetzt. Das Konfetti musste währenddessen im Nebenraum warten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-079",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unsere Pfandabrechnung ist die einzige Statistik, deren Rückgang auf eine gelungene Aufräumaktion hindeutet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-080",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Münchner S-Bahn brachte mich zum Workshop über Geduld. Ich hatte bereits unterwegs einen praktischen Teil absolviert.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-081",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Das Mainzer Büro führte stille Arbeitsphasen ein. Die Ankündigung dazu wird noch immer sehr begeistert diskutiert.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-082",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Beim Termin in Graz sollten wir locker bleiben. Mein deutscher Laptop nahm das wörtlich und verlor den Bildschirmwinkel.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-083",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Der Kassenwart des Sportvereins lobte meine Belege. Das war mein erster Applaus für ordentlich gefaltete Brötchenquittungen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-084",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Der Kleingartenvorstand bat um übersichtliche Berichte. Unsere Bohnen halten ihre Entwicklung inzwischen direkt an Stangen fest.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-085",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Schulfestliste heißt „kleine Aufgaben“. Ich bin jetzt für alles zuständig, was irgendwo herunterfallen könnte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-086",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Beim Wiener Kundengespräch verglichen wir Notizen. Mein wichtigster Punkt war der genaue Name der bestellten Torte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-087",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unser Kasseler Büro schaffte Pinnwände an. Seitdem können offene Fragen wenigstens ordentlich an der Wand warten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-088",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die österreichische Kollegin sagte „schaun wir mal“. Das deutsche Team freute sich: endlich ein gemeinsames Prüfverfahren ohne Softwarelizenz.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-089",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Museumskuratorin bat um weniger Fachbegriffe. Wir nennen die neue Vitrine jetzt einfach den Ort, wo niemand drankommt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-090",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Auf Dienstreise nach Leipzig hatte ich einen Fensterplatz. Mein Bericht enthält deshalb ungewöhnlich viele landschaftliche Fortschritte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-091",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Im Aachener Büro steht ein Kicker. Er ist die einzige Abteilung, die sich ausdrücklich über Gegentore beschweren darf.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-092",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unser Team aus Hamburg und Wien verglich Anreden. „Wer möchte Kaffee?“ erhielt in beiden Büros die höchste Zustimmung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-093",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Vereinswebseite sollte persönlicher werden. Jetzt sieht man genau, wer beim Gruppenfoto hinter dem Pokal verschwunden ist.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-094",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Beim Bäckereimeeting hieß es, die Kunden seien anspruchsvoller geworden. Der Sauerteig verlangte daraufhin ebenfalls bessere Betreuung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-095",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Gartenkolonie sucht Nachwuchs im Vorstand. Die Setzlinge erfüllen bisher nur einen Teil des Profils.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-096",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unser Salzburger Seminar bot Raum für große Ideen. Beim Flipchart mussten wir sie trotzdem mit etwas kleinerer Schrift anfangen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named Austrian travel, hiking, or everyday setting seen in a German-language cross-border collection. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-097",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "In der Würzburger Teeküche hängt ein Dienstplan. Er beweist, dass auch eine Kaffeemaschine sehr viele Vorgesetzte haben kann.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-098",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Meine Wiener Kollegin nennt komplizierte Abläufe einen Wirbel. Bei uns bekommen sie ein Diagramm und fühlen sich offiziell bestätigt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-099",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Mehrwegbecher fürs Büro tragen Namen. Der mit „Chef“ wird erstaunlich zuverlässig von anderen gespült.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-100",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Schulleitung plant einen digitalen Elternabend. Zum ersten Mal dürfen die Eltern ihre Hausaufgaben von zu Hause aus vergessen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-101",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unser Bibliotheksteam sucht einen Titel für den Jahresbericht. „Fortsetzung folgt“ wäre zumindest ehrlich.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-102",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Das Magdeburger Büro hat einen neuen Besprechungstisch. Auf ihm passen deutlich mehr Dinge, die wir erst später entscheiden.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-103",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Beim deutsch-österreichischen Workshop wurden Grenzen überwunden. Vor allem die zwischen Mittagspause und Nachmittagssitzung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-104",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unser Sportvereinsplan nennt jede Aufgabe beim Namen. Außer dem mysteriösen „jemand“, der immer aufräumt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-105",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Adventsfeier soll dieses Jahr klein werden. Der Ausschuss besteht vorsichtshalber schon aus zwölf Leuten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-106",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus schrieb ich einen Projektplan. Der Kellner fragte so freundlich nach, dass ich endlich eine zweite Bestellung abschloss.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-107",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Der Betriebsrat lud zur offenen Aussprache. Meine Kaffeetasse nutzte die Gelegenheit für einen sehr ehrlichen Sprung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-108",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Kollegin aus Linz brachte „eh klar“ ins Team. Wir kennen jetzt eine zusätzliche elegante Überschrift für ungeklärte Punkte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-109",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Das Bahnabteil wurde zum mobilen Büro. Mein Sitznachbar bestand allerdings auf seiner Zuständigkeit für die Armlehne.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-110",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unser Gartenverein will Papier sparen. Die Tomaten bekommen ihre Wachstumsziele künftig direkt vorgetragen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-111",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Bäckerei wechselte zur digitalen Bestellung. Die Brezel hält trotzdem beharrlich an ihrer analogen Form fest.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-112",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Im Berliner Co-Working-Loft heißen Türen Gesprächsangebote. Meine Konzentration hätte gern eines zum Schließen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-113",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unser Wiener Partner bot einen runden Tisch an. Der Münchner fragte vorsichtshalber, ob die Torte darauf schon eingeplant sei.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-114",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Vereinsversammlung verlängerte die Redezeit. Der Kuchenbuffetdienst erklärte daraufhin eine unabhängige Pause.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-115",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Im Theaterbüro gelten Auftritte als Fortschritt. Ein praktisches Modell auch für meine bislang nur angekündigten Berichte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-116",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Beim Schulfest-Projekt musste ich einen Plan B liefern. Ich habe ihn wetterfest laminiert; das ersetzt fast den Plan selbst.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-117",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die österreichische Jausenbestellung benötigte weniger Abstimmung als unser letzter Satz im E-Mail-Footer. Ich erkenne klare Kompetenzunterschiede.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-118",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unser Dresdner Team will sichtbare Erfolge. Das Whiteboard wurde deshalb frisch gereinigt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-119",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "In der Linzer Videokonferenz verstanden wir jedes Wort. Die eigentliche Herausforderung blieb wie immer die Bedeutung von „bald“.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-120",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Pfandkiste in der Teeküche hat einen festen Platz. Unser neues Projekt wünscht sich dieselbe organisatorische Sicherheit.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-121",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Der Kulturverein beriet über mehr Beteiligung. Sobald die Stühle getragen werden sollten, wurde die Stichprobe deutlich kleiner.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-122",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Das Büro in Regensburg nutzt einen historischen Raum. Unsere offenen Fragen wirken darin gleich etwas traditionsreicher.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-123",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Der Wiener Kollege fragte nach dem roten Faden. Ich zeigte ihm die farbigen Korrekturen unserer Hamburger Rechtsabteilung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-124",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Im Kleingartenverein haben wir kurze Berichtswege. Man ruft über die Hecke und erhält sofort eine unerwartete zweite Meinung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-125",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Auf dem Weg zur Messe in Hannover verlor ich meinen Notizzettel. Die Präsentation bekam dadurch einen sehr spontanen Charakter.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-126",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unser Strategiegespräch im Wiener Kaffeehaus ging in die zweite Runde. Der erste klar messbare Erfolg war der leere Kuchenteller.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-127",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Potsdamer Projektgruppe hat ein gemeinsames Postfach. Nun können wir Unsicherheit mit gleicher Berechtigung öffnen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-128",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Das Berliner Team wollte österreichische Gelassenheit lernen. Die Grazer Gäste baten zuerst um unsere Anleitung für den Beamer.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-129",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Elternvertretung führte Aufgabenpatenschaften ein. Ich bin inzwischen emotional sehr eng mit einem Waffeleisen verbunden.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-130",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Im Musikschulbüro hängt ein Plan für alle Instrumente. Nur das Telefon spielt weiterhin, wann es möchte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-131",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unsere Bäckerei plant einen Betriebsausflug. Der Teig muss leider weiterarbeiten; er hat schon genug eigene Gärungsprozesse.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-132",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Beim Nürnberger Abstimmungstermin schrieben wir alles auf Karten. Noch nie sah Unentschlossenheit so transportabel aus.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-133",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Kollegin aus Wien sagte, das werde schon. Ich empfand es als wohltuend, einmal Zukunft ohne Balkendiagramm präsentiert zu bekommen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-134",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Der Wanderverein suchte einen neuen Vorsitz. Für die bequemste Bank gab es sofort mehrere geeignete Bewerber.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-135",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unser Büro-Pfandbudget finanziert Kekse. Selten ließ sich ein Kreislauf so verständlich erklären.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-136",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Beim Stadtteilfest ordneten wir Helfer nach Fähigkeiten. Ich bekam den Bereich „Dinge festhalten, solange andere besser wissen, wohin“.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-137",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Im Dortmunder Büro heißt die tägliche Lagebesprechung Morgenrunde. Gegen Ende fühlt sie sich gelegentlich wie ein Rundwanderweg an.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-138",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Münchner und Wiener Kolleginnen planten eine gemeinsame Fortbildung. Beide stimmten zuerst über die Qualität der Pausenräume ab.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-139",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Gartenverwaltung schickte einen digitalen Hinweis aufs Gießen. Meine Pflanzen wären mit einer sehr analogen Antwort zufrieden.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-140",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Ein Wiener Kaffeehaustisch ist mein Lieblingsbesprechungsraum: Die wichtigsten Entscheidungen passen neben eine Zeitung und sind essbar.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-141",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Stadtbibliothek plant mehr offene Räume. Die offene Frage nach dem Budget ist bereits vorbildlich untergebracht.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-142",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Im Bremer Team darf jede Idee wachsen. Wir suchen noch jemanden, der regelmäßig die überflüssigen Seitentriebe entfernt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-143",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die österreichische Projektpartnerin nannte unseren Kalender sportlich. Wir haben die Deadline inzwischen vorsorglich zum Aufwärmen geschickt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-144",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Beim Vereinsprotokoll hieß es „einstimmig“. Das lag vor allem daran, dass nur der Vorsitzende die Keksdose schon offen hatte.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-145",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mein Geschäftstermin in Hamburg begann am Fähranleger. Zum ersten Mal war „wir sitzen im selben Boot“ keine bloße Teambotschaft.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-146",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Schulbibliothek braucht mehr Helfer. Bei der Aufteilung wollte meine Tochter ausschließlich für glückliche Enden zuständig sein.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-147",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Im Freiburger Büro sollen alle zwischendurch ins Grüne schauen. Meine grüne Tabelle erfüllt leider nur den Buchstaben der Empfehlung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-148",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Linzer Kollegin fragte nach einer einfachen Lösung. Unser Berliner Team hat dafür jetzt immerhin einen eigenen Ordner angelegt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-149",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Der Bäckereichef bat um weniger Leerlauf. Der Mixer fand die Ansprache persönlich etwas einseitig.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-150",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unser Gartenausschuss will neue Impulse. Die Sonnenblumen warten nur noch darauf, dass jemand „nach oben“ sagt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-151",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Beim Termin mit Graz war die Jause Teil des Programms. Ich habe selten so freiwillig ein vollständiges Protokoll abgearbeitet.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Austrian regional food or vocabulary, checked as a contextual term rather than a national stereotype. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-152",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Der Leipziger Workshop versprach konkrete Werkzeuge. Der einzige Schraubenzieher blieb leider beim Haustechniker.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-153",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Zwischen Hamburg und Wien teilen wir Dateien im selben Ordner. Beim letzten Stück Kuchen bestehen weiterhin nationale Zuständigkeitsfragen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-154",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Kegelvereinsplanung fiel einstimmig aus. Die Kugel hatte schließlich keine Wahlmöglichkeit vorgesehen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-155",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Im Museumsbüro heißt die alte Kaffeemaschine „Sammlungsbestand“. Damit lässt sich inzwischen jede Reparatur würdevoll begründen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-156",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Der Kassierer unseres Büropfands bat um saubere Belege. Wir haben erstmals eine Statistik, die vor allem nicht nach Apfelsaft riechen soll.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-157",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Im Stuttgarter Projekt nennen wir Hindernisse Lerngelegenheiten. Mein Erfahrungsbericht wird deshalb überraschend dick.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-158",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unser Partner aus Salzburg versprach kurze Rückmeldung. Sie lautete „Kaffee?“ und klärte mehr als unsere vorige E-Mail-Kette.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-159",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Der Elternabend zur Mediennutzung begann mit einem Beamerproblem. Die Kinder hätten darin ein sehr überzeugendes Unterrichtsbeispiel gesehen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "school"
+    ],
+    "cultural_note": "German school life, including the Schultüte when named; no nationwide school rule is asserted. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-160",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Im Wiener Kaffeehaus fiel mir eine gute Überschrift ein. Die restliche Präsentation musste zugunsten des Strudels vorläufig zurücktreten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-161",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unser Verein plant ein Sommerfest ohne Hektik. Wir haben für die Gelassenheit bereits zwei zusätzliche Abstimmungstermine angesetzt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German seasonal traditions, markets, or craft contexts; customs vary regionally. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-162",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Das Büro in Kiel wünscht sich frischen Wind. Seit dem neuen Ventilator brauchen die Papierakten allerdings mehr Führung.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-163",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die Grazer Kollegin brachte dem Berliner Team „Jänner“ bei. Wir behalten beide Monate im Wortschatz, falls einer zu viele Termine bekommt.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-164",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Beim Chorvorstand stellte jeder seine Aufgaben vor. Der Pausenverantwortliche hatte mit Abstand die aufmerksamsten Zuhörer.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-165",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Der Gemeinschaftsgarten führt jetzt ein schwarzes Brett. Die Bohnen reagieren auf schriftliche Fristen genauso wenig wie vorher.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German allotment-garden and neighborhood practices; a fictional local scene. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-166",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unsere Theaterverwaltung plant den großen Auftritt der neuen Software. Die Generalprobe besteht noch aus einem Passwortproblem.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German music, museums, books, or local arts participation; fictional participants. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-167",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Im Mainzer Büro hängt ein Plakat über Eigenverantwortung. Darunter steht die Nummer, bei der man vor Änderungen fragen soll.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-168",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Beim grenzüberschreitenden Teamtag sollten wir Gemeinsamkeiten finden. Beide Gruppen hielten den fremden Kalender für den übersichtlicheren.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-169",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Mein Zug nach München hatte einen Klapptisch. Er setzte der Länge meines Berichts auf angenehme Weise natürliche Grenzen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "travel"
+    ],
+    "cultural_note": "A named German public-transport or local travel setting; not a factual service-performance claim. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-170",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Wir haben den Pfanddienst rotierend verteilt. Ausgerechnet diese Aufgabe bringt regelmäßig etwas zurück.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "money"
+    ],
+    "cultural_note": "German bottle-deposit and reusable-container habits; a fictional everyday situation. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-171",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Der Verein schaffte ein Funkmikrofon an. Die Reden sind nicht kürzer, aber sie können uns jetzt bis zum Kuchen verfolgen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-172",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Nach der Wiener Besprechung blieb nur eine Frage offen: Warum sind unsere normalen Konferenzräume eigentlich nicht mit Torte ausgestattet?",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Viennese coffeehouse context, including coffee, newspapers, or lingering; no universal Austrian behavior is asserted. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-173",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unser Bonner Abschlussbericht enthält einen Ausblick. Er zeigt auf das Gebäude, in dem wir die nächste offene Frage besprechen.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "work"
+    ],
+    "cultural_note": "An everyday German workplace or civic-administration setting; not a universal national trait. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-174",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Die deutschen und österreichischen Teams verabschiedeten sich mit unterschiedlichen Worten. Der gemeinsame Beschluss „nicht noch ein Meeting“ blieb eindeutig.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  },
+  {
+    "id": "intl-v2-de-office-proper-175",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Im Vereinsbüro wurde endlich aufgeräumt. Wir fanden drei frühere Konzepte zur Verbesserung der Ablage; sie waren erstaunlich gut erhalten.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "German voluntary club life, rehearsal, shared work, or association gatherings. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-176",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Der Caterer fragte, wie viele belegte Brötchen unser Seminar brauche. Ich antwortete vorsichtig: „Wie lang können Sie die Einleitung machen?“",
+    "age_rating": "family-friendly",
+    "themes": [
+      "food"
+    ],
+    "cultural_note": "Regional German bread and bakery culture; the scene does not claim one national vocabulary. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed."
+  },
+  {
+    "id": "intl-v2-de-office-proper-177",
+    "collection": "de-de-everyday",
+    "category": "office-proper",
+    "format": "oneliner",
+    "text": "Unser Wiener Kunde wollte ein kurzes Gespräch im Stehen. Die Hamburger Kollegin nahm vorsichtshalber eine zweite Serviette für den Sacherteller mit.",
+    "age_rating": "family-friendly",
+    "themes": [
+      "family"
+    ],
+    "cultural_note": "Friendly Germany–Austria interaction; misunderstanding or reversal concerns the situation or vocabulary, not national intelligence. Workplace or organizational incongruity. Original AI-authored draft; no native human review claimed.",
+    "related_countries": [
+      "AT"
+    ]
+  }
+]
