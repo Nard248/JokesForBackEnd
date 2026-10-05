@@ -55,6 +55,7 @@ from communities.materialize import POSITIVE_REACTIONS, TREND_DAYS
 from communities.models import Community, CommunityMembership, CommunitySignal
 from creator_insights.privacy import analytics_allowed
 from jokes.identity import public_display_name, public_handle
+from jokes.managers import human_first_rank, live_joke_q
 from jokes.models import AnalyticsConsentRecord, Favorite, Joke, JokeReaction, SavedJoke, ShareEvent
 
 WINDOW_DAYS = 90
@@ -110,7 +111,7 @@ def signal_rows(since, until=None, users=None, jokes=None, eligible=False, exclu
     deletions, takedowns, tier changes and re-tags apply immediately.
     """
     rows = CommunitySignal.objects.filter(
-        occurred_at__gte=since, joke__content_tier='tier_1', joke__is_removed=False,
+        live_joke_q('joke__'), occurred_at__gte=since, joke__content_tier='tier_1',
     )
     if until is not None:
         rows = rows.filter(occurred_at__lte=until)
@@ -257,7 +258,7 @@ def compute_aggregate(now=None):
 
     joke_counts = dict(
         Joke.context_tags.through.objects.filter(
-            joke__content_tier='tier_1', joke__is_removed=False, contexttag_id__in=list(tag_to_community),
+            live_joke_q('joke__'), joke__content_tier='tier_1', contexttag_id__in=list(tag_to_community),
         ).values_list('contexttag_id').annotate(n=Count('joke_id', distinct=True))
     )
     rows = {}
@@ -575,8 +576,10 @@ def community_jokes(community, base_queryset, limit=6):
     """Trending and newest viewer-visible jokes on the community's theme."""
     since = timezone.now() - timedelta(days=30)
     themed = base_queryset.filter(context_tags=community.tag).distinct()
-    trending = list(_scored_jokes(themed, since).order_by('-community_score', '-created_at')[:limit])
-    newest = list(themed.order_by('-created_at')[:4])
+    # Human-written/reviewed jokes win ties and lead the recency rail.
+    themed = themed.annotate(human_rank=human_first_rank())
+    trending = list(_scored_jokes(themed, since).order_by('-community_score', 'human_rank', '-created_at')[:limit])
+    newest = list(themed.order_by('human_rank', '-created_at')[:4])
     return trending, newest
 
 

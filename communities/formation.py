@@ -99,7 +99,8 @@ def _baseline(community_id, status, observed_at):
 
 
 def _creator_ids(tag_id):
-    jokes = Joke.objects.filter(context_tags=tag_id, content_tier='tier_1', is_removed=False)
+    # Joke.objects already applies the takedown and editorial-hold gate.
+    jokes = Joke.objects.filter(context_tags=tag_id, content_tier='tier_1')
     direct = jokes.filter(creator__isnull=False).values_list('creator_id', flat=True)
     legacy = jokes.filter(Q(creator__isnull=True, submission__status='published')).values_list(
         'submission__user_id', flat=True)

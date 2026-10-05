@@ -186,22 +186,29 @@ class InternationalCorpusImportTests(TestCase):
         ContextTag.objects.get_or_create(slug='work', defaults={'name': 'Work'})
 
     def run_import(self, **kwargs):
-        if not kwargs.get('dry_run'):
-            kwargs.setdefault('publish_unreviewed', True)
         output = StringIO()
         call_command('import_international_jokes', manifest=str(self.root / 'manifest.json'),
                      stdout=output, **kwargs)
         return output.getvalue()
 
-    def test_database_import_requires_publication_acknowledgement(self):
-        from django.core.management.base import CommandError
-
+    def test_import_holds_records_until_a_launch_set_publishes_them(self):
         from jokes.models import Joke
-        before = Joke.all_objects.count()
-        with self.assertRaisesMessage(CommandError, '--publish-unreviewed'):
-            self.run_import(publish_unreviewed=False)
-        self.assertEqual(Joke.all_objects.count(), before)
+        self.run_import()
+        self.assertTrue(Joke.all_objects.filter(seed_key='intl-test-es-0').exists())
+        self.assertFalse(Joke.objects.filter(seed_key='intl-test-es-0').exists())
         self.assertIn('dry run', self.run_import(dry_run=True))
+
+    def test_publish_unreviewed_flag_no_longer_exists(self):
+        with self.assertRaises(TypeError):
+            self.run_import(publish_unreviewed=True)
+
+    def write_launch_set(self, publish=(), blocked=None):
+        path = self.root / 'launch_set.json'
+        path.write_text(json.dumps({
+            'version': 1, 'method': 'AI editorial screen — not native review',
+            'screened_at': '2026-10-05', 'publish': list(publish), 'blocked': blocked or {},
+        }), encoding='utf-8')
+        return path
 
     def write_bundle(self):
         (self.root / 'manifest.json').write_text(json.dumps(self.manifest), encoding='utf-8')
@@ -220,9 +227,10 @@ class InternationalCorpusImportTests(TestCase):
         self.run_import()
         self.run_import()
         self.assertEqual(Joke.all_objects.count(), before + 1)
-        joke = Joke.objects.get(seed_key='intl-test-es-0')
+        joke = Joke.all_objects.get(seed_key='intl-test-es-0')
         self.assertEqual(joke.language.code, 'es')
         self.assertEqual(list(joke.countries.values_list('code', flat=True)), ['ES'])
+        self.assertEqual(joke.origin_country.code, 'ES')
         self.assertEqual(list(joke.culture_tags.values_list('slug', flat=True)), ['spain-everyday'])
         self.assertEqual(list(joke.tones.values_list('slug', flat=True)), ['wholesome'])
         self.assertEqual(joke.editorial_status, 'generated')
@@ -260,9 +268,11 @@ class InternationalCorpusImportTests(TestCase):
         self.records[0]['related_countries'] = ['NO']
         (self.root / 'manifest.json').write_text(json.dumps(self.manifest), encoding='utf-8')
         (self.root / 'es.json').write_text(json.dumps(self.records), encoding='utf-8')
-        self.run_import(require_complete=True)
-        self.run_import(require_complete=True)
+        launch_set = self.write_launch_set(publish=[self.records[0]['id']])
+        self.run_import(require_complete=True, launch_set=launch_set)
+        self.run_import(require_complete=True, launch_set=launch_set)
         joke = Joke.objects.get(seed_key=self.records[0]['id'])
+        self.assertEqual(joke.origin_country.code, 'ES')
         self.assertSetEqual(set(joke.countries.values_list('code', flat=True)), {'ES', 'NO'})
         self.assertTrue(filter_discovery(Joke.objects.all(), {'country': 'NO'}).filter(pk=joke.pk).exists())
         self.assertFalse(CulturalCollection.objects.filter(language__code='es', country__code='NO').exists())
@@ -292,7 +302,7 @@ class InternationalCorpusImportTests(TestCase):
         output = self.run_import(report=report)
         body = json.loads(report.read_text())
         self.assertTrue(body['authored_complete'])
-        self.assertTrue(body['database']['public_complete'])
+        self.assertTrue(body['database']['installed_complete'])
         self.assertFalse(body['database']['context_complete'])
         self.assertEqual(body['database']['context_mismatches'], [{
             'id': self.records[0]['id'], 'collection': 'es-es-everyday',
@@ -300,7 +310,7 @@ class InternationalCorpusImportTests(TestCase):
             'missing_countries': ['NO'],
         }])
         self.assertIn('country context mismatch', output)
-        joke = Joke.objects.get(seed_key=self.records[0]['id'])
+        joke = Joke.all_objects.get(seed_key=self.records[0]['id'])
         self.assertSetEqual(set(joke.countries.values_list('code', flat=True)), {'ES'})
         culture = CultureTag.objects.get(slug='spain-everyday')
         self.assertFalse(culture.countries.filter(code='NO').exists())
@@ -332,7 +342,7 @@ class InternationalCorpusImportTests(TestCase):
         self.records[0]['related_countries'] = ['NO']
         self.write_bundle()
         self.run_import(require_complete=True)
-        joke = Joke.objects.get(seed_key=self.records[0]['id'])
+        joke = Joke.all_objects.get(seed_key=self.records[0]['id'])
         norway = Country.objects.get(code='NO')
         joke.countries.remove(norway)
         culture = CultureTag.objects.get(slug='spain-everyday')
@@ -340,7 +350,7 @@ class InternationalCorpusImportTests(TestCase):
         report = self.root / 'report.json'
         self.run_import(report=report)
         stats = json.loads(report.read_text())['database']
-        self.assertTrue(stats['public_complete'])
+        self.assertTrue(stats['installed_complete'])
         self.assertFalse(stats['context_complete'])
         self.assertEqual(stats['context_mismatches'][0]['missing_countries'], ['NO'])
         self.assertFalse(joke.countries.filter(code='NO').exists())
@@ -351,7 +361,7 @@ class InternationalCorpusImportTests(TestCase):
 
         self.configure_country_context()
         self.run_import(require_complete=True)
-        joke = Joke.objects.get(seed_key=self.records[0]['id'])
+        joke = Joke.all_objects.get(seed_key=self.records[0]['id'])
         joke.countries.add(Country.objects.get(code='NO'))
         report = self.root / 'report.json'
         self.run_import(require_complete=True, report=report)
@@ -364,7 +374,7 @@ class InternationalCorpusImportTests(TestCase):
         from jokes.models import Joke
 
         self.run_import()
-        joke = Joke.objects.get(seed_key=self.records[0]['id'])
+        joke = Joke.all_objects.get(seed_key=self.records[0]['id'])
         joke.countries.clear()
         report = self.root / 'report.json'
         self.run_import(report=report)
@@ -405,7 +415,7 @@ class InternationalCorpusImportTests(TestCase):
         stats = json.loads(report.read_text())['database']
         self.assertFalse(stats['context_complete'])
         self.assertEqual(stats['created'], 1)
-        self.assertTrue(Joke.objects.get(seed_key='intl-test-es-new').countries.filter(code='NO').exists())
+        self.assertTrue(Joke.all_objects.get(seed_key='intl-test-es-new').countries.filter(code='NO').exists())
         self.assertTrue(CultureTag.objects.get(slug='spain-everyday').countries.filter(code='NO').exists())
 
     def test_changed_seed_key_fails_without_overwriting_the_existing_joke(self):
@@ -415,7 +425,7 @@ class InternationalCorpusImportTests(TestCase):
         (self.root / 'es.json').write_text(json.dumps(self.records), encoding='utf-8')
         with self.assertRaisesRegex(CommandError, 'changed'):
             self.run_import()
-        self.assertNotEqual(Joke.objects.get(seed_key='intl-test-es-0').text, self.records[0]['text'])
+        self.assertNotEqual(Joke.all_objects.get(seed_key='intl-test-es-0').text, self.records[0]['text'])
 
     def test_moderated_seed_is_not_restored(self):
         from jokes.models import Joke
@@ -448,7 +458,7 @@ class InternationalCorpusImportTests(TestCase):
         (self.root / 'manifest.json').write_text(json.dumps(self.manifest), encoding='utf-8')
         self.run_import(require_complete=True)
         Joke.all_objects.filter(seed_key='intl-test-es-0').update(content_tier='tier_3')
-        with self.assertRaisesRegex(CommandError, 'public coverage'):
+        with self.assertRaisesRegex(CommandError, 'Installed coverage'):
             self.run_import(require_complete=True)
 
     def test_live_coverage_detects_editorial_recategorization_without_reverting_it(self):
@@ -456,15 +466,169 @@ class InternationalCorpusImportTests(TestCase):
         self.manifest['collections'][0]['target_per_category'] = 1
         (self.root / 'manifest.json').write_text(json.dumps(self.manifest), encoding='utf-8')
         self.run_import(require_complete=True)
-        joke = Joke.objects.get(seed_key='intl-test-es-0')
+        joke = Joke.all_objects.get(seed_key='intl-test-es-0')
         joke.tones.clear()
         report = self.root / 'report.json'
         self.run_import(report=report)
         body = json.loads(report.read_text())
         self.assertTrue(body['authored_complete'])
-        self.assertFalse(body['database']['public_complete'])
-        self.assertEqual(body['database']['coverage'][0]['public_count'], 0)
+        self.assertFalse(body['database']['installed_complete'])
+        self.assertEqual(body['database']['coverage'][0]['installed_count'], 0)
         self.assertFalse(joke.tones.exists())
+
+
+class InternationalLaunchSetTests(TestCase):
+    """Fail-closed publication: import = held; only the launch set publishes."""
+
+    def setUp(self):
+        from jokes.models import AgeRating, ContextTag, Format, Tone
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        self.manifest, self.records = corpus_fixture(self.root, count=3)
+        self.manifest['collections'][0]['categories'] = ['wholesome', 'dark', 'edgy']
+        self.records[1]['category'] = 'dark'
+        self.records[2]['category'] = 'edgy'
+        (self.root / 'manifest.json').write_text(json.dumps(self.manifest), encoding='utf-8')
+        (self.root / 'es.json').write_text(json.dumps(self.records), encoding='utf-8')
+        Format.objects.get_or_create(slug='oneliner', defaults={'name': 'One-liner'})
+        AgeRating.objects.get_or_create(
+            slug='family-friendly', defaults={'name': 'Family-friendly', 'min_age': 0},
+        )
+        for slug in ('wholesome', 'dark', 'edgy'):
+            Tone.objects.get_or_create(slug=slug, defaults={'name': slug.title()})
+        ContextTag.objects.get_or_create(slug='work', defaults={'name': 'Work'})
+        self.keys = [record['id'] for record in self.records]
+
+    def launch_set(self, publish=(), blocked=None, **overrides):
+        path = self.root / 'launch_set.json'
+        path.write_text(json.dumps({
+            'version': 1, 'method': 'AI editorial screen — not native review',
+            'screened_at': '2026-10-05', 'publish': list(publish), 'blocked': blocked or {},
+            **overrides,
+        }), encoding='utf-8')
+        return path
+
+    def run_import(self, **kwargs):
+        output = StringIO()
+        call_command('import_international_jokes', manifest=str(self.root / 'manifest.json'),
+                     stdout=output, **kwargs)
+        return output.getvalue()
+
+    def joke(self, index):
+        from jokes.models import Joke
+        return Joke.all_objects.get(seed_key=self.keys[index])
+
+    def test_dark_and_edgy_import_as_mature_even_with_a_family_rating(self):
+        self.run_import()
+        self.assertEqual(self.joke(0).content_tier, 'tier_1')
+        self.assertEqual(self.joke(1).content_tier, 'tier_2')
+        self.assertEqual(self.joke(2).content_tier, 'tier_2')
+        self.assertEqual({self.joke(i).editorial_status for i in range(3)}, {'generated'})
+
+    def test_existing_tier_1_dark_record_is_raised_to_mature(self):
+        from jokes.models import Joke
+        self.run_import()
+        Joke.all_objects.filter(seed_key=self.keys[1]).update(content_tier='tier_1')
+        self.assertIn('mature_floor=1', self.run_import())
+        self.assertEqual(self.joke(1).content_tier, 'tier_2')
+
+    def test_launch_set_publishes_listed_keys_once_and_records_an_audit_row(self):
+        from audit.models import AuditLog
+        from jokes.models import Joke
+        launch_set = self.launch_set(publish=[self.keys[0]])
+        self.assertIn('published=1', self.run_import(launch_set=launch_set))
+        self.assertEqual(self.joke(0).editorial_status, 'ai_screened')
+        self.assertTrue(Joke.objects.filter(seed_key=self.keys[0]).exists())
+        self.assertFalse(Joke.objects.filter(seed_key__in=self.keys[1:]).exists())
+        audit = AuditLog.objects.get(action='editorial_launch_set_applied')
+        self.assertEqual(audit.metadata['published'], 1)
+        updated_at = self.joke(0).updated_at
+        output = self.run_import(launch_set=launch_set)
+        self.assertIn('created=0 unchanged=3', output)
+        self.assertIn('published=0 blocked=0', output)
+        self.assertEqual(self.joke(0).updated_at, updated_at)
+        self.assertEqual(AuditLog.objects.filter(action='editorial_launch_set_applied').count(), 1)
+
+    def test_launch_set_never_downgrades_or_resurrects(self):
+        from jokes.models import Joke
+        self.manifest['collections'][0]['categories'].append('puns')
+        self.records.append({**self.records[0], 'id': 'intl-test-es-legacy', 'category': 'puns',
+                             'text': 'Mi paraguas solo trabaja cuando llueve: es autónomo.'})
+        (self.root / 'manifest.json').write_text(json.dumps(self.manifest), encoding='utf-8')
+        (self.root / 'es.json').write_text(json.dumps(self.records), encoding='utf-8')
+        from jokes.models import Tone
+        Tone.objects.get_or_create(slug='puns', defaults={'name': 'Puns'})
+        self.run_import()
+        Joke.all_objects.filter(seed_key=self.keys[0]).update(editorial_status='native_reviewed')
+        Joke.all_objects.filter(seed_key='intl-test-es-legacy').update(is_removed=True)
+        self.run_import(launch_set=self.launch_set(publish=[self.keys[0], 'intl-test-es-legacy']))
+        self.assertEqual(self.joke(0).editorial_status, 'native_reviewed')
+        removed = Joke.all_objects.get(seed_key='intl-test-es-legacy')
+        self.assertTrue(removed.is_removed)
+        self.assertEqual(removed.editorial_status, 'generated')
+
+    def test_blocked_keys_become_prohibited_held_and_withdraw_a_screen(self):
+        from jokes.models import Joke
+        self.run_import(launch_set=self.launch_set(publish=[self.keys[0]]))
+        self.assertEqual(self.joke(0).editorial_status, 'ai_screened')
+        blocked = {self.keys[0]: 'stereotype', self.keys[1]: 'punches down'}
+        self.assertIn('blocked=2', self.run_import(launch_set=self.launch_set(blocked=blocked)))
+        for index in (0, 1):
+            joke = self.joke(index)
+            self.assertEqual(joke.content_tier, 'tier_3')
+            self.assertEqual(joke.editorial_status, 'generated')
+        self.assertFalse(Joke.objects.filter(seed_key__in=self.keys[:2]).exists())
+
+    def test_new_blocked_record_imports_as_prohibited(self):
+        self.run_import(launch_set=self.launch_set(blocked={self.keys[0]: 'unclear premise'}))
+        self.assertEqual(self.joke(0).content_tier, 'tier_3')
+        self.assertEqual(self.joke(0).editorial_status, 'generated')
+
+    def test_launch_set_cannot_publish_dark_or_edgy_and_rejects_before_writing(self):
+        from jokes.models import Joke
+        before = Joke.all_objects.count()
+        for key in self.keys[1:]:
+            with self.subTest(key=key), self.assertRaisesRegex(CommandError, 'dark/edgy'):
+                self.run_import(launch_set=self.launch_set(publish=[key]))
+        self.assertEqual(Joke.all_objects.count(), before)
+
+    def test_invalid_launch_sets_fail_validation(self):
+        cases = {
+            'unknown record': {'publish': ['no-such-key']},
+            'both published and blocked': {'publish': [self.keys[0]], 'blocked': {self.keys[0]: 'x'}},
+            'duplicate': {'publish': [self.keys[0], self.keys[0]]},
+            'version': {'version': 2},
+            'screened_at': {'screened_at': 'yesterday'},
+            'nonempty reasons': {'blocked': {self.keys[0]: ' '}},
+            'Unknown launch set fields': {'reviewer': 'someone'},
+        }
+        for message, override in cases.items():
+            with self.subTest(message=message), self.assertRaisesRegex(CommandError, message):
+                self.run_import(dry_run=True, launch_set=self.launch_set(**override))
+
+    def test_report_separates_installed_live_mature_and_held_counts(self):
+        report = self.root / 'report.json'
+        self.run_import(launch_set=self.launch_set(publish=[self.keys[0]]), report=report)
+        body = json.loads(report.read_text())
+        rows = {row['category']: row for row in body['database']['coverage']}
+        self.assertEqual(rows['wholesome']['public_count'], 1)
+        self.assertEqual(rows['dark']['held_count'], 1)
+        self.assertEqual(rows['dark']['mature_count'], 0)
+        self.assertEqual(rows['edgy']['installed_count'], 1)
+        self.assertEqual(body['database']['live'], 1)
+        self.assertEqual(body['database']['held'], 2)
+        self.assertEqual(body['launch_set']['publish'], 1)
+
+    def test_origin_country_is_backfilled_but_editor_choice_is_kept(self):
+        from jokes.models import Country, Joke
+        self.run_import()
+        france, _ = Country.objects.get_or_create(code='FR', defaults={'name': 'France'})
+        Joke.all_objects.filter(seed_key=self.keys[0]).update(origin_country=None)
+        Joke.all_objects.filter(seed_key=self.keys[1]).update(origin_country=france)
+        self.assertIn('origin_backfilled=1', self.run_import())
+        self.assertEqual(self.joke(0).origin_country.code, 'ES')
+        self.assertEqual(self.joke(1).origin_country.code, 'FR')
 
 
 class BundledInternationalCorpusTests(SimpleTestCase):
@@ -485,3 +649,13 @@ class BundledInternationalCorpusTests(SimpleTestCase):
                 self.assertGreaterEqual(target['target'], 200)
                 self.assertGreaterEqual(target['count'], 200)
         self.assertGreaterEqual(len(corpus.records), 10800)
+
+    def test_shipped_launch_set_is_valid_for_the_bundle(self):
+        from jokes.international_corpus import MATURE_CATEGORIES, load_corpus, load_launch_set
+
+        root = Path(__file__).parent / 'fixtures/international'
+        corpus = load_corpus(root / 'manifest.json')
+        launch_set = load_launch_set(root / 'launch_set.json', corpus)
+        self.assertIn('not native review', launch_set['method'])
+        categories = {record['id']: record['category'] for record in corpus.records}
+        self.assertFalse({categories[key] for key in launch_set['publish']} & MATURE_CATEGORIES)

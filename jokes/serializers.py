@@ -16,6 +16,7 @@ from rest_framework.exceptions import NotFound
 
 from jokes.submission_rules import FORMAT_RULES, validate_per_format
 
+from .managers import live_joke_q
 from .models import (
     AgeRating,
     Appeal,
@@ -128,6 +129,14 @@ class CountrySerializer(serializers.ModelSerializer):
         fields = ['id', 'code', 'name', 'native_name']
 
 
+class OriginCountrySerializer(serializers.ModelSerializer):
+    """A joke's country of origin (nationality): ``{code, name, native_name}``."""
+
+    class Meta:
+        model = Country
+        fields = ['code', 'name', 'native_name']
+
+
 class CultureTagSerializer(serializers.ModelSerializer):
     """Serializer for cultural context tags."""
 
@@ -236,6 +245,9 @@ class JokeSerializer(serializers.ModelSerializer):
     context_tags = ContextTagSerializer(many=True, read_only=True)
     culture_tags = CultureTagSerializer(many=True, read_only=True)
     countries = CountrySerializer(many=True, read_only=True)
+    # Where the joke comes from (nationality); null when unknown. Not a
+    # country the joke is about -- those are in `countries`.
+    origin_country = OriginCountrySerializer(read_only=True, allow_null=True)
 
     # New design vocabulary aliases (P1 of Pivot Plan).
     # `themes` mirrors `context_tags`; `categories` mirrors `tones`. Both old and
@@ -285,7 +297,7 @@ class JokeSerializer(serializers.ModelSerializer):
             'context_tags',
             'themes',       # alias of context_tags
             'categories',   # alias of tones
-            'culture_tags', 'countries', 'cultural_note', 'editorial_status',
+            'culture_tags', 'countries', 'origin_country', 'cultural_note', 'editorial_status',
             'share_image_url',
             'is_locked',
             'created_at',
@@ -435,6 +447,11 @@ class JokeListSerializer(serializers.ModelSerializer):
     format = serializers.SlugRelatedField(slug_field='slug', read_only=True)
     age_rating = serializers.SlugRelatedField(slug_field='slug', read_only=True)
 
+    # Card badges, same shapes as JokeSerializer: content language, where the
+    # joke comes from, and whether it is AI-authored (ai_screened).
+    language = LanguageSerializer(read_only=True)
+    origin_country = OriginCountrySerializer(read_only=True, allow_null=True)
+
     # Slug list for M2M relations
     tones = serializers.SlugRelatedField(
         slug_field='slug',
@@ -464,6 +481,9 @@ class JokeListSerializer(serializers.ModelSerializer):
             'age_rating',
             'tones',
             'categories',   # alias of tones
+            'language',
+            'origin_country',
+            'editorial_status',
             'share_image_url',
             'media',
         ]
@@ -1447,7 +1467,7 @@ class JokePackListSerializer(serializers.ModelSerializer):
             return obj.entries.filter(
                 joke_id__in=discovery_pool(request, default_language=False).values('pk'),
             ).count()
-        return obj.entries.count()
+        return obj.entries.filter(live_joke_q('joke__')).count()
 
     def get_user_progress(self, obj) -> dict | None:
         request = self.context.get('request')
@@ -1474,16 +1494,16 @@ class JokePackDetailSerializer(JokePackListSerializer):
         from jokes.serving import allowed_tiers
         request = self.context.get('request')
         tiers = allowed_tiers(request) if request is not None else frozenset({'tier_1'})
-        # joke__is_removed: taken-down jokes vanish from pack detail — the FK
-        # traversal bypasses JokeManager's is_removed gate (same explicit
-        # filter as the tier gate on this exact queryset).
+        # live_joke_q: taken-down and held jokes vanish from pack detail — the
+        # FK traversal bypasses JokeManager's gate (same explicit filter as
+        # the tier gate on this exact queryset).
         entries = obj.entries.select_related(
-            'joke', 'joke__format', 'joke__age_rating', 'joke__language'
+            'joke', 'joke__format', 'joke__age_rating', 'joke__language', 'joke__origin_country',
         ).prefetch_related(
             'joke__tones', 'joke__context_tags', 'joke__culture_tags', 'joke__countries',
             'joke__media__asset',
         ).filter(
-            joke__content_tier__in=tiers, joke__is_removed=False,
+            live_joke_q('joke__'), joke__content_tier__in=tiers,
         ).order_by('order')
         if request is not None:
             from .discovery import discovery_pool

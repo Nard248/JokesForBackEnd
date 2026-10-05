@@ -28,6 +28,7 @@ from django.contrib.auth import get_user_model
 from django.db.models import F, Q
 from django.utils import timezone
 
+from jokes.managers import live_joke_q
 from jokes.models import Joke, JokeReaction
 from jokes.recommendations import get_daily_editorial_joke
 
@@ -141,7 +142,7 @@ def _eligible_milestone_creators(today):
             .values_list('sent_at', flat=True)
             .first()
         )
-        reactions = JokeReaction.objects.filter(joke__creator=creator, joke__is_removed=False)
+        reactions = JokeReaction.objects.filter(live_joke_q('joke__'), joke__creator=creator)
         if baseline:
             reactions = reactions.filter(created_at__gt=baseline)
         new_count = reactions.count()
