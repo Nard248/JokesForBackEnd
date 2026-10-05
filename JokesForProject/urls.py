@@ -17,7 +17,7 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import include, path
+from django.urls import include, path, re_path
 from drf_spectacular.views import (
     SpectacularAPIView,
     SpectacularRedocView,
@@ -31,6 +31,11 @@ from jokes.native_auth import (
 )
 from jokes.sitemap import sitemap_view
 from jokes.views import CookieRegisterView, GoogleLogin, csrf_token_view, joke_share_page
+from JokesForProject.auth_views import (
+    CookieTokenRefreshView,
+    StaleTolerantLoginView,
+    StaleTolerantLogoutView,
+)
 from JokesForProject.health import healthz, readyz
 from notifications.views import EmailUnsubscribeView, RunDigestsView
 
@@ -93,6 +98,13 @@ urlpatterns = [
         NativeVerifyEmailView.as_view(),
         name='native-verify-email',
     ),
+    # Same patterns as dj_rest_auth.urls, declared first so they win the match:
+    # a stale/orphaned JWT must not 401 the endpoints that replace or clear it,
+    # and refreshing a deleted user's token is a 401, not a 500
+    # (JokesForProject/auth_views.py).
+    re_path(r'^api/v1/auth/login/?$', StaleTolerantLoginView.as_view(), name='rest_login'),
+    re_path(r'^api/v1/auth/logout/?$', StaleTolerantLogoutView.as_view(), name='rest_logout'),
+    re_path(r'^api/v1/auth/token/refresh/?$', CookieTokenRefreshView.as_view(), name='token_refresh'),
     path('api/v1/auth/', include('dj_rest_auth.urls')),
     # Override registration root with cookie-setting variant; include still owns
     # sub-paths (verify-email, resend-email, account-confirm-email).

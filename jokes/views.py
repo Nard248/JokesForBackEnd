@@ -47,6 +47,7 @@ from rest_framework.response import Response
 from rest_framework.throttling import ScopedRateThrottle
 from rest_framework.views import APIView
 
+from JokesForProject.auth_views import CREDENTIAL_ENDPOINT_AUTHENTICATION
 from notifications.models import EmailMessageLog, EmailVerification
 
 from .achievements import evaluate_for as evaluate_achievements_for
@@ -935,6 +936,10 @@ class CookieRegisterView(RegisterView):
     the feature can be deployed before a real email provider is live.
     """
 
+    # A stale access cookie (expired, or for a deleted account) must not 401 a
+    # sign-up; CSRF is still enforced when the cookie is present.
+    authentication_classes = CREDENTIAL_ENDPOINT_AUTHENTICATION
+
     def create(self, request, *args, **kwargs):
         import logging as _logging
         _reg_metrics = _logging.getLogger('jokesfor.metrics')
@@ -1022,6 +1027,8 @@ class GoogleLogin(SocialLoginView):
         "user": { ... }
     }
     """
+    # Same as CookieRegisterView: a stale access cookie must not block sign-in.
+    authentication_classes = CREDENTIAL_ENDPOINT_AUTHENTICATION
     adapter_class = GoogleOAuth2Adapter
     callback_url = settings.GOOGLE_OAUTH_CALLBACK_URL
     client_class = OAuth2Client
