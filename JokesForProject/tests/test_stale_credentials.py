@@ -8,6 +8,8 @@
   browser holding one could not log in again. Login, logout, registration and
   Google login treat it as anonymous; CSRF is still enforced when it is sent.
 """
+import secrets
+
 from django.contrib.auth import get_user_model
 from django.core import mail
 from django.test import override_settings
@@ -18,7 +20,8 @@ User = get_user_model()
 
 ACCESS_COOKIE = 'jokes-access-token'
 REFRESH_COOKIE = 'jokes-refresh-token'
-PASSWORD = 'sup3rsecret!'
+# Generated per run: tests need a password, not a fixed secret-looking literal.
+PASSWORD = secrets.token_urlsafe(16)
 
 
 def _orphaned_tokens():
