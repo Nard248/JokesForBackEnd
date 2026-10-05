@@ -76,18 +76,24 @@ jobs:
       - name: ruff check (lint gate)
         run: ruff check .
 
-      # Security/dependency scans report but don't fail the build — see
-      # pyproject.toml for the current bandit triage. The pip-audit backlog
-      # was cleared on 2026-10-04 (0 advisories in requirements.txt; the
-      # runtime image's pip/setuptools are handled in the Dockerfile). It
-      # stays non-blocking on purpose so a newly published upstream advisory
-      # doesn't turn unrelated PRs red: read this step's output on every
-      # dependency change and treat any finding as a regression to fix.
+      # bandit reports but doesn't fail the build — see pyproject.toml for the
+      # current bandit triage.
       - name: bandit (security scan, non-blocking)
         run: bandit -c pyproject.toml -r JokesForProject jokes notifications creator_insights communities follows audit billing inbox || true
 
-      - name: pip-audit (dependency vulnerabilities, non-blocking)
-        run: pip-audit -r requirements.txt || true
+      # Blocking. The backlog was cleared on 2026-10-04 (0 known advisories in
+      # requirements.txt; the runtime image's pip/setuptools are handled in the
+      # Dockerfile), so any finding is a regression to fix in the same PR. A
+      # newly published upstream advisory will turn unrelated PRs red: bump the
+      # pin, or — only if no fix exists — add a dated, justified
+      # `--ignore-vuln <ID>` here.
+      #
+      # Deterministic: audits exactly the pinned requirements.txt in an
+      # isolated venv (not this job's site-packages, which also holds ruff,
+      # bandit and pip-audit itself), with --strict so a requirement that
+      # cannot be resolved or audited fails instead of being skipped.
+      - name: pip-audit (dependency vulnerabilities, blocking)
+        run: pip-audit --strict --requirement requirements.txt --progress-spinner off
 
       - name: Django system check
         run: python manage.py check
