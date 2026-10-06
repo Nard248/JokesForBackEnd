@@ -214,3 +214,51 @@ def load_corpus(manifest_path, *, require_complete=False):
         )
         raise ValueError(f'Corpus targets incomplete: {missing}')
     return corpus
+
+
+# Categories whose records are mature by policy, whatever their age rating:
+# they import as tier_2 (adult + explicit opt-in) and are never published by an
+# AI-only screen. This is an importer rule layered on top of the age-rating
+# derivation in jokes.serving.content_tier_for_age_rating, not a replacement.
+MATURE_CATEGORIES = frozenset({'dark', 'edgy'})
+LAUNCH_SET_METHOD_LIMIT = 200
+
+
+def load_launch_set(path, corpus):
+    """Validate a launch-set file against ``corpus`` (no database access).
+
+    Shape: ``{"version": 1, "method": str, "screened_at": "YYYY-MM-DD",
+    "publish": [record key, ...], "blocked": {record key: reason}}``. Every key
+    must exist in the corpus; a key cannot be both published and blocked; and a
+    mature-category (dark/edgy) record can never be published by this file.
+    """
+    data = _read_json(Path(path).resolve())
+    if not isinstance(data, dict) or type(data.get('version')) is not int or data['version'] != 1:
+        raise ValueError('Launch set version must be 1')
+    if unknown := set(data) - {'version', 'method', 'screened_at', 'publish', 'blocked'}:
+        raise ValueError(f'Unknown launch set fields: {sorted(unknown)}')
+    _text(data, 'method', limit=LAUNCH_SET_METHOD_LIMIT)
+    screened_at = data.get('screened_at')
+    if not isinstance(screened_at, str) or not re.fullmatch(r'\d{4}-\d{2}-\d{2}', screened_at):
+        raise ValueError('Launch set screened_at must be a YYYY-MM-DD date')
+    publish = data.get('publish')
+    if not isinstance(publish, list) or any(not isinstance(key, str) for key in publish):
+        raise ValueError('Launch set publish must be a list of record keys')
+    if len(set(publish)) != len(publish):
+        raise ValueError('Launch set publish contains duplicate keys')
+    blocked = data.get('blocked')
+    if not isinstance(blocked, dict) or any(
+        not isinstance(reason, str) or not reason.strip() for reason in blocked.values()
+    ):
+        raise ValueError('Launch set blocked must map record keys to nonempty reasons')
+    categories = {record['id']: record['category'] for record in corpus.records}
+    if unknown := sorted((set(publish) | set(blocked)) - categories.keys()):
+        raise ValueError(f'Launch set names unknown record keys: {unknown[:20]}')
+    if both := sorted(set(publish) & set(blocked)):
+        raise ValueError(f'Launch set keys cannot be both published and blocked: {both[:20]}')
+    if mature := sorted(key for key in publish if categories[key] in MATURE_CATEGORIES):
+        raise ValueError(
+            f'Launch set cannot publish {len(mature)} dark/edgy record(s); they need native '
+            f'review: {mature[:20]}'
+        )
+    return {**data, 'publish': list(publish), 'blocked': dict(blocked)}

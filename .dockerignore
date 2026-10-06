@@ -4,8 +4,12 @@
 .idea
 .vscode
 
-# Python
+# Python (any virtualenv: .venv, .venv-deps, venv, env)
 .venv
+.venv*
+venv
+env
+ENV
 __pycache__
 *.pyc
 *.pyo
@@ -21,6 +25,17 @@ __pycache__
 .planning
 .remember
 .claude
+.agents
+.codex
+.playwright-mcp
+**/node_modules
+
+# Local database dumps / scratch data
+**/*.sql
+**/*.sql.gz
+**/*.dump
+*.bak
+*.tmp
 
 # Build output
 staticfiles

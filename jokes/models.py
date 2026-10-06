@@ -9,7 +9,7 @@ from django.core.files.storage import default_storage
 from django.db import models
 from django.utils import timezone
 
-from .managers import JokeManager
+from .managers import PUBLISHED_EDITORIAL_STATUSES, JokeManager
 
 
 class Format(models.Model):
@@ -160,12 +160,28 @@ class Joke(models.Model):
     context_tags = models.ManyToManyField(ContextTag, related_name='jokes')
     culture_tags = models.ManyToManyField(CultureTag, related_name='jokes', blank=True)
     countries = models.ManyToManyField(Country, related_name='jokes', blank=True)
+    # Where the joke comes from (its nationality), e.g. the authored collection
+    # country of an imported joke. Not what the joke is about: `countries`
+    # keeps every country the joke is set in or relates to.
+    origin_country = models.ForeignKey(
+        Country, on_delete=models.SET_NULL, null=True, blank=True, related_name='origin_jokes',
+        help_text='Country the joke comes from (nationality), not a country it is about.',
+    )
     seed_key = models.CharField(max_length=160, unique=True, null=True, blank=True)
     cultural_note = models.TextField(blank=True)
+    # Publication gate: 'generated' is HELD (never served to readers; see
+    # managers.PUBLISHED_EDITORIAL_STATUSES). 'ai_screened' is published AI
+    # text that passed an AI editorial screen but no native-speaker review.
+    EDITORIAL_LEGACY = 'legacy'
+    EDITORIAL_GENERATED = 'generated'
+    EDITORIAL_AI_SCREENED = 'ai_screened'
+    EDITORIAL_NATIVE_REVIEWED = 'native_reviewed'
     editorial_status = models.CharField(
-        max_length=20, default='legacy',
-        choices=[('legacy', 'Legacy content'), ('generated', 'AI generated'),
-                 ('native_reviewed', 'Reviewed by a native speaker')],
+        max_length=20, default=EDITORIAL_LEGACY, db_index=True,
+        choices=[(EDITORIAL_LEGACY, 'Legacy content'),
+                 (EDITORIAL_GENERATED, 'AI generated (held)'),
+                 (EDITORIAL_AI_SCREENED, 'AI generated, screened'),
+                 (EDITORIAL_NATIVE_REVIEWED, 'Reviewed by a native speaker')],
     )
 
     # Content classification (compliance: three-bucket framework)
@@ -259,6 +275,10 @@ class Joke(models.Model):
         # while the file exists on disk/bucket, and nothing warns.
         if self.is_removed:
             regenerate = False
+        # Same for an editorially held joke: the card lives at a public,
+        # guessable path, so held text must not be rendered into one.
+        if self.editorial_status not in PUBLISHED_EDITORIAL_STATUSES:
+            regenerate = False
 
         # IMPORTANT: a live->removed transition made directly via save()
         # (e.g. the JokeAdmin change form, which bypasses
@@ -307,7 +327,7 @@ class Joke(models.Model):
         matching guard in save()) -- a no-op here rather than an implicit
         assumption every caller remembers to check first.
         """
-        if self.is_removed:
+        if self.is_removed or self.editorial_status not in PUBLISHED_EDITORIAL_STATUSES:
             return
         self._generate_share_image()
         Joke.objects.filter(pk=self.pk).update(share_image=self.share_image.name)

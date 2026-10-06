@@ -82,7 +82,7 @@ class CommunityDetailView(APIView):
         # community scoring aggregates are not multiplied by selector joins.
         base = (
             Joke.objects.filter(pk__in=discovery_pool(request).values('pk'))
-            .select_related('format', 'age_rating', 'language', 'source', 'creator__profile')
+            .select_related('format', 'age_rating', 'language', 'source', 'origin_country', 'creator__profile')
             .prefetch_related('tones', 'context_tags', 'culture_tags', 'countries', 'media__asset')
         )
         trending, newest = services.community_jokes(community, base)

@@ -44,6 +44,8 @@ from rest_framework_simplejwt.serializers import TokenRefreshSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.views import TokenViewBase
 
+from JokesForProject.auth_views import OrphanSafeRefreshMixin
+
 #: How long a native refresh token lives. The web default is 1 day, which in a
 #: daily-ritual product logs out anyone who skips a single day — a retention
 #: bug wearing a security costume. Overridable so it can be tightened without a
@@ -123,8 +125,10 @@ class NativeLoginView(APIView):
         return Response(payload, status=status.HTTP_200_OK)
 
 
-class NativeTokenRefreshSerializer(TokenRefreshSerializer):
+class NativeTokenRefreshSerializer(OrphanSafeRefreshMixin, TokenRefreshSerializer):
     """simplejwt's refresh, with the native lifetime re-applied on rotation.
+
+    A token whose user was deleted is a 401, not a 500 (``OrphanSafeRefreshMixin``).
 
     Without the ``set_exp`` below, the rotated token would silently fall back to
     the global 1-day ``REFRESH_TOKEN_LIFETIME`` — so the 30-day window would

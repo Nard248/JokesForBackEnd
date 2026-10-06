@@ -73,6 +73,9 @@ class CreatorProfileView(APIView):
         # Paginate + serialize the tier-filtered jokes for the viewer.
         paginator = PageNumberPagination()
         paginator.page_size = 10
+        jokes = jokes.select_related(
+            'format', 'age_rating', 'language', 'origin_country',
+        ).prefetch_related('tones', 'media__asset')
         page = paginator.paginate_queryset(jokes, request, view=self)
         serializer = JokeListSerializer(page, many=True, context={'request': request})
         data['jokes'] = serializer.data

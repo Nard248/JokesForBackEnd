@@ -13,7 +13,7 @@ from django.db.models import Avg, Count, Exists, F, IntegerField, OuterRef, Q, S
 from django.db.models.functions import Coalesce, ExtractHour
 from django.utils import timezone
 
-from creator_insights.privacy import eligible_analytics_users
+from creator_insights.privacy import eligible_analytics_users, since_latest_opt_in
 from follows.models import Follow
 from jokes.identity import public_display_name, public_handle
 from jokes.models import (
@@ -40,20 +40,29 @@ WATCH_COMPLETION_PCT = 90
 MIN_AUDIENCE_SIZE = 20
 
 
-def _eligible_events(model):
-    """Only currently consenting adults, excluding direct/legacy creator previews.
+# When each counted event happened, for the consent cutoff and raw retention.
+EVENT_TIMESTAMPS = {
+    JokeView: 'viewed_at', JokeImpression: 'created_at', JokeDwell: 'created_at',
+    JokeWatch: 'watched_at', JokeReaction: 'created_at', Favorite: 'created_at',
+    SavedJoke: 'created_at', ShareEvent: 'created_at',
+}
+RAW_TELEMETRY = (JokeImpression, JokeDwell, JokeWatch)
 
-    The eligible-user subquery is evaluated by PostgreSQL with the aggregate,
-    so withdrawal takes effect on the next request without a user-ID cache.
+
+def _eligible_events(model):
+    """Currently consenting adults' events since their latest opt-in, minus creator previews.
+
+    The eligible-user subquery and the opt-in cutoff are evaluated by
+    PostgreSQL with the aggregate, so withdrawal takes effect on the next
+    request without a user-ID cache, and activity from before an opt-in never
+    counts (the same rule as community aggregates).
     """
-    events = model.objects.filter(user__in=eligible_analytics_users())
+    timestamp = EVENT_TIMESTAMPS[model]
+    events = since_latest_opt_in(model.objects.filter(user__in=eligible_analytics_users()), timestamp)
     # The raw retention window applies immediately, including while bounded
     # physical cleanup is catching up. Operational reading/action history has
     # a separate purpose and is deliberately not aged out here.
-    timestamp = {
-        JokeImpression: 'created_at', JokeDwell: 'created_at', JokeWatch: 'watched_at',
-    }.get(model)
-    if timestamp:
+    if model in RAW_TELEMETRY:
         from jokes.telemetry import RETENTION_DAYS
         events = events.filter(**{f'{timestamp}__gte': timezone.now() - timedelta(days=RETENTION_DAYS)})
     return events.exclude(
@@ -496,7 +505,10 @@ def build_creator_insights(creator, period, *, allowed_content_tiers=None):
     # Follower stats (injected after _overview so the function signature stays stable)
     today = timezone.now().date()
     bf_start = today - timedelta(days=27)
-    follows = Follow.objects.filter(creator=creator, follower__in=eligible_analytics_users().exclude(pk=creator.pk))
+    follows = since_latest_opt_in(
+        Follow.objects.filter(creator=creator, follower__in=eligible_analytics_users().exclude(pk=creator.pk)),
+        'created_at', user_field='follower_id',
+    )
     overview['followers'] = follows.count()
     follow_counts = (
         follows.filter(created_at__date__gte=bf_start, created_at__date__lte=today)
@@ -524,14 +536,18 @@ def build_creator_insights(creator, period, *, allowed_content_tiers=None):
             'audience_minimum': MIN_AUDIENCE_SIZE,
         },
         'measurement_notes': {
-            'population': 'Currently consenting adults only; creator self-interactions excluded. This is not total audience.',
-            'views': 'Recorded opens/reveals, filtered by current consent; repeats may count after the debounce window.',
+            'population': ('Currently consenting adults only, counting only activity recorded at or after each '
+                           "person's latest analytics opt-in; creator self-interactions excluded. This is not total audience."),
+            'views': ('Recorded opens/reveals since each reader\'s latest analytics opt-in; repeats may count after the '
+                      'debounce window.'),
             'open_rate': 'Fraction of daily user/joke impressions with a same-user/joke/day open or reveal, not an attributed causal conversion.',
             'attention': 'Optional client dwell/playback samples, not proof of attention. Averages are per sample/segment, not per reader or session. Coverage varies by client; native completeness is not established. Missing playback/scroll completion is unknown, not zero.',
             'retention': 'Optional impressions, dwell and playback cover the most recent 90 days. Operational opens and surviving engagement edges have separate history; longer periods do not imply equal coverage.',
             'anonymous': 'Anonymous readers and shares are excluded; no anonymous audience identifier is collected.',
-            'engagement': 'Reactions, favorites and saves are surviving edges created in the window; removals rewrite historical totals.',
-            'followers': 'Consenting adult follower snapshots. Growth series counts surviving follows by creation date, not gains or net growth.',
+            'engagement': ('Reactions, favorites and saves are surviving edges created in the window and after the '
+                           "person's latest opt-in; removals rewrite historical totals."),
+            'followers': ('Consenting adult followers who followed after their latest opt-in. Growth series counts '
+                          'surviving follows by creation date, not gains or net growth.'),
             'shares': 'Recorded share initiations, not confirmed downstream consumption.',
             'audience': 'Viewed content tags, not demographic or cross-creator preferences; groups below 20 readers are suppressed.',
             'time_zone': 'UTC; week is 7 inclusive dates, month is 30, daily series always spans 28 dates.',

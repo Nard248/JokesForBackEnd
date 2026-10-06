@@ -78,7 +78,8 @@ def content_row(joke):
 
 
 MEASUREMENT_NOTES = [
-    'Analytics include signed-in adults who currently opt in to share analytics; anonymous visits are not measured.',
+    ('Analytics include signed-in adults who currently opt in to share analytics, counting only activity recorded '
+     'at or after their latest opt-in; anonymous visits are not measured.'),
     'Views are recorded opens or reveals, not laughs or completed reads.',
     'Reactions and saves count current relationships created in the selected window, not historical totals.',
     'Shares are share initiations; downstream clicks and recipient reads are not measured.',

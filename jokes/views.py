@@ -47,6 +47,7 @@ from rest_framework.response import Response
 from rest_framework.throttling import ScopedRateThrottle
 from rest_framework.views import APIView
 
+from JokesForProject.auth_views import CREDENTIAL_ENDPOINT_AUTHENTICATION
 from notifications.models import EmailMessageLog, EmailVerification
 
 from .achievements import evaluate_for as evaluate_achievements_for
@@ -66,6 +67,7 @@ from .identity import (
     public_display_name,
     public_handle,
 )
+from .managers import HUMAN_EDITORIAL_STATUSES, human_first_rank, live_joke_q, prefer_human
 from .media_processing import (
     MediaBusyError,
     MediaValidationError,
@@ -175,7 +177,7 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
         qs = Joke.objects.filter(
             content_tier__in=allowed_tiers(self.request)
         ).select_related(
-            'format', 'age_rating', 'language', 'source'
+            'format', 'age_rating', 'language', 'source', 'origin_country'
         ).prefetch_related('tones', 'context_tags', 'culture_tags', 'countries', 'media__asset')
         # Moderation: hide removed jokes (global) + blocked users' jokes (per-viewer).
         return visible_jokes(qs, self.request)
@@ -384,7 +386,7 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
         # language/source FKs; tones/context_tags/culture_tags/media__asset
         # M2M) each re-hit the DB once per joke on the page.
         queryset = queryset.select_related(
-            'format', 'age_rating', 'language', 'source'
+            'format', 'age_rating', 'language', 'source', 'origin_country'
         ).prefetch_related('tones', 'context_tags', 'culture_tags', 'countries', 'media__asset')
 
         # Paginate results
@@ -409,7 +411,8 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
         Useful for "Joke of the Day" or random joke button features.
         Returns 404 if no jokes exist in the database.
         """
-        qs = discovery_pool(request)
+        # Human-written/reviewed jokes are preferred whenever the pool has any.
+        qs = prefer_human(discovery_pool(request))
         joke = qs.order_by('?').first()
         if joke is None:
             return Response(
@@ -603,7 +606,7 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
         jokes = Joke.objects.filter(
             pk__in=discovery_pool(request).values('pk'),
         ).select_related(
-            'format', 'age_rating', 'language', 'source'
+            'format', 'age_rating', 'language', 'source', 'origin_country'
         ).prefetch_related('tones', 'context_tags', 'culture_tags', 'countries').annotate(
             recent_likes=Count('ratings', filter=Q(ratings__rating=1, ratings__created_at__gte=since)),
             recent_shares=Count('share_events', filter=Q(share_events__created_at__gte=since)),
@@ -613,7 +616,7 @@ class JokeViewSet(viewsets.ReadOnlyModelViewSet):
                   + Count('saved_by', filter=Q(saved_by__created_at__gte=since)),
         ).filter(
             Q(recent_likes__gt=0) | Q(recent_shares__gt=0) | Q(recent_saves__gt=0)
-        ).order_by('-score')
+        ).annotate(human_rank=human_first_rank()).order_by('-score', 'human_rank', '-created_at', '-pk')
 
         page = self.paginate_queryset(jokes)
         results = []
@@ -935,6 +938,10 @@ class CookieRegisterView(RegisterView):
     the feature can be deployed before a real email provider is live.
     """
 
+    # A stale access cookie (expired, or for a deleted account) must not 401 a
+    # sign-up; CSRF is still enforced when the cookie is present.
+    authentication_classes = CREDENTIAL_ENDPOINT_AUTHENTICATION
+
     def create(self, request, *args, **kwargs):
         import logging as _logging
         _reg_metrics = _logging.getLogger('jokesfor.metrics')
@@ -1022,6 +1029,8 @@ class GoogleLogin(SocialLoginView):
         "user": { ... }
     }
     """
+    # Same as CookieRegisterView: a stale access cookie must not block sign-in.
+    authentication_classes = CREDENTIAL_ENDPOINT_AUTHENTICATION
     adapter_class = GoogleOAuth2Adapter
     callback_url = settings.GOOGLE_OAUTH_CALLBACK_URL
     client_class = OAuth2Client
@@ -1087,10 +1096,10 @@ class CollectionViewSet(viewsets.ModelViewSet):
         """List jokes in this collection."""
         collection = self.get_object()
         saved_jokes = SavedJoke.objects.filter(
+            live_joke_q('joke__'),  # taken-down/held jokes vanish (FK bypasses JokeManager)
             collection=collection,
             joke__content_tier__in=allowed_tiers(request),
-            joke__is_removed=False,  # taken-down jokes vanish (FK bypasses JokeManager)
-        ).select_related('joke', 'collection')
+        ).select_related('joke', 'joke__origin_country', 'collection')
 
         # Paywall flows into the nested JokeSerializer via the root context.
         ctx = {'request': request, 'paywall_state': paywall_state(request)}
@@ -1154,17 +1163,17 @@ class SavedJokeViewSet(
     def get_queryset(self):
         """Return saved jokes for the current user with related data.
 
-        Removed (taken-down) jokes vanish from the list entirely: the FK
-        traversal bypasses JokeManager's is_removed gate, and post
+        Removed (taken-down) and editorially held jokes vanish from the list
+        entirely: the FK traversal bypasses JokeManager's gate, and post
         quarantine-rework the JokeMedia links (and quarantine-path URLs)
         still exist — so the filter must be explicit here.
         """
         qs = SavedJoke.objects.filter(
+            live_joke_q('joke__'),
             user=self.request.user,
-            joke__is_removed=False,
         ).select_related(
             'joke', 'joke__format', 'joke__age_rating', 'joke__language', 'joke__source',
-            'collection'
+            'joke__origin_country', 'collection'
         ).prefetch_related(
             'joke__tones', 'joke__context_tags', 'joke__culture_tags', 'joke__countries', 'joke__media__asset'
         )
@@ -1285,8 +1294,8 @@ class DailyJokeViewSet(viewsets.GenericViewSet):
         fresh = pool.exclude(id__in=recent)
         if fresh.exists():
             pool = fresh
-        pool = pool.select_related(
-            'format', 'age_rating', 'language', 'source',
+        pool = prefer_human(pool).select_related(
+            'format', 'age_rating', 'language', 'source', 'origin_country',
         ).prefetch_related(
             'tones', 'context_tags', 'culture_tags', 'countries', 'media__asset',
         ).order_by('id')
@@ -1307,7 +1316,7 @@ class DailyJokeViewSet(viewsets.GenericViewSet):
         selection pick instead.
         """
         stored = DailyJoke.objects.filter(user=request.user, date=day).select_related(
-            'joke', 'joke__format', 'joke__age_rating', 'joke__language',
+            'joke', 'joke__format', 'joke__age_rating', 'joke__language', 'joke__origin_country',
         ).prefetch_related(
             'joke__tones', 'joke__context_tags', 'joke__culture_tags', 'joke__countries',
         ).first()
@@ -1359,8 +1368,9 @@ class DailyJokeViewSet(viewsets.GenericViewSet):
         # per-day pick via DailyJoke; this gives anonymous readers the same
         # promise without needing a row per visitor.
         if not request.user.is_authenticated:
-            pool = discovery_pool(request).select_related(
-                'format', 'age_rating', 'language', 'source'
+            # Human-written/reviewed jokes are preferred whenever any qualify.
+            pool = prefer_human(discovery_pool(request)).select_related(
+                'format', 'age_rating', 'language', 'source', 'origin_country'
             ).prefetch_related(
                 'tones', 'context_tags', 'culture_tags', 'countries'
             ).order_by('id')
@@ -1437,12 +1447,13 @@ class DailyJokeViewSet(viewsets.GenericViewSet):
     def history(self, request):
         """Get all available daily joke history, independent of paid plans."""
         queryset = self.get_queryset().filter(
-            joke__is_removed=False,  # a taken-down joke drops out of history
+            live_joke_q('joke__'),  # a taken-down or held joke drops out of history
         ).select_related(
             'joke',
             'joke__format',
             'joke__age_rating',
-            'joke__language'
+            'joke__language',
+            'joke__origin_country',
         ).prefetch_related(
             'joke__tones',
             'joke__context_tags', 'joke__culture_tags', 'joke__countries'
@@ -1491,9 +1502,13 @@ def joke_share_page(request, pk):
     redirect shell (share_redirect.html) that bounces the human to the SPA
     -- which enforces the age-gate itself -- while exposing zero joke
     content (no text, no image, no JSON-LD) to anon/scraper eyes.
+
+    The default manager also excludes editorially held jokes, so an unscreened
+    AI draft 404s like a removed one. Published AI-authored jokes (ai_screened)
+    render normally but carry `noindex` until a native speaker reviews them.
     """
     joke = get_object_or_404(
-        Joke.objects.select_related('format', 'age_rating').prefetch_related('tones'),
+        Joke.objects.select_related('format', 'age_rating', 'language').prefetch_related('tones'),
         pk=pk,
     )
 
@@ -1526,11 +1541,13 @@ def joke_share_page(request, pk):
     # schema.org CreativeWork. The joke serializer never exposes the
     # individual creator's identity on this surface, so attribute to the
     # JokesFor org rather than fabricate a Person.
+    language_code = joke.language.code if joke.language_id else 'en'
     json_ld = {
         '@context': 'https://schema.org',
         '@type': 'CreativeWork',
         'name': title,
         'headline': title,
+        'inLanguage': language_code,
         'url': frontend_joke_url,
         'author': {
             '@type': 'Organization',
@@ -1549,6 +1566,9 @@ def joke_share_page(request, pk):
         'description': description,
         'badge_text': badge_text,
         'json_ld_script': _ld_json_script(json_ld),
+        'lang': language_code,
+        # Only human-written or native-reviewed jokes are offered to search engines.
+        'noindex': joke.editorial_status not in HUMAN_EDITORIAL_STATUSES,
     })
 
 
@@ -2016,15 +2036,16 @@ class FavoriteViewSet(
     permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
-        # joke__is_removed: same explicit gate as SavedJokeViewSet — the FK
-        # traversal bypasses JokeManager, and a taken-down joke must vanish
-        # from favorites (its quarantined media URLs would serialize).
+        # live_joke_q: same explicit gate as SavedJokeViewSet — the FK
+        # traversal bypasses JokeManager, and a taken-down or held joke must
+        # vanish from favorites (its quarantined media URLs would serialize).
         qs = Favorite.objects.filter(
+            live_joke_q('joke__'),
             user=self.request.user,
             joke__content_tier__in=allowed_tiers(self.request),
-            joke__is_removed=False,
         ).select_related(
-            'joke', 'joke__format', 'joke__age_rating', 'joke__language', 'joke__source'
+            'joke', 'joke__format', 'joke__age_rating', 'joke__language', 'joke__source',
+            'joke__origin_country',
         ).prefetch_related(
             'joke__tones', 'joke__context_tags', 'joke__culture_tags', 'joke__countries', 'joke__media__asset'
         )
@@ -2079,7 +2100,7 @@ class FavoriteViewSet(
         """GET /favorites/stats/ — Favorite statistics."""
         from datetime import timedelta
 
-        favorites = Favorite.objects.filter(user=request.user)
+        favorites = Favorite.objects.filter(live_joke_q('joke__'), user=request.user)
         total = favorites.count()
 
         week_ago = timezone.now() - timedelta(days=7)
@@ -2087,7 +2108,7 @@ class FavoriteViewSet(
 
         # Top tone: most common tone among favorited jokes
         top_tone_data = (
-            Tone.objects.filter(jokes__favorited_by__user=request.user)
+            Tone.objects.filter(live_joke_q('jokes__'), jokes__favorited_by__user=request.user)
             .annotate(fav_count=Count('jokes__favorited_by'))
             .order_by('-fav_count')
             .first()
@@ -2312,6 +2333,7 @@ class UserProfileView(APIView):
         """Distribution of tones across user's positive interactions."""
         tone_counts = (
             Tone.objects.filter(
+                live_joke_q('jokes__'),
                 Q(jokes__ratings__user=user, jokes__ratings__rating=1)
                 | Q(jokes__favorited_by__user=user)
                 | Q(jokes__saved_by__user=user)
@@ -2355,7 +2377,8 @@ class UserActivityView(APIView):
         activities = []
 
         # Recent ratings
-        for r in JokeRating.objects.filter(user=request.user).select_related('joke').order_by('-created_at')[:limit]:
+        for r in (JokeRating.objects.filter(live_joke_q('joke__'), user=request.user)
+                  .select_related('joke').order_by('-created_at')[:limit]):
             verb = 'Liked' if r.rating == 1 else 'Disliked'
             activities.append({
                 'id': f'rating_{r.id}',
@@ -2365,7 +2388,8 @@ class UserActivityView(APIView):
             })
 
         # Recent saves
-        for s in SavedJoke.objects.filter(user=request.user).select_related('joke').order_by('-created_at')[:limit]:
+        for s in (SavedJoke.objects.filter(live_joke_q('joke__'), user=request.user)
+                  .select_related('joke').order_by('-created_at')[:limit]):
             activities.append({
                 'id': f'save_{s.id}',
                 'type': 'save',
@@ -2374,7 +2398,8 @@ class UserActivityView(APIView):
             })
 
         # Recent favorites
-        for f in Favorite.objects.filter(user=request.user).select_related('joke').order_by('-created_at')[:limit]:
+        for f in (Favorite.objects.filter(live_joke_q('joke__'), user=request.user)
+                  .select_related('joke').order_by('-created_at')[:limit]):
             activities.append({
                 'id': f'fav_{f.id}',
                 'type': 'save',
@@ -2673,7 +2698,7 @@ class TagsTrendingView(APIView):
             Tone.objects.annotate(
                 count=Count('jokes__ratings', filter=Q(
                     jokes__ratings__rating=1, jokes__ratings__created_at__gte=since
-                ))
+                ) & live_joke_q('jokes__'))
             ).filter(count__gt=0).order_by('-count')[:10]
         )
 
@@ -2817,7 +2842,7 @@ class ThemesPopularView(APIView):
     )
     def get(self, request):
         names = list(
-            ContextTag.objects.annotate(joke_count=Count('jokes'))
+            ContextTag.objects.annotate(joke_count=Count('jokes', filter=live_joke_q('jokes__')))
             .order_by('-joke_count')
             .values_list('name', flat=True)[:10]
         )
@@ -3231,7 +3256,7 @@ class DataExportView(APIView):
                     'note': s.note,
                     'created_at': s.created_at,
                 }
-                for s in SavedJoke.objects.filter(user=u, joke__is_removed=False)
+                for s in SavedJoke.objects.filter(live_joke_q('joke__'), user=u)
                 .select_related('joke', 'collection')
             ],
             'favorites': [
@@ -3240,7 +3265,7 @@ class DataExportView(APIView):
                     'joke_text': f.joke.text,
                     'created_at': f.created_at,
                 }
-                for f in Favorite.objects.filter(user=u, joke__is_removed=False)
+                for f in Favorite.objects.filter(live_joke_q('joke__'), user=u)
                 .select_related('joke')
             ],
             'ratings': list(
@@ -3561,11 +3586,13 @@ class RecentlyViewedView(APIView):
             limit = 20
         qs = (
             JokeView.objects.filter(
+                live_joke_q('joke__'),  # taken-down/held jokes vanish (FK bypasses JokeManager)
                 user=request.user,
                 joke__content_tier__in=allowed_tiers(request),
-                joke__is_removed=False,  # taken-down jokes vanish (FK bypasses JokeManager)
             )
-            .select_related('joke', 'joke__format', 'joke__age_rating', 'joke__language')
+            .select_related(
+                'joke', 'joke__format', 'joke__age_rating', 'joke__language', 'joke__origin_country',
+            )
             .prefetch_related(
                 'joke__tones', 'joke__context_tags', 'joke__culture_tags', 'joke__countries',
                 'joke__media__asset',
@@ -3969,8 +3996,8 @@ class TasteProfileView(APIView):
             period = 'month'
             since = timezone.now().date() - timedelta(days=29)
 
-        view_qs = JokeView.objects.filter(user=request.user)
-        save_qs = SavedJoke.objects.filter(user=request.user)
+        view_qs = JokeView.objects.filter(live_joke_q('joke__'), user=request.user)
+        save_qs = SavedJoke.objects.filter(live_joke_q('joke__'), user=request.user)
         if since:
             view_qs = view_qs.filter(viewed_date__gte=since)
             save_qs = save_qs.filter(created_at__date__gte=since)

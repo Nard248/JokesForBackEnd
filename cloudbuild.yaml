@@ -7,7 +7,8 @@
 # MIGRATE step that the auto-config lacks. Migrations run INSIDE the freshly
 # built image (which has libcairo/pango for cairosvg + the exact release code),
 # against the prod DB, BEFORE the new revision is rolled out — so the schema is
-# always ahead of the running code.
+# always ahead of the running code. An IMPORT step then syncs the committed
+# international joke corpus (held unless the committed launch set publishes it).
 #
 # Substitutions (_AR_HOSTNAME, _AR_REPOSITORY, _SERVICE_NAME, _DEPLOY_REGION,
 # REPO_NAME) are already defined on the trigger; they resolve to the same values
@@ -51,7 +52,32 @@ steps:
     secretEnv:
       - DATABASE_URL
 
-  # ── 4. Deploy to Cloud Run (identical to current Deploy step) ──────────────
+  # ── 4. IMPORT INTERNATIONAL CORPUS (new) — same image/env as Migrate ──────
+  # Idempotently syncs jokes/fixtures/international/ into the DB so nobody needs
+  # production DB access. Fail-closed publication: new records import HELD
+  # (editorial_status=generated, never served); only keys in the committed
+  # launch set are promoted to ai_screened, blocked keys become tier_3, and
+  # dark/edgy records are never tier_1 and never published by the launch set.
+  # Atomic + advisory-locked; on unchanged data it performs no row writes (a
+  # few seconds of validation and read queries). Any validation error (bad
+  # manifest, unknown/dark/edgy launch-set key, changed stable key, duplicate
+  # text) exits non-zero, so the build stops here and Deploy never runs.
+  # Runbook: Docs/API/International_Discovery.md ("Production delivery").
+  - name: $_AR_HOSTNAME/$_AR_PROJECT_ID/$_AR_REPOSITORY/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA
+    id: ImportInternational
+    entrypoint: python
+    args:
+      - manage.py
+      - import_international_jokes
+      - --launch-set
+      - jokes/fixtures/international/launch_set.json
+    env:
+      - DEBUG=True
+      - ALLOWED_HOSTS=localhost
+    secretEnv:
+      - DATABASE_URL
+
+  # ── 5. Deploy to Cloud Run (identical to current Deploy step) ──────────────
   # No --set-env-vars, so all existing Cloud Run env (SECRET_KEY, RESEND_API_KEY,
   # GS_BUCKET_NAME, SENTRY_DSN, …) is preserved untouched.
   - name: gcr.io/google.com/cloudsdktool/cloud-sdk:slim

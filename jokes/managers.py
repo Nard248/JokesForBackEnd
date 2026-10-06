@@ -1,20 +1,57 @@
 from django.contrib.postgres.search import SearchQuery, SearchRank
 from django.db import models
-from django.db.models import Case, Count, F, Func, Q, When
+from django.db.models import Case, Count, F, Func, IntegerField, Q, Value, When
 
 from .search import normalize_search_query
+
+# Editorial publication gate. An allow-list, so any status that is not
+# explicitly published (today: 'generated', an unscreened AI draft) is HELD and
+# never reaches a reader. Fail-closed: a future status is held until added here.
+PUBLISHED_EDITORIAL_STATUSES = ('legacy', 'ai_screened', 'native_reviewed')
+# Human-written or human-reviewed content ranks ahead of AI-screened content
+# wherever recency is the default order or a tie-break.
+HUMAN_EDITORIAL_STATUSES = ('legacy', 'native_reviewed')
+
+
+def live_joke_q(prefix=''):
+    """Q for jokes a reader may be served: not taken down and not editorially held.
+
+    ``prefix`` addresses the joke through a relation (``'joke__'``,
+    ``'jokes__'``) for read paths that do not go through ``Joke.objects``:
+    forward FK traversals, reverse-relation aggregates and through tables.
+    """
+    return Q(**{
+        f'{prefix}is_removed': False,
+        f'{prefix}editorial_status__in': PUBLISHED_EDITORIAL_STATUSES,
+    })
+
+
+def human_first_rank():
+    """0 for human-written/reviewed jokes, 1 for AI-authored ones (sort ascending)."""
+    return Case(
+        When(editorial_status__in=HUMAN_EDITORIAL_STATUSES, then=Value(0)),
+        default=Value(1), output_field=IntegerField(),
+    )
+
+
+def prefer_human(queryset):
+    """Narrow a selection pool to human content when any exists, else keep it whole."""
+    human = queryset.filter(editorial_status__in=HUMAN_EDITORIAL_STATUSES)
+    return human if human.exists() else queryset
 
 
 class JokeManager(models.Manager):
     """Custom manager for Joke model with full-text search capabilities.
 
-    Takedowns are global: get_queryset() excludes is_removed=True so a moderated
-    joke never serves through the default manager on ANY read path. Admin and
-    moderation use `Joke.all_objects` (unfiltered) to view/restore removed jokes.
+    Takedowns and editorial holds are global: get_queryset() excludes
+    is_removed=True and every unpublished editorial status (see
+    ``live_joke_q``), so a moderated or held joke never serves through the
+    default manager on ANY read path. Admin and moderation use
+    `Joke.all_objects` (unfiltered) to view, review, publish or restore them.
     """
 
     def get_queryset(self):
-        return super().get_queryset().filter(is_removed=False)
+        return super().get_queryset().filter(live_joke_q())
 
     def search(self, query_text=None, filters=None, ordering=None, allowed_tiers=None):
         """
@@ -30,10 +67,11 @@ class JokeManager(models.Manager):
                 - culture_tags: list of slug strings
                 - language: code string
             ordering: Sort order string (optional):
-                - '-created_at': newest first
+                - '-created_at': newest first (pure recency, explicit choice)
                 - 'popularity': by likes + saves descending
                 - 'relevance': by search rank (default when query_text present)
-                - None: auto-select (relevance if searching, -created_at otherwise)
+                - None: auto-select (relevance if searching, human content
+                  first then newest otherwise)
 
         Returns:
             QuerySet ordered by the specified ordering
@@ -91,22 +129,23 @@ class JokeManager(models.Manager):
             if filters.get('country'):
                 qs = qs.filter(countries__code=str(filters['country']).upper())
 
-        # Apply ordering
+        # Apply ordering. Human-written/reviewed jokes (human_rank=0) rank
+        # ahead of AI-screened ones in the default browse order and in every
+        # tie-break; an explicit '-created_at' is honored as pure recency.
+        qs = qs.annotate(human_rank=human_first_rank())
         if ordering == 'popularity' or ordering == '-popularity':
             qs = qs.annotate(
                 like_count=Count('ratings', filter=Q(ratings__rating=1)),
                 save_count=Count('saved_by'),
-            ).order_by('-like_count', '-save_count', '-created_at', '-pk')
+            ).order_by('-like_count', '-save_count', 'human_rank', '-created_at', '-pk')
         elif ordering == '-created_at':
             qs = qs.order_by('-created_at', '-pk')
-        elif ordering == 'relevance' and has_query:
-            qs = qs.order_by('-rank', '-created_at', '-pk')
         elif has_query:
-            # Default when searching: order by relevance
-            qs = qs.order_by('-rank', '-created_at', '-pk')
+            # Default when searching (and explicit 'relevance'): order by rank
+            qs = qs.order_by('-rank', 'human_rank', '-created_at', '-pk')
         else:
-            # Default when browsing: order by date
-            qs = qs.order_by('-created_at', '-pk')
+            # Default when browsing: human content first, then newest
+            qs = qs.order_by('human_rank', '-created_at', '-pk')
 
         # Only to-many filter joins can duplicate jokes. Avoid forcing a wide
         # DISTINCT/Unique sort (including both vectors) for ordinary searches;

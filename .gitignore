@@ -3,8 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# Virtual environments
+# Virtual environments (incl. side venvs such as .venv-deps/ in a worktree root)
 .venv/
+.venv*/
 venv/
 ENV/
 env/
@@ -60,3 +61,8 @@ celerybeat.pid
 *.bak
 *.tmp
 .playwright-mcp/
+
+# Local-only assistant configuration (project rules, vault pointer, personal settings)
+.claude/rules/
+.claude/obsidian.env
+.claude/settings.local.json

@@ -9,6 +9,7 @@ from django.test import TestCase
 from rest_framework.test import APIClient
 
 from billing.models import Plan, Subscription
+from creator_insights.tests.consent import record_opt_in
 from jokes.models import AgeRating, ContextTag, Format, Joke, JokeView, Language
 
 User = get_user_model()
@@ -24,6 +25,7 @@ class CreatorWorkbenchTests(TestCase):
         cls.viewer.profile.date_of_birth = date(1990, 1, 1)
         cls.viewer.profile.share_analytics = True
         cls.viewer.profile.save()
+        record_opt_in(cls.viewer)
         cls.plan = Plan.objects.get(slug='creator_pro')
         Subscription.objects.create(user=cls.creator, plan=cls.plan, status='active')
         with patch('jokes.models.Joke._generate_share_image'):
@@ -102,6 +104,20 @@ class CreatorWorkbenchTests(TestCase):
         response = self.client.get(URL)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.data['results'][0]['views'], 0)
+
+    def test_views_before_the_latest_opt_in_are_not_counted(self):
+        from datetime import timedelta
+
+        from django.utils import timezone
+
+        from creator_insights.tests.consent import record_opt_in
+        now = timezone.now()
+        JokeView.objects.filter(user=self.viewer).update(viewed_at=now - timedelta(days=2))
+        record_opt_in(self.viewer, at=now - timedelta(days=1))
+        self.assertEqual(self.client.get(URL).data['results'][0]['views'], 0)
+        JokeView.objects.create(user=self.viewer, joke=self.joke)
+        self.assertEqual(self.client.get(URL).data['results'][0]['views'], 1)
+        self.assertIn('latest opt-in', ' '.join(self.client.get(URL).data['measurement_notes']))
 
     def test_minor_and_creator_self_views_do_not_inflate_audience_metrics(self):
         for person, birthday in [(self.creator, date(1990, 1, 1)), (self.other, date(2012, 1, 1))]:
