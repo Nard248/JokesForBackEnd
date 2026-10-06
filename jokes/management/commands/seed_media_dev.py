@@ -34,6 +34,7 @@ from django.core.files.base import ContentFile
 from django.core.management.base import BaseCommand
 from django.db import transaction
 
+from jokes.management.local_only import require_local_database
 from jokes.models import AgeRating, Format, Joke, JokeMedia, Language, MediaAsset
 
 User = get_user_model()
@@ -143,8 +144,14 @@ class Command(BaseCommand):
             help='Delete existing [media-dev] jokes and their assets first.',
         )
 
-    @transaction.atomic
     def handle(self, *args, **options):
+        # Before any connection opens (the atomic block below would open one):
+        # fake data must never reach a non-local database.
+        require_local_database('seed_media_dev')
+        return self._seed(*args, **options)
+
+    @transaction.atomic
+    def _seed(self, *args, **options):
         if not _ffmpeg_available():
             self.stderr.write(self.style.ERROR(
                 'ffmpeg not found. It generates the audio/video files, and a '

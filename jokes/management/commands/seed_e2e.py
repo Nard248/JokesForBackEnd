@@ -14,16 +14,15 @@ bug. Everything created here is shaped the way the publish pipeline shapes it.
 Idempotent on local development databases. Refuses non-debug mode, non-loopback
 PostgreSQL, alternate libpq routing, and nonlocal media storage before any write.
 """
-import os
 from datetime import date, timedelta
 
-from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.core.management.base import BaseCommand, CommandError
-from django.db import connections, transaction
+from django.db import transaction
 from django.utils import timezone
 
 from billing.models import Plan, Subscription
+from jokes.management.local_only import require_local_database
 from jokes.models import AgeRating, ContextTag, Format, Joke, JokeSubmission, Language, Tone
 
 #: Marker so the fixture can be found and refreshed without touching real rows.
@@ -89,20 +88,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         # Inspect connection configuration without opening a connection. Guard
         # before transaction.atomic: even --fresh must never reach a remote DB.
-        config = connections['default'].settings_dict
-        routing = config.get('OPTIONS') or {}
-        if (
-            not settings.DEBUG
-            or config.get('ENGINE') != 'django.db.backends.postgresql'
-            or str(config.get('HOST', '')).lower() not in {'localhost', '127.0.0.1', '::1'}
-            or any(routing.get(key) or os.environ.get('PG' + key.upper()) for key in ('hostaddr', 'service'))
-            or settings.STORAGES['default']['BACKEND'] != 'django.core.files.storage.FileSystemStorage'
-        ):
-            raise CommandError(
-                'seed_e2e is local-only: requires DEBUG=True, explicit loopback PostgreSQL, '
-                'no hostaddr/service overrides, and local filesystem storage. '
-                'Clear DATABASE_URL and GS_BUCKET_NAME for local E2E runs.'
-            )
+        require_local_database('seed_e2e')
         self._seed(options)
 
     @transaction.atomic

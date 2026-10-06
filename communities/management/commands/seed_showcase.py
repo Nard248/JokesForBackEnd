@@ -24,15 +24,13 @@ but DEBUG + loopback PostgreSQL + filesystem storage.
     DATABASE_URL= DEBUG=True DB_NAME=jokesfor DB_USER=postgres DB_PASSWORD=... \\
     DB_HOST=localhost .venv/bin/python manage.py seed_showcase
 """
-import os
 import random
 from datetime import date, timedelta
 from types import SimpleNamespace
 
-from django.conf import settings
 from django.contrib.auth import get_user_model
-from django.core.management.base import BaseCommand, CommandError
-from django.db import connection, connections, transaction
+from django.core.management.base import BaseCommand
+from django.db import connection, transaction
 from django.utils import timezone
 
 from billing.models import Plan, Subscription
@@ -40,6 +38,7 @@ from communities import materialize, services
 from communities.models import Community, CommunityMembership, CommunityState
 from creator_insights import library
 from follows.models import Follow
+from jokes.management.local_only import require_local_database
 from jokes.models import (
     AgeRating,
     AnalyticsConsentRecord,
@@ -149,19 +148,7 @@ class Command(BaseCommand):
     help = 'Rebuild the local Creator Studio + communities showcase (local PostgreSQL only).'
 
     def handle(self, *args, **options):
-        config = connections['default'].settings_dict
-        routing = config.get('OPTIONS') or {}
-        if (
-            not settings.DEBUG
-            or config.get('ENGINE') != 'django.db.backends.postgresql'
-            or str(config.get('HOST', '')).lower() not in {'localhost', '127.0.0.1', '::1'}
-            or any(routing.get(key) or os.environ.get('PG' + key.upper()) for key in ('hostaddr', 'service'))
-            or settings.STORAGES['default']['BACKEND'] != 'django.core.files.storage.FileSystemStorage'
-        ):
-            raise CommandError(
-                'seed_showcase is local-only: requires DEBUG=True, explicit loopback PostgreSQL, no '
-                'hostaddr/service overrides and local filesystem storage. Clear DATABASE_URL first.'
-            )
+        require_local_database('seed_showcase')
         self.rng = random.Random(RANDOM_SEED)
         self.now = timezone.now()
         self.opted_in = self.now - timedelta(days=120)  # consent predates every seeded signal
