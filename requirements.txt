@@ -3,7 +3,7 @@ asgiref==3.11.0
 attrs==25.4.0
 certifi==2026.1.4
 cffi==2.0.0
-charset-normalizer==3.4.4
+charset-normalizer==3.5.2
 cryptography==50.0.2
 defusedxml==0.7.1
 dj-rest-auth==7.0.2
@@ -40,13 +40,13 @@ python-dateutil==2.9.0.post0
 python-dotenv==1.2.2
 PyYAML==6.0.3
 referencing==0.37.0
-requests==2.33.1
+requests==2.34.2
 rpds-py==0.30.0
 sentry-sdk[django]==2.20.0
 stripe==12.2.0
 six==1.17.0
 sqlparse==0.6.0
-typing_extensions==4.15.0
+typing_extensions==4.16.0
 tzdata==2025.3
 uritemplate==4.2.0
 urllib3==2.8.0
