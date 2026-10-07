@@ -28,6 +28,7 @@ from django.utils import timezone
 from communities import materialize
 from creator_insights.services import build_creator_insights
 from follows.models import Follow
+from jokes.management.local_only import require_local_database
 from jokes.models import (
     AgeRating,
     ContextTag,
@@ -317,8 +318,14 @@ class Command(BaseCommand):
     # ------------------------------------------------------------------ #
     #  Main                                                               #
     # ------------------------------------------------------------------ #
-    @transaction.atomic
     def handle(self, *args, **opts):
+        # Before any connection opens (the atomic block below would open one):
+        # fake data must never reach a non-local database.
+        require_local_database('seed_demo_creator')
+        return self._seed(*args, **opts)
+
+    @transaction.atomic
+    def _seed(self, *args, **opts):
         random.seed(RANDOM_SEED)
         email = opts['email']
         password = opts['password']
