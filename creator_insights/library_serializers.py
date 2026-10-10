@@ -1,4 +1,5 @@
 """Strict inputs: private work cannot smuggle public content or ownership edits."""
+from drf_spectacular.utils import extend_schema_serializer
 from rest_framework import serializers
 
 from creator_insights.models import CreatorCollection, CreatorMetadataRequest, CreatorWorkspaceNote
@@ -49,6 +50,9 @@ class CollectionItemSerializer(serializers.Serializer):
     display_text = serializers.CharField(max_length=180)
 
 
+# jokes.serializers.CollectionSerializer (reader collections) already owns the
+# "Collection" schema component; two components sharing a name corrupt both.
+@extend_schema_serializer(component_name='CreatorCollection')
 class CollectionSerializer(serializers.Serializer):
     id = serializers.IntegerField()
     name = serializers.CharField()
