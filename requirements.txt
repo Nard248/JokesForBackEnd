@@ -22,7 +22,7 @@ django-storages[google]==1.14.6
 django-timezone-field==7.2.1
 djangorestframework==3.17.2
 djangorestframework_simplejwt==5.5.1
-drf-spectacular==0.29.0
+drf-spectacular==0.30.0
 freezegun==1.5.5
 google-cloud-storage==3.12.0
 google-cloud-vision==3.16.0
